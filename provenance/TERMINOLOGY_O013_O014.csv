@@ -334,3 +334,15 @@ math.homological.connecting_morphism,connecting morphism,morfisme penghubung,hom
 math.category.canonicality,canonicality,sifat kanonik,kanonisitas,o014.aljabr2.chapter2.diagram-lemmas,o014_new,Bentuk nomina alami untuk sifat suatu konstruksi kanonik
 math.category.self_dual,self-dual,swa-dual,dualnya diri sendiri,o014.aljabr2.chapter2.diagram-lemmas,o014_new,
 math.homological.salamander_lemma,Salamander Lemma,lema Salamander,,o014.aljabr2.chapter2.diagram-lemmas,o014_new,Nama Bergman dipertahankan
+math.order.lattice,lattice,kisi,,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Struktur terurut parsial dengan supremum dan infimum biner
+math.order.bounded_lattice,bounded lattice,kisi terbatas,kisi berbatas,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Mempunyai unsur terbesar 1 dan terkecil 0
+math.order.modular_lattice,modular lattice,kisi modular,,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,
+math.order.complement,complement,komplemen,,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Komplemen unsur dalam kisi terbatas atau interval
+math.order.standard_isomorphism,standard isomorphism,isomorfisme standar,isomorfisme baku,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Isomorfisme interval dari hukum modular
+math.order.refinement,refinement,penghalusan,penyempurnaan,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Penyisipan unsur pada rantai menurun
+math.order.proper_refinement,proper refinement,penghalusan sejati,penghalusan tepat,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Penghalusan yang menyisipkan unsur baru
+math.order.ascending_chain,ascending chain,rantai naik,rantai menaik,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,
+math.order.descending_chain,descending chain,rantai menurun,rantai turun,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,
+math.order.noetherian,Noetherian,Noetherian,kondisi Noether,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Tidak mempunyai rantai naik tak hingga
+math.order.artinian,Artinian,Artinian,kondisi Artin,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Tidak mempunyai rantai menurun tak hingga
+math.order.finite_length,finite length,berpanjang hingga,panjang hingga,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Sekaligus Artinian dan Noetherian

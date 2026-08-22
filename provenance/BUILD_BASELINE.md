@@ -808,3 +808,51 @@ list hierarchy, bibliography, and indexes are centered and legible with no
 clipping, overlap, detached punctuation, off-page content, or missing glyph.
 MuPDF witnesses of bibliography pages 127--128 confirm the intentional Chinese
 metadata that local Poppler cannot render without Adobe-GB1 mapping data.
+
+## Frozen cumulative build through Unit 024
+
+`source/id-ID/Al-jabr-2-id-cumulative-through-unit-024.tex` inputs Units
+001--024 and uses the frozen seventeen-entry bibliography. The admitted clean
+build ran in `build/cumulative-unit-024-frozen-final` with shell escape
+disabled: XeLaTeX, Biber 2.21 with `source/id-ID` in `BIBINPUTS`, both
+MakeIndex passes, and three final XeLaTeX passes.
+
+The first visual build found one 9.88 pt overfull theorem-header line. A
+source-neutral `\mbox{}\par` after the Schreier theorem index preserves the
+complete title while beginning the statement on the next line. The final
+fresh build has no error, undefined control sequence, unresolved
+citation/reference, rerun request, overfull box, or missing character. Ten
+underfull hboxes and six visually benign underfull vboxes remain. Biber
+resolves all seventeen keys. MakeIndex accepts 106 terminology entries and 38
+symbol entries with zero rejection or warning.
+
+Final result: 140 pages, 754,103 bytes, SHA-256
+`f7633cfd5783af30c464d2a04008cd5d1881f6ad2a375fce8aae3a53e74fcf97`.
+The 77,766-byte final log has SHA-256
+`beb3d03e4a7743e5d50168efb9246d6806d2cb584713361c69c9d60dcc96c52a`.
+The BBL has SHA-256
+`1ff14837ea986ec409b9851749d6dc83b4a9170ccc98e7303aea23e560476d87`;
+the term and symbol indexes have SHA-256
+`b4451e3e30700a50d29d5a69c7f2bd0a83833e9d6a340f2367ce0600bafc6b99`
+and
+`98f6367ea38dde5461be69127c4620a4c35e2d309d0f3686f36ab89cbeb7d6ec`.
+
+Strict parsing reports PDF 1.7, `id-ID`, unencrypted and untagged, thirty
+outline entries, 540 named destinations, and 430 links. All 420 internal links
+resolve; ten URI links cover eight unique HTTPS URLs. There is no form,
+JavaScript, embedded/associated file, attachment, other link action, or
+additional action. All fifty unique fonts are embedded/subset; 42 have
+ToUnicode maps. Pypdf extracts 252,690 characters with zero replacements and
+503 mathematical NULs. MuPDF extracts 252,866 characters with zero
+replacements/NULs and 77 intentional Han occurrences over 66 characters in
+names and exact bibliography metadata.
+
+All 140 pages were rendered at 120 dpi, totaling 24,299,336 bytes. Intentional
+blank versos are physical pages 2, 4, 106, 134, and 138. The full contact
+sheet and physical pages 126--133 were inspected individually. The complete
+Section 2.4, all five diagrams, theorem header, three disclosed correction
+notes, formulas, lists, bibliography, and indexes are centered and legible
+without clipping, overlap, detached punctuation, off-page material, or
+missing glyph. MuPDF witnesses of bibliography pages 135--136 confirm the
+intentional Chinese metadata hidden by this host's incomplete Poppler
+Adobe-GB1 mapping.

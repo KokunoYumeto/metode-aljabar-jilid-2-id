@@ -334,3 +334,15 @@ math.homological.connecting_morphism,morfisme penghubung,id-ID,O014,active
 math.category.canonicality,sifat kanonik,id-ID,O014,active
 math.category.self_dual,swa-dual,id-ID,O014,active
 math.homological.salamander_lemma,lema Salamander,id-ID,O014,active
+math.order.lattice,kisi,id-ID,O014,active
+math.order.bounded_lattice,kisi terbatas,id-ID,O014,active
+math.order.modular_lattice,kisi modular,id-ID,O014,active
+math.order.complement,komplemen,id-ID,O014,active
+math.order.standard_isomorphism,isomorfisme standar,id-ID,O014,active
+math.order.refinement,penghalusan,id-ID,O014,active
+math.order.proper_refinement,penghalusan sejati,id-ID,O014,active
+math.order.ascending_chain,rantai naik,id-ID,O014,active
+math.order.descending_chain,rantai menurun,id-ID,O014,active
+math.order.noetherian,Noetherian,id-ID,O014,active
+math.order.artinian,Artinian,id-ID,O014,active
+math.order.finite_length,berpanjang hingga,id-ID,O014,active
