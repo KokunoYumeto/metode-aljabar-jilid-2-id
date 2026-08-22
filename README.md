@@ -40,7 +40,7 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
 - `backend/`: unit, segmen, dan istilah dalam bentuk modular (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, QA Unit 023, serta manifes.
+  build, QA Unit 024, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS` mencatat ukuran dan SHA-256 setiap berkas publik.
