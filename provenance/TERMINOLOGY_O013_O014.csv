@@ -4,7 +4,7 @@ math.algebra.module,module,modul,,o014.aljabr2.prelude.linear-algebra,reserved_s
 math.algebra.field,field,lapangan,medan,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.abelian_group,abelian group,grup abelian,grup Abel,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.category.category,category,kategori,,o014.aljabr2.prelude,reserved_shared_id,O013 prerequisite
-math.category.functor,functor,funktor,fungtor,o014.aljabr2.prelude,reserved_shared_id,O013 coordination settled funktor
+math.category.functor,functor,funktor,fungtor,o014.aljabr2.prelude,reserved_shared_id,O013 coordination settled funktor; ITB 2012 comparator attests older fungtor
 math.category.natural_transformation,natural transformation,transformasi alami,transformasi natural,,reserved_shared_id,O013 coordination
 math.category.monoidal_category,monoidal category,kategori monoidal,,,reserved_shared_id,O013 coordination
 math.category.limit,limit,limit,,,reserved_shared_id,O013 coordination
@@ -15,20 +15,20 @@ math.analysis.completion,completion,pelengkapan,kompletisasi,,reserved_shared_id
 math.algebra.submodule,submodule,submodul,,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.quotient_module,quotient module,modul kuosien,modul hasil bagi,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.module_homomorphism,module homomorphism,homomorfisme modul,,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
-math.category.morphism,morphism,morfisme,morfisma,,reserved_shared_id,Use morfisme unless O013 later overrides globally
+math.category.morphism,morphism,morfisme,morfisma,,reserved_shared_id,Use morfisme unless O013 later overrides globally; ITB 2012 comparator attests morfisma
 math.category.kernel,kernel,kernel,kern,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.category.cokernel,cokernel,kokernel,kokern,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.category.image,image,citra,,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.vector_space,vector space,ruang vektor,,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.homological.cochain_complex,cochain complex,kompleks kokrantai,kompleks kokantai,o014.aljabr2.prelude.linear-algebra,o014_new,English gloss on first use
-math.homological.chain_complex,chain complex,kompleks rantai,,o014.aljabr2.prelude.linear-algebra,o014_new,
+math.homological.chain_complex,chain complex,kompleks rantai,rantai kompleks,o014.aljabr2.prelude.linear-algebra,o014_new,ITB 2020 bilingual abstract attests rantai kompleks; preferred head-first form retained
 math.homological.differential,differential,diferensial,,,o014_reserved,Reserved for first actual lexical use; Unit 001 does not name d as a differential
 math.homological.cohomology,cohomology,kohomologi,,o014.aljabr2.prelude.linear-algebra,o014_new,
 math.homological.homology,homology,homologi,,o014.aljabr2.prelude.linear-algebra,o014_new,
 math.homological.exact_sequence,exact sequence,barisan eksak,urutan eksak,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 Volume 1 section 6.8
 math.homological.acyclic_complex,acyclic complex,kompleks asiklik,kompleks tanpa homologi,o014.aljabr2.prelude.linear-algebra,o014_new,
-math.homological.abelian_category,abelian category,kategori abelian,kategori Abel,o014.aljabr2.prelude.linear-algebra,o014_new,
-math.homological.homological_algebra,homological algebra,aljabar homologis,aljabar homologi,o014.aljabr2.prelude.linear-algebra,o014_new,
+math.homological.abelian_category,abelian category,kategori abelian,kategori abel; kategori Abel,o014.aljabr2.prelude.linear-algebra,o014_new,ITB 2020 bilingual abstract attests kategori abel; coordinated preferred form retained
+math.homological.homological_algebra,homological algebra,aljabar homologis,aljabar homologi,o014.aljabr2.prelude.linear-algebra,o014_new,ITB 2020 bilingual abstract attests aljabar homologi; adjectival preferred form retained
 math.topology.genus,genus,genus,,o014.aljabr2.prelude.homology-history,o014_new,
 math.topology.betti_number,Betti number,bilangan Betti,,o014.aljabr2.prelude.homology-history,o014_new,
 math.algebra.torsion,torsion,torsi,,o014.aljabr2.prelude.homology-history,o014_new,
@@ -58,12 +58,12 @@ math.category.additive_category,additive category,kategori aditif,,o014.aljabr2.
 math.category.strict_morphism,strict morphism,morfisme ketat,,o014.aljabr2.prelude.homology-history,o014_new,
 math.homological.delta_functor,delta-functor,funktor-δ,,o014.aljabr2.prelude.homology-history,o014_new,
 math.category.grothendieck_category,Grothendieck category,kategori Grothendieck,,o014.aljabr2.prelude.homology-history,o014_new,
-math.homological.derived_category,derived category,kategori turunan,,o014.aljabr2.prelude.homology-history,o014_new,
+math.homological.derived_category,derived category,kategori turunan,kategori bentukan,o014.aljabr2.prelude.homology-history,o014_new,ITB 2020 bilingual abstract attests kategori bentukan; turunan retained for precision and alignment with funktor turunan
 math.homological.quasi_isomorphism,quasi-isomorphism,kuasi-isomorfisme,,o014.aljabr2.prelude.homology-history,o014_new,
 math.category.localization,categorical localization,lokalisasi kategoris,,o014.aljabr2.prelude.homology-history,o014_new,
 math.homological.distinguished_triangle,distinguished triangle,segitiga terbedakan,,o014.aljabr2.prelude.homology-history,o014_provisional,English gloss retained at first use; coordinate with O013 before shared reservation
 math.homological.shift,shift,pergeseran,,o014.aljabr2.prelude.homology-history,o014_new,
-math.homological.triangulated_category,triangulated category,kategori bertriangulasi,kategori triangulasi,o014.aljabr2.prelude.homology-history,o014_provisional,English gloss retained at first use; coordinate with O013 before shared reservation
+math.homological.triangulated_category,triangulated category,kategori bertriangulasi,kategori triangulasi; kategori tersegitigakan,o014.aljabr2.prelude.homology-history,o014_provisional,ITB 2020 bilingual abstract attests kategori tersegitigakan; English gloss retained at first use and coordinate with O013 before shared reservation
 math.homotopy.cofiber_sequence,cofiber sequence,barisan kofiber,,o014.aljabr2.prelude.homology-history,o014_provisional,English gloss retained at first use; coordinate with O013 before shared reservation
 math.homological.octahedral_axiom,octahedral axiom,aksioma oktahedral,,o014.aljabr2.prelude.homology-history,o014_new,
 math.homological.derived_equivalence,derived equivalence,ekuivalensi turunan,,o014.aljabr2.prelude.homology-history,o014_new,
@@ -320,7 +320,7 @@ math.homological.snake_lemma,snake lemma,lema ular,lema ular tangga,o014.aljabr2
 math.homological.five_lemma,five lemma,lema lima,,o014.aljabr2.chapter2.overview,o014_new,
 math.category.abelian_subcategory,abelian subcategory,subkategori abelian,subkategori Abel,o014.aljabr2.chapter2.overview,o014_new,
 math.category.serre_subcategory,Serre subcategory,subkategori Serre,,o014.aljabr2.chapter2.overview,o014_new,Subkategori abelian yang menghasilkan kuosien Serre
-math.category.indecomposable_object,indecomposable object,objek tak terurai,objek tak terdekomposisi,o014.aljabr2.chapter2.overview,o014_provisional,
+math.category.indecomposable_object,indecomposable object,objek tak terurai,objek tak terdekomposisi,o014.aljabr2.chapter2.overview,o014_provisional,ITB 2012 comparator attests tak terdekomposisi; concise preferred form retained
 math.category.simple_object,simple object,objek sederhana,objek simpel,o014.aljabr2.chapter2.overview,o014_new,
 math.algebra.composition_series,composition series,deret komposisi,barisan komposisi,o014.aljabr2.chapter2.overview,o014_provisional,
 math.order.lattice_theory,lattice theory,teori kisi,,o014.aljabr2.chapter2.overview,o014_new,
@@ -330,7 +330,7 @@ math.category.exact_category,exact category,kategori eksak,,o014.aljabr2.chapter
 math.category.krull_remak_schmidt_theorem,Krull--Remak--Schmidt theorem,teorema Krull--Remak--Schmidt,,o014.aljabr2.chapter2.overview,o014_new,Teorema dekomposisi jumlah langsung
 math.homological.short_exact_sequence,short exact sequence,barisan eksak pendek,urutan eksak pendek,o014.aljabr2.chapter2.first-look-at-complexes,o014_new,Didefinisikan pada Unit 022
 math.category.exactness_criterion,exactness criterion,kriteria keeksakan,,o014.aljabr2.chapter2.diagram-lemmas,o014_new,Kriteria internal untuk menggantikan pengejaran diagram
-math.homological.connecting_morphism,connecting morphism,morfisme penghubung,homomorfisme penghubung,o014.aljabr2.chapter2.diagram-lemmas,o014_new,Homomorfisme penghubung dipakai ketika konteksnya kategori modul
+math.homological.connecting_morphism,connecting morphism,morfisme penghubung,homomorfisme penghubung; homomorfisma penghubung,o014.aljabr2.chapter2.diagram-lemmas,o014_new,ITB 2020 bilingual abstract attests homomorfisma penghubung; homomorfisme is reserved for module context while category-general prose uses morfisme
 math.category.canonicality,canonicality,sifat kanonik,kanonisitas,o014.aljabr2.chapter2.diagram-lemmas,o014_new,Bentuk nomina alami untuk sifat suatu konstruksi kanonik
 math.category.self_dual,self-dual,swa-dual,dualnya diri sendiri,o014.aljabr2.chapter2.diagram-lemmas,o014_new,
 math.homological.salamander_lemma,Salamander Lemma,lema Salamander,,o014.aljabr2.chapter2.diagram-lemmas,o014_new,Nama Bergman dipertahankan

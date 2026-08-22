@@ -51,3 +51,8 @@ Teks, matematika, struktur, notasi, sitasi, dan diagram sumber: Wen-Wei Li.
 Terjemahan Bahasa Indonesia, metadata, dan backend: Codex, atas instruksi
 Floris. Semua perubahan dirilis di bawah CC BY 4.0 dengan atribusi kepada
 sumber.
+
+Provenans produksi: terjemahan Bahasa Indonesia, rekonsiliasi terminologi,
+metadata, backend modular, dan QA diproduksi dengan **OpenAI Codex
+gpt-5.6-sol, Ultra**, atas arahan Floris. Pengungkapan ini tidak menggantikan
+kredit Wen-Wei Li sebagai penulis karya sumber atau kredit komponen lain.
