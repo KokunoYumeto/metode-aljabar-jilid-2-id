@@ -33,6 +33,6 @@ upstream CC BY attribution remains attached at the smallest practical unit.
 ## Production provenance
 
 The Indonesian translation, terminology work, metadata, modular backend, and
-QA were produced with **OpenAI Codex gpt-5.6-sol, Ultra**, at Floris's
+QA were produced with **OpenAI Codex gpt-5.6-sol, Ultra**, at the user's
 direction. This disclosure does not replace or diminish Wen-Wei Li's source
-authorship, Floris's human direction, or any component-specific credit above.
+authorship, the user's human direction, or any component-specific credit above.

@@ -111,10 +111,10 @@ concepts.
 
 The Indonesian translation, terminology reconciliation, metadata, modular
 backend, and QA were produced with **OpenAI Codex gpt-5.6-sol, Ultra**, at
-Floris's direction. This model note does not alter authorship or rights: Wen-Wei
+the user's direction. This model note does not alter authorship or rights: Wen-Wei
 Li remains the author of the source work; Gustina Elfiyanti and Ryan Kasyfil
 Aziz remain the authors of the terminology witnesses; their supervisors and
-institutional records remain credited above; and Floris remains the directing
+institutional records remain credited above; and the user remains the directing
 human contributor. Neither the source author, the witness authors, their
 institutions, nor Higher Education Press endorses this independent edition.
 

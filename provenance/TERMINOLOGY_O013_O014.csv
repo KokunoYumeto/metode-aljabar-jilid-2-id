@@ -346,3 +346,14 @@ math.order.descending_chain,descending chain,rantai menurun,rantai turun,o014.al
 math.order.noetherian,Noetherian,Noetherian,kondisi Noether,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Tidak mempunyai rantai naik tak hingga
 math.order.artinian,Artinian,Artinian,kondisi Artin,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Tidak mempunyai rantai menurun tak hingga
 math.order.finite_length,finite length,berpanjang hingga,panjang hingga,o014.aljabr2.chapter2.glimpse-of-lattice-theory,o014_new,Sekaligus Artinian dan Noetherian
+math.algebra.idempotent,idempotent,idempoten,,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Unsur e dengan e kuadrat sama dengan e
+math.category.karoubian_category,Karoubian category,kategori Karoubi,kategori Karoubian,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Kategori-Ab berobjek nol tempat setiap idempoten mempunyai kernel
+math.category.pseudoabelian_category,pseudo-abelian category,kategori pseudoabelian,kategori pseudo-Abel,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Sinonim sumber untuk kategori Karoubi
+math.homological.split_short_exact_sequence,split short exact sequence,barisan eksak pendek terbelah,barisan eksak pendek split,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Barisan eksak pendek yang memenuhi kondisi pemisahan ekuivalen
+math.category.section,section,penampang,seksi,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Morfisme s dengan g s sama dengan identitas
+math.category.retraction,retraction,retraksi,retrakt,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Morfisme r dengan r f sama dengan identitas
+math.category.double_chain,double chain,rantai ganda,rantai bi,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Pasangan rantai epi dan mono antara objek berturutan
+math.category.double_chain_condition,bi-chain condition,syarat rantai ganda,kondisi rantai ganda,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Kestabilan eventual bagi kedua arah rantai ganda
+math.algebra.nilpotent,nilpotent,nilpoten,,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Suatu pangkat positif sama dengan nol
+math.algebra.local_ring,local ring,gelanggang lokal,ring lokal,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Unsur tak invertibel tertutup terhadap penjumlahan
+math.category.fitting_lemma,Fitting lemma,Lema Fitting,,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Bentuk kategori abelian di bawah syarat rantai ganda

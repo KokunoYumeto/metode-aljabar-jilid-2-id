@@ -9,10 +9,10 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 ## Status
 
 Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Batas publik ini
-mencakup Unit 001–024: seluruh Pendahuluan, seluruh Bab 1, dan Bab 2 sampai
-akhir bagian “Sekilas tentang Teori Kisi” (`chapter2.tex` upstream baris
-9–720). Pembaca saat ini berjumlah 140 halaman. Produksi berlanjut dalam urutan sumber
-menuju keseluruhan buku resmi 650 halaman.
+mencakup Unit 001–025: seluruh Pendahuluan, seluruh Bab 1, dan Bab 2 sampai
+akhir bagian “Dekomposisi Jumlah Langsung” (`chapter2.tex` upstream baris
+9–910). Pembaca saat ini berjumlah 146 halaman. Produksi berlanjut dalam
+urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
 yang telah diperiksa, tetapi **belum merupakan PDF bertag** dan tidak diklaim
@@ -36,11 +36,11 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 24 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 25 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
 - `backend/`: unit, segmen, dan istilah dalam bentuk modular (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, QA Unit 024, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 025, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS` mencatat ukuran dan SHA-256 setiap berkas publik.
@@ -49,10 +49,10 @@ Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 
 Teks, matematika, struktur, notasi, sitasi, dan diagram sumber: Wen-Wei Li.
 Terjemahan Bahasa Indonesia, metadata, dan backend: Codex, atas instruksi
-Floris. Semua perubahan dirilis di bawah CC BY 4.0 dengan atribusi kepada
+pengguna. Semua perubahan dirilis di bawah CC BY 4.0 dengan atribusi kepada
 sumber.
 
 Provenans produksi: terjemahan Bahasa Indonesia, rekonsiliasi terminologi,
 metadata, backend modular, dan QA diproduksi dengan **OpenAI Codex
-gpt-5.6-sol, Ultra**, atas arahan Floris. Pengungkapan ini tidak menggantikan
+gpt-5.6-sol, Ultra**, atas arahan pengguna. Pengungkapan ini tidak menggantikan
 kredit Wen-Wei Li sebagai penulis karya sumber atau kredit komponen lain.

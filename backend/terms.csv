@@ -346,3 +346,14 @@ math.order.descending_chain,rantai menurun,id-ID,O014,active
 math.order.noetherian,Noetherian,id-ID,O014,active
 math.order.artinian,Artinian,id-ID,O014,active
 math.order.finite_length,berpanjang hingga,id-ID,O014,active
+math.algebra.idempotent,idempoten,id-ID,O014,active
+math.category.karoubian_category,kategori Karoubi,id-ID,O014,active
+math.category.pseudoabelian_category,kategori pseudoabelian,id-ID,O014,active
+math.homological.split_short_exact_sequence,barisan eksak pendek terbelah,id-ID,O014,active
+math.category.section,penampang,id-ID,O014,active
+math.category.retraction,retraksi,id-ID,O014,active
+math.category.double_chain,rantai ganda,id-ID,O014,active
+math.category.double_chain_condition,syarat rantai ganda,id-ID,O014,active
+math.algebra.nilpotent,nilpoten,id-ID,O014,active
+math.algebra.local_ring,gelanggang lokal,id-ID,O014,active
+math.category.fitting_lemma,Lema Fitting,id-ID,O014,active

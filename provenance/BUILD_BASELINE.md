@@ -856,3 +856,52 @@ without clipping, overlap, detached punctuation, off-page material, or
 missing glyph. MuPDF witnesses of bibliography pages 135--136 confirm the
 intentional Chinese metadata hidden by this host's incomplete Poppler
 Adobe-GB1 mapping.
+
+## Frozen cumulative build through Unit 025
+
+`source/id-ID/Al-jabr-2-id-cumulative-through-unit-025.tex` inputs Units
+001--025 and the frozen eighteen-entry bibliography. The final clean build ran
+in `build/cumulative-unit-025-final2-20260822` with shell escape disabled:
+XeLaTeX, Biber 2.21 with `source/id-ID` in `BIBINPUTS`, both MakeIndex passes,
+and three final XeLaTeX passes.
+
+The first final build exposed two portability/presentation issues. Visible
+Chinese bibliography fields depended on Adobe-GB1 maps that are absent on
+some readers, so exact original-script metadata remains in source comments
+while verified Hanyu Pinyin appears in the visible fields. The provenance
+page's long source URL broke immediately after its scheme, so it was replaced
+by two centered human-readable links to the repository and exact commit. The
+second clean build has no TeX or package error, undefined control sequence,
+unresolved reference/citation, rerun request, overfull box, or missing
+character. Ten underfull hboxes and six visually benign underfull vboxes
+remain. Biber resolves all eighteen cited keys. MakeIndex accepts 115 term
+entries and 38 symbol entries with zero rejection or warning.
+
+Final result: 146 pages, 771,201 bytes, SHA-256
+`71f099e10d84e7d4f8c28756aba81c8ec82ca68a7f2d07df6cc168456efb5709`.
+The 81,066-byte final log has SHA-256
+`198f43e8276cf3d90256d9fcda80a156204faac4ff6364bbae43cb058162469a`.
+The BBL has SHA-256
+`308229e58134e11c6947ec59b712bf0b45e30a4bd235795fdc35ca2d9aca7128`;
+the term and symbol indexes have SHA-256
+`e65ff77ccd6e143c7ce2c32e951e4d0097072bfeda9f317810a4cbb0d9786569`
+and
+`98f6367ea38dde5461be69127c4620a4c35e2d309d0f3686f36ab89cbeb7d6ec`.
+
+Strict parsing reports PDF 1.7, `id-ID`, unencrypted and untagged, 31 valid
+outline entries, 580 valid named destinations, and 456 link annotations. All
+444 internal links resolve; twelve URI actions cover ten unique HTTPS URLs,
+and every link rectangle lies within its page. There is no form, JavaScript,
+embedded/associated file, launch or remote-GoTo action, media action, or
+additional action. All 49 unique fonts are embedded/subset; 41 have ToUnicode
+maps. Mathematical font extraction remains incomplete, so the reader is not
+represented as tagged or fully accessible.
+
+All 146 pages were freshly rendered at 70 dpi and inspected as a full contact
+sheet. Physical pages 129--146 were inspected at higher detail; the corrected
+provenance page and bibliography page 142 were rerendered and inspected
+individually. Intentional blank versos/transitions are physical pages 2, 4,
+106, 140, and 144. Section 2.5, its five diagrams and matrices, the two long
+reflowed displays, the disclosed typing correction, bibliography, and indexes
+are centered and legible without clipping, overlap, detached punctuation,
+off-page material, or missing visible glyph.

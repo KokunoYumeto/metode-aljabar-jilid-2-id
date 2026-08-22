@@ -1,0 +1,445 @@
+% Terjemahan Bahasa Indonesia dari chapter2.tex baris 721--910.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter2.direct-sum-decomposition
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.h001
+\section{Dekomposisi Jumlah Langsung}\label{sec:direct-sum}
+\hypertarget{o014.aljabr2.chapter2.direct-sum-decomposition}{ }
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p001
+Pertama-tama, kita membahas cara merepresentasikan morfisme di antara jumlah
+langsung dengan matriks. Argumen yang terkait sepenuhnya sama dengan kasus
+teori modul \cite[\S 6.3]{Li1}; di sini kita hanya memberikan tinjauan singkat.
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p002
+Tetapkan suatu kategori aditif $\mathcal{A}$. Tinjau objek-objek
+$X_1, \ldots, X_n$ dan $X'_1, \ldots, X'_m$ dari $\mathcal{A}$. Jumlah
+langsung $\bigoplus_{i=1}^n X_i$ yang diperkenalkan dalam
+Definisi~\ref{def:additive-category} dilengkapi dengan keluarga morfisme
+$X_j \xrightarrow{\iota_j} \bigoplus_{i=1}^n X_i \xrightarrow{p_j} X_j$.
+Demikian pula, untuk $\bigoplus_{i=1}^m X'_i$ terdapat $p'_j,\iota'_j$, dan
+seterusnya. Sifat universal produk dan koproduk memberikan
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.q001
+\begin{align*}
+	\Hom \left( \bigoplus_{j=1}^n X_j, \bigoplus_{i=1}^m X'_i \right) & \xrightarrow[\sim]{\phi \mapsto (p'_i \phi)_i } \prod_{i=1}^m \Hom\left(\bigoplus_{j=1}^n X_j , X'_i \right) \\
+	& \xrightarrow[\sim]{(p'_i \phi)_i \mapsto (p'_i \phi \iota_j)_{i, j}} \prod_{j=1}^n \prod_{i=1}^m  \Hom(X_j, X'_i).
+\end{align*}
+Dengan demikian, setiap morfisme
+$\phi: \bigoplus_{j=1}^n X_j \to \bigoplus_{i=1}^m X'_i$ bersesuaian dengan
+matriks
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.q002
+\[ \mathcal{M}(\phi) = (\phi_{ij})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}} = \begin{pmatrix}
+	\phi_{11} & \cdots & \phi_{1n} \\
+	\vdots & \ddots & \vdots \\
+	\phi_{m1} & \cdots & \phi_{mn}
+\end{pmatrix}, \quad \phi_{ij} := p'_i \phi \iota_j: X_j \to X'_i. \]
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p003
+Sebaliknya, setiap matriks $\mathcal{M} = (\phi_{ij})_{\substack{ 1 \leq i \leq m \\ 1 \leq j \leq n }}$
+yang tersusun dari $\phi_{ij}: X_j \to X'_i$ secara unik menentukan morfisme
+$\phi$ sedemikian sehingga $\mathcal{M}=\mathcal{M}(\phi)$. Komposisi morfisme
+bersesuaian dengan perkalian matriks:
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.q003
+\[ \mathcal{M}(\psi\phi) = \mathcal{M}(\psi) \mathcal{M}(\phi) \]
+dengan perkalian entri-entri matriks diberikan oleh komposisi
+$\Hom(X'_j, X''_i) \times \Hom(X_k, X'_j) \to \Hom(X_k, X''_i)$.
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.le001
+\begin{lema}\label{prop:isomorphism-matrix}
+	Diberikan keluarga morfisme $\phi_i:X_i\to X'_i$ dalam $\mathcal{A}$,
+	dengan $i=1,\ldots,n$, tetapkan
+	$\phi := (\phi_1, \ldots, \phi_n): \bigoplus_{i=1}^n X_i \to
+	\bigoplus_{i=1}^n X'_i$. Maka $\phi$ merupakan isomorfisme jika dan hanya
+	jika setiap $\phi_i$ merupakan isomorfisme.
+\end{lema}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf001
+\begin{bukti}
+	Implikasi $\impliedby$ sudah jelas. Untuk $\implies$, tuliskan matriks
+	$\mathcal{M}(\phi^{-1})$ sebagai $(\psi_{ij})_{i,j}$. Maka
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.q004
+	\[ \mathcal{M}(\phi^{-1}) \mathcal{M}(\phi) = \begin{pmatrix}
+		\psi_{11} \phi_1 & \cdots & \psi_{1n} \phi_n \\
+		\vdots & \ddots & \vdots \\
+		\psi_{n1} \phi_1 & \cdots & \psi_{nn} \phi_n
+	\end{pmatrix} = \begin{pmatrix}
+		\identity_{X_1} & & \\
+		& \ddots & \\
+		& & \identity_{X_n}
+	\end{pmatrix}\]
+	sehingga $\phi_1,\ldots,\phi_n$ semuanya memiliki invers kiri. Dengan cara
+	yang sama, semuanya memiliki invers kanan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p004
+Masih tinjau dekomposisi jumlah langsung
+$X \simeq \bigoplus_{i=1}^n X_i$, dengan $n\geq 1$ dan
+$X_i\neq 0$ untuk setiap $i$; darinya diperoleh keluarga morfisme
+$\iota_i:X_i\to X$ dan $p_i:X\to X_i$. Untuk setiap $1\leq i\leq n$,
+tetapkan $e_i:=\iota_i p_i\in\End(X)$. Morfisme-morfisme ini mempunyai
+sifat-sifat berikut. Ingat bahwa suatu \emph{idempoten} dalam gelanggang
+$\End(X)$ berarti unsur $e\in\End(X)$ yang memenuhi $e^2=e$; jika tidak
+menimbulkan kerancuan, kita juga menyebut $e$ sebagai idempoten dalam
+$\mathcal{A}$.
+\index{idempoten (idempotent)}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.l001
+\begin{enumerate}[(E1)]
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.i001
+	\item Setiap $e_i$ merupakan idempoten:
+	$e_i^2=(\iota_i p_i)(\iota_i p_i)=\iota_i(p_i\iota_i)p_i=\iota_i p_i$.
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.i002
+	\item Ortogonalitas: $i\neq j \implies
+	e_i e_j=\iota_i p_i\iota_j p_j=0$.
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.i003
+	\item Persamaan $\sum_{i=1}^n e_i=1$ berlaku dalam gelanggang $\End(X)$.
+\end{enumerate}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p005
+Mulai sekarang, kita selalu memandang suku-suku jumlah langsung $X_i$ sebagai
+subobjek dari $X$ dan menuliskan dekomposisinya sebagai persamaan
+$X=\bigoplus_{i=1}^n X_i$. Jika selanjutnya $\mathcal{A}$ diasumsikan sebagai
+kategori abelian, maka suatu keluarga idempoten
+$e_1,\ldots,e_n\in\End(X)$ yang memenuhi (E1)---(E3), sebaliknya, menentukan
+subobjek-subobjek dari $X$
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.q005
+\[ X_i := \Ker\left( \sum_{j \neq i} e_j \right) = \Image(e_i), \quad i=1, \ldots, n. \]
+Di satu pihak, subobjek-subobjek tersebut dilengkapi dengan monomorfisme
+$X_i\xrightarrow{\iota_i}X$; di pihak lain, $e_i:X\to X$ secara unik terurai
+sebagai $X\xrightarrow{p_i}X_i\xrightarrow{\iota_i}X$. Inilah tepatnya data
+yang diperlukan untuk jumlah langsung.
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p006
+Peralihan dari idempoten-idempoten $e_1,\ldots,e_n$ ke suku-suku jumlah
+langsung $X_1,\ldots,X_n$ tidak memerlukan seluruh sifat kategori abelian;
+kita hanya perlu mengasumsikan bahwa $\mathcal{A}$ merupakan
+kategori-$\cate{Ab}$ dengan objek nol dan bahwa setiap idempoten mempunyai
+kernel. Kategori semacam itu disebut \emph{kategori Karoubi} atau
+\emph{kategori pseudoabelian}. Pembahasan lebih lanjut akan diberikan dalam
+bagian latihan bab ini.
+\index{kategori!Karoubi (Karoubian)}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pr001
+\begin{proposisi}\label{prop:idempotent-decomposition}
+	Diberikan objek $X\neq 0$ dari kategori abelian (atau, secara lebih umum,
+	kategori Karoubi) $\mathcal{A}$ dan $n\in\Z_{\geq 1}$, konstruksi di atas
+	memberikan bijeksi
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.g001
+	\[\begin{tikzcd}[row sep=small]
+		\left\{\begin{gathered}
+			\text{dekomposisi jumlah langsung}\\[-2pt]
+			X = \bigoplus_{i=1}^n X_i
+		\end{gathered}\right\}
+		\arrow[leftrightarrow, r, "1:1"] &
+		\left\{\begin{gathered}
+			(e_i)_{i=1}^n \in \End(X)^n:\\[-2pt]
+			\text{memenuhi (E1)---(E3)}
+		\end{gathered}\right\}.
+	\end{tikzcd}\]
+	Pengurutan ulang suku-suku jumlah langsung $X_1,\ldots,X_n$ bersesuaian
+	dengan pengurutan ulang $e_1,\ldots,e_n$.
+\end{proposisi}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf002
+\begin{bukti}
+	Lihat \cite[Proposisi 6.12.4]{Li1}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p007
+Dalam kasus khusus $n=2$, dekomposisi jumlah langsung berkaitan dengan suatu
+kelas khusus barisan eksak pendek, yang disebut barisan eksak pendek terbelah.
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pr002
+\begin{proposisi}\label{prop:split-ses}
+	\index{barisan eksak pendek!terbelah (split)}
+	Untuk barisan eksak pendek
+	$0\to X'\xrightarrow{f}X\xrightarrow{g}X''\to 0$ dalam suatu kategori
+	abelian, pernyataan-pernyataan berikut ekuivalen.
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.l002
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i004
+		\item Terdapat $s:X''\to X$ sedemikian sehingga
+		$gs=\identity_{X''}$.
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i005
+		\item Terdapat $r:X\to X'$ sedemikian sehingga
+		$rf=\identity_{X'}$.
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i006
+		\item Terdapat diagram
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.g002
+		$\begin{tikzcd}
+			X' \arrow[yshift=-0.7ex, r, "f"'] & X \arrow[yshift=0.7ex, l, "r"'] \arrow[yshift=-0.7ex, r, "g"'] & X'' \arrow[yshift=0.7ex, l, "s"']
+		\end{tikzcd}$
+		sedemikian sehingga $X\simeq X'\oplus X''$; lihat tinjauan tentang
+		biproduk dalam \S\ref{sec:Ker-Coker}.
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i007
+		\item Pemetaan $g_*:\Hom(S,X)\to\Hom(S,X'')$ (yang memetakan
+		$\varphi$ ke $g\varphi$) bersifat surjektif untuk setiap objek $S$.
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i008
+		\item Pemetaan $f^*:\Hom(X,S)\to\Hom(X',S)$ (yang memetakan $\psi$
+		ke $\psi f$) bersifat surjektif untuk setiap objek $S$.
+	\end{enumerate}
+	Jika salah satu kondisi di atas berlaku, barisan eksak pendek
+	$0\to X'\to X\to X''\to 0$ disebut \emph{terbelah}. Morfisme
+	$s:X''\to X$ dalam (i), $r:X\to X'$ dalam (ii),\footnote{Catatan
+	penerjemah (O014-C024): sumber menulis $r:X'\to X$ di sini, tetapi (ii),
+	persamaan $rf=\identity_{X'}$, dan konstruksi berikutnya semuanya
+	menentukan $r:X\to X'$. Target menggunakan arah yang bertipe benar.} dan
+	isomorfisme $X\rightiso X'\oplus X''$ dalam (iii) (yang dilambangkan dengan
+	$\Phi$) saling bersesuaian sebagai berikut:
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.l003
+	\begin{compactitem}
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i009
+		\item dari $\Phi$ ke $s$: ambil komposisi
+		$X''\xrightarrow{\iota_2}X'\oplus X''\xrightarrow{\Phi^{-1}}X$;
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i010
+		\item dari $s$ ke $r$: morfisme $\identity_X-sg:X\to X$ secara unik
+		terurai sebagai $X\xrightarrow{r}X'\xrightarrow{f}X$; inilah $r$ yang
+		dikehendaki;
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i011
+		\item dari $r$ ke $\Phi$: ambil $(r,g):X\to X'\oplus X''$, yang
+		merupakan suatu isomorfisme.
+	\end{compactitem}
+
+	Selain itu, untuk $s$ yang diberikan atau $r$ yang bersesuaian dengannya,
+	idempoten-idempoten ortogonal yang bersesuaian dengan dekomposisi jumlah
+	langsung dalam (iii) adalah
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.q006
+	\[ e' := fr = \identity_X - sg, \quad e'' := sg = \identity_X - fr. \]
+\end{proposisi}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf003
+\begin{bukti}
+	Untuk kasus modul, lihat \cite[Proposisi 6.8.5]{Li1}. Karena buktinya hanya
+	menggunakan operasi aljabar dalam himpunan-himpunan $\Hom$ dan karakterisasi
+	biproduk, yang berlaku pula dalam kategori abelian, argumennya dapat
+	diterapkan tanpa perubahan. Rinciannya tidak diulangi di sini.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p008
+Dalam situasi Proposisi~\ref{prop:split-ses}, diberikan $f:X'\to X$ dan
+$g:X\to X''$, morfisme $s$ disebut suatu \emph{penampang} dari $g$ jika
+$gs=\identity_{X''}$, sedangkan $r$ disebut suatu \emph{retraksi} dari $f$
+jika $rf=\identity_{X'}$; istilah-istilah ini berasal dari topologi.
+Keberadaan penampang dan retraksi masing-masing mengakibatkan bahwa $g$
+merupakan epimorfisme dan $f$ merupakan monomorfisme, tetapi kebalikannya tidak
+berlaku.
+\index{penampang (section)}
+\index{retraksi (retract)}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p009
+Perhatikan pula bahwa keseluruhan pernyataan (i)---(v) dalam proposisi tersebut
+bersifat swa-dual.
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.d001
+\begin{definisi}\label{def:indecomposable}\index{objek!tak terurai (indecomposable)}
+	Misalkan $S$ merupakan objek tak nol dalam kategori abelian $\mathcal{A}$.
+	Jika $S=S'\oplus S''$ mengakibatkan $S'=0$ atau $S''=0$, maka $S$ disebut
+	\emph{objek tak terurai}.
+\end{definisi}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.co001
+\begin{korolari}\label{prop:indecomposable-criterion}
+	Objek tak nol $X$ dalam kategori abelian merupakan objek tak terurai jika
+	dan hanya jika
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.q007
+	\[ \forall e \in \End(X), \quad e^2 = e \iff (e = 0 \;\vee\; e = 1). \]
+\end{korolari}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf004
+\begin{bukti}
+	Terapkan Proposisi~\ref{prop:idempotent-decomposition}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p010
+Kita ingin mempelajari dekomposisi berbentuk
+$X=X_1\oplus\cdots\oplus X_n$, dengan $X\neq 0$ dan setiap $X_i$ merupakan
+objek tak terurai. Persoalannya terbagi menjadi masalah keberadaan dan
+keunikan. Untuk kasus modul, inilah isi Teorema Krull--Remak--Schmidt; lihat
+\cite[Korolari 6.12.9]{Li1}. Untuk kategori abelian umum, kita memerlukan
+sejumlah persiapan. Pembahasan berikut mengikuti pendekatan \cite{Kr15}.
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.d002
+\begin{definisi}\label{def:bichain}
+	\index{syarat rantai ganda (bi-chain condition)}
+	Misalkan $\mathcal{A}$ merupakan sebarang kategori. Suatu \emph{rantai
+	ganda} di dalamnya berarti data $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$,
+	dengan $X_n$ objek dari $\mathcal{A}$ dan
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.g003
+	$\begin{tikzcd}
+		X_n \arrow[twoheadrightarrow, r, shift left, "\alpha_n"] & X_{n+1} \arrow[hookrightarrow, l, shift left, "\beta_n"]
+	\end{tikzcd}$
+	merupakan morfisme di antaranya, dengan $\alpha_n$ epimorfisme dan $\beta_n$
+	monomorfisme ($n\in\Z_{\geq 0}$). Suatu objek $X$ dari $\mathcal{A}$
+	dikatakan memenuhi \emph{syarat rantai ganda} jika, untuk setiap rantai
+	ganda $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$ dengan $X_0=X$, morfisme
+	$\alpha_n$ dan $\beta_n$ merupakan isomorfisme untuk $n\gg 0$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p011
+Hasil berikut merupakan perumuman dari \cite[Lema 6.11.5]{Li1}.
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.le002
+\begin{lema}[Lema Fitting dalam Kategori Abelian]\label{prop:Abel-cat-Fitting}
+	Misalkan $\mathcal{A}$ merupakan kategori abelian, $X$ merupakan objek tak
+	nol di dalamnya yang memenuhi syarat rantai ganda, dan $f\in\End(X)$.
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.l004
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i012
+		\item Untuk $n\gg 0$, $\Ker(f^n)$ dan $\Image(f^n)$ tidak bergantung
+		pada $n$; keduanya masing-masing dilambangkan dengan $\Ker(f^\infty)$
+		dan $\Image(f^\infty)$. Kita mempunyai
+		$X=\Ker(f^\infty)\oplus\Image(f^\infty)$.
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i013
+		\item Jika $X$ tak terurai, maka $f$ bersifat invertibel atau nilpoten
+		dalam gelanggang $\End(X)$.
+	\end{enumerate}
+\end{lema}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf005
+\begin{bukti}
+	Untuk $n\in\Z_{\geq 0}$, definisikan $X_n:=\Image(f^n)$, sehingga
+	$X_0=X$. Dengan menerapkan Proposisi~\ref{prop:Images-f-gf} dan
+	$\Coim\rightiso\Image$, diperoleh epimorfisme
+	$\alpha_n:X_n\to X_{n+1}$ (yang diinduksi oleh $f$) dan monomorfisme
+	$\beta_n:X_{n+1}\to X_n$. Dengan demikian, diperoleh rantai ganda
+	$(X_n,\alpha_n,\beta_n)_{n=0}^\infty$.
+
+	Untuk $n\gg 0$, $\alpha_n$ dan $\beta_n$ merupakan isomorfisme. Oleh karena
+	itu, subobjek $\Image(f^\infty):=\Image(f^n)$ dari $X$, dengan $n\gg 0$,
+	terdefinisi dengan baik; monomorfisme yang bersesuaian dilambangkan dengan
+	$\iota:\Image(f^\infty)\hookrightarrow X$. Selain itu,
+	$\Ker(f^n)=\Ker[X\to\Image(f^n)]$ juga merupakan subobjek
+	$\Ker(f^\infty)$ yang tidak bergantung pada $n$ untuk $n\gg 0$.
+
+	Dengan demikian, untuk $n\gg 0$, morfisme
+	$\alpha_{2n-1}\cdots\alpha_n:X_n\to X_{2n}$ bersifat invertibel. Nyatakan
+	inversnya dengan
+	$\psi:\Image(f^\infty)\rightiso\Image(f^\infty)$, dan tetapkan
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.q008
+	\[ p := \psi f^n: X \to \Image(f^\infty), \quad \Ker(p) = \Ker(f^\infty) \qquad (n \gg 0). \]
+	Dari $p\iota=\identity_{\Image(f^\infty)}$ diperoleh bahwa
+	$e:=\iota p\in\End(X)$ merupakan idempoten, dengan
+	$\Image(e)=\Image(f^\infty)$ dan $\Ker(e)=\Ker(f^\infty)$. Dengan
+	menerapkan Proposisi~\ref{prop:idempotent-decomposition}, diperoleh
+	dekomposisi dalam (i).
+
+	Jika $X$ tak terurai, maka $\Image(f^\infty)=0$ dan
+	$\Ker(f^\infty)=X$, sehingga $f$ nilpoten; atau
+	$\Image(f^\infty)=X$ dan $\Ker(f^\infty)=0$, sehingga $f$ invertibel.
+	Inilah pernyataan (ii).
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p012
+Ingat dari \cite[Definisi 6.12.3]{Li1}: jika $S$ merupakan gelanggang dan
+$S\smallsetminus S^\times$ merupakan ideal dua sisi, maka $S$ disebut
+\emph{gelanggang lokal}.
+\index{gelanggang lokal (local ring)}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.co002
+\begin{korolari}\label{prop:indecomposable-local-ring}
+	Misalkan objek tak nol $X$ dalam suatu kategori abelian memenuhi syarat
+	rantai ganda. Maka $X$ tak terurai jika dan hanya jika $\End(X)$ merupakan
+	gelanggang lokal.
+\end{korolari}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf006
+\begin{bukti}
+	Lema~\ref{prop:Abel-cat-Fitting} menunjukkan bahwa jika $X$ tak terurai,
+	setiap unsur $\End(X)$ bersifat nilpoten atau invertibel. Argumen selebihnya
+	hanya menyangkut struktur gelanggang $\End(X)$ dan sama dengan
+	\cite[Lema 6.12.6]{Li1}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p013
+Sekarang kita dapat menyatakan versi Teorema Krull--Remak--Schmidt untuk
+kategori abelian.
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.th001
+\begin{teorema}[M.\ Atiyah]\label{prop:Krull-Schmidt-gen}
+	\index{Teorema Krull--Remak--Schmidt (Krull--Remak--Schmidt Theorem)}
+	Misalkan $X$ merupakan objek tak nol dalam suatu kategori abelian.
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.l005
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i014
+		\item Jika $X$ memenuhi syarat rantai ganda, maka terdapat
+		$n\in\Z_{\geq 1}$ dan subobjek-subobjek tak terurai
+		$X_1,\ldots,X_n$ sedemikian sehingga
+		$X=\bigoplus_{i=1}^n X_i$, dan setiap $\End(X_i)$ merupakan gelanggang
+		lokal.
+		% segment-id: o014.li2.chapter2.direct-sum-decomposition.i015
+		\item Andaikan $X$ mempunyai dekomposisi $\bigoplus_{i=1}^n X_i$ dan
+		$\bigoplus_{j=1}^m X'_j$, dengan setiap $X_i$ dan $X'_j$ tak terurai
+		serta setiap $\End(X_i)$ dan $\End(X'_j)$ merupakan gelanggang lokal.
+		Maka $n=m$, dan terdapat bijeksi $\sigma$ dari $\{1,\ldots,n\}$ ke
+		dirinya sendiri sedemikian sehingga $X_i\simeq X'_{\sigma(i)}$ untuk
+		setiap $i$.
+	\end{enumerate}
+\end{teorema}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf007
+\begin{bukti}
+	Pokok persoalannya adalah membuktikan bahwa $X$ yang memenuhi syarat rantai
+	ganda pasti mempunyai dekomposisi seperti dalam (i). Bagian selebihnya hanya
+	menyangkut operasi aljabar dalam gelanggang-gelanggang $\End$ dan sama dengan
+	\cite[Teorema 6.12.8]{Li1}. Karena itu, untuk bagian berikut kita asumsikan
+	bahwa syarat rantai ganda berlaku.
+
+	Perhatikan bahwa jika $X=Y\oplus Z$ dengan $Y\neq 0$, maka $Y$ juga
+	memenuhi syarat rantai ganda. Memang, untuk rantai ganda
+	$(Y_n,\alpha_n,\beta_n)_{n=0}^\infty$ dengan $Y_0=Y$, ambil
+	$X_n:=Y_n\oplus Z$, $\tilde{\alpha}_n:=\alpha_n\oplus\identity_Z$, dan
+	$\tilde{\beta}_n:=\beta_n\oplus\identity_Z$. Dengan demikian diperoleh
+	rantai ganda dengan $X_0=X$, sedangkan
+	Lema~\ref{prop:isomorphism-matrix} menunjukkan bahwa
+	$\tilde{\alpha}_n$ (atau $\tilde{\beta}_n$) merupakan isomorfisme jika dan
+	hanya jika $\alpha_n$ (atau $\beta_n$) juga demikian.
+
+	Jika $X$ sudah tak terurai, Korolari~\ref{prop:indecomposable-local-ring}
+	menunjukkan bahwa $\End(X)$ merupakan gelanggang lokal; inilah (i). Jika
+	pernyataan (i) tidak berlaku untuk $X$, maka pasti terdapat subobjek tak nol
+	$X_1,Y_1$ sedemikian sehingga $X=X_1\oplus Y_1$ dan pernyataan (i) tidak
+	berlaku untuk $X_1$. Melanjutkan operasi ini pada $X_1$ memberikan
+	$X_1=X_2\oplus Y_2$; iterasi menghasilkan rantai ganda
+	$(X_n,\alpha_n,\beta_n)_{n=0}^\infty$, dengan
+	$\alpha_n:X_n\twoheadrightarrow X_{n+1}$ dan
+	$\beta_n:X_{n+1}\hookrightarrow X_n$ berasal dari
+	$X_n=X_{n+1}\oplus Y_{n+1}$. Morfisme-morfisme ini tidak pernah merupakan
+	isomorfisme dan $X_0:=X$, bertentangan dengan syarat rantai ganda. Ini
+	membuktikan pernyataan tersebut.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p014
+Dalam penerapan, hal pentingnya adalah mengetahui kapan syarat rantai ganda
+berlaku. Berikut ini salah satu syarat yang mencukupi.
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pr003
+\begin{proposisi}
+	Misalkan $X$ merupakan objek berpanjang hingga dalam suatu kategori abelian
+	(Definisi~\ref{def:finite-length-object}). Maka $X$ memenuhi syarat rantai
+	ganda.
+\end{proposisi}
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.pf008
+\begin{bukti}
+	Diberikan rantai ganda $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$ dengan
+	$X_0=X$. Maka
+	\[
+		\left(\Image(\beta_0\cdots\beta_n)\right)_{n=0}^\infty
+	\]
+	merupakan rantai
+	menurun dalam himpunan terurut parsial $\mathrm{Sub}_X$. Karena setiap
+	$\beta_n$ merupakan monomorfisme, untuk $n\gg 0$ syarat Artinian memberikan
+	diagram komutatif
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.g004
+	\[\begin{tikzcd}
+		X_{n+1} \arrow[d, "\beta_n"'] \arrow[r, "\sim"] & \Image(\beta_0 \cdots \beta_n) \arrow[d, "\sim" sloped] \arrow[hookrightarrow, r] & X_0 \\
+		X_n \arrow[r, "\sim"] & \Image(\beta_0 \cdots \beta_{n-1}) \arrow[hookrightarrow, ru] &
+	\end{tikzcd}\]
+	dan $\beta_n$ merupakan isomorfisme. Demikian pula, terapkan syarat
+	Noetherian pada rantai menaik
+	$\left(\Ker(\alpha_n\cdots\alpha_0)\right)_{n=0}^\infty$ dan gunakan
+	bahwa setiap $\alpha_n$ merupakan epimorfisme. Untuk $n\gg 0$, diperoleh
+	diagram komutatif
+	dengan baris-baris eksak
+	% segment-id: o014.li2.chapter2.direct-sum-decomposition.g005
+	\[\begin{tikzcd}
+		0 \arrow[r] & \Ker(\alpha_{n-1} \cdots \alpha_0) \arrow[d, "\sim" sloped] \arrow[r] & X_0 \arrow[r, "{\alpha_{n-1} \cdots \alpha_0}" inner sep=0.7em] \arrow[equal, d] & X_n \arrow[d, "{\alpha_n}"] \arrow[r] & 0 \\
+		0 \arrow[r] & \Ker(\alpha_n \cdots \alpha_0) \arrow[r] & X_0 \arrow[r, "{\alpha_n \cdots \alpha_0}"' inner sep=0.7em] & X_{n+1} \arrow[r] & 0
+	\end{tikzcd}\]
+	dan $\alpha_n$ merupakan isomorfisme.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.direct-sum-decomposition.p015
+Bagian latihan akan memperkenalkan cara-cara lain untuk memperoleh syarat
+rantai ganda.
