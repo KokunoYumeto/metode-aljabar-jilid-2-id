@@ -1,0 +1,488 @@
+% Terjemahan Bahasa Indonesia dari chapter2.tex baris 293--518.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter2.diagram-lemmas
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.h001
+\section{Beberapa Lema Diagram}\label{sec:diagram-lemmas}
+\hypertarget{o014.aljabr2.chapter2.diagram-lemmas}{ }
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p001
+Argumen dalam bagian ini mengikuti \cite[Bab 8, 12]{KS06}. Kita mulai dengan
+suatu kriteria keeksakan yang dapat dipandang sebagai pengganti pengejaran
+diagram \cite[\S~6.8]{Li1} dalam kategori abelian umum. Sepanjang bagian ini,
+tetapkan suatu kategori abelian $\mathcal{A}$.
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.le001
+\begin{lema}\label{prop:Abel-cat-exact-aux}
+	Misalkan $X' \xrightarrow{f} X \xrightarrow{g} X''$ merupakan kompleks.
+	Kompleks ini eksak jika dan hanya jika, untuk setiap morfisme
+	$S \xrightarrow{h} X$ yang memenuhi $gh=0$, terdapat morfisme
+	$S' \to X'$ dan epimorfisme $S' \twoheadrightarrow S$ yang membuat diagram
+	berikut komutatif:
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g001
+	\[\begin{tikzcd}
+		S' \arrow[twoheadrightarrow, r] \arrow[d] & S \arrow[d, "h"] \\
+		X' \arrow[r, "f"'] & X .
+	\end{tikzcd}\]
+\end{lema}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.pf001
+\begin{bukti}
+	Pertama, perhatikan arah ``hanya jika''. Morfisme $f$ dan $h$ sama-sama
+	berfaktor melalui $\Ker(g)$. Berdasarkan faktorisasi itu, ambil
+	$S' := S \dtimes{\Ker(g)} X'$, sedangkan $S' \to S$ dan $S' \to X'$ diambil
+	sebagai morfisme alami dari produk serat. Keeksakan mengakibatkan
+	$X' \twoheadrightarrow \Ker(g)$, sehingga
+	Proposisi~\ref{prop:Abel-cat-pull-push} mengakibatkan $S' \to S$ juga
+	merupakan epimorfisme.
+
+	Sekarang perhatikan arah ``jika''. Untuk $S := \Ker(g)$ dengan morfisme
+	alaminya $h: S \hookrightarrow X$, hipotesis memberikan bagian bergaris
+	penuh dari diagram berikut:
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g002
+	\[\begin{tikzcd}
+		S' \arrow[d] \arrow[twoheadrightarrow, r] & S \arrow[d, "h"] \\
+		X' \arrow[dashed, ru, "\alpha" description] \arrow[r, "f"'] & X
+	\end{tikzcd}\]
+	Bagian bergaris putus-putus, yaitu $\alpha$, berasal dari faktorisasi $f$
+	yang diberikan oleh $gf=0$. Kita nyatakan bahwa diagram tersebut komutatif.
+	Bingkai luar dan segitiga kanan bawah sudah diketahui komutatif. Karena itu,
+	dua morfisme pada segitiga kiri atas menjadi sama setelah dikomposisikan
+	dengan $h$. Karena $h$ merupakan monomorfisme, segitiga kiri atas juga
+	komutatif; pernyataan pun terbukti. Terakhir, diagram memperlihatkan bahwa
+	komposisi $S' \to X' \xrightarrow{\alpha} S$ merupakan epimorfisme, sehingga
+	$\alpha$ merupakan epimorfisme. Dengan demikian, $f$ mempunyai faktorisasi
+	epi--mono $X' \twoheadrightarrow \Ker(g) \hookrightarrow X$, yang memberikan
+	$\Image(f) = \Ker(g)$. Jadi, kompleks tersebut eksak.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p002
+Untuk pendekatan lain yang menggantikan pengejaran diagram dalam kategori
+abelian umum, lihat \cite[Tag 05PL]{stacks}.
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p003
+Kembali ke pokok bahasan, kini kita membahas Lema Ular yang sangat diperlukan
+dalam penerapan. Perhatikan diagram
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.q001
+\begin{equation}\label{eqn:snake}
+% segment-id: o014.li2.chapter2.diagram-lemmas.g003
+\begin{tikzcd}
+	& \Ker' \arrow[r] \arrow[d] & \Ker \arrow[r] \arrow[d] & \Ker'' \arrow[d] & \\
+	& X' \arrow[d] \arrow[r, "f"]  & X \arrow[d] \arrow[r, "g"]  & X'' \arrow[r] \arrow[d, ""{coordinate, name=Z}] & 0  \\
+	0 \arrow[r] & Y' \arrow[r, "u"] \arrow[d] & Y \arrow[r, "v"] \arrow[d] & Y'' \arrow[d] & \\
+	& \Coker' \arrow[uuurr, "\delta" description, crossing over, dashed, leftarrow, rounded corners, to path= {-- ([xshift=-2ex]\tikztostart.west) |- (Z) [near end]\tikztonodes -| ([xshift=2ex]\tikztotarget.east) -- (\tikztotarget) } ] \arrow[r] & \Coker \arrow[r] & \Coker'' &
+\end{tikzcd}
+\end{equation}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p004
+dengan ketentuan berikut:
+% segment-id: o014.li2.chapter2.diagram-lemmas.l001
+\begin{itemize}
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i001
+	\item $X' \xrightarrow{f} X \xrightarrow{g} X'' \to 0$ dan
+	$0 \to Y' \xrightarrow{u} Y \xrightarrow{v} Y''$ merupakan barisan eksak
+	yang diberikan;
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i002
+	\item $\Ker' := \Ker[X' \to Y'] \hookrightarrow X'$, sedangkan $\Ker$ dan
+	$\Ker''$ didefinisikan dengan cara yang sama;
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i003
+	\item $Y' \twoheadrightarrow \Coker' := \Coker[X' \to Y']$, sedangkan
+	$\Coker$ dan $\Coker''$ didefinisikan dengan cara yang sama;
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i004
+	\item morfisme-morfisme $\Ker' \to \Ker$, $\Coker' \to \Coker$, dan
+	sebagainya berasal dari funktorialitas kernel dan kokernel dalam
+	\eqref{eqn:Ker-Coker-functoriality}.
+\end{itemize}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p005
+Dengan demikian, \eqref{eqn:snake} merupakan diagram komutatif yang setiap
+kolomnya dan kedua baris tengahnya eksak. Berikut akan dijelaskan cara
+membangun \emph{morfisme penghubung} bergaris putus-putus
+$\delta: \Ker'' \to \Coker'$.
+\index{morfisme penghubung (connecting morphism)}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p006
+Langkah pertama ialah membangun dari \eqref{eqn:snake} diagram komutatif
+berikut, yang baris-barisnya eksak:
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.q002
+\begin{equation}\label{eqn:snake-conn}
+% segment-id: o014.li2.chapter2.diagram-lemmas.g004
+\begin{tikzcd}
+	0 \arrow[r] & \Ker(g) \arrow[hookrightarrow, r, "s"] \arrow[equal, d] & X \dtimes{X''} \Ker'' \arrow[twoheadrightarrow, r] \arrow[d] \arrow[phantom, rd, "\Box" description] & \Ker'' \arrow[d] & \\
+	0 \arrow[r] & \Ker(g) \arrow[hookrightarrow, r] \arrow[dashrightarrow, d] & X \arrow[r, "g"'] \arrow[d] & X'' \arrow[dashrightarrow, d] \arrow[r] & 0 \\
+	0 \arrow[r] & Y' \arrow[r, "u"] \arrow[d] & Y \arrow[twoheadrightarrow, r] \arrow[d] & \Coker(u) \arrow[equal, d] \arrow[r] & 0 \\
+	& \Coker' \arrow[hookrightarrow, r] & \Coker' \dsqcup{Y'} Y \arrow[r] \arrow[phantom, lu, "\boxplus" description] \arrow[twoheadrightarrow, r, "t"'] & \Coker(u) \arrow[r] & 0
+\end{tikzcd}
+\end{equation}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p007
+Di sini berlaku ketentuan berikut:
+% segment-id: o014.li2.chapter2.diagram-lemmas.l002
+\begin{compactitem}
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i005
+	\item $\Box$ dan $\boxplus$ menyatakan bahwa persegi-persegi yang
+	bersangkutan masing-masing merupakan diagram tarik balik dan diagram dorong
+	keluar. Tarik balik mempertahankan kernel, sedangkan dorong keluar
+	mempertahankan kokernel; hal ini menjelaskan persegi kiri atas dan kanan
+	bawah dalam diagram;
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i006
+	\item Proposisi~\ref{prop:Abel-cat-pull-push} dapat diterapkan pada bagian
+	$\Box$ dan $\boxplus$ dalam \eqref{eqn:snake-conn}. Hal ini menjelaskan bahwa
+	$X \dtimes{X''} \Ker'' \to \Ker''$ merupakan epimorfisme, sedangkan
+	$\Coker' \to \Coker' \dsqcup{Y'} Y$ merupakan monomorfisme;
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i007
+	\item anak panah $\Ker(g) \dashrightarrow Y'$ tidak lain adalah morfisme
+	alami $\Ker(g) \to \Ker(v)$ yang berasal dari funktorialitas kernel dalam
+	\eqref{eqn:Ker-Coker-functoriality};
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i008
+	\item secara serupa, funktorialitas kokernel memberikan anak panah bergaris
+	putus-putus $X'' \simeq \Coker(f) \to \Coker(u)$.
+\end{compactitem}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p008
+Perhatikan bahwa komposisi
+$\Ker(g) \dashrightarrow Y' \to \Coker'$ dalam \eqref{eqn:snake-conn}
+bernilai $0$, karena setelah diprakomposisikan dengan
+$X' \twoheadrightarrow \Image(f) \rightiso \Ker(g)$ hasilnya bernilai $0$.
+Secara serupa, komposisi
+$\Ker'' \to X'' \dashrightarrow \Coker(u)$ bernilai $0$, karena komposisi
+selanjutnya dengan $\Coker(u) \rightiso \Image(v) \hookrightarrow Y''$
+bernilai $0$.
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p009
+Nyatakan komposisi sepanjang jalur tengah dalam \eqref{eqn:snake-conn} sebagai
+$\delta_0: X \dtimes{X''} \Ker'' \to \Coker' \dsqcup{Y'} Y$. Pengamatan di
+atas langsung memberikan
+% segment-id: o014.li2.chapter2.diagram-lemmas.q003
+\[ \delta_0 s = 0, \quad t \delta_0 = 0. \]
+Karena itu, $\delta_0$ mempunyai faktorisasi unik
+% segment-id: o014.li2.chapter2.diagram-lemmas.q004
+\[ X \dtimes{X''} \Ker'' \twoheadrightarrow \Coker(s) \xrightarrow{\exists!} \Ker(t) \hookrightarrow \Coker' \dsqcup{Y'} Y . \]
+
+Morfisme horizontal di sudut kanan atas dan kiri bawah dalam
+\eqref{eqn:snake-conn} masing-masing diketahui merupakan epimorfisme dan
+monomorfisme. Oleh karena itu,
+$\Coker(s) \rightiso \Ker''$ dan $\Coker' \rightiso \Ker(t)$. Kesimpulannya,
+diperoleh morfisme kanonik yang dicari, $\delta: \Ker'' \to \Coker'$.
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.r001
+\begin{catatan}\label{rem:connecting-canonical}
+	Sifat kanonik morfisme penghubung dapat dinyatakan secara lebih eksplisit
+	sebagai berikut. Perhatikan diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g005
+	\[\begin{tikzcd}[row sep=tiny, column sep=small]
+		& & X' \arrow[rr] \arrow[ld] \arrow[dd] & & X \arrow[rr] \arrow[ld] \arrow[dd] & & X'' \arrow[r] \arrow[ld] \arrow[dd] & 0 \\
+		0 \arrow[r] & Y' \arrow[rr, crossing over] & & Y \arrow[rr, crossing over] & & Y'' & & \\
+		& & \underline{X'} \arrow[rr] \arrow[ld] & & \underline{X} \arrow[rr] \arrow[ld] & & \underline{X''} \arrow[ld] \arrow[r] & 0 \\
+		0 \arrow[r] & \underline{Y'} \arrow[rr] \arrow[leftarrow, uu, crossing over] & & \underline{Y} \arrow[rr] \arrow[leftarrow, uu, crossing over] & & \underline{Y''} \arrow[leftarrow, uu, crossing over] & &
+	\end{tikzcd}\]
+	dengan setiap baris eksak. Diagram itu menghasilkan $\Ker'$,
+	$\underline{\Ker'}$, dan seterusnya. Morfisme-morfisme penghubung yang
+	bersesuaian, $\delta$ dan $\underline{\delta}$, dapat disusun ke dalam
+	diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g006
+	\[\begin{tikzcd}
+		\Ker'' \arrow[r, "\delta"] \arrow[d, "\text{morfisme alami}"'] & \Coker' \arrow[d, "\text{morfisme alami}"] \\
+		\underline{\Ker''} \arrow[r, "\underline{\delta}"'] & \underline{\Coker'} .
+	\end{tikzcd}\]
+	Menurut definisinya, untuk membuktikan hal ini cukup ditunjukkan bahwa
+	$\delta_0$ dan $\underline{\delta_0}$ juga dapat ditempatkan dalam persegi
+	komutatif yang bersesuaian. Semuanya tereduksi pada funktorialitas kernel,
+	kokernel, produk, dan koproduk. Perinciannya diserahkan kepada pembaca.
+\end{catatan}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p010
+Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
+% segment-id: o014.li2.chapter2.diagram-lemmas.l003
+\begin{itemize}
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i009
+	\item Konstruksi morfisme penghubung bersifat swa-dual: jika
+	\eqref{eqn:snake} dipandang di dalam $\mathcal{A}^{\opp}$, semua anak
+	panah dibalik, sedangkan peran $\Ker'$ dan $\Coker'$ dan seterusnya
+	dipertukarkan. Diagram yang diperoleh di dalam $\mathcal{A}^{\opp}$
+	masih menyerupai \eqref{eqn:snake}, hanya saja diputar setengah putaran;
+	ketika morfisme penghubung yang bersangkutan dipandang kembali di dalam
+	$\mathcal{A}$, arahnya tetap dari $\Ker''$ ke $\Coker'$, dan morfisme ini
+	berimpit dengan $\delta$ yang telah dikonstruksi sebelumnya.
+	
+	% segment-id: o014.li2.chapter2.diagram-lemmas.i010
+	\item Morfisme $\Ker \to \Ker''$ dapat difaktorkan sebagai
+	$\Ker \to X \dtimes{X''} \Ker'' \to \Ker''$. Dengan menelaah
+	\eqref{eqn:snake-conn}, tampak bahwa kedua komposisi morfisme
+	% segment-id: o014.li2.chapter2.diagram-lemmas.q005
+	\[ \Ker \to \Ker'' \xrightarrow{\delta} \Coker' \hookrightarrow \Coker' \dsqcup{Y'} Y, \qquad \Ker \to X \dtimes{X''} \Ker'' \xrightarrow{\delta_0} \Coker' \dsqcup{Y'} Y \]
+	adalah sama. Namun, komposisi yang kedua juga sama dengan komposisi
+	$\Ker \to X \to Y \to \Coker' \dsqcup{Y'} Y $, yaitu $0$. Dengan
+	demikian diperoleh
+	% segment-id: o014.li2.chapter2.diagram-lemmas.q006
+	\begin{equation}\label{eqn:snake-conn-complex}
+		\Ker \to \Ker'' \xrightarrow{\delta} \Coker' \quad \text{komposisinya adalah}\; 0.
+	\end{equation}
+\end{itemize}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.th001
+\begin{teorema}[Lema Ular]\label{prop:snake-lemma}\index{lema ular (Snake Lemma)}
+	Perhatikan diagram \eqref{eqn:snake} dalam kategori abelian
+	$\mathcal{A}$. Maka
+	$\Ker' \to \Ker \to \Ker'' \xrightarrow{\delta} \Coker' \to \Coker \to \Coker''$
+	merupakan barisan eksak. Jika dalam diagram tersebut $f: X' \to X$
+	merupakan monomorfisme (atau $v: Y \to Y''$ merupakan epimorfisme), maka
+	$\Ker' \to \Ker$ juga merupakan monomorfisme (atau
+	$\Coker \to \Coker''$ juga merupakan epimorfisme).
+\end{teorema}
+% segment-id: o014.li2.chapter2.diagram-lemmas.pf002
+\begin{bukti}
+	Pernyataan terakhir mudah dibuktikan: jika $f$ merupakan monomorfisme,
+	maka komposisi $\Ker' \hookrightarrow X' \xrightarrow{f} X$ juga
+	merupakan monomorfisme. Karena \eqref{eqn:snake} komutatif, hal ini
+	menyiratkan bahwa $\Ker' \to \Ker$ merupakan monomorfisme. Kasus ketika
+	$v$ merupakan epimorfisme diperoleh dengan membalik semua anak panah.
+
+	Pokok masalahnya ialah keeksakan barisan pertama.
+	Berdasarkan sifat dual yang telah diamati, cukup dibuktikan bahwa
+	$\Ker' \to \Ker \to \Ker'' \to \Coker'$ eksak.
+	
+	Pertama-tama, $\Ker' \to \Ker \to \Ker''$ merupakan kompleks. Memang,
+	$\Ker' \to \Ker \to \Ker''$ diinduksi oleh $X' \to X \to X''$, yang
+	komposisinya adalah $0$. Selanjutnya, gunakan
+	Lema~\ref{prop:Abel-cat-exact-aux} untuk
+	membuktikan keeksakannya: andaikan morfisme $\psi: S \to \Ker$ membuat
+	komposisi $S \xrightarrow{\psi} \Ker \to \Ker''$ sama dengan $0$.
+	Kita mencari diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.q007
+	\begin{equation}\label{eqn:snake-lemma-aux-1}
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g007
+	\begin{tikzcd}
+			S' \arrow[twoheadrightarrow, r, "h"] \arrow[d] & S \arrow[d, "\psi"] \arrow[rd, "0"] & \\
+			\Ker' \arrow[r] \arrow[hookrightarrow, d] & \Ker \arrow[hookrightarrow, d] \arrow[r] & \Ker'' \arrow[hookrightarrow, d] \\
+			X' \arrow[r, "f"'] & X \arrow[r, "g"'] & X''
+	\end{tikzcd}\end{equation}
+	dengan $\Ker' \leftarrow S' \xrightarrow{h} S$ yang masih harus
+	dikonstruksi. Untuk itu, pertama-tama terapkan
+	Lema~\ref{prop:Abel-cat-exact-aux} pada komposisi
+	$S \xrightarrow{\psi} \Ker \to X$ untuk memperoleh diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g008
+	\[\begin{tikzcd}
+		S' \arrow[twoheadrightarrow, r, "h"] \arrow[d] & S \arrow[d] \arrow[rd, "0"] & \\
+		X' \arrow[r, "f"'] & X \arrow[r, "g"'] & X'' .
+	\end{tikzcd}\]
+	Dengan demikian, komposisi $S' \to X' \to Y' \xrightarrow{u} Y$ sama
+	dengan komposisi $S' \xrightarrow{\psi h} \Ker \to X \to Y$, yakni
+	$0$. Karena $u$ merupakan monomorfisme, komposisi $S' \to X' \to Y'$
+	juga sama dengan $0$. Oleh sebab itu, $S' \to X'$ berfaktor melalui
+	$\Ker'$, dan semua anak panah dalam \eqref{eqn:snake-lemma-aux-1}
+	pun diperoleh.
+	
+	Sekarang perhatikan bagian kiri \eqref{eqn:snake-lemma-aux-1}: bingkai
+	luar dan persegi bawahnya komutatif. Lema~\ref{prop:epi-mono-morphism}
+	yang sudah dikenal menunjukkan bahwa persegi atasnya juga komutatif.
+	Jadi, $\Ker' \to \Ker \to \Ker''$ eksak.
+	
+	Berikutnya, tinjau $\Ker \to \Ker'' \xrightarrow{\delta} \Coker'$.
+	Persamaan \eqref{eqn:snake-conn-complex} terlebih dahulu menunjukkan
+	bahwa barisan ini merupakan kompleks. Untuk membuktikan keeksakannya,
+	kita kembali menggunakan Lema~\ref{prop:Abel-cat-exact-aux}. Andaikan
+	morfisme $\psi: S \to \Ker''$ memenuhi $\delta \psi = 0$. Kita mencari
+	diagram komutatif berbentuk
+	% segment-id: o014.li2.chapter2.diagram-lemmas.q008
+	\begin{equation}\label{eqn:snake-lemma-aux-2}
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g009
+	\begin{tikzcd}
+		S_0 \arrow[d] \arrow[twoheadrightarrow, r] & S \arrow[d, "\psi"] \\
+		\Ker \arrow[r] & \Ker''
+	\end{tikzcd}\end{equation}
+	Konstruksi $\delta$ telah menunjukkan bahwa
+	$X \dtimes{X''} \Ker'' \to \Ker'' \to 0$ eksak. Oleh karena itu,
+	terdapat diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.q009
+	\begin{equation}\label{eqn:snake-lemma-aux-3}
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g010
+	\begin{tikzcd}
+		S_1 \arrow[twoheadrightarrow, r] \arrow[d] & S \arrow[d, "\psi"'] \arrow[rd, "0"] & \\
+		X \dtimes{X''} \Ker'' \arrow[r] & \Ker'' \arrow[r] & 0 .
+	\end{tikzcd}\end{equation}
+
+	Perhatikan komposisi
+	$S_1 \to X \dtimes{X''} \Ker'' \to X \to Y \xrightarrow{v} Y''$.
+	Dengan membandingkan diagram di atas dengan \eqref{eqn:snake} dan
+	\eqref{eqn:snake-conn}, diketahui bahwa komposisi ini sama dengan $0$.
+	Karenanya, $S_1 \to X \dtimes{X''} \Ker'' \to X \to Y$ berfaktor
+	sebagai $S_1 \xrightarrow{\xi} Y' \xrightarrow{u} Y$. Sekarang akan
+	dibuktikan bahwa komposisi $S_1 \xrightarrow{\xi} Y' \to \Coker'$
+	sama dengan $0$. Titik pangkalnya ialah diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g011
+	\[\begin{tikzcd}
+		S \arrow[r, "\psi"] & \Ker'' \arrow[r, "\delta"] & \Coker' \arrow[hookrightarrow, d] \\
+		S_1 \arrow[twoheadrightarrow, u] \arrow[r] & X \dtimes{X''} \Ker'' \arrow[r, "\delta_0"] \arrow[u] \arrow[d] & \Coker' \dsqcup{Y'} Y \\
+		& X \arrow[r] & Y \arrow[u]
+	\end{tikzcd}\]
+
+	Komposisi baris pertama diagram di atas ialah $\delta \psi = 0$, sehingga
+	demikian pula komposisi baris kedua. Akibatnya, komposisi
+	$S_1 \xrightarrow{\xi} Y' \xrightarrow{u} Y \to \Coker' \dsqcup{Y'} Y$
+	sama dengan $0$. Di sisi lain, komposisi
+	$Y' \xrightarrow{u} Y \to \Coker' \dsqcup{Y'} Y$ sama dengan komposisi
+	$Y' \to \Coker' \to \Coker' \dsqcup{Y'} Y$. Dalam konstruksi $\delta$
+	telah dibuktikan bahwa $\Coker' \to \Coker' \dsqcup{Y'} Y$ merupakan
+	monomorfisme. Jadi, komposisi $S_1 \xrightarrow{\xi} Y' \to \Coker'$
+	memang sama dengan $0$.
+
+	Langkah berikutnya ialah menerapkan Lema~\ref{prop:Abel-cat-exact-aux}
+	pada barisan eksak $X' \to Y' \to \Coker'$. Diperoleh diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g012
+	\[\begin{tikzcd}
+		S_0 \arrow[twoheadrightarrow, r] \arrow[d, "k"'] & S_1 \arrow[d, "\xi"] \arrow[rd, "0"] & \\
+		X' \arrow[r] & Y' \arrow[r] & \Coker' .
+	\end{tikzcd}\]
+
+	Tuliskan $\lambda$ untuk komposisi
+	$S_0 \twoheadrightarrow S_1 \to X \dtimes{X''} \Ker'' \to X$.
+	Tuliskan pula morfisme $X' \to Y'$ dan $X \to Y$ berturut-turut sebagai
+	$a$ dan $b$. Dari uraian di atas diperoleh diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g013
+	\[\begin{tikzcd}
+		S_0 \arrow[twoheadrightarrow, r] \arrow[d, "k"' near end] \arrow[rrd, "\lambda" description, near end] & S_1 \arrow[d, crossing over, "\xi"' near end] \arrow[r] & X \dtimes{X''} \Ker'' \arrow[d] \\
+		X' \arrow[r, "a"] \arrow[d, "f"'] & Y' \arrow[d, "u"'] & X \arrow[ld, "b"] \\
+		X \arrow[r, "b"] & Y &
+	\end{tikzcd}\]
+	Kedua persegi dalam diagram ini telah diketahui komutatif; kekomutatifan
+	segitiganya berasal dari definisi $\lambda$, sedangkan kekomutatifan
+	trapesium di sebelah kanan berasal dari pembahasan sebelumnya tentang
+	$\xi$.
+	
+	Dengan demikian, segera diperoleh $b\lambda = bfk$, sehingga
+	$\lambda - fk: S_0 \to X$ berfaktor melalui
+	$\Ker = \Ker(b) \hookrightarrow X$. Terakhir, perhatikan diagram
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g014
+	\[\begin{tikzcd}
+		S_0 \arrow[twoheadrightarrow, r] \arrow[d] \arrow[dd, bend right=50, "{\lambda -fk}"'] & S_1 \arrow[twoheadrightarrow, r] & S \arrow[d, "\psi"] \\
+		\Ker \arrow[hookrightarrow, d] \arrow[rr] & & \Ker'' \arrow[hookrightarrow, d] \\
+		X \arrow[rr, "g"] & & X'' .
+	\end{tikzcd}\]
+	Untuk mencapai sasaran yang ditetapkan dalam
+	\eqref{eqn:snake-lemma-aux-2}, cukup ditunjukkan bahwa persegi atasnya
+	komutatif. Persegi bawah dan bagian yang melengkung telah diketahui
+	komutatif; argumen yang lazim mereduksi persoalan ini menjadi
+	kekomutatifan bingkai luar. Karena
+	$g(\lambda - fk) = g\lambda$, kekomutatifan bingkai luar tersebut
+	mereduksi pada diagram komutatif yang telah diketahui (lihat
+	\eqref{eqn:snake-lemma-aux-3}):
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g015
+	\[\begin{tikzcd}
+		S_0 \arrow[twoheadrightarrow, r] \arrow[rdd, bend right, "\lambda"'] & S_1 \arrow[twoheadrightarrow, r] \arrow[d] & S \arrow[d, "\psi"] \\
+		& X \dtimes{X''} \Ker'' \arrow[r] \arrow[d] & \Ker'' \arrow[d] \\
+		& X \arrow[r, "g"] & X'' .
+	\end{tikzcd}\]
+	Ini memverifikasi semua syarat yang diperlukan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p011
+Homomorfisme penghubung $\delta$ dan Teorema~\ref{prop:snake-lemma} jauh lebih
+sederhana dalam kategori modul $R\dcate{Mod}$; lihat
+\cite[Proposisi 6.8.6]{Li1}.
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.pr001
+\begin{proposisi}[Lema Lima]\label{prop:5-lemma}
+	\index{lema lima (Five Lemma)}
+	Perhatikan diagram komutatif dengan baris-baris eksak dalam kategori
+	abelian $\mathcal{A}$:
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g016
+	\[\begin{tikzcd}
+		X_1 \arrow[r] \arrow[d, "f_1"'] & X_2 \arrow[r] \arrow[d, "f_2"'] & X_3 \arrow[r] \arrow[d, "f_3" description] & X_4 \arrow[r] \arrow[d, "f_4"] & X_5 \arrow[d, "f_5"] \\
+		Y_1 \arrow[r] & Y_2 \arrow[r] & Y_3 \arrow[r] & Y_4 \arrow[r] & Y_5
+	\end{tikzcd}\]
+	% segment-id: o014.li2.chapter2.diagram-lemmas.l004
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter2.diagram-lemmas.i011
+		\item Jika $f_1$ merupakan epimorfisme dan $f_2, f_4$ merupakan
+		monomorfisme, maka $f_3$ merupakan monomorfisme (hanya empat kolom
+		pertama yang terlibat);
+		% segment-id: o014.li2.chapter2.diagram-lemmas.i012
+		\item jika $f_5$ merupakan monomorfisme dan $f_2, f_4$ merupakan
+		epimorfisme, maka $f_3$ merupakan epimorfisme (hanya empat kolom
+		terakhir yang terlibat);
+		% segment-id: o014.li2.chapter2.diagram-lemmas.i013
+		\item jika $f_1$ merupakan epimorfisme, $f_5$ merupakan monomorfisme,
+		dan $f_2, f_4$ keduanya merupakan isomorfisme, maka $f_3$ merupakan
+		isomorfisme.
+	\end{enumerate}
+\end{proposisi}
+% segment-id: o014.li2.chapter2.diagram-lemmas.pf003
+\begin{bukti}
+	Jelas bahwa (i) dan (ii) saling dual, sedangkan (iii) merupakan akibat
+	dari (i)--(ii) dan Proposisi~\ref{prop:strict-isomorphism}. Jadi, cukup
+	dibuktikan (i).
+	
+	Andaikan morfisme $h: S \to X_3$ memenuhi $f_3 h = 0$; sasaran kita
+	ialah membuktikan bahwa $h = 0$. Komposisi
+	$S \xrightarrow{h} X_3 \to X_4 \xrightarrow{f_4} Y_4$ sama dengan $0$,
+	sehingga komposisi $S \xrightarrow{h} X_3 \to X_4$ juga sama dengan
+	$0$. Dengan menerapkan Lema~\ref{prop:Abel-cat-exact-aux} pada barisan
+	eksak $X_2 \to X_3 \to X_4$, diperoleh diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g017
+	\[\begin{tikzcd}
+		S' \arrow[twoheadrightarrow, r] \arrow[d] & S \arrow[d, "h"] \\
+		X_2 \arrow[r] & X_3 .
+	\end{tikzcd}\]
+
+	Sekarang akan dikonstruksi diagram komutatif
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g018
+	\[\begin{tikzcd}[row sep=small]
+		S''' \arrow[twoheadrightarrow, r] \arrow[dd] & S'' \arrow[twoheadrightarrow, r] \arrow[dd] & S' \arrow[d] \\
+		& & X_2 \arrow[d, "f_2" inner sep=0.5em] \\
+		X_1 \arrow[r, "f_1"'] & Y_1 \arrow[r] & Y_2 . 
+	\end{tikzcd}\]
+	Caranya sebagai berikut. Komposisi
+	$S' \to X_2 \xrightarrow{f_2} Y_2 \to Y_3$, oleh karena $f_3 h = 0$,
+	sama dengan $0$. Penerapan Lema~\ref{prop:Abel-cat-exact-aux} pada
+	$S' \to Y_2$ dan barisan eksak $Y_1 \to Y_2 \to Y_3$ memberikan bagian
+	kanan diagram. Penerapan Lema~\ref{prop:Abel-cat-exact-aux} pada
+	$S'' \to Y_1$ dan barisan
+	eksak $X_1 \xrightarrow{f_1} Y_1 \to 0$ memberikan bagian kirinya.
+	
+	Ambil komposisi $S''' \to S'$ dan perhatikan diagram berikut:
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g019
+	\[\begin{tikzcd}
+		S''' \arrow[twoheadrightarrow, r] \arrow[d] & S' \arrow[twoheadrightarrow, r] \arrow[d] & S \arrow[d, "h"] & \\
+		X_1 \arrow[r] \arrow[d, "f_1"'] & X_2 \arrow[r] \arrow[d, "f_2"] & X_3 \arrow[r] & X_4 \\
+		Y_1 \arrow[r] & Y_2 & &
+	\end{tikzcd}\]
+	Kita nyatakan bahwa diagram ini komutatif. Satu-satunya persoalan ialah
+	persegi kiri atas. Komposisikan kedua lintasan
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g020
+	\begin{tikzpicture}[scale=0.3]
+		\draw[->] (0,1) -- (1,1) -- (1,0); \end{tikzpicture}
+	dan
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g021
+	\begin{tikzpicture}[scale=0.3]
+		\draw[->] (0,1) -- (0,0) -- (1,0);
+	\end{tikzpicture}
+	di dalamnya di sebelah kanan dengan $f_2$. Karena kedua persegi
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g022
+	$\begin{tikzcd}[row sep=small, column sep=small]
+		X_1 \arrow[r] \arrow[d] & X_2 \arrow[d] \\
+		Y_1 \arrow[r] & Y_2
+	\end{tikzcd}$ dan
+	% segment-id: o014.li2.chapter2.diagram-lemmas.g023
+	$\begin{tikzcd}[row sep=small, column sep=small]
+		S''' \arrow[r] \arrow[d] & S' \arrow[d] \\
+		Y_1 \arrow[r] & Y_2
+	\end{tikzcd}$
+	komutatif dan $f_2$ merupakan monomorfisme, persegi kiri atas juga
+	komutatif.
+	
+	Dengan demikian, komposisi
+	$S''' \twoheadrightarrow S' \twoheadrightarrow S \xrightarrow{h} X_3$
+	sama dengan $0$, sehingga $h=0$. Terbukti.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.diagram-lemmas.p012
+Bagian ini hanya memperkenalkan dua lema yang paling umum dipakai di antara
+sekian banyak lema diagram. Dengan bahasa bikompleks, G.\ Bergman
+menemukan Lema Salamander yang serba mencakup; lema ini merangkum Lema Ular
+dan beberapa lema diagram klasik dalam aljabar homologis. Pembaca yang
+berminat dipersilakan melihat \cite{Be12}.
+\index{lema salamander (Salamander Lemma)}

@@ -1,0 +1,347 @@
+% Terjemahan lengkap Bahasa Indonesia dari chapter1.tex baris 630--762.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.limits-through-functors
+
+% segment-id: o014.li2.chapter1.limits-through-functors.h001
+\section{Meninjau Limit melalui Funktor}\label{sec:limit-functor}
+\hypertarget{o014.aljabr2.chapter1.limits-through-functors}{ }
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p001
+Berbagai hubungan antara funktor $F: \mathcal{C} \to \mathcal{D}$ dan limit
+secara garis besar dapat dibagi ke dalam dua arah. Ambil $\varinjlim$ sebagai
+contoh. Diberikan funktor $\alpha: I \to \mathcal{C}$, pertanyaannya adalah:
+% segment-id: o014.li2.chapter1.limits-through-functors.l001
+\begin{itemize}
+	% segment-id: o014.li2.chapter1.limits-through-functors.i001
+	\item Andaikan $\varinjlim \alpha$ ada. Apakah citra
+	$F\left(\varinjlim \alpha\right)$ memberikan $\varinjlim (F\alpha)$?
+	% segment-id: o014.li2.chapter1.limits-through-functors.i002
+	\item Andaikan $\varinjlim F\alpha$ ada. Dapatkah limit itu
+	``diangkat'' ke $\mathcal{C}$? Dalam arti apa pengangkatan tersebut unik?
+\end{itemize}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p002
+Di sini kita terutama membahas kasus $\varinjlim$. Hasil-hasil ini tentu juga
+mempunyai versi yang bersesuaian untuk $\varprojlim$; berkat dualitas,
+rinciannya tidak perlu diulang.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p003
+Kita akan menata pembahasan $\varinjlim$ dengan bahasa kokonus dan kategori
+$(\alpha/\Delta)$.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.c001
+\begin{konvensi}\label{con:limit-cone}
+	Untuk funktor $\alpha: I \to \mathcal{C}$ yang telah ditetapkan, data
+	$(L, (f_i)_{i \in \Obj(I)})$ di $\mathcal{C}$ yang memenuhi syarat-syarat
+	berikut disebut \emph{kokonus} dengan alas $\alpha$ dan puncak $L$:
+	% segment-id: o014.li2.chapter1.limits-through-functors.l002
+	\begin{compactitem}
+		% segment-id: o014.li2.chapter1.limits-through-functors.i003
+		\item $L$ merupakan objek di $\mathcal{C}$,
+		% segment-id: o014.li2.chapter1.limits-through-functors.i004
+		\item setiap $f_i : \alpha(i) \to L$ merupakan morfisme di
+		$\mathcal{C}$ dan memenuhi syarat kompatibilitas
+		$f_j \circ \alpha(i \to j) = f_i$, dengan $[i \to j]$ berkisar pada
+		$\mathrm{Mor}(I)$.
+	\end{compactitem}
+\end{konvensi}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p004
+Dalam terminologi \cite[\S 2.7]{Li1}, kokonus-kokonus ini membentuk suatu
+kategori\footnote{Arti tepat $\Delta$ di sini ialah funktor diagonal
+$\mathcal{C} \to \mathcal{C}^I$; lihat Contoh
+\sourcecrossref{eg:comma-vs-cone}{1.6.3}. Notasi $\Delta$ dipilih dari huruf
+awal pinyin \emph{duìjiǎo} (``diagonal''). Namun, mengikuti asas piktografis,
+tidak ada salahnya membayangkan $\Delta$ sebagai ``kokonus''; lihat diagram
+\eqref{eqn:injlim-diagram}.} $(\alpha / \Delta)$. Secara konkret, setelah alas
+$\alpha$ ditetapkan, suatu morfisme dari kokonus $(L, (f_i)_i)$ ke kokonus
+$(M, (g_i)_i)$ ialah diagram komutatif
+% segment-id: o014.li2.chapter1.limits-through-functors.g001
+\begin{equation}\label{eqn:injlim-diagram}\begin{tikzcd}
+	& L \arrow[d] & \\
+	\alpha(i) \arrow[bend right, rr, "\alpha(i \to j)"'] \arrow[r, "g_i"] \arrow[ru, "f_i"] & M & \alpha(j) \arrow[l, "{g_j}"'] \arrow[lu, "f_j"']
+\end{tikzcd}\end{equation}
+dengan $i \to j$ berkisar pada $\Mor(I)$; komposisi morfisme didefinisikan
+dengan cara yang jelas. Menurut definisi, $\varinjlim \alpha$ beserta keluarga
+morfisme kanonik bawaannya
+$\iota_i: \alpha(i) \to \varinjlim \alpha$ merupakan objek awal dari
+$(\alpha / \Delta)$.
+\index{limit}\index[sym1]{lim}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p005
+Funktor $F$ secara langsung menginduksi funktor
+$(\alpha/\Delta) \to (F\alpha / \Delta)$, yang memetakan kokonus
+$(L, (f_i)_i)$ ke $(FL, (Ff_i)_i)$. Andaikan $\varinjlim \alpha$ ada. Jika
+$\varinjlim F\alpha$ juga ada, maka dalam $(F\alpha / \Delta)$ terdapat
+morfisme tunggal
+% segment-id: o014.li2.chapter1.limits-through-functors.q001
+\[ \varinjlim F\alpha \to F(\varinjlim \alpha), \]
+dan morfisme ini merupakan isomorfisme jika dan hanya jika
+$\left( F(\varinjlim \alpha), (F\iota_i)_i \right)$ memberikan
+$\varinjlim F\alpha$.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p006
+Dengan membalik panah-panah, $\varprojlim \alpha$ dapat dicirikan sebagai
+objek terminal dari $(\Delta/\alpha)$. Dengan asumsi bahwa kedua limit
+projektif yang dibahas ada, dalam $(\Delta/F\alpha)$ terdapat morfisme tunggal
+% segment-id: o014.li2.chapter1.limits-through-functors.q002
+\[ F\varprojlim \alpha \to \varprojlim F\alpha. \]
+
+% segment-id: o014.li2.chapter1.limits-through-functors.d001
+\begin{definisi}\label{def:create-limit}
+	\index{limit!mempertahankan, merefleksikan, menciptakan (preserve, reflect, create)}
+	Diberikan $F: \mathcal{C} \to \mathcal{D}$ dan funktor
+	$\alpha: I \to \mathcal{C}$, tinjau funktor di antara kategori kokonus
+	$(\alpha/\Delta) \to (F\alpha/\Delta)$.
+	% segment-id: o014.li2.chapter1.limits-through-functors.l003
+	\begin{itemize}
+		% segment-id: o014.li2.chapter1.limits-through-functors.i005
+		\item Funktor $F$ dikatakan \emph{mempertahankan} $\varinjlim$ ini jika
+		$(\alpha/\Delta) \to (F\alpha/\Delta)$ memetakan objek awal (jika ada)
+		ke objek awal.
+		% segment-id: o014.li2.chapter1.limits-through-functors.i006
+		\item Funktor $F$ dikatakan \emph{merefleksikan} $\varinjlim$ ini jika,
+		apabila suatu objek dari $(\alpha/\Delta)$ dipetakan menjadi objek awal
+		dari $(F\alpha/\Delta)$, objek itu sendiri merupakan objek awal.
+		% segment-id: o014.li2.chapter1.limits-through-functors.i007
+		\item Funktor $F$ dikatakan \emph{menciptakan} $\varinjlim$ ini jika,
+		begitu $\varinjlim F\alpha$ ada, $\varinjlim \alpha$ juga ada, dan dalam
+		keadaan ini $F$ mempertahankan $\varinjlim$ tersebut dan juga
+		merefleksikan $\varinjlim$ tersebut.
+	\end{itemize}
+	Untuk $\varprojlim$ terdapat konsep-konsep yang bersesuaian. Konsep-konsep
+	untuk $\varinjlim$ dan $\varprojlim$ ini dapat saling diperoleh dengan
+	mengganti $\mathcal{C}$ dan $\mathcal{D}$ oleh
+	$\mathcal{C}^{\opp}$ dan $\mathcal{D}^{\opp}$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p007
+Perhatikan bahwa konsep-konsep ini bergantung pada $\alpha$ yang sedang
+dibahas. Sebagai contoh, sangat mungkin $F$ mempertahankan semua
+$\varinjlim$ berhingga tetapi tidak mempertahankan $\varinjlim$ secara umum.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p008
+Untuk $\alpha$ tertentu, pernyataan bahwa suatu funktor menciptakan
+$\varinjlim$ (atau $\varprojlim$) setara dengan mengatakan bahwa kokonus (atau
+konus) di $\mathcal{D}$ yang mendefinisikan limit tersebut dapat diangkat
+secara unik ke $\mathcal{C}$, dan hasil pengangkatan itu memberikan limit yang
+bersesuaian di $\mathcal{C}$. Keunikan tersebut berasal dari syarat dalam
+definisi mengenai merefleksikan $\varinjlim$ (atau $\varprojlim$). Sudut
+pandang ini akan tampak jelas dalam Contoh \ref{eg:Grp-Set-create} dan
+Proposisi \ref{prop:forget-create} di bawah.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.pr001
+\begin{proposisi}\label{prop:ff-reflect}
+	Setiap funktor penuh dan setia merefleksikan semua $\varinjlim$ dan
+	$\varprojlim$.
+\end{proposisi}
+% segment-id: o014.li2.chapter1.limits-through-functors.pf001
+\begin{bukti}
+	Cukup tinjau $\varinjlim$. Jika $F$ penuh dan setia, sifat universal objek
+	awal dari $(\alpha/\Delta)$ dapat diverifikasi di $(F\alpha/\Delta)$ setelah
+	menerapkan $F$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p009
+Sejalan dengan pembahasan ini, kita perkenalkan sebuah konsep yang berguna.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.d002
+\begin{definisi}\label{def:conservative}
+	\index{funktor!konservatif (conservative)}
+	Funktor $F$ yang memenuhi syarat berikut disebut \emph{konservatif}:
+	morfisme $f \in \Mor(\mathcal{C})$ merupakan isomorfisme jika dan hanya jika
+	$Ff \in \Mor(\mathcal{D})$ merupakan isomorfisme.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.r001
+\begin{catatan}\label{rem:conservative-reflect}
+	Jika $F$ merupakan funktor konservatif, maka asalkan
+	$\varinjlim \alpha$ ada dan $F$ mempertahankan $\varinjlim$ ini, $F$ juga
+	harus merefleksikan $\varinjlim$ ini. Alasannya sebagai berikut. Misalkan
+	$L \in \Obj((\alpha/\Delta))$ dipetakan menjadi objek awal dari
+	$(F\alpha/\Delta)$. Tinjau morfisme tunggal
+	$\varinjlim \alpha \to L$ dalam $(\alpha/\Delta)$. Karena $F$
+	mempertahankan $\varinjlim$ ini, citra morfisme tersebut di bawah $F$
+	harus merupakan isomorfisme. Syarat konservatif kemudian memastikan bahwa
+	$\varinjlim \alpha \to L$ juga merupakan isomorfisme.
+
+	Dengan hipotesis ini, syarat merefleksikan $\varinjlim$ dapat dihapus dari
+	definisi bahwa $F$ menciptakan $\varinjlim$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.e001
+\begin{contoh}\label{eg:Grp-Set-create}
+	Kita akan memverifikasi bahwa funktor pelupa $U$ dari kategori grup
+	$\cate{Grp}$ ke kategori himpunan $\cate{Set}$ menciptakan semua
+	$\varprojlim$ kecil.
+
+	Hal ini merupakan akibat konstruksi konkret $\varprojlim$ dalam
+	$\cate{Grp}$ dan $\cate{Set}$; lihat
+	\cite[Contoh 2.7.5 dan 2.8.7]{Li1}. Secara lebih terperinci, ambil kategori
+	kecil $I$ dan funktor $\beta: I^{\opp} \to \cate{Grp}$. Sebagai himpunan,
+	% segment-id: o014.li2.chapter1.limits-through-functors.q003
+	\[ \varprojlim U\beta = \left\{\begin{array}{r|l}
+		(x_i)_i \in \prod_{i \in \Obj(I)} U\beta(i) & \forall [i \to j] \in \mathrm{Mor}(I), \\
+		& \beta(i \to j)(x_j) = x_i
+	\end{array}\right\}, \]
+	dan proyeksi $p_i: \varprojlim U\beta \to U\beta(i)$ memetakan $(x_j)_j$
+	ke $x_i$. Tugas kita sekarang adalah:
+	% segment-id: o014.li2.chapter1.limits-through-functors.l004
+	\begin{enumerate}
+		% segment-id: o014.li2.chapter1.limits-through-functors.i008
+		\item melengkapi $\varprojlim U\beta$ dengan struktur grup sedemikian
+		hingga setiap $p_i$ merupakan homomorfisme grup, serta menunjukkan bahwa
+		struktur grup semacam itu unik;
+		% segment-id: o014.li2.chapter1.limits-through-functors.i009
+		\item memverifikasi sifat universal $\varprojlim \beta$ bagi grup ini
+		beserta keluarga homomorfisme proyeksi $(p_i)_i$.
+	\end{enumerate}
+
+	Jelas bahwa $\varprojlim U\beta$ merupakan subgrup dari hasil kali langsung
+	$\prod_i \beta(i)$. Kita notasikan subgrup ini sebagai
+	$\varprojlim \beta \in \Obj(\cate{Grp})$; inilah satu-satunya struktur grup
+	yang membuat setiap $p_i$ menjadi homomorfisme grup. Dengan demikian, tugas
+	pertama selesai.
+
+	Selanjutnya, kita verifikasi sifat universal bagi konus
+	$\left( \varprojlim \beta, (p_i)_i\right)$. Tinjau sembarang konus
+	$(L, (q_i)_i)$ di $\cate{Grp}$, dengan $q_i: L \to \beta(i)$. Sifat
+	universal memberikan pemetaan tunggal
+	$\varphi: UL \to \varprojlim U\beta$ sedemikian sehingga
+	$p_i \varphi = q_i$ berlaku untuk setiap $i$. Sesungguhnya, $\varphi$ secara konkret
+	diberikan oleh $y \mapsto (q_i(y))_{i \in \Obj(I)}$, sehingga pemetaan ini
+	merupakan homomorfisme grup $L \to \varprojlim \beta$.\footnote{Catatan
+	penerjemah: sumber menulis $L \to \varinjlim \beta$; target dikoreksi
+	menjadi $L \to \varprojlim \beta$ sesuai limit projektif yang sedang
+	dibuktikan (O014-C007).} Verifikasi selesai.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p010
+Dengan argumen yang sepenuhnya serupa, dapat ditunjukkan bahwa funktor pelupa
+dari kategori ruang Hausdorff kompak $\cate{CHaus}$ ke $\cate{Set}$ juga
+menciptakan semua $\varprojlim$ kecil. Verifikasi terkait diserahkan sebagai
+latihan dalam bab ini.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p011
+Hasil berikutnya melibatkan kategori funktor berbentuk $\mathcal{C}^J$
+(yang mungkin merupakan kategori ``besar'', tetapi ini tidak menjadi masalah).
+Kita memerlukan dua langkah persiapan.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.l005
+\begin{itemize}
+	% segment-id: o014.li2.chapter1.limits-through-functors.i010
+	\item Misalkan $J$ merupakan himpunan. Hasil kali $J$ salinan
+	$\mathcal{C}$, yakni $\mathcal{C}^J$, didefinisikan sebagai
+	$\Obj\left(\mathcal{C}^J\right) = \Obj(\mathcal{C})^J$ dan
+	$\mathrm{Mor}\left(\mathcal{C}^J \right) = \mathrm{Mor}(\mathcal{C})^J$.
+	Untuk setiap $j \in J$ terdapat funktor proyeksi yang jelas
+	$p_j: \mathcal{C}^J \to \mathcal{C}$.
+
+	% Koreksi O014-C008: sumber menggandakan aksara pada frasa "untuk setiap".
+	Diberikan kategori $I$ dan funktor $\alpha: I \to \mathcal{C}^J$, jika
+	$\varinjlim (p_j \alpha)$ ada untuk setiap $j$, maka
+	$\varinjlim \alpha$ juga ada. Konstruksinya dilakukan dengan mengambil limit
+	secara ``titik demi titik'' atau ``objek demi objek'':
+	$\varinjlim \alpha = \left( \varinjlim (p_j \alpha) \right)_{j \in J}$.
+
+	% segment-id: o014.li2.chapter1.limits-through-functors.i011
+	\item Misalkan $J$ merupakan kategori. Kita dapat meninjau kategori funktor
+	$\mathcal{C}^J$. Untuk setiap $j \in \Obj(J)$ terdapat funktor evaluasi
+	$\mathrm{ev}_j: \mathcal{C}^J \to \mathcal{C}$, yang memetakan objek $F$
+	ke $Fj$ dan memetakan morfisme
+	$\varphi = (\varphi_{j'})_{j' \in \Obj(J)}$ ke $\varphi_j$. Nanti kita akan
+	meninjau funktor berbentuk $\alpha: I \to \mathcal{C}^J$ beserta
+	$\varinjlim$-nya. Perhatikan bahwa $\alpha$ dapat dipandang sebagai funktor
+	$I \times J \to \mathcal{C}$, dengan nilainya ditulis $\alpha(i, j)$.
+\end{itemize}
+
+% segment-id: o014.li2.chapter1.limits-through-functors.p012
+Kedua sistem notasi tersebut kompatibel. Jika $J$ merupakan kategori diskret
+dan dipandang sebagai himpunan, maka $\mathcal{C}^J$ tidak lain adalah hasil
+kali yang dibahas sebelumnya. Untuk $J$ umum, funktor pelupa
+$\mathcal{F}: \mathcal{C}^J \to \mathcal{C}^{\Obj(J)}$ memetakan objek $F$ ke
+$(Fj)_{j \in \Obj(J)}$ dan memetakan morfisme $\varphi$ ke
+$(\varphi_j)_{j \in \Obj(J)}$. Karena itu, $\mathrm{ev}_j = p_j \mathcal{F}$.
+
+% segment-id: o014.li2.chapter1.limits-through-functors.pr002
+\begin{proposisi}\label{prop:forget-create}
+	Misalkan $J$ dan $\mathcal{C}$ merupakan kategori.
+	% segment-id: o014.li2.chapter1.limits-through-functors.l006
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter1.limits-through-functors.i012
+		\item Funktor pelupa
+		$\mathcal{F}: \mathcal{C}^J \to \mathcal{C}^{\Obj(J)}$ menciptakan
+		$\varinjlim$ dan $\varprojlim$.
+		% segment-id: o014.li2.chapter1.limits-through-functors.i013
+		\item Misalkan $I$ merupakan kategori dan setiap funktor
+		$I \to \mathcal{C}$ mempunyai $\varinjlim$ (atau $\varprojlim$).
+		Maka semua funktor berbentuk $I \to \mathcal{C}^J$ juga mempunyai
+		$\varinjlim$ (atau $\varprojlim$) di $\mathcal{C}^J$.
+		% segment-id: o014.li2.chapter1.limits-through-functors.i014
+		\item Dengan asumsi pada (ii), untuk setiap $j \in \Obj(J)$, funktor
+		evaluasi $\mathrm{ev}_j: \mathcal{C}^J \to \mathcal{C}$ mempertahankan
+		$\varinjlim$ (atau $\varprojlim$) untuk diagram berbentuk $I$ tersebut.
+		Dengan kata lain, limit di $\mathcal{C}^J$ juga didefinisikan
+		secara ``titik demi titik'' atau ``objek demi objek''.
+	\end{enumerate}
+\end{proposisi}
+% segment-id: o014.li2.chapter1.limits-through-functors.pf002
+\begin{bukti}
+	Cukup tinjau kasus $\varinjlim$. Untuk (i), tetapkan
+	$\alpha: I \to \mathcal{C}^J$ dan andaikan $\varinjlim \mathcal{F}\alpha$
+	ada serta diberikan oleh kokonus
+	% segment-id: o014.li2.chapter1.limits-through-functors.q004
+	\[ \left( (X(j))_{j \in \Obj(J)}, \; \left( \iota_i = (\iota_{i, j})_{j \in \Obj(J)} \right)_{i \in \Obj(I)} \right) \]
+	dengan $\iota_{i,j}: \alpha(i, j) \to X(j)$. Kita ingin mengangkatnya
+	menjadi kokonus di $\mathcal{C}^J$ yang memberikan $\varinjlim \alpha$.
+
+	Pertama, perhatikan bahwa
+	$X(j) = \varinjlim \alpha(\cdot, j)$ untuk setiap $j$. Untuk setiap morfisme
+	$j \to j'$, sifat funktorial limit (lihat
+	\cite[Lema 2.7.4]{Li1}) memberikan morfisme tunggal
+	$X(j \to j'): X(j) \to X(j')$ yang membuat diagram berikut komutatif:
+	% segment-id: o014.li2.chapter1.limits-through-functors.g002
+	\[\begin{tikzcd}
+		\alpha(i, j) \arrow[r] \arrow[d, "{\iota_{i, j}}"'] & \alpha(i, j') \arrow[d, "{\iota_{i, j'}}"] \\
+		X(j) \arrow[r, "{X(j \to j')}"'] & X(j')
+	\end{tikzcd} \quad i \in \Obj(I). \]
+	Dengan cara ini, $j \mapsto X(j)$ diperluas menjadi funktor
+	$X: J \to \mathcal{C}$, sedangkan
+	$\iota_i: \alpha(i, \cdot) \to X$ membentuk morfisme di
+	$\mathcal{C}^J$. Tidak sulit memverifikasi bahwa
+	$(X, (\iota_i)_i) \in \Obj(\alpha/\Delta)$; selanjutnya kita buktikan
+	bahwa objek ini merupakan objek awal. Karena funktor $\mathcal{F}$
+	konservatif, syarat merefleksikan $\varinjlim$ tidak perlu diverifikasi lagi.
+
+	Diberikan $(L, (f_i)_i) \in \Obj(\alpha/\Delta)$, sifat universal
+	$\varinjlim \mathcal{F}\alpha$ menentukan morfisme tunggal
+	$\varphi = (\varphi_j)_j : \mathcal{F}X \to \mathcal{F}L$ sedemikian sehingga
+	bagian segitiga pada diagram berikut komutatif untuk setiap $(i, j)$:
+	% segment-id: o014.li2.chapter1.limits-through-functors.g003
+	\[\begin{tikzcd}
+		& X(j) \arrow[d, "\varphi_j"] \arrow[r, "{X(j \to j')}" inner sep=0.8em] & X(j') \arrow[d, "\varphi_{j'}"] \\
+		\alpha(i, j) \arrow[ru, "{\iota_{i,j}}"] \arrow[r, "f_{i, j}"' inner sep=0.8em] & L(j) \arrow[r, "{L(j \to j')}"' inner sep=0.8em] & L(j')
+	\end{tikzcd}\]
+	Jika dapat ditunjukkan bahwa bagian persegi komutatif untuk setiap
+	$j \to j'$, maka keluarga komponen $\varphi$ membentuk morfisme
+	$X \to L$. Bingkai
+	luar sudah diketahui komutatif, sehingga
+	% segment-id: o014.li2.chapter1.limits-through-functors.q005
+	\[ \varphi_{j'} X(j \to j') \iota_{i, j} = L(j \to j') f_{i, j} = L(j \to j') \varphi_j \iota_{i, j} \]
+	untuk setiap $i$. Morfisme dengan domain $X(j)$ ditentukan oleh
+	komposisinya dengan semua $\iota_{i,j}$, sehingga bagian persegi tersebut
+	komutatif.
+
+	Untuk (ii), tinjau funktor $\alpha: I \to \mathcal{C}^J$. Menurut
+	pembahasan sebelumnya, $\mathcal{F}\alpha: I \to \mathcal{C}^{\Obj(J)}$
+	mempunyai $\varinjlim$, yang didefinisikan secara objek demi objek. Oleh (i),
+	$\mathcal{F}$ menciptakan $\varinjlim \alpha$ di $\mathcal{C}^J$,\footnote{Catatan
+	penerjemah: teks sumber menulis $\mathcal{C}$ di sini. Targetnya dikoreksi
+	menjadi $\mathcal{C}^J$, yaitu domain funktor pelupa $\mathcal{F}$ dan
+	kategori yang memuat funktor $X: J \to \mathcal{C}$ yang baru dibangun;
+	lihat koreksi O014-C009.}
+	sedangkan pernyataan
+	pada (iii) bahwa $\mathrm{ev}_j$ mempertahankan $\varinjlim$ tersebut
+	merupakan akibat langsung dari konstruksi ini.
+\end{bukti}

@@ -1,0 +1,121 @@
+% Terjemahan Bahasa Indonesia dari chapter1.tex baris 9-31.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.overview
+
+% segment-id: o014.li2.chapter1.overview.h001
+\chapter{Pelengkap Teori Kategori}\label{sec:categories}
+\hypertarget{o014.aljabr2.chapter1.overview}{ }
+
+% segment-id: o014.li2.chapter1.overview.p001
+Sesuai dengan judulnya, bab ini memperkenalkan sejumlah perangkat teori
+kategori yang diperlukan dalam bab-bab berikut, agar pembaca dapat menyegarkan
+kembali pengetahuannya. Sebagian materi telah dibahas dalam \cite{Li1} atau
+buku ajar sejenis. Namun, untuk meninjau kembali konsep dan menyeragamkan
+notasi, materi tersebut tetap disajikan ulang di sini. Untuk istilah dasar
+lainnya, pembaca dapat merujuk pada Pendahuluan buku ini.
+
+% segment-id: o014.li2.chapter1.overview.l001
+\begin{itemize}
+	% segment-id: o014.li2.chapter1.overview.i001
+	\item Dalam \S\S~\sourcecrossref{sec:subquot}{1.1}--%
+	\sourcecrossref{sec:images}{1.2}, mula-mula diperkenalkan secara ringkas
+	subobjek dan objek kuosien, termasuk sifat-sifat umum monomorfisme dan
+	epimorfisme. Selanjutnya diperkenalkan citra $\Image(f)$ dan kocitra
+	$\Coim(f)$ suatu morfisme $f$, serta morfisme yang memenuhi
+	\emph{citra sama dengan kocitra}, yang disebut morfisme ketat. Semua ini
+	merupakan konsep dasar yang berlaku dalam kategori umum.
+
+	% segment-id: o014.li2.chapter1.overview.i002
+	\item \S\S~\sourcecrossref{sec:Ker-Coker}{1.3}--%
+	\sourcecrossref{sec:linear-cat}{1.4} merupakan bagian linear bab ini.
+	Di sana diperkenalkan jenis khusus kategori yang himpunan morfismenya
+	mempunyai struktur grup abelian, yang disebut kategori-$\cate{Ab}$;
+	funktor yang mempertahankan penjumlahan morfisme disebut funktor aditif.
+	Dalam kategori-kategori tersebut, kernel dan kokernel suatu morfisme dapat
+	didefinisikan sebagai perumuman kernel dan kokernel homomorfisme modul.
+	Kategori-$\cate{Ab}$ yang mempunyai objek nol dan semua produk hingga
+	disebut kategori aditif. Dalam kategori aditif dapat dibahas jumlah
+	langsung hingga dari objek, sedangkan morfisme di antara jumlah-jumlah
+	langsung hingga dapat diolah seperti operasi matriks.
+
+	Lebih jauh, struktur penjumlahan dapat ditingkatkan menjadi perkalian
+	skalar oleh suatu gelanggang komutatif $\Bbbk$. Dari sini diperoleh
+	pengertian kategori-$\Bbbk\dcate{Mod}$ dan kategori $\Bbbk$-linear.
+	Kategori-kategori berstruktur linear inilah yang menjadi perhatian utama
+	buku ini.
+
+	% segment-id: o014.li2.chapter1.overview.i003
+	\item \S\S~\sourcecrossref{sec:limit-functor}{1.5}--%
+	\sourcecrossref{sec:filtered-indlim}{1.6} memuat dasar-dasar tentang
+	limit. Secara khusus,
+	Definisi~\sourcecrossref{def:create-limit}{1.5.2} memperkenalkan istilah
+	untuk menyatakan apakah suatu funktor $F: \mathcal{C} \to \mathcal{D}$
+	\emph{mempertahankan} limit (dari $\mathcal{C}$ ke $\mathcal{D}$) atau
+	\emph{menciptakan} limit (dari $\mathcal{D}$ ke $\mathcal{C}$).
+	Selain itu dibahas pula funktor kofinal dan limit induktif terfilter;
+	istilah-istilah ini praktis dan penting.
+
+	% segment-id: o014.li2.chapter1.overview.i004
+	\item Ekstensi Kan kiri dan kanan yang dibahas dalam
+	\S\S~\sourcecrossref{sec:Kan-extension}{1.7}--%
+	\sourcecrossref{sec:Kan-as-limit}{1.8} merupakan operasi dasar dalam
+	teori kategori. Dengan syarat yang sesuai, ekstensi tersebut dapat
+dibangun menggunakan $\varinjlim$ atau $\varprojlim$. Argumennya cukup
+berliku, tetapi gagasan utamanya sederhana: merumuskan persoalan ekstensi
+funktor sebagai suatu \emph{aproksimasi terbaik} dalam bentuk limit. Dicatat
+	pula Teorema~\sourcecrossref{prop:Quillen-adjunction-gen}{1.7.7}, hasil
+	yang tidak serta-merta jelas dan menerangkan hubungan antara ekstensi Kan
+	kiri/kanan absolut dan pasangan adjoin.
+
+	% segment-id: o014.li2.chapter1.overview.i005
+	\item Lokalisasi Gabriel--Zisman yang diperkenalkan dalam
+	\S~\sourcecrossref{sec:cat-localization}{1.9} (selanjutnya cukup disebut
+	\emph{lokalisasi} dalam buku ini) merupakan konstruksi yang secara formal
+	menambahkan invers bagi suatu keluarga morfisme $S$ dalam kategori.
+	Konstruksi ini serupa dengan lokalisasi gelanggang, tetapi rincian
+	konkretnya jauh lebih rumit. Agar hasil setelah penginversan lebih mudah
+	dikendalikan, dalam praktik $S$ sering diandaikan sebagai apa yang disebut
+	\emph{sistem multiplikatif} dalam
+	Definisi~\sourcecrossref{def:multiplicative-family}{1.9.5}. Penerapan
+	utama lokalisasi dalam buku ini ialah membangun kategori turunan; penerapan
+	berikutnya ialah mendefinisikan kuosien Serre suatu kategori abelian dalam
+	\S~\sourcecrossref{sec:Serre-subcat}{2.9}.
+	\S~\sourcecrossref{sec:functor-localization}{1.10} akan menerangkan cara
+	melakukan ekstensi Kan sepanjang lokalisasi kategori. Konstruksi itu dapat
+	dibayangkan sebagai lokalisasi funktor dan menjadi kunci untuk memahami
+	funktor turunan.
+
+	% segment-id: o014.li2.chapter1.overview.i006
+	\item Teorema funktor adjoin yang dibahas dalam
+	\S~\sourcecrossref{sec:AFT}{1.11} mencirikan keberadaan adjoin kiri atau
+	adjoin kanan suatu funktor di bawah syarat-syarat yang sesuai. Dalam buku
+	ini, penerapan utamanya terdapat dalam
+	\S~\sourcecrossref{sec:Grothendieck-cat}{2.10}, pada kajian kategori
+	Grothendieck. Kegunaan teorema funktor adjoin dalam matematika tidak
+	terbatas pada penerapan tersebut, sehingga bagian ini bernilai secara
+	mandiri. Pengertian generator dan kogenerator
+	(Definisi~\sourcecrossref{def:generators}{1.11.8}) yang dibahas di sana
+	juga wajib dikuasai.
+\end{itemize}
+
+% segment-id: o014.li2.chapter1.overview.p002
+Isi bab ini banyak mengambil bahan dari \cite{KS06, Rie16}.
+
+% segment-id: o014.li2.chapter1.overview.n001
+\begin{petunjukbacaan}
+Teori dasar kategori abelian dan kompleks hanya memerlukan
+\S\S~\sourcecrossref{sec:subquot}{1.1}--%
+\sourcecrossref{sec:linear-cat}{1.4} dari bab ini.
+\S\S~\sourcecrossref{sec:limit-functor}{1.5}--%
+\sourcecrossref{sec:filtered-indlim}{1.6} berperan sebagai materi pendukung dan
+juga akan berulang kali dirujuk dalam bab-bab lain. Teori kategori turunan
+melibatkan \S\S~\sourcecrossref{sec:Kan-extension}{1.7}--%
+\sourcecrossref{sec:functor-localization}{1.10}. Kegunaan materi tersebut tidak
+terbatas pada topik itu, tetapi pembaca dapat menimbang kebutuhannya sendiri dan
+menunda pembacaan hingga sebelum mempelajari kategori turunan. Bagian terakhir,
+\S~\sourcecrossref{sec:AFT}{1.11}, hanya diterapkan dalam
+\S~\sourcecrossref{sec:Grothendieck-cat}{2.10}. Namun, pengetahuan tentang
+generator dan kogenerator di dalamnya bersifat wajib; pembaca dapat kembali
+merujuknya bila diperlukan.
+\end{petunjukbacaan}

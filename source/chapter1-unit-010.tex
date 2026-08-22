@@ -1,0 +1,276 @@
+% Terjemahan Bahasa Indonesia dari chapter1.tex baris 140--266.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.images-coimages-strict
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.h001
+\section{Citra, Kocitra, dan Morfisme Ketat}\label{sec:images}
+\hypertarget{o014.aljabr2.chapter1.images-coimages-strict}{ }
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p001
+Tetapkan sebuah kategori $\mathcal{C}$. Untuk setiap morfisme $f: X \to Y$,
+koproduk serat $Y \dsqcup{X} Y$, jika ada, dilengkapi secara kanonik dengan
+sepasang morfisme $Y \rightrightarrows Y \dsqcup{X} Y$. Secara dual, produk
+serat $X \dtimes{Y} X$, jika ada, dilengkapi secara kanonik dengan sepasang
+morfisme $X \dtimes{Y} X \rightrightarrows X$, yang sering disebut morfisme
+proyeksi.
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.d001
+\begin{definisi}[Citra dan Kocitra]\label{def:Im-Coim}
+	\index{citra (image)} \index[sym1]{imf@$\Image(f)$}
+	\index{kocitra (coimage)} \index[sym1]{coimf@$\Coim(f)$}
+	Misalkan $f: X \to Y$ adalah morfisme dalam kategori $\mathcal{C}$.
+	Andaikan $Y \dsqcup{X} Y$ ada. Jika penyama
+	$\Ker\left( Y \rightrightarrows Y \dsqcup{X} Y\right)$ ada, penyama ini
+	disebut \emph{citra} dari $f$, dinotasikan dengan $\Image(f)$; citra ini
+	dilengkapi dengan monomorfisme kanonik $\Image(f) \hookrightarrow Y$.
+
+	Secara dual, andaikan $X \dtimes{Y} X$ ada. Jika kopenyama
+	$\Coker\left( X \dtimes{Y} X \rightrightarrows X \right)$ ada, kopenyama
+	ini disebut \emph{kocitra} dari $f$, dinotasikan dengan $\Coim(f)$; kocitra
+	ini dilengkapi dengan epimorfisme kanonik
+	$X \twoheadrightarrow\Coim(f)$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.r001
+\begin{catatan}\label{rem:im-coim-duality}
+	Dengan menerapkan dualitas antara $\Ker$ dan $\Coker$, langsung terlihat
+	bahwa $\Image(f)$ ada dalam $\mathcal{C}$ jika dan hanya jika
+	$\Coim(f^{\opp})$ ada dalam $\mathcal{C}^{\opp}$, dan bahwa
+	$\Image(f) = \Coim(f^{\opp})$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p002
+Lema berikut tidak hanya berguna, tetapi juga menjelaskan dengan baik hakikat
+citra dan kocitra.
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.lm001
+\begin{lema}\label{prop:Im-Coim-fac}
+	Andaikan $f: X \to Y$ mempunyai $\Coim(f)$ (atau $\Image(f)$). Untuk setiap
+	monomorfisme $j: Y' \hookrightarrow Y$ (atau epimorfisme
+	$q: X \twoheadrightarrow X'$), jika morfisme $g: X \to Y'$ memenuhi
+	$j g = f$ (atau $g: X' \to Y$ memenuhi $gq = f$), maka terdapat
+	$\overline{g}$ yang unik sehingga diagram berikut komutatif:
+	% segment-id: o014.li2.chapter1.images-coimages-strict.g001
+	\[\begin{tikzcd}
+		X \arrow[r, "f"] \arrow[twoheadrightarrow, d] \arrow[rd, "g" description] & Y \\
+		\Coim(f) \arrow[r, "\overline{g}"'] & Y' \arrow[hookrightarrow, u, "j"']
+	\end{tikzcd} \quad \text{atau} \quad \begin{tikzcd}
+		X \arrow[r, "f"] \arrow[twoheadrightarrow, d, "q"'] & Y \\
+		X' \arrow[r, "\overline{g}"'] \arrow[ru, "g" description] & \Image(f) \arrow[hookrightarrow, u] .
+	\end{tikzcd}\]
+\end{lema}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pf001
+\begin{bukti}
+	Kedua versi saling dual, sehingga cukup dibahas kasus $j$. Tuliskan
+	$p_1, p_2$ untuk morfisme proyeksi produk serat
+	$X \dtimes{Y} X \rightrightarrows X$. Karena
+	$j g p_1 = f p_1 = f p_2 = j g p_2$ dan $j$ merupakan monomorfisme, maka
+	$g p_1 = g p_2$. Sifat universal $\Coim(f)$ sebagai kopenyama kemudian
+	secara unik menentukan $\overline{g}$ yang membuat diagram tersebut
+	komutatif.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p003
+Dengan menerapkan Lema~\ref{prop:Im-Coim-fac} berturut-turut kepada
+$\Coim(f)$ dan $\Image(f)$, mudah terlihat bahwa terdapat morfisme pembanding
+$\Coim(f) \to \Image(f)$ yang membuat diagram berikut komutatif:
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.g002
+\begin{equation}\label{eqn:strict-morphism} \begin{tikzcd}
+	X \arrow[r, "f"] \arrow[twoheadrightarrow, d] & Y \\
+	\Coim(f) \arrow[r] & \Image(f) \arrow[hookrightarrow, u]
+\end{tikzcd}\end{equation}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p004
+Selain itu, berdasarkan hukum kanselasi kiri (atau kanan) untuk monomorfisme
+(atau epimorfisme), morfisme pembanding tersebut juga unik.
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.d002
+\begin{definisi}[Morfisme ketat]\label{def:strict-morphism}\index{morfisme ketat (strict morphism)}
+	Andaikan $\Image(f)$ dan $\Coim(f)$ ada. Jika morfisme
+	$\Coim(f) \to \Image(f)$ dalam \eqref{eqn:strict-morphism} merupakan
+	isomorfisme, maka $f$ disebut \emph{morfisme ketat}.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p005
+Sebagai contoh, untuk $\mathcal{C} = \cate{Set}$, semua morfisme bersifat
+ketat, dan citra serta kocitra keduanya dapat diidentifikasi secara kanonik
+dengan citra dalam pengertian teori himpunan. Latihan-latihan bab ini memuat
+lebih banyak contoh.
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pr001
+\begin{proposisi}\label{prop:Images-f-gf}
+	Diberikan morfisme-morfisme $X \xrightarrow{f} Y \xrightarrow{g} Z$,
+	terdapat secara unik morfisme $\alpha: \Coim(f) \to \Image(gf)$ dan
+	morfisme $\beta: \Coim(gf) \to \Image(g)$ yang membuat diagram berikut
+	komutatif:
+	% segment-id: o014.li2.chapter1.images-coimages-strict.g003
+	\[\begin{tikzcd}
+		X \arrow[twoheadrightarrow, r] \arrow[rd] & \Coim(f) \arrow[d, "\alpha"] \\
+		& \Image(gf)
+	\end{tikzcd} \quad \begin{tikzcd}
+		Z & \Image(g) \arrow[hookrightarrow, l] \\
+		& \Coim(gf) \arrow[u, "\beta"'] \arrow[lu].
+	\end{tikzcd}\]
+	dengan ketentuan bahwa $\Coim$ dan $\Image$ yang dibicarakan ada.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pf002
+\begin{bukti}
+	Untuk versi $\alpha$, keunikan berasal dari hukum kanselasi kanan bagi
+	epimorfisme $X \twoheadrightarrow \Coim(f)$, sedangkan keberadaannya
+	diperoleh dengan menerapkan versi diagram kanan dari
+	Lema~\ref{prop:Im-Coim-fac} pada diagram
+	% segment-id: o014.li2.chapter1.images-coimages-strict.g004
+	\[\begin{tikzcd}
+		X \arrow[r, "f"] \arrow[twoheadrightarrow, d] & Y \arrow[r, "g"] & Z \\
+		\Coim(f) \arrow[ru] \arrow[rru] & & \Image(gf) \arrow[hookrightarrow, u]
+	\end{tikzcd}\]
+	di mana $\Coim(f) \to Y$ adalah komposisi
+	$\Coim(f) \to \Image(f) \hookrightarrow Y$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.lm002
+\begin{lema}\label{prop:epi-image}
+	Tinjau morfisme $f: X \to Y$ dalam $\mathcal{C}$. Maka berlaku
+	% segment-id: o014.li2.chapter1.images-coimages-strict.q001
+	\[ f\;\text{epimorfisme} \iff \Image(f) \rightiso Y, \quad
+	   f\;\text{monomorfisme} \iff X \rightiso \Coim(f). \]
+\end{lema}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pf003
+\begin{bukti}
+	Berdasarkan dualitas, cukup dibuktikan ekuivalensi pertama. Andaikan $f$
+	merupakan epimorfisme. Karena morfisme kanonik
+	$i_1, i_2: Y \rightrightarrows Y \dsqcup{X} Y$ memenuhi
+	$i_1 f = i_2 f$, maka $i_1 = i_2$, sehingga
+	$\Image(f) := \Ker(i_1, i_2) = Y$.
+
+	Sebaliknya, andaikan morfisme kanonik $\Image(f) \to Y$ merupakan
+	isomorfisme. Karena komposisinya dengan $i_1$ dan $i_2$ sama, sekali lagi
+	diperoleh $i_1 = i_2$. Jika $Z \in \Obj(\mathcal{C})$ dan
+	$g_1, g_2: Y \rightrightarrows Z$ memenuhi $g_1 f = g_2 f$, maka sifat
+	universal menentukan $g: Y \dsqcup{X} Y \to Z$ sedemikian sehingga
+	$g_j = g i_j$ untuk $j=1,2$. Karena itu $g_1 = g_2$, yang membuktikan
+	bahwa $f$ merupakan epimorfisme.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pr002
+\begin{proposisi}\label{prop:strict-isomorphism}
+	Andaikan $f$ merupakan morfisme ketat. Maka $f$ merupakan isomorfisme jika
+	dan hanya jika $f$ sekaligus merupakan monomorfisme dan epimorfisme.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pf004
+\begin{bukti}
+	Andaikan $f$ merupakan morfisme ketat yang sekaligus monomorfisme dan
+	epimorfisme. Faktorkan $f$ sebagai
+	$X \twoheadrightarrow \Coim(f) \rightiso \Image(f) \hookrightarrow Y$,
+	lalu terapkan Proposisi~\ref{prop:epi-mono-isomorphism} dan
+	Lema~\ref{prop:epi-image}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p006
+Argumen di atas melibatkan diagram berbentuk
+$X \twoheadrightarrow C \hookrightarrow Y$ yang komposisinya sama dengan
+$f$; diagram ini disebut \emph{faktorisasi epi--mono} dari morfisme
+$f: X \to Y$. Dalam praktiknya, kita tidak hanya berhadapan dengan
+faktorisasi-faktorisasi ini, tetapi juga dengan morfisme di antaranya.
+\index{faktorisasi epi--mono (epi--mono factorization)}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.lm003
+\begin{lema}\label{prop:epi-mono-morphism}
+	Tinjau diagram berikut, yang bagian berpanah utuhnya komutatif,
+	% segment-id: o014.li2.chapter1.images-coimages-strict.g005
+	\[\begin{tikzcd}
+		X \arrow[r, "e"] \arrow[d, "a"'] & C \arrow[r, "m"] \arrow[dashed, d, "\varphi"] & Y \arrow[d, "b"] \\
+		X' \arrow[r, "{e'}"'] & C' \arrow[r, "{m'}"'] & Y'
+	\end{tikzcd}\]
+	dan andaikan bahwa $e$ dan $e'$ merupakan epimorfisme (atau $m$ dan $m'$
+	merupakan monomorfisme).
+	% segment-id: o014.li2.chapter1.images-coimages-strict.l001
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter1.images-coimages-strict.i001
+		\item Jika terdapat $\varphi$ seperti yang ditunjukkan oleh panah
+		putus-putus, sedemikian sehingga bagian kiri (atau bagian kanan) diagram
+		komutatif, maka bagian yang lain juga komutatif. Jika $\varphi$ ada, ia
+		bersifat unik.
+		% segment-id: o014.li2.chapter1.images-coimages-strict.i002
+		\item Jika $a$ merupakan epimorfisme (atau $b$ merupakan monomorfisme) dan
+		$\varphi$ ada, maka $\varphi$ merupakan epimorfisme (atau monomorfisme).
+	\end{enumerate}
+\end{lema}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pf005
+\begin{bukti}
+	Andaikan $\varphi: C \to C'$ membuat bagian kiri diagram komutatif, serta
+	$e$ dan $e'$ merupakan epimorfisme. Persamaan $\varphi e = e' a$ dan sifat
+	epimorfisme $e$ secara unik menentukan $\varphi$. Karena bingkai luar
+	diagram tersebut komutatif, berlaku
+	$m' \varphi e = m' e' a = bm e$. Sifat epimorfisme $e$ selanjutnya
+	memberikan $m'\varphi = bm$, yakni bagian kanan diagram juga komutatif.
+	Jika $a$ juga merupakan epimorfisme, maka persamaan
+	$\varphi e = e' a$ menunjukkan bahwa $\varphi e$ merupakan epimorfisme,
+	sehingga $\varphi$ pun merupakan epimorfisme.
+
+	Argumen di atas membuktikan masing-masing separuh dari (i) dan (ii). Untuk
+	kasus ketika $\varphi$ membuat bagian kanan diagram komutatif dan $m,m'$
+	merupakan monomorfisme, argumennya sepenuhnya serupa, atau secara ekuivalen,
+	merupakan argumen dual.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.d003
+\begin{definisi}
+	Tetapkan $f: X \to Y$. Bentuklah kategori $\cate{epi.mono}(f)$ yang
+	objek-objeknya adalah semua faktorisasi epi--mono dari $f$, dengan
+	morfisme-morfismenya didefinisikan sebagai diagram komutatif
+	% segment-id: o014.li2.chapter1.images-coimages-strict.g006
+	\[\begin{tikzcd}[row sep=tiny]
+		& C \arrow[hookrightarrow, rd, "m"] \arrow[dd, "\varphi"] & \\
+		X \arrow[twoheadrightarrow, ru, "e"] \arrow[twoheadrightarrow, rd, "{e'}"'] & & Y . \\
+		& C' \arrow[hookrightarrow, ru, "{m'}"'] &
+	\end{tikzcd}\]
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p007
+Dengan mengambil $a = \identity_X$ dan $b = \identity_Y$ dalam
+Lema~\ref{prop:epi-mono-morphism}, terlihat bahwa $\varphi$ pada diagram di
+atas, jika ada, bersifat unik dan sekaligus merupakan epimorfisme serta
+monomorfisme. Dengan kata lain, $\cate{epi.mono}(f)$ berasal dari sebuah
+himpunan praterurut. Dalam bagian ini, kita hanya meninjau satu kasus khusus
+dari faktorisasi epi--mono.
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pr003
+\begin{proposisi}\label{prop:epi-mono-uniqueness}
+	Andaikan semua morfisme dalam kategori $\mathcal{C}$ bersifat ketat. Maka
+	setiap morfisme $f: X \to Y$ mempunyai faktorisasi epi--mono
+	$X \twoheadrightarrow C \hookrightarrow Y$, dan faktorisasi ini unik hingga
+	isomorfisme dalam kategori $\cate{epi.mono}(f)$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.pf006
+\begin{bukti}
+	Ambil $C = \Image(f)$ untuk memperoleh keberadaan faktorisasi. Untuk
+	keunikannya, Proposisi~\ref{prop:strict-isomorphism} dan pembahasan
+	sebelumnya menunjukkan bahwa setiap morfisme dalam $\cate{epi.mono}(f)$
+	merupakan isomorfisme. Jadi, cukuplah memberikan sebuah morfisme
+	$\varphi: C \to \Image(f)$ dalam $\cate{epi.mono}(f)$. Dengan menerapkan
+	versi diagram kanan dari Lema~\ref{prop:Im-Coim-fac} kepada
+	$X \stackrel{q}{\twoheadrightarrow} C \stackrel{g}{\hookrightarrow} Y$,
+	terlihat bahwa terdapat $\varphi$ yang membuat bagian kanan diagram berikut
+	komutatif:
+	% segment-id: o014.li2.chapter1.images-coimages-strict.g007
+	\[\begin{tikzcd}[row sep=tiny, column sep=small]
+		& C \arrow[hookrightarrow, rd] \arrow[dd, "\varphi"] & \\
+		X \arrow[twoheadrightarrow, ru] \arrow[twoheadrightarrow, rd] & & Y \\
+		& \Image(f) \arrow[hookrightarrow, ru] &
+	\end{tikzcd}\]
+	Berdasarkan Lema~\ref{prop:epi-mono-morphism}, seluruh diagram komutatif.
+	Selesai.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.images-coimages-strict.p008
+Menurunkan komutativitas suatu subdiagram dari komutativitas bingkai luarnya
+merupakan teknik umum yang akan digunakan berulang kali selanjutnya.

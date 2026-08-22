@@ -1,0 +1,13 @@
+/build/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.run.xml
+*.thm
+*.toc

@@ -1,0 +1,400 @@
+% Terjemahan Bahasa Indonesia dari chapter2.tex baris 116--292.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter2.first-look-at-complexes
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.h001
+\section{Mengenal Kompleks}\label{sec:cohomology}
+\hypertarget{o014.aljabr2.chapter2.first-look-at-complexes}{ }
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p001
+Titik pangkal bagian ini adalah morfisme-morfisme dalam kategori abelian yang
+memenuhi $gf = 0$, yaitu
+$X \xrightarrow{f} Y \xrightarrow{g} Z$. Ambil komposisi
+$\Ker(g) \hookrightarrow Y \twoheadrightarrow \Coker(f)$ sehingga diperoleh
+$\Ker(g) \to \Coker(f)$; yang menjadi perhatian kita ialah faktorisasi
+epi--mononya. Ada dua sudut pandang yang saling dual.
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.le001
+\begin{lema}\label{prop:image-to-kernel}
+	Misalkan dalam kategori abelian $\mathcal{A}$ terdapat morfisme-morfisme
+	$f: X \to Y$ dan $g: Y \to Z$ yang memenuhi $gf = 0$.
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.l001
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.i001
+		\item Terdapat morfisme-morfisme $\varphi$ dan $\psi$ yang unik sehingga
+		diagram-diagram berikut komutatif:
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.q001
+		\begin{equation}\label{eqn:cplx-transition}
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.g001
+		\begin{tikzcd}
+			X \arrow[r, "f"] \arrow[twoheadrightarrow, d] & Y \\
+			\Coim(f) \arrow[r, "\varphi"'] & \Ker(g) \arrow[hookrightarrow, u]
+		\end{tikzcd} \qquad
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.g002
+		\begin{tikzcd}
+			Z & Y \arrow[twoheadrightarrow, d] \arrow[l, "g"'] \\
+			\Image(g) \arrow[hookrightarrow, u] & \Coker(f) \arrow[l, "\psi"]
+		\end{tikzcd}
+		\end{equation}
+		Selain itu, $\varphi$ merupakan monomorfisme dan $\psi$ merupakan
+		epimorfisme.
+
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.i002
+		\item Morfisme $\Ker(g) \to \Coker(f)$ mempunyai dua faktorisasi
+		epi--mono yang diperlihatkan dalam diagram berikut; keduanya dihubungkan
+		oleh isomorfisme unik $\Coker(\varphi) \simeq \Ker(\psi)$:
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.g003
+		\[\begin{tikzcd}[row sep=tiny]
+			& \Ker(\psi) \arrow[hookrightarrow, rd, "\text{kanonik}"] \arrow[dd, "\sim" sloped] & \\
+			\Ker(g) \arrow[twoheadrightarrow, ru] \arrow[twoheadrightarrow, rd, "\text{kanonik}"'] & & \Coker(f) . \\
+			& \Coker(\varphi) \arrow[hookrightarrow, ru] &
+		\end{tikzcd}\]
+	\end{enumerate}
+\end{lema}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.pf001
+\begin{bukti}
+	Pertama-tama tinjau (i). Kedua diagram saling dual
+	(Catatan~\ref{rem:im-coim-duality} dan
+	Proposisi~\ref{prop:abelian-cat-duality}): diagram kanan sama artinya dengan
+	meninjau dalam $\mathcal{A}^{\opp}$ rangkaian
+	$Z \xrightarrow{g^{\opp}} Y \xrightarrow{f^{\opp}} X$. Karena itu, untuk
+	\eqref{eqn:cplx-transition}, cukup ditinjau kasus $\varphi$.
+
+	Syarat $gf=0$ sama artinya dengan mengatakan bahwa $f$ berfaktor melalui
+	$\Ker(g) \hookrightarrow Y$. Dengan menerapkan
+	Lema~\ref{prop:Im-Coim-fac} tentang kocitra pada faktorisasi ini, diperoleh
+	$\varphi$. Selanjutnya, karena $X \to \Coim(f)$ merupakan epimorfisme,
+	faktorisasi $f$ sebagai
+	$X \twoheadrightarrow \Coim(f) \xrightarrow{\overline{f}} Y$ bersifat unik.
+	Di sini $\overline{f}$ dapat diambil sebagai komposisi
+	$\Coim(f) \xrightarrow{\varphi} \Ker(g) \hookrightarrow Y$, atau sebagai
+	komposisi $\Coim(f) \rightiso \Image(f) \hookrightarrow Y$. Komposisi yang
+	terakhir merupakan monomorfisme, sehingga $\varphi$ pun merupakan
+	monomorfisme.
+
+	Untuk memperoleh (ii), kita nyatakan bahwa terdapat monomorfisme unik
+	$\Coker(\varphi) \hookrightarrow \Coker(f)$
+	(atau epimorfisme $\Ker(g) \twoheadrightarrow \Ker(\psi)$) yang membuat
+	diagram berikut komutatif:
+	\[
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.g004
+	\begin{tikzcd}[column sep=small]
+		X \arrow[r, "f"] \arrow[twoheadrightarrow, d] & Y \arrow[twoheadrightarrow, r] & \Coker(f) \\
+		\Coim(f) \arrow[hookrightarrow, r, "\varphi"'] & \Ker(g) \arrow[twoheadrightarrow, r, "\text{kanonik}"' inner sep=0.6em] \arrow[hookrightarrow, u] & \Coker(\varphi) \arrow[hookrightarrow, u]
+	\end{tikzcd} \quad
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.g005
+	\begin{tikzcd}[column sep=small]
+		Z & Y \arrow[twoheadrightarrow, d] \arrow[l, "g"'] & \Ker(g) \arrow[twoheadrightarrow, d] \arrow[hookrightarrow, l] \\
+		\Image(g) \arrow[hookrightarrow, u] & \Coker(f) \arrow[twoheadrightarrow, l, "\psi"] & \Ker(\psi) \arrow[hookrightarrow, l, "\text{kanonik}" inner sep=0.6em]
+	\end{tikzcd}
+	\]
+	Jika pernyataan ini diterima, dua faktorisasi epi--mono pada diagram dalam
+	(ii), yaitu bingkai luarnya, dapat langsung dibaca. Isomorfisme pada jalur
+	tengah kemudian diberikan secara unik oleh
+	Proposisi~\ref{prop:epi-mono-uniqueness}.
+
+	Persoalannya tinggal membangun diagram di atas. Karena kedua diagram saling
+	dual, cukup dibahas diagram kiri.
+	Lema~\ref{prop:mono-epi-ker-coker}~(iii) menunjukkan bahwa
+	$\Coker(\varphi)$ juga dapat diidentifikasi dengan kokernel komposisi
+	$X \to \Ker(g)$. Karena itu, morfisme yang dicari berasal dari
+	funktorialitas kokernel dan dicirikan oleh
+	\eqref{eqn:Ker-Coker-functoriality}. Mengapa morfisme tersebut merupakan
+	monomorfisme? Proposisi~\ref{prop:Ker-Coker-composite} menyatakan kokernel
+	morfisme komposit sebagai dorong keluar dari kokernel semula; secara
+	eksplisit, diagramnya ialah
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.g006
+	\[\begin{tikzcd}
+		\Ker(g) \arrow[hookrightarrow, r] \arrow[twoheadrightarrow, d] & Y \arrow[twoheadrightarrow, d] \\
+		\Coker{[X \to \Ker(g)]} \arrow[r] & \Coker(f) \arrow[phantom, lu, "\boxplus" description]
+	\end{tikzcd} \quad \text{(diagram dorong keluar)}\]
+	dengan semua morfisme bersifat kanonik. Proposisi
+	\ref{prop:Abel-cat-pull-push} kemudian menunjukkan bahwa morfisme pada baris
+	kedua merupakan monomorfisme.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p002
+Dalam situasi Lema~\ref{prop:image-to-kernel}, tuliskan
+\index[sym1]{HXYZ@$\Hm\left[X \to Y \to Z \right]$}
+% segment-id: o014.li2.chapter2.first-look-at-complexes.q002
+\begin{equation}\label{eqn:homology-3}\begin{aligned}
+	\Hm\left[ X \xrightarrow{f} Y \xrightarrow{g} Z \right] & := \Coker\left[ \Image(f) \xrightarrow{\varphi} \Ker(g) \right] \\
+	& \simeq \Ker\left[ \Coker(f) \xrightarrow{\psi} \Image(g) \right] ;
+\end{aligned}\end{equation}
+objek ini juga dapat dicirikan sebagai suku tengah dalam faktorisasi epi--mono
+dari $\Ker(g) \to \Coker(f)$. Seperti yang diharapkan,
+\eqref{eqn:homology-3} bersifat funktorial.
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.pr001
+\begin{proposisi}\label{prop:homology-functoriality}
+	Diberikan diagram komutatif dalam kategori abelian
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.g007
+	\[\begin{tikzcd}
+		X \arrow[r, "f"] \arrow[d, "a"'] & Y \arrow[r, "g"] \arrow[d, "b"] & Z \arrow[d, "c"] \\
+		X' \arrow[r, "{f'}"'] & Y' \arrow[r, "{g'}"'] & Z'
+	\end{tikzcd} \qquad g'f' = 0, \quad gf = 0, \]
+	terdapat morfisme unik
+	$\Phi: \Hm[X \to Y \to Z] \to \Hm[X' \to Y' \to Z']$ yang membuat diagram
+	berikut komutatif:
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.g008
+	\[\begin{tikzcd}
+		\Ker(g) \arrow[twoheadrightarrow, r]  \arrow[d, "\text{diinduksi oleh $(b,c)$}"'] & {\Hm[X \to Y \to Z]} \arrow[hookrightarrow, r] \arrow[d, "\Phi"] & \Coker(f) \arrow[d, "\text{diinduksi oleh $(a,b)$}"] \\
+		\Ker(g') \arrow[twoheadrightarrow, r] & {\Hm[X' \to Y' \to Z']} \arrow[hookrightarrow, r] & \Coker(f')
+	\end{tikzcd}\]
+	Kedua anak panah vertikal di sisi luar berasal dari funktorialitas kernel
+	dan kokernel, sedangkan anak panah horizontal adalah sebagaimana dalam
+	Lema~\ref{prop:image-to-kernel}.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.pf002
+\begin{bukti}
+	Menurut pola yang sudah dikenal dari
+	Lema~\ref{prop:epi-mono-morphism}, jika $\Phi$ ada maka morfisme tersebut
+	unik, dan cukup diperiksa bahwa $\Phi$ membuat persegi kanan komutatif.
+	Konstruksinya sebagai berikut. Karena
+	$\Image(g) = \Ker[Z \to \Coker(g)]$ dan
+	$\Image(g') = \Ker[Z' \to \Coker(g')]$, funktorialitas kernel memberikan
+	morfisme unik $\Image(g) \to \Image(g')$ yang membuat separuh kanan diagram
+	berikut komutatif:
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.g009
+	\[\begin{tikzcd}
+		\Coker(f) \arrow[d] \arrow[twoheadrightarrow, r, "\psi"] & \Image(g) \arrow[d] \arrow[hookrightarrow, r] & Z \arrow[d, "c"] \\
+		\Coker(f') \arrow[twoheadrightarrow, r, "{\psi'}"'] & \Image(g') \arrow[hookrightarrow, r] & Z' ;
+	\end{tikzcd}\]
+	Pola Lema~\ref{prop:epi-mono-morphism} menunjukkan bahwa separuh kiri juga
+	komutatif. Morfisme $\Ker(\psi) \to \Ker(\psi')$ yang diinduksi olehnya
+	adalah morfisme yang dicari.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.pr002
+\begin{proposisi}\label{prop:homology-biproduct}
+	Diberikan morfisme-morfisme yang memenuhi $gf = 0$ dan $g' f' = 0$,
+	terdapat isomorfisme kanonik
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.q003
+	\begin{multline*}
+		\Hm\left[ X \xrightarrow{f} Y \xrightarrow{g} Z \right] \oplus \Hm\left[ X' \xrightarrow{f'} Y' \xrightarrow{g'} Z' \right] \\
+		\simeq \Hm\left[ X \oplus X' \xrightarrow{f \oplus f'} Y \oplus Y' \xrightarrow{g \oplus g'} Z \oplus Z' \right].
+	\end{multline*}
+\end{proposisi}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.pf003
+\begin{bukti}
+	Ambil morfisme-morfisme $\iota$, $p$, dan seterusnya yang dimiliki
+	biproduk, seperti dalam \eqref{eqn:biproduct-identities}. Berdasarkan
+	funktorialitas pada Proposisi~\ref{prop:homology-functoriality},
+	morfisme-morfisme itu juga menginduksi
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.g010
+	\[\begin{tikzcd}[column sep=small]
+		\Hm{\left[ X \to Y \to Z \right]} \arrow[shift left, r, "\iota"] & \Hm{\left[ X \oplus X' \to Y \oplus Y' \to Z \oplus Z' \right]} \arrow[shift left, l, "p"] \arrow[shift right, r, "p"'] & \Hm\left[ X' \to Y' \to Z' \right] \arrow[shift right, l, "\iota"'].
+	\end{tikzcd}\]
+
+	Berdasarkan karakterisasi morfisme terinduksi $\Phi$ dalam
+	Proposisi~\ref{prop:homology-functoriality}, kita juga mengetahui bahwa
+	$(a,b,c) \mapsto \Phi$ serasi dengan komposisi, mempertahankan penjumlahan,
+	memetakan $0$ ke $0$, serta memetakan $\identity$ ke $\identity$. Jadi,
+	morfisme yang diinduksi pada tingkat $\Hm[\cdots]$ juga memenuhi
+	identitas-identitas biproduk \eqref{eqn:biproduct-identities}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p003
+Perhatikan bahwa pernyataan di atas belum tentu berlaku bagi koproduk tak
+hingga atau produk tak hingga dalam kategori abelian umum.
+% segment-id: o014.li2.chapter2.first-look-at-complexes.d001
+\begin{definisi}[Kompleks]\label{def:complex}
+	\index{kompleks (complex)}
+	Misalkan $\mathcal{A}$ merupakan kategori aditif. Perhatikan suatu barisan
+	morfisme dalam $\mathcal{A}$
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.q004
+	\[ \cdots \to X^n \xrightarrow{d^n} X^{n+1} \xrightarrow{d^{n+1}} X^{n+2} \to \cdots. \]
+	Barisan tersebut boleh hanya mempunyai berhingga banyak suku, menjulur tak
+	hingga ke satu atau kedua arah, ataupun membentuk siklus. Jika
+	$d^{n+1} d^n = 0$ untuk setiap $n$, data $(X^n, d^n)_n$ disebut
+	\emph{kompleks}; notasi yang lazim ialah $(X^\bullet, d^\bullet)$,
+	$X^\bullet$, atau $X$. Suku $X^n$ secara konvensional disebut suku dari
+	kompleks $X$ yang berderajat $n$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p004
+Bab ini terutama berfokus pada kasus kategori abelian, tempat kohomologi dan
+keeksakan kompleks dapat dikaji.
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.d002
+\begin{definisi}[Kohomologi dan barisan eksak]\label{def:cohomology}
+	\index{kohomologi (cohomology)}
+	\index{barisan eksak (exact sequence)}
+	\index{kompleks!asiklik (acyclic)}
+	\index{kompleks!eksak (exact)}
+	\index[sym1]{Hn@$\Hm^n$}
+	Misalkan $\mathcal{A}$ merupakan kategori abelian.
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.l002
+	\begin{itemize}
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.i003
+		\item Untuk kompleks $X$, sesuai dengan \eqref{eqn:homology-3},
+		\emph{kohomologi} di suku $X^n$ yang bukan merupakan suku ujung
+		didefinisikan sebagai
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.q005
+		\[ \Hm^n(X) = \Hm^n(X^\bullet, d^\bullet) := \Hm\left[ X^{n-1} \xrightarrow{d^{n-1}} X^n \xrightarrow{d^n} X^{n+1}  \right]. \]
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.i004
+		\item Jika $\Hm^n(X) = 0$, kompleks $X$ disebut eksak di $X^n$;
+		hal ini ekuivalen dengan $\Image(d^{n-1}) = \Ker(d^n)$. Kompleks yang
+		eksak di setiap suku disebut \emph{barisan eksak}; kompleks eksak juga
+		disebut \emph{asiklik}.
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p005
+Sifat-sifat kohomologi merupakan salah satu tema utama buku ini dan akan
+dikaji lebih lanjut di \S~\sourcecrossref{sec:Abel-cplx}{3.6}
+(``Kompleks dalam Kategori Abelian'').
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.r001
+\begin{catatan}[Homologi kompleks rantai]\label{rem:cochain-vs-chain}
+	\index{kompleks!kokrantai (cochain)}
+	\index{kompleks!rantai (chain)}
+	\index{homologi (homology)}
+	\index[sym1]{Hnn@$\Hm_n$}
+	Dalam Definisi~\ref{def:complex}, pilih penomoran menurun dan gunakan
+	subskrip, yakni
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.q006
+	\[ \cdots \to X_n \xrightarrow{d_n} X_{n-1} \to \cdots, \quad d_{n-1} d_n = 0, \]
+	semua definisi sebelumnya berlaku tanpa perubahan. Karena asal-usulnya dalam
+	topologi, versi dengan penomoran menaik $(X^\bullet, d^\bullet)$ lazim
+	disebut kompleks kokrantai, sedangkan versi dengan penomoran menurun
+	$(X_\bullet, d_\bullet)$ disebut kompleks rantai. Untuk kompleks rantai $X$
+	dalam kategori abelian, objek
+	\emph{homologi} di suku $X_n$ didefinisikan sebagai objek $\mathcal{A}$
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.q007
+	\[ \Hm_n(X) = \Hm_n(X_\bullet, d_\bullet) := \Hm\left[ X_{n+1} \xrightarrow{d_{n+1}} X_n \xrightarrow{d_n} X_{n-1} \right]. \]
+
+	Dalam aljabar, kompleks (yakni kompleks kokrantai) dan kompleks rantai hanya
+	berbeda dalam notasi, dan peralihan di antara keduanya bersifat langsung.
+	Untuk kategori aditif $\mathcal{A}$, salah satu cara yang seluruhnya
+	dilakukan di dalam kategori itu sendiri ialah mencerminkan indeks dengan
+	menetapkan
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.q008
+	\[ X^n := X_{-n}, \quad d^n := d_{-n}. \]
+	Cara lain ialah membalik anak panah, yang melibatkan kategori lawan. Jika
+	kompleks dalam $\mathcal{A}$
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.q009
+	\[ \cdots \to X^n \xrightarrow{d^n} X^{n+1} \to \cdots \]
+	dipandang dalam $\mathcal{A}^{\opp}$, kompleks itu menjadi kompleks rantai
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.q010
+	\begin{gather*}
+		\cdots \leftarrow X_n \xleftarrow{d_{n+1}} X_{n+1} \leftarrow \cdots, \\
+		X_n := X^n, \quad d_{n+1} := d^{n, \opp}.
+	\end{gather*}
+
+	Jika $\mathcal{A}$ merupakan kategori abelian dan dalam
+	$\mathcal{A}^{\opp}$ kompleks rantai $(X_\bullet, d_\bullet)$ didefinisikan
+	dengan membalik anak panah, terdapat isomorfisme kanonik
+	$\Hm^n(X^\bullet) \simeq \Hm_n(X_\bullet)$. Khususnya, $X^\bullet$ eksak
+	jika dan hanya jika $X_\bullet$ eksak. Untuk melihat hal ini, cukup perhatikan
+	bahwa $\Hm[X \xrightarrow{f} Y \xrightarrow{g} Z]$ dapat dicirikan sebagai
+	suku tengah dalam faktorisasi epi--mono dari
+	$\Ker(g) \to \Coker(f)$. Jika dipandang dalam $\mathcal{A}^{\opp}$, objek
+	yang sama juga merupakan suku tengah dalam faktorisasi epi--mono dari
+	$\Ker(f^{\opp}) \to \Coker(g^{\opp})$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p006
+Keeksakan suatu kompleks dapat diperiksa sepotong demi sepotong. Selanjutnya,
+bentuk-bentuk khas berikut akan digunakan tanpa penjelasan tambahan.
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.l003
+\begin{description}
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.i005
+	\item[Monomorfisme] Kompleks $0 \to X' \xrightarrow{f} X$ eksak jika dan
+	hanya jika $\Ker(f) = 0$, yakni jika dan hanya jika $f$ merupakan
+	monomorfisme (Lema~\ref{prop:mono-epi-ker-coker}). Kondisi ini juga ekuivalen
+	dengan $X' \rightiso \Coim(f)$ (Lema~\ref{prop:epi-image}).
+
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.i006
+	\item[Epimorfisme] Secara dual, kompleks
+	$X \xrightarrow{g} X'' \to 0$ eksak jika dan hanya jika $g$ merupakan
+	epimorfisme, dan ini juga ekuivalen dengan $\Image(g) \rightiso X''$.
+
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.i007
+	\item[Kernel] Perhatikan kompleks
+	$0 \to X' \xrightarrow{f} X \xrightarrow{g} X''$. Sesuai dengan
+	\eqref{eqn:cplx-transition}, faktorkan $f$ melalui
+	$X' \twoheadrightarrow \Image(f) \hookrightarrow \Ker(g)$. Kita nyatakan
+	bahwa $0 \to X' \to X \to X''$ eksak jika dan hanya jika
+	$X' \to \Ker(g)$ merupakan isomorfisme. Dengan kata lain, hingga
+	isomorfisme, barisan eksak seperti ini selalu berbentuk
+	$0 \to \Ker(g) \to X \xrightarrow{g} X''$ dan diberikan oleh kernel suatu
+	morfisme.
+
+	Argumennya mudah. Perhatikan \eqref{eqn:cplx-transition}. Kompleks tersebut
+	eksak di $X$ jika dan hanya jika
+	$\Image(f) \rightiso \Ker(g)$, sedangkan keeksakan di $X'$ ekuivalen dengan
+	$X' \rightiso \Image(f)$. Terapkan kemudian
+	Proposisi~\ref{prop:epi-mono-isomorphism} pada
+	$X' \twoheadrightarrow \Image(f) \hookrightarrow \Ker(g)$.
+
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.i008
+	\item[Kokernel] Secara dual, kompleks
+	$X' \xrightarrow{f} X \xrightarrow{g} X'' \to 0$ menginduksi morfisme
+	$\Coker(f) \to X''$ melalui \eqref{eqn:cplx-transition}. Kompleks ini eksak
+	jika dan hanya jika $\Coker(f) \rightiso X''$. Jadi, hingga isomorfisme,
+	barisan eksak seperti ini berasal dari kokernel.
+
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.i009
+	\item[Barisan eksak pendek] Barisan eksak berbentuk
+	$0 \to X' \to X \to X'' \to 0$ disebut \emph{barisan eksak pendek}.
+	Kedua butir sebelumnya bersama-sama memberikan dua karakterisasi keeksakan
+	yang ekuivalen dan saling dual:
+	% segment-id: o014.li2.chapter2.first-look-at-complexes.l004
+	\begin{compactitem}
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.i010
+		\item $X' \to X$ merupakan monomorfisme dan
+		$X'' = \Coker[X' \hookrightarrow X]$;
+		% segment-id: o014.li2.chapter2.first-look-at-complexes.i011
+		\item $X \to X''$ merupakan epimorfisme dan
+		$X' = \Ker[X \twoheadrightarrow X'']$.
+	\end{compactitem}
+	\index{barisan eksak pendek (short exact sequence)}
+\end{description}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p007
+Sebagai penerapan, setiap morfisme $f: X \to Y$ memberikan barisan-barisan
+eksak pendek
+% segment-id: o014.li2.chapter2.first-look-at-complexes.q011
+\[ 0 \to \Ker(f) \to X \to \Image(f) \to 0, \quad 0 \to \Image(f) \to Y \to \Coker(f) \to 0, \]
+yang dapat disambung menjadi barisan eksak
+$0 \to \Ker(f) \to X \xrightarrow{f} Y \to \Coker(f) \to 0$.
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p008
+Selain itu, andaikan $f$ dapat dimasukkan ke dalam suatu barisan eksak
+berbentuk
+% segment-id: o014.li2.chapter2.first-look-at-complexes.q012
+\[ L' \xrightarrow{\lambda} L \to X \xrightarrow{f} Y \to R \xrightarrow{\rho} R'' \]
+dengan $\lambda, \rho$ keduanya isomorfisme. Keeksakan kemudian memaksa
+$L \to X$ dan $Y \to R$ keduanya bernilai $0$, sehingga
+$\Ker(f) = 0$ dan $\Image(f) = Y$; dengan kata lain, $f$ merupakan
+isomorfisme. Ini merupakan teknik yang lazim untuk menguji apakah suatu
+morfisme merupakan isomorfisme.
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.p009
+Biproduk yang ditinjau dalam \S~\ref{sec:Ker-Coker} menghasilkan suatu kelas
+barisan eksak pendek yang sangat sederhana;
+Proposisi~\sourcecrossref{prop:split-ses}{pada \S~2.5 (bagian ``Dekomposisi Jumlah Langsung'')}
+akan memberikan karakterisasinya.
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.pr003
+\begin{proposisi}\label{prop:biproduct-ses}
+	Misalkan $X_1, X_2$ merupakan objek kategori abelian $\mathcal{A}$.
+	Maka
+	$0 \to X_1 \xrightarrow{\iota_1} X_1 \oplus X_2 \xrightarrow{p_2} X_2 \to 0$
+	merupakan barisan eksak pendek.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter2.first-look-at-complexes.pf004
+\begin{bukti}
+	Ambil barisan-barisan eksak pendek
+	$0 \to X_1 \xrightarrow{\identity} X_1 \to 0 \to 0$ dan
+	$0 \to 0 \to X_2 \xrightarrow{\identity} X_2 \to 0$.
+	Proposisi~\ref{prop:homology-biproduct} menunjukkan bahwa jumlah langsung
+	keduanya tetap eksak.
+\end{bukti}

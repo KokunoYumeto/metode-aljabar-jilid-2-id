@@ -1,0 +1,407 @@
+% Terjemahan Bahasa Indonesia dari chapter1.tex baris 763--925.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.filtered-inductive-limits
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.h001
+\section{Limit Induktif Terfilter}\label{sec:filtered-indlim}
+\hypertarget{o014.aljabr2.chapter1.filtered-inductive-limits}{ }
+\enlargethispage{2\baselineskip}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p001
+Salah satu fakta umum dalam analisis matematika ialah bahwa, jika suatu
+barisan konvergen, limitnya dapat dihitung dari subbarisan mana pun. Dalam
+teori kategori, gagasan ini diwujudkan oleh konsep kofinalitas. Kita mulai
+dari keterhubungan.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.d001
+\begin{definisi}\index{kategori!terhubung (connected)}
+	Misalkan $I$ suatu kategori. Jika $\Obj(I) \neq \emptyset$ dan, untuk setiap
+	$i, i' \in \Obj(I)$, selalu terdapat $n \geq 1$ beserta morfisme-morfisme
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q001
+	\[ i = i_0 \leftarrow i_1 \to i_2 \leftarrow i_3 \to i_4 \leftarrow \cdots \to i_{2n} = i' , \]
+	maka $I$ disebut terhubung.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p002
+Kita perkenalkan sebuah konsep bantu yang akan digunakan berulang kali dalam
+beberapa bagian berikutnya.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.d002
+\begin{definisi}[Kategori koma, lihat {\cite[Definisi 2.4.7]{Li1}}]\label{def:comma-category}
+	\index{kategori koma (comma category)}
+	\index[sym1]{iHHi@$(i/H)$, $(H/i)$}
+	\index[sym1]{Pii@$\Pi_{i/}$, $\Pi_{/i}$}
+	Diberikan kategori $I$, $J$, dan funktor $H: J \to I$. Misalkan
+	$i \in \Obj(I)$.
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.l001
+	\begin{itemize}
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.i001
+		\item Menurut definisi, objek kategori koma $(i/H)$ (atau $(H/i)$)
+		adalah data $(j, i \to Hj)$ (atau $(j, Hj \to i)$), dengan
+		$j \in \Obj(J)$ dan $i \to Hj$ (atau $Hj \to i$) merupakan morfisme
+		di $I$. Morfisme dari data $(j, i \to Hj)$ ke
+		$(j', i \to Hj')$ (atau dari $(j, Hj \to i)$ ke
+		$(j', Hj' \to i)$) adalah morfisme $f: j \to j'$ di $J$ yang membuat
+		diagram berikut komutatif:
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.g001
+		\[\begin{tikzcd}[row sep=small, column sep=small]
+			& i \arrow[ld] \arrow[rd] & \\
+			Hj \arrow[rr, "{Hf}"'] & & Hj'
+		\end{tikzcd} \quad \text{atau} \quad \begin{tikzcd}[row sep=small, column sep=small]
+			& i & \\
+			Hj \arrow[ru] \arrow[rr, "{Hf}"'] & & Hj' \arrow[lu] .
+		\end{tikzcd}\]
+		Komposisi dan morfisme identitas didefinisikan sebagaimana biasa.
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.i002
+		\item Kedua kategori di atas masing-masing dilengkapi dengan funktor
+		proyeksi $\Pi_{i/}: (i/H) \to J$ dan $\Pi_{/i}: (H/i) \to J$, yang
+		memetakan objek $(j, i \to Hj)$ (atau $(j, Hj \to i)$) ke $j$ dan
+		memetakan morfisme $f$ ke $f$.
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.i003
+		\item Setiap morfisme $i \to i'$ di $I$ secara alami menginduksi funktor
+		$(i'/H) \to (i/H)$ dan $(H/i) \to (H/i')$, sehingga diagram berikut
+		komutatif:
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.g002
+		\[\begin{tikzcd}[column sep=small, row sep=small]
+			(i'/H) \arrow[rr] \arrow[rd, "{\Pi_{i'/}}"'] & & (i/H) \arrow[ld, "{\Pi_{i/}}"] \\
+			& J &
+		\end{tikzcd} \quad \begin{tikzcd}[column sep=small, row sep=small]
+			(H/i) \arrow[rr] \arrow[rd, "{\Pi_{/i}}"'] & & (H/i') \arrow[ld, "{\Pi_{/i'}}"] . \\
+			& J &
+		\end{tikzcd}\]
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.e001
+\begin{contoh}\label{eg:comma-vs-cone}
+	Tinjau funktor $\alpha: I \to \mathcal{C}$ sebagai objek di
+	$\mathcal{C}^I$, dan tinjau pula funktor diagonal
+	$\Delta: \mathcal{C} \to \mathcal{C}^I$ yang memetakan setiap objek ke
+	funktor konstan yang bersesuaian. Menurut Definisi
+	\ref{def:comma-category}, $(\alpha/\Delta)$ tidak lain adalah kategori
+	``kokonus'' yang diperkenalkan dalam Konvensi \ref{con:limit-cone}, sedangkan
+	funktor $\Pi_{\alpha/}$ memetakan setiap kokonus ke puncaknya.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.d003
+\begin{definisi}\label{def:cofinal} \index{kofinal (cofinal)}
+	Untuk funktor $H: J \to I$, jika $(i/H)$ terhubung untuk setiap
+	$i \in \Obj(I)$, maka $H$ disebut \emph{kofinal}; jika $H$ merupakan
+	funktor inklusi dari suatu subkategori, subkategori $J$ disebut kofinal.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p003
+Mudah diperiksa bahwa jika $I \to J$ dan $J \to K$ keduanya kofinal, maka
+funktor komposit $I \to K$ juga kofinal. Pemeriksaannya diserahkan kepada
+pembaca sebagai latihan.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p004
+Hasil berikut menunjukkan bahwa limit dapat dihitung setelah diagram dibatasi
+di sepanjang funktor kofinal. Ingat bahwa $H$ menginduksi
+$H^{\opp}: J^{\opp} \to I^{\opp}$.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pr001
+\begin{proposisi}\label{prop:cofinal-lim}
+	Jika $H: J \to I$ kofinal, maka:
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.l002
+	\begin{itemize}
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.i004
+		\item untuk funktor $\alpha: I \to \mathcal{C}$ yang diberikan,
+		$\varinjlim \alpha$ ada jika dan hanya jika $\varinjlim \alpha H$ ada;
+		dalam hal ini terdapat isomorfisme kanonik
+		$\varinjlim \alpha H \simeq \varinjlim \alpha$;
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.i005
+		\item secara dual, untuk funktor
+		$\beta: I^{\opp} \to \mathcal{C}$ yang diberikan,
+		$\varprojlim \beta$ ada jika dan hanya jika
+		$\varprojlim \beta H^{\opp}$ ada; dalam hal ini terdapat isomorfisme
+		kanonik $\varprojlim \beta H^{\opp} \simeq \varprojlim \beta$.
+	\end{itemize}
+\end{proposisi}
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pf001
+\begin{bukti}
+	Kita hanya membahas $\varinjlim$. Dalam bahasa
+	\S\ref{sec:limit-functor}, cukup dibuktikan bahwa funktor
+	$(\alpha/\Delta) \to (\alpha H / \Delta)$ merupakan ekuivalensi; funktor
+	ini memetakan kokonus beralas $\alpha$, yakni $(L, (f_i)_i)$, ke kokonus
+	beralas $\alpha H$, yakni $(L, (f_{Hj})_j)$.
+
+	Pertama-tama kita buktikan bahwa funktor ini pada hakikatnya surjektif.
+	Tinjau $L \in \Obj(\mathcal{C})$ dan keluarga morfisme
+	$(g_j: \alpha H(j) \to L)_{j \in \Obj(J)}$ yang memenuhi syarat
+	kompatibilitas $g_{j'} \circ \alpha H(j \to j') = g_j$. Untuk setiap
+	$i \in \Obj(I)$, karena $(i/H)$ tidak kosong, kita dapat memilih $j$ dan
+	$i \to H(j)$. Definisikan
+	$f_i := g_j \circ \alpha(i \to H(j))$. Definisi ini tidak bergantung pada
+	pilihan objek koma $(j,i \to H(j))$: memang, jika terdapat
+	morfisme-morfisme di $(i/H)$ seperti dalam diagram
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.g003
+	\[\begin{tikzcd}[column sep=large]
+		& i \arrow[ld] \arrow[d] \arrow[rd] & \\
+		H(j) & H(j'') \arrow[l, "{H(j'' \to j)}"] \arrow[r, "{H(j'' \to j')}"'] & H(j')
+	\end{tikzcd}\]
+	maka dari konstruksinya mudah dilihat bahwa
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q002
+	\[ g_j \circ \alpha(i\to H(j))
+	= g_{j''} \circ \alpha(i\to H(j''))
+	= g_{j'} \circ \alpha(i\to H(j')). \]
+	Karena $(i/H)$ terhubung, ini cukup untuk menunjukkan bahwa $f_i$
+	terdefinisi dengan baik. Pembahasan di atas juga menyiratkan bahwa
+	$(f_i)_i$ memenuhi syarat kompatibilitas
+	$f_i=f_{i'}\circ\alpha(i\to i')$: untuk setiap $i \to i'$ dan
+	$i' \to H(j')$, kita dapat menghitung $f_i$ menggunakan objek koma
+	$(j',i \to i' \to H(j'))$. Jadi,
+	$(L, (f_i)_i) \in \Obj((\alpha/\Delta))$ dipetakan ke
+	$(L, (g_j)_j)$.
+
+	Selanjutnya kita tunjukkan bahwa funktor ini penuh dan setia. Memberikan
+	suatu morfisme di $(\alpha/\Delta)$, yaitu
+	$(L, (f_i)_i) \to (L', (f'_i)_i)$, setara dengan memberikan morfisme di
+	$\mathcal{C}$, yaitu $\theta: L \to L'$, sedemikian sehingga
+	$\theta f_i = f'_i$ selalu berlaku. Cukup memeriksa syarat ini pada
+	objek-objek $H(j)$ dalam citra kofinal $H$: untuk setiap $i$, pilih
+	$j \in \Obj(J)$ dan $i \to H(j)$; syarat tersebut lalu tereduksi menjadi
+	$\theta f_{H(j)} = f'_{H(j)}$, yakni bahwa $\theta$ merupakan morfisme di
+	$(\alpha H / \Delta)$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.d004
+\begin{definisi}
+	\index{kategori!terfilter (filtered)}
+	\index{limit!terfilter (filtered)}
+	Menurut \cite[Definisi 2.7.6]{Li1}, kategori $I$ dengan
+	$\Obj(I)\neq\emptyset$ yang memenuhi syarat-syarat berikut disebut
+	\emph{terfilter}\footnote{Catatan penerjemah: sumber tidak menyatakan syarat
+	$\Obj(I)\neq\emptyset$, sehingga kategori kosong akan memenuhi kedua butir
+	secara vakum; sumber juga menyebut $k\in\Obj(I)$ sebagai morfisme pada butir
+	kedua. Target menambahkan syarat ketak-kosongan dan memperbaiki jenis $k$
+	menjadi objek (O014-C010 dan O014-C011).}.
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.l003
+	\begin{compactitem}
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.i006
+		\item Untuk setiap $i, j \in \Obj(I)$, terdapat objek $k \in \Obj(I)$
+		beserta morfisme $i \rightarrow k$ dan $j \rightarrow k$.
+		% segment-id: o014.li2.chapter1.filtered-inductive-limits.i007
+		\item Untuk setiap pasangan morfisme $f, g: i \to j$ di $I$, terdapat
+		objek $k \in \Obj(I)$ dan morfisme $h: j \to k$ sedemikian sehingga
+		$hf = hg$.
+	\end{compactitem}
+
+	Jika $I$ merupakan kategori terfilter dan $\alpha: I \to \mathcal{C}$
+	merupakan funktor, maka $\varinjlim \alpha$ yang bersesuaian disebut
+	\emph{limit induktif terfilter}.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.e002
+\begin{contoh}\label{eg:filtered-poset}
+	\index{himpunan terurut parsial!terfilter (filtered)}
+	Salah satu kelas kategori terfilter yang umum berasal dari himpunan
+	terurut parsial terfilter\footnote{Ketika digunakan sebagai indeks limit,
+	kategori terfilter sering dapat digantikan dengan himpunan terurut parsial
+	terfilter; lihat Catatan \sourcecrossref{rem:filtered-poset}{A.2.3} dan
+	penjelasan untuk latihan-latihan dalam
+	Lampiran~\sourcecrossref{sec:app-Abel}{A}.}. Setiap himpunan terurut parsial
+	$(P, \leq)$ menentukan kategori $\mathcal{P}$ yang bersesuaian sedemikian
+	sehingga $x \leq y  \iff \Hom_{\mathcal{P}}(x, y) \neq \emptyset$. Jika
+	$\mathcal{P}$ merupakan kategori terfilter, maka $(P, \leq)$ disebut
+	\emph{himpunan terurut parsial terfilter}. Suatu himpunan terurut parsial
+	bersifat terfilter jika dan hanya jika himpunan itu tidak kosong dan setiap
+	dua unsurnya $i, j$ mempunyai batas atas bersama $k$. Setiap himpunan
+	terurut total yang tidak kosong jelas terfilter.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pr002
+\begin{proposisi}\label{prop:cofinal-filtered}
+	Misalkan $I$ kategori terfilter. Maka subkategori penuh $J\subset I$
+	bersifat kofinal jika dan hanya jika untuk setiap $i \in \Obj(I)$ terdapat
+	$j \in \Obj(J)$ dan morfisme $i \to j$; dalam hal ini $J$ juga terfilter.
+\end{proposisi}
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pf002
+\begin{bukti}
+	Arah ``hanya jika'' jelas. Untuk arah ``jika'', diberikan
+	$j \leftarrow i \to j'$, dengan $j, j' \in \Obj(J)$, sifat terfilter
+	menjamin adanya diagram komutatif
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.g004
+	\[\begin{tikzcd}[row sep=tiny, column sep=small]
+		& j \arrow[r] & k & j' \arrow[l] & \\
+		j \arrow[equal, ru] & & & & j' \arrow[equal, lu] \\
+		& & i \arrow[llu] \arrow[uu] \arrow[rru] & &
+	\end{tikzcd}\]
+	dengan $k \in \Obj(J)$. Ini menunjukkan bahwa $J$ kofinal.
+
+	Untuk sifat terfilter $J$, ambil sembarang $i, j \in \Obj(J)$. Karena $I$
+	terfilter, terdapat $k_0 \in \Obj(I)$ beserta morfisme $i\to k_0$ dan
+	$j\to k_0$; pilih pula $k \in \Obj(J)$ beserta
+	morfisme $k_0 \to k$. Dengan mengomposisikan morfisme-morfisme tersebut,
+	di $J$ terdapat morfisme $i \rightarrow k \leftarrow j$.
+	\footnote{Catatan penerjemah: sumber menulis
+	$i\rightarrow k_0\leftarrow j$ sebagai morfisme-morfisme di $J$, padahal
+	$k_0$ hanya diketahui berada di $I$. Target menggunakan komposit menuju
+	$k\in\Obj(J)$ (O014-C012).} Ini membuktikan syarat pertama
+	untuk kategori terfilter. Syarat kedua dapat ditangani dengan gagasan yang
+	sama.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.e003
+\begin{contoh}
+	Definisikan
+	$\mathrm{OFin}_I := \left\{ \text{subkategori penuh}\; J \subset I: \Obj(J) \;\text{berhingga} \right\}$.
+	Himpunan ini, terhadap $\subset$, merupakan himpunan terurut parsial
+	terfilter: untuk setiap $J, K \in \mathrm{OFin}_I$, subkategori yang
+	diperoleh dengan mengambil gabungan himpunan objeknya merupakan batas atas
+	bersama bagi $J$ dan $K$.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p005
+Apa kegunaan konstruksi ini? Tinjau sembarang funktor
+$\alpha: I \to \mathcal{C}$ (atau $\beta: I^{\opp} \to \mathcal{C}$).
+Pembatasannya pada subkategori penuh $J$ memberikan $\alpha|_J$ (atau
+$\beta|_{J^{\opp}}$). Jika $J \subset K$, terdapat morfisme alami
+$\varinjlim \alpha|_J \to \varinjlim \alpha|_K$ (atau
+$\varprojlim \beta|_{K^{\opp}} \to \varprojlim \beta|_{J^{\opp}}$), asalkan
+limit-limit tersebut ada. Hasil berikut menjelaskan suatu cara untuk
+menghampiri sembarang limit secara ``terfilter'' melalui kasus dengan
+objek berhingga.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pr003
+\begin{proposisi}\label{prop:limit-filtered-approx}
+	Dalam situasi di atas, terdapat isomorfisme kanonik
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q003
+	\[ \varinjlim_{\substack{J \in \mathrm{OFin}_I \\ \subset}} \varinjlim \alpha|_J \rightiso \varinjlim \alpha \]
+	(atau $\varprojlim \beta \rightiso
+	\varprojlim_{J \in \mathrm{OFin}_I^{\opp}}
+	\varprojlim \beta|_{J^{\opp}}$), dengan syarat limit rangkap pada ruas kiri
+	(atau ruas kanan) ada.\footnote{Catatan penerjemah: pada rumus dual, sumber
+	menulis limit induktif luar. Namun untuk $J\subset K$, morfisme transisinya
+	berarah dari suku $K$ ke suku $J$, sehingga suku-suku itu membentuk diagram
+	pada $\mathrm{OFin}_I^{\opp}$ dan konstruksi luarnya adalah limit projektif
+	(O014-C013).}
+\end{proposisi}
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pf003
+\begin{bukti}
+	Ambil kasus $\varinjlim$ sebagai contoh. Sifat universal memberikan bijeksi
+	kanonik
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q004
+	\[ \begin{aligned}
+	\Hom\left( \varinjlim_{J\in\mathrm{OFin}_I} \varinjlim \alpha|_J, S \right)
+	&\simeq \varprojlim_{J\in\mathrm{OFin}_I^{\opp}}
+	\Hom\left( \varinjlim \alpha|_J, S \right) \\
+	&\simeq \varprojlim_{J\in\mathrm{OFin}_I^{\opp}}
+	\varprojlim \Hom(\alpha|_J, S) .
+	\end{aligned} \]
+	dengan $S \in \Obj(\mathcal{C})$ sembarang, sedangkan ruas kanan merupakan
+	$\varprojlim$ rangkap dari himpunan. Persoalannya tereduksi menjadi
+	memeriksa, untuk keluarga himpunan $(X_i)_{i \in \Obj(I)}$ beserta keluarga
+	morfisme kompatibel
+	$\left( f_{i \to j}: X_j \to X_i \right)_{[i \to j] \in \Mor(I)}$,
+	bijeksi
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.g005
+	\[\begin{tikzcd}[row sep=tiny]
+		\displaystyle\varprojlim_{i \in \Obj(I)} X_i \arrow[r, "\sim"] & \displaystyle\varprojlim_{J \in \mathrm{OFin}_I^{\opp}} \displaystyle\varprojlim_{j \in \Obj(J)} X_j \\
+		(x_i)_i \arrow[mapsto, r] & \left( (x_j)_{j \in \Obj(J)} \right)_{J \in \mathrm{OFin}_I} .
+	\end{tikzcd}\]
+
+	Untuk setiap $J$, konstruksi konkret $\varprojlim$ dari himpunan ialah
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q005
+	\[ \varprojlim_{j \in \Obj(J)} X_j = \left\{ (x_j)_j \in \prod_{j \in \Obj(J)} X_j : \forall [i \to j] \in \Mor(J), \; f_{i \to j}(x_j) = x_i \right\}, \]
+	sehingga bijeksi tersebut jelas: setiap data dalam $\varprojlim_i X_i$,
+	baik koordinat $x_i$ maupun syarat kompatibilitas
+	$f_{i \to j}(x_j) = x_i$, dapat tercakup oleh suatu
+	$J \in \mathrm{OFin}_I$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p006
+Ingat bahwa kategori $\cate{Set}$ mempunyai semua $\varinjlim$ dan
+$\varprojlim$ kecil. Limit induktif kecil terfilter mempunyai deskripsi yang
+sangat baik.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pr004
+\begin{proposisi}\label{prop:filtered-union}
+	Misalkan $I$ kategori kecil yang terfilter dan
+	$\alpha: I \to \cate{Set}$ funktor. Definisikan relasi biner berikut pada
+	himpunan $\bigsqcup_{i \in \Obj(I)} \alpha(i)$: untuk $x \in \alpha(i)$
+	dan $y \in \alpha(j)$, relasi $x \sim y$ berarti bahwa terdapat objek
+	$k\in\Obj(I)$ beserta morfisme $i\rightarrow k$ dan $j\rightarrow k$
+	sedemikian sehingga
+	$\alpha(i \to k)(x) = \alpha(j \to k)(y)$. Maka $\sim$ merupakan relasi
+	ekuivalensi, dan
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q006
+	\[ \varinjlim \alpha = \left( \bigsqcup_{i \in \Obj(I)} \alpha(i) \right) \big/ \sim . \]
+\end{proposisi}
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pf004
+\begin{bukti}
+	Lihat pembahasan setelah \cite[Definisi 2.7.6]{Li1}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p007
+Selanjutnya, unsur $\varinjlim \alpha$ di atas akan kita tuliskan sebagai
+$[x_{i_0}]$, dengan $i_0 \in \Obj(I)$ dan $[x_{i_0}]$ merupakan kelas
+ekuivalensi yang memuat $x_{i_0} \in \alpha(i_0)$. Di sisi lain, untuk
+kategori kecil umum $J$ dan funktor $\beta: J^{\opp} \to \cate{Set}$, kita
+akan menuliskan unsur $\varprojlim \beta$ dalam bentuk
+$(y_j)_{j \in \Obj(J)}$, dengan $y_j \in \beta(j)$ memenuhi syarat
+kompatibilitas $\beta(j' \to j)(y_j) = y_{j'}$.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p008
+Berikutnya, tinjau funktor berbentuk
+$\alpha: I \times J^{\opp} \to \cate{Set}$, dengan $I, J$ kategori kecil;
+terhadap peubah $I$ dan $J$ masing-masing dapat diambil $\varinjlim$ dan
+$\varprojlim$. Untuk setiap $(i_0, j_0) \in \Obj(I \times J)$, terdapat
+komposisi pemetaan alami
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.q007
+\[ \varprojlim_j \alpha(i_0, j) \to \alpha(i_0, j_0) \to \varinjlim_i \alpha(i, j_0); \]
+komposisi ini alami dalam $i_0$ dan $j_0$. Dengan memvariasikan $j_0$,
+kita memperoleh pemetaan kanonik
+$\varprojlim_j \alpha(i_0, j) \to \varprojlim_j \varinjlim_i \alpha(i, j)$;
+selanjutnya, dengan memvariasikan $i_0$, kita memperoleh pemetaan kanonik
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.q008
+\begin{equation}\label{eqn:filtered-finite-exchange}
+	e: \varinjlim_i \varprojlim_j \alpha(i, j) \to \varprojlim_j \varinjlim_i \alpha(i, j).
+\end{equation}
+Dengan menggunakan notasi wakil, $e$ memetakan
+$\left[ (x_{i_0, j})_j \right]$ ke
+$\left( [ x_{i_0, j}] \right)_j$.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.p009
+Jika $\Mor(J)$ merupakan himpunan berhingga, kategori $J$ disebut berhingga;
+hal ini setara dengan mensyaratkan bahwa himpunan objeknya dan himpunan
+morfisme di antara setiap dua objek semuanya berhingga. Hasil berikut akan
+digunakan dalam \S\sourcecrossref{sec:cat-localization}{1.9}.
+
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pr005
+\begin{proposisi}\label{prop:filtered-finite-exchange}
+	Misalkan $I$ kategori kecil yang terfilter, $J$ kategori berhingga, dan
+	$\alpha: I \times J^{\opp} \to \cate{Set}$ funktor. Maka pemetaan $e$ dalam
+	\eqref{eqn:filtered-finite-exchange} merupakan bijeksi.
+\end{proposisi}
+% segment-id: o014.li2.chapter1.filtered-inductive-limits.pf005
+\begin{bukti}
+	Pertama-tama kita tunjukkan bahwa $e$ surjektif. Diberikan
+	$(b_j)_{j \in \Obj(J)} \in \varprojlim_j \varinjlim_i \alpha(i, j)$,
+	tuliskan setiap $b_j$ sebagai $[x_{i_j, j}]$. Karena $I$ terfilter dan $J$
+	berhingga, kita dapat memilih objek penerima bersama $i\in\Obj(I)$ untuk
+	semua $i_j$, lalu mengganti setiap wakil dengan citranya sepanjang morfisme
+	$i_j\to i$.
+	Dengan demikian, semua wakil dapat ditulis $x_{i,j}$ dengan indeks $i$ yang
+	sama. Untuk setiap morfisme $j \to j'$ di $J$, kita mempunyai
+	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q009
+	\[ \left[ \alpha(i, j \to j') (x_{i, j'}) \right] = \left[ x_{i, j} \right]. \]
+	Karena $\Mor(J)$ berhingga dan $I$ terfilter, kita dapat memilih penerus
+	bersama $i\to i_1$, mengganti semua wakil dengan citranya di indeks $i_1$,
+	lalu menamai
+	kembali $i_1$ sebagai $i$, sehingga
+	$\alpha(i, j \to j') (x_{i, j'}) = x_{i, j}$ berlaku untuk semua
+	$[j \to j'] \in \Mor(J)$. Karena itu,
+	$e\left( [(x_{i, j})_j] \right) = (b_j)_j$.
+
+	Selanjutnya kita tunjukkan bahwa $e$ injektif. Misalkan $e(x) = e(y)$.
+	Karena $I$ terfilter, kita dapat mengganti wakil-wakil $x$ dan $y$ dengan
+	citranya di satu indeks bersama $i\in\Obj(I)$, sehingga keduanya mempunyai wakil
+	$(x_{i,j})_j$ dan $(y_{i,j})_j$. Jadi, untuk setiap $j \in \Obj(J)$,
+	berlaku $[x_{i,j}]=[y_{i,j}]$. Karena $I$ terfilter dan $J$ berhingga, kita
+	dapat memilih satu penerus bersama, mengganti semua komponen dengan citranya
+	di sana, lalu menamainya kembali sebagai $i$, sehingga
+	$x_{i,j}=y_{i,j}$ untuk setiap
+	$j$. Dengan demikian, $x=y$.
+\end{bukti}

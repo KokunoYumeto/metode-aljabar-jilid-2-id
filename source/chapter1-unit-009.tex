@@ -1,0 +1,277 @@
+% Terjemahan Bahasa Indonesia dari chapter1.tex baris 33-139.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.subquotients
+
+% segment-id: o014.li2.chapter1.subquotients.h001
+\section{Subkuosien}\label{sec:subquot}
+\hypertarget{o014.aljabr2.chapter1.subquotients}{ }
+
+% segment-id: o014.li2.chapter1.subquotients.p001
+Pertama-tama, kita mengingat kembali pengertian monomorfisme dan
+epimorfisme. Tetapkan sebuah kategori $\mathcal{C}$.
+
+% segment-id: o014.li2.chapter1.subquotients.l001
+\begin{itemize}
+	% segment-id: o014.li2.chapter1.subquotients.i001
+	\item Morfisme $f: X \to Y$ disebut \emph{monomorfisme}, dan juga ditulis
+	$f: X \hookrightarrow Y$, jika hukum kanselasi kiri berlaku:
+	\[ \forall T \in \Obj(\mathcal{C}), \; \forall g,h: T \to X , \quad fg=fh \iff g=h; \]
+	% segment-id: o014.li2.chapter1.subquotients.i002
+	\item Morfisme $f: X \to Y$ disebut \emph{epimorfisme}, dan juga ditulis
+	$f: X \twoheadrightarrow Y$, jika hukum kanselasi kanan berlaku:
+	\[ \forall T \in \Obj(\mathcal{C}), \; \forall g,h: Y \to T, \quad gf=hf \iff g=h. \]
+\end{itemize}
+
+% segment-id: o014.li2.chapter1.subquotients.x001
+\index{monomorfisme (monomorphism)}
+\index{epimorfisme (epimorphism)}
+
+% segment-id: o014.li2.chapter1.subquotients.p002
+Dengan segera terlihat bahwa $f: X \to Y$ merupakan monomorfisme jika dan
+hanya jika $f_*: \Hom(T, X) \to \Hom(T, Y)$ injektif untuk setiap $T$;
+$f: X \to Y$ merupakan epimorfisme jika dan hanya jika
+$f^*: \Hom(Y, T) \to \Hom(X, T)$ injektif untuk setiap $T$. Sifat
+monomorfisme dan epimorfisme saling dual: $f$ merupakan monomorfisme jika dan
+hanya jika $f^{\opp}$ merupakan epimorfisme.
+
+% segment-id: o014.li2.chapter1.subquotients.e001
+\begin{contoh}
+	Jika penyama $\Ker(f,g)$ dari sepasang morfisme $f, g: X \to Y$ ada,
+	maka sifat universal menunjukkan bahwa morfisme kanonik
+	$\iota: \Ker(f,g) \to X$ merupakan monomorfisme. Secara dual, jika
+	kopenyama $\Coker(f,g)$ ada, maka morfisme kanonik
+	$p: Y \to \Coker(f,g)$ merupakan epimorfisme. Pengamatan sederhana lainnya
+	ialah sebagai berikut: jika $\mathcal{C}$ mempunyai objek nol, yang menurut
+	konvensi dinotasikan dengan $0$, maka $0 \to X$ merupakan monomorfisme dan
+	$X \to 0$ merupakan epimorfisme. Pembaca dipersilakan memeriksa
+	rincian-rincian ini.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.subquotients.pr001
+\begin{proposisi}\label{prop:epi-mono-isomorphism}
+	Tinjau morfisme-morfisme $X \xrightarrow{a} Y \xrightarrow{b} Z$. Andaikan bahwa
+	$b$ merupakan monomorfisme atau $a$ merupakan epimorfisme. Maka
+	$ba: X \to Z$ merupakan isomorfisme jika dan hanya jika $a$ dan $b$
+	keduanya merupakan isomorfisme.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter1.subquotients.pf001
+\begin{bukti}
+	Salah satu arah sudah jelas. Selanjutnya, andaikan bahwa $ba$ merupakan
+	isomorfisme dan $b$ merupakan monomorfisme. Tetapkan
+	$c := a(ba)^{-1}: Z \to Y$; maka $bc = \identity_Z$. Selain itu,
+	$b(cb) = (bc)b = b$. Karena $b$ merupakan monomorfisme, hukum kanselasi
+	kiri memberikan $cb = \identity_Y$. Jadi, $b$ merupakan isomorfisme, dan
+	karena itu $a$ juga merupakan isomorfisme. Dengan bekerja di
+	$\mathcal{C}^{\opp}$, diperoleh kasus ketika $a$ merupakan epimorfisme.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.subquotients.p003
+Dalam kategori yang lazim digunakan dalam aljabar, seperti $\cate{Set}$,
+$\cate{Ab}$, dan $R\dcate{Mod}$, sifat monomorfisme dan epimorfisme suatu
+morfisme masing-masing ekuivalen dengan sifat injektif dan surjektifnya
+sebagai pemetaan. Dalam contoh-contoh ini, kita juga dapat membahas lebih jauh
+himpunan bagian, subgrup, dan sebagainya. Konsep tersebut dapat diperluas ke
+kategori umum, tetapi diperlukan satu langkah tambahan. Kita akan
+merumuskannya dengan bahasa himpunan terurut parsial.
+
+% segment-id: o014.li2.chapter1.subquotients.p004
+Tinjau kategori $\mathcal{C}$ dan sebuah objek $X$ di dalamnya. Untuk sepasang
+monomorfisme $f_i: S_i \hookrightarrow X$, dengan $i = 1, 2$, jika terdapat
+$g: S_1 \to S_2$ sehingga $f_2 g = f_1$, tuliskan
+$(S_1, f_1) \subset (S_2, f_2)$, atau cukup $S_1 \subset S_2$. Perhatikan
+bahwa sifat monomorfisme $f_2$ mengakibatkan $g$, jika ada, bersifat unik dan
+juga merupakan monomorfisme. Relasi $\subset$ yang baru didefinisikan ini
+belum merupakan urutan parsial. Jika $S_1 \subset S_2$ dan
+$S_2 \subset S_1$, kita katakan bahwa $S_1$ dan $S_2$ ekuivalen. Hal ini juga
+setara dengan adanya diagram komutatif
+
+% segment-id: o014.li2.chapter1.subquotients.g001
+\[\begin{tikzcd}
+	S_1 \arrow[r, "g_1"] \arrow[hookrightarrow, rd, "f_1"'] & S_2 \arrow[hookrightarrow, d, "f_2"] \arrow[r, "g_2"] & S_1 \arrow[hookrightarrow, ld, "f_1"] \\
+	& X &
+\end{tikzcd}\]
+
+% segment-id: o014.li2.chapter1.subquotients.p005
+Keunikan memberikan $g_2 g_1 = \identity_{S_1}$, dan dengan cara yang sama
+$g_1 g_2 = \identity_{S_2}$. Dengan kata lain, $S_1$ dan $S_2$ ekuivalen jika
+dan hanya jika terdapat isomorfisme $g: S_1 \rightiso S_2$ sehingga
+$f_2 g = f_1$; isomorfisme ini pun unik. Tentu saja, inilah argumen baku
+dalam aljabar.
+
+% segment-id: o014.li2.chapter1.subquotients.p006
+Secara serupa, untuk sepasang epimorfisme
+$f_i: X \twoheadrightarrow Q_i$, dengan $i = 1, 2$, jika terdapat
+$g: Q_2 \to Q_1$ sehingga $g f_2 = f_1$, maka $g$ unik dan juga merupakan
+epimorfisme; tuliskan $Q_1 \twoheadleftarrow Q_2$. Jika
+$Q_1 \twoheadleftarrow Q_2$ dan $Q_2 \twoheadleftarrow Q_1$, kita katakan bahwa
+$Q_1$ dan $Q_2$ ekuivalen. Hal ini juga setara dengan adanya isomorfisme unik
+$g: Q_2 \rightiso Q_1$ sehingga $g f_2 = f_1$.
+
+% segment-id: o014.li2.chapter1.subquotients.p007
+Relasi biner $\subset$ (atau $\twoheadleftarrow$) menginduksi urutan parsial
+pada kelas-kelas ekuivalensi. Di sini kita meminjam simbol inklusi himpunan
+$\subset$. Meskipun hal ini dapat menimbulkan kerancuan, notasi tersebut
+selaras dengan notasi bagi substruktur lain dalam aljabar, seperti subgrup,
+submodul, dan subruang.
+
+% segment-id: o014.li2.chapter1.subquotients.d001
+\begin{definisi}\label{def:sub-quot-obj}
+	\index{subobjek (subobject)} \index[sym1]{SubX@$\mathrm{Sub}_X$}
+	\index{objek kuosien (quotient object)} \index[sym1]{QuotX@$\mathrm{Quot}_X$}
+	Tetapkan kategori $\mathcal{C}$ dan sebuah objek $X$ di dalamnya. Kelas
+	ekuivalensi dari monomorfisme berbentuk $S \hookrightarrow X$ (atau dari epimorfisme
+	berbentuk $X \twoheadrightarrow Q$) menurut relasi ekuivalensi di atas
+	disebut \emph{subobjek} (atau \emph{objek kuosien}) dari $X$. Kelas-kelas
+	itu membentuk himpunan terurut parsial $(\mathrm{Sub}_X, \subset)$ (atau
+	$(\mathrm{Quot}_X, \twoheadleftarrow)$), dengan
+	$\identity_X: X \to X$ sebagai unsur maksimal yang tunggal.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.subquotients.p008
+Subobjek dan objek kuosien saling dual: $(\mathrm{Sub}_X, \subset)$ yang
+didefinisikan untuk $\mathcal{C}$ sama dengan
+$(\mathrm{Quot}_X, \twoheadleftarrow)$ yang didefinisikan untuk
+$\mathcal{C}^{\opp}$. Demi kemudahan pemaparan, bagian ini terutama membahas
+subobjek. Karena isomorfisme $g$ dalam relasi ekuivalensi bersifat unik, dalam
+argumen kita dapat dengan aman memilih wakil $f: S \hookrightarrow X$ dari
+suatu kelas ekuivalensi, atau bahkan menuliskannya cukup sebagai $S$.
+Ingatlah bahwa $f_*: \Hom(\cdot, S) \to \Hom(\cdot, X)$ bersifat injektif.
+
+% segment-id: o014.li2.chapter1.subquotients.lm001
+\begin{lema}\label{prop:subobject-order}
+	Untuk setiap dua subobjek $S_1$ dan $S_2$ dari $X$, berlaku
+	\begin{equation*}
+		S_1 \subset S_2 \iff \forall T \in \Obj(\mathcal{C}), \; \Hom(T, S_1) \subset \Hom(T, S_2),
+	\end{equation*}
+	dengan $\Hom(T, S_1)$ dan $\Hom(T, S_2)$ pada ruas kanan dipahami sebagai
+	himpunan bagian dari $\Hom(T, X)$.
+\end{lema}
+
+% segment-id: o014.li2.chapter1.subquotients.pf002
+\begin{bukti}
+	Arah $\implies$ mudah. Untuk arah $\impliedby$, ambil $T := S_1$ dan
+	perhatikan $\identity_{S_1} \in \Hom(S_1, S_1)$. Di bawah penyertaan
+	$\Hom(S_1,S_1) \subset \Hom(S_1,X)$, unsur ini bersesuaian dengan $f_1$.
+	Hipotesis lalu memberikan $g \in \Hom(S_1,S_2)$ yang citranya dalam
+	$\Hom(S_1,X)$ adalah $f_1$, yakni $f_2g=f_1$. Inilah morfisme yang dicari.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.subquotients.p009
+Andaikan bahwa $\mathcal{C}$ mempunyai objek nol dan
+$(X_i)_{i \in I}$ merupakan suatu keluarga objek. Untuk setiap
+$(i,j) \in I \times I$, definisikan $\delta_{ij} \in \Hom(X_i, X_j)$ sebagai
+berikut: jika $i=j$, ambil $\delta_{ij} = \identity$; jika tidak, tetapkan
+$\delta_{ij}$ sebagai morfisme nol. Jika produk dan koproduk dari
+$(X_i)_{i \in I}$ ada, maka $(\delta_{ij})_{i,j}$ menentukan morfisme kanonik
+
+% segment-id: o014.li2.chapter1.subquotients.q001
+\begin{equation}\label{eqn:coprod-prod-delta}
+	\delta: \coprod_{i \in I} X_i \to \prod_{i \in I} X_i.
+\end{equation}
+
+% segment-id: o014.li2.chapter1.subquotients.p010
+Dalam kategori aditif, yang akan segera kita tinjau kembali, $\delta$ selalu
+merupakan isomorfisme apabila $I$ hingga. Hal ini belum tentu berlaku dalam
+kategori umum.
+
+% segment-id: o014.li2.chapter1.subquotients.lm002
+\begin{lema}\label{prop:mono-pullback}
+	Andaikan $X \to Z$ merupakan monomorfisme. Tarik baliknya sepanjang
+	$Y \to Z$, yaitu $X \dtimes{Z} Y \to Y$ (andaikan ada), juga merupakan
+	monomorfisme. Secara dual, dorong keluar suatu epimorfisme juga merupakan
+	epimorfisme.
+\end{lema}
+
+% segment-id: o014.li2.chapter1.subquotients.pf003
+\begin{bukti}
+	Berdasarkan dualitas, cukup menangani kasus monomorfisme. Misalkan
+	$p_2: X \dtimes{Z} Y \to Y$ adalah morfisme kanonik yang diberikan oleh
+	produk serat. Untuk setiap objek $T$, masalahnya cukup direduksi menjadi
+	pembuktian bahwa
+	% segment-id: o014.li2.chapter1.subquotients.g002
+	\[\begin{tikzcd}
+		\Hom(T,X) \dtimes{\Hom(T,Z)} \Hom(T,Y) & \\
+		\Hom\left(T, X \dtimes{Z} Y \right) \arrow[leftrightarrow, u, "1:1", "\text{sifat universal}"'] \arrow[r, "{(p_2)_*}"'] & \Hom(T, Y)
+	\end{tikzcd} \]
+	bersifat injektif. Akan tetapi, karena $X \to Z$ merupakan monomorfisme,
+	pemetaan $\Hom(T, X) \to \Hom(T, Z)$ bersifat injektif, sedangkan pemetaan
+	dari kiri atas ke kanan bawah hanyalah proyeksi alami.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.subquotients.lm003
+\begin{lema}\label{prop:mono-product}
+	Andaikan $\left( f_i: X_i \to Z \right)_{i \in I}$ merupakan suatu keluarga
+	monomorfisme. Maka morfisme kanonik dari
+	$\prod_{i \in I} (X_i \to Z)$ (andaikan ada) ke $Z$ juga merupakan
+	monomorfisme. Secara dual, untuk suatu keluarga epimorfisme
+	$\left( g_i: Z \to X_i \right)_{i \in I}$, morfisme kanonik dari $Z$ ke
+	$\coprod_{i \in I} (Z \to X_i)$ (andaikan ada) juga merupakan
+	epimorfisme.
+\end{lema}
+
+% segment-id: o014.li2.chapter1.subquotients.pf004
+\begin{bukti}
+	Seperti pada Lema~\ref{prop:mono-pullback}, cukup dibuktikan bahwa baris
+	kedua dalam diagram
+	% segment-id: o014.li2.chapter1.subquotients.g003
+	\[\begin{tikzcd}
+		\prod_{i \in I} \left( \Hom(T, X_i) \to \Hom(T, Z) \right) & \\
+		\Hom\left(T, \prod_{i \in I} (X_i \to Z) \right) \arrow[leftrightarrow, u, "1:1", "\text{sifat universal}"'] \arrow[r] & \Hom(T, Z)
+	\end{tikzcd}\]
+	bersifat injektif. Hal ini mengikuti dari hipotesis, sebab setiap
+	$\Hom(T, X_i) \to \Hom(T, Z)$ bersifat injektif.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.subquotients.p011
+Kita kembali ke pembahasan subobjek dan objek kuosien.
+
+% segment-id: o014.li2.chapter1.subquotients.d002
+\begin{definisi}\label{def:subquotient}
+	\index{subkuosien (subquotient)}
+	Diberikan sembarang kategori $\mathcal{C}$ beserta objek-objek $X$ dan $Y$
+	di dalamnya. Jika $Y$ dapat direalisasikan sebagai objek kuosien dari suatu
+	subobjek dari $X$, maka $Y$ disebut \emph{subkuosien} dari $X$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.subquotients.p012
+Jika yang ditinjau adalah subobjek dari objek kuosien, hal itu sama dengan
+membahas subkuosien dalam $\mathcal{C}^{\opp}$. Hasil berikut menunjukkan
+bahwa, untuk suatu kelas kategori, kedua cara tersebut memberikan pengertian
+yang sama. Kelas ini mencakup kategori abelian yang akan dipelajari kemudian;
+lihat Korolari~\sourcecrossref{prop:Abel-cat-subquotient}{2.1.7}.
+
+% segment-id: o014.li2.chapter1.subquotients.pr002
+\begin{proposisi}\label{prop:subquotient-equiv}
+	Andaikan kategori $\mathcal{C}$ mempunyai semua produk serat hingga dan
+	koproduk serat hingga, tarik balik epimorfisme tetap merupakan
+	epimorfisme, dan dorong keluar monomorfisme tetap merupakan monomorfisme.
+	Maka subkuosien dapat didefinisikan secara ekuivalen sebagai subobjek dari
+	objek kuosien.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter1.subquotients.pf005
+\begin{bukti}
+	Tinjau diagram subkuosien $Y \twoheadleftarrow Z \hookrightarrow X$ dalam
+	$\mathcal{C}$. Tetapkan $W := X \dsqcup{Z} Y$. Morfisme $X \to W$ adalah
+	dorong keluar dari $Z \to Y$, sehingga merupakan epimorfisme menurut
+	Lema~\ref{prop:mono-pullback}; morfisme $Y \to W$ adalah dorong keluar dari
+	$Z \to X$, sehingga merupakan monomorfisme menurut hipotesis. Jadi,
+	$Y \hookrightarrow W \twoheadleftarrow X$, yang memberikan subkuosien dari
+	$X$ dalam $\mathcal{C}^{\opp}$. Karena syarat-syarat tersebut swa-dual,
+	subkuosien dalam $\mathcal{C}^{\opp}$ juga memberikan subkuosien dalam
+	$\mathcal{C}$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.subquotients.p013
+Setelah sifat ``objek kuosien dari subobjek = subobjek dari objek kuosien'' di
+atas tersedia, dapat disimpulkan bahwa subkuosien dari subkuosien tetap
+merupakan subkuosien.
+
+% segment-id: o014.li2.chapter1.subquotients.p014
+Definisi subkuosien tidak menentukan bagaimana subkuosien itu direalisasikan
+sebagai objek kuosien dari suatu subobjek. Misalnya, untuk
+$\mathcal{C} = \cate{Ab}$, $\Z/2\Z$ merupakan subkuosien dari $\Z/4\Z$:
+objek tersebut dapat direalisasikan sebagai objek kuosien dari $\Z/4\Z$,
+tetapi juga sebagai subobjek $2\Z/4\Z$ dari $\Z/4\Z$.

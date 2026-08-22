@@ -1,0 +1,770 @@
+% Terjemahan Bahasa Indonesia dari chapter1.tex baris 1230--1582.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.gabriel-zisman-localization
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.h001
+\section{Lokalisasi Gabriel--Zisman}\label{sec:cat-localization}
+\hypertarget{o014.aljabr2.chapter1.gabriel-zisman-localization}{ }
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p001
+Lokalisasi Gabriel--Zisman, yang selanjutnya cukup disebut lokalisasi, adalah
+cara paling ekonomis untuk menambahkan invers pada suatu keluarga morfisme
+dalam sebuah kategori. Teori ini berasal dari \cite{GZ67} dan dicirikan oleh
+suatu sifat universal.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.d001
+\begin{definisi}[P.\ Gabriel, M.\ Zisman]\label{def:cat-localization}
+	\index{lokalisasi (localization)}
+	\index[sym1]{CS@$\mathcal{C}[S^{-1}]$}
+	Misalkan $\mathcal{C}$ suatu kategori dan $S$ suatu subhimpunan
+	$\Mor(\mathcal{C})$ yang memuat semua morfisme identitas dan tertutup
+	terhadap komposisi morfisme. Yang dimaksud dengan \emph{lokalisasi}
+	$\mathcal{C}$ terhadap $S$ ialah suatu kategori
+	$\mathcal{C}[S^{-1}]$ (yang boleh berupa kategori besar), bersama dengan
+	funktor $Q: \mathcal{C} \to \mathcal{C}[S^{-1}]$, yang disebut funktor
+	lokalisasi, sedemikian sehingga syarat-syarat berikut terpenuhi.
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.l001
+	\begin{itemize}
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i001
+		\item Untuk setiap $s \in S$, citranya $Q(s)$ merupakan isomorfisme
+		dalam $\mathcal{C}[S^{-1}]$.
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i002
+		\item Untuk setiap kategori $\mathcal{D}$ (yang juga boleh berupa
+		kategori besar) dan funktor $F: \mathcal{C} \to \mathcal{D}$, jika
+		setiap morfisme dalam $S$ dipetakan oleh $F$ menjadi isomorfisme, maka
+		terdapat funktor unik
+		$F[S^{-1}]: \mathcal{C}[S^{-1}] \to \mathcal{D}$ sedemikian sehingga
+		$F = F[S^{-1}] Q$.
+	\end{itemize}
+\end{definisi}
+\index{masalah ukuran (size issues)}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p002
+Menurut konvensi, kita sering menghilangkan $Q$ dari data tersebut. Sejumlah
+literatur, misalnya \cite[Definisi 7.1.1]{KS06}, memberikan sifat universal
+yang agak lebih longgar bagi lokalisasi\footnote{Dari sudut pandang
+$2$-kategori, sifat universal yang lebih alami adalah sebagai berikut:
+$Q^*: \mathcal{D}^{\mathcal{C}[S^{-1}]} \to \mathcal{D}^{\mathcal{C}}$
+bersifat penuh dan setia untuk setiap $\mathcal{D}$, dan
+$G \in \Obj\left(\mathcal{D}^{\mathcal{C}}\right)$ isomorfik dengan suatu
+$Q^*(F) = FQ$ jika dan hanya jika $G$ memetakan unsur-unsur $S$ menjadi
+isomorfisme. Funktor $Q$ dalam Definisi \ref{def:cat-localization} secara
+otomatis memiliki sifat ini---bagian penuh dan setianya diberikan oleh
+Proposisi \ref{prop:localization-extra-property}, sedangkan sisanya mudah.}.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p003
+Berikut ini kita tunjukkan bahwa lokalisasi unik hingga isomorfisme yang unik.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pr001
+\begin{proposisi}\label{prop:cat-localization-unique}
+	Jika data $(\mathcal{C}[S^{-1}], Q)$ dan
+	$(\mathcal{C}[S^{-1}]', Q')$ keduanya merupakan lokalisasi $\mathcal{C}$
+	terhadap $S$, maka terdapat pasangan funktor unik
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g001
+	$\begin{tikzcd}
+		\mathcal{C}[S^{-1}] \arrow[r, shift left, "G"] & \mathcal{C}[S^{-1}]' \arrow[l, shift left, "{G'}"]
+	\end{tikzcd}$
+	sedemikian sehingga $GQ = Q'$, $G'Q' = Q$, serta
+	$G'G = \identity_{\mathcal{C}[S^{-1}]}$ dan
+	$GG' = \identity_{\mathcal{C}[S^{-1}]'}$.
+\end{proposisi}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf001
+\begin{bukti}
+	Karena $Q'$ memetakan $S$ menjadi isomorfisme, sifat universal memberikan
+	funktor unik $G$ sedemikian sehingga $GQ = Q'$. Demikian pula, terdapat
+	funktor unik $G'$ sedemikian sehingga $G'Q' = Q$. Karena $G'GQ = Q$,
+	dengan mengambil $\mathcal{D} = \mathcal{C}[S^{-1}]$ dan $F = Q$ dalam
+	sifat universal, kita memperoleh
+	$G'G = \identity_{\mathcal{C}[S^{-1}]}$. Demikian pula diperoleh
+	$GG' = \identity_{\mathcal{C}[S^{-1}]'}$\footnote{Catatan penerjemah:
+	sumber menulis $\identity_{\mathcal{C}[S^{-1}]}$ pada identitas terakhir;
+	karena $GG'$ merupakan endofunktor pada $\mathcal{C}[S^{-1}]'$,
+	terjemahan ini menambahkan tanda prima pada lokalisasi sasaran
+	(O014-C017).}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pr002
+\begin{proposisi}
+	Misalkan lokalisasi $(\mathcal{C}[S^{-1}], Q)$ ada. Tuliskan $S^{\opp}$
+	untuk citra $S$ yang bersesuaian dalam $\Mor(\mathcal{C}^{\opp})$. Maka
+	terdapat ekuivalensi kategori yang kompatibel dengan $Q$,
+	$\mathcal{C}[S^{-1}]^{\opp} \leftrightarrows
+	\mathcal{C}^{\opp}[(S^{\opp})^{-1}]$.
+\end{proposisi}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf002
+\begin{bukti}
+	Berdasarkan ketunggalan lokalisasi, cukup ambil $(-)^{\opp}$ pada semua
+	kategori dan funktor dalam Definisi \ref{def:cat-localization}, sebab
+	operasi ini tidak mengubah arah funktor.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p004
+Masalahnya kini tereduksi menjadi mengkaji keberadaan dan konstruksi
+lokalisasi. Untuk $\mathcal{C}$ dan $S$ yang umum,
+$\mathcal{C}[S^{-1}]$ dapat dikonstruksi dengan menambahkan invers secara
+formal pada $\mathcal{C}$, dengan gagasan yang serupa dengan konstruksi grup
+bebas. Lebih konkret,
+$\Obj(\mathcal{C}[S^{-1}]) = \Obj(\mathcal{C})$, sedangkan morfisme dalam
+$\mathcal{C}[S^{-1}]$ secara formal berbentuk zigzag berhingga
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g002
+\[ \cdots b t^{-1} a s^{-1} \cdots = \left(
+	\begin{tikzcd}[row sep=tiny, column sep=tiny]
+	\cdots \arrow[rd] & & Y \arrow[ld, "s"'] \arrow[rd, "a"] & & W \arrow[ld, "t"'] \arrow[rd, "b"] & & \cdots \arrow[ld] \\
+	& X & & Z & & U &
+\end{tikzcd}\right) \]
+dengan $a, b, \ldots \in \Mor(\mathcal{C})$ dan $s, t, \ldots \in S$.
+Komposisi dan $Q$ didefinisikan dengan cara yang jelas, tetapi kita harus
+mengambil kuosien terhadap relasi ekuivalensi yang dibangkitkan oleh
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q001
+\[ s^{-1} t^{-1} = (ts)^{-1}, \quad s s^{-1} = \identity, \quad s^{-1} s = \identity \]
+dan seterusnya; lihat sketsa dalam \cite[I.1.1]{GZ67}. Dengan demikian,
+lokalisasi dapat dipandang sebagai semacam operasi pecahan pada morfisme.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p005
+Konstruksi tersebut bersifat umum, tetapi kelemahannya juga jelas, terutama
+karena relasi ekuivalensinya sulit diolah. Sebagai contoh, sukar untuk
+mencirikan pasangan $f, g \in \Mor(\mathcal{C})$ yang memenuhi $Qf = Qg$.
+Untungnya, dalam praktik, $S$ sering merupakan sistem multiplikatif kiri
+(atau kanan) yang akan diperkenalkan dalam Definisi
+\ref{def:multiplicative-family}. Dalam keadaan ini, deskripsi
+$\mathcal{C}[S^{-1}]$ dapat disederhanakan: diagram zigzag di atas dapat
+\emph{diluruskan} sehingga setiap morfisme dapat ditulis dalam bentuk
+$a s^{-1}$ (atau $s^{-1} a$).
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p006
+Sebelum memperkenalkan sistem multiplikatif, kita catat dahulu satu sifat
+sederhana dari konstruksi di atas.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pr003
+\begin{proposisi}\label{prop:localization-extra-property}
+	Funktor lokalisasi
+	$Q: \mathcal{C} \to \mathcal{C}[S^{-1}]$ selalu pada hakikatnya
+	surjektif. Selain itu, untuk setiap kategori $\mathcal{D}$ dan funktor
+	$A, B: \mathcal{C}[S^{-1}] \to \mathcal{D}$, pemetaan yang jelas
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q002
+	\[ \Hom_{\mathcal{D}^{\mathcal{C}[S^{-1}]}}(A, B) \to \Hom_{\mathcal{D}^{\mathcal{C}}}\left( AQ, BQ \right) \]
+	merupakan bijeksi. Dengan kata lain,
+	$Q^*: \mathcal{D}^{\mathcal{C}[S^{-1}]} \to
+	\mathcal{D}^{\mathcal{C}}$ merupakan funktor penuh dan setia.
+\end{proposisi}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf003
+\begin{bukti}
+	Tanpa mengurangi keumuman, realisasikan lokalisasi secara konkret seperti
+	di atas. Tuliskan pemetaan $Q$ pada himpunan objek sebagai
+	$X \mapsto \underline{X}$. Pemetaan ini bijektif, sehingga $Q$ pada
+	hakikatnya surjektif. Dari sini segera terlihat bahwa
+	$\Hom_{\mathcal{D}^{\mathcal{C}[S^{-1}]}}(A, B) \to
+	\Hom_{\mathcal{D}^{\mathcal{C}}}\left( AQ, BQ \right)$ injektif.
+
+	Untuk surjektivitas, misalkan
+	$\varphi = (\varphi_X)_{X \in \Obj(\mathcal{C})} \in
+	\Hom_{\mathcal{D}^{\mathcal{C}}}\left( AQ, BQ \right)$. Bagi setiap
+	$\underline{X} = QX$, definisikan morfisme
+	$\tilde{\varphi}_{\underline{X}}: A\underline{X} \to B\underline{X}$
+	dalam $\mathcal{D}$ sebagai $\varphi_X$. Tinggal ditunjukkan bahwa
+	$\tilde{\varphi} := (\tilde{\varphi}_{\underline{X}})_{\underline{X}}
+	\in \Hom_{\mathcal{D}^{\mathcal{C}[S^{-1}]}}(A, B)$. Dengan kata lain,
+	untuk setiap morfisme $f: \underline{X} \to \underline{Y}$ dalam
+	$\mathcal{C}[S^{-1}]$, kita harus memeriksa kekomutatifan diagram berikut
+	dalam $\mathcal{D}$:
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g003
+	\[\begin{tikzcd}
+		A\underline{X} \arrow[r, "{\tilde{\varphi}_{\underline{X}}}"] \arrow[d, "Af"'] & B\underline{X} \arrow[d, "Bf"] \\
+		A\underline{Y} \arrow[r, "{\tilde{\varphi}_{\underline{Y}}}"'] & B\underline{Y} .
+	\end{tikzcd}\]
+
+	Menurut konstruksi morfisme sebagai zigzag, $f$ terurai sebagai rangkaian
+	morfisme berbentuk $Qa$ atau $(Qs)^{-1}$, dengan
+	$a \in \Mor(\mathcal{C})$ dan $s \in S$. Karena itu, kekomutatifan diagram
+	di atas tereduksi pada sifat yang bersesuaian dari $\varphi$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.d002
+\begin{definisi}\label{def:multiplicative-family}
+	\index{sistem multiplikatif (multiplicative system)}
+	Subhimpunan $S \subset \Mor(\mathcal{C})$ yang memenuhi sifat-sifat
+	berikut disebut \emph{sistem multiplikatif kiri} dalam $\mathcal{C}$.
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.l002
+	\begin{enumerate}[(S1)]
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i003
+		\item Untuk setiap $X \in \Obj(\mathcal{C})$, berlaku
+		$\identity_X \in S$.
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i004
+		\item Untuk setiap $f, g \in S$, jika komposisi $gf$ terdefinisi, maka
+		$gf \in S$.
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i005
+		\item Diberikan morfisme
+		$X \xrightarrow{s \in S} Z \xleftarrow{f} Y$, terdapat morfisme dalam
+		$\mathcal{C}$,
+		$X \xleftarrow{f'} W \xrightarrow{s' \in S} Y$, sedemikian sehingga
+		$sf' = fs'$, yang dapat digambarkan sebagai diagram komutatif
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g004
+		\[\begin{tikzcd}
+			X \arrow[d, "{s \in S}"'] & W \arrow[dashed, l, "{f'}"'] \arrow[dashed, d, "{s' \in S}"] \\
+			Z & Y \arrow[l, "f"]
+		\end{tikzcd} \quad \text{komutatif}. \]
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i006
+		\item Misalkan $f, g: X \to Y$ morfisme dalam $\mathcal{C}$ dan
+		$s: Y \to W$ termasuk dalam $S$. Jika $sf = sg$, maka terdapat
+		morfisme $t: Z \to X$ dalam $S$ sedemikian sehingga $ft = gt$.
+		Secara diagramatis,
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g005
+		\[\begin{tikzcd}
+			Z \arrow[dashed, r, "t \in S"] \arrow[dash, rr, "\text{komutatif}"', to path={ -- ([yshift=-2ex]\tikztostart.south) -- ([yshift=-2ex]\tikztotarget.south) [midway]\tikztonodes -- (\tikztotarget)}] & X \arrow[r, shift left, "f"] \arrow[r, shift right, "g"'] & Y \arrow[r, "s \in S"] & W .
+		\end{tikzcd}\]
+	\end{enumerate}
+	Bagian bergaris putus-putus dalam diagram-diagram tersebut adalah morfisme
+	yang keberadaannya dinyatakan.
+
+	Jika citra $S^{\opp}$ dari $S$ dalam $\Mor(\mathcal{C}^{\opp})$ merupakan
+	sistem multiplikatif kiri, maka $S$ disebut \emph{sistem multiplikatif
+	kanan} dalam $\mathcal{C}$. Ini sama artinya dengan membalik arah anak panah
+	dalam syarat (S3) dan (S4). Suatu $S$ yang sekaligus merupakan sistem
+	multiplikatif kiri dan kanan disebut \emph{sistem multiplikatif} dalam
+	$\mathcal{C}$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.c001
+\begin{konvensi}
+	Untuk suatu sistem multiplikatif kiri atau kanan $S$, mulai sekarang anak
+	panah yang termasuk dalam $S$ selalu digambar dalam bentuk
+	$\rightarrowtail$ pada diagram komutatif agar mudah dibedakan.
+\end{konvensi}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p007
+Tetapkan $X \in \Obj(\mathcal{C})$. Sesuai dengan konvensi di atas, bagi
+sistem multiplikatif kiri (atau kanan) $S$, definisikan kategori $S_{/X}$
+(atau $S_{X/}$) sebagai berikut.
+\index[sym1]{SX@$S_{/X}, S_{X/}$}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q003
+\begin{align*}
+	\Obj\left( S_{/X} \right) & := \left\{ \text{morfisme}\; X \leftarrowtail Z \right\}, & \Mor(S_{/X}) & := \left\{ \text{diagram komutatif}\;
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g006
+	{\begin{tikzcd}[row sep=small, column sep=small, ampersand replacement=\&]
+			X \& Z \arrow[rightarrowtail, l] \arrow[d] \\
+			\& W \arrow[rightarrowtail, lu]	
+	\end{tikzcd}} \right\}, \\
+	\Obj\left( S_{X/} \right) & := \left\{ \text{morfisme}\; X \rightarrowtail Z \right\}, & \Mor(S_{X/}) & := \left\{ \text{diagram komutatif}\;
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g007
+	{\begin{tikzcd}[row sep=small, column sep=small, ampersand replacement=\&]
+			X \arrow[rightarrowtail, r] \arrow[rightarrowtail, rd] \& Z \arrow[d] \\
+			\& W	
+	\end{tikzcd}} \right\}.
+\end{align*}
+Perhatikan bahwa jika $S$ merupakan sistem multiplikatif kiri, maka
+$\left(S^{\opp}\right)_{X/} = (S_{/X})^{\opp}$.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.le001
+\begin{lema}\label{prop:S-filtered}
+	Jika $S$ merupakan sistem multiplikatif kiri (atau kanan), maka
+	$S_{/X}^{\opp}$ (atau $S_{X/}$) merupakan kategori terfilter.
+\end{lema}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf004
+\begin{bukti}
+	Berdasarkan dualitas yang telah diamati, kita cukup membahas kasus sistem
+	multiplikatif kanan. Untuk sembarang objek $i: X \to Z$ dan
+	$j: X \to Z'$ dalam $S_{X/}$, gunakan versi (S3) yang bersesuaian untuk
+	mengkonstruksi diagram komutatif
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g008
+	\[\begin{tikzcd}
+		Z \arrow[r, "{j'}"] & W \\
+		X \arrow[rightarrowtail, u, "i"] \arrow[rightarrowtail, r, "j"'] & Z' \arrow[rightarrowtail, u, "{i'}"']
+	\end{tikzcd}\]
+	Maka $k := i'j \in S$ memberikan suatu objek dalam $S_{X/}$, bersama
+	dengan morfisme $i \xrightarrow{j'} k \xleftarrow{i'} j$ dalam $S_{X/}$.
+
+	Misalkan $i,j$ seperti di atas. Untuk sembarang pasangan morfisme
+	dalam $S_{X/}$,
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g009
+	$\begin{tikzcd}[row sep=small]
+		Z \arrow[shift left, rr, "f"] \arrow[shift right, rr, "g"'] & & Z' \\
+		& X \arrow[lu, "i"] \arrow[ru, "j"'] &
+	\end{tikzcd}$
+	(yang merupakan diagram komutatif), versi (S4) yang bersesuaian
+	memberikan $h: Z' \rightarrowtail W$ sedemikian sehingga $hf = hg$.
+	Tuliskan $k := hj: X \rightarrowtail W$ dan pandang ini sebagai objek
+	dalam $S_{X/}$. Dalam $S_{X/}$ kita memperoleh diagram komutatif
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g010
+	$\begin{tikzcd}[column sep=small]
+		i \arrow[shift left, r, "f"] \arrow[shift right, r, "g"'] & j \arrow[r, "h"] & k
+	\end{tikzcd}$.
+	Inilah semua syarat bagi kategori terfilter.
+\end{bukti}	
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p008
+Misalkan $X, Y \in \Obj(\mathcal{C})$. Berikut ini kita definisikan
+$M_{X,Y}^l$ dan $M_{X,Y}^r$ masing-masing untuk kasus sistem multiplikatif
+kiri dan kanan. Perhatikan bahwa keduanya belum tentu merupakan himpunan
+kecil.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.l003
+\begin{itemize}
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i007
+	\item Misalkan $S$ sistem multiplikatif kiri. Diagram dalam $\mathcal{C}$
+	berbentuk
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g011
+	\[
+	\begin{tikzcd} X & Z \arrow[rightarrowtail, l, "s"'] \arrow[r, "a"] & Y \end{tikzcd}
+	\]
+	disingkat sebagai $(Z; s, a)$. Data-data ini membentuk himpunan
+	$M_{X,Y}^l$.
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i008
+	\item Misalkan $S$ sistem multiplikatif kanan. Diagram dalam $\mathcal{C}$
+	berbentuk
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g012
+	\[
+	\begin{tikzcd} X \arrow[r, "a"] & Z & Y \arrow[rightarrowtail, l, "s"'] \end{tikzcd}
+	\]
+	disingkat sebagai $(Z; a, s)$. Data-data ini membentuk himpunan
+	$M_{X,Y}^r$.
+\end{itemize}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p009
+Definisikan relasi biner $\sim$ sebagai berikut:
+$(Z; s, a) \sim (Z'; s', a')$ (atau
+$(Z; a, s) \sim (Z'; a', s')$) jika dan hanya jika terdapat diagram
+komutatif berbentuk
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q004
+\begin{equation}\label{eqn:localization-sim}
+	\begin{array}{cc}
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g013
+		\begin{tikzcd}
+			& Z \arrow[rightarrowtail, ld, "s"'] \arrow[rd, "a"] & \\
+			X & W \arrow[rightarrowtail, l] \arrow[r] \arrow[u] \arrow[d] & Y \\
+			& Z' \arrow[rightarrowtail, lu, "{s'}"] \arrow[ru, "{a'}"'] &
+		\end{tikzcd} & 
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g014
+		\begin{tikzcd}
+			& Z \arrow[d] & \\
+			X \arrow[r] \arrow[ru, "a"] \arrow[rd, "{a'}"'] & W & Y \arrow[rightarrowtail, l] \arrow[rightarrowtail, lu, "s"'] \arrow[rightarrowtail, ld, "{s'}"] \\
+			& Z' \arrow[u] &
+		\end{tikzcd} \\
+		\text{(sistem multiplikatif kiri)} & \text{(sistem multiplikatif kanan)}
+	\end{array}\end{equation}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p010
+Perhatikan bahwa untuk setiap $f: X \to Y$, syarat (S1) mengakibatkan
+$(X; \identity_X, f) \in M_{X, Y}^l$ dan
+$(X; f, \identity_Y) \in M_{X,Y}^r$. Kedua definisi tersebut jelas saling
+dual.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.le002
+\begin{lema}\label{prop:MXY-equiv}
+	Untuk sistem multiplikatif kiri (atau kanan) $S$ dan sembarang $X,Y$,
+	relasi $\sim$ yang didefinisikan di atas merupakan relasi ekuivalensi pada
+	$M_{X,Y}^l$ (atau $M_{X,Y}^r$). Bahkan, terdapat bijeksi
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g015
+	\[\begin{tikzcd}[row sep=tiny, column sep=small]
+		M_{X, Y}^l /\sim \arrow[r, "1:1"] & \displaystyle\varinjlim_{\substack{[X \leftarrowtail Z] \\ \in \Obj(S_{/X}^{\opp})}} \Hom(Z, Y) , \\
+		{[Z; s, a]} \arrow[mapsto, r] & {\left[ Z \xrightarrow{a} Y \right]}
+	\end{tikzcd} \quad
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g016
+	\begin{tikzcd}[row sep=tiny, column sep=small]
+		M_{X, Y}^r /\sim \arrow[r, "1:1"] & \displaystyle\varinjlim_{\substack{[Y \rightarrowtail Z] \\ \in \Obj(S_{Y/})}} \Hom(X, Z) \\
+		{[Z; a, s]} \arrow[mapsto, r] & {\left[ X \xrightarrow{a} Z \right]}
+	\end{tikzcd}\]
+	di mana $[Z; s, a]$ (atau $[Z; a, s]$) menyatakan kelas ekuivalensi yang
+	memuat $(Z; s, a)$ (atau $(Z; a, s)$).
+\end{lema}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf005
+\begin{bukti}
+	Tinjau funktor $\alpha: S_{/X}^{\opp} \to \cate{Set}$ yang memetakan objek
+	$X \leftarrowtail Z$ ke $\Hom(Z, Y)$. Menurut definisi,
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q005
+	\[ M_{X, Y}^l = \bigsqcup_{X \leftarrowtail Z} \alpha(X \leftarrowtail Z), \]
+	dan karena $S_{/X}^{\opp}$ terfilter (Lema \ref{prop:S-filtered}), mudah
+	diperiksa bahwa relasi biner $\sim$ pada $M_{X,Y}^l$ yang berasal dari
+	\eqref{eqn:localization-sim} diterjemahkan menjadi relasi ekuivalensi dalam
+	Proposisi \ref{prop:filtered-union}. Ini sekaligus membuktikan bijeksi
+	dengan $\varinjlim$. Argumen bagi versi $M_{X,Y}^r$ sama.
+
+	Perhatikan bahwa ketika membahas $\varinjlim$ terfilter dari himpunan,
+	\S\ref{sec:filtered-indlim} mengandaikan bahwa $\varinjlim$ tersebut kecil,
+	sehingga $\varinjlim$ yang bersesuaian tetap berada dalam $\cate{Set}$.
+	Di sini $S_{/X}$ dan
+	$S_{Y/}$ belum tentu merupakan kategori kecil. Namun, pembuktian pernyataan
+	di atas tidak melibatkan ukuran himpunan dan dapat dirumuskan secara tepat
+	agar tidak bergantung pada pilihan semesta Grothendieck.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.p011
+Kelas ekuivalensi $[Z; s, a]$ (atau $[Z; a, s]$) harus dipahami sebagai
+morfisme $as^{-1}$ (atau $s^{-1}a$) dalam $\mathcal{C}[S^{-1}]$ yang akan
+dikonstruksi.
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.dp001
+\begin{definisiproposisi}\label{prop:localized-composition}
+	Untuk sistem multiplikatif kiri $S$, ambil sembarang $X,Y$ dan data
+	$(U; s, a) \in M_{X,Y}^l$ serta $(V; t, b) \in M_{Y,Z}^l$. Gunakan (S3)
+	untuk memperluasnya menjadi diagram komutatif berikut:
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g017
+	\[\begin{tikzcd}[row sep=small]
+		& & W \arrow[rightarrowtail, ld, "r"'] \arrow[rd, "c"] & & \\
+		& U \arrow[rightarrowtail, ld, "s"'] \arrow[rd, "a"'] & & V \arrow[rightarrowtail, ld, "t"] \arrow[rd, "b"] & \\
+		X & & Y & & Z
+	\end{tikzcd}\]
+	Maka
+	$[V; t, b] \circ [U; s, a] := [W; sr, bc] \in M_{X,Z}^l /\sim$
+	hanya bergantung pada $[U; s, a]$ dan $[V; t, b]$. Pernyataan dual juga
+	berlaku bagi sistem multiplikatif kanan.
+\end{definisiproposisi}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf006
+\begin{bukti}
+	Pertama, tetapkan $(V; t, b)$ dan variasikan $(U; s, a)$ di dalam kelas
+	ekuivalensinya. Berdasarkan \eqref{eqn:localization-sim}, masalahnya adalah
+	membuktikan, bagi diagram komutatif
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g018
+	\[\begin{tikzcd}
+		& U \arrow[rightarrowtail, ld, "s"'] \arrow[rd, "a"] & W \arrow[rightarrowtail, l, "r"'] \arrow[rd, "c"] & & \\
+		X & & Y & V \arrow[r, "b"] \arrow[rightarrowtail, l, "t"'] & Z . \\
+		& U' \arrow[rightarrowtail, lu, "{s'}"] \arrow[ru, "{a'}"] \arrow[uu, "x"] & W' \arrow[rightarrowtail, l, "{r'}"] \arrow[ru, "{c'}"'] & &
+	\end{tikzcd}\]
+	bahwa $(W; sr, bc) \sim (W'; s'r', bc')$. Terapkan (S3) untuk memperoleh
+	objek $Q$ dan morfisme $q$, $k$ sedemikian sehingga
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g019
+	\[\begin{tikzcd}
+		Q \arrow[rightarrowtail, d, "k"'] \arrow[r, "q"] & W \arrow[rightarrowtail, d, "r"] \\
+		W' \arrow[r, "{xr'}"'] & U
+	\end{tikzcd} \quad \text{komutatif}. \]
+
+	Dengan menggabungkan diagram sebelumnya, diperoleh
+	$tc'k = a'r'k = axr'k = arq = tcq$. Menurut (S4), terdapat
+	$w: P \rightarrowtail Q$ sedemikian sehingga $c'kw = cqw$. Dari semua ini,
+	mudah diperiksa bahwa
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g020
+	\[\begin{tikzcd}[column sep=large, row sep=large]
+		& W \arrow[rightarrowtail, ld, "sr"'] \arrow[rd, "bc"] & \\
+		X & P \arrow[r, "{bc'kw}" description] \arrow[rightarrowtail, l, "{s'r'kw}" description] \arrow[u, "qw" description] \arrow[d, "{kw}" description] & Z \\
+		& W' \arrow[rightarrowtail, lu, "{s'r'}"] \arrow[ru, "{bc'}"'] &
+	\end{tikzcd} \quad \text{komutatif, yaitu}\; (W; sr, bc) \sim (W'; s'r', bc'). \]
+
+	Untuk kasus ketika $(U; s, a)$ ditetapkan dan $(V; t, b)$ divariasikan
+	dalam kelas ekuivalensinya, argumennya serupa.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.dt001
+\begin{definisiteorema}\label{def:fraction-localization}
+	Misalkan $S$ suatu sistem multiplikatif kiri dalam kategori $\mathcal{C}$.
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.l004
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i009
+		\item Dapat didefinisikan suatu kategori
+		$\mathcal{C}[S^{-1}]^l$ (yang boleh berupa kategori besar) dengan
+		himpunan objek $\Obj(\mathcal{C})$ dan himpunan $\Hom$ antara dua objek
+		$X,Y$ berupa $M_{X,Y}^l/\sim$. Morfisme identitas objek $X$ adalah
+		$[X;\identity_X,\identity_X]$, sedangkan komposisi morfisme diberikan
+		oleh operasi biner dalam Definisi--Proposisi
+		\ref{prop:localized-composition}.
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i010
+		\item Dapat didefinisikan funktor
+		$Q^l: \mathcal{C} \to \mathcal{C}[S^{-1}]^l$ yang merupakan pemetaan
+		identitas pada himpunan objek dan memetakan morfisme $f:X\to Y$ ke
+		$[X;\identity_X,f]$ pada himpunan morfisme.
+	\end{enumerate}
+	Versi dual dari pernyataan di atas juga berlaku bagi sistem multiplikatif
+	kanan $S$; data yang bersesuaian ditulis
+	$Q^r: \mathcal{C} \to \mathcal{C}[S^{-1}]^r$.
+\end{definisiteorema}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf007
+\begin{bukti}
+	Berdasarkan dualitas, kita cukup mengkaji kasus sistem multiplikatif kiri.
+
+	Untuk (i), cukup periksa sifat komposisi morfisme dalam
+	$\mathcal{C}[S^{-1}]^l$. Operasi dalam Definisi--Proposisi
+	\ref{prop:localized-composition} jelas membuat
+	$[X;\identity_X,\identity_X]$ memenuhi syarat morfisme identitas, sehingga
+	tinggal memeriksa sifat asosiatif. Tinjau
+	$(A;s,a)\in M_{X,Y}^l$, $(B;t,b)\in M_{Y,Z}^l$, dan
+	$(C;u,c)\in M_{Z,W}^l$. Dengan menerapkan (S3) tiga kali, diperoleh diagram
+	komutatif
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g021
+	\[\begin{tikzcd}[row sep=small]
+		& & & \bullet \arrow[rightarrowtail, ld] \arrow[rd] & & & \\
+		& & \bullet \arrow[rightarrowtail, ld] \arrow[rd] & & \bullet \arrow[rightarrowtail, ld] \arrow[rd] & & \\
+		& A \arrow[rightarrowtail, ld, "s"'] \arrow[rd, "a"] & & B \arrow[rightarrowtail, ld, "t"'] \arrow[rd, "b"] & & C \arrow[rightarrowtail, ld, "u"'] \arrow[rd, "c"] & \\
+		X & & Y & & Z & & W
+	\end{tikzcd}\]
+	Seluruh diagram memberikan suatu unsur $M_{X,W}^l$, bagian kiri bawah
+	memberikan wakil bagi $[B;t,b]\circ[A;s,a]$, dan bagian kanan bawah
+	memberikan wakil bagi $[C;u,c]\circ[B;t,b]$. Hal ini cukup untuk
+	membuktikan sifat asosiatif
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q006
+	\[ [C; u, c] \circ ([B; t, b] \circ [A; s, a]) = ([C; u, c] \circ [B; t, b]) \circ [A; s, a]. \]
+
+	Untuk (ii), cukup periksa bahwa $Q^l$ mempertahankan struktur morfisme.
+	Jelas bahwa $[X;\identity_X,\identity_X]$ memenuhi syarat morfisme
+	identitas. Sekarang tinjau morfisme
+	$X \xrightarrow{f} Y \xrightarrow{g} Z$ dalam $\mathcal{C}$. Diagram
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g022
+	\[\begin{tikzcd}[row sep=small]
+		& & X \arrow[equal, ld] \arrow[rd, "f"] & & \\
+		& X \arrow[equal, ld] \arrow[rd, "f"] & & Y \arrow[equal, ld] \arrow[rd, "g"] & \\
+		X & & Y & & Z
+	\end{tikzcd}\]
+	menunjukkan bahwa $Q^l(gf)=Q^l(g)Q^l(f)$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.th001
+\begin{teorema}[P.\ Gabriel, M.\ Zisman]\label{prop:Gabriel-Zisman}\index{lokalisasi}
+	Misalkan $S$ suatu sistem multiplikatif kiri (atau kanan) dalam
+	$\mathcal{C}$. Maka data $\left(\mathcal{C}[S^{-1}]^l,Q^l\right)$
+	(atau $\left(\mathcal{C}[S^{-1}]^r,Q^r\right)$) memberikan lokalisasi
+	$\mathcal{C}$ terhadap $S$.
+\end{teorema}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf008
+\begin{bukti}
+	Berdasarkan dualitas, kita cukup memeriksa syarat-syarat dalam Definisi
+	\ref{def:cat-localization} bagi kasus sistem multiplikatif kiri. Tuliskan
+	$Q=Q^l$. Jika $f:X\to Y$ termasuk dalam $S$, maka diagram
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g023
+	\[ \begin{tikzcd}
+		& X \arrow[rightarrowtail, ld, "f"'] \arrow[rd, "f"] \arrow[d, "f" description] & \\
+		Y & Y \arrow[equal, l] \arrow[equal, r] & Y
+	\end{tikzcd}\]
+	menunjukkan bahwa
+	$[X;f,f]=[Y;\identity_Y,\identity_Y]$. Oleh karena itu, diagram berikut
+	menunjukkan bahwa
+	$[X;f,\identity_X]=[X;\identity_X,f]^{-1}$:
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g024
+	\[\begin{tikzcd}[column sep=small, row sep=small]
+		& & X \arrow[equal, ld] \arrow[equal, rd] & & \\
+		& X \arrow[equal, ld] \arrow[rd, "f"] & & X \arrow[rightarrowtail, ld, "f"'] \arrow[equal, rd] & \\
+		X & & Y & & X
+	\end{tikzcd} \quad 
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g025
+	\begin{tikzcd}[column sep=small, row sep=small]
+		& & X \arrow[equal, ld] \arrow[equal, rd] & & \\
+		& X \arrow[rightarrowtail, ld, "f"'] \arrow[equal, rd] & & X \arrow[equal, ld] \arrow[rightarrowtail, rd, "f"] & \\
+		Y & & X & & Y
+	\end{tikzcd}\]
+	Dengan demikian, $Q$ memang memetakan unsur-unsur $S$ menjadi isomorfisme.
+
+	Selanjutnya, tinjau suatu funktor $F:\mathcal{C}\to\mathcal{D}$ yang
+	memetakan $S$ menjadi isomorfisme. Definisikan
+	$F[S^{-1}]:\mathcal{C}[S^{-1}]^l\to\mathcal{D}$ sebagai berikut: pada
+	objek, funktor ini memetakan $X$ ke $FX$, sedangkan pada morfisme, ia
+	memetakan
+	$[U;s,a]\in\Hom_{\mathcal{C}[S^{-1}]^l}(X,Y)$ ke
+	$(Fa)(Fs)^{-1}\in\Hom_{\mathcal{D}}(FX,FY)$\footnote{Catatan penerjemah:
+	sumber menulis $\Hom_{\mathcal{D}}(X,Y)$; karena
+	$(Fa)(Fs)^{-1}:FX\to FY$, terjemahan ini memperbaiki objek sumber dan
+	sasaran menjadi $FX$ dan $FY$ (O014-C018).}. Jelas bahwa $F[S^{-1}]$
+	memetakan morfisme identitas dalam $\mathcal{C}[S^{-1}]^l$ ke morfisme
+	identitas dalam $\mathcal{D}$. Terapkan funktor $F$ pada diagram dalam
+	Definisi--Proposisi \ref{prop:localized-composition}, lalu ambil invers
+	anak panah dalam $F(S)$; segera terlihat bahwa $F[S^{-1}]$ mempertahankan
+	komposisi morfisme. Sifat $F[S^{-1}]Q=F$ juga jelas. Karena semua morfisme
+	dalam $\mathcal{C}[S^{-1}]^l$ berbentuk $(Qa)(Qs)^{-1}$, tidak ada
+	pilihan lain bagi definisi $F[S^{-1}]$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.c002
+\begin{konvensi}
+	Jika $S$ merupakan sistem multiplikatif, Proposisi
+	\ref{prop:cat-localization-unique} menunjukkan bahwa kedua lokalisasi
+	tersebut dapat diidentifikasi satu sama lain; kita menuliskannya sebagai
+	$Q:\mathcal{C}\to\mathcal{C}[S^{-1}]$.
+\end{konvensi}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.co001
+\begin{korolari}\label{prop:fraction-zero}
+	Misalkan $S$ suatu sistem multiplikatif kiri (atau kanan) dalam
+	$\mathcal{C}$. Morfisme $f,g:X\to Y$ dalam $\mathcal{C}$ memenuhi
+	$Q^l f=Q^l g$ (atau $Q^r f=Q^r g$) jika dan hanya jika terdapat
+	$s\in S$ sedemikian sehingga $fs=gs$ (atau $sf=sg$).
+\end{korolari}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf009
+\begin{bukti}
+	Cukup periksa arah \emph{hanya jika} untuk sistem multiplikatif kiri $S$.
+	Jika $Q^l f=Q^l g$, konstruksi $\mathcal{C}[S^{-1}]^l$ mengakibatkan
+	adanya diagram komutatif
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g026
+	\[\begin{tikzcd}
+		& X \arrow[equal, ld] \arrow[rd, "f"] & \\
+		X & U \arrow[rightarrowtail, l, "s"'] \arrow[r, "a"] \arrow[d] \arrow[u] & Y \\
+		& X \arrow[equal, lu] \arrow[ru, "g"'] &
+	\end{tikzcd}\]
+	Dari sini diperoleh $fs=a=gs$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.co002
+\begin{korolari}\label{prop:fraction-mono-epi}
+	Misalkan $S$ suatu sistem multiplikatif kiri (atau kanan) dalam
+	$\mathcal{C}$. Maka $Q^l$ (atau $Q^r$) memetakan monomorfisme menjadi
+	monomorfisme (atau memetakan epimorfisme menjadi epimorfisme).
+\end{korolari}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf010
+\begin{bukti}
+	Kita hanya membuktikan kasus sistem multiplikatif kiri. Misalkan
+	$f:X\to Y$ suatu monomorfisme dalam $\mathcal{C}$. Ambil
+	$\alpha,\beta:Q^lW\rightrightarrows Q^lX$ sedemikian sehingga
+	$(Q^lf)\alpha=(Q^lf)\beta$. Syarat (S2) dan (S3) cukup untuk menyatakan
+	$\alpha$ dan $\beta$ masing-masing dengan unsur $(U;s,a)$ dan $(U;s,b)$
+	dari $M^l_{W,X}$; rinciannya diserahkan kepada pembaca sebagai latihan.
+	Syarat di atas kemudian mengakibatkan $Q^l(fa)=Q^l(fb)$. Dengan menerapkan
+	Korolari \ref{prop:fraction-zero}, terdapat $t\in S$ sedemikian sehingga
+	$fat=fbt$. Karena itu $at=bt$, sehingga $\alpha=\beta$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.r001
+\begin{catatan}\label{rem:localization-size}
+	\index{masalah ukuran (size issues)}
+	Dalam berbagai operasi dasar teori kategori, kita ingin sebisa mungkin
+	menghindari kategori besar. Definisi--Teorema
+	\ref{def:fraction-localization} menyebutkan bahwa
+	$\mathcal{C}[S^{-1}]^l$ (atau $\mathcal{C}[S^{-1}]^r$) mungkin merupakan
+	kategori besar. Alasannya, $\varinjlim$ dalam Lema
+	\ref{prop:MXY-equiv} belum tentu kecil, sehingga hasilnya belum tentu
+	berada dalam $\cate{Set}$. Ini merupakan persoalan yang agak rumit.
+
+	Namun, jika $S$ memenuhi syarat berikut, maka
+	$\mathcal{C}[S^{-1}]^l$ (atau $\mathcal{C}[S^{-1}]^r$) memang bukan
+	kategori besar: andaikan $S_{/X}^{\opp}$ (atau $S_{X/}$) memiliki
+	subkategori kecil yang kofinal (Definisi \ref{def:cofinal}) untuk setiap
+	$X\in\Obj(\mathcal{C})$. Menurut Proposisi \ref{prop:cofinal-lim},
+	$\varinjlim$ yang dibicarakan dapat dibatasi pada subkategori tersebut,
+	sehingga memberikan objek dalam $\cate{Set}$. Jika $\mathcal{C}$ sendiri
+	merupakan kategori kecil, syarat ini otomatis terpenuhi.
+\end{catatan}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.le003
+\begin{lema}\label{prop:localization-prod}
+	Misalkan $S$ suatu sistem multiplikatif kiri (atau kanan) dalam kategori
+	$\mathcal{C}$. Maka funktor lokalisasi $Q^l$ (atau $Q^r$) mempertahankan
+	$\varprojlim$ berhingga (atau $\varinjlim$ berhingga).
+\end{lema}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf011
+\begin{bukti}
+	Kita hanya membahas kasus ketika $S$ merupakan sistem multiplikatif kiri.
+	Misalkan $J$ suatu kategori berhingga dan $\varprojlim$ yang bersesuaian
+	dengan funktor $\beta:J^{\opp}\to\mathcal{C}$ ada. Menurut Lema
+	\ref{prop:MXY-equiv}, untuk setiap $X\in\Obj(\mathcal{C})$ terdapat
+	bijeksi kanonik
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q007
+	\begin{multline*}
+		\Hom_{\mathcal{C}[S^{-1}]^l} \left( Q^l X, Q^l \varprojlim \beta \right) \simeq \varinjlim_{X \leftarrowtail Z} \Hom_{\mathcal{C}}\left( Z, \varprojlim \beta \right) \\
+		\simeq \varinjlim_{X \leftarrowtail Z} \varprojlim_{j \in \Obj(J)} \Hom_{\mathcal{C}}\left( Z, \beta(j) \right).
+	\end{multline*}
+
+	Terapkan Lema \ref{prop:S-filtered} dan Proposisi
+	\ref{prop:filtered-finite-exchange} pada suku terakhir untuk
+	mengubahnya lebih lanjut menjadi
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q008
+	\[ \varprojlim_{j \in \Obj(J)} \varinjlim_{X \leftarrowtail Z} \Hom_{\mathcal{C}}\left( Z, \beta(j) \right) \simeq \varprojlim_{j \in \Obj(J)} \Hom_{\mathcal{C}[S^{-1}]^l} \left(Q^l X, Q^l \beta(j) \right). \]
+	Secara ketat, \S\ref{sec:filtered-indlim} bekerja dalam kategori
+	$\cate{Set}$, sedangkan himpunan-himpunan $\Hom$ di sini belum tentu berada
+	dalam $\cate{Set}$. Namun, ini hanyalah persoalan teknis kecil; lihat
+	pembahasan terkait dalam bukti Lema \ref{prop:MXY-equiv}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.th002
+\begin{teorema}\label{prop:localization-additivity}
+	Misalkan $\mathcal{C}$ suatu kategori-$\cate{Ab}$ dan $S$ suatu sistem
+	multiplikatif kiri (atau kanan) di dalamnya.
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.l005
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i011
+		\item Dalam keadaan ini, $\mathcal{C}[S^{-1}]^l$ (atau
+		$\mathcal{C}[S^{-1}]^r$) memiliki struktur kategori-$\cate{Ab}$
+		kanonik yang membuat $Q^l$ (atau $Q^r$) menjadi funktor aditif yang
+		pada hakikatnya surjektif.
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i012
+		\item Jika $\mathcal{C}$ merupakan kategori aditif dan $S$ merupakan
+		sistem multiplikatif, maka $\mathcal{C}[S^{-1}]$ juga merupakan
+		kategori aditif.
+		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i013
+		\item Pernyataan di atas tetap berlaku jika kategori-$\cate{Ab}$
+		diperumum menjadi kategori $\Bbbk$-linear, dengan $\Bbbk$ suatu
+		gelanggang komutatif. Jika $F$ dalam sifat universal Definisi
+		\ref{def:cat-localization} diambil $\Bbbk$-linear, maka funktor
+		$F[S^{-1}]$ yang bersesuaian juga demikian.
+	\end{enumerate}
+\end{teorema}
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf012
+\begin{bukti}
+	Untuk (i), cukup tinjau kasus sistem multiplikatif kiri. Kita harus
+	mendefinisikan penjumlahan pada himpunan-himpunan morfisme dalam
+	$\mathcal{C}[S^{-1}]$. Misalkan
+	\[
+		f,g\in\Hom_{\mathcal{C}[S^{-1}]^l}(X,Y).
+	\]
+	Karena $S_{/X}^{\opp}$
+	terfilter (Lema \ref{prop:S-filtered}), terdapat morfisme
+	$s:U\rightarrowtail X$ dan $a_1,a_2:U\to Y$ dalam $\mathcal{C}$
+	sedemikian sehingga $f=[U;s,a_1]$ dan $g=[U;s,a_2]$. Definisikan
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q009
+	\[ f + g := [U; s, a_1 + a_2] \in \Hom_{\mathcal{C}[S^{-1}]}(X, Y). \]
+	Secara khusus, morfisme nol dapat ditulis sebagai $[U;s,0]$, dan
+	$-[U;s,a]=[U;s,-a]$. Masih harus dibuktikan bahwa $f+g$ tidak bergantung
+	pada pilihan wakil; hal ini juga dapat ditangani dengan sifat terfilter
+	dari $S_{/X}^{\opp}$, dan rincian rutinnya dihilangkan. Setelah menerima
+	bahwa operasi ini terdefinisi dengan baik, mudah untuk memeriksa definisi
+	kategori-$\cate{Ab}$ dan bahwa $Q$ merupakan funktor aditif.
+
+	Berdasarkan Definisi \ref{def:additive-category} tentang kategori aditif
+	dan Lema \ref{prop:localization-prod}, pernyataan (ii) mengikuti dari (i).
+
+	Untuk (iii), jika $\mathcal{C}$ bersifat $\Bbbk$-linear, definisikan
+	perkalian skalar pada $\Hom_{\mathcal{C}[S^{-1}]}$ dengan
+	$t\cdot[U;s,a]=[U;s,ta]$, untuk $t\in\Bbbk$. Mudah diperiksa bahwa semua
+	syarat yang diperlukan terpenuhi.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.e001
+\begin{contoh}[Lokalisasi gelanggang]
+	Memberikan gelanggang $R$ sama artinya dengan memberikan
+	kategori-$\cate{Ab}$ dengan satu objek $\star$, katakanlah $\mathcal{C}$,
+	sedemikian sehingga $R=\End_{\mathcal{C}}(\star)$. Jika $R$ komutatif,
+	syarat bahwa $S\subset R=\Mor(\mathcal{C})$ merupakan sistem
+	multiplikatif kiri atau kanan berimpit. Dalam keadaan ini,
+	gelanggang yang bersesuaian dengan kategori-$\cate{Ab}$
+	$\mathcal{C}[S^{-1}]$ tepat merupakan lokalisasi $R[S^{-1}]$ dari $R$;
+	lihat \cite[\S 5.3]{Li1}. Untuk $R$ yang umum, teori dalam bagian ini
+	memberikan cara mengonstruksi lokalisasi nonkomutatif. Teori terkait juga
+	merupakan salah satu cabang teori gelanggang tak komutatif; lihat
+	\cite[\S 10A]{Lam99} untuk uraian terperinci.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.e002
+\begin{contoh}[Lokalisasi sentral]\label{eg:central-localization}
+	Tuliskan pusat kategori aditif $\mathcal{C}$ sebagai $Z(\mathcal{C})$;
+	ini merupakan gelanggang komutatif. Lihat pembahasan sebelum Proposisi
+	\ref{prop:k-linear-center}. Untuk sembarang subhimpunan multiplikatif $S$
+	dari gelanggang $Z(\mathcal{C})$, mudah diperiksa bahwa himpunan morfisme
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q010
+	\[ \{s_X \in \End_{\mathcal{C}}(X): s \in S, \; X \in \Obj(\mathcal{C}) \} \]
+	merupakan sistem multiplikatif. Kategori $\mathcal{C}[S^{-1}]$ yang
+	bersesuaian tentu dapat dikonstruksi melalui operasi pecahan di atas,
+	tetapi cara yang lebih singkat adalah mengambil
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q011
+	\[ \Obj(\mathcal{C}[S^{-1}]) := \Obj(\mathcal{C}), \quad \Hom_{\mathcal{C}[S^{-1}]}(X, Y) := \Hom_{\mathcal{C}}(X, Y) \dotimes{Z(\mathcal{C})} Z(\mathcal{C})[S^{-1}], \]
+	dengan komposisi morfisme didefinisikan secara jelas. Pemeriksaan yang
+	terkait diserahkan sebagai latihan untuk bab ini.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.r002
+\begin{catatan}\label{rem:reflexive-localization}
+	\index{lokalisasi!reflektif (reflective)}
+	Untuk $\mathcal{C}$ dan $S$ yang umum, kasus ketika funktor lokalisasi
+	$Q:\mathcal{C}\to\mathcal{C}[S^{-1}]$ memiliki adjoin kanan yang penuh dan
+	setia sangatlah menarik dan penting. Lokalisasi dengan sifat ini disebut
+	\emph{lokalisasi reflektif}. Teorema Gabriel--Popescu yang akan
+	diperkenalkan dalam Lampiran \S~A.3 merupakan salah satu contoh
+	khas.
+\end{catatan}
+
+% segment-id: o014.li2.chapter1.gabriel-zisman-localization.r003
+\begin{catatan}[Lokalisasi kategori produk]\label{rem:localization-product-cat}
+	Terakhir, tinjau kategori-kategori $\mathcal{C}_i$ beserta sistem
+	multiplikatif kiri (atau kanan) $S_i$ di dalamnya, untuk $i=1,2$. Tuliskan
+	funktor lokalisasi yang bersesuaian sebagai
+	$Q_i:\mathcal{C}_i\to\mathcal{C}_i[S_i^{-1}]$. Jelas bahwa
+	$S_1\times S_2$ juga merupakan sistem multiplikatif kiri (atau kanan)
+	dalam $\mathcal{C}_1\times\mathcal{C}_2$. Berdasarkan konstruksi dalam
+	Definisi--Teorema \ref{def:fraction-localization}, mudah diperiksa bahwa
+	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q012
+	\[ (Q_1, Q_2): \mathcal{C}_1 \times \mathcal{C}_2 \to \mathcal{C}_1[S_1^{-1}] \times \mathcal{C}_2[S_2^{-1}] \]
+	merupakan lokalisasi yang bersesuaian. Pernyataan ini dapat diperumum
+	menjadi produk dari sembarang banyak kategori.
+\end{catatan}

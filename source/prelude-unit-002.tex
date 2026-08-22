@@ -1,0 +1,279 @@
+% Terjemahan Bahasa Indonesia dari prelude.tex baris 30-103.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.prelude.homology-history
+
+\section*{Sejarah Singkat Homologi}
+\addcontentsline{toc}{section}{Sejarah Singkat Homologi}
+\hypertarget{o014.aljabr2.prelude.homology-history}{ }
+
+% segment-id: o014.li2.prelude.homology-history.p001
+Matematika tidak harus berpijak pada sejarah. Namun, menelaah masa lalu
+untuk memahami masa depan tentu bermanfaat dan tidak merugikan. Untuk memudahkan pembahasan,
+kita akan membagi perkembangan teori homologi secara agak artifisial ke
+dalam beberapa tahap.
+
+\subsection*{Masa Perintisan}
+
+% segment-id: o014.li2.prelude.homology-history.p002
+Pendorong pertama perkembangan aljabar homologis adalah topologi. Pada
+paruh akhir abad ke-19, B.\ Riemann dan E.\ Betti mengkaji genus permukaan
+beserta generalisasinya ke dimensi lebih tinggi, yang disebut bilangan
+Betti. Menjelang pergantian abad, gagasan ini dikembangkan oleh
+H.\ Poincaré menjadi suatu sistem yang lebih ketat secara matematis. Secara kasar, gagasan
+awal Poincaré ialah menguraikan ruang menjadi poligon, polihedron, atau
+padanan berdimensi lebih tinggi yang direkatkan satu sama lain, lalu
+menghitung bilangan Betti atau versi torsinya dari matriks yang merekam
+cara perekatan tersebut, dan menunjukkan bahwa semuanya merupakan
+invarian topologis.
+
+% segment-id: o014.li2.prelude.homology-history.p003
+Dalam tulisan singkat tahun 1925, E.\ Noether menjelaskan
+bagaimana homologi dapat didefinisikan sebagai grup abelian, sedangkan
+bilangan Betti dan versi torsinya hanyalah nilai numerik yang diturunkan
+darinya. Gagasan ini sudah mendekati definisi modern dalam topologi
+aljabar: untuk ruang $E$ yang dilengkapi dengan suatu penguraian dan grup
+abelian $A$, didefinisikan
+kompleks rantai $C(E, A)$ yang merekam cara bagian-bagian penguraian
+tersebut direkatkan.
+Grup homologi $E$ berkoefisien $A$ kemudian didefinisikan sebagai
+$\Hm_n(E; A) := \Hm_n(C(E, A))$, sementara grup kohomologi
+$\Hm^n(E; A)$ didefinisikan melalui cara yang dual.
+
+% segment-id: o014.li2.prelude.homology-history.p004
+Sejak saat itu hingga sekitar tahun 1950, topologi aljabar memasuki masa
+perkembangan yang amat subur. Dari sudut pandang aljabar, perkembangan
+yang patut dicatat meliputi:
+\begin{itemize}
+	% segment-id: o014.li2.prelude.homology-history.p005
+	\item Teorema koefisien universal untuk homologi (atau kohomologi),
+	yang menyatakan bahwa kasus berkoefisien bilangan bulat sudah cukup
+	untuk menentukan homologi (atau kohomologi) dengan koefisien dalam grup
+	abelian umum $A$. Uraian konkretnya melibatkan funktor $\Tor$ (atau
+	$\Ext$), yang akan dibahas secara mendalam kelak.
+	% segment-id: o014.li2.prelude.homology-history.p006
+	\item Hasil kali \emph{cup} pada kohomologi, yaitu suatu struktur
+	perkalian yang dimiliki grup kohomologi.
+	% segment-id: o014.li2.prelude.homology-history.p007
+	\item Ruang yang disebut asferis, yakni ruang terhubung yang memenuhi
+	$n > 1 \implies \pi_n(E) = 0$; di sini $E$ menyatakan ruang tersebut,
+	dan $\pi_n(E)$ menyatakan grup homotopi ke-$n$ relatif terhadap titik
+	dasar yang dipilih.
+	W.\ Hurewicz membuktikan bahwa grup homologi dan kohomologi ruang
+	asferis sepenuhnya ditentukan oleh $\pi_1(E)$ dan dapat diberikan secara
+	aljabar. Inilah cikal bakal teori kohomologi grup.
+\end{itemize}
+
+% segment-id: o014.li2.prelude.homology-history.p008
+Pendorong lain bagi aljabar homologis datang dari dalam aljabar sendiri.
+Contoh klasiknya ialah teorema sizigi Hilbert dalam teori invarian (1890):
+dalam bahasa modern, teorema sizigi menyatakan bahwa setiap modul atas
+gelanggang polinomial $\Bbbk[X_1, \ldots, X_n]$ memiliki resolusi bebas
+dengan panjang $\leq n$.
+
+% segment-id: o014.li2.prelude.homology-history.p009
+Funktor $\Ext$ juga berkaitan dengan persoalan aljabar. Untuk grup abelian
+$A$ dan $B$, barisan eksak pendek grup abelian
+$0 \to A \to E \to B \to 0$ disebut pula ekstensi grup (perluasan grup);
+hingga isomorfisme, ekstensi-ekstensi tersebut berkorespondensi satu-satu
+dengan unsur-unsur grup $\Ext^1(B, A)$. Selain itu, jika $B$ diganti oleh
+sembarang grup $G$, klasifikasi ekstensi grup secara alami menghasilkan
+definisi aljabar bagi kohomologi grup $\Hm^2(G, A)$.
+
+% segment-id: o014.li2.prelude.homology-history.p010
+Operasi derivasi pada gelanggang merupakan persoalan yang sejak awal
+menarik perhatian para ahli aljabar. Pada tahun 1942, G.\ Hochschild
+mendefinisikan invarian untuk gelanggang $R$ yang kini disebut homologi
+dan kohomologi Hochschild; suku kohomologi berderajat $n=1$
+mengklasifikasikan derivasi modulo derivasi dalam.\footnote{Catatan
+penerjemah: teks sumber menyatakan bahwa suku berderajat satu
+``mengklasifikasikan semua derivasi''. Pernyataan ini dikoreksi di sini:
+$\Hm^1_{\mathrm{Hoch}}(R,R)$ mengklasifikasikan derivasi modulo derivasi
+dalam; lihat catatan koreksi O014-C001.}
+Konstruksi-konstruksi ini dapat diperluas ke bimodul $(R, R)$ yang lebih
+umum, yaitu $M$, dan terus memainkan peranan penting dalam matematika
+mutakhir.
+
+% segment-id: o014.li2.prelude.homology-history.p011
+Patut disebut pula karya J.\ Leray mengenai berkas dan barisan spektral
+selama Perang Dunia II. Motivasinya bermula dari persoalan titik tetap
+yang berkaitan dengan persamaan diferensial parsial. Berkas adalah
+struktur dalam geometri yang memuat informasi lokal--global, sedangkan
+barisan spektral menyediakan perangkat ampuh untuk menghitung kohomologi
+berkas. Di bawah pengaruh teori Leray dan karya Kiyoshi Oka dalam teori
+fungsi beberapa peubah kompleks, H.\ Cartan dan sejumlah matematikawan lain
+mulai menulis ulang dasar-dasar topologi aljabar setelah perang; aljabar
+homologis pun memperoleh wajah yang sama sekali baru.
+
+\subsection*{Revolusi Cartan--Eilenberg}
+
+% segment-id: o014.li2.prelude.homology-history.p012
+Karya H.\ Cartan dan S.\ Eilenberg \cite{CE56} sangat luas dan mendalam,
+serta untuk waktu yang lama dipandang sebagai rujukan kanonik. Buku itu
+menandai suatu masa baru dalam perkembangan aljabar homologis. Sumbangan
+utamanya mencakup:
+\begin{itemize}
+	% segment-id: o014.li2.prelude.homology-history.p013
+	\item definisi modul injektif dan modul projektif, beserta resolusi
+	injektif dan resolusi projektif suatu modul;
+	% segment-id: o014.li2.prelude.homology-history.p014
+	\item definisi funktor turunan kanan dan funktor turunan kiri dalam
+	kerangka teori modul, yang memberikan definisi umum bagi funktor
+	$\Ext$ dan $\Tor$, serta pengenalan dimensi injektif dan dimensi
+	projektif suatu modul; perangkat ini segera menunjukkan kegunaannya
+	dalam teori gelanggang komutatif;
+	% segment-id: o014.li2.prelude.homology-history.p015
+	\item penjelasan, melalui perangkat tersebut, atas berbagai konstruksi
+	sebelumnya, seperti kohomologi grup serta homologi dan kohomologi
+	Hochschild;
+	% segment-id: o014.li2.prelude.homology-history.p016
+	\item pembangunan sistematis teori umum barisan spektral dan struktur
+	perkaliannya.
+\end{itemize}
+
+% segment-id: o014.li2.prelude.homology-history.p017
+Istilah ``aljabar homologis'' juga berasal dari \cite{CE56}. Dengan
+hadirnya teori akbar ini, aljabar homologis memasuki masa mudanya.
+
+\subsection*{Kategori Abelian}
+
+% segment-id: o014.li2.prelude.homology-history.p018
+Dilihat dari sudut pandang geometri---lebih tepatnya, teori berkas---kerangka
+teori modul belum memadai bagi aljabar homologis. Di samping kategori modul
+kiri atas gelanggang $R$, yakni $R\dcate{Mod}$, kita ingin mengizinkan suatu
+kategori yang lebih umum $\mathcal{A}$ tetapi tetap memiliki makna ``linear''.
+Upaya pertama ke arah ini muncul dalam disertasi
+doktor D.\ Buchsbaum pada tahun 1955, yang juga menjadi sebuah lampiran
+dalam \cite{CE56}; ia mengabstraksikan konsep barisan eksak dari teori
+modul.
+
+% segment-id: o014.li2.prelude.homology-history.p019
+Pendekatan yang kini lazim berasal dari makalah A.\ Grothendieck
+\cite{Gr57}; kategori yang dihasilkan disebut kategori abelian. Kategori
+ini adalah kategori aditif yang memiliki kernel dan kokernel, dengan
+syarat bahwa setiap morfisme $f: M \to N$ di dalamnya bersifat ketat.
+Secara kasar, keketatan tersebut bersesuaian dengan teorema isomorfisme
+yang dikenal dalam teori modul,
+$M/\Ker(f) \rightiso \Image(f)$. Dalam karya itu, Grothendieck juga:
+\begin{itemize}
+	% segment-id: o014.li2.prelude.homology-history.p020
+	\item mendefinisikan funktor-$\delta$ dan funktor-$\delta$ universal
+	dengan memakai konsep barisan eksak panjang, memberikan karakterisasi
+	bagi yang terakhir, dan menunjukkan bahwa funktor turunan merupakan
+	kasus khusus funktor-$\delta$ universal;
+	% segment-id: o014.li2.prelude.homology-history.p021
+	\item memberikan barisan spektral Grothendieck untuk funktor turunan
+	dari komposisi funktor;
+	% segment-id: o014.li2.prelude.homology-history.p022
+	\item mendefinisikan suatu kelas khusus kategori abelian, yang kini
+	disebut kategori Grothendieck, serta membuktikan keberadaan resolusi
+	injektif di dalamnya.
+\end{itemize}
+
+% segment-id: o014.li2.prelude.homology-history.p023
+Teori-teori ini memungkinkan kohomologi berkas dipelajari pada ruang yang
+lebih umum dan sangat penting bagi perkembangan geometri.
+
+\subsection*{Kategori Turunan}
+
+% segment-id: o014.li2.prelude.homology-history.p024
+Dalam disertasi doktor tahun 1963, J.-L.\ Verdier mendefinisikan kategori
+turunan $\cate{D}(\mathcal{A})$ bagi suatu kategori abelian $\mathcal{A}$.
+Motivasinya berasal dari kesulitan yang dihadapi
+Grothendieck ketika mengkaji dualitas dalam geometri aljabar. Hambatan
+tersebut mendorong pencarian kerangka baru untuk bekerja bukan lagi hanya
+dengan kohomologi, melainkan dengan kompleks itu sendiri, sambil secara
+formal menambahkan invers bagi kuasi-isomorfisme ke dalam kategori
+kompleks $\cate{C}(\mathcal{A})$. Kuasi-isomorfisme adalah morfisme
+kompleks yang menginduksi isomorfisme pada taraf kohomologi,
+$\Hm^n(f): \Hm^n(X) \rightiso \Hm^n(Y)$, dengan $f: X \to Y$.
+Konstruksi penambahan invers
+tersebut disebut lokalisasi Gabriel--Zisman dan merupakan generalisasi
+lokalisasi gelanggang pada taraf kategori.
+
+% segment-id: o014.li2.prelude.homology-history.p025
+Kategori turunan $\cate{D}(\mathcal{A})$ memuat lebih banyak informasi
+daripada kohomologi, dan cara bekerja dengannya pun berbeda. Di dalam
+$\cate{D}(\mathcal{A})$, kita harus memakai suatu kelas barisan morfisme
+yang disebut segitiga terbedakan (\emph{distinguished triangle})
+\[ X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1] \]
+untuk menggantikan barisan eksak pendek dalam $\mathcal{A}$ atau kategori
+kompleks $\cate{C}(\mathcal{A})$. Di sini,
+$X[1]$ berarti pergeseran kompleks $X$:
+\[ X[1]^n = X^{n+1}, \quad d_{X[1]}^n = -d_X^n. \]
+Konstruksi-konstruksi ini selanjutnya diabstraksikan oleh Verdier menjadi
+suatu kelas struktur yang disebut kategori bertriangulasi
+(\emph{triangulated category}). Dilihat dari
+topologi, struktur bertriangulasi kategori turunan juga bersifat alami:
+segitiga terbedakan dapat dianalogikan dengan barisan kofiber
+(\emph{cofiber sequence}) dalam teori
+homotopi. Hal ini berkaitan dengan aljabar homotopik yang akan dibahas
+kelak. Atas pertimbangan teori homotopi pula, D.\ Puppe secara independen
+menemukan struktur serupa pada tahun 1962, tetapi aksioma yang ia tuliskan
+tidak memuat aksioma oktahedral Verdier.
+
+% segment-id: o014.li2.prelude.homology-history.p026
+Meskipun kategori turunan tidak sempurna untuk semua penerapan, bahasa ini
+tetap menjadi pilihan utama para ahli geometri dan aljabar hingga awal
+abad ke-21. Sebagai contoh, salah satu penerapannya yang menonjol ialah
+teori modul-$\mathscr{D}$, yang terutama dikembangkan oleh Masaki Kashiwara,
+Z.\ Mebkhout, dan matematikawan lain; beberapa operasi dasarnya hanya
+dapat didefinisikan secara wajar pada taraf kategori turunan.
+
+% segment-id: o014.li2.prelude.homology-history.p027
+Selain itu, kategori turunan suatu gelanggang $R$,
+$\cate{D}(R) := \cate{D}(R\dcate{Mod})$, dapat pula dipandang sebagai
+suatu invarian bagi $R$. Jika kategori turunan dua gelanggang ekuivalen
+sebagai kategori bertriangulasi, kedua gelanggang itu disebut ekuivalen
+secara turunan. Berbagai persoalan dan metode seputar ekuivalensi turunan
+merupakan salah satu arus utama dalam teori representasi aljabar; para
+perintisnya antara lain D.\ Happel dan J.\ Rickard.
+
+\subsection*{Aljabar Homotopik}
+
+% segment-id: o014.li2.prelude.homology-history.p028
+Pembaca tentu masih ingat bahwa asal-usul topologis aljabar homologis
+adalah penguraian ruang, lalu pendefinisian kompleks rantai atau kompleks
+yang sesuai untuk menyarikan invarian topologis. Penguraian pada langkah
+pertama memiliki berbagai ragam; himpunan simplisial yang didefinisikan
+oleh Eilenberg dan Zilber pada tahun 1950 merupakan salah satunya, dan
+himpunan simplisial dapat diperumum lebih lanjut menjadi objek simplisial
+dalam suatu kategori tertentu. Bahasa ini memiliki daya penjelas yang
+sangat luas. Sebagai contoh, teori homotopi ruang topologis dapat
+dikembangkan dalam kerangka himpunan simplisial, sedangkan konstruksi yang
+disebut ``saraf'' (\emph{nerve}) menafsirkan kategori sebagai suatu jenis
+khusus himpunan simplisial.
+
+% segment-id: o014.li2.prelude.homology-history.p029
+Apa yang terjadi jika sedikit ``linearitas'' ditambahkan ke dalam gambaran
+ini? Korespondensi Dold--Kan (1958) memberikan hubungan langsung antara
+objek simplisial dalam kategori abelian dan teori kompleks. Sebagai
+contoh, untuk kategori grup abelian $\cate{Ab}$, korespondensi Dold--Kan
+merupakan suatu ekuivalensi adjoin yang diwujudkan secara eksplisit oleh
+sepasang funktor:
+\[\begin{tikzcd}
+	\mathrm{N}: \cate{sAb} \arrow[shift left, r] & \cate{Ch}_{\geq 0}(\cate{Ab}): \Gamma \arrow[shift left, l]
+\end{tikzcd}\]
+Di sini, $\cate{sAb}$ adalah kategori objek simplisial dalam $\cate{Ab}$,
+sedangkan $\cate{Ch}_{\geq 0}(\cate{Ab})$ adalah kategori kompleks rantai
+berderajat tak negatif dalam $\cate{Ab}$. Untuk kategori kompleks, kita
+dapat menangani konvensi lain dengan membalik pengindeksan atau beralih ke
+kategori lawan.
+
+% segment-id: o014.li2.prelude.homology-history.p030
+Korespondensi Dold--Kan memberikan tafsiran topologis bagi banyak definisi
+dan konstruksi tentang kompleks rantai. Melalui metode simplisial,
+suatu kelas resolusi yang secara kolektif disebut ``konstruksi bar'' dalam
+aljabar homologis juga memperoleh penjelasan terpadu.
+
+% segment-id: o014.li2.prelude.homology-history.p031
+Homotopi adalah gagasan inti dalam teori simplisial. Metode aljabar yang
+melibatkan objek simplisial kadang-kadang juga disebut aljabar homotopik.
+Daya metode ini tampak menonjol dalam teori K tingkat tinggi yang
+dikembangkan D.\ Quillen, dan penerapannya tidak terbatas pada hal itu.
+
+% segment-id: o014.li2.prelude.homology-history.p032
+Ringkasnya, metode simplisial dalam aljabar linear dapat dipandang sebagai
+pertemuan, pada suatu taraf yang lebih tinggi, antara topologi---khususnya
+teori homotopi---dan aljabar homologis. Teori kategori-$\infty$ merupakan
+gelombang lain yang diilhami oleh pertemuan tersebut pada awal abad ke-21.

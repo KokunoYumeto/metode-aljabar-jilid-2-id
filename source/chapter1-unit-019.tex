@@ -1,0 +1,917 @@
+% Terjemahan Bahasa Indonesia dari chapter1.tex baris 1708--2079.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.adjoint-functor-theorem
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.h001
+\section{Teorema Funktor Adjoin}\label{sec:AFT}
+\hypertarget{o014.aljabr2.chapter1.adjoint-functor-theorem}{ }
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p001
+Dalam praktik, funktor sering muncul sebagai pasangan adjoin. Tinjau kategori
+$\mathcal{C}$, $\mathcal{D}$ dan sepasang funktor
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g001
+\[\begin{tikzcd}
+	F: \mathcal{C} \arrow[shift left, r] & \mathcal{D}: G \arrow[shift left, l]
+\end{tikzcd}\]
+sedemikian sehingga $(F,G)$ membentuk pasangan adjoin. Dalam keadaan ini,
+$F$ mempertahankan $\varinjlim$, sedangkan $G$ mempertahankan
+$\varprojlim$, asalkan limit yang dibicarakan ada. Sebaliknya, muncullah
+pertanyaan alami berikut: jika funktor $F:\mathcal{C}\to\mathcal{D}$
+mempertahankan $\varinjlim$, bagaimana kita dapat menjamin bahwa $F$
+mempunyai adjoin kanan? Jika funktor $G:\mathcal{D}\to\mathcal{C}$
+mempertahankan $\varprojlim$, bagaimana kita dapat menjamin bahwa $G$
+mempunyai adjoin kiri? Dalam banyak keadaan, funktor adjoin dapat dituliskan
+secara eksplisit, tetapi kadang-kadang diperlukan suatu hasil keberadaan yang
+abstrak. Hasil-hasil semacam ini secara kolektif disebut teorema funktor
+adjoin. Syarat-syarat yang diperlukan secara kasar terbagi menjadi dua jenis.
+Pertama, agar syarat mempertahankan $\varinjlim$ (atau $\varprojlim$) dapat
+digunakan, kita harus mengandaikan bahwa $\mathcal{C}$ (atau $\mathcal{D}$)
+kolengkap (atau lengkap). Kedua, kita juga memerlukan sejumlah syarat yang
+berkaitan erat dengan ukuran himpunan.
+\index{masalah ukuran (size issues)}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p002
+Langkah pertama ialah merumuskan kembali keberadaan funktor adjoin dengan cara
+yang sesuai. Berdasarkan dualitas, berikut ini hanya dinyatakan kasus adjoin
+kiri.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p003
+Untuk funktor $G:\mathcal{D}\to\mathcal{C}$ dan
+$c\in\Obj(\mathcal{C})$, Definisi \ref{def:comma-category} memberikan
+kategori $(c/G)$; objeknya adalah data berbentuk
+$(d,c\xrightarrow{f}Gd)$.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.le001
+\begin{lema}\label{prop:adjoint-vs-comma}
+	Funktor $G:\mathcal{D}\to\mathcal{C}$ mempunyai adjoin kiri jika dan
+	hanya jika, untuk setiap $c\in\Obj(\mathcal{C})$, kategori $(c/G)$
+	mempunyai objek awal.
+\end{lema}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf001
+\begin{bukti}
+	Tetapkan $c$. Menentukan morfisme
+	$(d_0,c\xrightarrow{\beta_0}Gd_0)\to
+	(d,c\xrightarrow{\beta}Gd)$ dalam $(c/G)$ sama artinya dengan menentukan
+	$\alpha:d_0\to d$ sedemikian sehingga diagram
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g002
+	\[\begin{tikzcd}[row sep=small, column sep=small]
+		Gd_0 \arrow[rr, "G\alpha"] & & Gd \\
+		& c \arrow[lu, "\beta_0"] \arrow[ru, "\beta"'] &
+	\end{tikzcd}\]
+	komutatif. Dengan demikian, $(d_0,\beta_0)$ merupakan objek awal dari
+	$(c/G)$ jika dan hanya jika
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q001
+	\begin{equation}\label{eqn:adjoint-vs-comma-aux}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g003
+	\begin{tikzcd}[row sep=tiny]
+		\Hom_{\mathcal{D}}(d_0, d) \arrow[r] & \Hom_{\mathcal{C}}(c, Gd) \\
+		\alpha \arrow[mapsto, r] & \beta := (G\alpha) \beta_0
+	\end{tikzcd}\end{equation}
+	merupakan bijeksi untuk setiap $d\in\Obj(\mathcal{D})$. Fakta ini menjadi
+	dasar argumen berikut.
+
+	Andaikan $G$ mempunyai adjoin kiri $F$, dan ambil
+	$c\in\Obj(\mathcal{C})$. Kita menyatakan bahwa $Fc$, bersama dengan
+	morfisme unit adjungsi $\eta_c:c\to G(Fc)$, memberikan objek awal dari
+	$(c/G)$. Tinjau sembarang $(d,c\xrightarrow{\beta}Gd)$. Pemetaan
+	$\Hom_{\mathcal{D}}(Fc,d)\to\Hom_{\mathcal{C}}(c,Gd)$ dalam
+	\eqref{eqn:adjoint-vs-comma-aux} mengirim $\alpha$ ke
+	$(G\alpha)\eta_c$; tetapi inilah tepatnya bijeksi pada himpunan-himpunan
+	$\Hom$ yang diberikan oleh adjungsi. Jadi $(Fc,\eta_c)$ memang merupakan
+	objek awal.
+
+	Sebaliknya, andaikan $(c/G)$ mempunyai objek awal untuk setiap $c$, dan
+	tuliskan objek itu sebagai $(Fc,\eta_c:c\to G(Fc))$. Karena objek awal
+	unik hingga isomorfisme unik, objek-objek tersebut membentuk funktor
+	$F:\mathcal{C}\to\mathcal{D}$, sedangkan
+	$(\eta_c)_{c\in\Obj(\mathcal{C})}$ memberikan
+	$\eta:\identity_{\mathcal{C}}\to GF$. Untuk setiap
+	$(c,d)\in\Obj(\mathcal{C})\times\Obj(\mathcal{D})$, definisikan bijeksi
+	menurut \eqref{eqn:adjoint-vs-comma-aux}:
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q002
+	\begin{align*}
+		\varphi_{c, d}: \Hom_{\mathcal{D}}(Fc, d) & \to \Hom_{\mathcal{C}}(c, Gd) \\
+		\alpha & \mapsto (G\alpha) \eta_c.
+	\end{align*}
+	Bijeksi-bijeksi ini jelas funktorial dalam $c$ dan $d$. Jadi
+	$(F,G,\varphi)$ menentukan pasangan adjoin dengan unit $\eta$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.d001
+\begin{definisi}
+	Misalkan $\mathcal{E}$ suatu kategori. Subhimpunan kecil tak kosong
+	$\Gamma$ dari $\Obj(\mathcal{E})$ disebut \emph{keluarga awal lemah}
+	apabila, untuk setiap $e'\in\Obj(\mathcal{E})$, terdapat $e\in\Gamma$
+	sedemikian sehingga
+	$\Hom_{\mathcal{E}}(e,e')$ tidak kosong.\footnote{Catatan penerjemah
+	(O014-C020): subskrip dikoreksi dari $\mathcal{C}$ menjadi
+	$\mathcal{E}$, yaitu kategori yang diperkenalkan dalam definisi ini.}
+	Jika $e\in\Obj(\mathcal{E})$ dan $\{e\}$ merupakan keluarga awal lemah,
+	kita menyebut $e$ sendiri sebagai \emph{objek awal lemah}.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p004
+Setiap objek awal merupakan objek awal lemah. Secara serupa, kita dapat
+mendefinisikan keluarga terminal lemah dan objek terminal lemah.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.le002
+\begin{lema}\label{prop:weakly-initial-prod}
+	Jika $\Gamma$ merupakan keluarga awal lemah dalam kategori $\mathcal{E}$
+	dan produk $e:=\prod_{x\in\Gamma}x$ ada, maka $e$ merupakan objek awal
+	lemah.
+\end{lema}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf002
+\begin{bukti}
+	Untuk setiap $e'\in\Obj(\mathcal{E})$, terdapat $y\in\Gamma$ dan
+	morfisme $y\to e'$. Ambil komposit
+	$e\xrightarrow{\text{proyeksi}}y\to e'$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p005
+Kembali ke pembahasan teorema funktor adjoin. Untuk menerapkan kriteria dalam
+Lema \ref{prop:adjoint-vs-comma}, kita harus mengkaji funktor proyeksi
+$\Pi_{c/}:(c/G)\to\mathcal{D}$ dari Definisi
+\ref{def:comma-category}.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pr001
+\begin{proposisi}\label{prop:comma-cat-completeness}
+	Misalkan kategori $\mathcal{D}$ lengkap dan funktor
+	$G:\mathcal{D}\to\mathcal{C}$ mempertahankan semua $\varprojlim$ kecil.
+	Tetapkan $c\in\Obj(\mathcal{C})$.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l001
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i001
+		\item Funktor $\Pi_{c/}$ bersifat konservatif (Definisi
+		\ref{def:conservative}) dan menciptakan semua $\varprojlim$ kecil
+		(Definisi \ref{def:create-limit}).
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i002
+		\item Kategori $(c/G)$ lengkap.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i003
+		\item Funktor $\Pi_{c/}$ memetakan monomorfisme ke monomorfisme.
+	\end{enumerate}
+\end{proposisi}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf003
+\begin{bukti}
+	Untuk (i), sifat konservatifnya jelas. Pokok persoalannya ialah bahwa untuk
+	setiap $\beta:J\to(c/G)$ yang diberikan, yang memetakan
+	$j\in\Obj(J)$ ke $(d_j,c\xrightarrow{f_j}Gd_j)$, kita dapat mengangkat
+	$\varprojlim_jd_j$ beserta morfisme proyeksinya menjadi
+	$(\varprojlim_jd_j,c\xrightarrow{f}G(\varprojlim_jd_j))$, lalu
+	menunjukkan bahwa objek ini memberikan $\varprojlim\beta$. Secara
+	eksplisit, ambil $f$ sebagai komposit pada baris pertama diagram komutatif
+	berikut:
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g004
+	\[\begin{tikzcd}
+		c \arrow[r, "{\exists!}"] \arrow[rd, "{f_{j'}}"'] & \varprojlim_j Gd_j \arrow[d] & G (\varprojlim_j d_j) \arrow[l, "\exists!"', "\sim"] \arrow[ld] \\
+		& Gd_{j'} &
+	\end{tikzcd} \quad j' \in \Obj(J). \]
+	Pemeriksaan selebihnya bersifat rutin dan dihilangkan; lihat contoh-contoh
+	terkait dalam \S\ref{sec:limit-functor}.
+
+	Pernyataan (ii) mengikuti dari kelengkapan $\mathcal{D}$ dan (i).
+
+	Sekarang tinjau (iii). Langkah pertama ialah pengamatan berikut: untuk
+	setiap morfisme $f:a\to b$ dalam sembarang kategori, manipulasi langsung
+	terhadap definisi memberikan
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g005
+	\[ f \;\text{mono} \iff
+	\begin{tikzcd}
+		a \arrow[r, "\identity_a"] \arrow[d, "\identity_a"'] & a \arrow[d, "f"] \\
+		a \arrow[r, "f"'] & b
+	\end{tikzcd} \;\text{merupakan diagram tarik balik}. \]
+
+	Sekarang tinjau suatu monomorfisme dalam $(c/G)$ dari
+	$(d',c\to Gd')$ ke $(d,c\to Gd)$, yang ditentukan oleh morfisme
+	$\iota:d'\to d$ dalam $\mathcal{D}$. Menurut (i),
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q003
+	\[ (d', c \to Gd') \dtimes{(d, c \to Gd)} (d', c \to Gd') = \left( d' \dtimes{d} d' , \; c \to G\left( d' \dtimes{d} d' \right) \right) . \]
+	Ruas kiri dapat diidentifikasi dengan $(d',c\to Gd')$, dan kedua morfisme
+	proyeksinya bersesuaian dengan $\identity_{d'}$. Akibatnya,
+	$d'\dtimes{d}d'$ dapat diidentifikasi dengan $d'$ dengan cara yang sama.
+	Dengan kata lain, $\iota$ mono.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.le003
+\begin{lema}\label{prop:jointly-weak-initial-obj}
+	Misalkan kategori $\mathcal{E}$ lengkap. Jika $\mathcal{E}$ mempunyai
+	keluarga awal lemah $\Gamma$, maka $\mathcal{E}$ mempunyai objek awal.
+\end{lema}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf004
+\begin{bukti}
+	Kelengkapan dan Lema \ref{prop:weakly-initial-prod} memastikan bahwa
+	$\mathcal{E}$ mempunyai objek awal lemah $e$. Selanjutnya, ambil
+	subkategori penuh $I$ dari $\mathcal{E}$ dengan $\Obj(I)=\{e\}$; ini
+	merupakan kategori kecil. Kelengkapan memastikan bahwa funktor inklusi
+	$I\to\mathcal{E}$ mempunyai $\varprojlim$; tuliskan limit itu sebagai
+	$x$, dengan morfisme kanonik $i:x\to e$. Sifat universalnya berbunyi
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q004
+	\begin{equation}\label{eqn:jointly-weak-initial-obj-aux}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g006
+	\begin{tikzcd}[row sep=tiny]
+		i_*: \Hom_{\mathcal{E}}(t, x) \arrow[r, "1:1"] & \left\{ \phi \in \Hom_{\mathcal{E}}(t, e) : \forall \theta, \theta' \in \Hom_{\mathcal{E}}(e, e), \; \theta \phi = \theta' \phi \right\} \\
+		\psi \arrow[r, mapsto] & i\psi
+	\end{tikzcd}\end{equation}
+	dengan $t$ sembarang objek dari $\mathcal{E}$. Dari sini segera terlihat
+	bahwa $i$ merupakan monomorfisme.
+
+	Selanjutnya kita buktikan bahwa $x$ merupakan objek awal. Untuk
+	$y\in\Obj(\mathcal{E})$, pilih sembarang morfisme $e\to y$, dan tuliskan
+	komposit $x\xrightarrow{i}e\to y$ sebagai $f$. Untuk sembarang
+	$g:x\to y$, tinjau penyama $j:\Ker(f,g)\hookrightarrow x$. Terdapat
+	morfisme $k:e\to\Ker(f,g)$. Dengan demikian, kita mempunyai
+	$ijk:e\to e$. Jika dalam
+	\eqref{eqn:jointly-weak-initial-obj-aux} kita ambil
+	$\psi=\identity_x$, diperoleh
+	$(ijk)i=(\identity_e)i=i$. Karena $i$ monomorfisme, pencoretan di ruas
+	kiri memberikan $jki=\identity_x$; jadi
+	$f=fjki=gjki=g$. Ini membuktikan pernyataan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p006
+Hasil berikut berasal dari P.\ Freyd dan juga disebut teorema funktor adjoin
+umum.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.th001
+\begin{teorema}[Teorema Funktor Adjoin P.\ Freyd]\label{prop:GAFT}
+	\index{teorema funktor adjoin (Adjoint Functor Theorem)}
+	Tinjau kategori $\mathcal{C}$ dan $\mathcal{D}$.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l002
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i004
+		\item Misalkan $\mathcal{D}$ kategori lengkap dan funktor
+		$G:\mathcal{D}\to\mathcal{C}$ mempertahankan semua $\varprojlim$
+		kecil. Maka $G$ mempunyai funktor adjoin kiri jika dan hanya jika
+		\emph{syarat himpunan solusi} berikut berlaku: untuk setiap
+		$c\in\Obj(\mathcal{C})$, terdapat keluarga morfisme
+		$\left(f_i:c\to Gd_i\right)_{i\in I}$, dengan $I$ suatu himpunan
+		kecil, sedemikian sehingga untuk setiap morfisme $f:c\to Gd$ terdapat
+		$i\in I$ dan morfisme $\alpha:d_i\to d$ yang memfaktorkan $f$ sebagai
+		$c\xrightarrow{f_i}Gd_i\xrightarrow{G\alpha}Gd$.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i005
+		\item Misalkan $\mathcal{C}$ kategori kolengkap dan funktor
+		$F:\mathcal{C}\to\mathcal{D}$ mempertahankan semua $\varinjlim$
+		kecil. Maka $F$ mempunyai funktor adjoin kanan jika dan hanya jika
+		\emph{syarat himpunan kosolusi} berikut berlaku: untuk setiap
+		$d\in\Obj(\mathcal{D})$, terdapat keluarga morfisme
+		$\left(g_i:Fc_i\to d\right)_{i\in I}$, dengan $I$ suatu himpunan
+		kecil, sedemikian sehingga untuk setiap morfisme $g:Fc\to d$ terdapat
+		$i\in I$ dan morfisme $\beta:c\to c_i$ yang memfaktorkan $g$ sebagai
+		$Fc\xrightarrow{F\beta}Fc_i\xrightarrow{g_i}d$.
+	\end{enumerate}
+\end{teorema}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf005
+\begin{bukti}
+	Cukup bahas (i). Ambil $c\in\Obj(\mathcal{C})$. Lema
+	\ref{prop:adjoint-vs-comma} menyatakan bahwa $G$ mempunyai adjoin kiri
+	jika dan hanya jika $(c/G)$ mempunyai objek awal. Syarat himpunan solusi
+	tepat mengatakan bahwa $(c/G)$ mempunyai keluarga awal lemah
+	$\left\{(d_i,c\to Gd_i):i\in I\right\}$, dengan $I$ suatu himpunan
+	kecil. Karena objek awal merupakan kasus khusus objek awal lemah, arah
+	``hanya jika'' jelas. Untuk arah sebaliknya, Lema
+	\ref{prop:jointly-weak-initial-obj} mereduksi persoalan lebih lanjut menjadi
+	pembuktian bahwa $(c/G)$ lengkap. Namun, inilah isi Proposisi
+	\ref{prop:comma-cat-completeness} (ii).
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.e001
+\begin{contoh}\label{eg:free-group-GAFT}
+	Tinjau kategori grup $\cate{Grp}$ dan funktor pelupa
+	$U:\cate{Grp}\to\cate{Set}$. Telah diketahui bahwa $\cate{Grp}$ lengkap
+	dan $U$ mempertahankan semua $\varprojlim$ kecil. Untuk memperoleh adjoin
+	kiri $\mathrm{F}:\cate{Set}\to\cate{Grp}$ dari $U$ melalui Teorema
+	\ref{prop:GAFT}, yaitu funktor yang mengonstruksi grup bebas dari suatu
+	himpunan, pokok persoalannya ialah memeriksa syarat himpunan solusi untuk
+	setiap himpunan kecil $c$.
+
+	Ambil sembarang $d\in\Obj(\cate{Grp})$ dan pemetaan $f:c\to Ud$.
+	Faktorkan $f$ sebagai $c\to Us\xrightarrow{U\iota}Ud$, dengan $s$
+	subgrup dari $d$ yang dibangkitkan oleh $f(c)$ dan $\iota:s\to d$
+	homomorfisme inklusi. Dengan menyajikan $s$ melalui himpunan generator
+	$f(c)$ beserta relasi-relasinya, terlihat bahwa semua kelas isomorfisme
+	dari data $(s,c\to Us)$ ini membentuk suatu himpunan kecil $I$. Dengan
+	demikian, syarat himpunan solusi terpenuhi.
+
+	Prosedur yang sama berlaku bagi struktur aljabar lain, seperti
+	$\cate{Ab}$, $R\dcate{Mod}$, dan sebagainya, serta kembali memberikan
+	adjoin kiri dari funktor pelupa. Lihat pembahasan pada bagian kedua
+	\cite[Bab V, \S 6]{ML98}. Demikian pula, untuk setiap gelanggang
+	komutatif $\Bbbk$, pemetaan suatu $\Bbbk$-aljabar ke monoid
+	multiplikatifnya memberikan funktor pelupa
+	$U:\Bbbk\dcate{Alg}\to\cate{Mon}$. Teknik yang sama menunjukkan bahwa
+	$U$ mempunyai adjoin kiri yang memetakan monoid $M$ ke $\Bbbk[M]$; lihat
+	\cite[Definisi 5.6.1]{Li1}.
+
+	Pendekatan melalui Teorema Funktor Adjoin \ref{prop:GAFT} tidak hanya
+	berlaku seragam bagi berbagai struktur aljabar, tetapi dalam kasus grup
+	bebas juga lebih ringkas daripada konstruksi klasik dalam
+	\cite[\S 4.8]{Li1}.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p007
+Teorema Funktor Adjoin Khusus \ref{prop:SAFT}, yang segera diperkenalkan,
+menggantikan syarat himpunan solusi dengan syarat mengenai generator dan
+subobjek. Sebagai selingan, kita definisikan terlebih dahulu generator dan
+kogenerator dalam suatu kategori; konsep-konsep ini juga akan digunakan dalam
+bagian mendatang tentang kategori Grothendieck.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.d002
+\begin{definisi}\label{def:generators}
+	\index{generator}
+	\index{kogenerator}
+	Misalkan $\mathcal{E}$ suatu kategori dan $\Sigma$ subhimpunan kecil tak
+	kosong dari $\Obj(\mathcal{E})$.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l003
+	\begin{itemize}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i006
+		\item Kita menyebut $\Sigma$ sebagai \emph{keluarga generator} apabila
+		syarat berikut berlaku: untuk setiap pasangan morfisme
+		$f,g:x\to y$ dalam $\mathcal{E}$, jika
+		$f\epsilon=g\epsilon$ untuk setiap $s\in\Sigma$ dan setiap morfisme
+		$\epsilon:s\to x$, maka $f=g$. Jika $\{s\}$ merupakan keluarga
+		generator bagi $\mathcal{E}$, maka $s$ disebut \emph{generator} bagi
+		$\mathcal{E}$.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i007
+		\item Kita menyebut $\Sigma$ sebagai \emph{keluarga kogenerator}
+		apabila syarat berikut berlaku: untuk setiap pasangan morfisme
+		$f,g:x\to y$ dalam $\mathcal{E}$, jika $\delta f=\delta g$ untuk
+		setiap $s\in\Sigma$ dan setiap morfisme $\delta:y\to s$, maka $f=g$.
+		Jika $\{s\}$ merupakan keluarga kogenerator bagi $\mathcal{E}$, maka
+		$s$ disebut \emph{kogenerator} bagi $\mathcal{E}$.
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p008
+Kedua konsep ini jelas saling dual.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.le004
+\begin{lema}\label{prop:generator-via-limit}
+	Misalkan $\Sigma$ subhimpunan kecil dari $\Obj(\mathcal{C})$. Jika setiap
+	objek dari $\mathcal{C}$ dapat dinyatakan sebagai $\varinjlim$ (atau
+	$\varprojlim$) dari objek-objek dalam $\Sigma$, maka $\Sigma$ merupakan
+	keluarga generator (atau keluarga kogenerator).
+\end{lema}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf006
+\begin{bukti}
+	Ambil kasus $\varinjlim$. Morfisme
+	$\varinjlim\alpha=:x\to y$ ditentukan secara unik oleh kompositnya dengan
+	semua morfisme
+	$\alpha(i)\xrightarrow{\iota_i}\varinjlim\alpha$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.e002
+\begin{contoh}\label{eg:generators}
+	Mari tinjau beberapa contoh awal generator dan kogenerator.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l004
+	\begin{itemize}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i008
+		\item Dalam $\cate{Set}$, himpunan satu titik $\{\mathrm{pt}\}$
+		merupakan generator. Memang, untuk sepasang pemetaan $f,g:X\to Y$,
+		menentukan $\epsilon:\{\mathrm{pt}\}\to X$ sama artinya dengan
+		menentukan $x\in X$; jadi $f\epsilon=g\epsilon$ untuk setiap
+		$\epsilon$ setara dengan kesamaan titik demi titik antara $f$ dan $g$.
+		Himpunan $\{0,1\}$ merupakan kogenerator, sebab jika ada $x\in X$
+		dengan $f(x)\neq g(x)$, kita dapat memilih $\delta:Y\to\{0,1\}$
+		sedemikian sehingga $\delta(f(x))\neq\delta(g(x))$.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i009
+		\item Misalkan $\cate{CHaus}$ kategori ruang Hausdorff kompak beserta
+		pemetaan kontinu di antaranya. Himpunan satu titik
+		$\{\mathrm{pt}\}$ tetap merupakan generator. Sebagai kogenerator kita
+		dapat mengambil interval $[0,1]$: untuk setiap ruang Hausdorff kompak
+		$Y$ dan dua titik berbeda $a,b\in Y$, Lema Urysohn
+		\cite[Teorema 6.3.1 dan Korolari 7.2.6]{Xiong} memberikan pemetaan kontinu
+		$\delta:Y\to[0,1]$ sedemikian sehingga $\delta(a)=0$ dan
+		$\delta(b)=1$.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i010
+		\item Misalkan $R$ suatu gelanggang. Dalam $R\dcate{Mod}$, $R$
+		merupakan generator karena menentukan homomorfisme modul-$R$
+		$R\to M$ sama artinya dengan menentukan suatu elemen dari $M$. Dengan
+		mengambil koproduk, terlihat bahwa setiap modul-$R$ bebas tak nol juga
+		merupakan generator.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i011
+		\item Tinjau pembenaman Yoneda
+		$h_{\mathcal{E}}:\mathcal{E}\to\mathcal{E}^\wedge$ bagi suatu kategori
+		kecil $\mathcal{E}$. Maka
+		$h_{\mathcal{E}}(\Obj(\mathcal{E}))$ merupakan keluarga generator bagi
+		$\mathcal{E}^\wedge$. Ini langsung mengikuti
+		teorema kepadatan Yoneda dalam Lampiran \S~A.1 bersama Lema
+		\ref{prop:generator-via-limit}.
+	\end{itemize}
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p009
+Teorema Funktor Adjoin Khusus melibatkan satu lagi konsep mengenai ukuran
+himpunan. Ingat kembali poset $(\mathrm{Sub}_e,\subset)$ dan
+$(\mathrm{Quot}_e,\twoheadleftarrow)$ yang diperkenalkan dalam Definisi
+\ref{def:sub-quot-obj}, dengan $e$ suatu objek dari kategori $\mathcal{E}$.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.d003
+\begin{definisi}\label{def:well-powered}
+	\index{kategori!well-powered, well-copowered}
+	Suatu kategori $\mathcal{E}$ disebut \emph{well-powered} (atau
+	\emph{well-copowered}) jika, untuk setiap $e\in\Obj(\mathcal{E})$,
+	$\mathrm{Sub}_e$ (atau $\mathrm{Quot}_e$) merupakan himpunan kecil.
+\end{definisi}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p010
+Dalam bagian ini, sifat well-powered akan dipadukan dengan kelengkapan. Untuk
+setiap elemen $\mathrm{Sub}_e$, pilih sebuah wakil $s\hookrightarrow e$.
+Dengan demikian, untuk setiap subhimpunan $S\subset\mathrm{Sub}_e$, kita
+dapat membicarakan ada atau tidaknya produk serat
+$\prod_{s\in S}\left(s\hookrightarrow e\right)$ tanpa bergantung pada
+pilihan wakil. Secara dual, kita juga dapat membicarakan ada atau tidaknya
+koproduk serat $\coprod_{s\in S}\left(e\twoheadrightarrow s\right)$ untuk
+subhimpunan
+$S\subset\mathrm{Quot}_e$.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l005
+\begin{itemize}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i012
+	\item Jika $\mathcal{E}$ lengkap, maka sifat well-powered menyiratkan
+	bahwa, untuk setiap $e$, semua subhimpunan $S\subset\mathrm{Sub}_e$
+	mempunyai produk serat.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i013
+	\item Jika $\mathcal{E}$ kolengkap, maka sifat well-copowered menyiratkan
+	bahwa, untuk setiap $e$, semua subhimpunan $S\subset\mathrm{Quot}_e$
+	mempunyai koproduk serat.
+\end{itemize}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.le005
+\begin{lema}\label{prop:cogenerator-initial-obj}
+	Misalkan $\mathcal{E}$ kategori lengkap yang well-powered. Jika terdapat
+	keluarga kogenerator $\Sigma\subset\Obj(\mathcal{E})$, maka
+	$\mathcal{E}$ mempunyai objek awal.
+\end{lema}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf007
+\begin{bukti}
+	Ambil $e:=\prod_{s\in\Sigma}s$. Misalkan $x$ produk serat dari semua
+	elemen $\mathrm{Sub}_e$ (hanya pada langkah ini syarat well-powered
+	digunakan). Kita buktikan bahwa $x$ merupakan objek awal dari
+	$\mathcal{E}$.
+
+	Menurut konstruksi, $x\hookrightarrow e$ merupakan infimum dalam poset
+	$(\mathrm{Sub}_e,\subset)$; khususnya, $\mathrm{Sub}_x=\{x\}$. Untuk
+	setiap objek $y$ dan $f,g\in\Hom_{\mathcal{E}}(x,y)$, penyama
+	$\Ker(f,g)$ karena itu hanya mungkin $x$ sendiri, sehingga $f=g$. Untuk
+	menunjukkan bahwa $x$ merupakan objek awal, masih perlu dibuktikan bahwa
+	$\Hom_{\mathcal{E}}(x,y)$ tak kosong untuk setiap $y$.
+
+	Dalam $\mathcal{E}$, ambil produk
+	$\prod_{s\in\Sigma}s^{\Hom_{\mathcal{E}}(y,s)}$. Definisikan morfisme
+	$i:y\to\prod_{s\in\Sigma}s^{\Hom_{\mathcal{E}}(y,s)}$ sedemikian sehingga
+	proyeksinya pada komponen yang bersesuaian dengan $s\in\Sigma$ dan
+	$\delta\in\Hom_{\mathcal{E}}(y,s)$ tepat sama dengan $\delta$. Karena
+	$\Sigma$ merupakan keluarga kogenerator, mudah dibuktikan bahwa $i$ mono.
+	Sekarang, untuk setiap $s\in\Sigma$, ambil morfisme diagonal
+	$d_s:s\to s^{\Hom_{\mathcal{E}}(y,s)}$, lalu bentuk diagram tarik balik
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g007
+	\[\begin{tikzcd}[column sep=large]
+		z \arrow[r] \arrow[d, "j"'] & y \arrow[hookrightarrow, d, "i"] \arrow[phantom, ld, "\Box" description] \\
+		e \arrow[r, "{\prod_{s \in \Sigma} d_s}"'] &  \prod_{s \in \Sigma} s^{\Hom_{\mathcal{E}}(y, s)}.
+	\end{tikzcd}\]
+	Lema \ref{prop:mono-pullback} memastikan bahwa $j$ juga mono, sehingga
+	memberikan suatu subobjek dari $e$. Namun, $x$ merupakan infimum dari
+	$\mathrm{Sub}_e$, sehingga terdapat $x\hookrightarrow z$. Komposit
+	$x\hookrightarrow z\to y$ adalah morfisme yang dicari.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.th002
+\begin{teorema}[Teorema Funktor Adjoin Khusus]\label{prop:SAFT}
+	\index{teorema funktor adjoin (Adjoint Functor Theorem)}
+	Misalkan $\mathcal{C}$ dan $\mathcal{D}$ kategori.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l006
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i014
+		\item Funktor $G:\mathcal{D}\to\mathcal{C}$ mempunyai adjoin kiri
+		jika memenuhi syarat-syarat berikut.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l007
+		\begin{compactitem}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i015
+			\item $\mathcal{D}$ lengkap dan well-powered, serta $G$
+			mempertahankan semua $\varprojlim$ kecil;
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i016
+			\item terdapat keluarga kogenerator
+			$\Sigma\subset\Obj(\mathcal{D})$.
+		\end{compactitem}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i017
+		\item Funktor $F:\mathcal{C}\to\mathcal{D}$ mempunyai adjoin kanan
+		jika memenuhi syarat-syarat berikut.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l008
+		\begin{compactitem}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i018
+			\item $\mathcal{C}$ kolengkap dan well-copowered, serta $F$
+			mempertahankan semua $\varinjlim$ kecil;
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i019
+			\item terdapat keluarga generator
+			$\Sigma\subset\Obj(\mathcal{C})$.
+		\end{compactitem}
+	\end{enumerate}
+\end{teorema}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf008
+\begin{bukti}
+	Berdasarkan dualitas, cukup bahas (i). Sekali lagi, Lema
+	\ref{prop:adjoint-vs-comma} mereduksi persoalan menjadi pembuktian bahwa
+	$(c/G)$ mempunyai objek awal, dengan $c\in\Obj(\mathcal{C})$; strateginya
+	ialah menerapkan Lema \ref{prop:cogenerator-initial-obj}.
+
+	Proposisi \ref{prop:comma-cat-completeness} (ii) menunjukkan bahwa $(c/G)$
+	lengkap. Selain itu, dari Definisi \ref{def:generators} dan definisi
+	$(c/G)$ segera terlihat bahwa semua data berbentuk $(d,c\to Gd)$, dengan
+	$d\in\Sigma$, membentuk keluarga kogenerator bagi $(c/G)$. Secara khusus,
+	karena $\Sigma$ kecil, jelas bahwa keluarga ini merupakan himpunan kecil.
+
+	Misalkan $e=(d,c\to Gd)\in\Obj((c/G))$. Subobjek adalah kelas ekuivalensi
+	isomorfisme dari monomorfisme. Menurut Proposisi
+	\ref{prop:comma-cat-completeness}, funktor proyeksi
+	$\Pi_{c/}:(c/G)\to\mathcal{D}$ merupakan funktor konservatif yang
+	mempertahankan monomorfisme; karena itu, $\Pi_{c/}$ menginduksi pembenaman
+	pelestari urutan $\mathrm{Sub}_e\hookrightarrow\mathrm{Sub}_d$. Dengan
+	demikian, $(c/G)$ terbukti well-powered.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.co001
+\begin{korolari}\label{prop:SAFT-completeness}
+	Jika kategori lengkap yang well-powered $\mathcal{D}$ mempunyai keluarga
+	kogenerator $\Sigma$, maka $\mathcal{D}$ kolengkap.
+
+	Secara dual, jika kategori kolengkap yang well-copowered $\mathcal{C}$
+	mempunyai keluarga generator $\Sigma$, maka $\mathcal{C}$ lengkap.
+\end{korolari}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf009
+\begin{bukti}
+	Cukup buktikan versi bagi $\mathcal{D}$. Misalkan $I$ suatu kategori kecil.
+	Menurut Contoh \ref{eg:comma-vs-cone}, cukup dibuktikan bahwa
+	$(\alpha/\Delta)$ mempunyai objek awal untuk setiap
+	$\alpha:I\to\mathcal{D}$. Menurut Lema
+	\ref{prop:adjoint-vs-comma}, ini setara dengan mengatakan bahwa funktor
+	diagonal $\Delta$ mempunyai adjoin kiri. Jelas bahwa $\Delta$
+	mempertahankan semua $\varprojlim$ kecil dan $\varinjlim$ kecil, sehingga
+	cukup terapkan Teorema \ref{prop:SAFT}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.e003
+\begin{contoh}
+	Misalkan $\iota:\cate{CHaus}\to\cate{Top}$ funktor inklusi dari kategori
+	ruang Hausdorff kompak ke kategori ruang topologis. Contoh
+	\ref{eg:generators} telah menunjukkan bahwa $\cate{CHaus}$ mempunyai
+	kogenerator $[0,1]$. Berdasarkan Teorema Tychonoff
+	\cite[Teorema 7.7.2]{Xiong}, mudah dibuktikan bahwa $\cate{CHaus}$ lengkap dan
+	bahwa $\iota$ mempertahankan semua $\varprojlim$ kecil (rinciannya
+	diserahkan kepada pembaca). Selain itu, himpunan kuasa dari suatu himpunan
+	kecil tetap kecil; jadi $\cate{CHaus}$ well-powered. Teorema
+	\ref{prop:SAFT} (i) karena itu memberikan adjoin kiri
+	$C:\cate{Top}\to\cate{CHaus}$ bagi $\iota$. Dalam topologi himpunan-titik,
+	$C(X)$ disebut \emph{kompaktifikasi Stone--Čech} dari ruang $X$; unit
+	adjungsi memberikan morfisme kanonik $\eta_X:X\to\iota C(X)$. Metode
+	konstruksi dalam Lema \ref{prop:cogenerator-initial-obj} dan Teorema
+	\ref{prop:SAFT} sejalan dengan konstruksi klasik kompaktifikasi
+	Stone--Čech.
+\end{contoh}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.p011
+Teorema funktor adjoin dapat memberikan syarat cukup bagi keterwakilan suatu
+funktor. Untuk pengantar tentang funktor terwakili, lihat
+\cite[Definisi 2.5.2]{Li1} atau definisi funktor terwakili dalam
+Lampiran \S~A.1.
+Pokoknya adalah pengamatan berikut. Jika funktor
+$G:\mathcal{D}\to\cate{Set}$ mempunyai adjoin kiri $F$, maka $G$
+terwakili. Memang, tinjau himpunan satu titik $\{\mathrm{pt}\}$ dan
+$r_G:=F(\{\mathrm{pt}\})$; bijeksi kanonik
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q005
+\[ \Hom_{\mathcal{D}}\left( r_G, d \right) \simeq \Hom_{\cate{Set}}\left( \{\mathrm{pt}\}, Gd \right) \simeq Gd , \quad d \in \Obj(\mathcal{D}) \]
+menyiratkan $G\simeq\Hom_{\mathcal{D}}(r_G,\cdot)$.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.co002
+\begin{korolari}\label{prop:cogenerator-representability}
+	Jika kategori lengkap yang well-powered $\mathcal{D}$ mempunyai keluarga
+	kogenerator $\Sigma$, maka funktor $G:\mathcal{D}\to\cate{Set}$
+	terwakili jika dan hanya jika $G$ mempertahankan semua $\varprojlim$ kecil.
+\end{korolari}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf010
+\begin{bukti}
+	Arah ``hanya jika'' merupakan sifat umum funktor terwakili. Untuk arah
+	``jika'', Teorema \ref{prop:SAFT} memastikan bahwa $G$ mempunyai adjoin
+	kiri $F:\cate{Set}\to\mathcal{D}$; selanjutnya terapkan pengamatan di atas.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.x001
+\begin{Exercises}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex001
+	\item Tinjau kategori grup $\cate{Grp}$. Buktikan bahwa homomorfisme grup
+	$\varphi:H\to G$ merupakan monomorfisme (atau epimorfisme) dalam
+	$\cate{Grp}$ jika dan hanya jika, sebagai pemetaan, ia injektif (atau
+	surjektif). Sejumlah pustaka, termasuk \cite{Li1}, tidak menjelaskan fakta
+	ini secara memadai.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn001
+	\begin{hint}
+		Cukup bahas arah ``hanya jika''. Untuk kasus monomorfisme, tinjau
+		homomorfisme dari $\Ker\varphi$ ke $H$. Untuk epimorfisme, persoalannya
+		ialah menunjukkan bahwa jika $\varphi(H)\neq G$, terdapat homomorfisme
+		grup berbeda $f,g:G\rightrightarrows K$ yang pembatasannya pada
+		$\varphi(H)$ sama. Salah satu caranya ialah mengambil $K$ sebagai produk
+		bebas teramalgamasi yang ditentukan oleh dua salinan pembenaman
+		$\varphi(H)\hookrightarrow G$ dalam \cite[Definisi 4.8.5]{Li1}, lalu
+		mengambil $f$ dan $g$ sebagai pembenaman $G$ ke kedua salinan tersebut.
+		Keunikan bentuk tereduksi dalam \cite[Lema 4.8.7]{Li1} menyiratkan
+		$f\neq g$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex002
+	\item Tunjukkan bahwa dalam kategori ruang topologis $\cate{Top}$, citra
+	dari $f:X\to Y$ adalah $f(X)$ dengan topologi subruang dari $Y$, sedangkan
+	kocitranya adalah $f(X)$ dengan topologi kuosien yang berasal dari $X$.
+	Berikan interpretasi topologis yang bersesuaian bagi monomorfisme ketat dan
+	epimorfisme ketat.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex003
+	\item Misalkan kategori $\mathcal{C}$ mempunyai semua $\varinjlim$
+	berhingga dan $\varprojlim$ berhingga. Buktikan bahwa pernyataan-pernyataan
+	berikut mengenai morfisme $f:X\to Y$ saling ekuivalen.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l009
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i020
+		\item $f$ merupakan epimorfisme ketat.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i021
+		\item Morfisme kanonik $\Coim(f)\to Y$ merupakan isomorfisme.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i022
+		\item $X\dtimes{Y}X\rightrightarrows X\xrightarrow{f}Y$ merupakan
+		diagram kopenyama.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i023
+		\item $f:X\to Y$ merupakan kopenyama dari suatu pasangan morfisme
+		$a,b:W\rightrightarrows X$.
+	\end{enumerate}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn002
+	\begin{hint}
+		Ingat bahwa sifat epi setara dengan $\Image(f)\rightiso Y$ (Lema
+		\ref{prop:epi-image}), dan gunakan Proposisi
+		\ref{prop:epi-mono-isomorphism}. Tidak sulit membuktikan
+		(i) $\iff$ (ii) $\iff$ (iii) $\implies$ (iv). Untuk membuktikan
+		(iv) $\implies$ (ii), tinjau bagian bergaris penuh dari diagram
+		komutatif berikut:
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g008
+		\[\begin{tikzcd}
+			W \arrow[shift left, r, "a"] \arrow[shift right, r, "b"'] \arrow[d, "{(a, b)}"'] & X \arrow[d, "\identity"] \arrow[twoheadrightarrow, r, "f"] & Y \arrow[dashed, d] \\
+			X \dtimes{Y} X \arrow[shift left, r] \arrow[shift right, r] & X \arrow[twoheadrightarrow, r] & \Coim(f)
+		\end{tikzcd}\]
+		Sifat universal kopenyama memberikan anak panah putus-putus; anak
+		panah ini dan $\Coim(f)\to Y$ saling invers.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex004
+	\item Misalkan kategori $\mathcal{C}$ mempunyai semua $\varinjlim$
+	berhingga dan $\varprojlim$ berhingga. Buktikan bahwa jika morfisme $f$
+	mempunyai invers kanan (atau invers kiri), maka $f$ merupakan epimorfisme
+	ketat (atau monomorfisme ketat).
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn003
+	\begin{hint}
+		Jika $fg=\identity_Y$, maka $f$ merupakan kopenyama dari $gf$ dan
+		$\identity_X$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex005
+	\item Buktikan bahwa struktur kategori aditif pada suatu kategori, jika
+	ada, bersifat unik.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn004
+	\begin{hint}
+		Terapkan Proposisi \ref{prop:additive-cat-addition}.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex006
+	\item Bandingkan dengan keadaan dalam Contoh \ref{eg:Grp-Set-create}.
+	Tinjau funktor pelupa $U$ dari kategori ruang Hausdorff kompak
+	$\cate{CHaus}$ ke kategori himpunan $\cate{Set}$. Buktikan bahwa $U$
+	menciptakan semua $\varprojlim$ kecil. Tunjukkan bahwa $U$ tidak
+	menciptakan semua $\varinjlim$ kecil.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex007
+	\item Misalkan $\mathcal{I}$ kategori semua himpunan berhingga dengan
+	morfisme berupa pemetaan surjektif. Buktikan bahwa $\mathcal{I}^{\opp}$
+	bukan kategori terfilter dalam pengertian \S\ref{sec:filtered-indlim}.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex008
+	\item Dalam Definisi \ref{def:Kan-extension} tentang ekstensi Kan,
+	buktikan bahwa setiap morfisme $F\to F'$ menginduksi morfisme kanonik
+	$\Lan_KF\to\Lan_KF'$ dan $\Ran_KF\to\Ran_KF'$, asalkan ekstensi Kan
+	tersebut ada. Karakterisasikan morfisme-morfisme terinduksi ini.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex009
+	\item Misalkan $K$ dan $F$ funktor seperti dalam
+	\S\ref{sec:Kan-extension}. Buktikan bahwa jika funktor
+	$M:\mathcal{E}\to\mathcal{F}$ mempunyai adjoin kiri (atau adjoin kanan),
+	maka $M$ mempertahankan $\Ran_KF$ (atau $\Lan_KF$).
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn005
+	\begin{hint}
+		Berdasarkan dualitas, andaikan $M$ mempunyai adjoin kanan $N$, dengan
+		unit $\eta':\identity\to NM$ dan kounit
+		$\varepsilon':MN\to\identity$. Untuk setiap funktor
+		$L:\mathcal{D}\to\mathcal{F}$, terdapat bijeksi kanonik
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q006
+		\begin{multline*}
+			\Hom_{\mathcal{F}^{\mathcal{D}}} \left( M (\Lan_K F) , L \right) \simeq \Hom_{\mathcal{E}^{\mathcal{D}}} \left( \Lan_K F, N L \right) \\
+			\stackrel{\text{\eqref{eqn:Kan-univ}}}{\simeq} \Hom_{\mathcal{E}^{\mathcal{C}}} \left( F, NLK \right) \simeq \Hom_{\mathcal{F}^{\mathcal{C}}} \left( MF, LK \right).
+		\end{multline*}
+
+		Gunakan sifat-sifat umum $\eta'$ dan $\varepsilon'$ untuk memeriksa bahwa,
+		ketika $L=M(\Lan_KF)$, bijeksi di atas memetakan $\identity$ ke
+		$M\eta$, dengan $\eta$ morfisme yang menyertai $\Lan_KF$.
+
+		Untuk $L$ yang umum, teknik yang lazim (bandingkan dengan bukti Lema
+		Yoneda) menunjukkan bahwa morfisme
+		\[ \varphi:M(\Lan_KF)\to L \]
+		berkorespondensi dengan komposit
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q007
+		\[
+		\begin{aligned}
+			(\varphi K)(M\eta):\quad MF
+			&\xrightarrow{M\eta} M(\Lan_K F)K, \\
+			M(\Lan_K F)K &\xrightarrow{\varphi K} LK .
+		\end{aligned}
+		\]
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex010
+	\item Tinjau diagram funktor
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g009
+	\[\begin{tikzcd}[column sep=small, row sep=small]
+		& \mathcal{D} \arrow[rd, "E"] & \\
+		\mathcal{C} \arrow[ru, "F"] & & \mathcal{D}' \arrow[ll, "G"]
+	\end{tikzcd}\]
+	dengan $EF$ adjoin kiri dari $G$ dan kounit yang bersesuaian
+	$\varepsilon:EFG\to\identity_{\mathcal{D}'}$. Buktikan bahwa jika, untuk
+	setiap kategori $\mathcal{X}$, funktor
+	$F^*:\mathcal{X}^{\mathcal{D}}\to\mathcal{X}^{\mathcal{C}}$ penuh dan
+	setia, maka $E$ juga dapat dipandang sebagai adjoin kiri dari $FG$, dengan
+	kounit yang sama, yakni $\varepsilon$.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn006
+	\begin{hint}
+		Argumen berikut berasal dari \cite[Lema I.1.3.1]{GZ67}. Ambil unit
+		$\eta:\identity_{\mathcal{C}}\to GEF$ dari adjungsi $(EF,G)$. Dengan
+		mengambil $\mathcal{X}=\mathcal{D}$, diperoleh
+		$\eta':\identity_{\mathcal{D}}\to FGE$ sedemikian sehingga
+		$\eta'F=F\eta$. Cukup periksa identitas segitiga bagi adjungsi $(E,FG)$
+		untuk $\eta'$ dan $\varepsilon$. Pertama,
+		$(FG\varepsilon)(\eta'FG)=(FG\varepsilon)(F\eta G)=\identity_{FG}$.
+		Di sisi lain, dengan mengambil $\mathcal{X}=\mathcal{D}'$, terlihat bahwa
+		$(\varepsilon E)(E\eta')=\identity_E$ setara dengan
+		$(\varepsilon EF)(E\eta'F)=\identity_{EF}$; tetapi
+		$(\varepsilon EF)(E\eta'F)=(\varepsilon EF)(EF\eta)=\identity_{EF}$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex011
+	\item Tinjau pasangan adjoin
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g010
+	$\begin{tikzcd}
+		F: \mathcal{C} \arrow[r, shift left] & \mathcal{D} \arrow[l, shift left] : G
+	\end{tikzcd}$,
+	dan tuliskan
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.q008
+	\[ S := \left\{ s \in \Mor(\mathcal{C}): Fs \;\text{invertibel} \right\}; \]
+	dengan demikian, $F$ terfaktor secara unik sebagai
+	$\mathcal{C}\xrightarrow{Q}\mathcal{C}[S^{-1}]\xrightarrow{H}\mathcal{D}$.
+	Buktikan bahwa pernyataan-pernyataan berikut saling ekuivalen.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.l010
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i024
+		\item Funktor $G$ penuh dan setia.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i025
+		\item Kounit $\varepsilon:FG\to\identity_{\mathcal{D}}$ merupakan
+		isomorfisme.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i026
+		\item $H$ merupakan ekuivalensi kategori, dengan $QG$ sebagai
+		kuasi-inversnya.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.i027
+		\item Untuk setiap kategori $\mathcal{X}$, funktor
+		$F^*:\mathcal{X}^{\mathcal{D}}\to\mathcal{X}^{\mathcal{C}}$ penuh dan
+		setia.
+	\end{enumerate}
+	Nyatakan pula versi dual dari hasil ini.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn007
+	\begin{hint}
+		Argumen berikut berasal dari \cite[Proposisi I.1.3]{GZ67}. Pertama,
+		(i) $\iff$ (ii) relatif mudah; lihat petunjuk dalam
+		\cite[Bab 2, Latihan 8]{Li1}.
+
+		Untuk (ii) $\implies$ (iii), persoalannya ialah membuktikan
+		$QGH\simeq\identity_{\mathcal{C}[S^{-1}]}$. Proposisi
+		\ref{prop:localization-extra-property} mereduksi hal ini menjadi
+		pembuktian $QGHQ\simeq Q$. Tinjau unit adjungsi
+		$\eta:\identity_{\mathcal{C}}\to GF$. Karena
+		$(\varepsilon F)(F\eta)=\identity_F$, maka $F\eta$ merupakan
+		isomorfisme; jadi $Q\eta:Q\rightiso QGF=QGHQ$.
+
+		Untuk (iii) $\implies$ (iv), perhatikan bahwa $H$ merupakan ekuivalensi
+		menyiratkan $H^*$ penuh dan setia, sedangkan untuk $Q^*$ kita dapat
+		menggunakan Proposisi \ref{prop:localization-extra-property}.
+
+		Untuk (iv) $\implies$ (ii), ambil
+		$E=\identity_{\mathcal{D}}$ dalam latihan sebelumnya. Terlihat bahwa
+		$FG$ merupakan adjoin kanan dari $\identity_{\mathcal{D}}$, dengan
+		kounit $\varepsilon$. Karena adjoin kanan dari
+		$\identity_{\mathcal{D}}$ unik hingga isomorfisme, $\varepsilon$
+		merupakan isomorfisme.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex012
+	\item Misalkan $S$ suatu sistem multiplikatif kiri dalam kategori
+	$\mathcal{C}$. Buktikan bahwa setiap diagram komutatif dalam
+	$\mathcal{C}[S^{-1}]^l$ yang berbentuk
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g011
+	\[\begin{tikzcd}
+		Q^l X \arrow[r, "{Q^l f}"] \arrow[d, "\alpha"'] & Q^l X' \arrow[d, "\beta"] \\
+		Q^l Y \arrow[r, "{Q^l g}"'] & Q^l Y'
+	\end{tikzcd}\]
+	\begin{center}
+		berasal dari diagram komutatif dalam $\mathcal{C}$ yang berbentuk
+	\end{center}
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g012
+	\[\begin{tikzcd}
+		X \arrow[r, "f"] & X' \\
+		U \arrow[r] \arrow[rightarrowtail, u] \arrow[d] & U' \arrow[rightarrowtail, u] \arrow[d] \\
+		Y \arrow[r, "g"'] & Y'
+	\end{tikzcd}\]
+	dengan $f,g\in\Mor(\mathcal{C})$ telah diberikan, dan seperti biasa
+	$\rightarrowtail$ menyatakan morfisme yang termasuk dalam $S$. Nyatakan
+	versi yang bersesuaian bagi sistem multiplikatif kanan.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn008
+	\begin{hint}
+		Nyatakan $\alpha$ dan $\beta$ masing-masing dengan data
+		$(U^\dagger;s,a)$ dan $(U';t,b)$. Terapkan (S3) untuk memperoleh $W$,
+		$h$, $r$, dan diagram komutatif dalam $\mathcal{C}$
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g013
+		\[\begin{tikzcd}
+			W \arrow[r, "h"] \arrow[rightarrowtail, d, "r"'] & U' \arrow[rightarrowtail, d, "{t}"] \\
+			U^\dagger \arrow[r, "{fs}"'] & X' .
+		\end{tikzcd}\]
+		Diagram ini menunjukkan bahwa persegi bagian atas pada diagram berikut
+		komutatif:
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g014
+		\[\begin{tikzcd}
+			X \arrow[r, "f"] & X' \\
+			W \arrow[rightarrowtail, u, "{sr}"] \arrow[r, "h"] \arrow[d, "{ar}"'] & U' \arrow[rightarrowtail, u, "{t}"'] \arrow[d, "{b}"] \\
+			Y \arrow[r, "g"'] & Y'
+		\end{tikzcd}\]
+		Untuk persegi bagian bawah, buktikan terlebih dahulu bahwa diagramnya
+		komutatif setelah menerapkan $Q^l$, lalu gunakan Korolari
+		\ref{prop:fraction-zero} untuk memilih $U\rightarrowtail W$ dan
+		menyesuaikannya menjadi diagram komutatif yang diminta.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex013
+	\item Periksa rincian lokalisasi sentral dalam Contoh
+	\ref{eg:central-localization}. Buktikan bahwa $\mathcal{C}[S^{-1}]$ yang
+	didefinisikan di sana dan lokalisasi yang diberikan oleh Teorema
+	\ref{prop:localization-additivity} saling ekuivalen sebagai kategori
+	$Z(\mathcal{C})[S^{-1}]$-linear.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex014
+	\item Lengkapi rincian bukti Proposisi
+	\ref{prop:comma-cat-completeness} (i).
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex015
+	\item Gunakan Teorema Funktor Adjoin \ref{prop:GAFT} untuk mengonstruksi
+	produk bebas $G\star H$ dari sembarang dua grup $G$ dan $H$; lihat
+	\cite[Definisi 4.8.9]{Li1} untuk konsep terkait.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex016
+	\item Misalkan $\mathrm{F}(X)$ grup bebas pada himpunan $X$. Buktikan bahwa
+	pemetaan kanonik $\iota:X\to U(\mathrm{F}(X))$ injektif, dengan $U$
+	funktor pelupa dari kategori grup ke kategori himpunan.
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn009
+	\begin{hint}
+		Misalkan $x\neq y$ elemen-elemen dari $X$. Terdapat grup $H$ beserta
+		pemetaan himpunan $f:X\to U(H)$ sedemikian sehingga $f(x)\neq f(y)$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.ex017
+	\item (P.\ Freyd) Misalkan kategori $\mathcal{D}$ lengkap dan funktor
+	$G:\mathcal{D}\to\cate{Set}$ mempertahankan semua $\varprojlim$ kecil
+	serta memenuhi syarat himpunan solusi berikut: terdapat subhimpunan kecil
+	$\Gamma\subset\Obj(\mathcal{D})$ sedemikian sehingga, untuk setiap
+	$d\in\Obj(\mathcal{D})$ dan $p\in Gd$, terdapat $x\in\Gamma$, $q\in Gx$,
+	dan morfisme $f:x\to d$ dengan $(Gf)(q)=p$. Buktikan bahwa $G$ terwakili.
+
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn010
+	\begin{hint}
+		Nyatakan objek dari $\left(\{\mathrm{pt}\}/G\right)$ sebagai data
+		$(d,p)$, dengan $d\in\Obj(\mathcal{D})$ dan $p\in Gd$. Syarat di atas
+		setara dengan pernyataan bahwa
+		$\Gamma^\natural:=\left\{(x,q):x\in\Gamma,\;q\in Gx\right\}$ merupakan
+		keluarga awal lemah bagi $\left(\{\mathrm{pt}\}/G\right)$. Tunjukkan
+		bahwa $\left(\{\mathrm{pt}\}/G\right)$ mempunyai objek awal
+		$(r_G,u_G)$. Dengan mengikuti argumen dalam
+		\eqref{eqn:adjoint-vs-comma-aux}, tunjukkan bahwa untuk setiap $d$
+		terdapat bijeksi
+% segment-id: o014.li2.chapter1.adjoint-functor-theorem.g015
+		\[\begin{tikzcd}[row sep=tiny, column sep=small]
+			\Hom_{\mathcal{D}}(r_G, d) \arrow[r] & \Hom_{\cate{Set}}\left( \{\mathrm{pt}\}, Gd \right) \arrow[r, "\sim"] & Gd \\
+			\alpha \arrow[mapsto, rr] & & (G\alpha)(u_G) .
+		\end{tikzcd}\]
+	\end{hint}
+\end{Exercises}

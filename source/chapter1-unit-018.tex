@@ -1,0 +1,329 @@
+% Terjemahan Bahasa Indonesia dari chapter1.tex baris 1583--1707.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter1.kan-extensions-along-localization
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.h001
+\section{Ekstensi Kan sepanjang Lokalisasi}\label{sec:functor-localization}
+\hypertarget{o014.aljabr2.chapter1.kan-extensions-along-localization}{ }
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.p001
+Andaikan lokalisasi $\mathcal{C}$ terhadap
+$S \subset \Mor(\mathcal{C})$, yakni
+$Q: \mathcal{C} \to \mathcal{C}[S^{-1}]$, ada. Bagian ini
+menyelidiki masalah ekstensi funktor: untuk suatu kategori $\mathcal{E}$ dan
+funktor $F: \mathcal{C} \to \mathcal{E}$ yang diberikan, adakah diagram
+komutatif berikut?
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g001
+\[\begin{tikzcd}
+	\mathcal{C} \arrow[d, "Q"'] \arrow[rd, bend left, "F"'] & \\
+	\mathcal{C}{[S^{-1}]} \arrow[dashed, r, "\exists? "'] & \mathcal{E}
+\end{tikzcd}\]
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.p002
+Karena $F$ belum tentu memetakan morfisme dalam $S$ ke isomorfisme, funktor
+yang ditunjukkan oleh anak panah putus-putus itu belum tentu ada. Meskipun
+demikian, kita masih dapat mencari pendekatan optimal bagi masalah ekstensi
+tersebut, yakni ekstensi Kan kiri $(\Lan_Q F, \eta)$ dan ekstensi Kan kanan
+$(\Ran_Q F, \varepsilon)$. Mulai sekarang, data $\eta$ dan $\varepsilon$ akan
+dihilangkan dari notasi. Tujuan bagian ini ialah mencari syarat-syarat cukup
+bagi $\mathcal{C}$, $S$, dan $F$ yang dipilih agar $\Lan_Q F$ dan $\Ran_Q F$
+ada; begitu keduanya ada, Proposisi \ref{prop:Kan-uniqueness} menjamin
+keunikannya. Hasil-hasil ini akan digunakan dalam kajian funktor turunan;
+lihat \S~4.6.
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.p003
+Gagasan untuk menangani masalah ini ialah memilih subkategori $\mathcal{C}$
+secara saksama. Kita melanjutkan konvensi dari
+\S\ref{sec:cat-localization}: morfisme yang termasuk dalam $S$ ditandai
+dengan $\rightarrowtail$.
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.p004
+Argumen dalam bagian ini tidak melibatkan asumsi mengenai ukuran himpunan.
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.pr001
+\begin{proposisi}\label{prop:subcat-localization}
+	Misalkan $\mathcal{I}$ suatu subkategori penuh dari $\mathcal{C}$ dan
+	$S \subset \Mor(\mathcal{C})$ suatu sistem multiplikatif kiri (atau
+	kanan). Tetapkan $T := S \cap \Mor(\mathcal{I})$.
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.l001
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.i001
+		\item Jika $T$ diasumsikan sebagai sistem multiplikatif kiri (atau
+		kanan) dalam $\mathcal{I}$, data di atas menginduksi funktor
+		$\mathcal{I}[T^{-1}]^l \to \mathcal{C}[S^{-1}]^l$ (atau
+		$\mathcal{I}[T^{-1}]^r \to \mathcal{C}[S^{-1}]^r$\footnote{Catatan
+		penerjemah (O014-C019): sasaran pada cabang kanan dikoreksi dari
+		$\mathcal{C}[T^{-1}]^r$ menjadi $\mathcal{C}[S^{-1}]^r$, sebab
+		$T \subset \Mor(\mathcal{I})$, sedangkan
+		$S \subset \Mor(\mathcal{C})$.}).
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.i002
+		\item Andaikan syarat berikut berlaku: untuk setiap morfisme dalam $S$
+		yang berbentuk $s: W \to Y$ (atau $s: Y \to W$), dengan
+		$Y \in \Obj(\mathcal{I})$, terdapat morfisme $g: V \to W$ sedemikian
+		rupa sehingga $sg \in T$ (atau $g: W \to V$ sedemikian rupa sehingga
+		$gs \in T$). Maka $T$ merupakan sistem multiplikatif kiri (atau
+		kanan), dan funktor dalam (i) penuh dan setia.
+	\end{enumerate}
+\end{proposisi}
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.pf001
+\begin{bukti}
+	Berdasarkan dualitas, cukup tinjau kasus sistem multiplikatif kiri. Funktor
+	dalam (i) berasal dari sifat universal lokalisasi; pada tingkat morfisme,
+	funktor itu memetakan setiap kelas ekuivalensi $[U; s, a]$ (terhadap $T$)
+	ke $[U; s, a]$ (terhadap $S$).
+
+	Untuk (ii), pertama-tama kita periksa bahwa $T$ merupakan sistem
+	multiplikatif kiri. Syarat (S1) dan (S2) dalam Definisi
+	\ref{def:multiplicative-family} sudah jelas. Untuk (S3), jika
+	$X \stackrel{t}{\rightarrowtail} Z \stackrel{f}{\leftarrow} Y$
+	diberikan, kita dapat membentuk diagram berikut dalam $\mathcal{C}$:
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g002
+	\[\begin{tikzcd}
+		X \arrow[rightarrowtail, d, "{t \in T}"'] & W \arrow[l, "{f'}"'] \arrow[rightarrowtail, d, "{s' \in S}"] \\
+		Z & Y \arrow[l, "f"] ;
+	\end{tikzcd}\]
+	Selanjutnya, ambil $g: V \to W$ sedemikian rupa sehingga $s' g \in T$;
+	maka $s'g$ dan $f'g$ memenuhi spesifikasi (S3). Argumen untuk (S4) sama.
+
+	Misalkan $X, Y \in \Obj(\mathcal{I})$. Untuk suatu morfisme dalam
+	$\mathcal{C}[S^{-1}]^l$ yang diwakili oleh
+	$X \leftarrowtail U \to Y$, syarat di atas memungkinkan kita memilih
+	$V \to U$ sehingga komposit $V \to U \to X$ termasuk dalam $T$; karena
+	itu, $\Hom_{\mathcal{I}[T^{-1}]^l}(X, Y) \to
+	\Hom_{\mathcal{C}[S^{-1}]^l}(X, Y)$ surjektif. Dengan cara serupa, setiap
+	ekuivalensi dalam $M_{X, Y}^l$ yang dinyatakan dengan $\sim$ dapat
+	direalisasikan di dalam
+	$\mathcal{I}$, sehingga $\Hom_{\mathcal{I}[T^{-1}]^l}(X, Y) \to
+	\Hom_{\mathcal{C}[S^{-1}]^l}(X, Y)$ injektif.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.p005
+Lema berikut hanya dinyatakan untuk sistem multiplikatif kanan $S$; kasus
+sistem multiplikatif kiri bersifat dual.
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.le001
+\begin{lema}\label{prop:injective-localization-prep}
+	Misalkan $S \subset \Mor(\mathcal{C})$ suatu sistem multiplikatif kanan.
+	Untuk $\underline{X} := QX \in
+	\Obj\left(\mathcal{C}[S^{-1}]\right)$ yang diberikan, definisikan, dengan
+	cara dalam Definisi \ref{def:comma-category}, kategori
+	$(Q/\underline{X})$. Mulai sekarang, kita mewakili suatu objek dari
+	$(Q/\underline{X})$, yakni $(Y, QY \to \underline{X})$, secara tidak
+	unik dengan suatu diagram dalam $\mathcal{C}$ yang berbentuk
+	$Y \xrightarrow{a} U \stackrel{s}{\leftarrowtail} X$.
+
+	Definisikan kategori $S_{X/}$ seperti dalam
+	\S\ref{sec:cat-localization}. Funktor $S_{X/} \to (Q/\underline{X})$ yang
+	memetakan objek $[X \stackrel{t}{\rightarrowtail} V]$ ke diagram
+	$V = V \stackrel{t}{\leftarrowtail} X$, yang menentukan
+	$(V, QV \to \underline{X})$, merupakan funktor kofinal
+	(Definisi \ref{def:cofinal}).
+\end{lema}
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.pf002
+\begin{bukti}
+	Untuk $[X \stackrel{t}{\rightarrowtail} V]$ dalam pernyataan, menentukan
+	suatu morfisme dari $(Y, QY \to \underline{X})$ ke objek terkait
+	$(V, QV \to \underline{X})$ sama dengan menentukan, dalam
+	$\mathcal{C}$, suatu morfisme $b: Y \to V$ sedemikian rupa sehingga
+	diagram $Y \xrightarrow{b} V \stackrel{t}{\leftarrowtail} X$ mewakili,
+	dalam $\mathcal{C}[S^{-1}]$, morfisme $QY \to \underline{X}$.
+
+	Jika $Y \xrightarrow{a} U \stackrel{s}{\leftarrowtail} X$ diberikan,
+	diagram berikut memetakan $(Y, QY \to \underline{X})$ ke suatu objek yang
+	berasal dari $S_{X/}$:
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g003
+	\begin{equation*}\begin{tikzcd}
+		Y \arrow[r] \arrow[d] & U \arrow[equal, d] & X \arrow[rightarrowtail, l] \arrow[equal, d] & (Y, QY \to \underline{X}) \arrow[d, "a"] \\
+		U \arrow[equal, r] & U & X \arrow[rightarrowtail, l] & (U, QU \to \underline{X})
+	\end{tikzcd}\end{equation*}
+
+	Selanjutnya, tinjau dalam $S_{X/}$ objek-objek
+	$[X \stackrel{t_i}{\rightarrowtail} V_i]$ beserta
+	morfisme-morfisme dari $(Y, QY \to \underline{X})$ ke citranya, yang
+	masing-masing ditentukan oleh $b_i: Y \to V_i$ ($i=1, 2$). Dengan
+	menggunakan diagram sebelah kanan dalam \eqref{eqn:localization-sim}, ambil
+	diagram komutatif berikut:
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g004
+	\[\begin{tikzcd}
+		& V_1 \arrow[d, "{u_1}"'] & \\
+		Y \arrow[r, "b"'] \arrow[ru, "{b_1}"] \arrow[rd, "{b_2}"'] & W & X \arrow[rightarrowtail, l, "u"] \arrow[rightarrowtail, lu, "{t_1}"'] \arrow[rightarrowtail, ld, "{t_2}"] \\
+		& V_2 \arrow[u, "{u_2}"] &
+	\end{tikzcd}\]
+	Dengan demikian,
+	$u_i: [X \rightarrowtail V_i] \to [X \stackrel{u}{\rightarrowtail} W]$,
+	dan $b$ juga menentukan morfisme dari $(Y, QY \to \underline{X})$ ke
+	objek yang bersesuaian dengan $u$, yakni
+	$(W, QW \to \underline{X})$. Dari sini,
+	semua syarat yang diperlukan agar funktor tersebut kofinal segera
+	diperoleh.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.n001
+% Ref: [KS, Lemma 7.1.21, Proposition 7.3.3]
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.pr002
+\begin{proposisi}\label{prop:injective-localization}
+	Misalkan $\mathcal{I}$ suatu subkategori penuh dari $\mathcal{C}$,
+	$S \subset \Mor(\mathcal{C})$ suatu sistem multiplikatif kiri (atau
+	kanan), dan $T := S \cap \Mor(\mathcal{I})$. Andaikan ``syarat resolusi''
+	berikut berlaku: untuk setiap $X \in \Obj(\mathcal{C})$, terdapat
+	$s: U \to X$ (atau $s: X \to U$), dengan
+	$U \in \Obj(\mathcal{I})$ dan $s \in S$.
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.l002
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.i003
+		\item Maka $T \subset \Mor(\mathcal{I})$ merupakan sistem
+		multiplikatif kiri (atau kanan), dan
+		$\mathcal{I}[T^{-1}] \to \mathcal{C}[S^{-1}]$ merupakan ekuivalensi.
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.i004
+		\item Andaikan lebih lanjut bahwa funktor
+		$F: \mathcal{C} \to \mathcal{E}$ memetakan unsur-unsur $T$ ke
+		isomorfisme. Maka $\Ran_Q F$ (atau $\Lan_Q F$) ada, dan diagram berikut
+		komutatif hingga isomorfisme:
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g005
+		\[\begin{tikzcd}[column sep=huge]
+			\mathcal{C}[S^{-1}] \arrow[r, "{\Ran_Q F \;\text{atau}\; \Lan_Q F }" inner sep=1em] & \mathcal{E} \\
+			\mathcal{I}[T^{-1}] \arrow[u, "\text{ekuivalensi}"] \arrow[ru]
+		\end{tikzcd}\]
+		dengan $\mathcal{I}[T^{-1}] \to \mathcal{E}$ ditentukan oleh sifat
+		universal lokalisasi.
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.i005
+		\item Untuk $X \in \Obj(\mathcal{C})$, definisikan kategori $S_{/X}$
+		dan $S_{X/}$ seperti dalam \S\ref{sec:cat-localization}. Di bawah
+		asumsi (ii), terdapat isomorfisme kanonik\footnote{Indeks limit dalam
+		rumus pertama diambil atas $\Obj(S_{/X}^{\opp})$ karena kita memakai
+		konvensi $\varprojlim_i \beta(i)$ untuk menyatakan, bagi funktor
+		$\beta: I^{\opp} \to \mathcal{C}$, limit $\varprojlim$.}
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.q001
+		\begin{align*}
+			\left(\Ran_Q F\right) (QX) & \simeq \varprojlim_{[X \leftarrowtail Y] \in \Obj(S_{/X}^{\opp})} FY , \\
+			\left(\Lan_Q F\right) (QX) & \simeq \varinjlim_{[X \rightarrowtail Y] \in \Obj(S_{X/})} FY.
+		\end{align*}
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.p006
+	Morfisme bawaan ekstensi Kan
+	$\varepsilon: (\Ran_Q F) Q \to F$ (atau
+	$\eta: F \to (\Lan_Q F) Q$), dalam situasi (iii), ditentukan oleh
+	suku $FX$ yang bersesuaian dengan objek
+	$\identity_X \in \Obj(S_{/X}^{\opp})$ (atau
+	$\identity_X \in \Obj(S_{X/})$).
+\end{proposisi}
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.pf003
+\begin{bukti}
+	Cukup bahas sistem multiplikatif kanan. Syarat dalam Proposisi
+	\ref{prop:subcat-localization} (ii) jelas terpenuhi, sehingga $T$ merupakan
+	sistem multiplikatif kanan. Nyatakan lokalisasinya dengan
+	$Q': \mathcal{I} \to \mathcal{I}[T^{-1}]$, dan nyatakan funktor penuh dan
+	setia dalam Proposisi \ref{prop:subcat-localization} (ii), yakni
+	$\mathcal{I}[T^{-1}] \to \mathcal{C}[S^{-1}]$, dengan $\iota_Q$. Syarat resolusi juga
+	memastikan bahwa $\iota_Q$ pada hakikatnya surjektif, sehingga merupakan
+	ekuivalensi. Ini membuktikan (i).
+
+	Sekarang tinjau (ii). Nyatakan funktor inklusi dengan
+	$\iota: \mathcal{I} \to \mathcal{C}$. Berdasarkan sifat universal,
+	terdapat $F': \mathcal{I}[T^{-1}] \to \mathcal{E}$ yang membuat diagram
+	berikut komutatif:
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g006
+	\[\begin{tikzcd}
+		& \mathcal{C} \arrow[d, "Q"'] \arrow[rd, "F"] & \\
+		\mathcal{I} \arrow[ru, "\iota"] \arrow[rd, "{Q'}"'] & {\mathcal{C}[S^{-1}]} & \mathcal{E} \\
+		& {\mathcal{I}[T^{-1}]} \arrow[u, "\iota_Q"] \arrow[ru, "{F'}"'] &
+	\end{tikzcd}\]
+
+	Pilih sembarang funktor kuasi-invers dari $\iota_Q$ dan nyatakan funktor
+	itu dengan $\iota_Q^{-1}$. Kita
+	akan menunjukkan bahwa $F' \circ \iota_Q^{-1}$ memberikan ekstensi Kan
+	kiri $\Lan_Q F$, atau secara ekuivalen, bahwa $\Lan_Q F$ ada dan
+	$F' \simeq (\Lan_Q F) \circ \iota_Q$.
+
+	Untuk membuktikan keberadaan $\Lan_Q F$, menurut Definisi
+	\ref{def:comma-category}, definisikan funktor
+	$\Pi_{/\underline{X}}: (Q/\underline{X}) \to \mathcal{C}$, dengan
+	$\underline{X} := QX \in
+	\Obj\left(\mathcal{C}[S^{-1}]\right)$. Berdasarkan Teorema
+	\ref{prop:Kan-limit} (i), keberadaan $\Lan_Q F$ tereduksi pada pembuktian
+	bahwa $\varinjlim F \Pi_{/\underline{X}}$ ada untuk setiap
+	$\underline{X}$.
+
+	Selanjutnya, gunakan, dari Lema
+	\ref{prop:injective-localization-prep}, funktor kofinal
+	$S_{X/} \to (Q/\underline{X})$, serta Proposisi
+	\ref{prop:cofinal-lim}; dengan demikian,
+	$\varinjlim F\Pi_{/\underline{X}}$ tereduksi menjadi
+	$\varinjlim_{[X \rightarrowtail U]} FU$, dengan $\varinjlim$ diambil atas
+	$S_{X/}$.
+
+	Lebih lanjut, karena $S_{X/}$ terfilter (Lema
+	\ref{prop:S-filtered}), syarat resolusi bersama Proposisi
+	\ref{prop:cofinal-filtered} memastikan bahwa objek-objek dengan
+	$U \in \Obj(\mathcal{I})$, yakni $[X \rightarrowtail U]$, membentuk
+	subkategori penuh kofinal dari $S_{X/}$. Penerapan lain dari Proposisi
+	\ref{prop:cofinal-lim} karena itu memungkinkan kita membatasi
+	$\varinjlim$ pada kasus $U \in \Obj(\mathcal{I})$.
+
+	Tujuan kita ialah membuktikan keberadaan
+	$\varinjlim F\Pi_{/\underline{X}}$, atau secara ekuivalen, keberadaan
+	$\varinjlim_{[X \rightarrowtail U]} FU$. Masalah semula hanya bergantung
+	pada kelas isomorfisme $\underline{X}$, sehingga (i) mereduksinya pada
+	kasus $X \in \Obj(\mathcal{I})$. Akan tetapi, diagram berikut memberikan
+	suatu morfisme dalam $S_{X/}$:
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g007
+	\begin{equation*}
+		\begin{tikzcd}
+			U & X \arrow[rightarrowtail, l] \\
+			X \arrow[rightarrowtail, u] & X \arrow[equal, l] \arrow[equal, u]
+		\end{tikzcd} \quad
+		\text{dengan} \quad U \in \Obj(\mathcal{I})
+	\end{equation*}
+	Semua anak panah berlabel $\rightarrowtail$ menjadi isomorfisme setelah
+	diterapkan $F$. Ini menunjukkan bahwa dalam kasus ini
+	$\varinjlim FU$ bukan hanya ada, melainkan juga bernilai konstan $FX$;
+	perhatikan bahwa hal ini sekaligus menunjukkan
+	$F' \simeq (\Lan_Q F) \circ \iota_Q$. Dengan demikian, (ii) terbukti.
+
+	Terakhir, tinjau (iii). Untuk $X \in \Obj(\mathcal{C})$, argumen di atas
+	telah menunjukkan bahwa
+	$\varinjlim_{[X \rightarrowtail Y] \in \Obj(S_{X/})} FY$ ada dan
+	memberikan $(\Lan_Q F)(QX)$. Dalam korespondensi ini, morfisme bawaan
+	ekstensi Kan kiri $\eta_X$ secara alami ditentukan oleh suku yang
+	bersesuaian dengan $[X \stackrel{\identity}{\rightarrowtail} X]$; lihat
+	konstruksi dalam \S\ref{sec:Kan-as-limit}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.pr003
+\begin{proposisi}\label{prop:localization-functor-abs}
+	Di bawah syarat-syarat Proposisi \ref{prop:injective-localization},
+	$\Ran_Q F$ (atau $\Lan_Q F$) merupakan ekstensi Kan kanan absolut (atau
+	ekstensi Kan kiri absolut) dari $F$ sepanjang $Q$; lihat Definisi
+	\ref{def:absolute-Kan}.
+\end{proposisi}
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.pf004
+\begin{bukti}
+	Syarat pertama dalam Proposisi \ref{prop:injective-localization} hanya
+	menyangkut $\mathcal{C}$, yakni sistem multiplikatif kiri (atau kanan)
+	$S$ dan subkategori $\mathcal{I}$, bukan $F$; syarat
+	kedua hanya mengharuskan $F$ memetakan
+	$T := S \cap \Mor(\mathcal{I})$ ke isomorfisme. Khususnya, untuk setiap
+	funktor $M: \mathcal{E} \to \mathcal{F}$, syarat pada $F$ langsung
+	diturunkan kepada $MF: \mathcal{C} \to \mathcal{F}$.
+
+	Kita hanya membahas kasus $\Lan_Q F$. Dengan notasi dari bukti Proposisi
+	\ref{prop:injective-localization}, $\Lan_Q F$ secara konkret diambil
+	sebagai komposit
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.q002
+	\[ \mathcal{C}[S^{-1}] \xrightarrow{\iota_Q^{-1}} \mathcal{I}[T^{-1}] \xrightarrow{F'} \mathcal{E} \]
+	dengan $\iota_Q$ dan $F'$ keduanya berasal dari sifat universal
+	lokalisasi. Karena itu, $M (\Lan_Q F) = MF' \iota_Q^{-1}$. Dari diagram
+	komutatif
+% segment-id: o014.li2.chapter1.kan-extensions-along-localization.g008
+	\[\begin{tikzcd}
+		\mathcal{I} \arrow[hookrightarrow, r] \arrow[rd] & \mathcal{C} \arrow[r, "F"] & \mathcal{E} \arrow[r, "M"] & \mathcal{F} \\
+		& \mathcal{I}[T^{-1}] \arrow[ru, "{F'}" description] \arrow[rru, "{MF'}" description] & &
+	\end{tikzcd}\]
+	terlihat bahwa $MF'$ juga diinduksi oleh sifat universal lokalisasi.
+	Untuk $\mathcal{C} \xrightarrow{MF} \mathcal{F}$, terapkan konstruksi
+	Proposisi \ref{prop:injective-localization}; kita memperoleh
+	$\Lan_Q (MF) = MF' \iota_Q^{-1}$. Dengan kata lain, $\Lan_Q F$
+	dipertahankan oleh $M$.
+\end{bukti}
