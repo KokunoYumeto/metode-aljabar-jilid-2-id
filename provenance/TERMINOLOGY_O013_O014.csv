@@ -357,3 +357,11 @@ math.category.double_chain_condition,bi-chain condition,syarat rantai ganda,kond
 math.algebra.nilpotent,nilpotent,nilpoten,,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Suatu pangkat positif sama dengan nol
 math.algebra.local_ring,local ring,gelanggang lokal,ring lokal,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Unsur tak invertibel tertutup terhadap penjumlahan
 math.category.fitting_lemma,Fitting lemma,Lema Fitting,,o014.aljabr2.chapter2.direct-sum-decomposition,o014_new,Bentuk kategori abelian di bawah syarat rantai ganda
+math.category.subobject_intersection,intersection of subobjects,irisan subobjek,perpotongan subobjek,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Infimum keluarga subobjek ketika ada
+math.category.subobject_sum,sum of subobjects,jumlah subobjek,,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Supremum keluarga subobjek ketika ada
+math.category.increasing_union,increasing union,gabungan naik,gabungan meningkat; gabungan menaik,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Notasi gabungan bagi supremum keluarga subobjek terfilter yang menaik
+math.category.subobject_preimage,preimage of a subobject,prabayang subobjek,citra invers subobjek; citra balik subobjek,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Dibedakan dari funktor citra invers pada praberkas
+math.category.canonical_isomorphism,canonical isomorphism,isomorfisme kanonik,,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Bentuk komposisional dari isomorfisme dan sifat kanonik
+math.category.antidiagonal_morphism,antidiagonal morphism,morfisme antidiagonal,,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Morfisme ke biproduk dengan komponen pertama bertanda negatif
+math.order.order_reversing_bijection,order-reversing bijection,bijeksi pembalik urutan,bijeksi yang membalik urutan,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Korespondensi subobjek dengan objek kuosien
+math.algebra.isomorphism_theorem,isomorphism theorem,teorema isomorfisme,,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Versi kategori abelian dari teorema isomorfisme modul

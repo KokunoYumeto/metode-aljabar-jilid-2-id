@@ -1,0 +1,464 @@
+% Terjemahan Bahasa Indonesia dari chapter2.tex baris 911--1132.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.h001
+\section{Subobjek dan Teorema Isomorfisme}\label{sec:Abel-cat-subobjects}
+\hypertarget{o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems}{ }
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p001
+Pada bagian ini, tetapkan suatu kategori abelian $\mathcal{A}$. Untuk setiap
+objek $X$ dalam $\mathcal{A}$, himpunan terurut parsial subobjek-subobjeknya
+dilambangkan dengan $(\mathrm{Sub}_X, \subset)$, mengikuti konvensi dalam
+\S\ref{sec:subquot}.
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p002
+Hasil-hasil dalam bagian ini sudah dikenal baik untuk kasus
+$\mathcal{A}=R\dcate{Mod}$, dengan $R$ sebarang gelanggang; tetapi untuk
+kategori abelian diperlukan argumen yang berbeda.
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.d001
+\begin{definisi}\label{def:intersection-sum}
+	\index{kuosien (quotient)}
+	\index[sym1]{XoverY@$X/Y$}
+	Misalkan $X$ merupakan objek dari $\mathcal{A}$.
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.l001
+	\begin{itemize}
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i001
+		\item Untuk suatu subobjek $X'$ dari $X$, \emph{kuosien} yang
+		bersesuaian didefinisikan sebagai
+		$X/X':=\Coker[X'\to X]$; secara alami, objek ini merupakan objek
+		kuosien dari $X$. Setiap epimorfisme
+		$f:X\twoheadrightarrow X''$ dapat dipandang sebagai kuosien $X$ oleh
+		$\Ker(f)$.
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i002
+		\item Untuk keluarga subobjek $X_1,\ldots,X_n$ dari $X$, \emph{irisan}
+		dan \emph{jumlah subobjek} yang bersesuaian masing-masing didefinisikan
+		sebagai
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q001
+		\begin{align*}
+			X_1 \cap \cdots \cap X_n & := X_1 \dtimes{X} \cdots \dtimes{X} X_n, \\
+			X_1 + \cdots + X_n & := \Image\left[ X_1 \oplus \cdots \oplus X_n \xrightarrow{\sigma} X \right].
+		\end{align*}
+		Di sini, $\sigma$ diinduksi oleh semua $X_i\hookrightarrow X$ (dan dapat
+		dipandang sebagai penjumlahan). Keduanya secara alami merupakan subobjek
+		dari $X$: kasus $X_1\cap\cdots\cap X_n$ mengikuti
+		Lema~\ref{prop:mono-product}, sedangkan kasus $X_1+\cdots+X_n$ mengikuti
+		langsung dari definisi.
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p003
+Sebagai contoh, definisi kohomologi dapat ditulis ulang menggunakan kuosien:
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q002
+\[ \Hm^n(X) := \Ker(d_X^n)/\Image(d_X^{n-1}). \]
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p004
+Secara lebih umum, untuk sebarang himpunan $I$ dan keluarga subobjek
+$(X_i)_{i\in I}$ dari $X$, metode yang sama memberikan definisi yang baik
+bagi $\bigcap_{i\in I}X_i$ (atau $\sum_{i\in I}X_i$), asalkan produk seratnya
+di atas $X$ (atau koproduknya $\bigsqcup_{i\in I}X_i$ dalam $\mathcal{A}$)
+ada. Peran definisi ini dijelaskan oleh fakta berikut.
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pr001
+\begin{proposisi}\label{prop:subobject-inf-sup}
+	Diberikan suatu keluarga subobjek $(X_i)_{i\in I}$ dari $X$. Jika produk
+	seratnya di atas $X$ (atau koproduknya $\bigsqcup$ dalam $\mathcal{A}$)
+	ada, masing-masing objek tersebut memberikan infimum (atau supremum) dari
+	$(X_i)_{i\in I}$ dalam himpunan terurut parsial
+	$(\mathrm{Sub}_X,\subset)$.
+\end{proposisi}
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf001
+\begin{bukti}
+	Dari konstruksinya, untuk setiap $i$ berlaku
+	$\bigcap_{j\in I}X_j\subset X_i\subset\sum_{j\in I}X_j$.
+
+	Berikutnya, tinjau suatu subobjek $Y\hookrightarrow X$. Untuk kasus irisan,
+	andaikan $\forall i\in I,\;Y\subset X_i$, yakni terdapat keluarga diagram
+	komutatif
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g001
+	$\begin{tikzcd}[row sep=small, column sep=small]
+		Y \arrow[hookrightarrow, r] \arrow[d] & X \\
+		X_i \arrow[hookrightarrow, ru] &
+	\end{tikzcd}$.
+	Sifat universal produk serat kemudian memberikan morfisme
+	$Y\to\bigcap_{i\in I}X_i$, sehingga
+	$Y\subset\bigcap_{i\in I}X_i$. Untuk kasus jumlah subobjek, andaikan
+	$\forall i\in I,\;X_i\subset Y$. Sifat universal koproduk menghasilkan
+	diagram komutatif
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g002
+	\[\begin{tikzcd}
+		\coprod_{i \in I} X_i \arrow[r, "\sigma"] \arrow[rd] & X \\
+		& Y \arrow[hookrightarrow, u].
+	\end{tikzcd}\]
+
+	Dengan menerapkan Lema~\ref{prop:Im-Coim-fac}, morfisme
+	$\bigsqcup_{i\in I}X_i\to Y$ berfaktor secara unik melalui
+	$\Coim(\sigma)\simeq\Image(\sigma)$, serasi dengan morfisme menuju $X$.
+	Dengan demikian,
+	$\sum_{i\in I}X_i:=\Image(\sigma)\subset Y$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.c001
+\begin{konvensi}\label{con:increasing-union}
+	\index[sym1]{Xsum@$\sum_{i \in I} X_i$}
+	\index[sym1]{Xunion@$\bigcup_{i \in I} X_i$}
+	Berdasarkan Proposisi~\ref{prop:subobject-inf-sup}, kita juga dapat
+	menghindari penggunaan produk serat atau koproduk dan langsung
+	mendefinisikan irisan $\bigcap_iX_i$ (atau jumlah subobjek
+	$\sum_iX_i$) dari suatu keluarga subobjek $(X_i)_{i\in I}$ sebagai
+	infimum (atau supremum) keluarga tersebut dalam $\mathrm{Sub}_X$, asalkan
+	infimum (atau supremum) itu ada. Di sini selalu diandaikan bahwa himpunan
+	indeks $I$ merupakan himpunan kecil. Jika $I$ dilengkapi dengan urutan
+	parsial terfilter dan $i\leq j\implies X_i\subset X_j$, supremum
+	$\sum_{i\in I}X_i$ dapat pula dilambangkan secara wajar sebagai
+	gabungan naik $\bigcup_{i\in I}X_i$.
+\end{konvensi}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.co001
+\begin{korolari}
+	Untuk setiap objek $X$, himpunan terurut parsial
+	$(\mathrm{Sub}_X,\subset)$ merupakan kisi terbatas dalam pengertian
+	Definisi~\ref{def:lattice-order}.
+\end{korolari}
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf002
+\begin{bukti}
+	Supremum dari dua subobjek $Y,Z$ adalah $Y+Z$, sedangkan infimumnya adalah
+	$Y\cap Z$; unsur terbesar dalam $\mathrm{Sub}_X$ adalah $X$, dan unsur
+	terkecilnya adalah $0$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p005
+Bagian ini berfokus pada struktur $(\mathrm{Sub}_X,\subset)$, tetapi versi
+objek kuosien $(\mathrm{Quot}_X,\twoheadleftarrow)$ tidak berbeda secara
+hakiki. Hal ini berdasarkan bijeksi pembalik urutan yang jelas
+$\mathrm{Sub}_X\simeq\mathrm{Quot}_X$: subobjek $X'$ dan objek kuosien $X''$
+saling bersesuaian jika dan hanya jika keduanya dapat ditempatkan dalam suatu
+barisan eksak pendek $0\to X'\to X\to X''\to0$. Karena itu, versi tersebut
+tidak akan dibahas secara terpisah.
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.d002
+\begin{definisi}\label{def:subobject-image}
+	\index[sym1]{finvY@$f^{-1}(Y')$}
+	\index[sym1]{fX@$f(X')$}
+	Diberikan morfisme $f:X\to Y$ serta subobjek-subobjek
+	$X'\hookrightarrow X$ dan $Y'\hookrightarrow Y$, tuliskan
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q003
+	\[ f^{-1}(Y') := X \dtimes{Y} Y', \quad f(X') := \Image\left[ X' \hookrightarrow X \xrightarrow{f} Y \right]; \]
+	yang pertama merupakan prabayang $Y'$ dan subobjek dari $X$, sedangkan
+	yang kedua merupakan citra $X'$ dan subobjek dari $Y$. Konstruksi ini
+	memberikan pemetaan yang mempertahankan urutan dalam dua arah:
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g003
+	$\begin{tikzcd}
+		\mathrm{Sub}_X \arrow[r, yshift=0.3em, "f(\cdot)"] & \mathrm{Sub}_Y \arrow[l, yshift=-0.3em, "f^{-1}(\cdot)"]
+	\end{tikzcd}$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.le001
+\begin{lema}\label{prop:image-sum-preimage-intersection}
+	Diberikan $f:X\to Y$ seperti di atas.
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.l002
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i003
+		\item Untuk setiap $X'\in\mathrm{Sub}_X$ dan
+		$Y'\in\mathrm{Sub}_Y$, berlaku
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q004
+		\[ X' \subset f^{-1}(Y') \iff f(X') \subset Y'. \]
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i004
+		\item Diberikan keluarga elemen $(X'_i)_{i\in I}$ dari
+		$\mathrm{Sub}_X$ (atau $(Y'_i)_{i\in I}$ dari
+		$\mathrm{Sub}_Y$),\footnote{Catatan penerjemah (O014-C025): sumber
+		memperkenalkan keluarga $(X_i)$ dan $(Y_i)$ tanpa tanda prima, sedangkan
+		kedua rumus berikut memakai $X'_i$ dan $Y'_i$. Target menambahkan tanda
+		prima pada deklarasi agar cocok dengan rumus.} kita mempunyai
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q005
+		\[ f\left( \sum_{i \in I} X'_i \right) = \sum_{i \in I} f(X'_i), \quad f^{-1}\left( \bigcap_{i \in I} Y'_i \right) = \bigcap_{i \in I} f^{-1}(Y'_i), \]
+		asalkan irisan dan jumlah subobjek yang dibicarakan ada.
+	\end{enumerate}
+\end{lema}
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf003
+\begin{bukti}
+	Untuk (i), menurut definisi, $X'\subset f^{-1}(Y')$ ekuivalen dengan
+	keberadaan diagram komutatif
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g004
+	\[\begin{tikzcd}
+		X' \arrow[dashed, r, "\exists"] \arrow[hookrightarrow, d] & Y' \arrow[hookrightarrow, d] \\
+		X \arrow[r, "f"'] & Y .
+	\end{tikzcd}\]
+	Karena $f(X')$ adalah citra dari
+	$X'\hookrightarrow X\xrightarrow{f}Y$,\footnote{Catatan penerjemah
+	(O014-C026): sumber menyebut $f(X')$ sebagai kocitra, tetapi
+	Definisi~\ref{def:subobject-image} menetapkannya sebagai
+	$\Image[X'\to X\to Y]$, yakni citra dan subobjek dari $Y$. Target memakai
+	istilah yang sesuai dengan objek tersebut.} Lema~\ref{prop:Im-Coim-fac}
+	menunjukkan bahwa diagram seperti itu berkorespondensi satu-satu dengan
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g005
+	\[\begin{tikzcd}
+		X' \arrow[r] \arrow[d, hookrightarrow] & f(X') \arrow[hookrightarrow, d] \arrow[dashed, r, "\exists"] & Y' \arrow[hookrightarrow, ld] \\
+		X \arrow[r, "f"'] & Y &
+	\end{tikzcd}\]
+	yang membuktikan (i). Jika himpunan-himpunan terurut parsial tersebut
+	dipandang sebagai kategori $\cate{Sub}_X$ dan seterusnya, (i) menyatakan
+	bahwa $f(\cdot):\cate{Sub}_X\to\cate{Sub}_Y$ merupakan funktor adjoin kiri
+	bagi $f^{-1}(\cdot):\cate{Sub}_Y\to\cate{Sub}_X$. Karena produk (atau
+	koproduk) bersesuaian dengan infimum (atau supremum), (ii) merupakan
+	akibat dari \cite[Teorema 2.8.12]{Li1}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pr002
+\begin{proposisi}\label{prop:biproduct-sum-intersection}
+	Tinjau subobjek-subobjek $i:A\hookrightarrow X$ dan
+	$j:B\hookrightarrow X$. Morfisme $(i,j):A\oplus B\to X$ merupakan
+	isomorfisme jika dan hanya jika
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q006
+	\[ A \cap B = 0, \quad A + B = X. \]
+	Selain itu, diagram komutatif
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g006
+	\[\begin{tikzcd}
+		A \cap B \arrow[r, "\delta_1"] \arrow[d, "\delta_2"'] & A \arrow[d, "i"] \\
+		B \arrow[r, "j"'] & A + B
+	\end{tikzcd}\]
+	merupakan sekaligus diagram dorong keluar dan diagram tarik balik; di sini
+	$\delta_1$ dan $\delta_2$ adalah morfisme kanonik.
+\end{proposisi}
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf004
+\begin{bukti}
+	Definisikan morfisme diagonal $\Delta:A\cap B\to A\oplus B$ melalui
+	$p_i\Delta=\delta_i$ untuk $i=1,2$. Definisikan pula morfisme
+	antidiagonal $\Delta^-:A\cap B\to A\oplus B$ melalui
+	$p_1\Delta^-=-\delta_1$ dan $p_2\Delta^-=\delta_2$.
+
+	Catatan~\ref{rem:Abel-cat-fibered-product} menyatakan bahwa $\Delta$
+	memberikan isomorfisme
+	$A\cap B:=A\dtimes{X}B\rightiso
+	\Ker\left[A\oplus B\xrightarrow{(i,-j)}X\right]$. Jika $(i,-j)$ diganti
+	dengan $(i,j)$, citra $A\oplus B\to X$ tetap $A+B$, sedangkan morfisme
+	kernelnya berubah dari $\Delta$ menjadi $\Delta^-$. Dengan demikian,
+	diperoleh diagram komutatif
+	dengan baris eksak
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g007
+	\[\begin{tikzcd}
+		& & & X & \\
+		0 \arrow[r] & A \cap B \arrow[r, "{\Delta^-}"'] & A \oplus B \arrow[ru, "{(i, j)}" description] \arrow[r] & A+B \arrow[r] \arrow[hookrightarrow, u] & 0
+	\end{tikzcd}\]
+	Oleh karena itu, $(i,j):A\oplus B\to X$ merupakan isomorfisme jika dan
+	hanya jika $A+B=X$ dan $A\cap B=0$.
+
+	Catatan~\ref{rem:Abel-cat-fibered-product} juga mengidentifikasi
+	$A\dsqcup{A\cap B}B$ dengan
+	$(A\oplus B)/\Image(\Delta^-)$. Jadi, kita mempunyai diagram komutatif
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g008
+	\[\begin{tikzcd}[column sep=small]
+		A \cap B \arrow[r, "\delta_1"] \arrow[d, "\delta_2"'] & A \arrow[d] \arrow[rdd, bend left, "i" description] & \\
+		B \arrow[r] \arrow[rrd, bend right, "j" description] & (A \oplus B)/\Image(\Delta^-) \arrow[rd, "\simeq" description] & \\
+		& & A + B
+	\end{tikzcd}\]
+	dan persegi kiri atasnya merupakan diagram dorong keluar; karena itu, seluruh
+	bingkai luarnya juga merupakan diagram dorong keluar. Karena $\delta_1$ merupakan
+	monomorfisme, Proposisi~\ref{prop:Abel-cat-pull-push} menunjukkan bahwa
+	bingkai luar tersebut juga merupakan diagram tarik balik.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p006
+Dengan kata lain, $B$ merupakan komplemen dari $A$ dalam kisi
+$\mathrm{Sub}_X$ (Definisi~\ref{def:modular-lattice}) jika dan hanya jika
+$(i,j):A\oplus B\rightiso X$; kondisi terakhir ini juga sering ditulis
+sebagai persamaan $A\oplus B=X$. Bertolak dari fakta ini, kita dapat secara
+rekursif menggunakan bahasa teori kisi untuk mencirikan apakah $X$ dapat
+dinyatakan sebagai jumlah langsung dari sejumlah hingga subobjek yang
+diberikan, $X_1,\ldots,X_n$; hasilnya serupa dengan kasus teori modul. Untuk
+keluarga subobjek tak hingga, pada umumnya kita perlu bekerja dalam kategori
+Grothendieck; lihat
+\ifcsname r@sec:Grothendieck-cat\endcsname\S\ref{sec:Grothendieck-cat}\else\S2.10\fi.
+Pembahasan terkait diserahkan kepada latihan bab ini.
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p007
+Teori modul bertumpu pada beberapa teorema isomorfisme dasar; lihat
+\cite[Proposisi 6.1.11, 6.1.12, 6.1.13]{Li1}. Berikut ini kita memperluasnya
+ke kategori abelian umum $\mathcal{A}$.
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.th001
+\begin{teorema}\label{prop:Abel-cat-isom-thm}
+	Tetapkan suatu objek $X$.
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.l003
+	\begin{enumerate}[(i)]
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i005
+		\item Untuk setiap morfisme $f:X\to Y$, terdapat isomorfisme kanonik
+		$X/\Ker(f)\rightiso\Image(f)$ yang membuat diagram
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g009
+		\[\begin{tikzcd}
+			X \arrow[twoheadrightarrow, r] \arrow[twoheadrightarrow, d] & \Image(f) \\
+			X/\Ker(f) \arrow[ru, "\sim" sloped]
+		\end{tikzcd} \quad \text{komutatif}. \]
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i006
+		\item Tetapkan subobjek $Z\hookrightarrow X$, dan lambangkan morfisme
+		alami $X\twoheadrightarrow\overline{X}:=X/Z$ dengan $\pi$. Terdapat
+		bijeksi yang mempertahankan urutan
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g010
+		\[\begin{tikzcd}[row sep=tiny]
+			\left\{ Y \in \mathrm{Sub}_X : Z \subset Y \right\} \arrow[leftrightarrow, r, "1:1"] & \mathrm{Sub}_{\overline{X}} \\
+			Y \arrow[r, mapsto] & \pi(Y) = Y/Z =: \overline{Y} \\
+			\pi^{-1}(\overline{Y}) & \overline{Y} \arrow[mapsto, l] ,
+		\end{tikzcd}\]
+		dengan notasi seperti dalam Definisi~\ref{def:subobject-image}. Jika
+		$Y\supset Z$ seperti di atas, terdapat isomorfisme kanonik
+		$X/Y\rightiso\overline{X}/\overline{Y}$ yang membuat diagram
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g011
+		\[\begin{tikzcd}
+			X \arrow[r] \arrow[twoheadrightarrow, d] & \overline{X} \arrow[twoheadrightarrow, d] \\
+			X/Y \arrow[r, "\sim"'] & \overline{X}/\overline{Y}
+		\end{tikzcd}\]
+		komutatif. Selain itu,
+		$\overline{Y_1\cap Y_2}=\overline{Y_1}\cap\overline{Y_2}$ dan
+		$\overline{Y_1+Y_2}=\overline{Y_1}+\overline{Y_2}$.
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i007
+		\item Untuk $Y,Z\in\mathrm{Sub}_X$, terdapat isomorfisme kanonik
+		$Y/(Y\cap Z)\rightiso(Y+Z)/Z$ yang membuat diagram
+		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g012
+		\[\begin{tikzcd}
+			Y \arrow[hookrightarrow, r] \arrow[twoheadrightarrow, d] & Y+Z \arrow[twoheadrightarrow, d] \\
+			Y/(Y \cap Z) \arrow[r, "\sim"'] & (Y+Z)/Z
+		\end{tikzcd} \quad \text{komutatif}. \]
+	\end{enumerate}
+\end{teorema}
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf005
+\begin{bukti}
+	Mengingat barisan eksak pendek
+	$0\to\Ker(f)\to X\to\Image(f)\to0$, pernyataan (i) hanyalah
+	perumusan ulang definisi.
+
+	Untuk (ii), setelah $Y$ diberikan, mula-mula bentuk diagram komutatif
+	dengan baris-baris eksak
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g013
+	\[\begin{tikzcd}
+		0 \arrow[r] & Z \arrow[r] \arrow[equal, d] & Y \arrow[r] \arrow[hookrightarrow, d] & Y/Z \arrow[dashed, d, "\exists!"] \arrow[r] & 0 \\
+		0 \arrow[r] & Z \arrow[r] & X \arrow[r, "\pi"'] & \overline{X} \arrow[r] & 0
+	\end{tikzcd}\]
+	Panah putus-putus berasal dari funktorialitas kokernel
+	\eqref{eqn:Ker-Coker-functoriality}. Dengan menerapkan
+	Teorema~\ref{prop:snake-lemma}, segera diperoleh
+	$\Ker[Y/Z\to\overline{X}]=0$ dan
+	$X/Y\rightiso\Coker[Y/Z\to\overline{X}]$. Khususnya,
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q007
+	\[ Y/Z =  \Image[Y \to \overline{X}] = \pi(Y) \;\in \mathrm{Sub}_{\overline{X}}, \quad X/Y \simeq \overline{X}/\pi(Y). \]
+
+	Sebelumnya telah dijelaskan bahwa kedua pemetaan pada (ii) mempertahankan
+	urutan. Berikutnya akan dibuktikan bahwa keduanya saling invers. Untuk suatu
+	$Y$, karena $\overline{Y}\hookrightarrow\overline{X}$ merupakan kernel dari
+	$\overline{X}\to\overline{X}/\overline{Y}$,
+	Proposisi~\ref{prop:Ker-Coker-composite} menyatakan bahwa
+	$\pi^{-1}(\overline{Y}):=X\dtimes{\overline{X}}\overline{Y}\hookrightarrow X$
+	merupakan kernel dari morfisme komposit
+	$X\to\overline{X}\to\overline{X}/\overline{Y}$. Berkat isomorfisme di
+	atas, subobjek ini juga merupakan kernel dari $X\to X/Y$. Hal ini
+	mengidentifikasi $\pi^{-1}(\overline{Y})$ dengan $Y$.
+
+	Sebaliknya, diberikan $\overline{Y}$, tetapkan
+	$Y:=X\dtimes{\overline{X}}\overline{Y}=\pi^{-1}(\overline{Y})$. Tinjau
+	diagram tarik balik
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g014
+	\[\begin{tikzcd}
+		Y \arrow[r] \arrow[hookrightarrow, d] & \overline{Y} \arrow[hookrightarrow, d] \\
+		X \arrow[r, "\pi"'] & \overline{X} \arrow[phantom, lu, "\Box" description] .
+	\end{tikzcd}\]
+	Karena $\pi$ pada baris bawah merupakan epimorfisme,
+	Proposisi~\ref{prop:Abel-cat-pull-push} menyatakan bahwa morfisme pada baris
+	atas juga merupakan epimorfisme. Ini menunjukkan
+	$\overline{Y}=\pi(Y)$.
+
+	Terakhir, persamaan
+	$\overline{Y_1\cap Y_2}=\overline{Y_1}\cap\overline{Y_2}$ dan
+	$\overline{Y_1+Y_2}=\overline{Y_1}+\overline{Y_2}$ merupakan akibat
+	langsung dari bijeksi yang mempertahankan urutan
+	$Y\leftrightarrow\overline{Y}$.
+
+	Untuk (iii), tinjau diagram komutatif dengan baris-baris eksak
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g015
+	\[\begin{tikzcd}
+		0 \arrow[r] & Y \cap Z \arrow[r] \arrow[hookrightarrow, d] & Y \arrow[hookrightarrow, d] \arrow[r] & Y/(Y \cap Z) \arrow[r] \arrow[dashed, d, "\exists! \theta"] & 0 \\
+		0 \arrow[r] & Z \arrow[r] & Y+Z \arrow[r] & (Y+Z)/Z \arrow[r] & 0
+	\end{tikzcd}\]
+	dengan $\theta$ berasal dari funktorialitas kokernel.
+	Proposisi~\ref{prop:biproduct-sum-intersection} menyatakan bahwa persegi
+	kirinya merupakan diagram dorong keluar. Karena diagram dorong keluar mempertahankan
+	kokernel (Proposisi~\ref{prop:pull-back-ker}), $\theta$ merupakan
+	isomorfisme, sebagaimana ingin dibuktikan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.co002
+\begin{korolari}\label{prop:Abel-cat-Coker-pull}
+	Tinjau diagram komutatif
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g016
+	\[\begin{tikzcd}
+		\Ker(g') \arrow[hookrightarrow, r] \arrow[d, "k"'] & W \arrow[r, "{g'}"] \arrow[d, "{f'}"'] & Y \arrow[d, "f"] \arrow[twoheadrightarrow, r] & \Coker(g') \arrow[d, "c"] \\
+		\Ker(g) \arrow[hookrightarrow, r] & X \arrow[r, "g"'] & Z \arrow[twoheadrightarrow, r] & \Coker(g)
+	\end{tikzcd}\]
+	dengan $k,c$ merupakan morfisme yang dicirikan oleh funktorialitas
+	\eqref{eqn:Ker-Coker-functoriality}. Jika persegi tengah merupakan diagram
+	tarik balik (atau dorong keluar), maka $c$ merupakan monomorfisme (atau $k$
+	merupakan epimorfisme).
+\end{korolari}
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf006
+\begin{bukti}
+	Cukup menangani kasus diagram tarik balik. Karena penarikan balik sepanjang
+	$f$ dapat dilakukan secara bertahap, persoalan tereduksi pada dua kasus: $f$
+	merupakan epimorfisme atau $f$ merupakan monomorfisme. Jika $f$ merupakan
+	epimorfisme, Proposisi~\ref{prop:Abel-cat-pull-push} menyatakan bahwa
+	persegi tengah juga merupakan diagram dorong keluar; dalam hal ini $c$
+	merupakan isomorfisme. Jika $f$ merupakan monomorfisme, uraikan penarikan balik
+	sepanjang $g$ secara bertahap sebagai
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g017
+	\[\begin{tikzcd}
+		W \arrow[d, "{f'}"'] \arrow[r] & \Image(g) \dtimes{Z} Y \arrow[r, "{g''}"] \arrow[d] & Y \arrow[d, "f"] \\
+		X \arrow[twoheadrightarrow, r] & \Image(g) \arrow[hookrightarrow, r] \arrow[phantom, lu, "\Box" description] & Z ; \arrow[phantom, lu, "\Box" description]
+	\end{tikzcd}\]
+	Proposisi~\ref{prop:Abel-cat-pull-push} menyatakan bahwa
+	$W\to\Image(g)\dtimes{Z}Y$ merupakan epimorfisme, sehingga
+	$\Coker(g')=\Coker(g'')$. Dengan demikian, persoalan tereduksi pada kasus
+	ketika $f$ dan $g$ keduanya merupakan monomorfisme. Dalam hal ini
+	$W=Y\cap X$, dan $c$ berfaktor sebagai
+	$Y/(Y\cap X)\rightiso(Y+X)/X\hookrightarrow Z/X$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.th002
+\begin{teorema}\label{prop:subobject-modularity}
+	Untuk setiap objek $X$, himpunan terurut parsial
+	$(\mathrm{Sub}_X,\subset)$ merupakan kisi modular terbatas dalam
+	pengertian Definisi~\ref{def:modular-lattice}.
+\end{teorema}
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf007
+\begin{bukti}
+	Kita sudah mengetahui bahwa $(\mathrm{Sub}_X,\subset)$ merupakan kisi
+	terbatas. Sekarang tinjau sebarang interval $[Y_1,Y_2]$ dalam
+	$\mathrm{Sub}_X$. Lema~\ref{prop:modularity-criterion} mereduksi persoalan
+	pada pernyataan berikut: untuk setiap $A,B,C\in[Y_1,Y_2]$,
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q008
+	\begin{equation}\label{eqn:Abel-cat-interval-complement}
+		\left( A, B \;\text{keduanya merupakan komplemen dari}\; C, \; A \subset B \right) \implies A = B.
+	\end{equation}
+
+	Pertama-tama, bijeksi yang mempertahankan urutan dalam
+	Teorema~\ref{prop:Abel-cat-isom-thm}(ii) mereduksi
+	\eqref{eqn:Abel-cat-interval-complement} ke kasus $Y_1=0$ dan $Y_2=X$.
+	Dengan Proposisi~\ref{prop:biproduct-sum-intersection}, hipotesis mengenai
+	komplemen menjadi
+	$A\oplus C\rightiso X\leftiso B\oplus C$, dengan kedua isomorfisme
+	diinduksi oleh monomorfisme
+	$\iota_A,\iota_B,\iota_C$ dari $A,B,C$ menuju $X$. Menurut hipotesis,
+	terdapat $\alpha:A\to B$ sedemikian sehingga
+	$\iota_A=\iota_B\alpha$. Maka terdapat diagram komutatif
+	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g018
+	\[\begin{tikzcd}[column sep=large]
+		B \oplus C \arrow[r, "{(\iota_B, \iota_C)}"] & X \\
+		A \oplus C \arrow[ru, "{(\iota_A, \iota_C)}"'] \arrow[u, "{(\alpha, \identity_C)}"] &
+	\end{tikzcd}\]
+	Jadi, $(\alpha,\identity_C)$ merupakan isomorfisme. Menurut
+	Lema~\ref{prop:isomorphism-matrix}, hal ini selanjutnya mengakibatkan bahwa
+	$\alpha$ merupakan isomorfisme. Dengan demikian,
+	\eqref{eqn:Abel-cat-interval-complement} terbukti.
+\end{bukti}
+
+% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p008
+Sifat kisi modular merupakan jembatan penting untuk memindahkan sejumlah
+argumen standar dari teori modul ke kategori abelian.
