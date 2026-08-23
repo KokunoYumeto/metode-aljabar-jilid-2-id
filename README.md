@@ -9,9 +9,9 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 ## Status
 
 Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Batas publik ini
-mencakup Unit 001–026: seluruh Pendahuluan, seluruh Bab 1, dan Bab 2 sampai
-bagian “Subobjek dan Teorema Isomorfisme” (`chapter2.tex` upstream baris
-9–1132). Pembaca saat ini berjumlah 152 halaman. Produksi berlanjut dalam
+mencakup Unit 001–027: seluruh Pendahuluan, seluruh Bab 1, dan Bab 2 sampai
+bagian “Objek Sederhana dan Semisederhana” (`chapter2.tex` upstream baris
+9–1244). Pembaca saat ini berjumlah 157 halaman. Produksi berlanjut dalam
 urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
@@ -36,11 +36,11 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 26 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 27 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
 - `backend/`: unit, segmen, dan istilah dalam bentuk modular (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 025, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 027, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS` mencatat ukuran dan SHA-256 setiap berkas publik.

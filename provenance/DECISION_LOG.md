@@ -1192,3 +1192,44 @@ both publicly contain the article. The exact file inventory and hashes are
 recorded in the sanitized release receipt to be updated at the next release
 boundary. No credentials or signed-in browser state were used for the
 readback.
+
+## D070 - Unit 027 admission and checkpoint readiness (2026-08-23)
+
+Admit `o014.aljabr2.chapter2.simplicity-and-semisimplicity` as the complete
+source-order section `chapter2.tex` lines 1133--1244. The normalized authority
+slice is 8,321 bytes, SHA-256
+`e2f435c542379cd0f924343bd552514be261d8827dfa53afd107e20722ec213b`; its
+38-record segment map is 11,184 bytes, SHA-256
+`5d821f28602c5c7f40bfcb6569ccdf68f6aaac14bc9a5161a333d08f420d4fe6`. The
+translated target is 13,458 bytes, SHA-256
+`bcf83b6829f1ea4fcd4a712e19f4c7f1402ed0990565aad2b6c5055fbe97cf66`.
+
+Structural review preserved all 38 stable markers, six labels, thirteen
+references, two citations, eleven index commands, one footnote, six proofs,
+and all display/environment topology. The section has no exercises, hints,
+figures, or assets. Terminology uses the settled forms `objek sederhana`,
+`objek semisederhana`, `objek terbelah`, `faktor komposisi`, `multiplicitas`,
+and `gelanggang pembagian`; no new upstream correction was confirmed. A
+sourcecrossref fallback was retained for the intentional forward reference to
+`sec:Grothendieck-cat`. The Jordan--Hölder heading was shortened for fit and a
+local line-breaking adjustment was limited to presentation.
+
+The clean shell-escape-disabled XeLaTeX/Biber/MakeIndex replay in
+`build/cumulative-unit-027-final-20260823` produced the byte-identical
+checkpoint and cumulative reader: 157 pages, 823,894 bytes, SHA-256
+`04af446ade23411da0a59a5f6a9f526b0267ddfe104c24e8fdedc0ad0583a6e0`.
+There are no fatal, TeX, unresolved-reference, citation, rerun, overfull-box,
+or missing-character errors; sixteen underfull boxes and known non-fatal
+MiKTeX/biblatex/imakeidx warnings remain recorded. Physical pages 147--150
+were rendered at 180 dpi and visually inspected. QA receipt:
+`qa/UNIT_027_QA.md`, 7,019 bytes, SHA-256
+`165ca2cb47cc6670c76154743e91b94a5323eb9d4ba8a3a01ea816b2d1ba2145`.
+
+The backend now has 27 units and 1,274 segments; both terminology surfaces
+have 375 matching rows. The next exact cursor is `chapter2.tex` line 1245,
+`sec:inj-proj` (`正合函子, 内射对象和投射对象`); freeze its source slice and
+map before translation. Unit 026 remains the latest public GitHub and Zenodo
+boundary (GitHub commit `ba61089654d8df894111cd8ac9699d3ea280bf52`; Zenodo
+record `22070867`, DOI `10.5281/zenodo.22070867`). Unit 027 is ready for the
+next authorized advancement of those existing lineages; no duplicate record
+or upstream contact is permitted.

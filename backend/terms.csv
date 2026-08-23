@@ -365,3 +365,11 @@ math.category.canonical_isomorphism,isomorfisme kanonik,id-ID,O014,active
 math.category.antidiagonal_morphism,morfisme antidiagonal,id-ID,O014,active
 math.order.order_reversing_bijection,bijeksi pembalik urutan,id-ID,O014,active
 math.algebra.isomorphism_theorem,teorema isomorfisme,id-ID,O014,active
+math.category.semisimple_object,objek semisederhana,id-ID,O014,active
+math.category.split_object,objek terbelah,id-ID,O014,active
+math.category.semisimple_abelian_category,kategori abelian semisederhana,id-ID,O014,active
+math.category.split_abelian_category,kategori abelian terbelah,id-ID,O014,active
+math.algebra.composition_factor,faktor komposisi,id-ID,O014,active
+math.algebra.multiplicity,multiplicitas,id-ID,O014,active
+math.algebra.division_ring,gelanggang pembagian,id-ID,O014,active
+math.algebra.schur_lemma,Lema Schur,id-ID,O014,active

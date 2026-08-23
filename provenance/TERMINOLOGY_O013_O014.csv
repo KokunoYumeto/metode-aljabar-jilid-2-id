@@ -365,3 +365,11 @@ math.category.canonical_isomorphism,canonical isomorphism,isomorfisme kanonik,,o
 math.category.antidiagonal_morphism,antidiagonal morphism,morfisme antidiagonal,,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Morfisme ke biproduk dengan komponen pertama bertanda negatif
 math.order.order_reversing_bijection,order-reversing bijection,bijeksi pembalik urutan,bijeksi yang membalik urutan,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Korespondensi subobjek dengan objek kuosien
 math.algebra.isomorphism_theorem,isomorphism theorem,teorema isomorfisme,,o014.aljabr2.chapter2.subobjects-and-isomorphism-theorems,o014_new,Versi kategori abelian dari teorema isomorfisme modul
+math.category.semisimple_object,semisimple object,objek semisederhana,objek semi-sederhana,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Objek yang merupakan jumlah langsung keluarga objek sederhana
+math.category.split_object,split object,objek terbelah,objek split,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Objek yang semua barisan eksak pendeknya terbelah
+math.category.semisimple_abelian_category,semisimple Abelian category,kategori abelian semisederhana,kategori semisimple,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Kategori yang semua objeknya semisederhana
+math.category.split_abelian_category,split Abelian category,kategori abelian terbelah,kategori split,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Kategori yang semua objeknya terbelah
+math.algebra.composition_factor,composition factor,faktor komposisi,,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Subkuosien sederhana dalam deret komposisi
+math.algebra.multiplicity,multiplicity,multiplicitas,,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Banyaknya kemunculan suatu faktor dalam multihimpunan
+math.algebra.division_ring,division ring,gelanggang pembagian,,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Gelanggang tempat setiap unsur tak nol invertibel
+math.algebra.schur_lemma,Schur lemma,Lema Schur,,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Lema tentang morfisme tak nol antara objek sederhana
