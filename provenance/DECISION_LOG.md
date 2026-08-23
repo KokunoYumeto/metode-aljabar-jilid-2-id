@@ -1311,7 +1311,73 @@ verification pass found zero missing or byte/hash mismatches. Mutable pursuit
 controls are excluded from this snapshot and remain durable in their own
 hashed control files.
 
+## D074 - Unit 028 public lineage advancement (2026-08-23)
+
+The existing GitHub edition repository was advanced, not duplicated, through
+Unit 028 at public `main` commit
+`c24ae8b406ef6b12ffd30275779c6ee293516888`, tree
+`046d93c76ac12e2b84a66ae1db90636ea34dece1`. The reader is 167 pages, 868,564
+bytes, SHA-256
+`78c1ec3db75a97f3593d91412a8fbd19057d821df200cbc2893641dff5c48a43`.
+Anonymous archive/readback passed with zero missing, unexpected, or hash
+mismatches; the sanitized receipt is
+`release/github/GITHUB_PUBLICATION_RECEIPT.json`, 3,015 bytes, SHA-256
+`1aacb7327f4fdd23f0a0be6c79ef739b514602ac8ee87e4a58b763a77ada642d`.
+
+The same Zenodo concept lineage (`22059751`) now has clean latest record
+22071584, DOI `10.5281/zenodo.22071584`, version `unit-028-corrected-2`.
+Its seven reader-first files total 1,187,667 bytes; anonymous downloads match
+every local byte and SHA-256, and the DOI resolves with HTTP 200. The README
+contains the exact upstream commit/tree, `Funktor`, and 382 terminology rows;
+the sanitized receipt is
+`release/zenodo/unit-028/ZENODO_PUBLICATION_RECEIPT.json`, 6,192 bytes,
+SHA-256 `0600974fedb5091dcec687aa60e20b260b9474b8238a9715d35394d04476cca3`.
+Same-concept records 22071302 and 22071377 remain documented as superseded
+residuals; no deletion attempt or competing concept was made. Figshare was not
+mutated.
+
 The next exact cursor is `chapter2.tex` line 1564, `sec:Serre-subcat`
-(`Serre 子范畴和 \texorpdfstring{$\mathrm{K}_0$}{K0} 群`). Unit 028 is ready
-for advancement of the existing GitHub and Zenodo lineages; this checkpoint
-does not complete the corpus.
+(`Serre 子范畴和 \texorpdfstring{$\mathrm{K}_0$}{K0} 群`). Its exact slice
+and segment map are now frozen, and Unit 029 translation is in progress. This
+checkpoint does not complete the corpus.
+
+## D075 - Unit 029 admission and reader checkpoint (2026-08-23)
+
+Admit `o014.aljabr2.chapter2.serre-subcategories-and-k0-groups` as the complete
+source-order section `chapter2.tex` lines 1564--1754. The normalized authority
+slice is 17,301 bytes, SHA-256
+`45f958e6627cb4cef919dbd1fd5bc478b68c5d6c706dac47b69dd4d6dbd40aba`;
+the translated target is 25,425 bytes, SHA-256
+`6cfc81b8d1dc52ed685971c9dd4d81471e8978b58d8c682be60a5ef1f97d2b81`;
+and its 61-record map is 19,962 bytes, SHA-256
+`ec804f816cde5005f626110f65bf4dd7db928c6fc2ab040cfc36ad809f7ae4e2`.
+Two independent reviews passed marker/order, mathematical, reference,
+citation, environment, display, diagram, index, encoding, and naturalness
+checks. O014-C028 and O014-C029 are accepted and disclosed at point of use.
+
+The pre-existing Indonesian field-terminology gate remains satisfied by the
+bounded arXiv negative result and the two directly inspected ITB fallback
+witnesses in `controls/INDONESIAN_FIELD_TERMINOLOGY_QA.md`. No bulk replacement
+was justified. Unit 029 registers `subkategori Serre lemah`, `kerangka kecil`,
+and `modul torsi-S`, bringing both terminology surfaces to 385 matching rows.
+The edition and repository retain the exact production-model disclosure
+`OpenAI Codex gpt-5.6-sol, Ultra` without displacing source or human credits.
+
+The first build exposed a missing cumulative bibliography record for `Lai19`.
+Older snapshots were preserved; the new Unit-029 snapshot adds the exact
+source identity in readable Hanyu Pinyin display form. Final Biber resolves all
+19 citekeys. The shell-escape-disabled XeLaTeX/Biber/MakeIndex replay in
+`build/cumulative-unit-029-finalB-20260823` produces a 175-page, 902,840-byte
+PDF, SHA-256
+`bfda39c9f834643f024dd2c7d9c16e341c8736b40f3bfa6dcc9d1646b6d6bd25`.
+Final logs have no TeX, citation, reference, rerun, overfull, or missing-glyph
+error; seventeen underfull warnings remain. Physical pages 160--175 passed
+visual inspection. QA receipt `qa/UNIT_029_QA.md` is 7,276 bytes, SHA-256
+`60006df36bb0e8622870886fcf2286f4e776d7894a9772d22ec99e9590333d55`.
+
+The 64-row manifest `qa/CUMULATIVE_UNIT_029_FILE_MANIFEST.csv` lists 5,609,913
+bytes, is 8,042 bytes, SHA-256
+`ec69439286262800cd2ec6dd830ae21fd968508ccd67c703f3e6798715ccb40d`,
+and verifies with zero missing or mismatched entries. The next source cursor is
+`chapter2.tex` line 1756, `sec:Grothendieck-cat`; its exact section boundary is
+under source audit. This checkpoint does not complete the corpus.

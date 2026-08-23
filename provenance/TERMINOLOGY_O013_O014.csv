@@ -324,7 +324,7 @@ math.category.indecomposable_object,indecomposable object,objek tak terurai,obje
 math.category.simple_object,simple object,objek sederhana,objek simpel,o014.aljabr2.chapter2.overview,o014_new,
 math.algebra.composition_series,composition series,deret komposisi,barisan komposisi,o014.aljabr2.chapter2.overview,o014_provisional,
 math.order.lattice_theory,lattice theory,teori kisi,,o014.aljabr2.chapter2.overview,o014_new,
-math.ktheory.k0_group,K0 group,grup K_0,grup Grothendieck,o014.aljabr2.chapter2.overview,o014_provisional,Ditata sebagai $\mathrm{K}_0$ dalam teks
+math.ktheory.k0_group,K0 group,grup K_0,grup Grothendieck,o014.aljabr2.chapter2.overview,o014_new,Ditata sebagai $\mathrm{K}_0$ dalam teks; istilah diaktifkan pada unit subkategori Serre dan grup K0
 math.ktheory.euler_poincare_principle,Euler--Poincare principle,prinsip Euler--Poincaré,prinsip Euler-Poincare,o014.aljabr2.chapter2.overview,o014_new,Nama diri mempertahankan diakritik baku
 math.category.exact_category,exact category,kategori eksak,,o014.aljabr2.chapter2.overview,o014_new,Jangan disamakan dengan kategori abelian
 math.category.krull_remak_schmidt_theorem,Krull--Remak--Schmidt theorem,teorema Krull--Remak--Schmidt,,o014.aljabr2.chapter2.overview,o014_new,Teorema dekomposisi jumlah langsung
@@ -381,3 +381,6 @@ math.category.enough_injective_objects,enough injectives,cukup banyak objek inje
 math.category.enough_projective_objects,enough projectives,cukup banyak objek projektif,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Setiap objek merupakan kuosien objek projektif.
 math.category.arrow_category,arrow category,kategori panah,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Kategori funktor untuk diagram 0 ke 1.
 math.category.localization_exactness,exactness of localization,keeksakan lokalisasi,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Lokalisasi kategori abelian oleh keluarga multiplikatif tetap eksak.
+math.category.weak_serre_subcategory,weak Serre subcategory,subkategori Serre lemah,,o014.aljabr2.chapter2.serre-subcategories-and-k0-groups,o014_new,Subkategori penuh yang memenuhi kondisi penutupan lima-suku dalam definisi sumber.
+math.category.small_skeleton,small skeleton,kerangka kecil,,o014.aljabr2.chapter2.serre-subcategories-and-k0-groups,o014_new,Kerangka suatu kategori dengan kelas objek berupa himpunan kecil.
+math.algebra.s_torsion_module,S-torsion module,modul torsi-S,,o014.aljabr2.chapter2.serre-subcategories-and-k0-groups,o014_new,Modul yang setiap unsurnya dimatikan oleh suatu unsur dari himpunan multiplikatif S.

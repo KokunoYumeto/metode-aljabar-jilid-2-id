@@ -11,8 +11,8 @@ official 650-page Linux/TeX Live/xindy baseline and the separately valid
 pagination difference as a corpus mismatch.
 
 Resume from the exact frozen boundary in `CURRENT_CURSOR.json` (currently
-`chapter2.tex` line 1564, the start of `sec:Serre-subcat`; Units 001--028 are
-complete through the end of `sec:inj-proj`) and translate every
+`chapter2.tex` line 1756, the start of `sec:Grothendieck-cat`; Units 001--029
+are complete through the end of `sec:Serre-subcat`) and translate every
 active source component in order through Chapters 1--9, Appendices A--B,
 bibliography, and indexes. Preserve all mathematics, numbering, labels,
 cross-references, citations, diagrams and source assets, all 194 exercises,
