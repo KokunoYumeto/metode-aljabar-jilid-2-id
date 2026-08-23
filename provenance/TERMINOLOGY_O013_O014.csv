@@ -308,7 +308,7 @@ math.category.special_adjoint_functor_theorem,special adjoint functor theorem,te
 math.category.generating_family,generating family,keluarga generator,,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_new,Keluarga yang membedakan morfisme melalui Hom keluar
 math.category.cogenerating_family,cogenerating family,keluarga kogenerator,,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_new,Dual keluarga generator
 math.category.well_powered_category,well-powered category,kategori well-powered,,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_provisional,Istilah internasional dipertahankan dan langsung didefinisikan dalam bahasa Indonesia
-math.category.well_copowered_category,well-copowered category,kategori well-copowered,,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_provisional,Istilah internasional dipertahankan dan langsung didefinisikan dalam bahasa Indonesia
+math.category.well_copowered_category,well-copowered category,kategori co-well-powered,kategori well-copowered,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_new,Bentuk co-well-powered membedakan awalan dual dari istilah well-powered dan dipakai eksplisit pada kategori Grothendieck.
 math.category.representable_functor,representable functor,funktor terwakili,,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_new,Selaras dengan istilah keterwakilan O013
 math.topology.stone_cech_compactification,Stone--Cech compactification,kompaktifikasi Stone--Čech,kompaktifikasi Stone-Cech,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_new,Nama diri mempertahankan diakritik baku
 math.group.free_group,free group,grup bebas,,o014.aljabr2.chapter1.adjoint-functor-theorem,o014_new,Contoh adjoin kiri
@@ -384,3 +384,13 @@ math.category.localization_exactness,exactness of localization,keeksakan lokalis
 math.category.weak_serre_subcategory,weak Serre subcategory,subkategori Serre lemah,,o014.aljabr2.chapter2.serre-subcategories-and-k0-groups,o014_new,Subkategori penuh yang memenuhi kondisi penutupan lima-suku dalam definisi sumber.
 math.category.small_skeleton,small skeleton,kerangka kecil,,o014.aljabr2.chapter2.serre-subcategories-and-k0-groups,o014_new,Kerangka suatu kategori dengan kelas objek berupa himpunan kecil.
 math.algebra.s_torsion_module,S-torsion module,modul torsi-S,,o014.aljabr2.chapter2.serre-subcategories-and-k0-groups,o014_new,Modul yang setiap unsurnya dimatikan oleh suatu unsur dari himpunan multiplikatif S.
+math.category.strong_generator,strong generator,generator kuat,,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Generator yang mendeteksi kapan monomorfisme merupakan isomorfisme.
+math.category.injective_cogenerator,injective cogenerator,kogenerator injektif,,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Kogenerator yang sekaligus merupakan objek injektif.
+math.category.small_object_argument,small object argument,argumen objek kecil,,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Konstruksi transfinit yang memperluas morfisme secara funktorial.
+math.category.alpha_small_object_relative_to_i,alpha-small object relative to I,objek alpha-kecil relatif terhadap I,objek $\alpha$-kecil relatif terhadap $I$,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Objek yang Hom-nya mengkomutasi dengan kolimit ordinal terfilter yang morfisme transisinya berada dalam I.
+math.set_theory.regular_small_cardinal,regular small cardinal,kardinal kecil regular,,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Kardinal regular yang kecil relatif terhadap semesta Grothendieck terpilih.
+math.set_theory.transfinite_recursion,transfinite recursion,rekursi transfinit,rekursi transhingga,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Rekursi sepanjang ordinal penerus dan ordinal limit.
+math.set_theory.successor_ordinal,successor ordinal,ordinal penerus,,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Ordinal berbentuk beta tambah satu.
+math.set_theory.limit_ordinal,limit ordinal,ordinal limit,ordinal batas,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Ordinal tak nol yang bukan ordinal penerus.
+math.category.karoubi_envelope,Karoubi envelope,selubung Karoubi,penyelesaian Karoubi,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Kategori yang diperoleh dengan menambahkan secara formal semua suku jumlah langsung.
+math.homological.schanuel_lemma,Schanuel lemma,Lema Schanuel,,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Lema yang membandingkan kernel dua presentasi projektif dari objek yang sama.

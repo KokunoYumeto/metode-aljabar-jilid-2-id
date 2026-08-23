@@ -308,7 +308,7 @@ math.category.special_adjoint_functor_theorem,teorema funktor adjoin khusus,id-I
 math.category.generating_family,keluarga generator,id-ID,O014,active
 math.category.cogenerating_family,keluarga kogenerator,id-ID,O014,active
 math.category.well_powered_category,kategori well-powered,id-ID,O014,provisional
-math.category.well_copowered_category,kategori well-copowered,id-ID,O014,provisional
+math.category.well_copowered_category,kategori co-well-powered,id-ID,O014,active
 math.category.representable_functor,funktor terwakili,id-ID,O014,active
 math.topology.stone_cech_compactification,kompaktifikasi Stone--Čech,id-ID,O014,active
 math.group.free_group,grup bebas,id-ID,O014,active
@@ -384,3 +384,13 @@ math.category.localization_exactness,keeksakan lokalisasi,id-ID,O014,active
 math.category.weak_serre_subcategory,subkategori Serre lemah,id-ID,O014,active
 math.category.small_skeleton,kerangka kecil,id-ID,O014,active
 math.algebra.s_torsion_module,modul torsi-S,id-ID,O014,active
+math.category.strong_generator,generator kuat,id-ID,O014,active
+math.category.injective_cogenerator,kogenerator injektif,id-ID,O014,active
+math.category.small_object_argument,argumen objek kecil,id-ID,O014,active
+math.category.alpha_small_object_relative_to_i,objek alpha-kecil relatif terhadap I,id-ID,O014,active
+math.set_theory.regular_small_cardinal,kardinal kecil regular,id-ID,O014,active
+math.set_theory.transfinite_recursion,rekursi transfinit,id-ID,O014,active
+math.set_theory.successor_ordinal,ordinal penerus,id-ID,O014,active
+math.set_theory.limit_ordinal,ordinal limit,id-ID,O014,active
+math.category.karoubi_envelope,selubung Karoubi,id-ID,O014,active
+math.homological.schanuel_lemma,Lema Schanuel,id-ID,O014,active

@@ -1381,3 +1381,84 @@ bytes, is 8,042 bytes, SHA-256
 and verifies with zero missing or mismatched entries. The next source cursor is
 `chapter2.tex` line 1756, `sec:Grothendieck-cat`; its exact section boundary is
 under source audit. This checkpoint does not complete the corpus.
+
+## D076 - Unit 029 public lineage advancement (2026-08-23)
+
+Advance the existing GitHub edition repository, not a new repository, through
+Unit 029 at public `main` commit
+`7c99d2a6af0b55e00aa3b42959ce014db482ab62`, tree
+`6884cf2df9d9fb45e2186201f59837ee3dc6fb32`. The immutable 71-file archive is
+1,270,661 bytes, SHA-256
+`cdf937fccf1c1e102203784363625cf5d27382664a886cb5ce7e2616ef4cf793`.
+Anonymous repository, commit, raw-file, archive, manifest, checksum, source
+closure, and 175-page reader verification passed with zero mismatch. The
+sanitized receipt is `release/github/GITHUB_PUBLICATION_RECEIPT.json`, 4,669
+bytes, SHA-256
+`c3a612a1b14338f0dd7db60ac399befe6251981cd23ebd76ab1906a458a1872f`.
+
+Advance the same Zenodo concept lineage 22059751 from prior record 22071584 to
+record 22071903, DOI `10.5281/zenodo.22071903`, version `unit-029`. The
+reader-first seven-file payload totals 1,237,689 bytes. Every anonymous file
+download matches local bytes and SHA-256; record, DOI, API, and concept-latest
+readbacks all return HTTP 200. The 45-entry source/backend ZIP includes all 29
+source inputs, 1,448 segments, 385 terms, and the exact referenced bibliography;
+the 14-entry QA/provenance ZIP contains no restricted witness. Metadata retains
+the exact title, CC BY 4.0, Indonesian language, source/non-endorsement credits,
+one organization contributor entry, and the exact production-model note,
+without organization branding in title or descriptive prose. Receipt
+`release/zenodo/unit-029/ZENODO_PUBLICATION_RECEIPT.json` is 5,910 bytes,
+SHA-256
+`9d0aa36d98979cf5cb02838ac35fd0005987252e496a2fbe562b449ca60acdbe`.
+No duplicate concept or unpublished draft remains. Unit 030 production is
+already underway; Unit 029 publication does not complete the corpus.
+
+## D077 - Unit 030 admission and complete Chapter 2 reader (2026-08-23)
+
+Admit `o014.aljabr2.chapter2.grothendieck-categories` as the exact final
+Chapter 2 section and chapter-level exercise closure, `chapter2.tex` lines
+1756--2132. The normalized authority slice is 30,150 bytes, SHA-256
+`4b3ed0e1d7676d37d3bf465a241df0116fbb0e28cf39cd1b313a9f9f19225b7e`;
+the translated target is 43,836 bytes, SHA-256
+`a7fec40262a70c2f7fe253a97cf21558acc3c0b32272e3bcdb24a04e58c96697`;
+and its 133-record stable map is 41,437 bytes, SHA-256
+`dff9eaedeaaaad88c10b68d40fd4683f0e27f88164985b1824aef5bfb71b85b7`.
+Independent review passed marker order, labels, 46 references over 35 targets,
+citations, localized environments, mathematics, all nine TikZ-CD diagrams,
+all 20 exercises, 13 active hints, the single commented hint, encoding, and
+naturalness. No new source correction is admitted.
+
+Retain two presentation decisions. The Appendix-A forward reference
+`eqn:I-small-gen` uses a printed `sourcecrossref` fallback `A.2.1` until the
+appendix enters the cumulative reader. A long inline Hom map is reflowed as an
+unnumbered display to remove an overfull line; this is the sole display-count
+difference and preserves the formula and numbering. The pre-existing bounded
+Indonesian terminology QA remains satisfied. Ten new concept entries are
+synchronized and the existing `kategori co-well-powered` form is reused,
+bringing both terminology surfaces to 395 matching IDs. The exact production
+model disclosure remains `OpenAI Codex gpt-5.6-sol, Ultra` without displacing
+source or human credits.
+
+The backend now contains 30 sequential units and 1,581 segments. The admitted
+shell-escape-disabled XeLaTeX/Biber/MakeIndex replay is
+`build/cumulative-unit-030-finalD-20260823`. Biber resolves 19 citekeys;
+MakeIndex accepts 144 term and 47 symbol entries. Three final XeLaTeX passes
+are stable. The final log has zero TeX, fatal, unresolved, rerun, overfull, or
+missing-character finding and 19 non-fatal underfull boxes.
+
+The checkpoint and promoted cumulative reader are byte-identical: 187 pages,
+963,655 bytes, SHA-256
+`e74feecbbcc1dc2b4538b182215b1c3210ad32f4d90fa933c43cbd27293823bf`.
+The PDF is unencrypted and untagged, with 37 resolving outline entries, 51
+embedded/subset font names, 636 resolving internal links, 12 HTTPS links, and
+no forms, JavaScript, embedded files, or additional actions. Physical pages
+167--187 and three contact sheets passed visual inspection. Blank pages 180
+and 184 are intentional verso separators. QA receipt `qa/UNIT_030_QA.md` is
+8,288 bytes, SHA-256
+`ccc38fc3565f4628704e3ef5572cb5e96d5dd2dbcbb22de4829193000b76b26d`.
+
+The 66-row exact manifest `qa/CUMULATIVE_UNIT_030_FILE_MANIFEST.csv` lists
+5,562,324 bytes, is 8,318 bytes, SHA-256
+`4dc90363c8af66e305689da41c465d083a9b2c09c393537d6c93633ff4f345b2`,
+and verifies with zero missing or mismatch. The next exact source cursor is
+`chapter3.tex` line 9, `sec:cplx`; its first unit boundary is under bounded
+audit. This checkpoint completes Chapter 2 but does not complete the corpus.
