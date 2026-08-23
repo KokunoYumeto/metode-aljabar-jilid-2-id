@@ -3,7 +3,7 @@ path,bytes,sha256,role
 ".gitignore",84,41992fe868509124ac7e46ace8f46fd857fb490ea314bef81f99e4f59f10e22d,repository_metadata
 "BUILD.md",1958,cba458069bdc914b49e3b8d5a37a13ea1624a2721602edbc9b2e12ee5a063f4b,documentation
 "LICENSE",18650,7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661,license
-"README.md",2807,ce62f293fcd9546974c6177300c290ab57b2d4ce3a9551fedbe8048f24a4dd80,documentation
+"README.md",2807,2a2836224701773beecd4d9c6d4ed1b24bafa9697b6e64f0130e59bd089c659e,documentation
 "artifacts/metode-dalam-aljabar-jilid-2-id-cumulative.pdf",868564,78c1ec3db75a97f3593d91412a8fbd19057d821df200cbc2893641dff5c48a43,reader
 "backend/segments.jsonl",400163,91abf38aa24cbbe8104cbb61a118b443bc840baf3274e44c6386d56adc46de04,backend
 "backend/terms.csv",25632,eee2687340596e47610add6920f5a60982bdeba56d6cb91eba2cf93020f5a7f0,backend

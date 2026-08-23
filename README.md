@@ -10,7 +10,7 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 
 Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Batas publik ini
 mencakup Unit 001–028: seluruh Pendahuluan, seluruh Bab 1, dan Bab 2 sampai
-bagian “Fungtor Eksak, Objek Injektif, dan Objek Projektif” (`chapter2.tex`
+bagian “Funktor Eksak, Objek Injektif, dan Objek Projektif” (`chapter2.tex`
 upstream baris 9–1563). Pembaca saat ini berjumlah 167 halaman. Produksi
 berlanjut dalam urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
