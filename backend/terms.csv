@@ -394,3 +394,19 @@ math.set_theory.successor_ordinal,ordinal penerus,id-ID,O014,active
 math.set_theory.limit_ordinal,ordinal limit,id-ID,O014,active
 math.category.karoubi_envelope,selubung Karoubi,id-ID,O014,active
 math.homological.schanuel_lemma,Lema Schanuel,id-ID,O014,active
+math.homological.complex_homotopy,homotopi kompleks,id-ID,O014,active
+math.homological.hom_complex,kompleks Hom,id-ID,O014,active
+math.homological.total_complex,kompleks total,id-ID,O014,active
+math.homological.long_exact_sequence,barisan eksak panjang,id-ID,O014,active
+math.homological.resolution,resolusi,id-ID,O014,active
+math.homological.truncation_functor,funktor pemenggalan,id-ID,O014,active
+math.homological.cartan_eilenberg_resolution,resolusi Cartan-Eilenberg,id-ID,O014,active
+math.homological.hyperderived_functor,funktor hiperturunan,id-ID,O014,provisional
+math.homological.effaceable_functor,funktor yang dapat dihapus,id-ID,O014,provisional
+math.homological.coeffaceable_functor,funktor yang dapat dihapus secara dual,id-ID,O014,provisional
+math.category.bifunctor,bifunktor,id-ID,O014,active
+math.homological.balanced_bifunctor,bifunktor seimbang,id-ID,O014,active
+math.homological.mittag_leffler_condition,syarat Mittag-Leffler,id-ID,O014,active
+math.homological.k_injective_complex,kompleks K-injektif,id-ID,O014,active
+math.homological.k_projective_complex,kompleks K-projektif,id-ID,O014,active
+math.homological.mapping_cylinder,silinder pemetaan,id-ID,O014,active

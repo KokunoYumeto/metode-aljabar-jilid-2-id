@@ -1462,3 +1462,75 @@ The 66-row exact manifest `qa/CUMULATIVE_UNIT_030_FILE_MANIFEST.csv` lists
 and verifies with zero missing or mismatch. The next exact source cursor is
 `chapter3.tex` line 9, `sec:cplx`; its first unit boundary is under bounded
 audit. This checkpoint completes Chapter 2 but does not complete the corpus.
+
+## D078 - Unit 030 public lineage advancement (2026-08-23)
+
+Advance the existing GitHub edition repository through Unit 030 at public
+`main` commit `12fffac4cae9d30c0e01a842af2a17d97bc11fab`, tree
+`915f707640eaf69772629aaa1ebe74244e4a5a47`. The immutable 75-file archive is
+1,361,188 bytes, SHA-256
+`e7e31d77704180f33b7151e1751c4fb9a015c500840cfb048285f9c7aca58c9d`.
+Anonymous repository, commit, raw, archive, manifest, checksum, and reader
+readback passed with zero mismatch. The sanitized receipt is
+`release/github/GITHUB_PUBLICATION_RECEIPT.json`, 4,730 bytes, SHA-256
+`84e960f2da5566437005743036cfdf08e83c1c62ce5da0b9d18a7770b043bea7`.
+
+Advance the same Zenodo concept lineage 22059751 from record 22071903 to
+record 22072361, DOI `10.5281/zenodo.22072361`, version `unit-030`. Its seven
+reader-first files total 1,315,841 bytes. Every anonymous file download matches
+the local bytes and SHA-256; record API/page, DOI, and concept-latest readbacks
+all return HTTP 200. The source/backend ZIP is frozen at exactly 30 units,
+1,581 segments, 395 terms, and source through `chapter2-unit-030`; no concurrent
+Unit 031 material or restricted terminology witness is present. Metadata
+retains the exact work title, CC BY 4.0, Indonesian language, attribution,
+non-endorsement, single organization contributor entry, and exact production
+model note without organization branding in title or descriptive prose. The
+sanitized receipt is
+`release/zenodo/unit-030/ZENODO_PUBLICATION_RECEIPT.json`, 7,226 bytes,
+SHA-256
+`5ba4a68170d9b6b67ddf05578db694b81a126fb37177d2bfb132e9c933dbac75`.
+No competing concept or unpublished draft was created. Publication does not
+complete the corpus.
+
+## D079 - Unit 031 admission and Chapter 3 overview reader (2026-08-23)
+
+Admit `o014.aljabr2.chapter3.overview` as the exact Chapter 3 overview,
+`chapter3.tex` lines 9--55. The normalized authority slice is 8,019 bytes,
+SHA-256
+`6b4b4806e0d9885580547cb103d93e59f0a094ff08d93abdd2781287b71040ec`;
+the translated target is 13,031 bytes, SHA-256
+`65e3dd7e5c5a0a4512c9c90efd727b32fc7d8c1397d8117f29a492ca080c4e65`;
+and its 19-record stable map is 5,258 bytes, SHA-256
+`0c70f75800fa91ed0d1ebf97642237d576118746dcc60de1ef43521f4e43731f`.
+Independent review passed all markers, 39 references over 30 targets, citation
+`KS06`, three displays, the TikZ-CD diagram, reader-tip topology, mathematics,
+encoding, and naturalness after one minor bimodule-phrase repair.
+
+Admit and disclose O014-C030--C032: restore the malformed transition as
+`Sebaliknya`; restore the skipped `I^1` in the injective resolution; and
+replace the ill-typed cohomology denominator `Image(d^{n+1})` with
+`Image(d^{n-1})`, verified against three earlier admitted definitions. Add 16
+synchronized terminology concepts. Retain the three weakly attested forms for
+hyperderived, effaceable, and co-effaceable functors as explicitly provisional,
+without a human-dependent hold. Both terminology surfaces now contain 411
+matching IDs.
+
+The admitted shell-escape-disabled build is
+`build/cumulative-unit-031-finalC-20260823`: Biber resolves 19 citekeys;
+MakeIndex accepts 144 term and 47 symbol entries; three final XeLaTeX passes
+are clean. The final log has zero TeX, fatal, unresolved, rerun, overfull, or
+missing-character finding and 19 non-fatal underfull boxes. The checkpoint and
+promoted cumulative reader are byte-identical: 191 pages, 979,643 bytes,
+SHA-256
+`0834eaa525fb64f3f2f13665238429fd3e4db9e3679b8c71e781ce2fdf333330`.
+Physical pages 179--191 passed rendered inspection. The PDF remains untagged
+and is not described as fully accessible.
+
+QA receipt `qa/UNIT_031_QA.md` is 8,237 bytes, SHA-256
+`eb6dda5f6ebef8776e44981bdf1dd05006fe11476e96d48714d0b0feb1baaf16`.
+The 66-row manifest `qa/CUMULATIVE_UNIT_031_FILE_MANIFEST.csv` lists 5,061,256
+bytes, is 8,285 bytes, SHA-256
+`1578225fc37b67bb44a036fcb384cfc63c00f331a55dad29b825d23cd8b2cd2c`,
+and verified with zero mismatch at admission. The next frozen unit is
+`chapter3.tex` lines 57--162, `sec:additive-cplx`; this checkpoint does not
+complete the corpus.
