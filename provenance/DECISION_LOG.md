@@ -1233,3 +1233,85 @@ boundary (GitHub commit `ba61089654d8df894111cd8ac9699d3ea280bf52`; Zenodo
 record `22070867`, DOI `10.5281/zenodo.22070867`). Unit 027 is ready for the
 next authorized advancement of those existing lineages; no duplicate record
 or upstream contact is permitted.
+
+## D071 - Unit 027 GitHub preservation (2026-08-23)
+
+The existing edition repository was advanced, not duplicated, through the
+Unit 027 boundary. Public `main` commit is
+`3b0ec2283199f58fd5078c8cbb07410c34077329`, tree
+`3d0554f2ebb37663124c4f8c68844c3179a41048`. The anonymous commit/archive
+readback passed: 64 files, 62 manifest rows, archive 1,147,288 bytes,
+SHA-256 `e81e8a7c1e3eaab4ada0bbc610dedd1e77f8d1e8dc7a8e7881adf3dad1cbd282`,
+zero missing/unexpected/hash mismatches. The public reader is 157 pages,
+823,894 bytes, SHA-256
+`04af446ade23411da0a59a5f6a9f526b0267ddfe104c24e8fdedc0ad0583a6e0`.
+Receipt: `release/github/GITHUB_PUBLICATION_RECEIPT.json`. Zenodo and
+Figshare Unit 027 advancement remain pending their anonymous readbacks.
+
+## D072 - Unit 027 public preservation (2026-08-23)
+
+The existing GitHub edition lineage now contains Unit 027 at commit
+`3b0ec2283199f58fd5078c8cbb07410c34077329`, tree
+`3d0554f2ebb37663124c4f8c68844c3179a41048`; the anonymous archive/readback
+passed with 64 files, 62 manifest rows, and zero mismatches. The existing
+Zenodo concept lineage now has clean latest record 22071108,
+`https://doi.org/10.5281/zenodo.22071108`, version `unit-027`, exactly seven
+files totaling 1,130,179 bytes; every public byte/hash readback passed. The
+correct PDF is 157 pages, 823,894 bytes, SHA-256
+`04af446ade23411da0a59a5f6a9f526b0267ddfe104c24e8fdedc0ad0583a6e0`.
+Receipts are `release/github/GITHUB_PUBLICATION_RECEIPT.json` and
+`release/zenodo/unit-027/ZENODO_PUBLICATION_RECEIPT.json`.
+
+An intermediate same-lineage Zenodo record 22071092 was accidentally
+published with ten inherited files. One bounded deletion-request attempt was
+made; Zenodo left it `done` and does not permit deletion through the deposit
+API. It is explicitly marked residual/superseded in the Zenodo receipt; no
+further retries are authorized. Figshare was not mutated: its account API
+returned 403 `InactiveAccount`, article lookup returned 404, and the web
+surface was degraded. The verified seven-file local payload and blocker
+receipt are retained at `release/figshare/unit-027/FIGSHARE_PUBLICATION_RECEIPT.json`
+(3,245 bytes, SHA-256
+`7e6e3dd7f14fc2bb6960608edcc135cf5806292f08994c6de313a593fdac1044`).
+
+## D073 - Unit 028 admission and reader checkpoint (2026-08-23)
+
+Admit `o014.aljabr2.chapter2.exact-functors-injective-projective-objects` as
+the complete source-order section `chapter2.tex` lines 1245--1563. The
+normalized authority slice is 24,797 bytes, SHA-256
+`e6e50b76ae9dcd59f739e00b89347c0a0a05c303a6fff56934018301cd275d63`; its
+113-record segment map is 39,367 bytes, SHA-256
+`0dfbfa43a29313cd1b3a57a9b72b64c2d668889e369605dd2709164688c6b9d8`. The
+translated target is 37,694 bytes, SHA-256
+`cd2f4bc1d7c2d4912650db33a934f9571f7a018d409a617fef4e61033d293a85`.
+
+Structural review preserved the 113 stable markers, 19 labels, six citations,
+six index commands, 17 TikZ-CD environments, and 21 display environments.
+The sole conventional-reference difference is intentional: the source's
+forward `sec:derived-primer` reference is represented by the local
+`sourcecrossref` fallback to printed section 3.12. O014-C027 is disclosed in a
+translator footnote. No exercises or hints occur in this section. The backend
+now has 28 units and 1,387 segments; terminology has 382 matching rows.
+
+The clean shell-escape-disabled XeLaTeX/Biber/MakeIndex replay in
+`build/cumulative-unit-028-final-20260823` produced the byte-identical
+checkpoint and cumulative reader: 167 pages, 868,564 bytes, SHA-256
+`78c1ec3db75a97f3593d91412a8fbd19057d821df200cbc2893641dff5c48a43`.
+There are no fatal, TeX, unresolved-reference, citation, rerun, overfull-box,
+or missing-character errors; seventeen underfull boxes and known non-fatal
+MiKTeX/fontspec/biblatex/imakeidx warnings remain recorded. Physical pages
+153--167 were rendered and visually inspected. QA receipt:
+`qa/UNIT_028_QA.md`, 5,070 bytes, SHA-256
+`df6282afeae47aa0f3cb81be82b88a9a9a47fedcad6c223b131e637b0b7e8faf`.
+
+The 67-row exact checkpoint manifest
+`qa/CUMULATIVE_UNIT_028_FILE_MANIFEST.csv` lists 6,395,650 bytes, is 8,554
+bytes, and has SHA-256
+`4594c6510d46ab84568945035b503436624786d4df49ad2340d3cd0986b424e`; the
+verification pass found zero missing or byte/hash mismatches. Mutable pursuit
+controls are excluded from this snapshot and remain durable in their own
+hashed control files.
+
+The next exact cursor is `chapter2.tex` line 1564, `sec:Serre-subcat`
+(`Serre 子范畴和 \texorpdfstring{$\mathrm{K}_0$}{K0} 群`). Unit 028 is ready
+for advancement of the existing GitHub and Zenodo lineages; this checkpoint
+does not complete the corpus.

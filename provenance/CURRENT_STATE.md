@@ -1,8 +1,8 @@
 # O014 current state
 
-Status: active source-order Indonesian production. Units 001--027 are complete,
+Status: active source-order Indonesian production. Units 001--028 are complete,
 admitted, built, and QA-passed without a source gap through
-`chapter2.tex` line 1244. This remains a partial working edition; do not
+`chapter2.tex` line 1563. This remains a partial working edition; do not
 complete the pursuit at this or any later checkpoint short of the entire
 corpus, independent mastery layer, semantic reader, and final verified release
 set.
@@ -28,8 +28,8 @@ set.
 
 Units 001--007 translate `prelude.tex` lines 9--495. Units 008--019 translate
 `chapter1.tex` lines 9--2079, including all eleven Chapter 1 sections,
-seventeen exercises, and ten hints. Units 020--027 translate `chapter2.tex`
-lines 9--1244: the overview, Abelian-category definition, first look at
+seventeen exercises, and ten hints. Units 020--028 translate `chapter2.tex`
+lines 9--1563: the overview, Abelian-category definition, first look at
 complexes, diagram lemmas, lattice-theory overview, direct-sum decomposition,
 Subobjek dan Teorema Isomorfisme, and Objek Sederhana dan Semisederhana.
 
@@ -65,16 +65,31 @@ one footnote, no diagrams/assets, and no exercises or hints. No confirmed
 mathematical defect was found. The target uses the existing sourcecrossref
 fallback for the intentional forward reference to `sec:Grothendieck-cat`.
 
-The backend contains 27 sequential units and 1,274 unique segments.
-`backend/units.jsonl` is 20,066 bytes, SHA-256
-`87a7322bae33b27c1fc953d3bedf32d8346165cce4a672e2c4e0fd8ac3d0fb93`;
-`backend/segments.jsonl` is 360,796 bytes, SHA-256
-`c959e28face3800d41ec03b698f969b45a131028fe185732e800b189edae7ae8`.
-Both terminology surfaces now contain 375 unique, matching IDs:
+Unit 028, `o014.aljabr2.chapter2.exact-functors-injective-projective-objects`,
+is admitted at `source/id-ID/chapter2-unit-028.tex`, 37,694 bytes, SHA-256
+`cd2f4bc1d7c2d4912650db33a934f9571f7a018d409a617fef4e61033d293a85`.
+Its normalized authority slice is lines 1245--1563, 24,797 bytes, SHA-256
+`e6e50b76ae9dcd59f739e00b89347c0a0a05c303a6fff56934018301cd275d63`; its
+113-record map is 39,367 bytes, SHA-256
+`0dfbfa43a29313cd1b3a57a9b72b64c2d668889e369605dd2709164688c6b9d8`.
+The section has 19 labels, 30 conventional references plus one intentional
+`sourcecrossref` fallback for `sec:derived-primer`, six citations, six index
+commands, 17 TikZ-CD environments, 21 display environments, and no exercises
+or hints. O014-C027 is disclosed in a translator footnote. New settled terms
+include `funktor eksak`, `funktor eksak kiri/kanan`, `funktor eksak setia`,
+`cukup banyak objek injektif/projektif`, `kategori panah`, and `keeksakan
+lokalisasi`.
+
+The backend contains 28 sequential units and 1,387 unique segments.
+`backend/units.jsonl` is 20,820 bytes, SHA-256
+`f1dd95c50b2cde67c216df17a209aa6287bf26fd9dc6bb118bed79dc98ec7ae4`;
+`backend/segments.jsonl` is 400,163 bytes, SHA-256
+`91abf38aa24cbbe8104cbb61a118b443bc840baf3274e44c6386d56adc46de04`.
+Both terminology surfaces now contain 382 unique, matching IDs:
 control `controls/TERMINOLOGY_O013_O014.csv` SHA-256
-`f7da2827f72eb138de719321d7cc99914441b4ad41679538b262dffd747fca61`;
+`8aff5bad2fb43e8319426e54df1ff0ba48abf580ce5f8a3ceeb378a176cea8e3`;
 backend `backend/terms.csv` SHA-256
-`c39537a5ea87198b3d0311c5a10821edfa1142d799b3ab5a79a2704da748864f`.
+`eee2687340596e47610add6920f5a60982bdeba56d6cb91eba2cf93020f5a7f0`.
 
 ## External Indonesian terminology QA
 
@@ -121,7 +136,7 @@ The 53-row exact manifest
 `qa/CUMULATIVE_UNIT_026_FILE_MANIFEST.csv` is 7,076 bytes, SHA-256
 `f78c35eea3f2a52ecc9d64a5f7310d158377774d30d8d2b8fcd33a65411c096d`.
 
-## Latest admitted reader (Unit 027)
+## Prior admitted reader (Unit 027)
 
 The clean shell-escape-disabled build directory is
 `build/cumulative-unit-027-final-20260823`: XeLaTeX, Biber 2.21, both
@@ -149,37 +164,73 @@ The 60-row exact manifest
 `qa/CUMULATIVE_UNIT_027_FILE_MANIFEST.csv` is 7,433 bytes, SHA-256
 `bd7c0e9309ec2231b1bf2a59acdfd60995906af9d1a9d6a97db901088ef3af45`.
 
+## Latest admitted reader (Unit 028)
+
+The clean shell-escape-disabled build directory is
+`build/cumulative-unit-028-final-20260823`: XeLaTeX, Biber 2.21, both
+MakeIndex passes, and three final XeLaTeX passes. It has no fatal, TeX,
+unresolved-reference, citation, rerun, overfull-box, or missing-character
+errors; seventeen underfull boxes plus known non-fatal MiKTeX/fontspec,
+biblatex, and imakeidx warnings remain recorded.
+
+The frozen checkpoint and promoted cumulative reader are byte-identical:
+167 pages, 868,564 bytes, SHA-256
+`78c1ec3db75a97f3593d91412a8fbd19057d821df200cbc2893641dff5c48a43`.
+Paths:
+`output/pdf/checkpoints/metode-dalam-aljabar-jilid-2-id-through-unit-028.pdf`
+and `output/pdf/metode-dalam-aljabar-jilid-2-id-cumulative.pdf`.
+The PDF is PDF 1.7, `id-ID`, unencrypted, untagged; accessibility is not
+overstated. Physical pages 153--167 were rendered at 120 dpi and visually
+inspected; contact sheet:
+`tmp/pdfs/unit028-final-pages-153-167/contact-sheet.png`, 825,266 bytes,
+SHA-256 `912c627cebd05472f10bae56b5ba5922ce95a7ddc52b103b7df2361f070b4e6e`.
+QA receipt `qa/UNIT_028_QA.md` is 5,070 bytes, SHA-256
+`df6282afeae47aa0f3cb81be82b88a9a9a47fedcad6c223b131e637b0b7e8faf`.
+The 67-row exact Unit 028 manifest
+`qa/CUMULATIVE_UNIT_028_FILE_MANIFEST.csv` lists 6,395,650 bytes, is 8,554
+bytes, and has SHA-256
+`4594c6510d46ab84568945035b503436624786d4df49ad2340d3cd0986b424e`;
+verification found zero missing or hash/byte mismatches. Mutable pursuit
+controls are intentionally kept outside this release snapshot to avoid a
+self-invalidating manifest; their current hashes are recorded in the cursor
+and decision log.
+
 ## Exact continuation
 
-The next source cursor is `chapter2.tex` line 1245, where the authority begins
-the section labeled `sec:inj-proj` (`正合函子, 内射对象和投射对象`). Before
-translation, freeze that section's exact source slice, topology, map, and
-terminology in the same bounded manner. Continue in source order without
-skipping exercises or hints; the next executable action is the Unit 028 source
-audit and map.
+The next source cursor is `chapter2.tex` line 1564, where the authority begins
+the section labeled `sec:Serre-subcat` (`Serre 子范畴和
+\texorpdfstring{$\mathrm{K}_0$}{K0} 群`). Before translation, freeze that
+section's exact source slice, topology, map, and terminology in the same
+bounded manner. Continue in source order without skipping exercises or hints;
+the next executable action is the Unit 029 source audit and map.
 
 ## Public preservation
 
 GitHub remains the existing edition repository
 <https://github.com/KokunoYumeto/metode-aljabar-jilid-2-id>, branch `main`,
-public through Unit 026 at commit
-`ba61089654d8df894111cd8ac9699d3ea280bf52`, tree
-`cda01d4653348c40c99440aaae8f90835f86d55b`; anonymous archive/readback passed
-with zero missing, unexpected, or hash-mismatched files. Unit 027 is the next
-authorized release boundary; advance this lineage, never create a duplicate.
+public through Unit 027 at commit
+`3b0ec2283199f58fd5078c8cbb07410c34077329`, tree
+`3d0554f2ebb37663124c4f8c68844c3179a41048`; anonymous archive/readback passed
+with zero missing, unexpected, or hash-mismatched files. Unit 028 is built and
+ready for the next authorized advancement of this same lineage; never create a
+duplicate.
 
-Zenodo is one concept lineage: public Unit 025 record 22062526, concept
-22059751, DOI `10.5281/zenodo.22059751`. Unit 026 is now public as record
-22070867, DOI `10.5281/zenodo.22070867`, version `unit-026`, with seven files
-and zero anonymous byte/hash mismatches; receipt:
-`release/zenodo/unit-026/ZENODO_PUBLICATION_RECEIPT.json`.
+Zenodo is one concept lineage: Unit 027 is public as record 22071108, DOI
+`10.5281/zenodo.22071108`, concept 22059751,
+`10.5281/zenodo.22059751`, version `unit-027`, with seven files and zero
+anonymous byte/hash mismatches; receipt:
+`release/zenodo/unit-027/ZENODO_PUBLICATION_RECEIPT.json`. An intermediate
+same-lineage record 22071092 was published with inherited files during the
+transaction and cannot be deleted through the deposit API; the receipt records
+its residual state and the clean latest seven-file record.
 
-Figshare is one work-level item, article 33314775, public version 3, DOI
-`10.6084/m9.figshare.33314775.v3`, CC BY 4.0, in project 280296 and
-collection 8668413. The seven-file reader-first Unit 025 payload totals
-1,034,298 bytes and passed anonymous filename/byte/hash readback. Receipt:
-`release/figshare/unit-022/FIGSHARE_PUBLICATION_RECEIPT.json`, 4,362 bytes,
-SHA-256 `f3bbdc670dce089eb53d9118db2164a3fd8aaf4ada57ac7dc351b55f68c108e1`.
+Figshare remains one work-level item, article 33314775, public version 3,
+DOI `10.6084/m9.figshare.33314775.v3`, CC BY 4.0, in project 280296 and
+collection 8668413. A reader-first Unit 027 seven-file payload (1,130,394
+bytes) is prepared locally but no mutation occurred: the account endpoint
+returned 403 `InactiveAccount`, the article endpoint returned 404, and the web
+surface returned 502/202. Blocker receipt:
+`release/figshare/unit-027/FIGSHARE_PUBLICATION_RECEIPT.json`.
 
 Continue contiguous source-order production. This checkpoint does not complete
 the pursuit.

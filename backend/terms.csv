@@ -373,3 +373,11 @@ math.algebra.composition_factor,faktor komposisi,id-ID,O014,active
 math.algebra.multiplicity,multiplicitas,id-ID,O014,active
 math.algebra.division_ring,gelanggang pembagian,id-ID,O014,active
 math.algebra.schur_lemma,Lema Schur,id-ID,O014,active
+math.category.exact_functor,exact functor,funktor eksak,id-ID,O014,active
+math.category.left_exact_functor,left exact functor,funktor eksak kiri,id-ID,O014,active
+math.category.right_exact_functor,right exact functor,funktor eksak kanan,id-ID,O014,active
+math.category.faithfully_exact_functor,faithfully exact functor,funktor eksak setia,id-ID,O014,active
+math.category.enough_injective_objects,enough injectives,cukup banyak objek injektif,id-ID,O014,active
+math.category.enough_projective_objects,enough projectives,cukup banyak objek projektif,id-ID,O014,active
+math.category.arrow_category,arrow category,kategori panah,id-ID,O014,active
+math.category.localization_exactness,exactness of localization,keeksakan lokalisasi,id-ID,O014,active

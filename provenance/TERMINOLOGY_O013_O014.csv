@@ -373,3 +373,11 @@ math.algebra.composition_factor,composition factor,faktor komposisi,,o014.aljabr
 math.algebra.multiplicity,multiplicity,multiplicitas,,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Banyaknya kemunculan suatu faktor dalam multihimpunan
 math.algebra.division_ring,division ring,gelanggang pembagian,,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Gelanggang tempat setiap unsur tak nol invertibel
 math.algebra.schur_lemma,Schur lemma,Lema Schur,,o014.aljabr2.chapter2.simplicity-and-semisimplicity,o014_new,Lema tentang morfisme tak nol antara objek sederhana
+math.category.exact_functor,exact functor,funktor eksak,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Funktor aditif yang mempertahankan barisan eksak pendek dan barisan eksak.
+math.category.left_exact_functor,left exact functor,funktor eksak kiri,funktor kiri-eksak,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Funktor yang mempertahankan kernel atau limit hingga.
+math.category.right_exact_functor,right exact functor,funktor eksak kanan,funktor kanan-eksak,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Funktor yang mempertahankan kokernel atau kolimit hingga.
+math.category.faithfully_exact_functor,faithfully exact functor,funktor eksak setia,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Funktor eksak yang juga setia.
+math.category.enough_injective_objects,enough injectives,cukup banyak objek injektif,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Setiap objek membenam ke objek injektif.
+math.category.enough_projective_objects,enough projectives,cukup banyak objek projektif,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Setiap objek merupakan kuosien objek projektif.
+math.category.arrow_category,arrow category,kategori panah,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Kategori funktor untuk diagram 0 ke 1.
+math.category.localization_exactness,exactness of localization,keeksakan lokalisasi,,o014.aljabr2.chapter2.exact-functors-injective-projective-objects,o014_new,Lokalisasi kategori abelian oleh keluarga multiplikatif tetap eksak.
