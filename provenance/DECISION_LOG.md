@@ -1654,3 +1654,413 @@ The 67-row exact manifest `qa/CUMULATIVE_UNIT_032_FILE_MANIFEST.csv` lists
 and verifies with zero missing file, byte-count mismatch, or hash mismatch.
 The next exact cursor is `chapter3.tex` line 163, `sec:Hom-cplx`. This
 checkpoint remains partial and does not complete the corpus.
+
+## D083 - Unit 032 public lineage advancement (2026-08-24)
+
+Advance the existing GitHub edition repository `main` through Unit 032 at
+commit `86e859ef869195aec41d69f8a2aa45362a37f7a0`, tree
+`64f1ecea3c0da6af2f5c54677013c8821f86b67f`. Its anonymous immutable archive
+contains 85 files, 1,446,288 bytes, SHA-256
+`cddc7e994de983926566f76cb21814af147bff257fc6fadf6cc6d44036076f72`;
+the 83-row manifest and checksums have SHA-256
+`b501226a4db96aa547329564b379673608c73b1724f7541fe714089470b69004`
+and `304ae56e3a864c246adf60d6e922640bb3fc7b4298ee07e88427d3e810a43545`,
+with zero mismatch. The 999,106-byte reader has SHA-256
+`f28977200909076af2a30ea82de30985a917a5e3d62cb2f2d478502b51314ef3`.
+Receipt: `release/github/GITHUB_PUBLICATION_RECEIPT.json`, 4,959 bytes,
+SHA-256 `ef60848a9545356ab99bc379dcbbf0186d5de591e345a03a82c290256b904e1d`.
+
+Advance only the existing Zenodo concept 22059751 from record 22072584 to
+record 22073972, DOI `10.5281/zenodo.22073972`, version `unit-032`. Its seven
+public files total 1,367,262 bytes: PDF 999,106 bytes / SHA-256
+`f28977200909076af2a30ea82de30985a917a5e3d62cb2f2d478502b51314ef3`;
+source/backend ZIP 274,681 bytes /
+`d2ad4f7c13c90d04a3acda6cc6870de3d38e9afc0fd45e4685fe787b0f619932`;
+QA/provenance ZIP 66,327 bytes /
+`7d7c685f3f6ea3ec12fbc6192e3bfcdfc63ebe75812f7ea4c0db365378e47cce`;
+LICENSE 19,045 bytes /
+`48a83a6e39f7b2f166763b30776132c9a99aa816f17cb06f87ad5b8542a7b71f`;
+README 2,972 bytes /
+`1c550d081c714133bbea1e11eed91388ee5d51e2e4a56439173c2827f0abf16f`;
+release manifest 4,528 bytes /
+`e06f82587665d091bf652c5485508726e4bfc237dff3d56e835b482d0889ecd9`;
+and checksums 603 bytes /
+`f25168c782490269741898a9153831714262bb64261d1d64e9d625130488e760`.
+Anonymous record, DOI, concept-latest, and every-file readback pass. The payload
+freezes exactly 32 units, 1,633 segments, and 416 terms; no Unit 033 target or
+C033--C035 correction artifact is present. Exact model provenance remains
+`OpenAI Codex gpt-5.6-sol, Ultra`; title, CC BY 4.0, `ind`, attribution,
+non-endorsement, and the single established organization contributor are
+preserved. Receipt: `release/zenodo/unit-032/ZENODO_PUBLICATION_RECEIPT.json`,
+7,200 bytes, SHA-256
+`aca04167d54526bcc81ad63c7b4bb9da3c61e1a581e7015679e5e906517ae8ca`.
+Publication remains partial and does not complete the corpus.
+
+## D090 - Unit 036 admission: double complexes (2026-08-24)
+
+Admit Unit 036, `o014.aljabr2.chapter3.double-complexes`, exactly
+`chapter3.tex` lines 700--945. The normalized 20,674-byte authority slice has
+SHA-256
+`0d532ff079384d4437ed82abf21c828fe392f79f48db27f57a5af62069ed1c8c`;
+the translated 28,124-byte target has SHA-256
+`d36274b3f84495b1a28608b9f95f7e2d173afe73e84b38f408b265819c9bcc3f`;
+and the 76-record stable map has SHA-256
+`f2a147d9be45c91a2ccd292e843b830237636743b43616eb1437453479edcada`.
+Two independent reviews pass exact marker order, all 13 labels, 12 semantic
+reference relationships, one citation, 14 indexes, ten TikZ-CD diagrams, six
+items, 37 balanced environments, formulas, signs, degrees, encoding, and
+natural Indonesian prose. One long Hom-totalization isomorphism is reflowed as
+a display to remove an overfull line without mathematical change.
+
+Apply and disclose two deterministic source corrections. O014-C038 restores
+the omitted bifunctor `F` in the functor equality and both rightmost shifted
+isomorphism terms. O014-C039 uses vertical coefficient `(-1)^q` for the strict
+inverse `sigma^{-1}` and supplies the coordinate isomorphism `(-1)^q` that
+changes only the vertical sign and recovers the standard Hom differential.
+The corrections ledger has 40 unique rows through O014-C039. No upstream
+contact occurred.
+
+Complete the requested arXiv-first terminology recheck before admission. No
+Indonesian same-field arXiv source with downloadable TeX was found in the
+bounded exact-phrase search, so four official institutional PDF witnesses were
+directly inspected. They refine field variants and evidence notes but do not
+justify changing coordinated preferred prose. The exact report is 14,089
+bytes, SHA-256
+`0d3cc71e0e7eb1a837de69cbc4e570575df8efd63090927495899ed78e19b3fc`.
+The control and backend stores contain the same 427 terminology concepts. The
+exact model identification `OpenAI Codex gpt-5.6-sol, Ultra` remains in reader,
+edition, and release metadata with source and human credits preserved.
+
+Admit the shell-escape-disabled build
+`build/cumulative-unit-036-finalB-20260824`. Biber resolves 19 citekeys;
+MakeIndex accepts 165 term and 70 symbol entries with zero rejection or
+warning. The final 79,529-byte log has SHA-256
+`b4b884d331045167ca903e11b920f776ddfaecc617c91c1ae2086bfb64dfdddb`
+and zero TeX/package error, unresolved reference or citation, rerun request,
+overfull box, missing character, fatal error, or emergency stop. Fifteen
+non-fatal underfull horizontal boxes and seven underfull vertical boxes remain.
+
+The checkpoint and promoted reader are byte-identical: PDF 1.7, 219 pages,
+1,107,313 bytes, SHA-256
+`a720761eeab43f504f22af1214259c3481e377f5de3ecd3287b7aee9e71c8d2b`.
+Physical pages 198--219, both contact sheets, and full-size pages 205--212 pass
+visual inspection; physical page 216 is an intentional separator. QA receipt
+`qa/UNIT_036_QA.md` is 9,198 bytes, SHA-256
+`126ff3267e7dd55b943a6277d72525dde3b5abe51cbf0279229de8063cf7859b`.
+The 73-row manifest `qa/CUMULATIVE_UNIT_036_FILE_MANIFEST.csv` lists 7,144,999
+bytes, is 9,283 bytes, SHA-256
+`e069f9a83d36952473d5dc7ff18b4ba371a16523c6c971fee7d9731dd1642a9c`,
+and independently verifies with zero missing file, duplicate path, byte-count
+mismatch, or hash mismatch.
+
+Advance the exact cursor to Unit 037,
+`o014.aljabr2.chapter3.abelian-category-complexes`, `chapter3.tex` lines
+946--1060, stopping before `sec:cone-vs-long-exact-sequence` at line 1061. Its
+frozen 8,933-byte slice has SHA-256
+`6adf88af700b26dac31c81724d991fbefcedab64f6ccd08849e532a75e04410e`;
+its 30-record map has SHA-256
+`e08be8d6d9372550bcfa2680c6f3d1b02fbaa4f9886d35ff7b293fc82aaa30c2`.
+This checkpoint remains partial and does not complete the corpus.
+
+## D084 - Unit 033 admission: Hom complexes and homotopy (2026-08-24)
+
+Admit Unit 033, `o014.aljabr2.chapter3.hom-complex-and-homotopy`, exactly
+`chapter3.tex` lines 163--345. The frozen 12,347-byte source slice has SHA-256
+`30e6afb74eae4ea7aa78d610a2806c713faa3d0e7f893e16f0565a0ce379e59c`;
+the translated 18,841-byte target has SHA-256
+`deb48c356cc78ad8fc5f4d730be640d5a60fde0c3b90d7a45c21330bcbd337d2`;
+and the 56-record stable map has SHA-256
+`0798cc52a5cf5e9c49c9132039d58e74f95e7d653348d6e4367708214a2d11c2`.
+Independent final review passes exact marker order, all 15 labels, all 20
+references, all 8 indexes, four TikZ-CD diagrams and 12 arrows, all formula
+signs and degrees, balanced environments, encoding, and Indonesian
+naturalness. Three overly long inline formulas were moved into displays to
+remove overfull lines without changing their mathematical content.
+
+Apply and disclose three deterministic source corrections: O014-C033 types
+the upper horizontal diagram map as `\Hom^n(u,v)`; O014-C034 binds the
+homotopy variable in degree `n-1`; O014-C035 types the adjunction component
+degreewise. Preserve the functional source label spelling
+`eqn:homotopy-cat-cmposition`. Synchronize four new terminology concepts:
+`aturan Leibniz`, `morfisme homotopik`, `morfisme homotopik nol`, and
+`kategori homotopi`. The backend now contains 33 units, 1,689 segments, and
+420 exact matching terminology concepts.
+
+Admit the shell-escape-disabled build
+`build/cumulative-unit-033-finalC-20260824`. Biber resolves 19 citekeys;
+MakeIndex accepts 155 term and 55 symbol entries with zero rejection or
+warning. The final 79,160-byte log has SHA-256
+`a9f4627dcaee573db4dd4454a196e33c1e3ef91f5616ba9fbdbd5f558abc49d5`
+and zero TeX/package error, unresolved reference or citation, rerun request,
+overfull box, missing character, fatal error, or emergency stop. Twenty
+non-fatal underfull boxes remain.
+
+The checkpoint and promoted cumulative reader are byte-identical: 201 pages,
+1,023,423 bytes, SHA-256
+`b621a25b3fe7032885680eea75fae0096cab5bafd95818cd1cf88fad9e6e40a3`.
+Physical pages 181--201 and full-size pages 188--194 pass visual inspection.
+QA receipt `qa/UNIT_033_QA.md` is 7,765 bytes, SHA-256
+`be60e4a4db0b7831942fbd420cdf15cc1fb3fb011dbe974b3b2b595140e13e62`.
+The 70-row manifest `qa/CUMULATIVE_UNIT_033_FILE_MANIFEST.csv` lists 7,264,804
+bytes, is 8,844 bytes, SHA-256
+`2f2af339423f49c2bb9bfe90ebe2d8af199b84e43bb59c5adec5a30b34054b2c`,
+and verifies with zero missing file, duplicate path, byte mismatch, or hash
+mismatch. The next exact cursor is Unit 034, `chapter3.tex` line 346,
+`sec:mapping-cone`, stopping before line 622. This remains partial and does
+not complete the corpus.
+
+## D085 - Unit 033 public lineage advancement (2026-08-24)
+
+Advance the existing GitHub edition repository `KokunoYumeto/metode-aljabar-jilid-2-id`
+on `main` to commit `45eb6b8975c1ddc8b94f2c42cd669c2a0ad972c7`, tree
+`7e10077278642d2cdfabfb92b1b7023a19655668`. Anonymous repository, commit,
+archive, raw manifest, checksums, and PDF readback pass. The 90-file public
+archive is 1,493,833 bytes, SHA-256
+`fbe766c4cbfb1a496a89305d2a28c5435c544180968f5365533224acaac984c0`;
+its 88-row manifest covers 2,786,609 payload bytes with zero mismatch and has
+SHA-256 `5489da053ff9ca1988b8b2f73015a9da09e5617c59bf8a00af83b73d07f8943c`;
+checksums have SHA-256
+`0d1d9801ff95f26158c8e7859926411577664a8862860e841f3683b1bac9dc48`.
+The reader is 1,023,423 bytes, SHA-256
+`b621a25b3fe7032885680eea75fae0096cab5bafd95818cd1cf88fad9e6e40a3`.
+Sanitized receipt `release/github/GITHUB_PUBLICATION_RECEIPT.json` is 5,157
+bytes, SHA-256
+`e79f8cfe56a4d950b11d191310de9083bdec72762f6f952dbfbaf81d22f4a0c5`.
+
+Advance only existing Zenodo concept 22059751 from record 22073972 to record
+22074221, DOI `10.5281/zenodo.22074221`, version `unit-033`. Its seven public
+files total 1,399,828 bytes: PDF 1,023,423 /
+`b621a25b3fe7032885680eea75fae0096cab5bafd95818cd1cf88fad9e6e40a3`;
+source/backend ZIP 281,854 /
+`39a30bc43a8a409cd130fff8bb7cebcd2db8e2842691e289a84bef083740f082`;
+QA/provenance ZIP 67,315 /
+`ab92f9253bada89ee70284e14d4552f23afd7cf92b4ad81310b7a1ddea27fab8`;
+LICENSE 19,045 /
+`48a83a6e39f7b2f166763b30776132c9a99aa816f17cb06f87ad5b8542a7b71f`;
+README 2,967 /
+`887bdc3d21516f93cb40cc3681d58f56ff15ef8d4460d1e2e0c83d91e101f650`;
+release manifest 4,621 /
+`9346e52473a63b2dddb80de939487bf62d90947e6a918a212c4a70593911f881`;
+and checksums 603 /
+`bbbdde73c9d3417d10ca14ce20b5d5084c0a55f4af341ef32b9a34534302aca2`.
+Anonymous record, DOI, concept-latest, and every-file readback pass. Sanitized
+receipt `release/zenodo/unit-033/ZENODO_PUBLICATION_RECEIPT.json` is 7,477
+bytes, SHA-256
+`ff888a23baf443fad48b42ce91f7e984ed4d0f8ad878f07a9b16699fcf3f48ff`.
+
+The exact public snapshot freezes 33 units, 1,689 segments, and 420 terms,
+with corrections through O014-C035 and zero Unit 034 leakage. Preserve the
+exact title, CC BY 4.0, `ind`, attribution, non-endorsement, one established
+organization contributor, and model note `OpenAI Codex gpt-5.6-sol, Ultra`.
+A bounded Figshare retry made no mutation: account and project endpoints return
+403 `Inactive/disabled account`, article 33314775 returns 404, and collection
+8668413 remains publicly readable. Sanitized receipt
+`release/figshare/unit-033/FIGSHARE_PUBLICATION_RECEIPT.json` is 4,010 bytes,
+SHA-256 `02b14573b71222ce451d0ead95c4a9db22d536c94717eb3975129731184098a4`.
+Publication remains partial and does not complete the corpus.
+
+## D086 - Unit 034 admission: mapping cone (2026-08-24)
+
+Admit Unit 034, `o014.aljabr2.chapter3.mapping-cone`, exactly
+`chapter3.tex` lines 346--621. The normalized 18,021-byte authority slice has
+SHA-256
+`0640f89fb580226e49e7663880d487fea235d21fbe5e510e842bc782b9eafa35`;
+the translated 24,865-byte target has SHA-256
+`8cd871b192324139083c3a3bd206418b37b0d9bceede23db6279c223f0b6da03`;
+and the 80-record stable map has SHA-256
+`d2cf4ff2a6a8ce6da91171bfce6df365cdf58b8ef33421273e5b15185d77052b`.
+Two independent final reviews pass exact marker order, all 13 labels, 15
+references, nine indexes, seven TikZ-CD diagrams plus one embedded TikZ
+matrix, 30 source displays plus one presentation-only tuple reflow, all signs,
+degrees, maps, balanced environments, encoding, and natural Indonesian prose.
+No Chinese prose remains and no source correction is required. Synchronize
+three new terminology concepts: `kokernel homotopi`, `kernel homotopi`, and
+`kocitra homotopi`. The backend now contains 34 units, 1,769 segments, and 423
+exact matching terminology concepts.
+
+Admit the shell-escape-disabled build
+`build/cumulative-unit-034-finalC-20260824`. Biber resolves 19 citekeys;
+MakeIndex accepts 160 term and 59 symbol entries with zero rejection or
+warning. The final 79,349-byte log has SHA-256
+`4385fd0e3d80884dcbc157dbe512010d02b852ea0500235cec64d54c6ac13f97`
+and zero TeX/package error, unresolved reference or citation, rerun request,
+overfull box, missing character, fatal error, or emergency stop. Fifteen
+non-fatal underfull horizontal boxes and six underfull vertical boxes remain.
+
+The checkpoint and promoted cumulative reader are byte-identical: 209 pages,
+1,056,839 bytes, SHA-256
+`c49a6a7fd01659cc2fdaf7304b7a0576f48cfbb35c3106446bd21db78e509aac`.
+Physical pages 188--209, both contact sheets, and full-size pages 194--202 pass
+visual inspection; physical page 206 is an intentional separator. QA receipt
+`qa/UNIT_034_QA.md` is 7,387 bytes, SHA-256
+`db34ae09be27c2a6173ba0966df3a72e8002a89235ed5305e8d1b0eb24f822aa`.
+The 71-row manifest `qa/CUMULATIVE_UNIT_034_FILE_MANIFEST.csv` lists 7,308,710
+bytes, is 8,966 bytes, SHA-256
+`edad5e9ff4ad53da1f7d73564639d964b1213f87632368c15c2b92507d4494a8`,
+and verifies with zero missing file, duplicate path, byte mismatch, or hash
+mismatch.
+
+Advance the exact cursor to Unit 035,
+`o014.aljabr2.chapter3.opposite-category-complexes`, `chapter3.tex`
+lines 622--699, stopping before `sec:double-cplx` at line 700. Freeze its
+6,688-byte slice at SHA-256
+`2fb37ee63cd53f2ac6de01c3aef3bc9fab1da286ee4ad989e7e9f38fd07108ba`
+and its 24-record map at SHA-256
+`238672a25609198890fec47d1a06490b15ae4e388e18f1ddd9fa7c311671a2af`.
+Authority line 645 has the proven O014-C036 candidate: the printed strict
+involutivity claim overlooks that `\sigma^2X` has differential `-d`; preserve
+the valid natural isomorphism to `X` by degree-`n` component
+`(-1)^n\identity_{X^n}` and disclose the correction. This checkpoint remains
+partial and does not complete the corpus.
+
+## D087 - Unit 034 public lineage advancement (2026-08-24)
+
+Advance the existing GitHub edition repository
+`KokunoYumeto/metode-aljabar-jilid-2-id` on `main` to commit
+`e1cc1e0f81471da54726dff4c2086e4102725312`, tree
+`fd16fcc220af6af56fd9ae9e4734d6fca712b418`. Anonymous repository, commit,
+archive, manifest, checksum, and reader readback pass. The 95-file archive is
+1,550,775 bytes, SHA-256
+`75ca202ad604ad447e69eb1c888cdd9773edb70ac96f60e7158e2ab5ed98e807`;
+the 93-row manifest covers 2,899,523 bytes with zero mismatch and has SHA-256
+`f238d6fcdb4e087483a2c8de631188bfb639344a0e5b2feee021246be21cf8bf`;
+checksums have SHA-256
+`543959151ee38230c53bda26a8863556388538deb96bd183f694b3357a5b00b1`.
+Sanitized receipt `release/github/GITHUB_PUBLICATION_RECEIPT.json` is 5,600
+bytes, SHA-256
+`9437c2f5d239d946331dd2eda1073ab9fe4c02e00588aca8bf15b7004ede4756`.
+
+Advance only existing Zenodo concept 22059751 from record 22074221 to record
+22074495, DOI `10.5281/zenodo.22074495`, version `unit-034`. Its seven public
+files total 1,429,702 bytes. The reader is 1,056,839 bytes, SHA-256
+`c49a6a7fd01659cc2fdaf7304b7a0576f48cfbb35c3106446bd21db78e509aac`;
+the source/backend ZIP is 290,677 bytes, SHA-256
+`7f528be372db582837c08f2de2433b7f84137348ed6dab1ac11a04e931b330a5`;
+and the QA/provenance ZIP is 54,931 bytes, SHA-256
+`08ea62ee4756e2fcca79080e1f5e02f46dcf2ef533c219a864fa3b01104e6bd0`.
+All seven files pass anonymous byte/hash readback; no residual draft or
+competing concept remains. Sanitized receipt
+`release/zenodo/unit-034/ZENODO_PUBLICATION_RECEIPT.json` is 7,531 bytes,
+SHA-256
+`0dcaad52bb26ab65150fe1d8c3395febaf65b18889a5a133fdc48fcd46db6fef`.
+
+The public snapshot freezes exactly 34 units, 1,769 segments, and 423 terms,
+with corrections through O014-C035 and zero Unit 035 leakage. Preserve the
+exact title, CC BY 4.0, `ind`, attribution, non-endorsement, one established
+organization contributor, and model note `OpenAI Codex gpt-5.6-sol, Ultra`.
+A bounded Figshare retry made no mutation because the account remains inactive;
+its receipt is `release/figshare/unit-034/FIGSHARE_PUBLICATION_RECEIPT.json`,
+4,010 bytes, SHA-256
+`357d5df10851b62d73c4117f0cbea8d608f8ecf3ffa75f019291dc5e28c2ed86`.
+Publication remains partial and does not complete the corpus.
+
+## D088 - Unit 035 admission: complexes over the opposite category (2026-08-24)
+
+Admit Unit 035, `o014.aljabr2.chapter3.opposite-category-complexes`, exactly
+`chapter3.tex` lines 622--699. The normalized 6,688-byte authority slice has
+SHA-256
+`2fb37ee63cd53f2ac6de01c3aef3bc9fab1da286ee4ad989e7e9f38fd07108ba`;
+the translated 10,449-byte target has SHA-256
+`e0b892cb1be0a68e67a7e88dcb3b1c9fe6346a26811feb426b540a0be98c804f`;
+and the 24-record stable map has SHA-256
+`238672a25609198890fec47d1a06490b15ae4e388e18f1ddd9fa7c311671a2af`.
+Two independent reviews pass exact marker order, all six labels, five
+reference relationships, two indexes, three TikZ-CD diagrams, environments,
+formulas, signs, degrees, balanced structure, encoding, and natural Indonesian
+prose. A forward reference to `prop:derived-cat-op` uses the established
+`sourcecrossref` fallback. Local table spacing and one aligned-display reflow
+remove two overfull lines without mathematical change.
+
+Apply and disclose two deterministic source corrections. O014-C036 replaces
+the printed strict-involutivity claim: applying the displayed
+`(-1)^{n+1}` construction twice gives `(X,-d_X)`, naturally isomorphic to
+`X` by degree-`n` component `(-1)^n\identity_{X^n}`, while coefficient
+`(-1)^n` defines the true strict inverse. O014-C037 replaces a reversed
+left/right prose locator by side-neutral wording. The corrections ledger has
+38 unique rows through O014-C037. No new terminology concept is required; the
+control and backend terminology ledgers remain exact 423-concept matches. The
+backend now contains 35 units and 1,793 segments.
+
+Admit the shell-escape-disabled build
+`build/cumulative-unit-035-finalC-20260824`. Biber resolves 19 citekeys;
+MakeIndex accepts 160 term and 61 symbol entries with zero rejection or
+warning. The final 79,457-byte log has SHA-256
+`c18387a776347a26f88660d8ac768079fba0050691599c78229b35c3b9263050`
+and zero TeX/package error, unresolved reference or citation, rerun request,
+overfull box, missing character, fatal error, or emergency stop. Fifteen
+non-fatal underfull horizontal boxes and seven underfull vertical boxes remain.
+
+The checkpoint and promoted reader are byte-identical: PDF 1.7, 211 pages,
+1,070,845 bytes, SHA-256
+`1f6cc9abf330f9d25604bfe9b5862bb39114069973256bcb11f6be23cf0c8b4c`.
+Physical pages 195--211 and full-size pages 201--204 pass visual inspection.
+QA receipt `qa/UNIT_035_QA.md` is 7,537 bytes, SHA-256
+`8970a0179ec41cc94ed10dea56557f777e31d909e44bdae2bcd4067d3cc8391a`.
+The 72-row manifest `qa/CUMULATIVE_UNIT_035_FILE_MANIFEST.csv` lists 8,327,986
+bytes, is 9,086 bytes, SHA-256
+`0f439079634f08549d4ec6e124683469e09c4bf1392b0279f6f8b216d10794fe`,
+and independently re-verifies with zero missing file, duplicate path,
+byte-count mismatch, or hash mismatch.
+
+Advance the exact cursor to Unit 036,
+`o014.aljabr2.chapter3.double-complexes`, `chapter3.tex` lines 700--945,
+stopping before `sec:Abel-cplx` at line 946. Its frozen 20,674-byte slice has
+SHA-256
+`0d532ff079384d4437ed82abf21c828fe392f79f48db27f57a5af62069ed1c8c`;
+its 76-record map is 20,892 bytes, SHA-256
+`f2a147d9be45c91a2ccd292e843b830237636743b43616eb1437453479edcada`.
+During translation, resolve and disclose only if proven the apparent omitted
+`F` in lines 907--908 and the strict-inverse versus same-form
+`\sigma^{-1}` sign/notation conflict in lines 915--932. This checkpoint
+remains partial and does not complete the corpus.
+
+## D089 - Unit 035 public lineage advancement (2026-08-24)
+
+Advance the existing GitHub edition repository
+`KokunoYumeto/metode-aljabar-jilid-2-id` on `main` to commit
+`372e9cbcb6b04181e0b6c6bc4a0cdf3fe16728a4`, tree
+`388fef9e48dd30c052c8c39494a7367fa400f7c6`. Anonymous repository, commit,
+archive, manifest, checksum, and reader readback pass. The 100-file immutable
+archive is 1,585,097 bytes, SHA-256
+`85b53e213feb49b56db2e4c18053f49f26b0ec3be3aa31d6a9cb25a8562a927f`;
+the 98-row manifest covers 2,965,413 payload bytes with zero mismatch and has
+SHA-256 `1450b5db5f268bd5e7831209d1aca39d3e58921f720cf82af7666df64a468aca`;
+checksums have SHA-256
+`5fbb1cba6107da3c30a385c4447e08ac34e6db08baee3e527d073ab4cf004a07`.
+The reader is 1,070,845 bytes, SHA-256
+`1f6cc9abf330f9d25604bfe9b5862bb39114069973256bcb11f6be23cf0c8b4c`.
+Sanitized receipt `release/github/GITHUB_PUBLICATION_RECEIPT.json` is 5,603
+bytes, SHA-256
+`417a1c013f497cabff2b99553201a8b63033cfe7d59b8a77fa5f697007b53994`.
+
+Advance only existing Zenodo concept 22059751 from record 22074495 to record
+22074617, DOI `10.5281/zenodo.22074617`, version `unit-035`. Its seven public
+files total 1,448,692 bytes: PDF 1,070,845 /
+`1f6cc9abf330f9d25604bfe9b5862bb39114069973256bcb11f6be23cf0c8b4c`;
+source/backend ZIP 295,163 /
+`b81a4e3ac6486e5da92f39ae4c8b4ee56715f3696f85e58ef1a21bb49db34104`;
+QA/provenance ZIP 55,452 /
+`7940cee1b0df5511b2f1369f786cba4525a60e07f7ebb2408284030627c17001`;
+LICENSE 19,045 /
+`48a83a6e39f7b2f166763b30776132c9a99aa816f17cb06f87ad5b8542a7b71f`;
+README 2,964 /
+`c5252f5e17f94d7c60e31c4720620ea67955f57be70e3ddbd6f9ec307d64b391`;
+release manifest 4,620 /
+`33842dd560b7d3f7ed7d60b477ddb5cbf7ffd7ecfe433691c47374a37671d7e6`;
+and checksums 603 /
+`afb0ab31ec83f1c6e974af4bea3122503113a1ecafa657f1f6059743e0bdbf8c`.
+Anonymous record API/page, DOI resolution, concept-latest, and every-file
+byte/hash readback pass independently; no residual draft or competing concept
+exists. Sanitized receipt
+`release/zenodo/unit-035/ZENODO_PUBLICATION_RECEIPT.json` is 7,529 bytes,
+SHA-256 `087d33f0a572472ce38591b22d128d39c0a9fbcc042238e6fa1845abb4ed2dc2`.
+
+The exact public snapshot freezes 35 units, 1,793 segments, 423 terms, and
+corrections through O014-C037, with zero Unit 036 leakage. Preserve the exact
+work title, CC BY 4.0, `ind`, attribution, non-endorsement, one established
+organization contributor, and model note `OpenAI Codex gpt-5.6-sol, Ultra`.
+The bounded Figshare retry made no mutation because the account remains
+inactive; receipt `release/figshare/unit-035/FIGSHARE_PUBLICATION_RECEIPT.json`
+is 4,010 bytes, SHA-256
+`a430dcbb7dd6e2e16cf74129ee2b3cff0d45c0f8ad1aff48f4255c2734e502ea`.
+Publication remains partial and does not complete the corpus.

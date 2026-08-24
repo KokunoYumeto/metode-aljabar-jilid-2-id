@@ -4,14 +4,14 @@ math.algebra.module,module,modul,,o014.aljabr2.prelude.linear-algebra,reserved_s
 math.algebra.field,field,lapangan,medan,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.abelian_group,abelian group,grup abelian,grup Abel,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.category.category,category,kategori,,o014.aljabr2.prelude,reserved_shared_id,O013 prerequisite
-math.category.functor,functor,funktor,fungtor,o014.aljabr2.prelude,reserved_shared_id,O013 coordination settled funktor; ITB 2012 comparator attests older fungtor
-math.category.natural_transformation,natural transformation,transformasi alami,transformasi natural,,reserved_shared_id,O013 coordination
+math.category.functor,functor,funktor,fungtor,o014.aljabr2.prelude,reserved_shared_id,O013 coordination settled funktor; ITB 2012 and UNDIP 2016 witnesses plus UGM 2022 curriculum attest fungtor; retain the coordinated modernized preferred spelling and the field spelling as an active variant
+math.category.natural_transformation,natural transformation,transformasi alami,transformasi natural,,reserved_shared_id,O013 coordination; UGM 2022 category-theory curriculum attests transformasi natural while another Indonesian category-theory thesis contents page attests transformasi alami; genuine field variation
 math.category.monoidal_category,monoidal category,kategori monoidal,,,reserved_shared_id,O013 coordination
 math.category.limit,limit,limit,,,reserved_shared_id,O013 coordination
 math.category.representability,representability,keterwakilan,representabilitas,,reserved_shared_id,O013 coordination
 math.category.enrichment,enriched category/enrichment,pengayaan kategori,kategori diperkaya,,reserved_shared_id,O013 coordination
-math.algebra.tensor_product,tensor product,hasil kali tensor,produk tensor,,reserved_shared_id,O013 coordination
-math.analysis.completion,completion,pelengkapan,kompletisasi,,reserved_shared_id,O013 coordination; kompletisasi search variant
+math.algebra.tensor_product,tensor product,hasil kali tensor,produk tensor,,reserved_shared_id,O013 coordination; UNDIP/UNY 2010 module-algebra paper repeatedly attests hasil kali tensor
+math.analysis.completion,completion,pelengkapan,kompletisasi,,reserved_shared_id,O013 coordination; pelengkapan is field-attested in an Indonesian mathematics title; kompletisasi retained as a search variant
 math.algebra.submodule,submodule,submodul,,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.quotient_module,quotient module,modul kuosien,modul hasil bagi,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.module_homomorphism,module homomorphism,homomorfisme modul,homomorfisma modul,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite; Suryanto et al. 2016 official UNDIP witness attests homomorfisma modul; preferred form retained
@@ -106,7 +106,7 @@ math.probability.probability_theory,probability theory,teori probabilitas,teori 
 math.measure.measure_theory,measure theory,teori ukuran,,o014.aljabr2.prelude.reader-guide,o014_new,
 math.category.kan_extension,Kan extension,ekstensi Kan,perluasan Kan,o014.aljabr2.prelude.structure-overview,o014_provisional,English gloss retained at first use
 math.category.gabriel_zisman_localization,Gabriel-Zisman localization,lokalisasi Gabriel-Zisman,,o014.aljabr2.prelude.structure-overview,o014_new,
-math.homological.bicomplex,bicomplex,bikompleks,kompleks ganda,o014.aljabr2.prelude.structure-overview,o014_new,
+math.homological.bicomplex,bicomplex,bikompleks,kompleks ganda,o014.aljabr2.prelude.structure-overview,o014_new,No exact Indonesian attestation was located in the bounded arXiv-first and institutional fallback search through Unit 036; transparent provisional preferred form retained
 math.homological.mapping_cone,mapping cone,kerucut pemetaan,,o014.aljabr2.prelude.structure-overview,o014_new,
 math.homological.k_injective_resolution,K-injective resolution,resolusi K-injektif,,o014.aljabr2.prelude.structure-overview,o014_new,
 math.homological.k_projective_resolution,K-projective resolution,resolusi K-projektif,,o014.aljabr2.prelude.structure-overview,o014_new,
@@ -422,3 +422,7 @@ math.homological.homotopy_category,homotopy category,kategori homotopi,,o014.alj
 math.homological.homotopy_cokernel,homotopy cokernel,kokernel homotopi,,o014.aljabr2.chapter3.mapping-cone,o014_new,Morfisme Y ke Cone(f) yang memfaktorkan morfisme u ketika uf homotopik nol sekaligus membawa data homotopinya.
 math.homological.homotopy_kernel,homotopy kernel,kernel homotopi,,o014.aljabr2.chapter3.mapping-cone,o014_new,Morfisme Cone(f)[-1] ke X yang memfaktorkan morfisme v ketika fv homotopik nol sekaligus membawa data homotopinya.
 math.homological.homotopy_coimage,homotopy coimage,kocitra homotopi,,o014.aljabr2.chapter3.mapping-cone,o014_new,Peran silinder pemetaan sebagai analog homotopik kocitra suatu morfisme kompleks.
+math.homological.koszul_sign_rule,Koszul sign rule,aturan tanda Koszul,kaidah tanda Koszul,o014.aljabr2.chapter3.double-complexes,o014_new,Aturan tanda berderajat yang menghasilkan faktor Koszul seperti (-1)^{pq}; no exact Indonesian attestation was located in the bounded Unit 036 field search.
+math.homological.k_fold_complex,k-fold complex,kompleks lipat-k,kompleks k-rangkap,o014.aljabr2.chapter3.double-complexes,o014_provisional,Kompleks dengan k arah diferensial yang saling berkomutasi.
+math.homological.hom_bicomplex,Hom bicomplex,bikompleks Hom,,o014.aljabr2.chapter3.double-complexes,o014_new,Bikompleks yang dibentuk dari Hom antara dua kompleks; no exact Indonesian field attestation was located and the transparent form remains provisional.
+math.homological.bicomplex_homotopy,bicomplex homotopy,homotopi bikompleks,,o014.aljabr2.chapter3.double-complexes,o014_new,Homotopi dua-arah antara morfisme bikompleks; homotopi is strongly attested by the ITB 2020 same-field witness while the compound is not directly attested.

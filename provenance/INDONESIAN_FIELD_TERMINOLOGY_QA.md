@@ -122,6 +122,67 @@ adds only the missing variants `obyek`, `homomorfisma modul`, `obyek terminal`,
 requires propagation. The PDF is retained only as local QA evidence and is not
 an edition component or public-release payload.
 
+## Unit 036 arXiv-first reconfirmation and focused term decision
+
+At the safe boundary before admitting Unit 036, the requested arXiv-first check
+was repeated specifically for the terminology introduced by the double-complex
+section. Exact all-field searches for `"kategori abelian"`, `"aljabar
+homologi"`, `"transformasi natural"`, and `"hasil kali tensor"` each returned
+zero arXiv records. Related bounded searches for Indonesian category theory,
+`bikompleks`, `kompleks ganda`, and a Koszul sign term likewise produced no
+Indonesian-language same-field record with a downloadable TeX source package.
+There was therefore no source archive to unpack. This remains a bounded
+negative result rather than a universal absence claim.
+
+The fallback comparison directly inspected the previously recorded 2020 ITB
+U-complex abstract and 2016 UNDIP category-theory paper, plus two official
+institutional documents:
+
+- Nikken Prima Puspita, “Pengaruh Kenon-Unitalan Modul terhadap Hasil Kali
+  Tensor,” Seminar Nasional Matematika dan Pendidikan Matematika, 2010,
+  official UNY record <https://eprints.uny.ac.id/10473/>. The local PDF is
+  `references/terminology-qa/Puspita-2010-Pengaruh-Kenon-Unitalan-Modul-terhadap-Hasil-Kali-Tensor.pdf`,
+  450,227 bytes, SHA-256
+  `767e89f16a31f952ad4a5c3df74f7422f49abf5a4a4af1e1d1506654b0ad02f6`;
+  its layout-preserving text witness is 22,175 bytes, SHA-256
+  `4b230c6b5f268216231d474a3db69fed2551726760a5f7c1551ab3f4d120d609`.
+- FMIPA Universitas Gadjah Mada, *Dokumen Kurikulum 2022 Program Magister*,
+  course MMM 6203 “Teori Kategori dan Fungtor,” printed page 106 / PDF page
+  122, official PDF
+  <https://mkom.ugm.ac.id/wp-content/uploads/sites/690/2026/01/Dokumen-Kurikulum-Progam-Magister-FMIPA-UGM-tahun-2022.pdf>.
+  The local PDF is
+  `references/terminology-qa/UGM-2022-Dokumen-Kurikulum-Program-Magister-FMIPA.pdf`,
+  4,213,305 bytes, SHA-256
+  `aab71b299cf141c63069f3b2a061d23be1d6b06abac7c9dd912c321cbe362bc7`;
+  the extracted page witness is 2,943 bytes, SHA-256
+  `8a6932560f20abd9cbef781f50f729176df7e70ca9651114e5beb5b00d84edc3`.
+
+The four relevant PDF pages were rendered and visually inspected rather than
+accepted from search snippets alone. Puspita repeatedly uses `hasil kali
+tensor`. The UGM course repeatedly uses `fungtor` and `transformasi natural`.
+Suryanto et al. likewise use `fungtor`, while Elfiyanti directly attests
+`aljabar homologi`, `rantai kompleks`, `kategori homotopi`, and `kategori
+aditif`.
+
+These observations refine evidence notes and variants but do not justify a
+corpus-wide preferred-term replacement. This edition retains the coordinated
+O013/O014 preferred `funktor` and `transformasi alami`, while registering the
+genuinely attested `fungtor` and `transformasi natural`; retains the strongly
+attested `hasil kali tensor` and `pelengkapan`; and retains `aljabar homologis`
+with `aljabar homologi` as a field-attested variant for grammatical and
+cross-corpus consistency. No witness used `bikompleks`, `kompleks ganda`,
+`bikompleks Hom`, or either Indonesian form of “Koszul sign rule.” Accordingly,
+Unit 036 keeps the transparent provisional forms `bikompleks`, `bikompleks
+Hom`, `aturan tanda Koszul`, and `homotopi bikompleks`. The simple component
+`homotopi` is strongly attested. No translated Unit 001--036 prose requires a
+replacement; the terminology ledger notes were propagated instead.
+
+The new PDFs and text extracts are local QA witnesses only. They are excluded
+from edition and public-release payloads because their redistribution rights
+were not established. The edition and reader metadata already carry the exact
+production identification **OpenAI Codex gpt-5.6-sol, Ultra** while preserving
+all source-author and human-contributor credits.
+
 ## Comparison and decisions
 
 | Concept | Current preferred form | Witness form | Decision |
