@@ -1696,6 +1696,125 @@ preserved. Receipt: `release/zenodo/unit-032/ZENODO_PUBLICATION_RECEIPT.json`,
 `aca04167d54526bcc81ad63c7b4bb9da3c61e1a581e7015679e5e906517ae8ca`.
 Publication remains partial and does not complete the corpus.
 
+## D091 - Explicit task-local cleanup before continuation (2026-08-24)
+
+Pause production for the user's cleanup gate and inspect only exact O014 paths
+already known to this lane. Preserve canonical and live sources, the admitted
+Unit 036 finalB build, current PDFs, frozen release staging, contact sheets,
+authority and terminology evidence, receipts, controls, manifests, credentials,
+and the active Unit 037 source slice and map.
+
+Archive 51 exact superseded or reproducible artifacts: the 15-file obsolete
+`build/cumulative-unit-036-finalA-20260824` tree; the 12-file transient
+`tmp/terminology-field-qa` tree; 22 loose rendered `page-*.png` files and the
+extracted text file in `tmp/pdfs/unit036-finalB-pages-198-219`; and
+`tmp/unit036-full-pdftotext.txt`. The verified no-overwrite archive is
+`old stuff/O014-unit036-superseded-build-and-QA-scratch-20260824.zip`, 51
+entries and 10,910,003 uncompressed bytes, 9,617,936 compressed bytes,
+SHA-256
+`af8056e178442db4223655000956e69d944aa64a667e7f7ddfa3b45832356742`.
+Every entry name, byte count, and SHA-256 reverified before deletion; delete
+only those exact archived loose originals. This cleanup changes no canonical
+source, admitted artifact, release payload, or reproducibility evidence.
+
+## D092 - Unit 036 public lineage advancement (2026-08-24)
+
+Advance the existing GitHub edition repository
+`KokunoYumeto/metode-aljabar-jilid-2-id` on `main` through Unit 036. Commit
+`51db528789c176d8a906a55b5c2a7ee40dc27ccc` carries the admitted content;
+inventory-only commit `9abf7c2861bb08e0d09d919ce2e242699ae4e657`, tree
+`b1d951c2244694e5f8b8f2a102ab8184dec9dc7c`, corrects two manifest and
+checksum rows that had described CRLF working-tree bytes instead of the
+canonical LF blobs. No payload content changes in the follow-up commit. The
+105-file immutable public archive is 1,658,586 bytes, SHA-256
+`6b2ee1c75911a2143c6ec2a73a599e78d1214b7a6088083d64398a2893910da9`;
+all 103 manifest rows, all 103 checksum rows, repository and commit pages, and
+the 1,107,313-byte PDF pass anonymous readback with zero mismatch. Sanitized
+receipt `release/github/GITHUB_PUBLICATION_RECEIPT.json` is 5,829 bytes,
+SHA-256
+`e7663b8ce5ff43b7c9d11fb06d145c22fa00f1d30e3259a20b1739feb9080327`.
+
+Advance only existing Zenodo concept 22059751 from record 22074617 to public
+record 22075083, DOI `10.5281/zenodo.22075083`, version `unit-036`. Its seven
+public files total 1,499,086 bytes: reader PDF 1,107,313 /
+`a720761eeab43f504f22af1214259c3481e377f5de3ecd3287b7aee9e71c8d2b`;
+source/backend ZIP 304,935 /
+`4c979019f554de4082029a5b192edad3508a5396d529993d8b13159aa28dfb37`;
+QA/provenance ZIP 59,453 /
+`726c5c08e43a01034b5aaf5e842f4b53e5c280c12ba72574d1afaf022bf802bd`;
+LICENSE 19,045 /
+`48a83a6e39f7b2f166763b30776132c9a99aa816f17cb06f87ad5b8542a7b71f`;
+README 3,006 /
+`c56c10d6e4bf84608da7cbbe7c264498a9796d9180a2fe6eb1a7c54e8440ed4f`;
+release manifest 4,731 /
+`8304e25e0d6b1c03591df101c2a72357de0e792370d4f34c23ac89427dbbcbfb`;
+and checksums 603 /
+`c4b769fb7df26e1ffe26f2c5778d69118ed02a714f5c63cb61557130ac70f6ff`.
+Anonymous record API/page, DOI resolution, concept-latest, and every-file
+byte/hash readback pass with zero mismatch. Metadata preserves exact title,
+`ind`, CC BY 4.0, source attribution and non-endorsement; the established
+organization contributor appears exactly once and nowhere in the title or
+description. Model disclosure remains `OpenAI Codex gpt-5.6-sol, Ultra`.
+Receipt `release/zenodo/unit-036/ZENODO_PUBLICATION_RECEIPT.json` is 6,743
+bytes, SHA-256
+`38d64d268f1a3828ab29c7b3be083030300642e811474877adfc9e811659d290`.
+No competing concept or residual unpublished draft exists. This worthwhile
+partial checkpoint is preserved but does not complete the corpus.
+
+## D093 - Unit 037 admission: complexes in an abelian category (2026-08-24)
+
+Admit `o014.aljabr2.chapter3.abelian-category-complexes`, exactly frozen
+`chapter3.tex` lines 946--1060. The 8,933-byte LF-normalized slice has SHA-256
+`6adf88af700b26dac31c81724d991fbefcedab64f6ccd08849e532a75e04410e`;
+the exhaustive 30-record map is 9,537 bytes, SHA-256
+`e08be8d6d9372550bcfa2680c6f3d1b02fbaa4f9886d35ff7b293fc82aaa30c2`.
+The complete Indonesian target is 262 LF-terminated lines, 13,925 bytes,
+SHA-256
+`e6078b3d29464c49f90f9586aa44448da806efc41017b610bf2e2f3715583065`.
+
+Independent full-unit structural and semantic reviews pass all 30 segments,
+eight labels, 18 xrefs, 23 balanced environment pairs, eight display
+constructs, six TikZ-CD diagrams with 62 arrows, three indexes, and both list
+items. No omitted content, mistranslation, polarity, quantifier, degree,
+encoding, active-language-residue, or stop-boundary defect remains. Accept and
+disclose O014-C040--C043: component families must be identities of complexes;
+the induced three-term-diagram differential requires `d_Z^n`; the proof
+concludes `C(A)` rather than its already-assumed-abelian input `A`; and the
+cokernels must use `d^(n-1)` to type the displayed degree-`n-1` to degree-`n`
+vertical maps. The correction ledger has 44 unique rows through O014-C043.
+Unit 037 adds no exercise, hint, answer, solution, citation, or external asset.
+
+Repair the stale backend adjacency metadata discovered during the independent
+build audit: sequences 26--36 now point to their exact successor, all 36
+nonterminal records match the following unit ID, and sequence 37 is marked
+`translated_built_qa_passed`. The synchronized backend has 37 unique units,
+1,899 unique segments, and 427 terminology concepts with zero missing nested
+target or terminology mismatch.
+
+Admit `build/cumulative-unit-037-finalA-20260824`. Biber resolves 19 citekeys;
+MakeIndex accepts 167 term and 71 symbol entries with zero rejection or
+warning. The final 79,650-byte log, SHA-256
+`bcff49d344c09a3b34a68ac64b676fe6981bf1fa3526aa4cb46404f329065d84`,
+has zero TeX/package error, undefined control/reference/citation, rerun request,
+overfull box, missing character/file, fatal error, or emergency stop. Sixteen
+underfull horizontal and seven underfull vertical boxes are non-fatal.
+
+Promote the byte-identical 223-page PDF to the Unit 037 checkpoint and current
+cumulative reader: 1,127,663 bytes, SHA-256
+`27e07599542a5994f99c6a43c4a8cebdfec4c2f2d3415e186fa79dea108facb0`.
+It is unencrypted and untagged, with 44 outlines, 974 named destinations, 749
+resolved internal actions, 12 URI actions, and all 52 fonts embedded; 11
+mathematical fonts lack ToUnicode. Local and independent visual inspection of
+pages 1--8 and 209--223 finds no clipping, overlap, malformed diagram, or
+non-centered-reader regression. QA receipt `qa/UNIT_037_QA.md` is 8,548 bytes,
+SHA-256
+`7ea0827f6b28949cccda14231ff6217be51f10c1c766ba3743e37426e7bd6315`.
+The 75-row exact manifest lists 10,497,235 bytes, is 9,483 bytes, SHA-256
+`46d35857206375e14e1810289633b74fa52031132d7a115c4783c59ef8d894d0`,
+and re-verifies with zero mismatch. Advance next to the complete Section 3.7,
+`chapter3.tex` lines 1061--1292, without crossing `sec:HH` at line 1293. This
+is an admitted partial boundary and does not complete the full corpus.
+
 ## D090 - Unit 036 admission: double complexes (2026-08-24)
 
 Admit Unit 036, `o014.aljabr2.chapter3.double-complexes`, exactly
@@ -2064,3 +2183,147 @@ inactive; receipt `release/figshare/unit-035/FIGSHARE_PUBLICATION_RECEIPT.json`
 is 4,010 bytes, SHA-256
 `a430dcbb7dd6e2e16cf74129ee2b3cff0d45c0f8ad1aff48f4255c2734e502ea`.
 Publication remains partial and does not complete the corpus.
+
+## D094 - Freeze Unit 038 after admitting Unit 037 (2026-08-24)
+
+Advance the durable production cursor from admitted Unit 037 to
+`o014.aljabr2.chapter3.mapping-cone-and-long-exact-sequences`. Freeze exactly
+`chapter3.tex` lines 1061--1292, including the terminal blank line, and stop
+before `sec:HH` at line 1293. The 17,739-byte LF-normalized slice has SHA-256
+`161c303deb0ff9f7d7a6dbd8341a1dae0e11086d794e68d812b6d3db334fe43e`
+and independently matches the authority source. Its 63-record map is 22,724
+bytes, SHA-256
+`2d258bb98975a650dc395a3b355da041d8d9dcb12719a7701037fc300d7e8794`;
+sequences and identifiers are unique, mapped bounds are monotone, all 43
+source-reference occurrences over 22 unique targets and both citation keys
+resolve, and no correction
+candidate or missing component is demonstrated by the bounded static audit.
+Translate this unit next while Unit 037 is advanced through the already
+authorized GitHub and Zenodo publication lineages.
+
+## D095 - Publish the admitted Unit 037 boundary (2026-08-24)
+
+Advance the existing GitHub edition repository, without creating another
+repository or contacting upstream, to commit
+`1c75e6d7691e460b8bb1a8c23888674e93dce18c`, tree
+`6b47e4fda674de204cc116470d8e6b184daf97ca`. Accept only after anonymous
+readback of the 1,701,722-byte immutable archive (SHA-256
+`b12bd4b67b67303f794180db2f63aaec1470eb7cfaa5dccdcbcb6516f93f288f`),
+all 108 canonical manifest/checksum rows, and the 223-page reader reports zero
+mismatch.
+
+Advance only Zenodo concept 22059751 from record 22075083 to published record
+22086560, DOI `10.5281/zenodo.22086560`, version `unit-037`. The seven files
+total 1,517,978 bytes and anonymously match the local PDF, source/backend ZIP,
+QA/provenance ZIP, license, README, release manifest, and checksums with zero
+mismatch. Preserve CC BY 4.0, author attribution, exact partial scope,
+non-endorsement, model disclosure, and the established single organization
+contributor; keep the organization label out of title and descriptive prose.
+No residual draft or duplicate concept is permitted. Public preservation is
+complete for Unit 037, but the overall goal remains active at Unit 038.
+
+## D096 - Admit the reviewed Unit 038 translation draft to integration (2026-08-24)
+
+Accept all 63 translated segments as mathematically faithful after independent
+structural and semantic comparison. The final pre-build target is 25,223 bytes,
+SHA-256
+`391faa18feede781394efefe0808ed3729650a5f014d2217efac05e4d2b35f08`.
+It preserves 13 labels, 43 source references as 42 ordinary references plus
+one established forward-reference fallback, two citations, 50 balanced
+environment pairs, 16 TikZ-CD diagrams with 139 arrows, 12 list items, all
+formula signs/degrees/indices, and all 63 stable IDs; no Han prose remains.
+
+Repair two segment-map annotations that attributed references outside their
+mapped ranges, yielding a 22,648-byte map with SHA-256
+`56322e9fc22c7dc1ef8eb5fac6a9b09913011cf451f05f6cd5922ddd450e1ad8`.
+Use `saling berlawanan tanda` for the one awkward phrase and
+`\sourcecrossref{prop:ses-vs-triangle}{...}` for the sole Bab 4 label that is
+not yet in the cumulative wrapper. Add `rotation axiom` / `aksioma rotasi` as
+the only new term, bringing both terminology ledgers to 428 rows. These are
+translation/backend presentation repairs, not corrections to the mathematical
+source; the source-correction ledger remains at O014-C043. Proceed to backend
+integration and a clean cumulative build.
+
+## D097 - Bound the Unit 037 Figshare retry (2026-08-24)
+
+Perform one authenticated preflight against the existing Figshare article,
+project, and collection only. Stop before mutation because the account and
+project endpoints both return `403 Inactive/disabled account`; do not create a
+replacement article or misstate the public boundary. Preserve the exact Unit
+037 bytes on the already verified GitHub and Zenodo surfaces. Receipt
+`release/figshare/unit-037/FIGSHARE_PUBLICATION_RECEIPT.json` records zero
+uploads, zero metadata mutations, and zero new or competing items.
+
+## D098 - Archive only confirmed-disposable O014 artifacts (2026-08-24)
+
+Pause Unit 038 production and archive only task-owned artifacts already
+superseded by canonical sources, admitted QA evidence, and public release
+receipts: reproducible Unit 001--037 build trees, the stray duplicate Unit 028
+build tree under `source/id-ID/build`, completed release staging/readback trees,
+temporary Zenodo transaction responses for Units 028--029, and superseded draft
+fragments or one-off QA scripts. Preserve the active
+`build/cumulative-unit-038-finalA-20260824` tree, `build/upstream-replay`, all
+canonical translated sources, source slices, segment maps, terminology and
+backend ledgers, controls, receipts, final release artifacts, and credentials.
+
+The no-overwrite archive is
+`C:/Users/Floris/Documents/interlanguage/old stuff/o014_methods_of_algebra_v2_obsolete_builds_readbacks_01a02164_20260824-222605.zip`:
+692,700,671 bytes, SHA-256
+`dfccec87a0f8bc71767709969803649cc795ef2b47276de49a4812aa7098cf34`.
+Its `_cleanup_roots.txt` gives the exact 150 archived/deleted roots and
+`_cleanup_manifest.csv` gives every one of the 5,287 source-relative paths,
+byte counts, and SHA-256 hashes. Independent post-write verification reopened
+all 5,289 ZIP entries and found zero missing, extra, size-mismatched, or
+hash-mismatched payload entries. Only then were the 150 exact loose roots
+deleted. Loose bytes removed: 762,133,538; net disk recovery after retaining
+the archive: 69,432,867 bytes; surviving selected roots: zero.
+
+## D099 - Admit Unit 038 and advance the exact source cursor (2026-08-24)
+
+Admit `o014.aljabr2.chapter3.mapping-cone-and-long-exact-sequences` after
+independent structural and semantic passes plus the clean finalD reader build.
+The final target is 25,357 bytes, SHA-256
+`85971b03546ce646f434602b3af499be7244fab17fa5944ed5987618a06ee2d1`.
+It preserves all 63 stable segments, thirteen labels, 43 reference occurrences,
+two citations, sixteen TikZ-CD diagrams with 139 arrows, and twelve list items.
+The colon heading and four display reflows are presentation-only changes that
+remove all overfull lines; independent normalized comparison proves that no
+map, composition, factor, sign, label, citation, or logical claim changed. No
+source correction is added.
+
+Update Unit 038 in `backend/units.jsonl` to the final target hash and status
+`translated_built_qa_passed`, and declare the exact Unit 039 successor. The
+resulting 38-row unit backend is 28,564 bytes, SHA-256
+`c6d57531805acfb61275ead07455afd7a27c4d448ecd7c4b440abfa4dee72d51`.
+The 1,962-row segment backend is 575,630 bytes, SHA-256
+`3f09a22da6f742859bbaba24721f78d1deb88f0bc3a7ad909820dc326148bbc5`;
+its 63 Unit 038 rows exactly equal the frozen map. Both terminology surfaces
+hold 428 matching concepts.
+
+Admit `build/cumulative-unit-038-finalD-20260824`. The converged log has no
+TeX/package error, unresolved control/reference/citation, rerun request,
+overfull box, missing character/included file, fatal error, or emergency stop.
+The build, checkpoint, and promoted cumulative PDF are byte-identical: 231
+pages, 1,162,756 bytes, SHA-256
+`71293cdd594e6df12ddf7ea0c1ca74518e1a0ca5da530f91934a562426702a07`.
+All 808 links are classified and all 796 internal targets resolve. The reader
+is untagged; eleven of 52 embedded mathematical font rows lack ToUnicode, so
+full semantic accessibility is not claimed. Fresh visual inspection of cover,
+attribution, all Unit 038 pages, bibliography, and indexes passes with normal
+page fill and no clipping or collision.
+
+QA receipt `qa/UNIT_038_QA.md` is 9,568 bytes, SHA-256
+`b012592ff91252b1dbb8fdbc880f3d8197170afcbe3a6c40e16cb5042e10c02e`.
+The exact 75-row manifest
+`qa/CUMULATIVE_UNIT_038_FILE_MANIFEST.csv` lists 8,443,225 bytes, is 9,470
+bytes, SHA-256
+`ca514d36eeea7489242ffc2b3aab685858c9805bcaa0ab5b8a103cd3be399b34`,
+and verifies with zero missing, duplicate, byte-count, or hash defect.
+
+Advance the production cursor to Unit 039,
+`o014.aljabr2.chapter3.exercises-hochschild-homology-and-cohomology`, exactly
+`chapter3.tex` lines 1293--1586, stopping before
+`sec:truncation-functors` at line 1587. The source witness and stable map remain
+the next production action. Public preservation remains truthfully at Unit 037
+until the already authorized Unit 038 GitHub and Zenodo transactions complete.
+This admission remains partial and does not complete the corpus pursuit.

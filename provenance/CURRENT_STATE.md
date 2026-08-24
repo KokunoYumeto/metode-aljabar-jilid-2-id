@@ -1,8 +1,8 @@
 # O014 current state
 
-Status: active source-order Indonesian production. Units 001--036 are complete,
+Status: active source-order Indonesian production. Units 001--038 are complete,
 admitted, built, and QA-passed without a source gap through `chapter3.tex`
-line 945. This remains a partial working edition; do not
+line 1292. This remains a partial working edition; do not
 complete the pursuit at this or any later checkpoint short of the entire
 corpus, independent mastery layer, semantic reader, and final verified release
 set.
@@ -415,7 +415,12 @@ It contains eight labels, 18 reference tokens over 14 targets, eight display
 constructs including six TikZ-CD diagrams, three indexes, four propositions,
 five proofs, one remark, one definition, one corollary, and a two-item list.
 It has no citation, exercise, hint, solution, external asset, footnote, or
-source comment.
+source comment. The first complete Indonesian draft now exists at
+`source/id-ID/chapter3-unit-037.tex`: 262 LF-terminated lines, 13,925 bytes,
+SHA-256
+`e6078b3d29464c49f90f9586aa44448da806efc41017b610bf2e2f3715583065`.
+Structural, semantic, integration, build, render, and admission QA remain
+pending; Unit 037 is not yet an admitted boundary.
 
 Four source-correction candidates require exact review during translation:
 the degreewise kernel/cokernel formulas at lines 957--958 are mistyped as
@@ -428,28 +433,39 @@ degree labels in the diagram at lines 1026--1031 do not match the prose's
 
 GitHub remains the existing edition repository
 <https://github.com/KokunoYumeto/metode-aljabar-jilid-2-id>, branch `main`,
-public through Unit 035 at commit
-`372e9cbcb6b04181e0b6c6bc4a0cdf3fe16728a4`, tree
-`388fef9e48dd30c052c8c39494a7367fa400f7c6`. The immutable anonymous archive
-has 100 files, 1,585,097 bytes, SHA-256
-`85b53e213feb49b56db2e4c18053f49f26b0ec3be3aa31d6a9cb25a8562a927f`;
-repository, commit, raw files, archive, manifest, checksum, and 211-page reader
-readback passed with zero mismatch. Receipt
-`release/github/GITHUB_PUBLICATION_RECEIPT.json` is 5,603 bytes, SHA-256
-`417a1c013f497cabff2b99553201a8b63033cfe7d59b8a77fa5f697007b53994`.
+public through Unit 036 at commit
+`9abf7c2861bb08e0d09d919ce2e242699ae4e657`, tree
+`b1d951c2244694e5f8b8f2a102ab8184dec9dc7c`. The immutable anonymous archive
+has 105 files, 1,658,586 bytes, SHA-256
+`6b2ee1c75911a2143c6ec2a73a599e78d1214b7a6088083d64398a2893910da9`;
+all 103 manifest and checksum rows and the 219-page reader passed byte/hash
+readback with zero mismatch. An inventory-only follow-up commit corrected two
+CRLF-versus-LF inventory rows without changing payload content. Receipt
+`release/github/GITHUB_PUBLICATION_RECEIPT.json` is 5,829 bytes, SHA-256
+`e7663b8ce5ff43b7c9d11fb06d145c22fa00f1d30e3259a20b1739feb9080327`.
 
-Zenodo remains one concept lineage, 22059751. The clean latest Unit 035 record
-is 22074617, DOI `10.5281/zenodo.22074617`, version `unit-035`: seven files
-totaling 1,448,692 bytes. Every anonymous file download matches local bytes
+Zenodo remains one concept lineage, 22059751. The latest Unit 036 record is
+22075083, DOI `10.5281/zenodo.22075083`, version `unit-036`: seven files
+totaling 1,499,086 bytes. Every anonymous file download matches local bytes
 and SHA-256; the record API/page, DOI, and concept-latest readbacks all pass.
-The reader-first payload freezes exactly 35 units, 1,793 segments, and 423
-terms, with corrections through O014-C037. No Unit 036 or future artifact or
-restricted terminology witness leaked into the release. Receipt
-`release/zenodo/unit-035/ZENODO_PUBLICATION_RECEIPT.json` is 7,529 bytes,
+The reader-first payload freezes exactly 36 units, 1,869 segments, and 427
+terms, with corrections through O014-C039. No Unit 037 or future artifact or
+restricted terminology witness entered the release. Receipt
+`release/zenodo/unit-036/ZENODO_PUBLICATION_RECEIPT.json` is 6,743 bytes,
 SHA-256
-`087d33f0a572472ce38591b22d128d39c0a9fbcc042238e6fa1845abb4ed2dc2`.
-The prior records remain immutable; no competing concept or unpublished draft
-was created.
+`38d64d268f1a3828ab29c7b3be083030300642e811474877adfc9e811659d290`.
+Record 22074617 and all earlier versions remain immutable; no competing
+concept or unpublished draft was created.
+
+Before this publication, the explicit task-local cleanup archived 51
+superseded build, terminology-QA scratch, and rendered-page artifacts into
+`old stuff/O014-unit036-superseded-build-and-QA-scratch-20260824.zip`.
+The verified ZIP contains 10,910,003 uncompressed bytes, is 9,617,936 bytes,
+and has SHA-256
+`af8056e178442db4223655000956e69d944aa64a667e7f7ddfa3b45832356742`;
+only the exact successfully archived loose originals were deleted. Canonical
+sources, the admitted finalB build, current PDFs, release staging, receipts,
+and durable evidence remain live.
 
 Figshare remains one work-level item, article 33314775, public version 3,
 DOI `10.6084/m9.figshare.33314775.v3`, CC BY 4.0, in project 280296 and
@@ -461,3 +477,225 @@ SHA-256
 
 Continue contiguous source-order production. This checkpoint does not complete
 the pursuit.
+
+## Unit 037 admitted checkpoint (2026-08-24)
+
+Units 001--037 now form one contiguous admitted Indonesian reader through all
+of `prelude.tex`, all of `chapter1.tex`, all of `chapter2.tex`, and
+`chapter3.tex` lines 9--1060 / Section 3.6. Unit 037 is
+`o014.aljabr2.chapter3.abelian-category-complexes`, exact lines 946--1060. Its
+frozen 8,933-byte source slice has SHA-256
+`6adf88af700b26dac31c81724d991fbefcedab64f6ccd08849e532a75e04410e`;
+its 30-record, 9,537-byte map has SHA-256
+`e08be8d6d9372550bcfa2680c6f3d1b02fbaa4f9886d35ff7b293fc82aaa30c2`.
+The complete 262-line Indonesian target is 13,925 bytes, SHA-256
+`e6078b3d29464c49f90f9586aa44448da806efc41017b610bf2e2f3715583065`.
+
+Independent structural and semantic audits pass all 30 segments, eight labels,
+18 reference tokens, 23 environment pairs, eight display constructs, six
+TikZ-CD diagrams with 62 arrows, three index terms, and the two-item list.
+There is no omission, mathematical polarity/quantifier/index defect, CJK
+residue, encoding defect, exercise, hint, answer, solution, citation, or
+external asset. Four proven source corrections O014-C040--C043 repair the
+component-family notation, omitted `d_Z^n`, wrong category name, and cokernel
+degree mismatch; all are disclosed exactly once and now registered in the
+44-row correction ledger. The backend contains 37 unique sequential units,
+1,899 unique segments, and 427 exact terminology concepts. A stale
+`next_unit_id` chain from Units 026--036 was repaired; all 36 nonterminal units
+now point to their actual successor and Unit 037 alone is terminal pending the
+Unit 038 freeze.
+
+The admitted shell-escape-disabled build is
+`build/cumulative-unit-037-finalA-20260824`: XeLaTeX, Biber 2.21, both
+MakeIndex passes, and four XeLaTeX passes. Biber resolves 19 citekeys;
+MakeIndex accepts 167 term entries and 71 symbol entries with zero rejection
+or warning. The 79,650-byte final log has SHA-256
+`bcff49d344c09a3b34a68ac64b676fe6981bf1fa3526aa4cb46404f329065d84`
+and zero error, undefined control/reference/citation, rerun request, overfull
+box, missing character/file, fatal error, or emergency stop. Sixteen non-fatal
+underfull horizontal boxes and seven underfull vertical boxes remain.
+
+The build, checkpoint, and promoted cumulative reader are byte-identical: PDF
+1.7, 223 pages, 1,127,663 bytes, SHA-256
+`27e07599542a5994f99c6a43c4a8cebdfec4c2f2d3415e186fa79dea108facb0`.
+It is `id-ID`, unencrypted, untagged, and has 44 outlines, 974 named
+destinations, 749 valid internal actions, and 12 URI actions. All 52 fonts are
+embedded; 11 mathematical fonts lack ToUnicode. Physical pages 1--8 and
+209--223, including full-size pages 213--216, pass local and independent visual
+inspection. The section, six diagram groups, footnotes, bibliography, and
+indexes are centered and unclipped; the prior non-centered-reader defect does
+not recur. QA receipt `qa/UNIT_037_QA.md` is 8,548 bytes, SHA-256
+`7ea0827f6b28949cccda14231ff6217be51f10c1c766ba3743e37426e7bd6315`.
+
+The exact 75-row admission manifest
+`qa/CUMULATIVE_UNIT_037_FILE_MANIFEST.csv` lists 10,497,235 bytes, is 9,483
+bytes, SHA-256
+`46d35857206375e14e1810289633b74fa52031132d7a115c4783c59ef8d894d0`,
+and independently re-verifies with zero missing file, duplicate path,
+byte-count mismatch, or hash mismatch. The byte-identical frozen staging tree
+`release/staging/unit-037-frozen` contains exactly those 75 files. Public
+GitHub and Zenodo still correctly identify Unit 036 until the Unit 037 release
+transaction completes; no premature public-boundary claim is made.
+
+The next source-order boundary is Unit 038, the complete
+`sec:cone-vs-long-exact-sequence`, `chapter3.tex` lines 1061--1292, stopping
+before `sec:HH` at line 1293. Continue there without skipping. This admitted
+checkpoint remains partial and does not complete the corpus pursuit.
+
+## Unit 038 source freeze (2026-08-24)
+
+The next production unit is now deterministically frozen as
+`o014.aljabr2.chapter3.mapping-cone-and-long-exact-sequences`, the complete
+Section 3.7 `sec:cone-vs-long-exact-sequence`. The source boundary is exactly
+`chapter3.tex` lines 1061--1292, including the terminal blank line, and stops
+before `sec:HH` at line 1293. The LF-normalized source witness
+`tmp/unit038-source-slice.tex` is 17,739 bytes, SHA-256
+`161c303deb0ff9f7d7a6dbd8341a1dae0e11086d794e68d812b6d3db334fe43e`;
+an independent byte comparison against the frozen authority tree passes.
+
+The map `tmp/unit038-segment-map.jsonl` has 63 unique, contiguous records.
+The source has 13 labels, 43 `\ref`/`\eqref` occurrences over 22 resolved
+unique targets, and two resolved citation keys (`KS06` and `Li1`). The map is
+22,724 bytes, SHA-256
+`2d258bb98975a650dc395a3b355da041d8d9dcb12719a7701037fc300d7e8794`.
+All mapped intervals are monotone and remain inside lines 1061--1291. A bounded
+static audit found no demonstrable source-correction candidate, no exercise,
+hint, solution, external asset, or source comment. Translation must preserve
+all labels, references, citations, environments, displays, and TikZ-CD
+structure, and must not cross into the Hochschild section. Public preservation
+still correctly reports Unit 036 until the admitted Unit 037 release completes.
+
+## Unit 037 public preservation complete (2026-08-24)
+
+The existing corpus-specific GitHub repository is now public through Unit 037
+at commit `1c75e6d7691e460b8bb1a8c23888674e93dce18c`, tree
+`6b47e4fda674de204cc116470d8e6b184daf97ca`. The immutable anonymous archive
+contains 110 files, is 1,701,722 bytes, and has SHA-256
+`b12bd4b67b67303f794180db2f63aaec1470eb7cfaa5dccdcbcb6516f93f288f`.
+Both the 108-row `MANIFEST.csv` and 108-row `SHA256SUMS.txt` independently
+reverify every payload blob with zero mismatch. The public 223-page PDF is
+1,127,663 bytes, SHA-256
+`27e07599542a5994f99c6a43c4a8cebdfec4c2f2d3415e186fa79dea108facb0`.
+Sanitized receipt `release/github/GITHUB_PUBLICATION_RECEIPT.json` is 6,665
+bytes, SHA-256
+`6c9f3a6d029e853061f144226084951f36c7607c21e2fd194225ebcee11d58f3`.
+
+The same admitted boundary advances only the existing Zenodo concept 22059751
+to record 22086560, DOI `10.5281/zenodo.22086560`, version `unit-037`. Its seven
+reader-first files total 1,517,978 bytes. Every anonymous public download
+matches its local byte count and SHA-256; the record page, DOI, and concept
+latest-alias all resolve to the new public version. Metadata preserves the
+exact work title, author, `ind`, CC BY 4.0, independent-derivative and
+non-endorsement statements, the single organization-contributor entry, and
+the exact model disclosure `OpenAI Codex gpt-5.6-sol, Ultra`; the organization
+label is absent from the title and description. No duplicate concept or
+residual unpublished draft was created. Sanitized receipt
+`release/zenodo/unit-037/ZENODO_PUBLICATION_RECEIPT.json` is 6,926 bytes,
+SHA-256
+`1f191028f01a817543b203b2047306d075f8c8192800341612c13a8dd4cdaa27`.
+
+The public snapshot contains Units 001--037, 1,899 segments, 427 terms, and
+corrections through O014-C043, with no Unit 038 byte or future correction.
+Unit 038 remains the active local production boundary; this partial release
+does not complete the corpus pursuit.
+
+## Unit 038 translation draft (2026-08-24)
+
+The complete draft `source/id-ID/chapter3-unit-038.tex` now covers all 63
+mapped segments through source line 1291 and stops before `sec:HH`. After
+independent review it is 434 LF-only UTF-8 lines, 25,223 bytes, SHA-256
+`391faa18feede781394efefe0808ed3729650a5f014d2217efac05e4d2b35f08`,
+with a terminal newline and no BOM. Preliminary deterministic counts match the
+source at 13 labels, 43 reference occurrences, two citations, 16 TikZ-CD
+environments, and 12 list items; 63 unique stable segment markers are present
+in map order and no Han prose remains. Both independent audits now pass after
+replacing one unidiomatic phrase, converting the sole not-yet-included Bab 4
+reference to the established `\sourcecrossref` fallback, and repairing two
+incorrect map annotations. The corrected 63-row map is 22,648 bytes, SHA-256
+`56322e9fc22c7dc1ef8eb5fac6a9b09913011cf451f05f6cd5922ddd450e1ad8`.
+`Aksioma rotasi` is added as the sole new terminology entry, bringing the
+control/backend ledgers to 428 exact concepts. No mathematical source defect
+or source correction is demonstrated. Backend and cumulative-build integration
+are the next executable actions.
+
+The single bounded Figshare Unit 037 attempt made no mutation: both the
+authenticated account and project endpoints still return `403
+Inactive/disabled account`, while the Indonesian collection remains publicly
+readable. The existing article was not duplicated or modified. Sanitized
+receipt `release/figshare/unit-037/FIGSHARE_PUBLICATION_RECEIPT.json` is 4,190
+bytes, SHA-256
+`67472fb2041d4564343eba6333e5e80a482256873cd98f8ca31c7d5ea182edd2`.
+GitHub and Zenodo remain the verified current Unit 037 preservation surfaces.
+
+## Unit 038 admitted checkpoint (2026-08-24)
+
+Units 001--038 now form one contiguous admitted Indonesian reader through all
+of `prelude.tex`, `chapter1.tex`, and `chapter2.tex`, plus `chapter3.tex` lines
+9--1292 / Section 3.7. Unit 038 is
+`o014.aljabr2.chapter3.mapping-cone-and-long-exact-sequences`, exact lines
+1061--1292. Its frozen 17,739-byte source slice has SHA-256
+`161c303deb0ff9f7d7a6dbd8341a1dae0e11086d794e68d812b6d3db334fe43e`;
+its 63-record, 22,648-byte map has SHA-256
+`56322e9fc22c7dc1ef8eb5fac6a9b09913011cf451f05f6cd5922ddd450e1ad8`.
+The complete 454-line Indonesian target is 25,357 bytes, SHA-256
+`85971b03546ce646f434602b3af499be7244fab17fa5944ed5987618a06ee2d1`.
+
+Independent structural and semantic audits pass all 63 stable segments,
+thirteen labels, 43 source-reference occurrences, both citations, 52 balanced
+target environment pairs, sixteen TikZ-CD diagrams with 139 arrows, and twelve
+list items. Four layout-only reflows remove all overfull lines while
+preserving the exact maps, compositions, factors, signs, and claims. No source
+exercise, hint, answer, solution, asset, or demonstrable correction occurs.
+The source-correction ledger remains at 44 rows through O014-C043. The sole new
+settled term is `aksioma rotasi`, bringing both terminology surfaces to 428
+exact matching concepts.
+
+The backend contains 38 unique sequential units and 1,962 unique segments.
+`backend/units.jsonl` is 28,564 bytes, SHA-256
+`c6d57531805acfb61275ead07455afd7a27c4d448ecd7c4b440abfa4dee72d51`;
+`backend/segments.jsonl` is 575,630 bytes, SHA-256
+`3f09a22da6f742859bbaba24721f78d1deb88f0bc3a7ad909820dc326148bbc5`.
+All 63 Unit 038 backend rows exactly match the frozen map. The wrapper has 38
+resolving inputs and 310 unique labels; all nineteen citations resolve against
+the nineteen-entry bibliography.
+
+The admitted shell-escape-disabled build is
+`build/cumulative-unit-038-finalD-20260824`: XeLaTeX, Biber 2.21, both bounded
+MakeIndex passes, and converged final XeLaTeX passes. Biber and both index
+passes have zero warning/error or rejection. The 79,553-byte final log has
+SHA-256
+`d6648d30b969f1c515910e594f9b91ff397c631edfecd10dad1d69489d6e1aff`
+and zero TeX/package error, undefined control/reference/citation, rerun request,
+overfull box, missing character/included file, fatal error, or emergency stop.
+Sixteen non-fatal underfull horizontal boxes and seven underfull vertical boxes
+remain.
+
+The build, checkpoint, and promoted cumulative reader are byte-identical: PDF
+1.7, 231 pages, 1,162,756 bytes, SHA-256
+`71293cdd594e6df12ddf7ea0c1ca74518e1a0ca5da530f91934a562426702a07`.
+It is unencrypted and untagged, with 45 outline items, 1,007 named
+destinations, 796 resolved internal links, and twelve HTTPS links. All 52 font
+rows are embedded; eleven mathematical fonts lack ToUnicode. Fresh 120-dpi
+inspection of the cover, attribution, all Section 3.7 pages, bibliography, and
+indexes passes: the page is filled normally, and all prose, displays, diagrams,
+equation numbers, footnotes, and indexes are centered, legible, and unclipped.
+The complete qualification and contact-sheet hashes are in
+`qa/UNIT_038_QA.md`, 9,568 bytes, SHA-256
+`b012592ff91252b1dbb8fdbc880f3d8197170afcbe3a6c40e16cb5042e10c02e`.
+
+The exact 75-row admission manifest
+`qa/CUMULATIVE_UNIT_038_FILE_MANIFEST.csv` lists 8,443,225 bytes, is 9,470
+bytes, SHA-256
+`ca514d36eeea7489242ffc2b3aab685858c9805bcaa0ab5b8a103cd3be399b34`,
+and re-verifies with zero missing file, duplicate path, byte-count mismatch, or
+hash mismatch. Public GitHub and Zenodo still correctly identify Unit 037
+until the Unit 038 release transaction completes; no premature public-boundary
+claim is made.
+
+The next exact source-order boundary is Unit 039,
+`o014.aljabr2.chapter3.exercises-hochschild-homology-and-cohomology`, the
+complete `sec:HH`, `chapter3.tex` lines 1293--1586, with substantive content
+through line 1585 and a terminal blank separator at line 1586. It stops before
+`sec:truncation-functors` at line 1587. Freeze its source witness and segment
+map before translation. This admitted checkpoint remains partial and does not
+complete the corpus pursuit.

@@ -942,3 +942,48 @@ fully semantic accessibility artifact.
 As throughout this lane, the author's official 650-page Linux/TeX Live/xindy
 PDF is authoritative. This 223-page Windows/MiKTeX/MakeIndex artifact is a
 valid partial Indonesian reader and makes no pagination-identity claim.
+
+## Frozen cumulative build through Unit 038
+
+The admitted Unit 038 build is
+`build/cumulative-unit-038-finalD-20260824`. It uses the frozen 38-input
+wrapper `source/id-ID/Al-jabr-2-id-cumulative-through-unit-038.tex`, the
+byte-identical stable bibliography
+`references-cumulative-through-unit-038.bib`, XeLaTeX with shell escape
+disabled, Biber 2.21, both bounded MakeIndex passes, and converged final
+XeLaTeX passes. All 38 inputs and all nineteen cited bibliography keys resolve.
+Biber has no warning or error. MakeIndex accepts 167 terminology entries and
+71 symbol entries with zero rejection and zero warning.
+
+The final log is 79,553 bytes, SHA-256
+`d6648d30b969f1c515910e594f9b91ff397c631edfecd10dad1d69489d6e1aff`.
+It contains no TeX/package error, undefined control, unresolved reference or
+citation, rerun request, overfull box, missing character or included file,
+fatal error, or emergency stop. Sixteen non-fatal underfull horizontal boxes
+and seven underfull vertical boxes remain. The informational absence of the
+optional `biblatex-dm.cfg`, inherited LaTeX release notices, the known
+biblatex footnote-patching warning, and generic imakeidx advisories remain;
+both generated indexes are incorporated in the final passes.
+
+The resulting PDF 1.7 is 231 pages and 1,162,756 bytes, SHA-256
+`71293cdd594e6df12ddf7ea0c1ca74518e1a0ca5da530f91934a562426702a07`.
+It is unencrypted and untagged, with 45 outline items, 1,007 named
+destinations, 796 resolved internal actions, and twelve HTTPS actions. All 52
+font rows reported by `pdffonts` are embedded/subset; eleven mathematical fonts
+lack ToUnicode maps. There is no JavaScript, form, widget, embedded file,
+additional action, structure tree, or `MarkInfo`; the sole open action is the
+ordinary first-page `/Fit` view. The reader is not represented as tagged or
+fully semantic.
+
+Fresh 120-dpi visual QA covers physical pages 1--5, all Unit 038 pages
+217--224, and bibliography/index pages 225--231. The cover and attribution
+state Section 3.7 and source coverage through `chapter3.tex` line 1291. All
+text blocks, long reflowed maps, sixteen diagrams, equation numbers, theorem
+heads, footnotes, bibliography, and indexes are centered, legible, and
+unclipped. Physical page 224 has intentional lower whitespace because the
+section ends there. Exact contact-sheet hashes and the full accessibility
+qualification are recorded in `qa/UNIT_038_QA.md`.
+
+As throughout this lane, the author's official 650-page Linux/TeX Live/xindy
+PDF is authoritative. This 231-page Windows/MiKTeX/MakeIndex artifact is a
+valid partial Indonesian reader and makes no pagination-identity claim.

@@ -1,0 +1,454 @@
+% Unit 038 terjemahan Bahasa Indonesia dari chapter3.tex baris 1061--1291.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter3.mapping-cone-and-long-exact-sequences
+% Cakupan: Bagian 3.7 lengkap.
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.h001
+\section{Kerucut pemetaan: barisan eksak panjang}\label{sec:cone-vs-long-exact-sequence}
+\hypertarget{o014.aljabr2.chapter3.mapping-cone-and-long-exact-sequences}{ }
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.p001
+Barisan eksak panjang merupakan alat utama dalam aljabar homologis. Bagian ini
+bertujuan membandingkan tiga cara membangun barisan eksak panjang dari barisan
+eksak pendek. Terlepas dari beberapa perbedaan tanda, ketiganya memberikan
+hasil yang sama. Dalam bagian ini, $\mathcal{A}$ diasumsikan sebagai kategori
+abelian.
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pr001
+\begin{proposisi}\label{prop:cone-triangle-ses}
+	Misalkan $f:X\to Y$ merupakan morfisme dalam $\cate{C}(\mathcal{A})$.
+	Ambil $\alpha(f)$ dan $\beta(f)$ sebagaimana dalam
+	Definisi~\ref{def:cone-triangle}. Maka
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q001
+	\[ 0 \to Y \xrightarrow{\alpha(f)} \Cone(f) \xrightarrow{\beta(f)} X[1] \to 0 \]
+	merupakan barisan eksak dalam $\cate{C}(\mathcal{A})$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pf001
+\begin{bukti}
+	Ingat kembali definisi $\alpha(f)$ dan $\beta(f)$. Karena keeksakan dapat
+	diperiksa derajat demi derajat (Proposisi~\ref{prop:abelian-cat-cplx}),
+	pernyataan tersebut tereduksi pada keeksakan
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q002
+	\[ 0 \to Y^n \xrightarrow{(0, \identity)} X^{n+1} \oplus Y^n \xrightarrow{\text{proyeksi}} X^{n+1} \to 0, \]
+	untuk setiap $n\in\Z$. Inilah isi Proposisi~\ref{prop:biproduct-ses}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.p002
+Diberikan morfisme $f:X\to Y$ dalam $\cate{C}(\mathcal{A})$, barisan eksak
+pendek pada Proposisi~\ref{prop:cone-triangle-ses}, bersama dengan
+Proposisi~\ref{prop:long-exact-sequence-ses}, memberikan barisan eksak panjang
+berikut dalam $\mathcal{A}$:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q003
+\begin{equation}\label{eqn:cone-long-exact-sequence}
+	\cdots \to \Hm^n(Y) \xrightarrow{\Hm^n(\alpha(f))} \Hm^n(\Cone(f)) \xrightarrow{\Hm^n(\beta(f))} \underbracket{\Hm^n(X[1])}_{= \Hm^{n+1}(X)} \xrightarrow{\xi^n} \Hm^{n+1}(Y) \to \cdots
+\end{equation}
+Morfisme yang ditandai dengan $\xi^n$ ialah morfisme penghubung yang
+diinduksi oleh barisan eksak pendek tersebut. Korolari~\ref{prop:cone-connecting}
+akan membuktikan bahwa $\xi^n$ tidak lain ialah
+$\Hm^{n+1}(f):\Hm^{n+1}(X)\to\Hm^{n+1}(Y)$. Dengan demikian, setiap bagian
+dari barisan eksak panjang kerucut pemetaan
+\eqref{eqn:cone-long-exact-sequence} bersifat eksplisit dan berasal dari
+$f$, $\alpha(f)$, dan $\beta(f)$.
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.p003
+Hasil berikut menunjukkan arah sebaliknya: dari sebarang barisan eksak pendek
+dalam $\cate{C}(\mathcal{A})$, terdapat pula hubungan alami dengan kerucut
+pemetaan. Hubungan ini dapat dibentuk dengan dua cara.
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.le001
+\begin{lema}\label{prop:cone-qis}
+	Diberikan barisan eksak pendek
+	$0\to X\xrightarrow{f}Y\xrightarrow{g}Z\to0$ dalam
+	$\cate{C}(\mathcal{A})$, kedua morfisme
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q004
+	\[ \Phi := (0, g): \Cone(f) \to Z, \quad \Phi' := (f[1], 0): X[1] \to \Cone(g) \]
+	merupakan kuasi-isomorfisme antarkompleks dan mempunyai sifat-sifat berikut:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.l001
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i001
+		\item $\Phi \circ \alpha(f) = g$ dan $\beta(g) \circ \Phi' = f[1]$;
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i002
+		\item $\alpha(g)\Phi + \Phi'\beta(f):\Cone(f)\to\Cone(g)$ secara
+		kanonik homotopik nol.
+	\end{enumerate}
+\end{lema}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pf002
+\begin{bukti}
+	Perhatikan diagram komutatif berikut dalam $\cate{C}(\mathcal{A})$:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g001
+	\[\begin{tikzcd}[column sep=small]
+		0 \arrow[r] & X \arrow[r, "\identity_X"] \arrow[d, "{\identity_X}"'] & X \arrow[r] \arrow[d, "f"] & 0 \arrow[r] \arrow[d] & 0 \\
+		0 \arrow[r] & X \arrow[r, "f"'] & Y \arrow[r, "g"'] & Z \arrow[r] & 0
+	\end{tikzcd} \quad \begin{tikzcd}[column sep=small]
+		0 \arrow[r] & X \arrow[d] \arrow[r, "f"] & Y \arrow[d, "g"'] \arrow[r, "g"] & Z \arrow[d, "\identity_Z"] \arrow[r] & 0 \\
+		0 \arrow[r] & 0 \arrow[r] & Z \arrow[r, "\identity_Z"'] & Z \arrow[r] & 0
+	\end{tikzcd}\]
+	Setiap baris eksak. Oleh karena itu, funktorialitas kerucut pemetaan
+	(Proposisi~\ref{prop:cone-functorial}) memberikan morfisme-morfisme dalam
+	$\cate{C}(\mathcal{A})$ yang tersusun sebagai
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g002
+	\begin{equation}\label{eqn:cone-qis-aux}\begin{tikzcd}[row sep=tiny]
+		0 \arrow[r] & \Cone\left( \identity_X \right) \arrow[r] & \Cone\left( X \xrightarrow{f} Y \right) \arrow[r] & \Cone\left( 0 \to Z \right) \arrow[r] & 0 \\
+		0 \arrow[r] & \Cone(X \to 0) \arrow[r] & \Cone\left( Y \xrightarrow{g} Z \right) \arrow[r] & \Cone\left( \identity_Z \right) \arrow[r] & 0
+	\end{tikzcd}\end{equation}
+	Dengan memeriksa derajat demi derajat serta menggunakan diagram-diagram
+	komutatif di atas dan definisi kerucut pemetaan, tampak bahwa setiap baris
+	dalam~\eqref{eqn:cone-qis-aux} eksak. Selain itu, mudah dilihat bahwa
+	$\Cone(f)\to\Cone(0\to Z)\simeq Z$ (atau
+	$X[1]\simeq\Cone(X\to0)\to\Cone(g)$) tidak lain ialah $\Phi$ (atau
+	$\Phi'$). Setelah diketahui bahwa keduanya merupakan morfisme kompleks,
+	persamaan-persamaan dalam (i) langsung terlihat.
+
+	Dengan menerapkan Proposisi~\ref{prop:long-exact-sequence-ses}
+	pada~\eqref{eqn:cone-qis-aux}, untuk setiap $n\in\Z$ diperoleh barisan eksak
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q005
+	\begin{gather*}
+		\Hm^n\left( \Cone(\identity_X) \right) \to \Hm^n \left( \Cone(f) \right) \xrightarrow{\Hm^n(\Phi)} \Hm^n(Z) \to \Hm^{n+1} \left( \Cone(\identity_X) \right), \\
+		\Hm^{n-1}\left( \Cone(\identity_Z) \right) \to \Hm^n(X[1]) \xrightarrow{\Hm^n(\Phi')} \Hm^n\left( \Cone(g) \right) \to \Hm^n\left( \Cone(\identity_Z) \right).
+	\end{gather*}
+	Lema~\ref{prop:cone-homotopy} (i) dan
+	Proposisi~\ref{prop:null-homotopic-cohomology} menunjukkan bahwa suku-suku
+	ujung kiri dan kanan semuanya $0$. Jadi, $\Phi$ dan $\Phi'$ merupakan
+	kuasi-isomorfisme.
+
+	Terakhir, kita verifikasi (ii). Dengan menggunakan
+	$\Cone(f)^n=X^{n+1}\oplus Y^n$ dan
+	$\Cone(g)^n=Y^{n+1}\oplus Z^n$, tuliskan morfisme-morfisme tersebut sebagai
+	matriks:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g003
+	\begin{gather*}\begin{tikzcd}[row sep=tiny, column sep=large, ampersand replacement=\&]
+		\& Z \arrow[rd, "\alpha(g)" description, "{\bigl(\begin{smallmatrix} 0 \\ \identity \end{smallmatrix} \bigr)}" inner sep=0.6em] \& \\
+		\Cone(f) \arrow[ru, "\Phi" description, "{\bigl( 0 \; g \bigr)}" inner sep=0.6em] \arrow[rd, "\beta(f)" description, "{\big( \identity \; 0 \bigr)}"' inner sep=0.6em] \& \& \Cone(g) \\
+		\& X[1] \arrow[ru, "{\Phi'}" description, "{\bigl( \begin{smallmatrix} f[1] \\ 0 \end{smallmatrix} \bigr)}"' inner sep=0.6em] \&
+	\end{tikzcd}, \quad
+		\alpha(g) \Phi + \Phi' \beta(f) = \begin{pmatrix} f[1] & 0 \\ 0 & g  \end{pmatrix}.
+	\end{gather*}
+	Di sisi lain, ambil $s=(s^n)_n\in
+	\Hom^{-1}\left(\Cone(f),\Cone(g)\right)$ dengan
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q006
+	\[ s^n := \begin{pmatrix}
+		0 & \identity_{Y^n} \\
+		0 & 0
+	\end{pmatrix}: X^{n+1} \oplus Y^n \to Y^n \oplus Z^{n-1} , \]
+	yang juga merupakan satu-satunya pilihan yang wajar. Perhitungan matriks
+	langsung menunjukkan bahwa
+	$d_{\Cone(g)}^{n-1}s^n+s^{n+1}d_{\Cone(f)}^n$ sama dengan
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q007
+	\[\begin{pmatrix}
+		-d_Y^n & 0 \\
+		g^n & d_Z^{n-1}
+	\end{pmatrix} \begin{pmatrix}
+		0 & \identity_{Y^n} \\
+		0 & 0
+	\end{pmatrix} + \begin{pmatrix}
+		0 & \identity_{Y^{n+1}} \\
+		0 & 0
+	\end{pmatrix} \begin{pmatrix}
+		-d_X^{n+1} & 0 \\
+		f^{n+1} & d_Y^n
+	\end{pmatrix} = \begin{pmatrix}
+		f^{n+1} & 0 \\
+		0 & g^n
+	\end{pmatrix}.\]
+	Jadi, $\alpha(g)\Phi+\Phi'\beta(f)$ memang homotopik nol.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.p004
+Sebagai rangkuman, dari barisan eksak pendek
+$0\to X\xrightarrow{f}Y\xrightarrow{g}Z\to0$ dalam
+$\cate{C}(\mathcal{A})$, terdapat tiga cara untuk memperoleh barisan eksak
+panjang berikut dalam $\mathcal{A}$:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g004
+\[\begin{tikzcd}[row sep=large]
+	\cdots \arrow[r] & \Hm^{n-1}(Y) \arrow[r] \arrow[phantom, d, ""{coordinate, name=A}] & \Hm^{n-1}(Z) \arrow[dll, rounded corners, to path={
+		-- ([xshift=2ex]\tikztostart.east)
+		|- (A) [near end]\tikztonodes
+		-| ([xshift=-2ex]\tikztotarget.west)
+		-- (\tikztotarget)}] \\
+	\Hm^n(X) \arrow[r] & \Hm^n(Y) \arrow[r] \arrow[phantom, d, ""{coordinate, name=B}] & \Hm^n(Z) \arrow[dll, rounded corners, to path={
+		-- ([xshift=2ex]\tikztostart.east)
+		|- (B) [near end]\tikztonodes
+		-| ([xshift=-2ex]\tikztotarget.west)
+		-- (\tikztotarget)}] \\
+	\Hm^{n+1}(X) \arrow[r] & \Hm^{n+1}(Y) \arrow[r] & \cdots .
+\end{tikzcd}\]
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.l002
+\begin{enumerate}[(A)]
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i003
+	\item Dengan menerapkan Proposisi~\ref{prop:long-exact-sequence-ses}
+	secara langsung, diperoleh barisan eksak panjang
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g005
+	\[\begin{tikzcd}
+		\cdots \arrow[r] & \Hm^n(Y) \arrow[r, "{\Hm^n(g)}" inner sep=0.6em] & \Hm^n(Z) \arrow[r, "{\delta^n}" inner sep=0.6em] & \Hm^{n+1}(X) \arrow[r, "{\Hm^{n+1}(f)}" inner sep=0.6em] & \Hm^{n+1}(Y) \arrow[r] & \cdots
+	\end{tikzcd}\]
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i004
+	\item Gunakan kuasi-isomorfisme $\Phi:\Cone(f)\to Z$ dari
+	Lema~\ref{prop:cone-qis}, bersama dengan
+	\eqref{eqn:cone-long-exact-sequence}, untuk memperoleh diagram komutatif
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g006
+	\[\begin{tikzcd}[column sep=scriptsize]
+		\cdots \arrow[r] & \Hm^n(Y) \arrow[r, "{\Hm^n(\alpha(f))}" inner sep=0.6em] \arrow[equal, d] & \Hm^n\left( \Cone(f) \right) \arrow[r, "{\Hm^n(\beta(f))}" inner sep=0.6em] \arrow[d, "{\Hm^n(\Phi)}"] & \Hm^n(X[1]) \arrow[r] \arrow[equal, d] & \Hm^{n+1}(Y) \arrow[r] \arrow[equal, d] & \cdots \\
+		\cdots \arrow[r] & \Hm^n(Y) \arrow[r, "{\Hm^n(g)}"' inner sep=0.6em] & \Hm^n(Z) \arrow[r, "{\eta^n}"' inner sep=0.6em] & \Hm^{n+1}(X) \arrow[r, "{\xi^n}"' inner sep=0.6em] & \Hm^{n+1}(Y) \arrow[r] & \cdots
+	\end{tikzcd}\]
+	dengan
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.l003
+	\begin{compactitem}
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i005
+		\item $\eta^n := \Hm^n(\beta(f)) \Hm^n(\Phi)^{-1}$;
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i006
+		\item $\xi^n$ ialah morfisme penghubung dalam
+		\eqref{eqn:cone-long-exact-sequence}, yang berbentuk
+		\[
+			\Hm^{n+1}(X)=\Hm^n(X[1])\to\Hm^{n+1}(Y).
+		\]
+	\end{compactitem}
+	Karena baris pertama diketahui eksak, baris kedua juga eksak.
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i007
+	\item Lakukan hal yang sama, tetapi kini gunakan kuasi-isomorfisme
+	$\Phi':X[1]\to\Cone(g)$ dari Lema~\ref{prop:cone-qis}. Diperoleh diagram
+	komutatif
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g007
+	\[\begin{tikzcd}[column sep=scriptsize]
+		\cdots \arrow[r] & \Hm^n(Z) \arrow[r, "{\Hm^n(\alpha(g))}" inner sep=0.6em] & \Hm^n\left( \Cone(g) \right) \arrow[r, "{\Hm^n(\beta(g))}" inner sep=0.6em] & \Hm^n(Y[1]) \arrow[r] & \Hm^{n+1}(Z) \arrow[r] & \cdots \\
+		\cdots \arrow[r] & \Hm^n(Z) \arrow[r, "{(\eta')^n}"' inner sep=0.6em] \arrow[equal, u] & \Hm^n(X[1]) \arrow[r, "{\Hm^n(f[1])}"' inner sep=0.6em] \arrow[u, "{\Hm^n(\Phi')}"', "\simeq"] & \Hm^{n+1}(Y) \arrow[r, "{(\xi')^n}"' inner sep=0.6em] \arrow[equal, u] & \Hm^{n+1}(Z) \arrow[r] \arrow[equal, u] & \cdots
+	\end{tikzcd}\]
+	dengan
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.l004
+	\begin{compactitem}
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i008
+		\item $(\eta')^n := \Hm^n(\Phi')^{-1} \Hm^n(\alpha(g))$;
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i009
+		\item $(\xi')^n$ berasal dari morfisme penghubung
+		$\Hm^{n+1}(Y)=\Hm^n(Y[1])\to\Hm^{n+1}(Z)$
+		dalam~\eqref{eqn:cone-long-exact-sequence}, dengan $g$ menggantikan $f$.
+	\end{compactitem}
+	Karena baris pertama diketahui eksak, baris kedua juga eksak.
+\end{enumerate}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.p005
+Apa persamaan dan perbedaan di antara ketiga barisan eksak panjang ini? Kita
+nyatakan terlebih dahulu kesimpulannya.
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.l005
+\begin{itemize}
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i010
+	\item Konstruksi (A) dan (B) hanya berbeda dalam beberapa tanda negatif:
+	Proposisi~\ref{prop:connecting-eta-delta} akan menunjukkan bahwa
+	$\eta^n=-\delta^n$, sedangkan Korolari~\ref{prop:cone-connecting}
+	menyiratkan $\xi^n=\Hm^{n+1}(f)$.
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i011
+	\item Konstruksi (A) dan (C) memberikan hasil yang sama:
+	Korolari~\ref{prop:connecting-eta-delta-2}, berdasarkan hasil untuk (B),
+	akan menunjukkan bahwa $(\eta')^n=\delta^n$, sedangkan
+	Korolari~\ref{prop:cone-connecting} menyiratkan
+	$(\xi')^n=\Hm^{n+1}(g)$.
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.i012
+	\item Dengan demikian, (B) dan (C) hanya berbeda tanda pada morfisme
+	penghubung $\Hm^n(Z)\to\Hm^{n+1}(X)$. Hal ini dapat dijelaskan melalui
+	aksioma rotasi (TR3) bagi kategori bertriangulasi; lihat
+	Proposisi~\sourcecrossref{prop:ses-vs-triangle}{pada pembahasan kategori
+	turunan di Bab~4}.
+\end{itemize}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.p006
+Selanjutnya, kita buktikan hubungan-hubungan tersebut.
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pr002
+\begin{proposisi}\label{prop:connecting-eta-delta}
+	Dalam situasi di atas, $\eta^n=-\delta^n$ untuk setiap $n\in\Z$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pf003
+\begin{bukti}
+	Argumen berikut diambil dari \cite[Proposisi~12.3.6]{KS06}. Karena
+	argumen ini cukup rumit, pembaca dianjurkan terlebih dahulu mencoba kasus
+	konkret $\mathcal{A}=R\dcate{Mod}$, dengan $R$ gelanggang; metode pengejaran
+	diagram dalam \cite[\S 6.8]{Li1} memberikan bukti langsung untuk kasus
+	tersebut.
+
+	Untuk kategori abelian umum $\mathcal{A}$, pertama-tama tetapkan
+	$n\in\Z$ dan ambil produk serat
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q008
+	\[ S := \Coker(d_Y^{n-1}) \dtimes{\Coker(d_Z^{n-1})} \Hm^n(Z). \]
+	Bagaimana morfisme penghubung $\delta^n$ dikonstruksi? Morfisme ini
+	diperoleh dengan menerapkan~\eqref{eqn:snake-conn} pada diagram dalam
+	\eqref{eqn:long-exact-sequence-ses-aux},
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g008
+	\[\begin{tikzcd}
+		& \Coker(d_X^{n-1}) \arrow[r] \arrow[d] & \Coker(d_Y^{n-1}) \arrow[r] \arrow[d] & \Coker(d_Z^{n-1}) \arrow[d] \arrow[r] & 0 \\
+		0 \arrow[r] & \Ker(d_X^{n+1}) \arrow[r] & \Ker(d_Y^{n+1}) \arrow[r] & \Ker(d_Z^{n+1}) &
+	\end{tikzcd}\]
+	yang di sini disesuaikan menjadi bentuk
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g009
+	\begin{equation}\label{eqn:connecting-eta-delta-0}\begin{tikzcd}
+		& S \arrow[twoheadrightarrow, r, "w"] \arrow[d, "v"] \arrow[ldd, bend right, "u"'] \arrow[rd, phantom, "\Box" description] & \Hm^n(Z) \arrow[hookrightarrow, d] \\
+		& \Coker(d_Y^{n-1}) \arrow[twoheadrightarrow, r] \arrow[d, "a"] & \Coker(d_Z^{n-1}) \arrow[d] \\
+		\Ker(d_X^{n+1}) \arrow[hookrightarrow, r, "b"'] \arrow[twoheadrightarrow, d] & \Ker(d_Y^{n+1}) \arrow[r, "c"'] & \Ker(d_Z^{n+1}) \\
+		\Hm^{n+1}(X) & &
+	\end{tikzcd}\end{equation}
+	Di sini semua baris dan kolom eksak, panah $a$ diinduksi oleh $d_Y^n$,
+	panah $b$ diinduksi oleh $f^{n+1}$, sedangkan keberadaan dan ketunggalan
+	panah $u$ mengikuti dari fakta bahwa komutativitas bagian kanan menyiratkan
+	$cav=0$. Dengan meninjau secara saksama konstruksi
+	dalam~\eqref{eqn:snake-conn}, tampak bahwa diagram
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g010
+	\begin{equation}\label{eqn:connecting-eta-delta-0.5}\begin{tikzcd}[row sep=tiny]
+		& \Hm^n(Z) \arrow[rd, "\delta^n"] & \\
+		S \arrow[twoheadrightarrow, ru, "w"] \arrow[rd, "u"'] & & \Hm^{n+1}(X) \\
+		& \Ker\left( d_X^{n+1} \right) \arrow[twoheadrightarrow, ru] &
+	\end{tikzcd} \quad \text{komutatif}; \end{equation}
+	karena $w$ diketahui merupakan epimorfisme, diagram ini juga menentukan
+	$\delta^n$ secara unik.
+
+	Untuk membandingkannya dengan kerucut pemetaan, verifikasi langsung dari
+	definisi bahwa diagram berikut komutatif:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g011
+	\[\begin{tikzcd}
+		\Ker(d_X^{n+1}) \oplus \Coker(d_Y^{n-1}) \arrow[d, "{(b,a)}"'] \arrow[hookrightarrow, r] & X^{n+1} \oplus \Coker\left( d_Y^{n-1} \right) \arrow[twoheadrightarrow, r] & \Coker\left( d_{\Cone(f)}^{n-1} \right) \arrow[d, "{d_{\Cone(f)}^n}"] \\
+		\Ker(d_Y^{n+1}) \arrow[r, "\sim"] & 0 \oplus \Ker\left( d_Y^{n+1} \right) \arrow[hookrightarrow, r] & \Ker\left( d_{\Cone(f)}^{n+1} \right)
+	\end{tikzcd}\]
+	Definisi panah-panah horizontal seharusnya jelas. Karena bagian berbentuk
+	kipas dalam~\eqref{eqn:connecting-eta-delta-0} komutatif, diagram di atas
+	menyiratkan bahwa komposisi
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q009
+	\[
+	\begin{multlined}
+		S \xrightarrow{(-u, v)}
+		\Ker\left( d_X^{n+1} \right) \oplus \Coker\left( d_Y^{n-1} \right)
+		\\
+		{}\xrightarrow[\text{baris pertama}]{\text{diagram di atas}}
+		\Coker\left( d_{\Cone(f)}^{n-1} \right)
+		\xrightarrow{d_{\Cone(f)}^n}
+		\Ker\left( d_{\Cone(f)}^{n+1} \right)
+	\end{multlined}
+	\]
+	ialah $0$. Oleh karena itu,
+	$S \xrightarrow{(-u, v)} \Ker\left( d_X^{n+1} \right) \oplus
+	\Coker\left( d_Y^{n-1} \right) \to
+	\Coker\left( d_{\Cone(f)}^{n-1} \right)$ berfaktor secara unik sebagai
+	$S \to \Hm^n(\Cone(f)) \hookrightarrow
+	\Coker\left( d_{\Cone(f)}^{n-1} \right)$.
+	Kita nyatakan bahwa diagram berikut komutatif:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g012
+	\begin{equation}\label{eqn:connecting-eta-delta-1}\begin{tikzcd}
+		S \arrow[ddd, bend right=60, "w"'] \arrow[dd] \arrow[r, "{(-u, v)}"] & \Ker\left( d_X^{n+1} \right) \oplus \Coker\left( d_Y^{n-1} \right) \arrow[dd, "\text{jelas}"] \arrow[r, "\text{proyeksi}"] & \Ker\left( d_X^{n+1} \right) \arrow[twoheadrightarrow, d] \\
+		& & \Hm^{n+1}(X) \arrow[hookrightarrow, d] \\
+		\Hm^n\left( \Cone(f) \right) \arrow[d, "\simeq"', "{\Hm^n(\Phi)}"] \arrow[hookrightarrow, r] & \Coker\left( d_{\Cone(f)}^{n-1} \right) \arrow[r, "\text{diinduksi oleh $\beta(f)$}"' inner sep=0.5em] \arrow[d, "\text{diinduksi oleh $\Phi$}"' inner sep=0.2em] & \Coker\left( d_X^n \right) \\
+		\Hm^n(Z) \arrow[hookrightarrow, r] & \Coker\left( d_Z^{n-1} \right) . &
+	\end{tikzcd}\end{equation}
+	Memang, komutativitas setiap persegi dapat diverifikasi secara rutin.
+	Berdasarkan persegi kanan atas dalam~\eqref{eqn:connecting-eta-delta-0}
+	dan $\Phi=(0,g)$, bagian
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g013
+	\[\begin{tikzcd}
+		S \arrow[r, "{(-u, v)}"]  \arrow[bend right=60, d, "w"'] & \Ker\left( d_X^{n+1} \right) \oplus \Coker\left( d_Y^{n-1} \right) \arrow[d] \\
+		\Hm^n(Z) \arrow[hookrightarrow, r] & \Coker\left( d_Z^{n-1} \right)
+	\end{tikzcd}\]
+	dari diagram~\eqref{eqn:connecting-eta-delta-1} juga komutatif. Selain itu,
+	karena $\Hm^n(Z)\to\Coker(d_Z^{n-1})$ merupakan monomorfisme, komposisi
+	dengan panah ini menunjukkan bahwa bagian lengkung kiri yang tersisa
+	dalam~\eqref{eqn:connecting-eta-delta-1} juga komutatif.
+
+	Perhatikan bahwa kedua komposisi
+	\[
+	\begin{aligned}
+		\Hm^n(\Cone(f)) &\hookrightarrow
+		\Coker \left( d_{\Cone(f)}^{n-1} \right)
+		\to \Coker(d_X^n), \\
+		\Hm^n(\Cone(f)) &\xrightarrow{\Hm^n(\beta(f))}
+		\Hm^{n+1}(X) \hookrightarrow \Coker(d_X^n)
+	\end{aligned}
+	\]
+	sama, karena keduanya diinduksi oleh proyeksi
+	ke $X^{n+1}$. Dengan demikian,
+	\eqref{eqn:connecting-eta-delta-1} selanjutnya memberikan diagram komutatif
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g014
+	\[\begin{tikzcd}
+		S \arrow[d, "w"'] \arrow[rr, "-u"] & & \Ker\left( d_X^{n+1} \right) \arrow[d] \\
+		\Hm^n(Z) \arrow[r, "\sim", "{\Hm^n(\Phi)^{-1}}"' inner sep=0.5em] & \Hm^n\left( \Cone(f) \right) \arrow[r, "{\Hm^n(\beta(f))}"' inner sep=0.5em] & \Hm^{n+1}(X) .
+	\end{tikzcd}\]
+	Berdasarkan~\eqref{eqn:connecting-eta-delta-0.5}, ini menyiratkan bahwa
+	komposisi $S\xrightarrow{w}\Hm^n(Z)\xrightarrow{\delta^n}\Hm^{n+1}(X)$
+	dan $S\xrightarrow{w}\Hm^n(Z)\xrightarrow{\eta^n}\Hm^{n+1}(X)$
+	saling berlawanan tanda. Karena $w$ merupakan epimorfisme, diperoleh
+	$\eta^n=-\delta^n$. Terbukti.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.co001
+\begin{korolari}\label{prop:connecting-eta-delta-2}
+	Dalam situasi di atas, $(\eta')^n=\delta^n$ untuk setiap $n\in\Z$.
+\end{korolari}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pf004
+\begin{bukti}
+	Gunakan notasi Lema~\ref{prop:cone-qis}. Berdasarkan
+	Proposisi~\ref{prop:connecting-eta-delta}, persoalan tereduksi pada
+	pembuktian $(\eta')^n+\eta^n=0$. Namun, persamaan terakhir merupakan akibat
+	langsung dari fakta bahwa
+	$\alpha(g)\Phi+\Phi'\beta(f):\Cone(f)\to\Cone(g)$ homotopik nol
+	(Lema~\ref{prop:cone-qis} (ii)).
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.co002
+\begin{korolari}\label{prop:cone-connecting}
+	Diberikan sebarang morfisme $f:X\to Y$ dalam $\cate{C}(\mathcal{A})$,
+	morfisme penghubung
+	$\xi^n:\Hm^{n+1}(X)\simeq\Hm^n(X[1])\to\Hm^{n+1}(Y)$ dalam barisan
+	eksak panjang~\eqref{eqn:cone-long-exact-sequence} sama dengan
+	$\Hm^{n+1}(f)$.
+\end{korolari}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pf005
+\begin{bukti}
+	Terapkan Lema~\ref{prop:cone-qis} pada barisan eksak pendek
+	$0\to Y\to\Cone(f)\to X[1]\to0$. Diperoleh kuasi-isomorfisme
+	$(0,\beta(f))$ dan diagram komutatif dengan baris-baris eksak
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.g015
+	\[\begin{tikzcd}
+		0 \arrow[r] & Y \arrow[r, "\alpha(f)"] & \Cone(f) \arrow[r, "{\alpha(\alpha(f))}"] & \Cone(\alpha(f)) \arrow[d, "{\Phi = (0, \beta(f))}"] \arrow[r] & 0 \\
+		0 \arrow[r] & Y \arrow[r, "\alpha(f)"'] \arrow[equal, u] & \Cone(f) \arrow[r, "\beta(f)"'] \arrow[equal, u] & X[1] \arrow[r] & 0
+	\end{tikzcd}\]
+	Morfisme $\psi:\Cone(\alpha(f))\to X[1]$ yang dibahas dalam
+	Lema~\ref{prop:cone-alpha} tidak lain ialah $(0,\beta(f))$ di sini:
+	komponen derajat $n$ dari morfisme ini ialah proyeksi dari
+	$Y^{n+1}\oplus\Cone(f)^n=Y^{n+1}\oplus X^{n+1}\oplus Y^n$ ke
+	$X^{n+1}$. Diagram komutatif pada lema tersebut dengan demikian memberikan
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q010
+	\begin{equation}\label{eqn:cone-connecting-aux}
+		\text{dalam $\cate{K}(\mathcal{A})$} \quad f[1] \circ (0, \beta(f)) + \beta(\alpha(f)) = 0 .
+	\end{equation}
+
+	Sekarang, ingat bahwa
+	\[
+		\xi^n:\Hm^n(X[1])\to\Hm^{n+1}(Y)
+	\]
+	merupakan morfisme penghubung dari barisan eksak pendek berikut:
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q011
+	\[ 0 \to Y \xrightarrow{\alpha(f)} \Cone(f) \xrightarrow{\beta(f)} X[1] \to 0, \]
+	dan penerapan Proposisi~\ref{prop:connecting-eta-delta} pada barisan eksak
+	pendek ini segera menunjukkan bahwa morfisme komposit
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q012
+	\[ \Hm^n(\Cone(\alpha(f))) \xrightarrow[\sim]{\Hm^n((0, \beta(f)))} \Hm^n(X[1]) \xrightarrow{\xi^n} \Hm^{n+1}(Y) \]
+	sama dengan $-\Hm^n(\beta(\alpha(f)))$. Akan tetapi,
+	\eqref{eqn:cone-connecting-aux} menyiratkan
+	$\Hm^n(\beta(\alpha(f)))=-\Hm^n(f[1])\circ
+	\Hm^n((0,\beta(f)))$. Jadi,
+	$\xi^n=\Hm^n(f[1])=\Hm^{n+1}(f)$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.co003
+\begin{korolari}\label{prop:quism-cone}
+	Dengan notasi di atas, $f$ merupakan kuasi-isomorfisme jika dan hanya jika
+	$\Hm^n(\Cone(f))=0$ untuk setiap $n\in\Z$.
+\end{korolari}
+
+% segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pf006
+\begin{bukti}
+	Substitusikan Korolari~\ref{prop:cone-connecting} ke dalam barisan eksak
+	panjang~\eqref{eqn:cone-long-exact-sequence}; kesimpulannya langsung
+	terlihat.
+\end{bukti}

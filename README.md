@@ -9,12 +9,11 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 ## Status
 
 Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Batas publik ini
-mencakup Unit 001–037: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
-serta Bab 3 sampai Bagian 3.6 (`chapter3.tex` upstream baris 9–1060). Pembaca
-saat ini berjumlah 223 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
-baris 1061, hubungan kerucut pemetaan dengan barisan eksak panjang
-(`sec:cone-vs-long-exact-sequence`), dan berlanjut dalam urutan sumber menuju
-keseluruhan buku resmi 650 halaman.
+mencakup Unit 001–038: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
+serta Bab 3 sampai Bagian 3.7 (`chapter3.tex` upstream baris 9–1292). Pembaca
+saat ini berjumlah 231 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
+baris 1293, latihan tentang homologi dan kohomologi Hochschild (`sec:HH`), dan
+berlanjut dalam urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
 yang telah diperiksa, tetapi **belum merupakan PDF bertag** dan tidak diklaim
@@ -38,12 +37,12 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 37 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 38 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 37 unit, 1.899 segmen, dan 427 istilah dalam bentuk modular
+- `backend/`: 38 unit, 1.962 segmen, dan 428 istilah dalam bentuk modular
   (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 037, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 038, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS.txt` mencatat ukuran dan SHA-256 setiap berkas publik.

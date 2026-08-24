@@ -426,3 +426,4 @@ math.homological.koszul_sign_rule,aturan tanda Koszul,id-ID,O014,active
 math.homological.k_fold_complex,kompleks lipat-k,id-ID,O014,active
 math.homological.hom_bicomplex,bikompleks Hom,id-ID,O014,active
 math.homological.bicomplex_homotopy,homotopi bikompleks,id-ID,O014,active
+math.homological.rotation_axiom,aksioma rotasi,id-ID,O014,active
