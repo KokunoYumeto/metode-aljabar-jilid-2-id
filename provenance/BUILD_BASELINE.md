@@ -905,3 +905,40 @@ individually. Intentional blank versos/transitions are physical pages 2, 4,
 reflowed displays, the disclosed typing correction, bibliography, and indexes
 are centered and legible without clipping, overlap, detached punctuation,
 off-page material, or missing visible glyph.
+
+## Frozen cumulative build through Unit 037
+
+The admitted Unit 037 build is
+`build/cumulative-unit-037-finalA-20260824`. It uses the frozen 37-input
+wrapper `source/id-ID/Al-jabr-2-id-cumulative-through-unit-037.tex`, the
+byte-identical stable bibliography
+`references-cumulative-through-unit-037.bib`, XeLaTeX with shell escape
+disabled, Biber 2.21, the bounded MakeIndex fallback for both indexes, and four
+XeLaTeX passes. All 37 inputs and the bibliography resource resolve. Biber
+processes 19 citekeys without warning or error. MakeIndex accepts 167 term
+entries and 71 symbol entries with zero rejection and zero warning.
+
+The final log is 79,650 bytes, SHA-256
+`bcff49d344c09a3b34a68ac64b676fe6981bf1fa3526aa4cb46404f329065d84`.
+It contains no TeX/package error, undefined control, unresolved reference or
+citation, rerun request, overfull box, missing character or file, fatal error,
+or emergency stop. Sixteen underfull horizontal boxes and seven underfull
+vertical boxes remain non-fatal. Four inherited LaTeX release notices, one
+biblatex footnote-patching warning, and two generic imakeidx advisories remain;
+the completed final passes incorporate both generated indexes.
+
+The resulting PDF 1.7 is 223 pages and 1,127,663 bytes, SHA-256
+`27e07599542a5994f99c6a43c4a8cebdfec4c2f2d3415e186fa79dea108facb0`.
+It is `id-ID`, unencrypted, and untagged. All 52 fonts are embedded and
+subsetted; 11 mathematical fonts lack ToUnicode maps. It has 44 outlines, 974
+named destinations, 749 resolved GoTo actions, and 12 URI actions, with no
+form, JavaScript, embedded file, structure tree, or MarkInfo. Visual QA covers
+physical pages 1--8 and 209--223, with full-size inspection of pages 213--216;
+the section, six diagram groups, footnotes, bibliography, and indexes are
+centered and unclipped. Physical pages 2, 4, and 220 are intentional verso
+pages. The PDF therefore remains a visually verified reader, not a tagged or
+fully semantic accessibility artifact.
+
+As throughout this lane, the author's official 650-page Linux/TeX Live/xindy
+PDF is authoritative. This 223-page Windows/MiKTeX/MakeIndex artifact is a
+valid partial Indonesian reader and makes no pagination-identity claim.

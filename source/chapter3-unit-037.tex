@@ -1,0 +1,262 @@
+% Unit 037 terjemahan Bahasa Indonesia dari chapter3.tex baris 946--1060.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter3.abelian-category-complexes
+% Cakupan: Bagian 3.6 lengkap.
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.h001
+\section{Kompleks pada kategori abelian}\label{sec:Abel-cplx}
+\hypertarget{o014.aljabr2.chapter3.abelian-category-complexes}{ }
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.p001
+Dalam bagian ini, $\mathcal{A}$ diasumsikan sebagai kategori abelian. Seperti
+biasa, semua pernyataan tentang keaditifan dalam bagian ini juga dapat
+ditingkatkan ke kasus ketika $\mathcal{A}$ merupakan kategori $\Bbbk$-linear.
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.p002
+Untuk suatu kompleks $X$ pada kategori abelian, kita dapat membahas
+kohomologinya (Definisi~\ref{def:cohomology}). Ingat bahwa $[n]$ bukan hanya
+menggeser indeks atas kompleks, melainkan juga mengalikan $d_X^\bullet$ dengan
+tanda $(-1)^n$. Akan tetapi, perubahan tanda ini tidak mengubah kernel maupun
+citra setiap $d_X$. Dengan demikian,
+% segment-id: o014.li2.chapter3.abelian-category-complexes.q001
+\[ \Hm^k\left( X[n] \right) = \Hm^{n+k} \left(X \right), \quad k, n \in \Z . \]
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.p003
+Proposisi~\ref{prop:additive-cat-cplx} telah memastikan bahwa
+$\cate{C}(\mathcal{A})$ merupakan kategori aditif. Berikut ini ditunjukkan bahwa
+kategori tersebut juga abelian.
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pr001
+\begin{proposisi}\label{prop:abelian-cat-cplx}
+	Kategori $\cate{C}(\mathcal{A})$ merupakan kategori abelian. Secara lebih
+	tepat, untuk semua $X,Y\in\Obj(\cate{C}(\mathcal{A}))$, berlaku
+	$X \oplus Y = (X^n \oplus Y^n, (d_X^n, d_Y^n))_{n \in \Z}$, dan untuk
+	setiap morfisme $f:X\to Y$ dapat diambil
+% segment-id: o014.li2.chapter3.abelian-category-complexes.q002
+	\begin{gather*}
+		\Ker(f) = \left( \Ker(f^n) \right)_{n \in \Z}, \quad
+		\Coker(f) = \left( \Coker(f^n) \right)_{n \in \Z}, \\
+		\Image(f) = \left( \Image(f^n) \right)_{n \in \Z}, \quad
+		\Coim(f) = \left( \Coim(f^n) \right)_{n \in \Z}.
+	\end{gather*}%
+	\footnote{Catatan penerjemah (O014-C040): sumber menuliskan
+	$\Ker(f)^n$, $\Coker(f)^n$, $\Image(f)^n$, dan $\Coim(f)^n$ pada ruas
+	kiri, tetapi menyamakannya dengan seluruh keluarga berindeks $n$ pada ruas
+	kanan. Target menghapus pangkat $n$ pada ruas kiri agar keempatnya merupakan
+	identitas kompleks; komponen derajat $n$ tetap tepat seperti yang
+	ditampilkan pada ruas kanan.}
+
+	Misalkan morfisme $f$ dan $g$ dalam $\cate{C}(\mathcal{A})$ dapat
+	dikomposisikan dan $gf=0$. Maka
+	$H:=\Hm\left[X\xrightarrow{f}Y\xrightarrow{g}Z\right]$ adalah kompleks
+	berikut:
+% segment-id: o014.li2.chapter3.abelian-category-complexes.l001
+	\begin{itemize}
+% segment-id: o014.li2.chapter3.abelian-category-complexes.i001
+		\item suku derajat $n$ ialah
+		$H^n:=\Hm\left[X^n\xrightarrow{f^n}Y^n\xrightarrow{g^n}Z^n\right]$;
+% segment-id: o014.li2.chapter3.abelian-category-complexes.i002
+		\item morfisme $d_H^n:H^n\to H^{n+1}$ ditentukan oleh $d_X^n$,
+		$d_Y^n$, dan $d_Z^n$, bersama dengan funktorialitas $\Hm[\cdots]$
+		(Proposisi~\ref{prop:homology-functoriality}).\footnote{Catatan
+		penerjemah (O014-C041): sumber hanya menyebut $d_X^n$ dan $d_Y^n$.
+		Target menambahkan $d_Z^n$, yang diperlukan untuk memberikan morfisme
+		antara kedua diagram tiga-suku dan dengan demikian menginduksi $d_H^n$.}
+	\end{itemize}
+	Sebagai akibatnya, $X\xrightarrow{f}Y\xrightarrow{g}Z$ eksak jika dan
+	hanya jika $X^n\xrightarrow{f^n}Y^n\xrightarrow{g^n}Z^n$ eksak untuk
+	setiap $n\in\Z$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pf001
+\begin{bukti}
+	Proposisi~\ref{prop:additive-cat-cplx} telah menjelaskan cara menggunakan
+	funktor pelupa dari kompleks ke objek bergradasi,
+	$U:\cate{C}(\mathcal{A})\to\mathcal{A}^{\Z}$, untuk mereduksi
+	$\varinjlim$ dan $\varprojlim$ yang diperlukan menjadi konstruksi derajat
+	demi derajat di $\mathcal{A}$. Pokoknya ialah bahwa $U$ menciptakan
+	$\varinjlim$ dan $\varprojlim$ (Lema~\ref{prop:limits-cplx}). Hal ini
+	memberikan konstruksi derajat demi derajat bagi $X\oplus Y$, $\Ker(f)$,
+	$\Coker(f)$, dan seterusnya.
+
+	Secara khusus, berdasarkan karakterisasi~\eqref{eqn:strict-morphism},
+	morfisme kanonik $\Coim(f)\to\Image(f)$ diberikan oleh morfisme
+	$\Coim(f^n)\to\Image(f^n)$ di $\mathcal{A}$. Isomorfisme derajat demi
+	derajat adalah isomorfisme kompleks. Jadi, setiap morfisme dalam
+	$\cate{C}(\mathcal{A})$ bersifat ketat. Oleh karena itu,
+	$\cate{C}(\mathcal{A})$ merupakan kategori abelian.\footnote{Catatan
+	penerjemah (O014-C042): kalimat penutup sumber menyebut $\mathcal{A}$,
+	padahal kategori itu telah diasumsikan abelian, sedangkan kategori yang baru
+	saja dibuktikan abelian ialah $\cate{C}(\mathcal{A})$. Target memperbaiki nama kategori
+	tersebut.} Deskripsi $\Hm[X\to Y\to Z]$ diperoleh dengan cara yang sama.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.r001
+\begin{catatan}
+	Dengan cara yang sama dapat dibuktikan bahwa kategori bikompleks
+	$\cate{C}^2(\mathcal{A})$, bahkan kategori kompleks lipat-$k$
+	$\cate{C}^k(\mathcal{A})$, tetap merupakan kategori abelian untuk
+	$k\in\Z_{\geq 1}$; lihat Catatan~\ref{rem:k-fold-cplx}.
+\end{catatan}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.p004
+Selanjutnya, perhatikan suatu morfisme $f:X\to Y$ dalam
+$\cate{C}(\mathcal{A})$. Untuk setiap $n\in\Z$,
+Proposisi~\ref{prop:homology-functoriality} menentukan secara unik
+$\Hm^n(f):\Hm^n(X)\to\Hm^n(Y)$ sedemikian sehingga diagram berikut komutatif:
+% segment-id: o014.li2.chapter3.abelian-category-complexes.g001
+\begin{equation}\label{eqn:induced-morphism-cohomology}\begin{tikzcd}
+	\Ker(d_X^n) \arrow[twoheadrightarrow, r] \arrow[d, "\text{diinduksi oleh $f$}"'] & \Hm^n(X) \arrow[hookrightarrow, r] \arrow[d, "{\Hm^n(f)}"] & \Coker(d_X^{n-1}) \arrow[d, "\text{diinduksi oleh $f$}"] \\
+	\Ker(d_Y^n) \arrow[twoheadrightarrow, r] & \Hm^n(Y) \arrow[hookrightarrow, r] & \Coker(d_Y^{n-1}) .
+\end{tikzcd}\end{equation}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.p005
+Untuk morfisme yang dapat dikomposisikan
+$X\xrightarrow{f}Y\xrightarrow{g}Z$, karakterisasi ini langsung memberikan
+$\Hm^n(gf)=\Hm^n(g)\Hm^n(f)$; selain itu,
+$\Hm^n(\identity_X)=\identity_{\Hm^n(X)}$.
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pr002
+\begin{proposisi}[Kohomologi sebagai funktor]\label{prop:H-functor}
+	\index[sym1]{Hn}
+	Untuk setiap $n\in\Z$, definisi di atas memberikan funktor aditif
+	$\Hm^n:\cate{C}(\mathcal{A})\to\mathcal{A}$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pf002
+\begin{bukti}
+	Sifat $\Hm^n(gf)=\Hm^n(g)\Hm^n(f)$ dan
+	$\Hm^n(\identity)=\identity$ langsung diperoleh dari
+	karakterisasi~\eqref{eqn:induced-morphism-cohomology}. Dengan cara yang
+	sama diperoleh $\Hm^n(f_1+f_2)=\Hm^n(f_1)+\Hm^n(f_2)$, serta
+	$\Hm^n(tf)=t\Hm^n(f)$ apabila $\mathcal{A}$ merupakan kategori
+	$\Bbbk$-linear dan $t\in\Bbbk$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.p006
+Barisan eksak pendek antar-kompleks secara otomatis menginduksi barisan eksak
+panjang pada kohomologi. Inilah bentuk paling dasar dari barisan eksak panjang
+dalam teori homologi.
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pr003
+\begin{proposisi}[Barisan eksak pendek menginduksi barisan eksak panjang]\label{prop:long-exact-sequence-ses}
+	\index{barisan eksak panjang (long exact sequence)}
+	Misalkan $0\to X\xrightarrow{f}Y\xrightarrow{g}Z\to 0$ merupakan barisan
+	eksak pendek dalam $\cate{C}(\mathcal{A})$. Maka Teorema~\ref{prop:snake-lemma}
+	memberikan barisan eksak kanonik berikut di $\mathcal{A}$:
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.g002
+	\begin{equation*}\begin{tikzcd}[row sep=large]
+	\cdots \arrow[r] & \Hm^{n-1}(Y) \arrow[r, "{\Hm^{n-1}(g)}" inner sep=0.7em] \arrow[phantom, d, ""{coordinate, name=A}] & \Hm^{n-1}(Z) \arrow[dll, rounded corners, "{\delta^{n-1}}" description, to path={
+		-- ([xshift=2ex]\tikztostart.east)
+		|- (A) [near end]\tikztonodes
+		-| ([xshift=-2ex]\tikztotarget.west)
+		-- (\tikztotarget)}] \\
+	\Hm^n(X) \arrow[r, "{\Hm^n(f)}"] & \Hm^n(Y) \arrow[r, "{\Hm^n(g)}"] \arrow[phantom, d, ""{coordinate, name=B}] & \Hm^n(Z) \arrow[dll, rounded corners, "{\delta^n}" description, to path={
+		-- ([xshift=2ex]\tikztostart.east)
+		|- (B) [near end]\tikztonodes
+		-| ([xshift=-2ex]\tikztotarget.west)
+		-- (\tikztotarget)}] \\
+	\Hm^{n+1}(X) \arrow[r, "{\Hm^{n+1}(f)}"' inner sep=0.7em] & \Hm^{n+1}(Y) \arrow[r] & \cdots
+	\end{tikzcd}\end{equation*}
+
+	Barisan ini mempunyai funktorialitas berikut. Jika terdapat diagram
+	komutatif dalam $\cate{C}(\mathcal{A})$ yang baris-barisnya eksak,
+% segment-id: o014.li2.chapter3.abelian-category-complexes.g003
+	\[\begin{tikzcd}[row sep=small]
+		0 \arrow[r] & X \arrow[r] \arrow[d] & Y \arrow[r] \arrow[d] & Z \arrow[d] \arrow[r] & 0 \\
+		0 \arrow[r] & \underline{X} \arrow[r] & \underline{Y} \arrow[r] & \underline{Z} \arrow[r] & 0
+	\end{tikzcd}\]
+	maka diperoleh diagram komutatif
+% segment-id: o014.li2.chapter3.abelian-category-complexes.g004
+	\[\begin{tikzcd}[column sep=small, row sep=small]
+		\cdots \arrow[r] & \Hm^n(X) \arrow[d] \arrow[r] & \Hm^n(Y) \arrow[r] \arrow[d] & \Hm^n(Z) \arrow[r] \arrow[d] & \Hm^{n+1}(X) \arrow[r] \arrow[d] & \cdots \\
+		\cdots \arrow[r] & \Hm^n(\underline{X}) \arrow[r] & \Hm^n(\underline{Y}) \arrow[r] & \Hm^n(\underline{Z}) \arrow[r] & \Hm^{n+1}(\underline{X}) \arrow[r] & \cdots .
+	\end{tikzcd}\]
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pf003
+\begin{bukti}
+	Untuk setiap $n\in\Z$ terdapat barisan eksak
+	$\Coker(d_X^{n-1})\to\Coker(d_Y^{n-1})\to\Coker(d_Z^{n-1})\to0$.
+	Memang, ambil bagian $\Coker$ dari barisan eksak dalam
+	Teorema~\ref{prop:snake-lemma} yang diterapkan pada diagram
+% segment-id: o014.li2.chapter3.abelian-category-complexes.g005
+	\[\begin{tikzcd}
+		0 \arrow[r] & X^{n-1} \arrow[r] \arrow[d] & Y^{n-1} \arrow[r] \arrow[d] & Z^{n-1} \arrow[r] \arrow[d] & 0 \\
+		0 \arrow[r] & X^n \arrow[r] & Y^n \arrow[r] & Z^n \arrow[r] & 0
+	\end{tikzcd}\]%
+	\footnote{Catatan penerjemah (O014-C043): sumber menyatakan barisan
+	$\Coker(d_X^n)\to\Coker(d_Y^n)\to\Coker(d_Z^n)\to0$, sedangkan panah
+	vertikal pada diagram yang langsung menyusul ialah $d_X^{n-1}$,
+	$d_Y^{n-1}$, dan $d_Z^{n-1}$. Target menyesuaikan indeks kokernel dengan
+	diagram; pergantian nama indeks kemudian memberikan baris berindeks $n-2$
+	yang dipakai di bawah.}
+	Dengan cara yang sama juga terdapat barisan eksak
+	$0\to\Ker(d_X^n)\to\Ker(d_Y^n)\to\Ker(d_Z^n)$. Kedua barisan itu dapat
+	ditempatkan dalam diagram komutatif dengan baris-baris eksak berikut:
+% segment-id: o014.li2.chapter3.abelian-category-complexes.g006
+	\begin{equation}\label{eqn:long-exact-sequence-ses-aux}\begin{tikzcd}
+		& \Coker(d_X^{n-2}) \arrow[r] \arrow[d] & \Coker(d_Y^{n-2}) \arrow[r] \arrow[d] & \Coker(d_Z^{n-2}) \arrow[d] \arrow[r] & 0 \\
+		0 \arrow[r] & \Ker(d_X^n) \arrow[r] & \Ker(d_Y^n) \arrow[r] & \Ker(d_Z^n) &
+	\end{tikzcd}\end{equation}
+	Panah-panah vertikal masing-masing diinduksi oleh $d_X^{n-1}$,
+	$d_Y^{n-1}$, dan $d_Z^{n-1}$, serta mempunyai faktorisasi epi--mono
+	berbentuk
+	$\Coker(d^{n-2})\stackrel{d^{n-1}}{\twoheadrightarrow}
+	\Image(d^{n-1})\hookrightarrow\Ker(d^n)$ (subskrip dihilangkan).
+
+	Menurut Lema~\ref{prop:mono-epi-ker-coker} (iii), epimorfisme
+	$\Coker(d^{n-2})\twoheadrightarrow\Image(d^{n-1})$ menentukan kernel
+	panah-panah vertikal dalam~\eqref{eqn:long-exact-sequence-ses-aux}; lalu
+	\eqref{eqn:homology-3} berturut-turut memberikan $\Hm^{n-1}(X)$,
+	$\Hm^{n-1}(Y)$, dan $\Hm^{n-1}(Z)$. Demikian pula, monomorfisme
+	$\Image(d^{n-1})\hookrightarrow\Ker(d^n)$ menentukan kokernel
+	panah-panah vertikal tersebut, yang berturut-turut memberikan $\Hm^n(X)$,
+	$\Hm^n(Y)$, dan $\Hm^n(Z)$. Penerapan Teorema~\ref{prop:snake-lemma}
+	sekarang menghasilkan morfisme penghubung
+	$\delta^{n-1}:\Hm^{n-1}(Z)\to\Hm^n(X)$ beserta bagian barisan eksak
+	panjang yang memuat suku-suku $\Hm^n$ dan $\Hm^{n-1}$. Funktorialitasnya
+	diperoleh dengan menerapkan Catatan~\ref{rem:connecting-canonical}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.d001
+\begin{definisi}[Kuasi-isomorfisme]\label{def:quasi-isomorphism}
+	\index{kuasi-isomorfisme (quasi-isomorphism)}
+	Misalkan $f:X\to Y$ merupakan morfisme dalam $\cate{C}(\mathcal{A})$.
+	Jika $\Hm^n(f)$ merupakan isomorfisme untuk setiap $n\in\Z$, maka $f$
+	disebut \emph{kuasi-isomorfisme}.
+\end{definisi}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pr004
+\begin{proposisi}\label{prop:null-homotopic-cohomology}
+	Misalkan $f:X\to Y$ merupakan morfisme dalam $\cate{C}(\mathcal{A})$ dan
+	$n\in\Z$. Jika $f$ homotopik nol, maka $\Hm^n(f)=0$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pf004
+\begin{bukti}
+	Ambil $h\in\Hom^{-1}(X,Y)$ sedemikian sehingga $f=d_Yh+hd_X$.
+	Komposisi
+	$\Ker(d_X^n)\hookrightarrow X^n\xrightarrow{h^{n+1}d_X^n}Y^n$
+	ialah nol. Di sisi lain, $d_Y^{n-1}h^n$ berfaktor melalui
+	$\Image(d_Y^{n-1})$. Kedua fakta ini bersama-sama memberikan
+	$\Hm^n(f)=0$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.co001
+\begin{korolari}
+	Untuk setiap $n\in\Z$, funktor kohomologi
+	$\Hm^n:\cate{C}(\mathcal{A})\to\mathcal{A}$ berfaktor secara unik melalui
+	$\cate{K}(\mathcal{A})$. Oleh karena itu, konsep kuasi-isomorfisme dapat
+	diperluas ke morfisme dalam $\cate{K}(\mathcal{A})$. Jika $f:X\to Y$
+	merupakan isomorfisme dalam $\cate{K}(\mathcal{A})$, maka $f$ merupakan
+	kuasi-isomorfisme.
+\end{korolari}
+
+% segment-id: o014.li2.chapter3.abelian-category-complexes.pf005
+\begin{bukti}
+	Gabungkan Proposisi~\ref{prop:homotopy-category-universal-property} dan
+	Proposisi~\ref{prop:null-homotopic-cohomology}.
+\end{bukti}

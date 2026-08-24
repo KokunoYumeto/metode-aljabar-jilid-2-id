@@ -9,11 +9,12 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 ## Status
 
 Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Batas publik ini
-mencakup Unit 001–036: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
-serta Bab 3 sampai Bagian 3.5 (`chapter3.tex` upstream baris 9–945). Pembaca
-saat ini berjumlah 219 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
-baris 946, bagian kompleks pada kategori abelian (`sec:Abel-cplx`), dan
-berlanjut dalam urutan sumber menuju keseluruhan buku resmi 650 halaman.
+mencakup Unit 001–037: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
+serta Bab 3 sampai Bagian 3.6 (`chapter3.tex` upstream baris 9–1060). Pembaca
+saat ini berjumlah 223 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
+baris 1061, hubungan kerucut pemetaan dengan barisan eksak panjang
+(`sec:cone-vs-long-exact-sequence`), dan berlanjut dalam urutan sumber menuju
+keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
 yang telah diperiksa, tetapi **belum merupakan PDF bertag** dan tidak diklaim
@@ -37,15 +38,15 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 36 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 37 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 36 unit, 1.869 segmen, dan 427 istilah dalam bentuk modular
+- `backend/`: 37 unit, 1.899 segmen, dan 427 istilah dalam bentuk modular
   (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 036, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 037, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
-`SHA256SUMS` mencatat ukuran dan SHA-256 setiap berkas publik.
+`SHA256SUMS.txt` mencatat ukuran dan SHA-256 setiap berkas publik.
 
 ## Kredit
 
@@ -55,6 +56,6 @@ pengguna. Semua perubahan dirilis di bawah CC BY 4.0 dengan atribusi kepada
 sumber.
 
 Provenans produksi: terjemahan Bahasa Indonesia, rekonsiliasi terminologi,
-metadata, backend modular, dan QA diproduksi dengan **OpenAI Codex
-gpt-5.6-sol, Ultra**, atas arahan pengguna. Pengungkapan ini tidak menggantikan
-kredit Wen-Wei Li sebagai penulis karya sumber atau kredit komponen lain.
+metadata, backend modular, dan QA diproduksi dengan **OpenAI Codex gpt-5.6-sol, Ultra**,
+atas arahan pengguna. Pengungkapan ini tidak menggantikan kredit Wen-Wei Li
+sebagai penulis karya sumber atau kredit komponen lain.

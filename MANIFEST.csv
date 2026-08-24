@@ -1,14 +1,14 @@
 path,bytes,sha256,role
 ".gitattributes",45,8df22cc43d34bc5cf0e2ae4d1cd11a28ad8073b0e53f3ad51d1d693516d12b32,repository_metadata
 ".gitignore",84,41992fe868509124ac7e46ace8f46fd857fb490ea314bef81f99e4f59f10e22d,repository_metadata
-"artifacts/metode-dalam-aljabar-jilid-2-id-cumulative.pdf",1107313,a720761eeab43f504f22af1214259c3481e377f5de3ecd3287b7aee9e71c8d2b,reader
-"backend/segments.jsonl",543445,dfdcfc54ac38ec99399c2406f5e96b75e17e802522114a06851209f8c1a31778,backend
+"artifacts/metode-dalam-aljabar-jilid-2-id-cumulative.pdf",1127663,27e07599542a5994f99c6a43c4a8cebdfec4c2f2d3415e186fa79dea108facb0,reader
+"backend/segments.jsonl",552982,4f4997e219bd1813fb6bf36331497ad4eab6dee63e8e3582d0e857f437013606,backend
 "backend/terms.csv",28724,fd71fe300455b1a24b2a2a059fb1ad39c0771245cd8c97af9284e16faabe3bd4,backend
-"backend/units.jsonl",26483,9ed6ad3dcfe91aebff97cd5e427fdbb9f511de760e0741515ecebb4cf619053c,backend
-"BUILD.md",1960,67668982791e9c0a400c041d7400f0f499031adaa5301c0cb37036325831f2c5,documentation
+"backend/units.jsonl",27700,904f3923b84594d80ea904a21476b5dd0ab18384814966661866c8f969ecdce8,backend
+"BUILD.md",1960,473a3ec893fe914f93da78b4e92858a312d7d1a9ee299c072c06844d13818c8d,documentation
 "LICENSE",18650,7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661,license
 "provenance/AUTHORITY_FILE_MANIFEST.csv",2997,24d6ad6ef29fe7038ec68c44a465f34ef0e48b5bcdce9e62a2fd7d39ea6d1c48,provenance
-"provenance/BUILD_BASELINE.md",51730,7e22c9b0b21adef036987075ff1b2991005f589364baf0821fdabaca41b29732,provenance
+"provenance/BUILD_BASELINE.md",53920,a0a1efafab9af366d1be4a99c3359333752a3db716afe7073429f0a0dd0925d4,provenance
 "provenance/COURSE_SCOPE_AND_COMPARISON.md",2688,03804e780157183f502c850ff2f540b0f9d0d382d16cf407748b8d2c55da6d47,provenance
 "provenance/CUMULATIVE_UNIT_025_FILE_MANIFEST.csv",7334,c253a6af5d63f7c2ba8c455affdf81060c90bee77dfd7eae7bb269bc8539aad4,provenance
 "provenance/CUMULATIVE_UNIT_026_FILE_MANIFEST.csv",7076,f78c35eea3f2a52ecc9d64a5f7310d158377774d30d8d2b8fcd33a65411c096d,provenance
@@ -22,6 +22,7 @@ path,bytes,sha256,role
 "provenance/CUMULATIVE_UNIT_034_FILE_MANIFEST.csv",8966,edad5e9ff4ad53da1f7d73564639d964b1213f87632368c15c2b92507d4494a8,provenance
 "provenance/CUMULATIVE_UNIT_035_FILE_MANIFEST.csv",9086,0f439079634f08549d4ec6e124683469e09c4bf1392b0279f6f8b216d10794fe,provenance
 "provenance/CUMULATIVE_UNIT_036_FILE_MANIFEST.csv",9209,faf3efbe6230831d34da7dd5a74e35b1abb683ac4f6f8e3e993b844866af86a9,provenance
+"provenance/CUMULATIVE_UNIT_037_FILE_MANIFEST.csv",9483,46d35857206375e14e1810289633b74fa52031132d7a115c4783c59ef8d894d0,provenance
 "provenance/CURRENT_CURSOR.json",8179,5ff6f98e3d6d221cf2157c92ee222f6de64f677a5a3d3f9a0f83a69d1ef99b03,provenance
 "provenance/CURRENT_STATE.md",26176,28ab845c9ca9df5fb0560d349be7448f34abf7b55820cbddb8e8c8fc91daaa4e,provenance
 "provenance/DECISION_LOG.md",116089,ca0864895acd1d5ea4e9f783b513aa352604f53c349c36f033c4a70e0ea5c3ee,provenance
@@ -29,7 +30,7 @@ path,bytes,sha256,role
 "provenance/PRODUCTION_GOAL.md",4570,83637d87766b1b556b2b454c2404515bda54eb944a503cf99e8abe1e9ea91e57,provenance
 "provenance/RIGHTS_AND_COMPONENTS.md",2622,77bee51fc394e93045aca52f7d82ac26ec120728e596c270d1aaab2b55672bf4,provenance
 "provenance/SOURCE_AUTHORITY.md",3124,c86667c0ce238b0fcde9b652a6bbbf7d4ac5a8fdd869201bc2d0199e17ca16dd,provenance
-"provenance/SOURCE_CORRECTIONS.csv",25459,1f776e1f4186ed68fb76c2395253fbb86ecc95eed078bc56cf349fd9a7414c3c,provenance
+"provenance/SOURCE_CORRECTIONS.csv",28407,505dbaf4a3a719facf0ff0986a1fe1e284414aefd0c6b0769c841ad081f94db9,provenance
 "provenance/TERMINOLOGY_O013_O014.csv",69146,c148e22d102db93b359ef7d4d7341dc5953cf0747fc34af4e587e3c60ca7e4f4,provenance
 "provenance/UNIT_025_QA.md",9184,2ad42b5a244cdf54134806a586b5cdcb2b2db3febe05e35e12a5e7abb572d7c2,provenance
 "provenance/UNIT_026_QA.md",7491,2bb2a8d1c3a352ba68f5adb9d5f02a7ca9a4de5352c6ff724b2aff33db0c2abf,provenance
@@ -43,7 +44,8 @@ path,bytes,sha256,role
 "provenance/UNIT_034_QA.md",7387,db34ae09be27c2a6173ba0966df3a72e8002a89235ed5305e8d1b0eb24f822aa,provenance
 "provenance/UNIT_035_QA.md",7537,8970a0179ec41cc94ed10dea56557f777e31d909e44bdae2bcd4067d3cc8391a,provenance
 "provenance/UNIT_036_QA.md",9198,126ff3267e7dd55b943a6277d72525dde3b5abe51cbf0279229de8063cf7859b,provenance
-"README.md",2896,e32b6143184b0152b7e1dd56461166daded95837bf252cdddbfa77c544585df3,documentation
+"provenance/UNIT_037_QA.md",8548,7ea0827f6b28949cccda14231ff6217be51f10c1c766ba3743e37426e7bd6315,provenance
+"README.md",2937,af8297377480870f3ce43851adcc45332d9be4650b85882590ea262bede7d1ee,documentation
 "source/AJbook2.cls",13852,d671788b2a9f24d1a8a7227144f9d8677622a50dbce097baaf632d880b0d0e29,source
 "source/Al-jabr-2-id-cumulative-through-unit-031.tex",8571,7367d1ed75cab76e4d73fab776289dc59d0b89c33d35ff3d7a6553825714050b,source
 "source/Al-jabr-2-id-cumulative-through-unit-032.tex",8615,986c92fa9072265b48d37fe5a13ab6510b37ea0b5f72d91642723cd751c1924c,source
@@ -51,7 +53,8 @@ path,bytes,sha256,role
 "source/Al-jabr-2-id-cumulative-through-unit-034.tex",8667,5c7838c25c23943f5d6832588535fd1e73d38c0d89db3dd79a284b4ff0dc310f,source
 "source/Al-jabr-2-id-cumulative-through-unit-035.tex",8693,2bfde7d988b5dc4c0c21f44e19c1386eaa891c6d7301d7685b6570edd2f17361,source
 "source/Al-jabr-2-id-cumulative-through-unit-036.tex",8719,9a0e61ae42f3fb7e2a0d081b60e82f3a00e504eea85a7f1cdaa7a93af9ca1f75,source
-"source/Al-jabr-2-id-cumulative.tex",8719,9a0e61ae42f3fb7e2a0d081b60e82f3a00e504eea85a7f1cdaa7a93af9ca1f75,source
+"source/Al-jabr-2-id-cumulative-through-unit-037.tex",8746,76229abbc9650f0d453a95b120b55e45406abdce8a4847ae02aa6ee20a311584,source
+"source/Al-jabr-2-id-cumulative.tex",8746,76229abbc9650f0d453a95b120b55e45406abdce8a4847ae02aa6ee20a311584,source
 "source/ccby.png",12588,633aae44a5d5b8915debc82f56a8e05c1b62b567b1aefeabc18617b81d8a04a9,source
 "source/chapter1-unit-008.tex",6636,76f91855c7a199789f70d9741b4aafcaaa10df63f4d3115dbdc3284a662d1dac,source
 "source/chapter1-unit-009.tex",13800,ede78ab615ad672a6655780041c70c07d9bfcc34ce54d7044e004c5437728a11,source
@@ -82,6 +85,7 @@ path,bytes,sha256,role
 "source/chapter3-unit-034.tex",24865,8cd871b192324139083c3a3bd206418b37b0d9bceede23db6279c223f0b6da03,source
 "source/chapter3-unit-035.tex",10449,e0b892cb1be0a68e67a7e88dcb3b1c9fe6346a26811feb426b540a0be98c804f,source
 "source/chapter3-unit-036.tex",28124,d36274b3f84495b1a28608b9f95f7e2d173afe73e84b38f408b265819c9bcc3f,source
+"source/chapter3-unit-037.tex",13925,e6078b3d29464c49f90f9586aa44448da806efc41017b610bf2e2f3715583065,source
 "source/font-setup-id.tex",1785,c1e291a96382f8539a65363f82139333e15840e3d080b675778175a3e60b9805,source
 "source/myarrows.sty",3651,9641d56b1d7659da85360ebabb46eddd203d403bf257eaf82541f21d39b0a809,source
 "source/mycommand.sty",7883,a0ee58270f72078a71c065fda51b027bec7b40fc49721997d996c1c10683496a,source
@@ -100,5 +104,6 @@ path,bytes,sha256,role
 "source/references-cumulative-through-unit-034.bib",6649,a7ec7fa3df2ad91a8d13f8ed552e51e5c79ed64896e07dd68d4bd58b90ad2019,source
 "source/references-cumulative-through-unit-035.bib",6649,a7ec7fa3df2ad91a8d13f8ed552e51e5c79ed64896e07dd68d4bd58b90ad2019,source
 "source/references-cumulative-through-unit-036.bib",6649,a7ec7fa3df2ad91a8d13f8ed552e51e5c79ed64896e07dd68d4bd58b90ad2019,source
+"source/references-cumulative-through-unit-037.bib",6649,a7ec7fa3df2ad91a8d13f8ed552e51e5c79ed64896e07dd68d4bd58b90ad2019,source
 "source/references-cumulative.bib",6649,a7ec7fa3df2ad91a8d13f8ed552e51e5c79ed64896e07dd68d4bd58b90ad2019,source
 "source/titles-setup.tex",6614,9dc217a4bc566d91526ce69ee1a7675f6136d66c532525d2e2c7797bde1b088d,source
