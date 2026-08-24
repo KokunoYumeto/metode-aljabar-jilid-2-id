@@ -14,7 +14,7 @@ math.algebra.tensor_product,tensor product,hasil kali tensor,produk tensor,,rese
 math.analysis.completion,completion,pelengkapan,kompletisasi,,reserved_shared_id,O013 coordination; kompletisasi search variant
 math.algebra.submodule,submodule,submodul,,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.algebra.quotient_module,quotient module,modul kuosien,modul hasil bagi,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
-math.algebra.module_homomorphism,module homomorphism,homomorfisme modul,,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
+math.algebra.module_homomorphism,module homomorphism,homomorfisme modul,homomorfisma modul,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite; Suryanto et al. 2016 official UNDIP witness attests homomorfisma modul; preferred form retained
 math.category.morphism,morphism,morfisme,morfisma,,reserved_shared_id,Use morfisme unless O013 later overrides globally; ITB 2012 comparator attests morfisma
 math.category.kernel,kernel,kernel,kern,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
 math.category.cokernel,cokernel,kokernel,kokern,o014.aljabr2.prelude.linear-algebra,reserved_shared_id,O013 prerequisite
@@ -96,7 +96,7 @@ publishing.modular_writing,modular writing,penulisan modular,,o014.aljabr2.prelu
 pedagogy.optional_reading,optional reading,bacaan pilihan,bacaan opsional,o014.aljabr2.prelude.reader-guide,o014_new,
 pedagogy.reading_guidance,reading guidance,Petunjuk Bacaan,panduan membaca,o014.aljabr2.prelude.reader-guide,o014_new,Formal recurring source heading
 math.category.category_theory,category theory,teori kategori,,o014.aljabr2.prelude.reader-guide,o014_new,
-math.category.object,object,objek,,o014.aljabr2.prelude.reader-guide,o014_new,
+math.category.object,object,objek,obyek,o014.aljabr2.prelude.reader-guide,o014_new,Suryanto et al. 2016 official UNDIP witness attests obyek; preferred form retained
 math.set_theory.set,set,himpunan,,o014.aljabr2.prelude.reader-guide,o014_new,
 math.set_theory.class,class,kelas,,o014.aljabr2.prelude.reader-guide,o014_new,
 math.set_theory.proper_class,proper class,kelas sejati,,o014.aljabr2.prelude.reader-guide,o014_provisional,English gloss retained at first use
@@ -182,10 +182,10 @@ math.category.product,categorical product,produk,hasil kali,o014.aljabr2.prelude
 math.category.coproduct,categorical coproduct,koproduk,,o014.aljabr2.prelude.conventions,o014_new,Object-level defining table at source 444-447
 math.algebra.direct_sum,direct sum,jumlah langsung,,o014.aljabr2.prelude.conventions,o014_new,First use at source 450
 math.category.yoneda_embedding,Yoneda embedding,pembenaman Yoneda,,o014.aljabr2.prelude.conventions,o014_new,First use at source 452
-math.category.terminal_object,terminal object,objek terminal,,o014.aljabr2.prelude.conventions,o014_new,Defining description item at source 456
-math.category.initial_object,initial object,objek awal,objek inisial,o014.aljabr2.prelude.conventions,o014_new,Defining description item at source 457
-math.category.zero_object,zero object,objek nol,,o014.aljabr2.prelude.conventions,o014_new,Indexed defining item at source 458-459
-math.category.zero_morphism,zero morphism,morfisme nol,,o014.aljabr2.prelude.conventions,o014_new,Defining item at source 458
+math.category.terminal_object,terminal object,objek terminal,obyek terminal,o014.aljabr2.prelude.conventions,o014_new,Defining description item at source 456; Suryanto et al. 2016 official UNDIP witness attests obyek terminal; preferred form retained
+math.category.initial_object,initial object,objek awal,objek inisial; obyek inisial,o014.aljabr2.prelude.conventions,o014_new,Defining description item at source 457; Suryanto et al. 2016 official UNDIP witness attests obyek inisial; existing objek inisial variant and preferred form retained
+math.category.zero_object,zero object,objek nol,obyek nol,o014.aljabr2.prelude.conventions,o014_new,Indexed defining item at source 458-459; Suryanto et al. 2016 official UNDIP witness attests obyek nol; preferred form retained
+math.category.zero_morphism,zero morphism,morfisme nol,morfisma nol,o014.aljabr2.prelude.conventions,o014_new,Defining item at source 458; Suryanto et al. 2016 official UNDIP witness attests morfisma nol; preferred form retained
 math.category.fiber_product,fiber product,produk serat,hasil kali serat,o014.aljabr2.prelude.conventions,o014_new,Defining table at source 467-470
 math.category.fiber_coproduct,fiber coproduct,koproduk serat,,o014.aljabr2.prelude.conventions,o014_new,Defining table at source 471-474
 math.category.pullback,pullback,tarik balik,diagram tarik balik,o014.aljabr2.prelude.conventions,o014_provisional,Indexed diagram term at source 487; English gloss retained
@@ -410,3 +410,8 @@ math.homological.mittag_leffler_condition,Mittag-Leffler condition,syarat Mittag
 math.homological.k_injective_complex,K-injective complex,kompleks K-injektif,,o014.aljabr2.chapter3.overview,o014_new,Kompleks dengan sifat injektivitas homotopis secara keseluruhan.
 math.homological.k_projective_complex,K-projective complex,kompleks K-projektif,,o014.aljabr2.chapter3.overview,o014_new,Kompleks dengan sifat projektivitas homotopis secara keseluruhan.
 math.homological.mapping_cylinder,mapping cylinder,silinder pemetaan,,o014.aljabr2.chapter3.overview,o014_new,Konstruksi kompleks yang berpasangan dengan kerucut pemetaan.
+math.algebra.graded_object,graded object,objek bergradasi,objek berderajat,o014.aljabr2.chapter3.complexes-over-additive-categories,o014_new,Objek dalam kategori produk berindeks derajat; jangan campurkan pergeseran tanpa tanda T dengan pergeseran kompleks bertanda [n].
+math.algebra.differential_graded_object,differential graded object,objek diferensial bergradasi,objek dg,o014.aljabr2.chapter3.complexes-over-additive-categories,o014_new,Objek bergradasi X dengan diferensial d:X ke TX yang memenuhi (Td)d=0.
+math.algebra.bigraded_object,bigraded object,objek bergradasi ganda,objek bigradasi,o014.aljabr2.chapter3.complexes-over-additive-categories,o014_new,Kasus objek bergradasi Z pangkat m dengan m=2.
+math.homological.complex_category,category of complexes,kategori kompleks,kategori kompleks-kompleks,o014.aljabr2.chapter3.complexes-over-additive-categories,o014_new,Kategori C(A) yang objeknya kompleks dan morfismenya morfisme kompleks.
+math.homological.concentrated_complex,complex concentrated in a degree,kompleks terkonsentrasi,kompleks yang terkonsentrasi pada suatu derajat,o014.aljabr2.chapter3.complexes-over-additive-categories,o014_new,Kompleks S[-n] menempatkan S hanya pada derajat n dan nol pada derajat lain.

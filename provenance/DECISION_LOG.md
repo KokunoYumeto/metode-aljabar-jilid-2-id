@@ -1534,3 +1534,123 @@ bytes, is 8,285 bytes, SHA-256
 and verified with zero mismatch at admission. The next frozen unit is
 `chapter3.tex` lines 57--162, `sec:additive-cplx`; this checkpoint does not
 complete the corpus.
+
+## D080 - Unit 031 public lineage advancement (2026-08-23)
+
+Advance the existing GitHub edition repository through Unit 031 at public
+`main` commit `b194a5ff973e53790564860c9054e5b8736bb2f2`, tree
+`1d3728351c64dab3cee68784986aae89ca7db377`. The immutable 80-file archive is
+1,401,778 bytes, SHA-256
+`a875a5c1c118d0a0545934aea16b9402a355f74411190bb6080598637bdd4da0`.
+Its 78 manifest payload rows list 2,600,853 bytes. Anonymous repository,
+commit, raw-file, archive, manifest, checksum, README, and reader readback all
+passed with zero mismatch. The sanitized receipt is
+`release/github/GITHUB_PUBLICATION_RECEIPT.json`, 4,740 bytes, SHA-256
+`82d393ca2ca3998c11cd6055cfdc63c2270254a5b6d0f19b0bc3ca14b5394f66`.
+
+Advance the same Zenodo concept lineage 22059751 from record 22072361 to
+record 22072584, DOI `10.5281/zenodo.22072584`, version `unit-031`. Its seven
+reader-first files total 1,340,041 bytes. Every anonymous file download matches
+the local bytes and SHA-256; record API/page, DOI, and concept-latest readbacks
+all return HTTP 200. The source/backend and QA/provenance packages freeze
+exactly 31 units, 1,600 segments, 411 terms, and source through Unit 031, with
+no Unit 032 material or restricted terminology witness. Metadata preserves the
+exact title, CC BY 4.0, Indonesian language, author/source credit,
+non-endorsement, one organization contributor entry, and exact model note,
+without organization branding in the title or descriptive prose. The sanitized
+receipt is `release/zenodo/unit-031/ZENODO_PUBLICATION_RECEIPT.json`, 7,232
+bytes, SHA-256
+`0aa083c4a4789d8ebe30e7b8873fc71c904e4552aaa9e3d203c4b0902c387d7d`.
+No competing concept or unpublished draft was created. Publication does not
+complete the corpus.
+
+## D081 - Supplemental Indonesian category-theory terminology QA (2026-08-24)
+
+Reaffirm the earlier bounded arXiv-first result before admitting Unit 032:
+official arXiv searches did not locate an Indonesian-language category theory,
+homological algebra, or adjacent algebra paper with downloadable TeX. This is
+a bounded negative result, not a claim of exhaustive absence. Apply the
+instructed fallback to the official Universitas Diponegoro journal PDF by Agus
+Suryanto, Nikken Prima Puspita, and Robertus Heri S. U., “Fungtor Kontravarian
+dan Kategori Abelian,” *Jurnal Matematika* 5(2), 2016. The nine-page PDF is
+429,219 bytes, SHA-256
+`d22cf3c40242359a2d00eb726697e08b6ad29c647a0309cbcd98914484b5f9b6`.
+All pages were rendered with MuPDF and visually inspected; the contact sheet is
+922,354 bytes, SHA-256
+`1fd4a03e0f49111e8f4fa99991e73e0ff6bb503d5c623d66b4a78bce11976718`.
+
+The witness exactly supports `kategori abelian`, `kernel`, `kokernel`,
+`produk`, and `koproduk`. Its older spellings `fungtor`, `obyek`, `morfisma`,
+and `homomorfisma` are registered only as recognition/search variants. Retain
+the coordinated preferred forms `funktor`, `objek`, `morfisme`, and
+`homomorfisme`; no translated prose or formula needs propagation. The complete
+evidence and rationale are in `controls/INDONESIAN_FIELD_TERMINOLOGY_QA.md`.
+The witness remains local QA evidence and is excluded from release payloads.
+The edition and public provenance already identify the production model
+exactly as `OpenAI Codex gpt-5.6-sol, Ultra` without displacing any source,
+author, witness-author, or human-contributor credit.
+
+## D082 - Unit 032 admission: complexes over additive categories (2026-08-24)
+
+Admit `o014.aljabr2.chapter3.complexes-over-additive-categories` as the exact
+Section 3.1 range, `chapter3.tex` lines 57--162. The normalized authority slice
+is 8,995 bytes, SHA-256
+`2f928e1ca88a032bec9c270d65604e25a38bd00ec62874562ae95a55be0ee8b5`;
+the translated target is 13,677 bytes, SHA-256
+`0ac6def5c534f07ceacfb80f29fff71b0174fffb944c0759fce1392510e3b500`;
+and its 33-record stable map is 10,336 bytes, SHA-256
+`7100b28797cf67adb12b11dc400a54d980671957bd491a053ba16702fc3c2e1f`.
+Independent review passed all 33 markers, 9 labels, 7 references, 4
+definitions, 1 lemma, 2 propositions, 2 proofs, the convention, the remark,
+all 5 displays, both TikZ-CD diagrams, both lists and all 6 items, 2 footnotes,
+11 indexes, mathematics, encoding, and naturalness. The target explicitly
+types the DG-morphism identity as `(Tf)d_X=d_Yf`. This range has no exercise,
+hint, answer, solution, citation, external figure, or external asset. No new
+source correction is required.
+
+Synchronize five newly defined concepts for graded objects, differential graded
+objects, bigraded objects, the complex category, and concentrated complexes.
+After repairing an initially detected control/backend count mismatch, both
+terminology surfaces contain exactly 416 unique matching concept IDs. The
+control ledger is 65,903 bytes, SHA-256
+`cf88447b578262f044d15ebaecd5b505b051599f90068e88099ca073c12ad777`;
+the backend terminology is 27,955 bytes, SHA-256
+`f37a93c0ad714999de14697f31b549746f52fac116aa128b600e5e4e3bbcd96a`.
+Retain the supplemental UNDIP spellings only as variants; no bulk prose change
+is warranted.
+
+The modular backend now contains 32 sequential units and 1,633 segments.
+`backend/units.jsonl` is 23,665 bytes, SHA-256
+`0212ad5888b3153a14679d27a149b518e3a9396084643228d15a6b4b2c9365e0`;
+`backend/segments.jsonl` is 477,156 bytes, SHA-256
+`8906b0d5204e12187eb198e361b91358145aee5d464b9fafb69d23a3bf049406`.
+The Unit-032 row is `translated_built_qa_passed` and has target-hash parity.
+
+The admitted shell-escape-disabled build is
+`build/cumulative-unit-032-finalA-20260823`. Biber resolves 19 citekeys;
+MakeIndex accepts 151 term and 51 symbol entries with zero rejection or
+warning; three convergence XeLaTeX passes are complete. The final log has zero
+TeX/package error, unresolved reference or citation, rerun request, overfull
+box, missing character, fatal error, or emergency stop, and 19 non-fatal
+underfull boxes. The corrected Biber invocation is recorded because an initial
+working-directory invocation could not resolve the relative bibliography; the
+final `.blg` is clean.
+
+The checkpoint and promoted cumulative reader are byte-identical: PDF 1.7,
+195 pages, 999,106 bytes, SHA-256
+`f28977200909076af2a30ea82de30985a917a5e3d62cb2f2d478502b51314ef3`.
+It is `id-ID`, unencrypted, untagged, and has 39 outline entries, 843 named
+destinations, 654 internal links, 12 HTTPS links, and 52 embedded font
+programs, with no forms, JavaScript, embedded files, structure tree, or
+MarkInfo. Physical pages 178--195, both contact sheets, and full-size pages
+185--188 passed visual inspection; blank physical pages 180 and 192 are
+intentional separators.
+
+QA receipt `qa/UNIT_032_QA.md` is 7,699 bytes, SHA-256
+`dbb770de4c12b1f884e6a487d48a2725a0e428e923951fc07c478022e579d51c`.
+The 67-row exact manifest `qa/CUMULATIVE_UNIT_032_FILE_MANIFEST.csv` lists
+5,896,555 bytes, is 8,476 bytes, SHA-256
+`d05def8f5bcff64f85a71373ecb125027baeb3892fed2e3621b592336ade913a`,
+and verifies with zero missing file, byte-count mismatch, or hash mismatch.
+The next exact cursor is `chapter3.tex` line 163, `sec:Hom-cplx`. This
+checkpoint remains partial and does not complete the corpus.

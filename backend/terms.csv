@@ -410,3 +410,8 @@ math.homological.mittag_leffler_condition,syarat Mittag-Leffler,id-ID,O014,activ
 math.homological.k_injective_complex,kompleks K-injektif,id-ID,O014,active
 math.homological.k_projective_complex,kompleks K-projektif,id-ID,O014,active
 math.homological.mapping_cylinder,silinder pemetaan,id-ID,O014,active
+math.algebra.graded_object,objek bergradasi,id-ID,O014,active
+math.algebra.differential_graded_object,objek diferensial bergradasi,id-ID,O014,active
+math.algebra.bigraded_object,objek bergradasi ganda,id-ID,O014,active
+math.homological.complex_category,kategori kompleks,id-ID,O014,active
+math.homological.concentrated_complex,kompleks terkonsentrasi,id-ID,O014,active

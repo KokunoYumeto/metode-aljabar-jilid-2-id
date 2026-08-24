@@ -81,6 +81,47 @@ terurai`. The PDF is encrypted and forbids copying/printing in its permissions;
 it is therefore also strictly a local terminology witness and is excluded from
 all public payloads.
 
+## Supplemental same-field journal witness at the Unit 031/032 boundary
+
+The arXiv-first search was bounded again before Unit 032 admission. Searches
+combining Indonesian category-theory terms such as `kategori`, `funktor`,
+`kategori abelian`, `aljabar homologis`, and `kategori monoidal` did not locate
+an Indonesian-language same-field arXiv record with downloadable TeX. The result
+remains a bounded negative finding, not a proof of absence. The instructed PDF
+fallback was therefore applied to an official Indonesian mathematics-journal
+source:
+
+Agus Suryanto, Nikken Prima Puspita, and Robertus Heri S. U., “Fungtor
+Kontravarian dan Kategori Abelian,” *Jurnal Matematika* 5(2), October 2016,
+Jurusan Matematika, Universitas Diponegoro.
+
+- Official article record:
+  <https://ejournal3.undip.ac.id/index.php/matematika/article/view/13930>
+- Official PDF:
+  <https://ejournal3.undip.ac.id/index.php/matematika/article/download/13930/13466>
+- Local evidence copy:
+  `references/terminology-qa/Suryanto-Puspita-Heri-2016-Fungtor-Kontravarian-dan-Kategori-Abelian.pdf`
+- Identity: 9 pages, 429,219 bytes, SHA-256
+  `d22cf3c40242359a2d00eb726697e08b6ad29c647a0309cbcd98914484b5f9b6`.
+- Layout-preserving extracted text: 15,691 bytes, SHA-256
+  `fe8fcf391a4dc16edca2643e96b3a312ed1ecfb5b627c079ef314ddd3f6b8443`.
+- All nine pages were rendered with MuPDF and visually inspected; the 3-by-3
+  contact sheet is 922,354 bytes, SHA-256
+  `1fd4a03e0f49111e8f4fa99991e73e0ff6bb503d5c623d66b4a78bce11976718`.
+  Poppler emitted font-substitution warnings because several legacy Microsoft
+  fonts are not embedded, so the MuPDF render—not the degraded Poppler render—
+  is the visual witness.
+
+The paper repeatedly attests `kategori abelian`, `kernel`, `kokernel`, `produk`,
+and `koproduk`, exactly matching this edition. It uses the older spellings
+`fungtor`, `obyek`, `morfisma`, and `homomorfisma`; these are useful search and
+recognition variants but do not justify replacing the coordinated preferred
+forms `funktor`, `objek`, `morfisme`, and `homomorfisme`. The glossary therefore
+adds only the missing variants `obyek`, `homomorfisma modul`, `obyek terminal`,
+`obyek inisial`, `obyek nol`, and `morfisma nol`. No translated prose or formula
+requires propagation. The PDF is retained only as local QA evidence and is not
+an edition component or public-release payload.
+
 ## Comparison and decisions
 
 | Concept | Current preferred form | Witness form | Decision |
