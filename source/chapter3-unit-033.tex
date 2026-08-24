@@ -1,0 +1,376 @@
+% Unit 033 terjemahan Bahasa Indonesia dari chapter3.tex baris 163--345.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter3.hom-complex-and-homotopy
+% Cakupan: Bagian 3.2 lengkap; berhenti sebelum Bagian 3.3.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.h001
+\section{Kompleks \texorpdfstring{$\Hom$}{Hom} dan Homotopi}\label{sec:Hom-cplx}
+\hypertarget{o014.aljabr2.chapter3.hom-complex-and-homotopy}{ }
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p001
+Sebelumnya telah didefinisikan $\Hom$ di antara dua kompleks. Bagian ini
+menjelaskan cara meningkatkannya menjadi suatu kompleks, dan juga cara
+meningkatkan komposisi morfisme menjadi sejenis perkalian pada kompleks.
+Tetapkan kembali $\mathcal{A}$ sebagai kategori aditif. Jika $\Bbbk$ sebarang
+gelanggang komutatif dan $\mathcal{A}$ kategori $\Bbbk$-linear, semua
+pernyataan dalam bagian ini mempunyai versi $\Bbbk$-linear yang jelas.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p002
+Ingat bahwa pengambilan himpunan $\Hom$ memberikan funktor
+$\Hom:\mathcal{A}^{\opp}\times\mathcal{A}\to\cate{Ab}$. Notasi $\Hom$ tanpa
+superskrip merujuk pada himpunan $\Hom$ dalam $\mathcal{A}$ atau
+$\cate{C}(\mathcal{A})$; jika perlu, kategorinya dibedakan dengan subskrip.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.d001
+\begin{definisi}[Kompleks $\Hom$]\label{def:Hom-cplx}
+	\index[sym1]{Hombullet@$\Hom^{\bullet}$}
+	Misalkan $X,Y$ objek $\cate{C}(\mathcal{A})$. Untuk setiap $n\in\Z$,
+	definisikan
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q001
+	\[ \Hom^n\left(X, Y \right) := \prod_{k \in \Z} \Hom_{\mathcal{A}}\left( X^k, Y^{k+n} \right); \]
+	komposisi morfisme suku demi suku memberikan
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q002
+	\begin{equation}\label{eqn:Hom-cplx-multiplication}\begin{aligned}
+		\Hom^n \left(Y, Z \right) \times \Hom^m\left( X, Y \right) & \longrightarrow \Hom^{n+m}\left(X , Z \right) \\
+		(g, f) & \longmapsto gf := \left( g^{k+m} f^k \right)_{k \in \Z}.
+	\end{aligned}\end{equation}
+	Perhatikan bahwa $d_X=(d_X^k)_k\in\Hom^1(X,X)$, dan demikian pula untuk
+	$d_Y$. Berdasarkan definisi ini, tetapkan
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q003
+	\begin{align*}
+		d^n = d_{\Hom^\bullet(X, Y)}^n: \Hom^n\left(X, Y \right) & \longrightarrow \Hom^{n+1}\left(X, Y \right) \\
+		f & \longmapsto d_Y f - (-1)^n f d_X.
+	\end{align*}
+\end{definisi}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p003
+Operasi \eqref{eqn:Hom-cplx-multiplication} jelas asosiatif dan distributif
+terhadap penjumlahan. Diberikan morfisme $u:\underline{X}\to X$ dan
+$v:Y\to\underline{Y}$ dalam $\cate{C}(\mathcal{A})$, pandang keduanya
+masing-masing sebagai unsur $\Hom^0(\underline{X},X)$ dan
+$\Hom^0(Y,\underline{Y})$. Untuk setiap $n\in\Z$ diperoleh homomorfisme
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q004
+\begin{equation}\label{eqn:Hom-cplx-functoriality}\begin{aligned}
+	\Hom^n(u, v): \Hom^n\left( X, Y\right) & \longrightarrow \Hom^n\left(\underline{X}, \underline{Y}\right) \\
+	f & \longmapsto vfu.
+\end{aligned}\end{equation}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.dp001
+\begin{definisiproposisi}
+	\index{kompleks Hom@kompleks $\Hom$ ($\Hom$ complex)}
+	Data $\left(\Hom^n(X,Y),d^n\right)_{n\in\Z}$ di atas memberikan objek
+	dalam $\cate{C}(\cate{Ab})$, yang disebut \emph{kompleks $\Hom$}. Ketika
+	$X$ dan $Y$ bervariasi, konstruksi ini bersama
+	dengan \eqref{eqn:Hom-cplx-functoriality} memberikan funktor aditif
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q005
+	\[ \Hom^\bullet: \cate{C}(\mathcal{A})^{\opp} \times \cate{C}(\mathcal{A}) \to \cate{C}(\cate{Ab}). \]
+\end{definisiproposisi}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf001
+\begin{bukti}
+	Pertama-tama, verifikasi $d^{n+1}d^n=0$. Karena
+	$d_Y^2=0=d_X^2$, perhitungan langsung memberikan
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q006
+	\begin{align*}
+		d^{n+1} \left( d^n f \right) & = d_Y \left( d_Y f - (-1)^n f d_X \right) - (-1)^{n+1} \left( d_Y f - (-1)^n f d_X \right) d_X \\
+		& = (-1)^{n+1} d_Y f d_X - (-1)^{n+1} d_Y f d_X = 0.
+	\end{align*}
+
+	Berikutnya, periksa funktorialitas. Masukkan $\Hom^\bullet(u,v)$ yang
+	didefinisikan dalam \eqref{eqn:Hom-cplx-functoriality} ke dalam diagram%
+	\footnote{Catatan penerjemah (O014-C033): sumber memberi label
+	$\Hom^{n+1}(u,v)$ pada kedua anak panah horizontal. Karena anak panah atas
+	menghubungkan suku berderajat $n$, target memulihkan labelnya menjadi
+	$\Hom^n(u,v)$; anak panah bawah tetap berlabel $\Hom^{n+1}(u,v)$.}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.g001
+	\[\begin{tikzcd}
+		\Hom^n\left( X^\bullet, Y^\bullet \right) \arrow[d, "{d^n}"'] \arrow[r, "{\Hom^n(u, v)}" inner sep=0.7em] & \Hom^n\left( \underline{X}^\bullet, \underline{Y}^\bullet \right) \arrow[d, "{\underline{d}^n}"] \\
+		\Hom^{n+1}\left( X^\bullet, Y^\bullet \right) \arrow[r, "{\Hom^{n+1}(u, v)}"' inner sep=0.7em] & \Hom^{n+1}\left( \underline{X}^\bullet, \underline{Y}^\bullet \right) ;
+	\end{tikzcd}\]
+	Karena $d_Xu=ud_{\underline{X}}$ dan $vd_Y=d_{\underline{Y}}v$, diagram
+	ini jelas komutatif.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p004
+Selain itu, diferensial $d_{\Hom^\bullet(X,Y)}$ kompatibel dengan pergeseran.
+Pembuktiannya jauh lebih mudah daripada pernyataannya.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.le001
+\begin{lema}\label{prop:Hom-cplx-d-translate}
+	Misalkan $n,m\in\Z$ dan $f\in\Hom^n(X,Y)$. Identifikasikan $f$ dengan
+	unsur $\underline{f}=(f^k)_k$ dari $\Hom^{n-m}(X,Y[m])$, atau dengan
+	unsur $\overline{f}=(f^{k-m})_k$ dari $\Hom^{n-m}(X[-m],Y)$. Maka
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q007
+	\begin{align*}
+		d^{n-m}_{\Hom^\bullet(X, Y[m])} \underline{f} & \xlongequal{\text{diidentifikasi dengan}} (-1)^m d^n_{\Hom^\bullet(X, Y)} f, \\ d^{n-m}_{\Hom^\bullet(X[-m], Y)} \overline{f} & \xlongequal{\text{diidentifikasi dengan}} d^n_{\Hom^\bullet(X, Y)} f.
+	\end{align*}
+	Akibatnya,
+	$\Hom^\bullet(X,Y[m])=\Hom^\bullet(X,Y)[m]\simeq
+	\Hom^\bullet(X[-m],Y)$.
+\end{lema}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf002
+\begin{bukti}
+	Sebagai contoh, untuk persamaan pertama,
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q008
+	\[ (d^{n-m}_{\Hom^\bullet(X, Y[m])} \underline{f})^k = d_{Y[m]}^{k+n-m} \underline{f}^k - (-1)^{n-m} \underline{f}^{k+1} d_X^k : X^k \to Y^{k+n+1}, \]
+	dan ruas ini juga sama dengan
+	$(-1)^m\left(d_Y^{k+n}f^k-(-1)^nf^{k+1}d_X^k\right)$. Argumen untuk
+	$\overline{f}$ serupa: walaupun kasus $\overline{f}$ tidak mempunyai
+	tanda $(-1)^m$, tetap ada isomorfisme kompleks $\Hom$; lihat catatan kaki
+	pada Definisi~\ref{def:translation-functor}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p005
+Operasi perkalian yang didefinisikan dalam
+\eqref{eqn:Hom-cplx-multiplication} juga memenuhi aturan Leibniz.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.le002
+\begin{lema}\label{prop:Hom-cplx-Leibniz}
+	Misalkan $X,Y,Z$ kompleks dan ambil
+	\[
+		(g,f)\in\Hom^n(Y,Z)\times\Hom^m(X,Y).
+	\]
+	Untuk perkalian dalam \eqref{eqn:Hom-cplx-multiplication}, berlaku persamaan
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q009
+	\[
+		\begin{aligned}
+			d^{n+m}(gf)
+				&= (d^n g)f \\
+				&\quad + (-1)^n g(d^m f)
+		\end{aligned}
+	\]
+	di $\Hom^{n+m+1}(X,Z)$.
+\end{lema}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf003
+\begin{bukti}
+	Lakukan perhitungan langsung; rinciannya diserahkan kepada pembaca.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.le003
+\begin{lema}\label{prop:Hom-as-cocycle}
+	Misalkan $n\in\Z$ dan $f\in\Hom^n(X,Y)$. Maka $d^nf=0$ jika dan hanya
+	jika $f\in\Hom(X,Y[n])$.
+\end{lema}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf004
+\begin{bukti}
+	Melalui Lema~\ref{prop:Hom-cplx-d-translate}, identifikasikan $f$ dengan
+	unsur $\Hom^0(X,Y[n])$, sehingga masalahnya tereduksi pada kasus $n=0$.
+	Jelas bahwa $d^0f=0\iff d_Yf=fd_X$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.d002
+\begin{definisi}\label{def:homotopy}
+	\index{homotopi (homotopy)}
+	\index{homotopik nol (null-homotopic)}
+	Misalkan $n\in\Z$. Pandang $\Hom(X,Y[n])$ sebagai subhimpunan
+	$\Hom^n(X,Y)$.
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.l001
+	\begin{compactitem}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.i001
+		\item Jika $f,g\in\Hom(X,Y[n])$, sedangkan
+		$h\in\Hom^{n-1}(X,Y)$ (atau secara ekuivalen
+		$h\in\Hom^{-1}(X,Y[n])$)%
+		\footnote{Catatan penerjemah (O014-C034): sumber tidak menyatakan
+		derajat $h$, padahal $d^{n-1}h$ menuntut
+		$h\in\Hom^{n-1}(X,Y)$. Target mengikat tipenya secara eksplisit.}
+		memenuhi $g-f=d^{n-1}h$, maka $h$ disebut
+		suatu \emph{homotopi} dari $f$ ke $g$.
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.i002
+		\item Untuk $f,g$ seperti di atas, jika terdapat suatu homotopi dari
+		$f$ ke $g$, maka $f$ dan $g$ disebut homotopik. Morfisme $f$ yang
+		homotopik dengan morfisme nol disebut \emph{homotopik nol}.
+	\end{compactitem}
+
+	Sebagai kasus khusus $n=0$, morfisme $f\in\Hom(X,Y)$ homotopik nol jika
+	dan hanya jika terdapat keluarga morfisme $h^m:X^m\to Y^{m-1}$ sedemikian
+	sehingga
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q010
+	\[ \forall m \in \Z, \quad f^m = d_Y^{m-1} h^m + h^{m+1} d_X^m . \]
+\end{definisi}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p006
+Relasi homotopi merupakan relasi ekuivalensi.
+Lema~\ref{prop:Hom-as-cocycle}
+memberikan persamaan penting berikut dalam $\cate{Ab}$ (atau
+$\Bbbk\dcate{Mod}$):
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q011
+\[ \Hm^n\left(\Hom^\bullet(X, Y), d^\bullet \right) = \Hom\left(X, Y[n]\right) \big/ \{\text{morfisme homotopik nol} \}. \]
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p007
+Hasil berikut menunjukkan bahwa morfisme homotopik nol bukan hanya tertutup
+terhadap penjumlahan, melainkan juga membentuk suatu ideal.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.le004
+\begin{lema}\label{prop:null-homotopic-composition}
+	Misalkan $X\xrightarrow{f}Y[m]$ dan $Y\xrightarrow{g}Z[n]$ morfisme di
+	antara kompleks. Jika $f$ atau $g$ homotopik nol, maka
+	$g[m]\circ f:X\to Z[n+m]$ homotopik nol.
+\end{lema}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf005
+\begin{bukti}
+	Superskrip pada $d$ dihilangkan di bawah ini. Misalkan $f=dh$, dengan
+	$h\in\Hom^{-1}(X,Y[m])$. Dengan memahami komposisi di dalam
+	$\Hom^\bullet$, kita dapat menyingkat $g[m]\circ f$ menjadi $gf$.
+	Lema~\ref{prop:Hom-cplx-Leibniz} mengimplikasikan
+	$d(gh)=(dg)h+(-1)^ng(dh)=(-1)^ngf$, sehingga $gf$ homotopik nol. Kasus
+	$g=dh$ serupa.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p008
+Dengan menghilangkan subskrip pada $d_{\Hom^\bullet}$,
+Lema~\ref{prop:Hom-cplx-Leibniz} dan
+Lema~\ref{prop:null-homotopic-composition} menunjukkan bahwa perkalian pada
+$\Hom^\bullet$ dalam \eqref{eqn:Hom-cplx-multiplication} menginduksi
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q012
+\begin{equation}\label{eqn:homotopy-cat-cmposition}
+	\Hm^n\left(\Hom^\bullet(Y, Z) \right) \times \Hm^m\left(\Hom^\bullet(X, Y) \right) \to \Hm^{n+m}\left( \Hom^\bullet(X, Z) \right) ,
+\end{equation}
+dan operasi biner \eqref{eqn:homotopy-cat-cmposition} mewarisi sifat asosiatif
+dan distributif terhadap penjumlahan dari
+\eqref{eqn:Hom-cplx-multiplication}.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.d003
+\begin{definisi}\label{def:cplx-homotopy-cat}
+	\index[sym1]{KA@$\cate{K}(\mathcal{A})$}
+	Definisikan kategori $\cate{K}(\mathcal{A})$ dari
+	$\cate{C}(\mathcal{A})$ dengan menetapkan
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q013
+	\begin{align*}
+		\Obj\left( \cate{K}(\mathcal{A}) \right) & := \Obj\left( \cate{C}(\mathcal{A}) \right), \\
+		\Hom_{\cate{K}(\mathcal{A})}\left( X, Y \right) & := \Hm^0\left( \Hom^\bullet\left( X, Y \right), d^\bullet_{\Hom} \right),
+	\end{align*}
+	dengan komposisi morfisme ditentukan oleh
+	\eqref{eqn:homotopy-cat-cmposition} untuk $n=m=0$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p009
+Perhatikan bahwa $\cate{K}(\mathcal{A})$ merupakan kategori aditif:
+penjumlahan pada himpunan morfisme sudah jelas, objek nol berasal dari objek
+nol dalam $\cate{C}(\mathcal{A})$, sedangkan keberadaan produk (atau
+koproduk) berasal dari sifat yang lebih umum berikut. Terdapat isomorfisme
+alami
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q014
+\begin{align*}
+	\Hom_{\cate{K}(\mathcal{A})}\left( X, \prod_{i \in I} Y_i \right) & \simeq \prod_{i \in I} \Hom_{\cate{K}(\mathcal{A})}(X, Y_i) \\
+	\text{atau}\quad \Hom_{\cate{K}(\mathcal{A})}\left( \coprod_{i \in I} X_i, Y \right) & \simeq \prod_{i \in I} \Hom_{\cate{K}(\mathcal{A})}(X_i, Y),
+\end{align*}
+dengan $I$ sebarang himpunan, asalkan $\prod_{i\in I}Y_i$ (atau
+$\coprod_iX_i$) ada pada tingkat $\cate{C}(\mathcal{A})$. Karena pengambilan
+produk dan pengambilan $\Hm^0$ berkomutasi dalam $\cate{C}(\cate{Ab})$,
+semuanya tereduksi pada isomorfisme kompleks $\Hom$ yang jelas:
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q015
+\begin{align*}
+	\Hom^\bullet\left(X, \prod_i Y_i\right) & \simeq \prod_i \Hom^\bullet(X, Y_i) \\
+	\text{atau}\quad \Hom^\bullet\left(\coprod_i X_i, Y\right) & \simeq \prod_i \Hom^\bullet(X_i, Y).
+\end{align*}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p010
+Funktor pergeseran $[n]$ menginduksi automorfisme kategori aditif
+$\cate{K}(\mathcal{A})$, yang tetap dinotasikan dengan $[n]$. Funktor aditif
+$\cate{C}(\mathcal{A})\to\cate{K}(\mathcal{A})$ merupakan identitas pada
+himpunan objek dan pemetaan kuosien pada himpunan morfisme. Sifat universal
+berikut sudah jelas.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pr001
+\begin{proposisi}\label{prop:homotopy-category-universal-property}
+	Jika $\mathcal{B}$ kategori-$\cate{Ab}$ dan funktor aditif
+	$F:\cate{C}(\mathcal{A})\to\mathcal{B}$ memetakan setiap morfisme
+	homotopik nol ke morfisme nol, maka $F$ secara unik berfaktor melalui
+	$\cate{C}(\mathcal{A})\to\cate{K}(\mathcal{A})$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p011
+Latihan pada bab berikutnya akan menunjukkan bahwa $\cate{K}(\mathcal{A})$
+pada umumnya bukan kategori abelian.
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.r001
+\begin{catatan}\index{kompleks Hom}\index[sym1]{Homlbullet@$\Hom_\bullet$}
+	\label{rem:Hom-chain-cplx}
+	Untuk kompleks rantai (Catatan~\ref{rem:cochain-vs-chain}) juga terdapat
+	$\Hom_\bullet$ yang bersesuaian:
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q016
+	\begin{gather*}
+		\Hom_n(X, Y) := \prod_{k \in \Z} \Hom\left(X_k, Y_{k+n} \right), \\
+		d_n f = d_Y f - (-1)^n f d_X, \quad f \in \Hom_n(X, Y).
+	\end{gather*}
+	Sesungguhnya, gunakan cara dalam Catatan~\ref{rem:cochain-vs-chain} dengan
+	menetapkan $X^n=X_{-n}$, $d^n=d_{-n}$, dan seterusnya. Maka
+	$\left(\Hom_n(X,Y),d_n\right)_n$ tepat merupakan kompleks rantai yang
+	bersesuaian dengan $\left(\Hom^n(X,Y),d^n\right)_n$:
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q017
+	\begin{align*}
+		\Hom_n\left(X, Y \right) & = \prod_{k \in \Z} \Hom\left( X_k, Y_{n+k} \right) \xlongequal{h = -k} \prod_{h \in \Z} \Hom\left(X^h, Y^{h-n} \right) \\
+		& = \Hom^{-n} \left(X, Y\right),
+	\end{align*}
+	dan hubungan antara $d_n$ dan $d^{-n}$ juga serupa. Tentu saja, untuk
+	kompleks rantai juga terdapat versi $\cate{K}(\mathcal{A})$ yang
+	bersesuaian.
+\end{catatan}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p012
+Diberikan funktor aditif $F:\mathcal{A}\to\mathcal{B}$ di antara kategori
+aditif, untuk setiap $X,Y\in\Obj(\cate{C}(\mathcal{A}))$, penerapan $F$ suku
+demi suku memberikan morfisme dalam $\cate{C}(\cate{Ab})$
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q018
+\begin{align*}
+	\Hom^\bullet\left(X, Y\right) & \to \Hom^\bullet\left(\cate{C}F(X), \cate{C}F(Y) \right) \\
+	(f^k)_{k \in \Z}\in\Hom^r(X,Y) & \mapsto
+	(F(f^k))_{k \in \Z}\in
+	\Hom^r\left(\cate{C}F(X),\cate{C}F(Y)\right) \qquad (r\in\Z).
+\end{align*}
+Dengan mengambil $\Hm^0$ pada kedua ruas, diperoleh
+\[
+	\Hom_{\cate{K}(\mathcal{A})}(X,Y)\longrightarrow
+	\Hom_{\cate{K}(\mathcal{B})}
+	\bigl(\cate{C}F(X),\cate{C}F(Y)\bigr).
+\]
+Dengan demikian,
+diperoleh funktor $\cate{K}F:\cate{K}(\mathcal{A})\to
+\cate{K}(\mathcal{B})$ yang membuat diagram berikut komutatif:
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.g002
+\begin{equation}\label{eqn:KF}\begin{tikzcd}
+	\cate{C}(\mathcal{A}) \arrow[r, "{\cate{C}F}"] \arrow[d] & \cate{C}(\mathcal{B}) \arrow[d] \\
+	\cate{K}(\mathcal{A}) \arrow[r, "{\cate{K}F}"'] & \cate{K}(\mathcal{B}).
+\end{tikzcd}\end{equation}
+Baris atasnya adalah funktor pada Proposisi~\ref{prop:CA-functoriality}.
+Konstruksi-konstruksi ini kompatibel dengan pasangan adjoin.
+\index[sym1]{KF@$\cate{K}F$}
+
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pr002
+\begin{proposisi}\label{prop:KF-adjoint}
+	Tinjau pasangan adjoin $(F,G,\varphi)$, dengan
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.g003
+	$\begin{tikzcd}
+		F: \mathcal{A} \arrow[shift left, r] & \mathcal{B} \arrow[shift left, l] : G
+	\end{tikzcd}$
+	funktor-funktor aditif di antara kategori aditif. Maka
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.g004
+	\[\begin{tikzcd}
+		\cate{K}F: \cate{K}(\mathcal{A}) \arrow[shift left, r] & \cate{K}(\mathcal{B}) \arrow[shift left, l] : \cate{K}G
+	\end{tikzcd}\]
+	juga secara alami merupakan pasangan adjoin.
+\end{proposisi}
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf006
+\begin{bukti}
+	Data pasangan adjoin $\varphi$ merupakan keluarga bijeksi
+	$\varphi_{A,B}:\Hom_{\mathcal{B}}(FA,B)\simeq
+	\Hom_{\mathcal{A}}(A,GB)$ yang funktorial dalam $A$ dan $B$.
+	Proposisi~\ref{prop:automatic-k-morphism} memastikan bahwa bijeksi-bijeksi
+	ini linear, sehingga menginduksi isomorfisme kanonik kompleks
+% segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q019
+	\[ \Hom^\bullet\left( \cate{C}F(X), Y \right) \simeq \Hom^\bullet\left( X, \cate{C}G(Y) \right). \]
+	Pada derajat $r$, isomorfisme ini memetakan
+	\[
+		(f^k)_{k\in\Z}\in\Hom^r(\cate{C}F(X),Y)
+		\longmapsto
+		(\varphi_{X^k,Y^{k+r}}(f^k))_{k\in\Z}
+		\in\Hom^r(X,\cate{C}G(Y)).
+	\]%
+	\footnote{Catatan penerjemah (O014-C035): sumber menuliskan komponen
+	sebagai $\varphi_{A,B}(f^n)$ tanpa mengikat $A$ dan $B$ pada objek
+	berderajat yang menjadi sumber dan target $f^n$. Target memakai indeks
+	derajat kompleks $r$ dan indeks keluarga $k$, sehingga komponennya
+	tertipe sebagai $\varphi_{X^k,Y^{k+r}}(f^k)$.}
+	Berdasarkan \eqref{eqn:KF}, pengambilan $\Hm^0$
+	pada kedua ruas menjadikan $\cate{K}F$ adjoin kiri dari $\cate{K}G$.
+\end{bukti}

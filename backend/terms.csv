@@ -415,3 +415,7 @@ math.algebra.differential_graded_object,objek diferensial bergradasi,id-ID,O014,
 math.algebra.bigraded_object,objek bergradasi ganda,id-ID,O014,active
 math.homological.complex_category,kategori kompleks,id-ID,O014,active
 math.homological.concentrated_complex,kompleks terkonsentrasi,id-ID,O014,active
+math.algebra.leibniz_rule,aturan Leibniz,id-ID,O014,active
+math.homological.homotopic_morphism,morfisme homotopik,id-ID,O014,active
+math.homological.null_homotopic_morphism,morfisme homotopik nol,id-ID,O014,active
+math.homological.homotopy_category,kategori homotopi,id-ID,O014,active
