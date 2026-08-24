@@ -1,0 +1,184 @@
+% Unit 035 terjemahan Bahasa Indonesia dari chapter3.tex baris 622--699.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter3.opposite-category-complexes
+% Cakupan: Bagian 3.4 lengkap.
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.h001
+\section{Kompleks pada kategori lawan}\label{sec:opposite-cplx}
+\hypertarget{o014.aljabr2.chapter3.opposite-category-complexes}{ }
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.p001
+Tetapkan suatu kategori aditif $\mathcal{A}$. Bagian ini bertujuan
+menghubungkan kompleks pada $\mathcal{A}$ dan $\mathcal{A}^{\opp}$. Karena
+funktor yang melibatkan $\mathcal{A}^{\opp}$, misalnya funktor $\Hom$, sering
+muncul, prosedur ini sederhana tetapi perlu; beberapa tanda positif dan
+negatif yang terlibat juga memerlukan sedikit perhatian. Pembaca pemula
+disarankan melewati bagian ini atau sekadar membacanya sepintas terlebih
+dahulu.
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.p002
+Pembahasan berikut terbagi menjadi tiga aspek: kompleks, homotopi, dan kerucut
+pemetaan. Versi untuk kategori turunan yang akan dikaji kemudian
+(Proposisi~\sourcecrossref{prop:derived-cat-op}{pada pembahasan kategori turunan selanjutnya})
+merupakan penerapan langsung hasil-hasil
+ini. Ingat bahwa jika $f:X\to Y$ suatu morfisme dalam $\mathcal{A}$, maka
+$f^{\opp}$ menyatakan morfisme yang bersesuaian $Y\to X$ dalam
+$\mathcal{A}^{\opp}$.
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.dp001
+\begin{definisiproposisi}\label{def:sigma}
+	\index[sym1]{sigma@$\sigma$}
+	Isomorfisme antarkategori aditif
+	$\sigma:\cate{C}(\mathcal{A}^{\opp})\to\cate{C}(\mathcal{A})^{\opp}$
+	didefinisikan sebagai berikut. Untuk suatu objek $X$ dalam
+	$\cate{C}(\mathcal{A}^{\opp})$, definisikan di dalam $\mathcal{A}$
+% segment-id: o014.li2.chapter3.opposite-category-complexes.q001
+	\[ (\sigma X)^n := X^{-n}, \quad d_{\sigma X}^n = (-1)^{n+1} \left[ d_X^{-n-1, \opp}: (\sigma X)^n \to (\sigma X)^{n+1} \right], \quad n \in \Z. \]
+	Untuk suatu morfisme
+	$f=\left(f^n:X^n\to Y^n\right)_n$ dalam
+	$\cate{C}(\mathcal{A}^{\opp})$, citranya $\sigma f$ diambil sebagai
+	morfisme berikut dalam $\cate{C}(\mathcal{A})$:
+% segment-id: o014.li2.chapter3.opposite-category-complexes.q002
+	\[ (\sigma f)^n := \left(f^{-n} \right)^{\opp} : (\sigma Y)^n \to (\sigma X)^n, \]
+	yakni sebagai morfisme $\sigma X\to\sigma Y$ dalam
+	$\cate{C}(\mathcal{A})^{\opp}$. Untuk setiap $m\in\Z$, terdapat
+	isomorfisme alami
+% segment-id: o014.li2.chapter3.opposite-category-complexes.q003
+	\[ s_m: \sigma \circ [m] \rightiso [-m] \circ \sigma, \]
+	dengan $[-m]$ dipandang sebagai funktor dari
+	$\cate{C}(\mathcal{A})^{\opp}$ ke dirinya sendiri (secara ketat, notasinya
+	seharusnya $[-m]^{\opp}$).
+\end{definisiproposisi}
+% segment-id: o014.li2.chapter3.opposite-category-complexes.pf001
+\begin{bukti}
+	Kasus umum $s_m$ dapat direduksi secara bertahap ke kasus $m=1$.
+	Definisikan $s_1=(s_{1,X})_X$ sebagai berikut. Untuk setiap $n$, ambil
+% segment-id: o014.li2.chapter3.opposite-category-complexes.g001
+	\begin{equation}\label{eqn:sigma-s}\begin{tikzcd}[row sep=tiny]
+		s_{1,X}^n : \sigma(X{[1]})^n = X^{1-n} \arrow[r, "\sim"', "{(-1)^{n-1}}" inner sep=0.6em] & X^{1-n} = (\sigma X){[-1]}^n .
+	\end{tikzcd}\end{equation}
+	Seluruh verifikasi tereduksi pada
+	$s_{1, X}^{n+1} d^n_{\sigma(X[1])} = -d_{X[1]}^{-n-1, \opp} =
+	d_X^{-n, \opp} = (-1)^n d_{\sigma X}^{n-1} =
+	d^n_{(\sigma X)[-1]} s_{1,X}^n$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.p003
+Jika konstruksi $\sigma$ dengan koefisien $(-1)^{n+1}$ diterapkan pada kedua
+arah, $\sigma^2X$ isomorfik secara alami dengan $X$ melalui isomorfisme yang
+komponen berderajat $n$-nya adalah $(-1)^n\identity_{X^n}$. Untuk memperoleh
+invers, definisikan konstruksi arah balik dengan rumus yang sama pada objek
+dan morfisme, tetapi gunakan koefisien $(-1)^n$ pada diferensial. Komposisi
+dalam kedua urutan tepat sama dengan funktor identitas, sehingga $\sigma$
+memang merupakan isomorfisme antarkategori.%
+\footnote{Catatan penerjemah (O014-C036): sumber, dengan alasan
+$n(n+1)\equiv0\pmod{2}$, menyatakan bahwa penerapan $\sigma$ dua kali
+langsung mengembalikan $X$. Namun, penggunaan rumus yang sama pada kedua arah
+memberikan diferensial $-d_X$, bukan $d_X$. Target mencatat isomorfisme alami
+bertanda dan konstruksi invers yang dikoreksi di atas.}
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.r001
+\begin{catatan}\label{rem:sigma-vs-cohomology}
+	Jika $\mathcal{A}$ kategori abelian, tanda pada $d_{\sigma X}^\bullet$
+	tidak mengubah kohomologi yang diperkenalkan dalam
+	Definisi~\ref{def:cohomology}; dengan demikian,
+	$\Hm^{-n}(\sigma X)\in\Obj(\mathcal{A})$ bersesuaian dengan
+	$\Hm^n(X)\in\Obj(\mathcal{A}^{\opp})$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.p004
+Selanjutnya, kita kaji hubungan antara $\sigma$ dan homotopi.
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.pr001
+\begin{proposisi}\label{prop:sigma-homotopy}
+	Funktor $\sigma$ yang didefinisikan di atas menginduksi ekuivalensi
+	antarkategori aditif
+	$\cate{K}(\mathcal{A}^{\opp})\rightiso\cate{K}(\mathcal{A})^{\opp}$.
+\end{proposisi}
+% segment-id: o014.li2.chapter3.opposite-category-complexes.pf002
+\begin{bukti}
+	Tetapkan objek $X,Y$ dalam $\cate{C}(\mathcal{A}^{\opp})$. Untuk
+	$f=(f^k)_k\in\Hom^{-1}_{\cate{C}(\mathcal{A}^{\opp})}(X,Y)$, gunakan
+	tabel berikut untuk mendefinisikan $\sigma f$ yang bersesuaian dalam
+	$\mathcal{A}$, dengan
+	$\sigma f\in\Hom^{-1}_{\cate{C}(\mathcal{A})}(\sigma Y,\sigma X)$:
+% segment-id: o014.li2.chapter3.opposite-category-complexes.q004
+	\begingroup\setlength{\arraycolsep}{4pt}
+	\[\begin{array}{|c|c|c|c|} \hline
+		\text{Kategori} & \multicolumn{3}{c|}{\text{Morfisme}} \\ \hline
+		\mathcal{A}^{\opp} & X^k \xrightarrow{(-1)^{k+1} f^k} Y^{k-1} & d_Y^{k-1} f^k + f^{k+1} d_X^k & (d^{-1}f)^k \\
+		\mathcal{A} & (\sigma Y)^{-k+1} \xrightarrow{(\sigma f)^{-k+1}} (\sigma X)^{-k} & (\sigma f)^{-k+1} d_{\sigma Y}^{-k} + d_{\sigma X}^{-k-1} (\sigma f)^{-k} & d^{-1} (\sigma f)^{-k} \\ \hline
+	\end{array}\]
+	\endgroup
+	Hal ini cukup untuk menunjukkan
+	\[\begin{aligned}
+		\Hom_{\cate{K}(\mathcal{A}^{\opp})}(X, Y)
+		&\rightiso \Hom_{\cate{K}(\mathcal{A})}(\sigma Y, \sigma X) \\
+		&= \Hom_{\cate{K}(\mathcal{A})^{\opp}}(\sigma X, \sigma Y).
+	\end{aligned}\]
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.p005
+Terakhir, melalui $\sigma$ dan keluarga isomorfisme $(s_m)_m$ yang dibangun
+di atas, kita bandingkan kerucut pemetaan dalam $\cate{C}(\mathcal{A})$ dan
+$\cate{C}(\mathcal{A}^{\opp})$. Rinciannya berupa perhitungan yang agak rutin.
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.pr002
+\begin{proposisi}\label{prop:sigma-triangulated}
+	\index[sym1]{sigma}
+	Untuk setiap morfisme $f:X\to Y$ dalam
+	$\cate{C}(\mathcal{A}^{\opp})$, terdapat diagram komutatif berikut dalam
+	$\cate{C}(\mathcal{A})$% 
+	\footnote{Di sini $\alpha(\cdot)$ dan $\beta(\cdot)$ keduanya didefinisikan
+	relatif terhadap $\cate{C}(\mathcal{A})$. Jika diagram dipandang dalam
+	$\cate{C}(\mathcal{A})^{\opp}$, semua panahnya harus dibalik.}:
+% segment-id: o014.li2.chapter3.opposite-category-complexes.g002
+	\[\begin{tikzcd}[column sep=large]
+		\sigma\left( X{[1]} \right) \arrow[r, "{\sigma(\beta(f))}"] \arrow[d, "{s_{1,X}}"'] & \sigma\left(\Cone(f)\right) \arrow[r, "{\sigma(\alpha(f))}"] \arrow[d, "\theta"] & \sigma Y \arrow[r, "\sigma(f)"] \arrow[d, "\identity"] & \sigma X \arrow[d, "{\identity}"] \\
+		(\sigma X){[-1]} \arrow[r, "{\alpha(\sigma(f))[-1]}"' inner sep=0.6em] & \Cone(\sigma(f)){[-1]} \arrow[r, "{\beta(\sigma(f))[-1]}"' inner sep=0.6em] & \sigma Y \arrow[r, "{\sigma(f)}"' inner sep=0.6em] & \sigma X
+	\end{tikzcd}\]
+	dengan $\theta$ suatu isomorfisme kanonik dan $s_{1,X}$ isomorfisme yang
+	diberikan oleh Definisi--Proposisi~\ref{def:sigma}.
+\end{proposisi}
+% segment-id: o014.li2.chapter3.opposite-category-complexes.pf003
+\begin{bukti}
+	Jika $\Cone(f)$ diganti dengan $X[1]\oplus Y$, pernyataannya mudah dan
+	isomorfisme yang diperlukan cukup diambil sebagai
+	$(s_{1,X},\identity_{\sigma Y})$. Kesulitannya di sini ialah bahwa matriks
+	$d_{\Cone(f)}$ mempunyai entri luar diagonal $f[1]$. Meskipun demikian,
+	kita tetap mengikuti cara yang sama: dengan menggunakan
+	\eqref{eqn:sigma-s}, untuk setiap $n\in\Z$ definisikan isomorfisme
+% segment-id: o014.li2.chapter3.opposite-category-complexes.q005
+	\begin{multline*}
+		\theta^n: \sigma\left(\Cone(f)\right)^n = \sigma\left(X[1]\right)^n \oplus (\sigma Y)^n \\
+		\xrightarrow[\sim]{(s_{1,X}, \identity)^n = ((-1)^{n-1} \identity, \identity) } (\sigma X)[-1]^n \oplus (\sigma Y)^n \xlongequal{\text{pertukaran}} \left( (\sigma Y) \oplus (\sigma X)[-1] \right)^n ,
+	\end{multline*}	
+	Dengan identifikasi ini, morfisme $d_{\sigma(\Cone(f))}^n$ dalam
+	$\mathcal{A}$ bersesuaian dengan
+% segment-id: o014.li2.chapter3.opposite-category-complexes.q006
+	\[ \begin{pmatrix}
+		d_{\sigma Y}^n & 0 \\
+		* & d_{(\sigma X)[-1]}^n
+	\end{pmatrix} : \left( (\sigma Y) \oplus (\sigma X)[-1] \right)^n \to \left( (\sigma Y) \oplus (\sigma X)[-1] \right)^{n+1} . \]
+	Seperti dinyatakan pada awal bukti, entri-entri diagonal tidak bermasalah;
+	yang perlu ditentukan ialah entri kiri bawah matriks tersebut. Berdasarkan
+	Definisi--Proposisi~\ref{def:sigma}, entri ini sama dengan $(-1)^{n+1}$
+	dikali komposisi morfisme berikut dalam $\mathcal{A}$:
+% segment-id: o014.li2.chapter3.opposite-category-complexes.g003
+	\[\begin{tikzcd}[row sep=tiny]
+		(\sigma Y)^n \arrow[r] & (\sigma(X[1]))^{n+1} \arrow[r, "\sim"] & (\sigma X)[-1]^{n+1} \\
+		Y^{-n} \arrow[equal, u] \arrow[r, "{(f^{-n})^{\opp}}"'] & X^{-n} \arrow[equal, u] \arrow[r, "{s_{1, X}^{n+1} = (-1)^n}"'] & X^{-n} \arrow[equal, u]
+	\end{tikzcd}\]
+	Dengan demikian, hasilnya ialah $-\sigma(f)^n$. Oleh karena itu,
+% segment-id: o014.li2.chapter3.opposite-category-complexes.q007
+	\[ \theta := (\theta^n)_{n \in \Z}: \sigma(\Cone(f)) \rightiso \Cone(\sigma(f))[-1] \]
+	memang merupakan isomorfisme dalam $\cate{C}(\mathcal{A})$. Setelah hal
+	ini ditetapkan, verifikasi komutativitas tidak lagi mengandung kesulitan
+	yang berarti.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.opposite-category-complexes.p006
+Tentu saja, hasil-hasil bagian ini juga berlaku untuk kompleks rantai dan
+dapat diperumum ke kasus ketika $\mathcal{A}$ merupakan kategori
+$\Bbbk$-linear.
