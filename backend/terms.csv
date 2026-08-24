@@ -419,3 +419,6 @@ math.algebra.leibniz_rule,aturan Leibniz,id-ID,O014,active
 math.homological.homotopic_morphism,morfisme homotopik,id-ID,O014,active
 math.homological.null_homotopic_morphism,morfisme homotopik nol,id-ID,O014,active
 math.homological.homotopy_category,kategori homotopi,id-ID,O014,active
+math.homological.homotopy_cokernel,kokernel homotopi,id-ID,O014,active
+math.homological.homotopy_kernel,kernel homotopi,id-ID,O014,active
+math.homological.homotopy_coimage,kocitra homotopi,id-ID,O014,active

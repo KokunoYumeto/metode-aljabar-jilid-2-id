@@ -9,11 +9,11 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 ## Status
 
 Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Batas publik ini
-mencakup Unit 001–033: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
-serta Bab 3 sampai Bagian 3.2 (`chapter3.tex` upstream baris 9–345). Pembaca
-saat ini berjumlah 201 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
-baris 346, bagian kerucut pemetaan (`sec:mapping-cone`), dan berlanjut dalam
-urutan sumber menuju keseluruhan buku resmi 650 halaman.
+mencakup Unit 001–034: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
+serta Bab 3 sampai Bagian 3.3 (`chapter3.tex` upstream baris 9–621). Pembaca
+saat ini berjumlah 209 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
+baris 622, bagian kompleks pada kategori berlawanan (`sec:opposite-cplx`), dan
+berlanjut dalam urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
 yang telah diperiksa, tetapi **belum merupakan PDF bertag** dan tidak diklaim
@@ -37,12 +37,12 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 33 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 34 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 33 unit, 1.689 segmen, dan 420 istilah dalam bentuk modular
+- `backend/`: 34 unit, 1.769 segmen, dan 423 istilah dalam bentuk modular
   (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 033, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 034, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS` mencatat ukuran dan SHA-256 setiap berkas publik.
