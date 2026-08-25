@@ -1,0 +1,364 @@
+% Unit 041 terjemahan Bahasa Indonesia dari chapter3.tex baris 1710--1881.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter3.double-complex-cohomology
+% Cakupan: Bagian 3.10 lengkap.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.h001
+\section{Kohomologi bikompleks}\label{sec:double-cplx-coh}
+\hypertarget{o014.aljabr2.chapter3.double-complex-cohomology}{ }
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p001
+Bagian ini bertujuan mengkaji kohomologi bikompleks $X$ pada arah horizontal
+atau vertikal, serta hubungannya dengan kohomologi kompleks total. Hasil-hasil
+terkait akan digunakan untuk mengkaji funktor turunan dari bifunktor; cara
+pembuktiannya mengikuti \cite[\S 12.5]{KS06}.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p002
+Misalkan $\mathcal{A}$ kategori abelian. Seperti biasa, semua hasil mempunyai
+perumuman yang bersesuaian ketika $\mathcal{A}$ merupakan kategori abelian
+$\Bbbk$-linear.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p003
+Ingat bahwa Definisi~\ref{def:bicplx-F1} (atau diagram yang lebih eksplisit,
+\eqref{eqn:bicplx-diagram}) memperkenalkan sepasang isomorfisme antarkategori
+aditif:
+% segment-id: o014.li2.chapter3.double-complex-cohomology.g001
+\[\begin{tikzcd}
+	\cate{C}^2(\mathcal{A}) \arrow[r, shift left, "{F_{\mathrm{I}}}"] \arrow[r, shift right, "{F_{\mathrm{II}}}"'] & \cate{C}(\cate{C}(\mathcal{A})) ,
+\end{tikzcd}\]
+Dengan funktor-funktor tersebut, untuk setiap bikompleks $X$ definisikan
+(di bawah ini $p, q, n \in \Z$):
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q001
+\begin{align*}
+	\Hm_{\mathrm{I}}^p(X) & := (\Hm^p \circ F_{\mathrm{I}})(X)
+	= \text{kompleks}\; \left[ \begin{tikzcd}[row sep=small]
+		\vdots \\
+		\Hm^p(X^{\bullet, q+1}, \dhori) \arrow[u, "{\dvert}" inner sep=0.6em] \\
+		\Hm^p(X^{\bullet, q}, \dhori) \arrow[u, "{\dvert}" inner sep=0.6em] \\
+		\vdots \arrow[u, "{\dvert}" inner sep=0.6em]
+	\end{tikzcd}\right] \quad \text{(lihat Proposisi~\ref{prop:abelian-cat-cplx})}, \\
+	\Hm_{\mathrm{II}}^q(X) & := (\Hm^q \circ F_{\mathrm{II}})(X) \\
+	& = \text{kompleks}\; \left[ \cdots \xrightarrow{\dhori} \Hm^q(X^{p, \bullet}, \dvert) \xrightarrow{\dhori} \Hm^q(X^{p+1, \bullet}, \dvert) \xrightarrow{\dhori} \cdots \right] , \\
+	\tau_{\mathrm{I}}^{\leq n} & := (F_{\mathrm{I}})^{-1} \circ \tau^{\leq n} \circ F_{\mathrm{I}}, \\
+	\tau_{\mathrm{II}}^{\leq n} & := (F_{\mathrm{II}})^{-1} \circ \tau^{\leq n} \circ F_{\mathrm{II}},
+\end{align*} \index[sym1]{HmIpX@$\Hm_{\mathrm{I}}^p(X)$, $\Hm_{\mathrm{II}}^q(X)$} \index[sym1]{tauI@$\tau_{\mathrm{I}}^{\leq n}$, $\tau_{\mathrm{II}}^{\leq n}, \ldots$}%
+\footnote{Catatan penerjemah (O014-C054): pada kedua definisi pertama,
+sumber hanya mencetak funktor komposit $\Hm^p\circ F_{\mathrm{I}}$ dan
+$\Hm^q\circ F_{\mathrm{II}}$ pada ruas kanan, padahal ruas kiri merupakan
+nilainya pada bikompleks $X$. Target memulihkan penerapan pada $X$.}
+Selain itu, terdapat $\tilde{\tau}_{\mathrm{I}}^{\leq n}$,
+$\tau_{\mathrm{I}}^{\geq n}$, $\tilde{\tau}_{\mathrm{I}}^{\geq n}$,
+serta $\tilde{\tau}_{\mathrm{II}}^{\leq n}$,
+$\tau_{\mathrm{II}}^{\geq n}$, dan
+$\tilde{\tau}_{\mathrm{II}}^{\geq n}$. Dengan demikian, tetap terdapat
+morfisme-morfisme antarfunktor
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q002
+\begin{gather*}
+	\tau_{\mathrm{I}}^{\leq n} \to \tilde{\tau}_{\mathrm{I}}^{\leq n} \to \identity_{\cate{C}^2(\mathcal{A})} \to \tilde{\tau}_{\mathrm{I}}^{\geq n} \to \tau_{\mathrm{I}}^{\geq n}, \\
+	\tau_{\mathrm{II}}^{\leq n} \to \tilde{\tau}_{\mathrm{II}}^{\leq n} \to \identity_{\cate{C}^2(\mathcal{A})} \to \tilde{\tau}_{\mathrm{II}}^{\geq n} \to \tau_{\mathrm{II}}^{\geq n}.
+\end{gather*}
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.de001
+\begin{definisi}\label{def:Cf-Supp}
+	\index[sym1]{SuppX@$\Supp(X)$}
+	\index[sym1]{C2f@$\cate{C}^2_f(\mathcal{A})$}
+	Untuk bikompleks $X$, tuliskan
+	$\Supp(X) := \left\{ (p,q) \in \Z^2 : X^{p,q} \neq 0 \right\}$.
+	Definisikan $\cate{C}^2_f(\mathcal{A})$ sebagai subkategori penuh yang
+	terdiri atas objek-objek $X$ dari $\cate{C}^2(\mathcal{A})$ yang memenuhi
+	syarat berikut: untuk setiap $n \in \Z$, himpunan
+	$\{ (p, q) \in \Supp(X): p + q = n \}$ berhingga.
+\end{definisi}
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.ex001
+\begin{contoh}
+	Jika $\Supp(X) \subset \Z_{\geq 0}^2$ (kuadran pertama), atau
+	$\Supp(X) \subset \Z_{\leq 0}^2$ (kuadran ketiga), atau jika $\Supp(X)$
+	merupakan gabungan berhingga dari kolom atau baris, maka $X$ merupakan
+	objek dari $\cate{C}^2_f(\mathcal{A})$.
+\end{contoh}
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p004
+Kompleks total $\tot_{\oplus}(X)$ dan $\tot_{\Pi}(X)$ terdefinisi untuk
+setiap objek $X$ dari $\cate{C}^2_f(\mathcal{A})$, tanpa syarat tambahan
+terhadap $\mathcal{A}$. Selain itu, dalam keadaan ini
+$\tot_{\oplus}(X) = \tot_{\Pi}(X)$. Dengan demikian, diperoleh funktor aditif
+$\tot: \cate{C}^2_f(\mathcal{A}) \to \cate{C}(\mathcal{A})$.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p005
+Sekarang buat pengamatan sederhana tetapi perlu berikut. Untuk objek $X$ dari
+$\cate{C}^2_f(\mathcal{A})$ dan $n \in \Z$, terdapat himpunan bagian
+berhingga $S \subset \Z^2$ sedemikian sehingga
+$\Hm^n\left( \tot(X) \right)$ sepenuhnya ditentukan oleh data
+$\left( X^{p,q}, \dhori^{p, q} , \dvert^{p,q} \right)_{(p, q) \in S}$.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.le001
+\begin{lema}\label{prop:tot-exact}
+	Funktor kompleks total
+	$\tot: \cate{C}^2_f(\mathcal{A}) \to \cate{C}(\mathcal{A})$ merupakan
+	funktor eksak (Definisi~\ref{def:exact-functor}).
+\end{lema}
+% segment-id: o014.li2.chapter3.double-complex-cohomology.pf001
+\begin{bukti}
+	Misalkan $X \xrightarrow{f} Y \xrightarrow{g} Z$ merupakan barisan eksak dalam
+	$\cate{C}^2_f(\mathcal{A})$. Dengan mengingat definisi-definisi terkait,
+	misalnya Proposisi~\ref{prop:abelian-cat-cplx}, persoalannya ialah
+	membuktikan bahwa, untuk setiap $n \in \Z$, barisan
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q003
+	\[ \bigoplus_{p+q=n} X^{p,q} \xrightarrow{\bigoplus_{p+q=n} f^{p,q}} \bigoplus_{p+q=n} Y^{p,q} \xrightarrow{\bigoplus_{p+q=n} g^{p,q}} \bigoplus_{p+q=n} Z^{p,q} \]
+	eksak dalam $\mathcal{A}$. Karena jumlah langsung tersebut berhingga,
+	semuanya tereduksi pada keeksakan
+	$X^{p,q} \xrightarrow{f^{p,q}} Y^{p,q} \xrightarrow{g^{p,q}} Z^{p,q}$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p006
+Walaupun lema berikut tampak rumit, lema ini semata-mata merupakan pengolahan
+definisi dan berlaku untuk setiap kategori aditif $\mathcal{A}$.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.le002
+\begin{lema}\label{prop:double-cplx-tot-aux0}
+	Misalkan $h \in \Z$ dan $Y$ objek dari $\cate{C}(\mathcal{A})$. Dari data
+	ini, bentuk
+% segment-id: o014.li2.chapter3.double-complex-cohomology.l001
+	\begin{compactitem}
+% segment-id: o014.li2.chapter3.double-complex-cohomology.i001
+		\item objek $Y[-h]$ dari $\cate{C}(\mathcal{A})$;
+% segment-id: o014.li2.chapter3.double-complex-cohomology.i002
+		\item objek $Y_{\mathrm{I}}[-h]$ dari
+		$\cate{C}(\cate{C}(\mathcal{A}))$: komponen berderajat $h$ ialah $Y$,
+		sedangkan komponen lainnya ialah $0$.
+	\end{compactitem}
+	Maka terdapat isomorfisme-isomorfisme kanonik berikut dalam
+	$\cate{C}(\mathcal{A})$:
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q004
+	\begin{gather*}
+		(\tot \circ F_{\mathrm{I}}^{-1}) \Cone\left( \identity_{Y_{\mathrm{I}}[-h]} \right) \simeq \Cone\left( \identity_{Y[-h]} \right), \\
+		(\tot \circ F_{\mathrm{I}}^{-1}) \left( Y_{\mathrm{I}}[-h] \right) \simeq Y[-h].
+	\end{gather*}
+\end{lema}
+% segment-id: o014.li2.chapter3.double-complex-cohomology.pf002
+\begin{bukti}
+	Menurut definisi, objek
+	\[
+		\Cone\left( \identity_{Y_{\mathrm{I}}[-h]} \right)
+		\quad\text{berbentuk}\quad
+		Y \xrightarrow{\identity_Y} Y
+	\]
+	dari kategori
+	\[
+		\cate{C}^{[h-1, h]}(\cate{C}(\mathcal{A})),
+	\]
+	yang terkonsentrasi pada derajat $h-1$ dan $h$. Oleh karena itu, dengan menetapkan
+	\[
+		Z := F_{\mathrm{I}}^{-1}
+		\Cone\left( \identity_{Y_{\mathrm{I}}[-h]} \right),
+	\]
+	diperoleh bikompleks pada diagram berikut:
+% segment-id: o014.li2.chapter3.double-complex-cohomology.g002
+	\[\begin{tikzcd}
+		n \in \Z & \vdots & \vdots \\
+		(q = n-h+1) & Y^{n-h+1} \arrow[u, "d_Y"] \arrow[r, "\identity"] & Y^{n-h+1} \arrow[u, "d_Y"] \\
+		(q = n-h) & Y^{n-h} \arrow[r, "\identity"] \arrow[u, "d_Y"] & Y^{n-h} \arrow[u, "d_Y"] \\
+		& (p = h-1) \arrow[phantom, u, "\cdots" description, sloped] & (p = h) \arrow[phantom, u, "\cdots" description, sloped]
+	\end{tikzcd}\]
+	Kolom-kolom yang bersesuaian dengan $p \notin \{h-1, h\}$ semuanya
+	bernilai $0$. Berdasarkan Definisi~\ref{def:total-cplx} tentang kompleks
+	total, langsung diperoleh
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q005
+	\begin{align*}
+		\tot(Z)^n & = Y^{n-h+1} \oplus Y^{n-h} = Y[-h]^{n+1} \oplus Y[-h]^n \\
+		& = \Cone\left( \identity_{Y[-h]} \right)^n , \\
+		d_{\tot(Z)}^n & = \begin{pmatrix}
+			(-1)^{h-1} d_Y^{n-h+1} & 0 \\
+			\identity_{Y^{n-h+1}} & (-1)^{h} d_Y^{n-h}
+		\end{pmatrix}
+		= \begin{pmatrix}
+			- d_{Y[-h]}^{n+1} & 0 \\
+			\identity_{Y[-h]^{n+1}} & d_{Y[-h]}^n
+		\end{pmatrix} \\
+		& = d_{\Cone\left( \identity_{Y[-h]} \right)}^n .
+	\end{align*}
+	Isomorfisme kedua dapat diverifikasi dengan cara serupa, tetapi lebih
+	mudah, sehingga diserahkan kepada pembaca.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.le003
+\begin{lema}\label{prop:double-cplx-tot-aux}
+	Misalkan $X$ objek dari $\cate{C}^2_f(\mathcal{A})$ dan $q \in \Z$.
+% segment-id: o014.li2.chapter3.double-complex-cohomology.l002
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.double-complex-cohomology.i003
+		\item Morfisme alami
+		$\tot\left(\tau_{\mathrm{I}}^{\leq q} X\right) \to
+		\tot\left(\tilde{\tau}_{\mathrm{I}}^{\leq q} X\right)$ merupakan
+		kuasi-isomorfisme;
+% segment-id: o014.li2.chapter3.double-complex-cohomology.i004
+		\item Terdapat barisan eksak pendek kanonik
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q006
+		\[ 0 \to \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q-1} (X) \right) \to \tot\left( \tau_{\mathrm{I}}^{\leq q}(X) \right) \to \Hm_{\mathrm{I}}^q(X)[-q] \to 0. \]
+	\end{enumerate}
+\end{lema}
+% segment-id: o014.li2.chapter3.double-complex-cohomology.pf003
+\begin{bukti}
+	Terapkan Lema~\ref{prop:truncation-ses} dalam
+	$\cate{C}(\cate{C}(\mathcal{A}))$ untuk memperoleh barisan-barisan eksak
+	pendek
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q007
+	\begin{gather*}
+		0 \to \tau^{\leq q} F_{\mathrm{I}} (X) \to \tilde{\tau}^{\leq q} F_{\mathrm{I}} (X) \to \Cone\left( \identity_{\Image\left( d^q_{F_{\mathrm{I}} X} \right)_{\mathrm{I}} [-q-1]} \right) \to 0, \\
+		0 \to \tilde{\tau}^{\leq q-1} F_{\mathrm{I}}(X) \to \tau^{\leq q} F_{\mathrm{I}}(X) \to \Hm^q_{\mathrm{I}}(X)_{\mathrm{I}}[-q] \to 0.
+	\end{gather*}
+	Arti notasi $(\cdots)_{\mathrm{I}}[\cdots]$ sama seperti dalam
+	Lema~\ref{prop:double-cplx-tot-aux0}. Sekarang terapkan
+	$\tot \circ F_{\mathrm{I}}^{-1}$ pada barisan-barisan eksak pendek
+	tersebut. Lema~\ref{prop:tot-exact} menunjukkan bahwa $\tot$ eksak, dan
+	$F_{\mathrm{I}}^{-1}$ tentu juga eksak. Dengan menggunakan
+	Lema~\ref{prop:double-cplx-tot-aux0}, diperoleh barisan-barisan eksak pendek
+	berikut dalam $\cate{C}(\mathcal{A})$:
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q008
+	\begin{gather*}
+		0 \to \tot\left(\tau_{\mathrm{I}}^{\leq q} X\right) \to \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q} X \right) \to \Cone\left( \identity_{\Image( d_{F_{\mathrm{I}} X}^q )[-q-1]} \right) \to 0, \\
+		0 \to \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q-1} X \right) \to \tot\left( \tau_{\mathrm{I}}^{\leq q}X \right) \to \Hm_{\mathrm{I}}^q(X)[-q] \to 0.
+	\end{gather*}
+	Barisan kedua tepat merupakan (ii). Sementara itu, (i) diperoleh dari
+	barisan pertama bersama Proposisi~\ref{prop:long-exact-sequence-ses} dan
+	Proposisi~\ref{prop:cone-homotopy} (i).
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p007
+Untuk setiap objek $X$ dari $\cate{C}^2(\mathcal{A})$, notasikan
+bikompleks-bikompleks berikut dengan $\Hm_{\mathrm{I}}(X)$ dan
+$\Hm_{\mathrm{II}}(X)$ ($p,q \in \Z$):
+\index[sym1]{HmIX@$\Hm_{\mathrm{I}}(X)$, $\Hm_{\mathrm{II}}(X)$}
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q009
+\begin{equation}\label{eqn:HIHII}\begin{aligned}
+	\left( \Hm_{\mathrm{I}}(X)^{p, \bullet}, \dvert_{\Hm_{\mathrm{I}}(X)}^{p, \bullet} \right) & := \Hm_{\mathrm{I}}^p(X), &
+	\dhori_{\Hm_{\mathrm{I}}(X)}^{\bullet, \bullet} := 0, \\
+	\left( \Hm_{\mathrm{II}}(X)^{\bullet, q}, \dhori_{\Hm_{\mathrm{II}}(X)}^{\bullet, q} \right) & := \Hm_{\mathrm{II}}^q(X), &
+	\dvert_{\Hm_{\mathrm{II}}(X)}^{\bullet, \bullet} := 0,
+\end{aligned}\end{equation}
+Dengan kata lain, $\Hm_{\mathrm{I}}(X)$ (atau $\Hm_{\mathrm{II}}(X)$)
+diperoleh dengan mengambil kohomologi $X$ pada arah $\dhori$ (atau
+$\dvert$). Keduanya merupakan funktor dari $\cate{C}^2(\mathcal{A})$ ke
+dirinya sendiri. Selanjutnya, dapat didefinisikan
+$\Hm_{\mathrm{II}} \Hm_{\mathrm{I}}(X)$ dan
+$\Hm_{\mathrm{I}} \Hm_{\mathrm{II}} (X)$; keduanya memenuhi
+$\dhori = 0 = \dvert$.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.th001
+\begin{teorema}\label{prop:double-cplx-tot}
+	Misalkan $f: X \to Y$ suatu morfisme dalam $\cate{C}^2_f(\mathcal{A})$. Jika
+	morfisme yang diinduksinya
+	$\Hm_{\mathrm{II}} \Hm_{\mathrm{I}} (X) \to
+	\Hm_{\mathrm{II}} \Hm_{\mathrm{I}} (Y)$ merupakan isomorfisme, maka
+	$\tot(f): \tot(X) \to \tot(Y)$ merupakan kuasi-isomorfisme.
+	
+	Kesimpulan yang sama berlaku apabila, sebagai gantinya, disyaratkan bahwa
+	morfisme yang diinduksi
+	$\Hm_{\mathrm{I}} \Hm_{\mathrm{II}} (X) \to
+	\Hm_{\mathrm{I}} \Hm_{\mathrm{II}} (Y)$ merupakan isomorfisme.
+\end{teorema}
+% segment-id: o014.li2.chapter3.double-complex-cohomology.pf004
+\begin{bukti}
+	Syarat tersebut ekuivalen dengan mengatakan bahwa morfisme
+	$\Hm_{\mathrm{I}}^n(f): \Hm_{\mathrm{I}}^n(X) \to
+	\Hm_{\mathrm{I}}^n(Y)$ dalam $\cate{C}(\mathcal{A})$ merupakan
+	kuasi-isomorfisme untuk setiap $n \in \Z$. Langkah pertama pembuktian
+	ialah mereduksi ke kasus ketika
+% segment-id: o014.li2.chapter3.double-complex-cohomology.q010
+	\begin{equation}\label{eqn:double-cplx-tot-aux}
+		q \ll 0 \implies \tilde{\tau}_{\mathrm{I}}^{\leq q}(X) = 0 = \tilde{\tau}_{\mathrm{I}}^{\leq q}(Y).
+	\end{equation}
+	Memang, misalkan $r \in \Z$. Pemenggalan dengan funktor-funktor dalam
+	Lema~\ref{prop:truncation-ses} menunjukkan bahwa syarat semula juga
+	mengakibatkan
+	$\Hm_{\mathrm{I}}^n\left( \tau_{\mathrm{I}}^{\geq r} f \right):
+	\Hm_{\mathrm{I}}^n \left(\tau_{\mathrm{I}}^{\geq r} X \right) \to
+	\Hm_{\mathrm{I}}^n\left( \tau_{\mathrm{I}}^{\geq r} Y \right)$
+	merupakan kuasi-isomorfisme untuk setiap $n$. Akan tetapi, untuk $n$ yang
+	diberikan, definisi $\cate{C}^2_f(\mathcal{A})$ memperlihatkan bahwa ketika
+	$r \ll 0$ terdapat diagram komutatif
+% segment-id: o014.li2.chapter3.double-complex-cohomology.g003
+	\begin{equation}\label{eqn:double-cplx-tot-aux2}\begin{tikzcd}
+		\Hm^n(\tot(X)) \arrow[r, "{\Hm^n(\tot(f))}"] \arrow[d, "\sim"' sloped] & \Hm^n(\tot(Y)) \arrow[d, "\sim" sloped] \\
+		\Hm^n\left( \tot(\tau_{\mathrm{I}}^{\geq r} X) \right) \arrow[r, "{\Hm^n\left( \tot (\tau_{\mathrm{I}}^{\geq r} f) \right)}"' inner sep=0.8em] & \Hm^n\left( \tot(\tau_{\mathrm{I}}^{\geq r} Y) \right)
+	\end{tikzcd}\end{equation}
+	Bikompleks-bikompleks pada baris kedua memenuhi
+	\eqref{eqn:double-cplx-tot-aux}. Karena itu, mulai sekarang kita dapat
+	mengganti $f$ dengan $\tau_{\mathrm{I}}^{\geq r} f$ dan mengasumsikan
+	bahwa \eqref{eqn:double-cplx-tot-aux} berlaku. Tujuan kita ialah
+	membuktikan bahwa $\Hm^n(\tot(f))$ merupakan isomorfisme untuk $n$ yang
+	telah dipilih.
+	
+	Untuk setiap $q \in \Z$, Lema~\ref{prop:double-cplx-tot-aux} (ii)
+	memberikan diagram komutatif dengan baris-baris eksak
+% segment-id: o014.li2.chapter3.double-complex-cohomology.g004
+	\[\begin{tikzcd}
+		0 \arrow[r] & \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q-1} X \right) \arrow[r] \arrow[d, "{\alpha_{q-1}}"] & \tot\left( \tau_{\mathrm{I}}^{\leq q} X \right) \arrow[d, "{\beta_q}"] \arrow[r] & \Hm_{\mathrm{I}}^q(X)[-q] \arrow[d, "{\Hm_{\mathrm{I}}^q(f)[-q]}" description] \arrow[r] & 0 \\
+		0 \arrow[r] & \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q-1} Y \right) \arrow[r] & \tot\left( \tau_{\mathrm{I}}^{\leq q} Y \right) \arrow[r] & \Hm_{\mathrm{I}}^q(Y)[-q] \arrow[r] & 0
+	\end{tikzcd}\]%
+	\footnote{Catatan penerjemah (O014-C055): sumber hanya memberi label
+	$\simeq$ pada panah vertikal kanan. Hipotesis teorema menyatakan bahwa
+	morfisme itu ialah kuasi-isomorfisme $\Hm_{\mathrm{I}}^q(f)[-q]$, bukan
+	harus isomorfisme kompleks; target menamai morfismenya dan menyatakan sifat
+	yang tepat.}
+	Panah vertikal kanan merupakan kuasi-isomorfisme, dan semua panah
+	vertikalnya berasal dari $f$. Kita akan membuktikan bahwa
+	$\alpha_q$ dan $\beta_q$ keduanya merupakan kuasi-isomorfisme. Jika
+	$\alpha_{q-1}$ merupakan kuasi-isomorfisme, maka funktorialitas barisan
+	eksak panjang terkait (Proposisi~\ref{prop:long-exact-sequence-ses}),
+	bersama Proposisi~\ref{prop:5-lemma}, mengakibatkan bahwa $\beta_q$ juga
+	merupakan kuasi-isomorfisme. Di sisi lain,
+	Lema~\ref{prop:double-cplx-tot-aux} (i) memberikan diagram komutatif
+	berikut, dengan kedua panah horizontal berupa kuasi-isomorfisme:
+% segment-id: o014.li2.chapter3.double-complex-cohomology.g005
+	\[\begin{tikzcd}
+		\tot\left( \tau_{\mathrm{I}}^{\leq q} X \right) \arrow[r] \arrow[d, "{\beta_q}"'] & \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q} X \right) \arrow[d, "{\alpha_q}"] \\
+		\tot\left( \tau_{\mathrm{I}}^{\leq q} Y \right) \arrow[r] & \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q} Y \right)
+	\end{tikzcd}\]
+	Oleh karena itu, jika $\beta_q$ merupakan kuasi-isomorfisme, maka
+	$\alpha_q$ juga demikian. Karena untuk $q \ll 0$, $\alpha_q$ tidak lain
+	daripada $0 \rightiso 0$, secara rekursif diperoleh bahwa $\alpha_q$ dan
+	$\beta_q$ merupakan kuasi-isomorfisme untuk setiap $q$.
+	
+	Ingat bahwa $n \in \Z$ telah dipilih. Dengan alasan yang serupa dengan
+	\eqref{eqn:double-cplx-tot-aux2}, ketika $q \gg 0$ terdapat diagram
+	komutatif
+% segment-id: o014.li2.chapter3.double-complex-cohomology.g006
+	\[\begin{tikzcd}
+		\Hm^n(\tot(X)) \arrow[r, "{\Hm^n(\tot(f))}"] & \Hm^n(\tot(Y)) \\
+		\Hm^n\left( \tot(\tau_{\mathrm{I}}^{\leq q} X) \right) \arrow[r, "{\Hm^n(\beta_q)}"' inner sep=0.8em, "\sim"] \arrow[u, "\sim" sloped] & \Hm^n\left( \tot(\tau_{\mathrm{I}}^{\leq q} Y) \right) \arrow[u, "\sim"' sloped]
+	\end{tikzcd}\]
+	Jadi, $\Hm^n(\tot(f))$ memang merupakan isomorfisme.
+	
+	Terakhir, argumen yang sama berlaku untuk kasus
+	$\Hm_{\mathrm{I}} \Hm_{\mathrm{II}} (X) \rightiso
+	\Hm_{\mathrm{I}} \Hm_{\mathrm{II}} (Y)$. Sudut pandang lainnya ialah
+	menukar $\Hm_{\mathrm{I}}$ dan $\Hm_{\mathrm{II}}$ dengan menggunakan
+	Proposisi~\ref{prop:double-cplx-swap}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.p008
+Pembuktian di atas cukup panjang. Contoh~\sourcecrossref{eg:double-cplx-tot-ss}{pada \S~5.6} akan
+memberikan pembuktian lain yang didasarkan pada barisan spektral.
+
+% segment-id: o014.li2.chapter3.double-complex-cohomology.co001
+\begin{korolari}\label{prop:acyclic-assembly}
+	Misalkan $X$ objek dari $\cate{C}_f^2(\mathcal{A})$. Jika $X$ eksak pada
+	baris, yakni jika $\left( X^{\bullet, q}, \dhori \right)$ eksak untuk
+	setiap $q \in \Z$, maka $\tot(X)$ eksak. Demikian pula, jika $X$ eksak
+	pada kolom, maka $\tot(X)$ eksak.
+\end{korolari}
+% segment-id: o014.li2.chapter3.double-complex-cohomology.pf005
+\begin{bukti}
+	Jika $X$ eksak pada baris, maka
+	$\Hm_{\mathrm{II}} \Hm_{\mathrm{I}}(X) = 0$. Karena itu,
+	Teorema~\ref{prop:double-cplx-tot} mengakibatkan bahwa
+	$\tot(X) \to \tot(0) = 0$ merupakan kuasi-isomorfisme; dengan kata lain,
+	$\tot(X)$ eksak.
+
+	Argumen untuk kasus eksak pada kolom sama persis. Sebagai alternatif,
+	kedua kasus dapat dialihkan satu ke yang lain dengan menggunakan
+	Proposisi~\ref{prop:double-cplx-swap}.
+\end{bukti}

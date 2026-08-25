@@ -2600,3 +2600,109 @@ mismatch. Delete only the exact archived loose roots/files after verification.
 Retain the complete finalD canonical build artifacts, three contact sheets,
 source witness/map/translation, backend, controls, QA/manifest, promoted PDFs,
 and publication materials.
+
+## D109 - Archive superseded Unit 038 candidate builds (2026-08-25)
+
+At the explicit cleanup boundary, archive only the three superseded Unit 038
+candidate build trees `cumulative-unit-038-finalA-20260824`,
+`cumulative-unit-038-finalB-20260824`, and
+`cumulative-unit-038-finalC-20260824`. Their 45 files total 6,086,501 loose
+bytes. The no-overwrite archive is
+`old stuff/o014_unit038_superseded_candidate_builds_01a02164_20260825-041840.zip`,
+5,028,153 bytes, SHA-256
+`7db65aee4716316fa7dab0528db6c6ca8dea97cfc424a3500e51a71f2df948ea`.
+The archive opened successfully and every entry name, uncompressed byte count,
+and SHA-256 matched the pre-archive inventory before deletion. Retain the
+successful Unit 038 finalD build, successful Unit 039 finalC build, current
+Unit 040 finalD build, all source witnesses/maps, QA contacts, canonical
+outputs, release packages, receipts, and the active publication worktree.
+
+## D110 - Publish and anonymously verify Unit 040 (2026-08-25)
+
+Advance the existing GitHub repository and Zenodo concept with the admitted
+Unit 040 snapshot; do not create a competing lineage. The first GitHub commit
+`4a2e1e28ab2668173b8a6fce8c241f146808293b` preserved the correct reader and
+content bytes, but anonymous archive readback exposed three checksum rows that
+described CRLF worktree bytes instead of Git's LF-normalized public blobs.
+Correct only those inventory rows and publish final commit
+`cd61ef96eda025a072deffbe98de451ef236dc05`, tree
+`fb94b4915b3f8920ef1b47f4eac5a2aa9dae31bb`. Its 1,903,798-byte immutable
+archive has SHA-256
+`adb26734ceaae10a01af0f292e682671b2e561331507385f345eb275dd3d301f`;
+all 123 payloads then pass anonymous manifest/checksum readback with zero
+mismatch, and the public PDF remains byte-identical to the admitted reader.
+
+Advance Zenodo concept record `22059751` from immutable Unit 039 record
+`22088565` to published Unit 040 record `22096566`, DOI
+`10.5281/zenodo.22096566`. Publish exactly seven reader-first files totaling
+1,658,212 bytes: the 247-page PDF, compact 40-unit source/backend ZIP, compact
+QA/provenance ZIP including the exact Unit 040 slice and map, CC BY 4.0
+license, README, release manifest, and checksum list. Anonymous readback of
+the public API, page, both DOI routes, all seven files, both ZIP internal
+manifests, and PDF properties passes with zero mismatch. Keep the complete
+corpus pursuit active and continue at Unit 041, `chapter3.tex` line 1710.
+
+## D111 - Archive redundant Unit 040 public readbacks (2026-08-25)
+
+Once the sanitized GitHub and Zenodo receipts independently captured the full
+public identities, archive the two task-local GitHub readback directories and
+the task-local Zenodo readback directory as redundant loose evidence. Their 13
+files total 7,932,488 bytes. The no-overwrite archive is
+`old stuff/o014_unit040_public_readbacks_01a02164_20260825-151616.zip`,
+7,685,984 bytes, SHA-256
+`18eaaafbc65c8e7b7c7526641621f6b85bcea4d866b14b35bb94296dbc430358`.
+The archive opens and every entry name, uncompressed byte count, and SHA-256
+matches before exact-root deletion. Retain both local release packages,
+sanitized receipts, canonical source/backend/controls, and the public records.
+
+## D112 - Archive superseded Unit 038--039 builds and renders (2026-08-25)
+
+At the explicit cleanup boundary, archive only the admitted-but-now-superseded
+Unit 038 finalD and Unit 039 finalC build trees and their rendered-page sets.
+The four exact task-local directories contain 36 files / 8,287,867 loose bytes.
+The no-overwrite archive is
+`old stuff/o014_superseded_unit038-039_builds_and_renders_01a02164_20260825-154253.zip`,
+7,290,676 bytes, SHA-256
+`833bccd43e990ddf2ad967c0a08cfc84277f5614c665b60c03c00409ceb702d2`.
+The archive opens and every entry name, uncompressed byte count, and SHA-256
+matches the pre-archive inventory before deletion. Delete only
+`build/cumulative-unit-038-finalD-20260824`,
+`build/cumulative-unit-039-finalC-20260825`, `tmp/pdfs/unit038-finalD`, and
+`tmp/pdfs/unit039-finalC`. Retain the canonical Unit 040 finalD build, its
+render evidence, all Unit 041 work, source witnesses and maps, controls,
+backend, QA records, release packages, receipts, and upstream replay.
+
+## D113 - Archive superseded Unit 041 candidates and renders (2026-08-25)
+
+After finalD admission, archive the three superseded Unit 041 build candidates
+finalA, finalB, and finalC together with the obsolete finalC render set. The
+four exact task-local directories contain 100 files / 10,539,388 loose bytes.
+The no-overwrite archive is
+`old stuff/o014_unit041_superseded_builds_and_renders_01a02164_20260825-161628.zip`,
+8,798,871 bytes, SHA-256
+`f2cf861907e647d9177784ca0f045fcff8f077a1552ad007a91f02c3422f30ed`.
+The archive opens and every entry name, uncompressed byte count, and SHA-256
+matches before exact-root deletion. Retain the finalD build, finalD render
+evidence, promoted PDFs, sources, backend, controls, QA, and release materials.
+
+## D114 - Admit Unit 041 and advance the local cumulative reader (2026-08-25)
+
+Admit `o014.aljabr2.chapter3.double-complex-cohomology`, the complete
+`chapter3.tex` lines 1710--1881. Preserve the 43-record stable map, all formulas,
+ten labels, 24 cross-reference commands, `KS06`, five symbol indexes, seven
+TikZ-CD diagrams, and 36 arrows. Disclose O014-C054 for the missing evaluation
+at `X` and O014-C055 for the source's overstrong isomorphism symbol. Reflow the
+long cone-object formula and move crowded quasi-isomorphism properties from
+two diagrams into adjacent prose after full-size render inspection; independent
+delta review confirms no semantic or topological change.
+
+Admit `build/cumulative-unit-041-finalD-20260825`: Biber resolves 21 citekeys,
+MakeIndex accepts 182 terminology and 93 symbol entries, and the final log has
+zero error, unresolved reference/citation, rerun request, overfull box, missing
+character, or fatal stop. Promote the byte-identical 253-page PDF, 1,255,777
+bytes, SHA-256
+`f364d2c3b6839a14b89f77313f9e3117dc9b7b5e5ad920d27637924513d5a29f`.
+The 78-row manifest re-verifies with zero mismatch. Advance the next cursor to
+Unit 042, `sec:resolutions`, lines 1882--2214, but keep the corpus pursuit
+active and publish this worthwhile boundary through the existing GitHub and
+Zenodo lineages before continuing.

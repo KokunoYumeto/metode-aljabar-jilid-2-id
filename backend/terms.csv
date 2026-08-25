@@ -450,3 +450,6 @@ math.algebra.linear_dual,dual linear,id-ID,O014,active
 math.homological.bounded_complex,kompleks terbatas,id-ID,O014,active
 math.homological.bounded_below_complex,kompleks terbatas bawah,id-ID,O014,active
 math.homological.bounded_above_complex,kompleks terbatas atas,id-ID,O014,active
+math.homological.diagonally_finite_bicomplex,bikompleks berhingga pada setiap diagonal,id-ID,O014,active
+math.homological.row_exact_bicomplex,bikompleks eksak pada baris,id-ID,O014,active
+math.homological.column_exact_bicomplex,bikompleks eksak pada kolom,id-ID,O014,active

@@ -910,10 +910,97 @@ SHA-256
 `3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`,
 then deleted. Canonical finalD artifacts and the three contact sheets remain.
 
+The later explicit cleanup boundary archived only the three obsolete Unit 038
+candidate build trees (finalA/finalB/finalC): 45 files / 6,086,501 bytes into
+`old stuff/o014_unit038_superseded_candidate_builds_01a02164_20260825-041840.zip`
+(5,028,153 bytes; SHA-256
+`7db65aee4716316fa7dab0528db6c6ca8dea97cfc424a3500e51a71f2df948ea`).
+Entry names, uncompressed sizes, and hashes verified before exact-root
+deletion. Successful final builds, canonical evidence, and publication files
+were deliberately retained.
+
+GitHub and Zenodo now publish the admitted Unit 040 boundary. The corrected
+GitHub head is commit `cd61ef96eda025a072deffbe98de451ef236dc05`, tree
+`fb94b4915b3f8920ef1b47f4eac5a2aa9dae31bb`; its immutable archive is
+1,903,798 bytes, SHA-256
+`adb26734ceaae10a01af0f292e682671b2e561331507385f345eb275dd3d301f`.
+Anonymous readback verifies 123 payloads with zero missing, unlisted,
+duplicate, byte, hash, or cross-inventory mismatch; the PDF exactly matches
+the admitted 1,230,437-byte reader. Zenodo record `22096566`, DOI
+`10.5281/zenodo.22096566`, advances the existing concept `22059751` as
+`unit-040`. All seven public files total 1,658,212 bytes and match the local
+package byte-for-byte and SHA-256; both DOI routes resolve to this record, and
+the concept-latest API returns it. Sanitized receipts are
+`release/github/GITHUB_PUBLICATION_RECEIPT.json` and
+`release/zenodo/unit-040/ZENODO_PUBLICATION_RECEIPT.json`.
+
+After both sanitized receipts were validated, the two GitHub readback folders
+(initial failing inventory and corrected passing inventory) and the passing
+Zenodo readback folder became redundant loose copies. Their exact 13 files /
+7,932,488 bytes were archived as
+`old stuff/o014_unit040_public_readbacks_01a02164_20260825-151616.zip`
+(7,685,984 bytes; SHA-256
+`18eaaafbc65c8e7b7c7526641621f6b85bcea4d866b14b35bb94296dbc430358`).
+Every ZIP entry name, uncompressed byte count, and SHA-256 matched before the
+three exact loose directories were deleted. Canonical packages, public files,
+and sanitized receipts remain live.
+
 The next exact boundary is Unit 041,
 `o014.aljabr2.chapter3.double-complex-cohomology`, *Kohomologi bikompleks*,
 the complete `chapter3.tex` lines 1710--1881, stopping before
-`sec:resolutions` at line 1882. The public GitHub and Zenodo surfaces still
-truthfully identify Unit 039 until the Unit 040 publication transaction and
-anonymous readback complete. This admitted checkpoint remains partial and does
+`sec:resolutions` at line 1882. This published checkpoint remains partial and
+does not complete the corpus pursuit.
+
+At the next explicit cleanup boundary, the now-superseded Unit 038 finalD and
+Unit 039 finalC build trees and their rendered-page sets (36 files / 8,287,867
+bytes) were verified in
+`old stuff/o014_superseded_unit038-039_builds_and_renders_01a02164_20260825-154253.zip`
+(7,290,676 bytes; SHA-256
+`833bccd43e990ddf2ad967c0a08cfc84277f5614c665b60c03c00409ceb702d2`)
+before the four exact loose directories were deleted. The Unit 040 canonical
+build/render evidence and all active Unit 041, source, control, backend, QA,
+and release materials remain live.
+
+Unit 041, `o014.aljabr2.chapter3.double-complex-cohomology`, is now locally
+admitted. It covers the complete `chapter3.tex` lines 1710--1881 and stops
+before `sec:resolutions` at line 1882. The exact 14,167-byte source witness has
+SHA-256
+`fac229cb4d731ecac5486304c8f4f172d0f8522adede60034b5060616d04ccfa`;
+the 43-record map is 13,693 bytes / SHA-256
+`ef38bad8dc30390e2b8057c17ee5d113e5f7b4c7eba3d08a6d111b08decd444b`;
+and the final 20,059-byte Indonesian target has SHA-256
+`8ad7d65cc4681252b6ff4e71f8bd4e3cbdcbfca6416cd538f3fa75c31b1f1367`.
+Independent structural, semantic, and focused delta reviews pass. Disclosed
+repairs O014-C054 and O014-C055 cover object/functor typing and the distinction
+between a quasi-isomorphism and a chain-level isomorphism. Both ledgers have
+454 exact-matching terminology concepts; the backend has 41 unique units and
+2,120 unique segments.
+
+The admitted build is `build/cumulative-unit-041-finalD-20260825`. Biber
+resolves all 21 citations and both MakeIndex passes accept 182 terminology and
+93 symbol entries with no rejection or warning. The final log has zero error,
+undefined reference/citation, rerun request, overfull box, missing character,
+or fatal stop. The build, Unit 041 checkpoint, and promoted cumulative reader
+are byte-identical: 253 pages, 1,255,777 bytes, SHA-256
+`f364d2c3b6839a14b89f77313f9e3117dc9b7b5e5ad920d27637924513d5a29f`.
+Strict PDF checks and fresh full-size rendering pass after moving two crowded
+quasi-isomorphism labels into adjacent prose. QA receipt `qa/UNIT_041_QA.md`
+is 9,621 bytes, SHA-256
+`d515d3a6e28fe4c25d99f910e5383e8b58bd56bcbce8ba8238a33ce77e52bc71`.
+The 78-row admission manifest lists 6,851,782 bytes, is 9,820 bytes, SHA-256
+`b7271d4b4e429125dcf474d0b1810933cc559bf17b574c5f8b38830822a843dc`,
+and re-verifies with zero mismatch.
+
+After finalD admission, the three superseded Unit 041 build candidates and the
+obsolete finalC render set (100 files / 10,539,388 bytes) were verified in
+`old stuff/o014_unit041_superseded_builds_and_renders_01a02164_20260825-161628.zip`
+(8,798,871 bytes; SHA-256
+`f2cf861907e647d9177784ca0f045fcff8f077a1552ad007a91f02c3422f30ed`)
+before the four exact loose directories were deleted. The finalD build and
+render evidence remain live.
+
+GitHub and Zenodo still expose the earlier Unit 040 boundary while Unit 041
+release packaging is in progress. The next exact source cursor is Unit 042,
+`o014.aljabr2.chapter3.resolutions`, `chapter3.tex` lines 1882--2214,
+stopping before `sec:derived-primer` at line 2215. This partial checkpoint does
 not complete the corpus pursuit.

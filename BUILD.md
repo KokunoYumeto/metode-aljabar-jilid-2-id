@@ -2,7 +2,7 @@
 
 ## Toolchain baseline
 
-The admitted Unit 040 artifact was built on Windows with XeLaTeX, Biber 2.21,
+The admitted Unit 041 artifact was built on Windows with XeLaTeX, Biber 2.21,
 and MakeIndex. A complete TeX distribution must provide the packages named by
 `source/AJbook2.cls`, `source/mycommand.sty`, `source/myarrows.sty`, and the
 wrapper. The portable configuration uses TeX Gyre Heros and the Fandol fonts
@@ -38,8 +38,8 @@ Pop-Location
 $env:BIBINPUTS = $oldBibInputs
 ```
 
-Expected admitted boundary: 247 pages, 1,230,437 bytes, SHA-256
-`15976f12f8a401766cfeca2d446abd780ced1ddeedf812b2e65204d346b73ebf`.
+Expected admitted boundary: 253 pages, 1,255,777 bytes, SHA-256
+`f364d2c3b6839a14b89f77313f9e3117dc9b7b5e5ad920d27637924513d5a29f`.
 Toolchain and platform metadata can change PDF bytes even when the mathematical
 content is unchanged; compare the build log, page count, links, fonts, and
 rendered pages as well as the byte hash. A clean replay may differ in raw PDF
@@ -47,4 +47,4 @@ bytes because of platform job-name and metadata variation; it must still match
 the admitted page count, links, fonts, and visual checks.
 
 The full build and visual-QA receipt is
-[`provenance/UNIT_040_QA.md`](provenance/UNIT_040_QA.md).
+[`provenance/UNIT_041_QA.md`](provenance/UNIT_041_QA.md).
