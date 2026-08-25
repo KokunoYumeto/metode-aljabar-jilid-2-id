@@ -812,6 +812,108 @@ hash mismatch.
 The next exact source-order boundary is Unit 040,
 `o014.aljabr2.chapter3.truncation-functors`, *Funktor pemenggalan*, exact
 `chapter3.tex` lines 1587--1709, substantive through line 1708, stopping before
-`sec:double-cplx-coh` at line 1710. Public GitHub and Zenodo still correctly
-identify Unit 038 until the Unit 039 release transaction completes. This
-admitted checkpoint remains partial and does not complete the corpus pursuit.
+`sec:double-cplx-coh` at line 1710. The Unit 039 public transaction and
+readback are recorded immediately below. This admitted checkpoint remains
+partial and does not complete the corpus pursuit.
+
+## Unit 039 public preservation complete (2026-08-25)
+
+The existing corpus-specific GitHub repository is public through Unit 039 at
+commit `37ead420edf108b4974a6a040812406fc12df039`, tree
+`459b2f6c28e84ffab9f22a0aa153d2e058d9f67a`. Its immutable anonymous archive
+contains 120 files, is 1,856,390 bytes, and has SHA-256
+`3f196257bca21fd76662998e16bedb0ba288c302e310d4d00988ba0cda1361df`.
+The 118-row `MANIFEST.csv` and 118-row `SHA256SUMS.txt` both reverify every
+canonical public blob with zero missing, extra, byte, or hash mismatch. The
+public 243-page PDF is 1,210,711 bytes, SHA-256
+`11cabff2db7b4bdb1abaaf29be78a37fd5e16b4dd08b30f6debf88742f026f6a`.
+The staged/public blob audit found no credential pattern, private user path,
+personal name, or stray organization-label prose. Sanitized receipt
+`release/github/GITHUB_PUBLICATION_RECEIPT.json` is 5,879 bytes, SHA-256
+`797663d6c3a7e4ddab4295ce565d0a46d23da2645a72ca52ebdc4ba71ef80095`.
+
+The same admitted boundary advances only the existing Zenodo concept 22059751
+from record 22087331 to published record 22088565, DOI
+`10.5281/zenodo.22088565`, version `unit-039`. Its seven reader-first files
+total 1,627,091 bytes. Every credential-free public download matches its local
+byte count and SHA-256; the record page, record DOI, concept DOI, concept API
+latest alias, metadata, and sorted first PDF all pass. Metadata preserves the
+exact work title, Wen-Wei Li creator attribution, `ind`, CC BY 4.0,
+independent-derivative and non-endorsement statements, the single established
+organization-contributor entry, and exact model disclosure `OpenAI Codex
+gpt-5.6-sol, Ultra`; the organization label is absent from the title and
+description. No competing concept or residual unpublished draft was created.
+Sanitized receipt
+`release/zenodo/unit-039/ZENODO_PUBLICATION_RECEIPT.json` is 7,202 bytes,
+SHA-256
+`f842947a29c953bcbeff661f4d5681403b867735bac09064e65eb7528e31531b`.
+
+The public snapshot contains Units 001--039, 2,044 segments, 448 terminology
+concepts, and corrections through O014-C049. It contains no Unit 040 byte or
+future correction. Figshare remains truthfully at its last verified public
+boundary because the account is inactive; no repeated mutation attempt or
+duplicate article occurs. GitHub and Zenodo are the verified current Unit 039
+preservation surfaces. Unit 040 is now the active production boundary. This
+partial release does not complete the corpus pursuit.
+
+## Unit 040 admitted checkpoint (2026-08-25)
+
+Units 001--040 now form one contiguous admitted Indonesian reader through all
+of `prelude.tex`, `chapter1.tex`, and `chapter2.tex`, plus `chapter3.tex` lines
+9--1709 / Section 3.9. Unit 040 is
+`o014.aljabr2.chapter3.truncation-functors`, *Funktor pemenggalan*. Its exact
+10,217-byte normalized-LF source slice has SHA-256
+`7954b37ef2279d82e9ce3d8e56f6ce218ccd839970a684189b6315a3f67a48be`;
+its 33-record map has SHA-256
+`d2488a8f085baec85fbfc199198db009f9b85f0da996533ec12dde64dd2e62a2`;
+and its independently audited 14,865-byte Indonesian target has SHA-256
+`073c9ddbc20430ecb37ee80658f73f5b20756919ec38ffe7807c77130291c9b0`.
+
+All 33 mapped segments, nine labels, six references, 22 environment pairs,
+58 diagram arrows, eight index writes, formulas, signs, shifts, and adjunction
+directions pass. Four disclosed source repairs O014-C050--C053 cover the
+missing Abelian hypothesis, comparison-map antecedent, Coim/Image component
+typing, and wrong object category. Three bounded-complex terms bring both
+terminology surfaces to 451 exact-matching concepts. The modular backend now
+contains 40 units and 2,077 unique segments; its final 33 rows exactly match
+the frozen Unit 040 map.
+
+The admitted build is `build/cumulative-unit-040-finalD-20260825`. Biber
+resolves all 21 citations and both MakeIndex passes accept 182 terminology and
+88 symbol entries with no warning or rejection. The final log has zero error,
+undefined reference/citation, rerun request, overfull box, missing character,
+or fatal stop. The build, checkpoint, and promoted cumulative reader are
+byte-identical: 247 pages, 1,230,437 bytes, SHA-256
+`15976f12f8a401766cfeca2d446abd780ced1ddeedf812b2e65204d346b73ebf`.
+Strict PDF and fresh full-size render inspection pass; the reflowed boundedness
+table, duality display, diagrams, notes, bibliography, and indexes are centered,
+legible, and unclipped. QA receipt `qa/UNIT_040_QA.md` is 9,489 bytes, SHA-256
+`e7eab8020a62d6a1994212742e73b573de6520f92ffed8ec1c412e8e49171705`.
+The 77-row admission manifest lists 12,119,914 bytes, is 9,716 bytes, SHA-256
+`70afa2bf1a259fd69333bb61ca9e863e0b95b47341b2924515d6d6b27cc95a88`,
+and re-verifies with zero missing, duplicate, byte-count, or hash mismatch.
+
+The output-argument parsing failure that created a literal `$out` directory is
+closed: exactly eleven failed-build files / 1,651,491 bytes were verified in
+the no-overwrite archive
+`old stuff/o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
+SHA-256
+`3b98158aeb8ad61ad818d352f340f7d8145a6fc2a8199ca7cd2cbf5bfddb83f7`,
+then both loose failed roots were deleted. The finalD canonical build and QA
+surfaces are retained.
+
+After admission, the two superseded overflow-build trees, inspected individual
+page renders, and redundant finalD console captures (70 files / 5,984,538
+bytes) were likewise verified in the no-overwrite archive
+`old stuff/o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
+SHA-256
+`3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`,
+then deleted. Canonical finalD artifacts and the three contact sheets remain.
+
+The next exact boundary is Unit 041,
+`o014.aljabr2.chapter3.double-complex-cohomology`, *Kohomologi bikompleks*,
+the complete `chapter3.tex` lines 1710--1881, stopping before
+`sec:resolutions` at line 1882. The public GitHub and Zenodo surfaces still
+truthfully identify Unit 039 until the Unit 040 publication transaction and
+anonymous readback complete. This admitted checkpoint remains partial and does
+not complete the corpus pursuit.

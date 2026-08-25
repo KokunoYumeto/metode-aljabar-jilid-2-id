@@ -447,3 +447,6 @@ math.homological.connes_periodicity_operator,operator periodisitas Connes,id-ID,
 math.homological.cyclic_cohomology,kohomologi siklik,id-ID,O014,active
 math.homological.periodic_cyclic_cohomology,kohomologi siklik periodik,id-ID,O014,active
 math.algebra.linear_dual,dual linear,id-ID,O014,active
+math.homological.bounded_complex,kompleks terbatas,id-ID,O014,active
+math.homological.bounded_below_complex,kompleks terbatas bawah,id-ID,O014,active
+math.homological.bounded_above_complex,kompleks terbatas atas,id-ID,O014,active
