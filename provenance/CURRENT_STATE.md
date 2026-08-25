@@ -1004,3 +1004,93 @@ release packaging is in progress. The next exact source cursor is Unit 042,
 `o014.aljabr2.chapter3.resolutions`, `chapter3.tex` lines 1882--2214,
 stopping before `sec:derived-primer` at line 2215. This partial checkpoint does
 not complete the corpus pursuit.
+
+Unit 041 is now public and anonymously verified in both existing lineages.
+GitHub `main` is commit
+`98bc2fec01c8e7a1e987f46cfaf519e9b9ee2e6c`, tree
+`ad28c286f4e07ffc847fff339d2c509f49ed099e`. Its immutable 1,957,201-byte
+archive has SHA-256
+`3badbdddb20a602a208ddce629fb17a6d96d0850bb616b8a3761fd9a261a7b2e`.
+Anonymous codeload, raw-reader, raw-README, repository-page, and commit-page
+readback passes: 128 payload rows and 128 checksum rows have zero missing,
+unlisted, byte, or hash mismatch, and the public PDF remains the exact
+1,255,777-byte admitted reader. An initial Unit 041 commit exposed task-local
+absolute archive paths in provenance-only text; it was replaced with
+force-with-lease after path sanitization, cursor repair, inventory
+regeneration, and a second complete anonymous readback. No private path,
+credential-like string, or stale Unit 040 cursor remains in the final head.
+The sanitized receipt is
+`release/github/GITHUB_PUBLICATION_RECEIPT.json`, 6,683 bytes, SHA-256
+`8abb97ec439bbd96cb26b1d9384c6e31d44addd0813bae3864e2cb67baca5196`.
+
+Zenodo record `22098141`, DOI `10.5281/zenodo.22098141`, advances the
+existing concept `22059751` as version `unit-041`; it does not create a
+competing concept. Seven reader-first files total 1,693,098 bytes. Anonymous
+record, page, DOI, concept-DOI, concept-latest, and per-file readback passes
+with zero filename, byte, or SHA-256 mismatch. The PDF is first, 253 pages,
+unencrypted, and still honestly identified as untagged. The exact work title
+is preserved without an organization label in the title or description; the
+single organization-contributor metadata entry is preserved. The sanitized
+receipt is
+`release/zenodo/unit-041/ZENODO_PUBLICATION_RECEIPT.json`, 7,545 bytes,
+SHA-256
+`5a52ac1af8d25cf06ecdf1d479424160e052b193051b39e4cb798a85fb9ecbca`.
+
+After the receipts passed, three redundant loose public-readback directories
+(274 files / 15,679,484 bytes) were verified in the no-overwrite archive
+`old stuff/o014_unit041_public_readbacks_01a02164_20260825-165331.zip`
+(11,796,299 bytes; SHA-256
+`4c7e83208853f83e14e7a7b2dfc65395171a6b2a540c939dc9eefb11979a4a87`)
+before the exact loose directories were deleted. Canonical release packages,
+sanitized receipts, current source/backend, finalD build/render evidence, and
+the promoted reader remain live.
+
+The complete corpus pursuit remains active. Resume next at Unit 042,
+`o014.aljabr2.chapter3.resolutions`, by freezing and mapping exactly
+`chapter3.tex` lines 1882--2214 and stopping before
+`sec:derived-primer` at line 2215.
+
+Unit 042, `o014.aljabr2.chapter3.resolutions`, is now locally admitted. It
+covers the complete `chapter3.tex` lines 1882--2214, with substantive content
+through line 2213, and stops before `sec:derived-primer` at line 2215. The
+333-line normalized-LF source witness is 27,644 bytes, SHA-256
+`75da0a5963f8e3bf2cec5fbe6a4007fea1c1b27faca6bd54528ac8957547ebfa`;
+the 102-record map is 29,370 bytes, SHA-256
+`2581b89bc0485cc25e8c6dbbdf72402d16bd6a58b2ba0c24b6d4d2772c88eb7e`;
+and the final Indonesian target is 39,646 bytes, SHA-256
+`8d82d95029a29901862007a63ae2311fd215c576811e6b646770798d2968736e`.
+Independent structural and semantic review passes after four disclosed,
+type-preserving repairs, O014-C056 through O014-C059. The terminology surfaces
+have 457 exact-matching concepts; the backend has 42 unique units and 2,222
+unique segments, with its final 102 rows line-identical to the frozen map.
+
+The admitted build is `build/cumulative-unit-042-finalD-20260825`. Biber
+resolves all 21 citekeys, and the two MakeIndex passes accept 187 terminology
+and 93 symbol entries with no rejection or warning. The final log has zero
+TeX/package error, undefined reference/citation, rerun request, overfull box,
+missing character, fatal error, or emergency stop. The build, checkpoint, and
+promoted reader are byte-identical: 265 pages, 1,309,971 bytes, SHA-256
+`11037fbd52c9bdea1b18a449fbf8395f89ad6716b4c080035565ffc71f2d7491`.
+Strict structural checks and fresh 120-dpi rendering of the front matter, all
+Unit 042 pages, and the complete backmatter pass. The PDF is navigable and
+searchable but remains untagged; twelve mathematical font rows lack ToUnicode,
+so no fully semantic accessibility claim is made.
+
+The 79-row admission manifest
+`qa/CUMULATIVE_UNIT_042_FILE_MANIFEST.csv` lists 10,952,634 bytes and
+re-verifies 79 unique paths with zero missing, duplicate, byte-count, or hash
+mismatch. It is 9,947 bytes, SHA-256
+`829961cb5e76ad4a031d06240b14084acccbea50092eaded5cf1f7709197ffae`.
+The Unit 042 QA receipt is 9,285 bytes, SHA-256
+`9bcc87d3483b439ac4381760241880a3a139671c98660eacb62817a0de787f66`.
+GitHub and Zenodo still expose Unit 041 while this admitted boundary is being
+packaged, so the local completion status remains publication-pending.
+
+The next exact boundary is Unit 043,
+`o014.aljabr2.chapter3.classical-derived-functors`, *Funktor turunan
+klasik*, the complete `chapter3.tex` lines 2215--2552. Its 338-line
+normalized-LF slice is 27,132 bytes, SHA-256
+`ac95a737c3df39dff8ece789057d2ad3ce93474b258476245b2fcc67d074dbb9`,
+and it stops before `sec:lim1` at line 2553. Unit 043 remains untranslated;
+this public snapshot includes no source correction beyond O014-C059. This
+checkpoint is partial and does not complete the corpus pursuit.

@@ -453,3 +453,6 @@ math.homological.bounded_above_complex,kompleks terbatas atas,id-ID,O014,active
 math.homological.diagonally_finite_bicomplex,bikompleks berhingga pada setiap diagonal,id-ID,O014,active
 math.homological.row_exact_bicomplex,bikompleks eksak pada baris,id-ID,O014,active
 math.homological.column_exact_bicomplex,bikompleks eksak pada kolom,id-ID,O014,active
+math.homological.complex_of_injective_objects,kompleks yang terdiri atas objek-objek injektif,id-ID,O014,active
+math.homological.complex_of_projective_objects,kompleks yang terdiri atas objek-objek projektif,id-ID,O014,active
+math.homological.horseshoe_lemma,Lema Tapal Kuda,id-ID,O014,active

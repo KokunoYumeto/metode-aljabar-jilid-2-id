@@ -11,8 +11,9 @@ official 650-page Linux/TeX Live/xindy baseline and the separately valid
 pagination difference as a corpus mismatch.
 
 Resume from the exact frozen boundary in `CURRENT_CURSOR.json` (currently
-`chapter3.tex` line 946, the start of `sec:Abel-cplx`; Units 001--036 are
-complete through Section 3.5) and translate every
+Unit 043, `chapter3.tex` lines 2215--2552, the complete
+`sec:derived-primer`; Units 001--042 are complete through Section 3.11) and
+translate every
 active source component in order through Chapters 1--9, Appendices A--B,
 bibliography, and indexes. Preserve all mathematics, numbering, labels,
 cross-references, citations, diagrams and source assets, all 194 exercises,

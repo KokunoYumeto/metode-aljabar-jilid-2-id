@@ -2706,3 +2706,77 @@ The 78-row manifest re-verifies with zero mismatch. Advance the next cursor to
 Unit 042, `sec:resolutions`, lines 1882--2214, but keep the corpus pursuit
 active and publish this worthwhile boundary through the existing GitHub and
 Zenodo lineages before continuing.
+
+## D115 - Publish and anonymously verify Unit 041 (2026-08-25)
+
+Advance the existing GitHub repository and Zenodo concept with the admitted
+Unit 041 snapshot; create no competing lineage. The first Unit 041 GitHub
+commit exposed task-local absolute archive paths in two provenance files.
+Because the PDF and mathematical sources were unaffected, sanitize those
+provenance-only strings, repair the mutable cursor's Unit 041 QA pointer,
+regenerate the public manifest and checksum inventory, amend the Unit 041
+commit, and replace the branch head with force-with-lease.
+
+The final GitHub head is commit
+`98bc2fec01c8e7a1e987f46cfaf519e9b9ee2e6c`, tree
+`ad28c286f4e07ffc847fff339d2c509f49ed099e`. Its 1,957,201-byte immutable
+archive has SHA-256
+`3badbdddb20a602a208ddce629fb17a6d96d0850bb616b8a3761fd9a261a7b2e`.
+Anonymous readback proves 128 manifest payloads and 128 checksum rows with
+zero missing, unlisted, duplicate, byte, or hash mismatch; it also proves zero
+private-path/name match and exact identity of the 1,255,777-byte reader.
+
+Advance Zenodo concept record `22059751` from immutable Unit 040 record
+`22096566` to published Unit 041 record `22098141`, DOI
+`10.5281/zenodo.22098141`. Publish exactly seven files totaling 1,693,098
+bytes: the 253-page reader, compact 41-unit source/backend ZIP, compact
+QA/provenance ZIP with the exact Unit 041 slice and segment map, CC BY 4.0
+license, README, release manifest, and checksums. Preserve the exact title,
+single organization-contributor entry, source attribution, modification
+notice, non-endorsement, partial-status claim, and precise model disclosure.
+Anonymous per-file, record, DOI, concept-DOI, and concept-latest readback passes
+with zero mismatch.
+
+## D116 - Archive redundant Unit 041 public readbacks (2026-08-25)
+
+Once both sanitized receipts captured the final public identities, archive
+only the two GitHub readback directories and one Zenodo readback directory.
+Their 274 files total 15,679,484 loose bytes. The no-overwrite archive is
+`old stuff/o014_unit041_public_readbacks_01a02164_20260825-165331.zip`,
+11,796,299 bytes, SHA-256
+`4c7e83208853f83e14e7a7b2dfc65395171a6b2a540c939dc9eefb11979a4a87`.
+The ZIP opens and every entry name, uncompressed byte count, and SHA-256
+matches before deletion of the three exact task-local roots. Retain the
+canonical Unit 041 packages, sanitized receipts, finalD build/render evidence,
+source witnesses and maps, controls, backend, QA, and promoted PDF.
+
+## D117 - Admit Unit 042 and freeze the Unit 043 boundary (2026-08-25)
+
+Admit `o014.aljabr2.chapter3.resolutions`, the complete
+`chapter3.tex` lines 1882--2214. Preserve its 102-record stable map, 15
+labels, 31 live cross-references plus two explicit source-number forward
+references, seven equation references, five symbol-index entries, 21 item
+nodes, thirteen diagrams, and 90 arrows. Disclose O014-C056 through O014-C059
+for the undefined base-step cokernel, wrong diagram object, ill-typed matrix
+entry, and repeated vertical arrow. Independent semantic and delta review
+confirms these repairs and the natural Indonesian text.
+
+Admit `build/cumulative-unit-042-finalD-20260825`: Biber resolves 21
+citekeys, MakeIndex accepts 187 terminology and 93 symbol entries, and the
+final log has zero error, unresolved reference/citation, rerun request,
+overfull box, missing character, or fatal stop. Promote the byte-identical
+265-page PDF, 1,309,971 bytes, SHA-256
+`11037fbd52c9bdea1b18a449fbf8395f89ad6716b4c080035565ffc71f2d7491`.
+Fresh full-size page inspection passes, with the untagged/ToUnicode
+accessibility limitation stated explicitly. The final 79-row manifest,
+9,947 bytes, SHA-256
+`829961cb5e76ad4a031d06240b14084acccbea50092eaded5cf1f7709197ffae`,
+re-verifies 10,952,634 listed bytes with zero mismatch.
+
+Freeze the next source-order boundary as Unit 043,
+`o014.aljabr2.chapter3.classical-derived-functors`,
+`chapter3.tex` lines 2215--2552, stopping before `sec:lim1` at line
+2553. Keep that unit untranslated in this snapshot and include no correction
+beyond O014-C059. Keep the full corpus pursuit active and publish Unit 042
+through the existing GitHub and Zenodo lineages before translating this next
+unit.
