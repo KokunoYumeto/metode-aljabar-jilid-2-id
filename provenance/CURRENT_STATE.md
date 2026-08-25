@@ -1,8 +1,8 @@
 # O014 current state
 
-Status: active source-order Indonesian production. Units 001--038 are complete,
+Status: active source-order Indonesian production. Units 001--039 are complete,
 admitted, built, and QA-passed without a source gap through `chapter3.tex`
-line 1292. This remains a partial working edition; do not
+line 1586. This remains a partial working edition; do not
 complete the pursuit at this or any later checkpoint short of the entire
 corpus, independent mastery layer, semantic reader, and final verified release
 set.
@@ -699,3 +699,119 @@ through line 1585 and a terminal blank separator at line 1586. It stops before
 `sec:truncation-functors` at line 1587. Freeze its source witness and segment
 map before translation. This admitted checkpoint remains partial and does not
 complete the corpus pursuit.
+
+## Unit 038 public preservation complete (2026-08-24)
+
+The existing corpus-specific GitHub repository is public through Unit 038 at
+commit `e129fc737546c3778eba6a96f975309fbe14c57b`, tree
+`c033468e6edb1af5cc40d47c1a738f2e71020f45`. The immutable anonymous archive
+contains 115 files, is 1,771,050 bytes, and has SHA-256
+`c23ec8c757b6a8a86d5ec0749179ca8f526a16a3a0afd91125410f383b259f4d`.
+The 113-row `MANIFEST.csv` and 113-row `SHA256SUMS.txt` both reverify every
+canonical public blob with zero missing, extra, byte, or hash mismatch. The
+first readback exposed four CRLF-checkout hashes that did not describe Git's
+LF-normalized public blobs; corrective commit `e129fc7` repairs exactly those
+inventory rows, and the complete second readback passes. The public 231-page
+PDF is 1,162,756 bytes, SHA-256
+`71293cdd594e6df12ddf7ea0c1ca74518e1a0ca5da530f91934a562426702a07`.
+Sanitized receipt `release/github/GITHUB_PUBLICATION_RECEIPT.json` is 6,979
+bytes, SHA-256
+`a9b240310577020f9eb2d9dfd2b7ba0cca9c2b364e91dc9a22d59b68e6d7c817`.
+
+The same admitted boundary advances only the existing Zenodo concept 22059751
+to record 22087331, DOI `10.5281/zenodo.22087331`, version `unit-038`. Its seven
+reader-first files total 1,562,324 bytes. Every anonymous public download
+matches its local byte count and SHA-256; the record page, record DOI, concept
+DOI, concept API latest alias, metadata, and sorted first PDF all pass. Metadata
+preserves the exact work title, Wen-Wei Li creator attribution, `ind`, CC BY
+4.0, independent-derivative and non-endorsement statements, the single
+organization-contributor entry, and exact model disclosure `OpenAI Codex
+gpt-5.6-sol, Ultra`; the organization label is absent from the title and
+description. No competing concept or residual unpublished draft was created.
+Sanitized receipt
+`release/zenodo/unit-038/ZENODO_PUBLICATION_RECEIPT.json` is 6,977 bytes,
+SHA-256
+`ab21198f8c86c6d377d5afcb710ebe076c764a1cce36e84d5e312341f709ec3a`.
+
+The public snapshot contains Units 001--038, 1,962 segments, 428 terminology
+concepts, and corrections through O014-C043, with no Unit 039 byte or future
+correction. One bounded Figshare preflight made no mutation because both the
+account and project endpoints still return `403 Inactive/disabled account`;
+the public collection remains readable, while the prior article endpoint
+returns 404. Receipt
+`release/figshare/unit-038/FIGSHARE_PUBLICATION_RECEIPT.json` is 4,190 bytes,
+SHA-256
+`22fbf23546b7602739202cc14ffa38934afffd18bccd8dbcf785662bf7c6dc68`.
+GitHub and Zenodo are the verified current Unit 038 preservation surfaces.
+
+## Unit 039 admitted checkpoint (2026-08-25)
+
+Units 001--039 now form one contiguous admitted Indonesian reader through all
+of `prelude.tex`, `chapter1.tex`, and `chapter2.tex`, plus `chapter3.tex` lines
+9--1586 / Section 3.8. Unit 039 is
+`o014.aljabr2.chapter3.exercises-hochschild-homology-and-cohomology`, exact
+lines 1293--1586. Its frozen 22,932-byte source slice has SHA-256
+`d94462e5d3d2868d7f6de812d6b888c927eb5c8611d52dcfb3a6b9104550325c`;
+its 82-record, 28,522-byte map has SHA-256
+`e7fe543ff2f5165924a3dd4fe99e6d6bb00417e9f76e3dbca4ef2b1195c9ad08`.
+The complete 711-line Indonesian target is 35,023 bytes, SHA-256
+`641c391d6a11b0d5276070b14253278a194ab820e2850d3be8223a6bf953d254`.
+
+Independent structural, mathematical, language, and post-layout audits pass
+all 82 stable segments, twelve labels, thirteen references, three citation
+keys, 46 balanced environment pairs, ten TikZ-CD diagrams/48 arrows, one TikZ
+figure, six list items, and 24 index commands. Seven TeX-native quote pairs
+replace Unicode smart quotes without semantic change. Six demonstrated source
+repairs, O014-C044--C049, correct a surplus tensor factor, a dual-boundary
+index, undeclared two-argument Hochschild notation, reversed complex
+arguments, a homology/cohomology typo, and the coefficient bimodule in the
+cohomological SBI sequence. All are disclosed inline and in the 50-row source
+correction ledger; no upstream message was sent.
+
+Twenty first-use concepts bring both terminology surfaces to 448 exact
+matching unique concept IDs. The backend contains 39 unique sequential units
+and 2,044 unique segments. `backend/units.jsonl` is 29,357 bytes, SHA-256
+`96d4bce4db97ba7cb737300eecdbb75ded1c4de974e54d1f501e2d046c57ccce`;
+`backend/segments.jsonl` is 604,152 bytes, SHA-256
+`688d32abdc574c69c82c83f9b03ef9e2679ab7e70fc22f01df4d0083b5d8a0fa`.
+The final 82 backend rows exactly match the frozen Unit 039 map. The 39-input
+wrapper and its mutable alias are byte-identical; the 21-entry bibliography
+and its mutable alias are also byte-identical.
+
+The admitted shell-escape-disabled build is
+`build/cumulative-unit-039-finalC-20260825`: XeLaTeX, Biber 2.21, both bounded
+MakeIndex passes, and converged final XeLaTeX passes. Biber and both index
+passes have zero warning/error or rejection. The 84,606-byte final log has
+SHA-256
+`33fb1a38c0fa46dee4ca3fd3012c71b89b1f844ece7a2f66bd418250ed61e1bf`
+and zero TeX/package error, undefined control/reference/citation, rerun
+request, overfull box, missing character, fatal error, or emergency stop.
+Seventeen non-fatal underfull horizontal boxes and seven underfull vertical
+boxes remain.
+
+The build, checkpoint, and promoted cumulative reader are byte-identical: PDF
+1.7, 243 pages, 1,210,711 bytes, SHA-256
+`11cabff2db7b4bdb1abaaf29be78a37fd5e16b4dd08b30f6debf88742f026f6a`.
+It is unencrypted and untagged, with 46 valid outline entries, 1,049 valid
+named destinations, 817 resolved internal links, fourteen HTTPS links, and 52
+embedded/subset font rows. Twelve mathematical fonts lack ToUnicode. Fresh
+120-dpi inspection of the corrected 3.8 cover, all Section 3.8 pages,
+bibliography, and indexes passes: all prose, displays, diagrams, equation
+numbers, footnotes, and indexes are centered, legible, and unclipped.
+
+The complete qualification and contact-sheet hashes are in
+`qa/UNIT_039_QA.md`, 9,656 bytes, SHA-256
+`53a9b5b309ecc0ba1648781e1bf858a26d835414a01ab165aff3dbd8ec2f4bcf`.
+The exact 76-row admission manifest
+`qa/CUMULATIVE_UNIT_039_FILE_MANIFEST.csv` lists 7,592,101 bytes, is 9,591
+bytes, SHA-256
+`6c74c75ecbab1a4465b9cd65be2670fbc68bf9c3382242cc9503b26a121de972`,
+and re-verifies with zero missing file, duplicate path, byte-count mismatch, or
+hash mismatch.
+
+The next exact source-order boundary is Unit 040,
+`o014.aljabr2.chapter3.truncation-functors`, *Funktor pemenggalan*, exact
+`chapter3.tex` lines 1587--1709, substantive through line 1708, stopping before
+`sec:double-cplx-coh` at line 1710. Public GitHub and Zenodo still correctly
+identify Unit 038 until the Unit 039 release transaction completes. This
+admitted checkpoint remains partial and does not complete the corpus pursuit.

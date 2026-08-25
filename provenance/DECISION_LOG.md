@@ -2267,7 +2267,7 @@ canonical translated sources, source slices, segment maps, terminology and
 backend ledgers, controls, receipts, final release artifacts, and credentials.
 
 The no-overwrite archive is
-`C:/Users/Floris/Documents/interlanguage/old stuff/o014_methods_of_algebra_v2_obsolete_builds_readbacks_01a02164_20260824-222605.zip`:
+`[local archive root]/o014_methods_of_algebra_v2_obsolete_builds_readbacks_01a02164_20260824-222605.zip`:
 692,700,671 bytes, SHA-256
 `dfccec87a0f8bc71767709969803649cc795ef2b47276de49a4812aa7098cf34`.
 Its `_cleanup_roots.txt` gives the exact 150 archived/deleted roots and
@@ -2327,3 +2327,146 @@ Advance the production cursor to Unit 039,
 the next production action. Public preservation remains truthfully at Unit 037
 until the already authorized Unit 038 GitHub and Zenodo transactions complete.
 This admission remains partial and does not complete the corpus pursuit.
+
+## D100 - Publish and anonymously verify the Unit 038 boundary (2026-08-24)
+
+Advance the existing GitHub edition repository without creating a replacement
+repository or contacting upstream. The initial content commit
+`b101791b45e96e6aa033ade7e7e71c908820c7cc` published the reader and exact
+Unit 038 source/backend/provenance closure. Its first anonymous archive audit
+correctly rejected four inventory rows derived from CRLF checkout bytes rather
+than Git's LF-normalized canonical blobs. Correct only those rows and accept
+final commit `e129fc737546c3778eba6a96f975309fbe14c57b`, tree
+`c033468e6edb1af5cc40d47c1a738f2e71020f45`, after a complete second readback.
+The 1,771,050-byte archive has SHA-256
+`c23ec8c757b6a8a86d5ec0749179ca8f526a16a3a0afd91125410f383b259f4d`,
+contains exactly 115 expected files, and verifies all 113 manifest/checksum
+payload rows with zero defect. The raw 231-page reader matches the admitted
+1,162,756 bytes and SHA-256
+`71293cdd594e6df12ddf7ea0c1ca74518e1a0ca5da530f91934a562426702a07`.
+Sanitized receipt hash:
+`a9b240310577020f9eb2d9dfd2b7ba0cca9c2b364e91dc9a22d59b68e6d7c817`.
+
+Advance only existing Zenodo concept 22059751 from record 22086560 to
+published record 22087331, DOI `10.5281/zenodo.22087331`, version `unit-038`.
+The seven reader-first files total 1,562,324 bytes: PDF 1,162,756 /
+`71293cdd594e6df12ddf7ea0c1ca74518e1a0ca5da530f91934a562426702a07`;
+source/backend ZIP 318,266 /
+`3872d931085130d8a379c6a6c0314e7b4947c1c9dd8a8a96738a03c92348bdea`;
+QA/provenance ZIP 55,888 /
+`e82355b12d38d945d395a1f1b7b819eef969bc4a252e89200155fe337a7ffc8c`;
+LICENSE 19,045 /
+`48a83a6e39f7b2f166763b30776132c9a99aa816f17cb06f87ad5b8542a7b71f`;
+README 3,081 /
+`9d8de19fe144a9e203e397773749305f67f9f5c10cd866d4291b5a9173ad19d1`;
+release manifest 2,686 /
+`5780098d447dcad2c801977c02a372ec443137ccd6140adc5d1ff76c62138e90`;
+and checksums 602 /
+`b3cc27a06959d94ee7ddc02a0935070cbdbda93316a5d6ac58bd8c716fe8242d`.
+Anonymous record API/page, record DOI, concept DOI/latest API, and every-file
+byte/hash readback pass. Metadata preserves the exact title, author, license,
+language, one established organization contributor, non-endorsement, and
+model disclosure without placing the organization label in the title or
+description. No residual draft or competing concept exists. Sanitized receipt
+hash: `ab21198f8c86c6d377d5afcb710ebe076c764a1cce36e84d5e312341f709ec3a`.
+
+Perform one bounded Figshare preflight after both successful publications.
+Stop before mutation because authenticated account and project endpoints both
+return `403 Inactive/disabled account`; do not duplicate the existing article.
+Receipt hash:
+`22fbf23546b7602739202cc14ffa38934afffd18bccd8dbcf785662bf7c6dc68`.
+GitHub and Zenodo now preserve the exact Unit 038 boundary. Continue at Unit
+039; the overall corpus pursuit remains active.
+
+## D101 - Remove recreatable post-release transaction/render transients (2026-08-24)
+
+After both public readbacks and sanitized receipts passed, remove only five
+exact task-owned transient targets that are fully recreatable and excluded from
+the canonical admission/release manifests: the temporary GitHub archive/raw
+readback directory (2,976,910 bytes), the temporary Zenodo seven-file readback
+directory (1,562,324 bytes), the superseded 328-byte Zenodo transaction-state
+file, and the finalD individual-page render directories (3,408,834 and 306,938
+bytes). Total transient bytes removed: 8,255,334. Preserve the finalD build,
+promoted PDFs, three admitted contact sheets, source/backend packages, public
+receipts, manifests, controls, and all canonical production files.
+
+## D102 - Archive the escaped literal-dollar-out failed build log (2026-08-24)
+
+The bounded task-root check found one additional obsolete artifact: the
+literal directory `$out`, containing only the 1,111-byte failed Unit 025 log
+`Al-jabr-2-id-cumulative-through-unit-025.log` (SHA-256
+`2d1eaf4ef111bd8647c8e788baff24971fe99f1c3ea2cc1318628f81439556eb`).
+Archive that exact file, without overwrite, as
+`[local archive root]/o014_literal-dollar-out_failed-unit025-log_01a02164_20260824.zip`.
+The ZIP is 824 bytes with SHA-256
+`f6aad85381e98388d129b63bdb2c7a1263447216105141beaddb2212f0ebc7db`.
+Its sole entry has the expected name, 1,111 bytes, and the exact source hash;
+after this byte/hash verification, delete only the archived log and its now
+empty literal `$out` directory. Canonical sources, builds, readers, manifests,
+receipts, controls, and Unit 039 work remain untouched.
+
+## D103 - Admit Unit 039 and advance to truncation functors (2026-08-25)
+
+Admit `o014.aljabr2.chapter3.exercises-hochschild-homology-and-cohomology`,
+the complete `chapter3.tex` lines 1293--1586 / Section 3.8. The frozen
+22,932-byte slice has SHA-256
+`d94462e5d3d2868d7f6de812d6b888c927eb5c8611d52dcfb3a6b9104550325c`;
+the 82-record map has SHA-256
+`e7fe543ff2f5165924a3dd4fe99e6d6bb00417e9f76e3dbca4ef2b1195c9ad08`;
+and the audited 35,023-byte Indonesian target has SHA-256
+`641c391d6a11b0d5276070b14253278a194ab820e2850d3be8223a6bf953d254`.
+Independent fidelity, mathematical, structural, and post-layout audits pass
+all 82 segments, the complete formula/diagram topology, twelve labels,
+thirteen references, three citation keys, 24 index commands, and zero active
+Han residue. Replace seven Unicode smart-quote pairs with TeX-native quoting
+to remove CJK glue without changing semantics.
+
+Disclose and admit source repairs O014-C044--C049: the surplus tensor factor,
+dual-boundary index, undeclared two-argument Hochschild notation, reversed
+complex arguments, chain-homology wording, and `R^vee` coefficient in the
+cohomological SBI sequence. No upstream contact occurs. Add twenty first-use
+terminology concepts, bringing both exact-matching terminology surfaces to
+448 rows. Admit the 39-unit / 2,044-segment backend at SHA-256
+`96d4bce4db97ba7cb737300eecdbb75ded1c4de974e54d1f501e2d046c57ccce`
+and
+`688d32abdc574c69c82c83f9b03ef9e2679ab7e70fc22f01df4d0083b5d8a0fa`.
+
+The first invocation of the newly named finalC directory omitted the required
+source search path and stopped before producing pages; delete that exact
+2,281-byte recreatable failed directory, then replay in a fresh finalC
+directory with `TEXINPUTS` and `BIBINPUTS` bound to `source/id-ID`. Admit the
+shell-escape-disabled finalC build after Biber, both MakeIndex passes, and
+converged XeLaTeX passes. The final log has zero error, undefined
+reference/citation, rerun request, overflow, missing character, or fatal stop.
+The 243-page, 1,210,711-byte PDF has SHA-256
+`11cabff2db7b4bdb1abaaf29be78a37fd5e16b4dd08b30f6debf88742f026f6a`;
+all 1,049 destinations and 831 links validate, all 52 fonts are embedded, and
+fresh exact renders pass. The finalC rebuild corrects the stale cover claim
+from Section 3.7 to Section 3.8; pages 2--243 retain identical decompressed
+content streams to the otherwise valid finalB candidate.
+
+QA receipt `qa/UNIT_039_QA.md` is 9,656 bytes, SHA-256
+`53a9b5b309ecc0ba1648781e1bf858a26d835414a01ab165aff3dbd8ec2f4bcf`.
+The exact 76-row manifest lists 7,592,101 bytes, is 9,591 bytes, SHA-256
+`6c74c75ecbab1a4465b9cd65be2670fbc68bf9c3382242cc9503b26a121de972`,
+and re-verifies with zero mismatch. Advance to Unit 040,
+`o014.aljabr2.chapter3.truncation-functors`, exactly lines 1587--1709,
+stopping before `sec:double-cplx-coh` at line 1710. This admission remains a
+partial corpus checkpoint.
+
+## D104 - Archive superseded Unit 039 build and render transients (2026-08-25)
+
+After finalC admission, archive 136 exact task-owned files from the superseded
+preflight, finalA, and finalB build directories; the finalA and finalB render
+trees; the finalC individual-page render directories; and the finalC console
+captures. Their total loose size is 17,918,924 bytes. The no-overwrite archive
+is
+`[local archive root]/o014_unit039_superseded_builds_and_render_transients_01a02164_20260825-004808.zip`,
+15,908,977 bytes, SHA-256
+`3d180c3baea9e3a266159b41867dcf70e666350b5f225e0d93e91b8e3558bbf4`.
+Its 136 payload entries plus `_cleanup_manifest.csv` open successfully; every
+entry name, byte count, and SHA-256 re-verifies with zero mismatch. Delete only
+the eighteen exact archived roots/files after verification. Retain the finalC
+canonical build artifacts, all three finalC contact sheets, Unit 039 source
+witness/map/translation, backend, controls, QA/manifest, and both promoted
+PDFs.

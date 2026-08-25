@@ -427,3 +427,23 @@ math.homological.k_fold_complex,kompleks lipat-k,id-ID,O014,active
 math.homological.hom_bicomplex,bikompleks Hom,id-ID,O014,active
 math.homological.bicomplex_homotopy,homotopi bikompleks,id-ID,O014,active
 math.homological.rotation_axiom,aksioma rotasi,id-ID,O014,active
+math.algebra.tensor_power,pangkat tensor,id-ID,O014,active
+math.homological.bar_complex,kompleks bar,id-ID,O014,active
+math.homological.augmented_bar_complex,kompleks bar teraugmentasi,id-ID,O014,active
+math.homological.augmentation_morphism,homomorfisme augmentasi,id-ID,O014,active
+math.category.comonad,komonad,id-ID,O014,active
+math.homological.hochschild_complex,kompleks Hochschild,id-ID,O014,active
+math.homological.relative_tor,Tor relatif,id-ID,O014,active
+math.homological.relative_ext,Ext relatif,id-ID,O014,active
+math.algebra.center,pusat,id-ID,O014,active
+math.algebra.cocenter,kopusat,id-ID,O014,active
+math.algebra.kahler_differentials,diferensial Kähler,id-ID,O014,active
+math.algebra.universal_derivation,derivasi universal,id-ID,O014,active
+math.homological.cyclic_bicomplex,bikompleks siklik,id-ID,O014,active
+math.homological.brutal_truncation,pemenggalan kasar,id-ID,O014,provisional
+math.homological.cyclic_homology,homologi siklik,id-ID,O014,active
+math.homological.periodic_cyclic_homology,homologi siklik periodik,id-ID,O014,active
+math.homological.connes_periodicity_operator,operator periodisitas Connes,id-ID,O014,active
+math.homological.cyclic_cohomology,kohomologi siklik,id-ID,O014,active
+math.homological.periodic_cyclic_cohomology,kohomologi siklik periodik,id-ID,O014,active
+math.algebra.linear_dual,dual linear,id-ID,O014,active

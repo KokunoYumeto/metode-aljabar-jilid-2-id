@@ -987,3 +987,58 @@ qualification are recorded in `qa/UNIT_038_QA.md`.
 As throughout this lane, the author's official 650-page Linux/TeX Live/xindy
 PDF is authoritative. This 231-page Windows/MiKTeX/MakeIndex artifact is a
 valid partial Indonesian reader and makes no pagination-identity claim.
+
+## Frozen cumulative build through Unit 039
+
+The admitted Unit 039 build is
+`build/cumulative-unit-039-finalC-20260825`. It uses the 39-input wrapper
+`source/id-ID/Al-jabr-2-id-cumulative-through-unit-039.tex`, 8,799 bytes,
+SHA-256
+`5dc42a8a699bfd2fc0fd25a3bbe6174a2aa7d0fa9210ffc39d41679c4a6c8937`,
+and the 21-entry bibliography
+`references-cumulative-through-unit-039.bib`, 7,631 bytes, SHA-256
+`b882ae8225e57e383d85b4a5a8f69a0bddc688f20157365d8513b47f612ee597`.
+The mutable wrapper and bibliography aliases are byte-identical to these
+frozen files.
+
+The fresh shell-escape-disabled replay ran XeLaTeX, Biber 2.21, bounded
+MakeIndex passes for both indexes, and three further XeLaTeX passes. Biber
+resolved all 21 citekeys with zero warning or error. MakeIndex accepted 180
+terminology entries and 82 symbol entries with zero rejection or warning.
+The 84,606-byte final log has SHA-256
+`33fb1a38c0fa46dee4ca3fd3012c71b89b1f844ece7a2f66bd418250ed61e1bf`
+and contains zero TeX/package error, undefined control/reference/citation,
+rerun request, overfull box, missing character, fatal error, or emergency
+stop. Seventeen underfull horizontal boxes and seven underfull vertical boxes
+remain non-fatal. The one matched missing-file string is biblatex's
+informational absence of optional `biblatex-dm.cfg`, not a missing reader
+resource. The resolved BBL is 29,093 bytes, SHA-256
+`aedae96a05b2b62b7728ef815f287b2ef9eb4b6459a1901f08e5bad004543103`;
+the term index is 7,799 bytes, SHA-256
+`5a285a0e77e571a5b48a11b1ea71cdc920f32476f2dde200a331f7b589a8e73b`;
+and the symbol index is 2,847 bytes, SHA-256
+`039e0f874c2e574719296d2512fa4abce481951069c167cd3cb29bf606ff4d63`.
+
+The build, checkpoint, and promoted cumulative PDF are byte-identical: PDF
+1.7, 243 pages, 1,210,711 bytes, SHA-256
+`11cabff2db7b4bdb1abaaf29be78a37fd5e16b4dd08b30f6debf88742f026f6a`.
+All pages use the same 498.9 x 708.66-point geometry and zero rotation. The
+file is unencrypted and untagged, with 46 valid outline entries, 1,049 valid
+named destinations, 817 resolved internal links, and fourteen HTTPS links.
+There is no form, widget, JavaScript, embedded file, additional action,
+structure tree, or `MarkInfo`; the opening action is the ordinary first-page
+`/Fit` view. All 52 font rows are embedded/subset; twelve mathematical fonts
+lack ToUnicode maps, so a tagged or fully semantic PDF is not claimed.
+
+Fresh 120-dpi visual QA covers physical pages 1--5, all Unit 039 pages
+224--234, and bibliography/index pages 235--243. The corrected cover states
+Chapter 3 through Section 3.8. All text blocks, formulas, theorem heads,
+footnotes, ten TikZ-CD diagrams, the cyclic-complex figure, bibliography, and
+indexes are centered, legible, and unclipped. Physical page 234 has
+intentional lower whitespace because the section ends there. Exact
+contact-sheet hashes and the full accessibility qualification are recorded in
+`qa/UNIT_039_QA.md`.
+
+As throughout this lane, the author's official 650-page Linux/TeX Live/xindy
+PDF is authoritative. This 243-page Windows/MiKTeX/MakeIndex artifact is a
+valid partial Indonesian reader and makes no pagination-identity claim.
