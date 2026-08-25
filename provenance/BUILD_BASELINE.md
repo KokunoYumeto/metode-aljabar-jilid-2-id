@@ -1197,3 +1197,56 @@ Physical pages 2, 4, 256, and 260 are intentional blank transitions. The
 author's official 650-page Linux/TeX Live/xindy PDF remains authoritative;
 this 265-page Windows/MiKTeX/MakeIndex artifact is a valid partial Indonesian
 reader and makes no pagination-identity claim.
+
+## Frozen cumulative build through Unit 043
+
+The admitted Unit 043 build is
+`build/cumulative-unit-043-finalD-20260825`. It uses the 43-input wrapper
+`source/id-ID/Al-jabr-2-id-cumulative-through-unit-043.tex`, 8,942 bytes,
+SHA-256
+`ba0f8dcfc44e74567ca9a35963a821071f7070f0d69b5dcc8fe5fa6c460df7a3`,
+and the byte-identical mutable alias. The 21-entry bibliography
+`references-cumulative-through-unit-043.bib` is 7,631 bytes, SHA-256
+`b882ae8225e57e383d85b4a5a8f69a0bddc688f20157365d8513b47f612ee597`;
+its mutable alias is byte-identical.
+
+The fresh shell-escape-disabled replay ran XeLaTeX, Biber 2.21, both bounded
+MakeIndex passes, and three further XeLaTeX passes. Biber resolves all 21
+citekeys with zero warning or error. MakeIndex accepts 195 terminology
+entries and 95 symbol entries with zero rejection or warning. The final
+80,536-byte log, SHA-256
+`e96f51b93b205e06f432e19ada8f0bb9e16569944caa2d46008e4fcfdd4b8e58`,
+has zero TeX/package error, undefined control/reference/citation, rerun
+request, overfull box, missing character, fatal error, or emergency stop.
+Eighteen non-fatal underfull horizontal boxes and seven underfull vertical
+boxes remain. The BBL is 29,093 bytes / SHA-256
+`aedae96a05b2b62b7728ef815f287b2ef9eb4b6459a1901f08e5bad004543103`;
+the term index is 8,628 bytes / SHA-256
+`db0b751b72510338ac6147931611079309f16f18fe9bed2865ffabb5a7563654`;
+and the symbol index is 3,622 bytes / SHA-256
+`153d99f626e68123973100db559106356837930a77a0414acd4aaf40959a7743`.
+
+The build, checkpoint, and promoted cumulative PDF are byte-identical: PDF
+1.7, 275 pages, 1,361,656 bytes, SHA-256
+`15a22aa8f55fefd7ba0d10840e3719bd3718d6af6ceda63eedf919db24250ac1`.
+All pages have 498.9 by 708.66-point geometry and zero rotation. The file is
+unencrypted and untagged, with 50 outline entries, 1,189 named destinations,
+937 resolved internal links, and fourteen URI links. All 951 link rectangles
+lie within their pages. There is no malformed or unresolved destination,
+form, widget, JavaScript, embedded file, additional action, structure tree,
+`MarkInfo`, or metadata stream; the opening action is the ordinary
+first-page `/Fit` view. All 52 Poppler font rows are embedded and subsetted;
+twelve mathematical fonts lack ToUnicode maps, so tagged or fully semantic
+PDF accessibility is not claimed.
+
+Fresh 120-dpi visual QA covers physical pages 1--5, every Unit 043 page
+255--266, and all backmatter pages 267--275. Contact-sheet and full-size
+inspection confirms truthful Section 3.12/source-line coverage, centered and
+unclipped formulas and seventeen TikZ-CD diagrams, three attached correction
+notes, clean bibliography pages, and both indexes. The terminology-index
+leading is 9.3 points at an unchanged 8-point glyph size, which removes the
+earlier minor final-page vertical overflow while preserving legibility.
+Physical pages 2, 4, and 270 are intentional blank transitions. The author's
+official 650-page Linux/TeX Live/xindy PDF remains authoritative; this
+275-page Windows/MiKTeX/MakeIndex artifact is a valid partial Indonesian
+reader and makes no pagination-identity claim.

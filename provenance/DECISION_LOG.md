@@ -2776,7 +2776,73 @@ re-verifies 10,952,634 listed bytes with zero mismatch.
 Freeze the next source-order boundary as Unit 043,
 `o014.aljabr2.chapter3.classical-derived-functors`,
 `chapter3.tex` lines 2215--2552, stopping before `sec:lim1` at line
-2553. Keep that unit untranslated in this snapshot and include no correction
-beyond O014-C059. Keep the full corpus pursuit active and publish Unit 042
-through the existing GitHub and Zenodo lineages before translating this next
-unit.
+2553. Reserve O014-C060 and O014-C061 for the two typed source anomalies
+identified at lines 2345--2346 and 2538--2539. Keep the full corpus pursuit
+active and publish Unit 042 through the existing GitHub and Zenodo lineages
+before translating this next unit.
+
+## D118 - Publish and anonymously verify Unit 042 (2026-08-25)
+
+Advance the existing GitHub repository and Zenodo concept with the admitted
+Unit 042 snapshot; create no competing lineage and expose no Unit 043 source
+or correction beyond O014-C059. Fast-forward GitHub `main` from
+`98bc2fec01c8e7a1e987f46cfaf519e9b9ee2e6c` to commit
+`3a8062fb77b60c456f560523508885445db57c3a`, tree
+`147809a3a936e447a20d4287dcd818a8be2610e0`. The immutable 2,044,848-byte
+codeload archive has SHA-256
+`c576bbc934cfe7a387aff1e5140023a28f6fe838ef04e0d6b503ad84ce35dd48`.
+Anonymous HTML, raw, and archive readback verifies all 133 payload manifest
+rows and 133 checksum rows with zero mismatch; the 265-page public PDF remains
+byte-identical to the admitted reader.
+
+Advance Zenodo concept record `22059751` from immutable Unit 041 record
+`22098141` to published Unit 042 record `22102326`, DOI
+`10.5281/zenodo.22102326`. Publish exactly seven files totaling 1,774,270
+bytes: the reader, 60-entry source/backend ZIP, 11-entry QA/provenance ZIP,
+CC BY 4.0 license, README, release manifest, and checksum list. Preserve the
+exact title, one organization-contributor entry, source attribution,
+modification notice, non-endorsement, partial-status claim, and exact model
+disclosure; keep the organization label out of title and descriptive prose.
+Anonymous record, page, both DOI routes, concept-latest, every file, both ZIP
+manifests, and PDF properties pass with zero mismatch. Keep the full corpus
+pursuit active and begin Unit 043 at `chapter3.tex` line 2215.
+
+## D119 - Admit Unit 043 and freeze the Unit 044 boundary (2026-08-26)
+
+Admit `o014.aljabr2.chapter3.classical-derived-functors` as the complete
+Section 3.12, `chapter3.tex` lines 2215--2552, stopping before
+`sec:lim1` at line 2553. Freeze the normalized 338-line authority witness at
+27,132 bytes / SHA-256
+`ac95a737c3df39dff8ece789057d2ad3ce93474b258476245b2fcc67d074dbb9`,
+the 105-record map at 32,475 bytes / SHA-256
+`2712c57d9a9066fb1a119037857552c0c331abd20d91c86a3c41c56de1a542cd`,
+and the final Indonesian target at 40,571 bytes / SHA-256
+`80d7ba5a71f45c418ac8278ac03ee6409d23bc7bc48dcf52310096d0ae153d54`.
+Independent block review and the final deterministic replay pass. Disclose
+O014-C060 through O014-C062 exactly once each; these restore two diagram
+objects, two connecting-morphism degrees, and the intended `n >= 1`
+zero-extension boundary.
+
+Synchronize the terminology stores at 467 exact-matching concepts and the
+backend at 43 unique units / 2,327 unique segments. Keep effaceable and
+coeffaceable active, but retain hyperderived as provisional because this
+source-internal recurrence is not external Indonesian field attestation.
+
+Admit `build/cumulative-unit-043-finalD-20260825`. Biber resolves 21
+citekeys, MakeIndex accepts 195 terminology and 95 symbol entries, and the
+final log has zero TeX/package error, undefined reference/citation, rerun
+request, overfull box, missing character, or fatal stop. Promote the
+byte-identical 275-page reader, 1,361,656 bytes, SHA-256
+`15a22aa8f55fefd7ba0d10840e3719bd3718d6af6ceda63eedf919db24250ac1`.
+Strict PDF checks and full-size inspection of every new page and the complete
+backmatter pass, with the untagged/ToUnicode limitation stated explicitly.
+
+The final 80-row manifest lists 8,342,643 bytes, is 10,069 bytes, SHA-256
+`ea52868bcecc97dabd75ac6a0935f1bbefb5ffe2f07fca7aec3cabc23fe2822c`,
+and re-verifies with zero mismatch. Freeze Unit 044,
+`o014.aljabr2.chapter3.example-lim1`, as complete `chapter3.tex` lines
+2553--2713, content through line 2712, stopping before `sec:Ext-Tor` at line
+2714. Its normalized 161-line authority slice is 13,478 bytes, SHA-256
+`2b8a923963fba1f31a9c5f7bfd98e5381a4a1b194f70cd3b7d002fa05a68298e`.
+Keep the full corpus pursuit active and publish Unit 043 through the existing
+GitHub and Zenodo lineages before scaling Unit 044 production.

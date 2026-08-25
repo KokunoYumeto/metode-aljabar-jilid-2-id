@@ -402,8 +402,8 @@ math.homological.resolution,resolusi,id-ID,O014,active
 math.homological.truncation_functor,funktor pemenggalan,id-ID,O014,active
 math.homological.cartan_eilenberg_resolution,resolusi Cartan-Eilenberg,id-ID,O014,active
 math.homological.hyperderived_functor,funktor hiperturunan,id-ID,O014,provisional
-math.homological.effaceable_functor,funktor yang dapat dihapus,id-ID,O014,provisional
-math.homological.coeffaceable_functor,funktor yang dapat dihapus secara dual,id-ID,O014,provisional
+math.homological.effaceable_functor,funktor yang dapat dihapus,id-ID,O014,active
+math.homological.coeffaceable_functor,funktor yang dapat dihapus secara dual,id-ID,O014,active
 math.category.bifunctor,bifunktor,id-ID,O014,active
 math.homological.balanced_bifunctor,bifunktor seimbang,id-ID,O014,active
 math.homological.mittag_leffler_condition,syarat Mittag-Leffler,id-ID,O014,active
@@ -456,3 +456,13 @@ math.homological.column_exact_bicomplex,bikompleks eksak pada kolom,id-ID,O014,a
 math.homological.complex_of_injective_objects,kompleks yang terdiri atas objek-objek injektif,id-ID,O014,active
 math.homological.complex_of_projective_objects,kompleks yang terdiri atas objek-objek projektif,id-ID,O014,active
 math.homological.horseshoe_lemma,Lema Tapal Kuda,id-ID,O014,active
+math.homological.classical_derived_functor,funktor turunan klasik,id-ID,O014,active
+math.homological.right_derived_functor,funktor turunan kanan,id-ID,O014,active
+math.homological.left_derived_functor,funktor turunan kiri,id-ID,O014,active
+math.homological.higher_derived_functor,funktor turunan tingkat tinggi,id-ID,O014,active
+math.homological.cohomological_delta_functor,funktor-δ kohomologis,id-ID,O014,active
+math.homological.homological_delta_functor,funktor-δ homologis,id-ID,O014,active
+math.homological.f_acyclic_object,objek F-asiklik,id-ID,O014,active
+math.homological.dimension_shifting,pergeseran dimensi,id-ID,O014,active
+math.homological.universal_cohomological_delta_functor,funktor-δ kohomologis universal,id-ID,O014,active
+math.homological.universal_homological_delta_functor,funktor-δ homologis universal,id-ID,O014,active
