@@ -2979,3 +2979,77 @@ materialized, but semantic review and three possible notation repairs remain
 to be adjudicated before integration. Keep the full corpus pursuit active and
 publish Unit 045 through the existing GitHub and Zenodo lineages before its
 next cumulative build.
+
+## D124 - Publish and anonymously verify Unit 045; admit the reviewed Unit 046 target (2026-08-26)
+
+Advance the existing GitHub repository from Unit 044 commit
+`e0b8335594526f773fc97d41f8916061815758a2` by one fast-forward commit only.
+The Unit 045 public boundary is commit
+`e072d5949d8ce0c1768c0c0e631b259db444fa8a`, tree
+`ec57f1a58263ec43128be9fd20fe140e31e06295`. Its 2,252,498-byte immutable
+codeload archive has SHA-256
+`295232cd9d545f783fc36eeb6f4952d6590c0950dfd7b10dfe32d2a0f09b5c7f`.
+Anonymous HTML, raw-file, manifest, checksum, reader, and archive verification
+passes across exactly 150 files and 148 payload rows with zero mismatch and no
+Unit 046 leakage. Preserve the sanitized 6,118-byte GitHub receipt, SHA-256
+`01cf9e7096d98e81b50425da15a3e9068c79626eb123ded6d7338eb950c836b6`.
+
+Advance Zenodo concept `22059751` from record `22104088` to record `22104808`,
+DOI `10.5281/zenodo.22104808`, version `unit-045`, without creating a competing
+concept. Publish exactly seven files totaling 2,163,607 bytes, with the exact
+290-page reader first. Anonymous record, page, version DOI, concept DOI,
+predecessor, every public file, both ZIP manifests, and PDF properties pass.
+Preserve the exact title, Li as sole creator, CC BY 4.0, the independent
+derivative/non-endorsement statement, exact model disclosure, and the one
+inherited organization contributor. Preserve the sanitized 5,331-byte receipt,
+SHA-256
+`266e8ec7032015cbb363cd5b1f5527a53b123c27b050ae9e23241745cfd99531`.
+
+Accept the independent Unit 046 review and disclose three inherited source
+repairs as O014-C064--O014-C066. Restore `\varprojlim_k` at source line 3063,
+restore `\Delta_{\tau A}` at line 3137, and normalize the undefined
+`\Delta_{\tau_A}` to `\Delta_{\tau A}` at line 3145. Also enforce the settled
+`homotopik` and `barisan` terminology. The reviewed target is 28,931 bytes /
+SHA-256
+`15f84671182c59ac6779a61968b9d03ca8f43d8625fd81399e4a44dacddbf496`.
+Integrate/build/QA the exact complete Section 3.15 boundary through line 3200,
+without crossing into Exercises at line 3201. This public checkpoint and target
+review do not complete the corpus pursuit.
+
+## D125 - Admit Unit 046 and freeze the Unit 047 exercise closure (2026-08-26)
+
+Admit `o014.aljabr2.chapter3.k-injectives` as complete Section 3.15,
+`chapter3.tex` lines 2936--3200, stopping before Exercises at line 3201. Freeze
+the 20,086-byte authority witness at SHA-256
+`5a56872f1fbdd507618130c9def1445e5689dba76d94189676a97e2a677a72e6`,
+the 83-record map at 24,432 bytes / SHA-256
+`64dcb930ff3a0327d9b15e6cc34764f9f41d458a25e9b5857dffdf6c322e3a1a`,
+and the reviewed Indonesian target at 28,931 bytes / SHA-256
+`15f84671182c59ac6779a61968b9d03ca8f43d8625fd81399e4a44dacddbf496`.
+Preserve all source topology and disclose O014-C064--O014-C066 exactly once
+each. Synchronize the backend at 46 units / 2,521 segments and the terminology
+stores at 479 exact-matching concepts.
+
+Admit `build/cumulative-unit-046-finalA-20260826`. Biber resolves all 25
+citekeys, MakeIndex accepts 207 terminology and 103 symbol entries, and the
+final log has no TeX/package error, undefined reference/citation, rerun request,
+missing character, or fatal stop. Retain the seven measured overfull hboxes as
+honestly recorded non-fatal warnings because full-size page-image inspection
+proves that no content clips or crosses the page. Promote the byte-identical
+302-page reader, 1,468,650 bytes, SHA-256
+`4edebacd5d8a2f8fd62da9d9553b3b8ad3699fcd523311bae04759c7c1176bc9`.
+Strict PDF validation and inspection of the front matter, every new page, and
+complete backmatter pass; retain the explicit untagged/ToUnicode accessibility
+limitation.
+
+Freeze the 97-row manifest at 12,441 bytes / SHA-256
+`bbad03aedeff6c06ce0e72f3fc092dc9c94a2ac50dc23f1e69dc27b0a9b78f05`;
+it replays 15,977,340 listed bytes with zero mismatch and no Unit 047 payload.
+Freeze Unit 047, `o014.aljabr2.chapter3.exercises`, as the complete Exercises
+environment at `chapter3.tex` lines 3201--3425 and the end of the file. Its
+18,004-byte normalized witness has SHA-256
+`831dd2a9e3ddacc3ece25aaae474487678f93aa4731660ae07e81aa69e5cb4a0`.
+Reserve O014-C067--O014-C069 for independent target review; do not treat them
+as admitted corrections before that review. Package and publish Unit 046
+through the existing GitHub and Zenodo lineages while Unit 047 translation
+continues. This checkpoint remains partial and does not complete the pursuit.

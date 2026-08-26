@@ -8,12 +8,12 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 
 ## Status
 
-Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Batas publik ini
-mencakup Unit 001–045: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
-serta Bab 3 sampai Bagian 3.14 (`chapter3.tex` upstream baris 9–2935). Pembaca
-saat ini berjumlah 290 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
-baris 2936, kompleks K-injektif dan K-projektif (`sec:K-injectives`), dan
-berlanjut dalam urutan sumber menuju keseluruhan buku resmi 650 halaman.
+Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 046
+ini mencakup Unit 001–046: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
+serta Bab 3 sampai Bagian 3.15 (`chapter3.tex` upstream baris 9–3200). Pembaca
+saat ini berjumlah 302 halaman. Produksi berikutnya dimulai pada `chapter3.tex`
+baris 3201, Latihan Bab 3, dan berlanjut dalam urutan sumber menuju keseluruhan
+buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
 yang telah diperiksa, tetapi **belum merupakan PDF bertag** dan tidak diklaim
@@ -37,15 +37,20 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 45 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 46 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 45 unit, 2.438 segmen, dan 477 istilah dalam bentuk modular
+- `backend/`: 46 unit, 2.521 segmen, dan 479 istilah dalam bentuk modular
   (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 045, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 046, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS.txt` mencatat ukuran dan SHA-256 setiap berkas publik.
+
+Repositori edisi berada di
+[`KokunoYumeto/metode-aljabar-jilid-2-id`](https://github.com/KokunoYumeto/metode-aljabar-jilid-2-id/tree/main).
+Arsip versi bernomor dipelihara pada
+[konsep Zenodo 10.5281/zenodo.22059751](https://doi.org/10.5281/zenodo.22059751).
 
 ## Kredit
 
@@ -55,6 +60,6 @@ pengguna. Semua perubahan dirilis di bawah CC BY 4.0 dengan atribusi kepada
 sumber.
 
 Provenans produksi: terjemahan Bahasa Indonesia, rekonsiliasi terminologi,
-metadata, backend modular, dan QA diproduksi dengan **OpenAI Codex gpt-5.6-sol, Ultra**,
-atas arahan pengguna. Pengungkapan ini tidak menggantikan kredit Wen-Wei Li
-sebagai penulis karya sumber atau kredit komponen lain.
+metadata, backend modular, dan QA diproduksi dengan **OpenAI Codex gpt-5.6-sol,
+Ultra**, atas arahan pengguna. Pengungkapan ini tidak menggantikan kredit
+Wen-Wei Li sebagai penulis karya sumber atau kredit komponen lain.

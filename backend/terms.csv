@@ -476,3 +476,5 @@ math.homological.ext_functor,funktor Ext,id-ID,O014,active
 math.homological.tor_functor,funktor Tor,id-ID,O014,active
 math.homological.flat_resolution,resolusi datar,id-ID,O014,active
 math.homological.kunneth_theorem,Teorema Künneth,id-ID,O014,active
+math.homological.enough_k_injective_complexes,cukup banyak kompleks K-injektif,id-ID,O014,active
+math.homological.enough_k_projective_complexes,cukup banyak kompleks K-projektif,id-ID,O014,active

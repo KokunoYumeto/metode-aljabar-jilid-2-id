@@ -1,11 +1,11 @@
 # O014 current state
 
-Status: active source-order Indonesian production. Units 001--045 are complete,
-admitted, built, and QA-passed without a source gap through `chapter3.tex`
-line 2935; Unit 044 remains the current publicly verified GitHub/Zenodo
-boundary while Unit 045 is being packaged into those same lineages. Unit 046
-is the active next boundary at `chapter3.tex` lines 2936--3200. This remains a
-partial working edition; do
+Status: active source-order Indonesian production. Units 001--046 are complete,
+admitted, built, and QA-passed without a source gap through `chapter3.tex` line
+3200. Units 001--045 are publicly verified; Unit 046 is the publication-pending
+boundary. Unit 047 is the complete Chapter 3 exercise closure at
+`chapter3.tex` lines 3201--3425 and is now in source-order translation. This
+remains a partial working edition; do
 not complete the pursuit at this or any later checkpoint short of the entire
 corpus, independent mastery layer, semantic reader, and final verified release
 set.
@@ -1336,5 +1336,131 @@ The next frozen source-order boundary is Unit 046,
 Section 3.15 at `chapter3.tex` lines 2936--3200, stopping before the exercise
 block at line 3201. Its witness, 83-record map, and Indonesian draft are
 materialized for independent semantic and source-correction review. Unit 045
-is now packaged for publication through the existing GitHub and Zenodo
-lineages. This partial checkpoint does not complete the corpus pursuit.
+has now been published and anonymously verified through the existing GitHub
+and Zenodo lineages. This partial checkpoint does not complete the corpus
+pursuit.
+
+## Unit 045 public release close and Unit 046 reviewed target (2026-08-26)
+
+The existing GitHub edition advances by one fast-forward commit from Unit 044
+to Unit 045. Public `main` is commit
+`e072d5949d8ce0c1768c0c0e631b259db444fa8a`, tree
+`ec57f1a58263ec43128be9fd20fe140e31e06295`. Its immutable codeload ZIP is
+2,252,498 bytes / SHA-256
+`295232cd9d545f783fc36eeb6f4952d6590c0950dfd7b10dfe32d2a0f09b5c7f`.
+Anonymous repository, commit, raw-reader, raw-README, raw-manifest,
+raw-checksum, and archive readback all return HTTP 200. The archive contains
+exactly 150 files; its 148-row manifest replays with zero missing, extra, byte,
+or hash mismatch and no Unit 046 file. The exact 290-page admitted reader is
+present. The sanitized receipt is `release/github/GITHUB_PUBLICATION_RECEIPT.json`,
+6,118 bytes / SHA-256
+`01cf9e7096d98e81b50425da15a3e9068c79626eb123ded6d7338eb950c836b6`.
+
+Zenodo record `22104808`, DOI `10.5281/zenodo.22104808`, advances the existing
+concept `22059751`, DOI `10.5281/zenodo.22059751`, as version `unit-045`.
+Immutable Unit 044 record `22104088` remains the immediate predecessor; no
+competing concept was created. Exactly seven reader-first public files total
+2,163,607 bytes. Anonymous API, record-page, version-DOI, concept-DOI,
+predecessor, and every-file readback pass with exact byte and SHA-256 identity.
+The source/backend ZIP contains 147 entries and revalidates 146 manifest rows;
+the QA/provenance ZIP contains 15 entries and revalidates fourteen rows. Both
+have zero missing, extra, size, or hash mismatch and contain no Unit 046 or
+restricted witness. The primary public file is the exact 290-page PDF 1.7
+reader; it is unencrypted and untagged. The work title and description contain
+no organization branding, while the single inherited organization contributor
+is retained. The sanitized receipt is
+`release/zenodo/unit-045/ZENODO_PUBLICATION_RECEIPT.json`, 5,331 bytes /
+SHA-256
+`266e8ec7032015cbb363cd5b1f5527a53b123c27b050ae9e23241745cfd99531`.
+
+Unit 046 has passed independent post-translation semantic review across all 83
+ordered segments. Three high-confidence inherited source defects are corrected
+and disclosed as O014-C064--O014-C066: the missing inverse-limit index on
+authority line 3063, the incorrect lower diagram label on line 3137, and the
+undefined subscripted truncation notation on line 3145. The isolated
+`homotopis` and sequence-as-`deret` forms are normalized to the admitted
+`homotopik` and `barisan` terminology. The reviewed target is 28,931 bytes /
+SHA-256
+`15f84671182c59ac6779a61968b9d03ca8f43d8625fd81399e4a44dacddbf496`.
+Proceed with its deterministic backend integration and cumulative build through
+line 3200 only; do not enter Exercises at line 3201. The full pursuit remains
+active.
+
+## Unit 046 local admission and Unit 047 freeze (2026-08-26)
+
+Unit 046 (`o014.aljabr2.chapter3.k-injectives`) is admitted as complete
+Section 3.15, `chapter3.tex` lines 2936--3200, stopping immediately before the
+Exercises environment at line 3201. Its normalized-LF authority witness is
+20,086 bytes / SHA-256
+`5a56872f1fbdd507618130c9def1445e5689dba76d94189676a97e2a677a72e6`;
+its 83-record stable segment map is 24,432 bytes / SHA-256
+`64dcb930ff3a0327d9b15e6cc34764f9f41d458a25e9b5857dffdf6c322e3a1a`;
+and its independently reviewed Indonesian target is 28,931 bytes / SHA-256
+`15f84671182c59ac6779a61968b9d03ca8f43d8625fd81399e4a44dacddbf496`.
+The target preserves all 18 labels, 50 references, six citations, four index
+commands, 50 environment pairs, fifteen TikZ-CD diagrams, and 74 arrows.
+O014-C064--O014-C066 disclose the three type-preserving source repairs at the
+point of use. The intentional forward reference to `prop:cplx-triangulated`
+is represented as source Section 4.4 and does not create a broken reader link.
+
+The cumulative backend now contains 46 unique units and 2,521 unique segments.
+`backend/units.jsonl` is 34,517 bytes / SHA-256
+`af7ab6f34da9dff08d553ff650bedf089a9b217c655886a50e4d71a3467f0972`;
+`backend/segments.jsonl` is 742,864 bytes / SHA-256
+`369b4482de9464d549b69043c660cf361d299ff9efcf21c000430004680591ab`.
+Both terminology surfaces contain 479 exact-matching concepts: the control
+ledger is 81,555 bytes / SHA-256
+`04bf0f2217adbb15dba375db669d698d0050a7e40a51ac505e2cf9ddd30ad5bd`,
+and `backend/terms.csv` is 32,645 bytes / SHA-256
+`48bf9b975b8f20ef95f155850421cc8620877e56f4b8b0b22adf5f5969f34632`.
+The frozen and mutable cumulative wrappers are byte-identical at 9,020 bytes /
+SHA-256
+`8fea814e7776b2170fef6cc07f8aece3aa0053e6e239cb4f024f8b8f51174775`.
+The frozen and mutable bibliography aliases are byte-identical at 9,435 bytes /
+SHA-256
+`e7696fffa125a2381dc8d8ede47b4741127caad4fb47d5716a378c7e06e21098`
+and resolve all 25 cited keys.
+
+The admitted build is `build/cumulative-unit-046-finalA-20260826`. XeLaTeX,
+Biber, both MakeIndex passes, and final XeLaTeX passes converge; the last two
+transcripts are byte-identical. Biber resolves all 25 citekeys. MakeIndex
+accepts 207 terminology and 103 symbol entries with zero rejection or warning.
+The final log is 83,717 bytes / SHA-256
+`65dbe5357362499d8671057a21cf1b5f62a0a7028644a6eca331c4bcd8ee1d05`
+and contains no TeX/package error, undefined reference/citation, rerun request,
+missing character, fatal error, or emergency stop. Seven overfull hboxes remain
+recorded; full-size inspection proves that none clips or crosses the page.
+
+The build, checkpoint, and promoted reader are byte-identical: PDF 1.7, 302
+pages, 1,468,650 bytes, SHA-256
+`4edebacd5d8a2f8fd62da9d9553b3b8ad3699fcd523311bae04759c7c1176bc9`.
+Strict structure checks verify uniform page geometry, 53 outline entries,
+1,299 named destinations, 1,073 internal and twenty URI links, all resolved and
+inside page bounds. The reader is unencrypted and has no forms, widgets,
+JavaScript, embedded files, or additional actions. It remains untagged; twelve
+Poppler font rows lack ToUnicode maps, so no fully semantic accessibility claim
+is made. Full-size page-image inspection covers the front matter, every Unit
+046 page, the bibliography, both indexes, and the intentional blank transitions;
+all formulas, diagrams, headings, margins, and page furniture are legible and
+unclipped.
+
+The Unit 046 QA receipt `qa/UNIT_046_QA.md` is 7,987 bytes / SHA-256
+`99072cfecb0de002c4ae6279f74daacca6fa4792c1d7dea7d882dba6c6671b54`.
+The 97-row admission manifest
+`qa/CUMULATIVE_UNIT_046_FILE_MANIFEST.csv` lists 15,977,340 bytes, is 12,441
+bytes / SHA-256
+`bbad03aedeff6c06ce0e72f3fc092dc9c94a2ac50dc23f1e69dc27b0a9b78f05`,
+and re-verifies with zero missing, duplicate, size, or hash mismatch and no
+Unit 047 payload.
+
+The next exact source-order boundary is Unit 047,
+`o014.aljabr2.chapter3.exercises`, the complete Chapter 3 Exercises environment
+at `chapter3.tex` lines 3201--3425 inclusive. Its normalized-LF authority
+witness is 18,004 bytes / SHA-256
+`831dd2a9e3ddacc3ece25aaae474487678f93aa4731660ae07e81aa69e5cb4a0`.
+It contains 26 top-level exercises and seventeen active hints and ends at the
+end of `chapter3.tex`. Candidate corrections O014-C067--O014-C069 remain
+reserved until the Indonesian target's independent review confirms and
+discloses them. After this boundary, source order continues at `chapter4.tex`
+line 9. Unit 046 remains publication-pending in the existing GitHub and Zenodo
+lineages, and this partial checkpoint does not complete the corpus pursuit.
