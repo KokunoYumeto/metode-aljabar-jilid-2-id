@@ -407,6 +407,12 @@ math.homological.coeffaceable_functor,co-effaceable functor,funktor yang dapat d
 math.category.bifunctor,bifunctor,bifunktor,funktor dua variabel,o014.aljabr2.chapter3.overview,o014_new,Funktor dengan dua variabel kategori.
 math.homological.balanced_bifunctor,balanced bifunctor,bifunktor seimbang,,o014.aljabr2.chapter3.overview,o014_new,Bifunktor yang penurunannya terhadap salah satu variabel memberikan hasil yang sama.
 math.homological.mittag_leffler_condition,Mittag-Leffler condition,syarat Mittag-Leffler,kondisi Mittag-Leffler,o014.aljabr2.chapter3.overview,o014_new,Syarat kestabilan citra dalam sistem invers yang membantu menjamin lenyapnya lim pangkat satu.
+math.homological.inverse_system,inverse system,sistem invers,sistem projectif,o014.aljabr2.chapter3.example-lim1,o014_new,Data objek berindeks nonnegatif dengan morfisme transisi ke indeks sebelumnya.
+math.category.countable_product,countable product,produk terhitung,,o014.aljabr2.chapter3.example-lim1,o014_new,Produk yang diindeks oleh Z_{\geq 0}; dibedakan dari produk hingga.
+math.category.countable_coproduct,countable coproduct,koproduk terhitung,jumlah langsung terhitung,o014.aljabr2.chapter3.example-lim1,o014_new,Koproduk yang diindeks oleh Z_{\geq 0}; pada kategori modul berupa jumlah langsung terhitung.
+math.homological.exact_countable_product,exact countable product,produk terhitung eksak,,o014.aljabr2.chapter3.example-lim1,o014_new,Produk terhitung yang funktor produknya eksak; bentuk dualnya koproduk terhitung eksak.
+math.category.shift_morphism,shift morphism,morfisme pergeseran,,o014.aljabr2.chapter3.example-lim1,o014_new,Morfisme T_A yang menggeser komponen sistem invers melalui morfisme transisi.
+math.category.stable_image,stable image,citra stabil,subobjek citra stabil,o014.aljabr2.chapter3.example-lim1,o014_new,Citra Image f^N_k yang stabil untuk semua N cukup besar dibandingkan k.
 math.homological.k_injective_complex,K-injective complex,kompleks K-injektif,,o014.aljabr2.chapter3.overview,o014_new,Kompleks dengan sifat injektivitas homotopis secara keseluruhan.
 math.homological.k_projective_complex,K-projective complex,kompleks K-projektif,,o014.aljabr2.chapter3.overview,o014_new,Kompleks dengan sifat projektivitas homotopis secara keseluruhan.
 math.homological.mapping_cylinder,mapping cylinder,silinder pemetaan,,o014.aljabr2.chapter3.overview,o014_new,Konstruksi kompleks yang berpasangan dengan kerucut pemetaan.

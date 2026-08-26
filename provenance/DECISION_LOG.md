@@ -2267,7 +2267,7 @@ canonical translated sources, source slices, segment maps, terminology and
 backend ledgers, controls, receipts, final release artifacts, and credentials.
 
 The no-overwrite archive is
-`old stuff/o014_methods_of_algebra_v2_obsolete_builds_readbacks_01a02164_20260824-222605.zip`:
+`[local path omitted]`:
 692,700,671 bytes, SHA-256
 `dfccec87a0f8bc71767709969803649cc795ef2b47276de49a4812aa7098cf34`.
 Its `_cleanup_roots.txt` gives the exact 150 archived/deleted roots and
@@ -2397,7 +2397,7 @@ literal directory `$out`, containing only the 1,111-byte failed Unit 025 log
 `Al-jabr-2-id-cumulative-through-unit-025.log` (SHA-256
 `2d1eaf4ef111bd8647c8e788baff24971fe99f1c3ea2cc1318628f81439556eb`).
 Archive that exact file, without overwrite, as
-`old stuff/o014_literal-dollar-out_failed-unit025-log_01a02164_20260824.zip`.
+`[local path omitted]`.
 The ZIP is 824 bytes with SHA-256
 `f6aad85381e98388d129b63bdb2c7a1263447216105141beaddb2212f0ebc7db`.
 Its sole entry has the expected name, 1,111 bytes, and the exact source hash;
@@ -2461,7 +2461,7 @@ preflight, finalA, and finalB build directories; the finalA and finalB render
 trees; the finalC individual-page render directories; and the finalC console
 captures. Their total loose size is 17,918,924 bytes. The no-overwrite archive
 is
-`old stuff/o014_unit039_superseded_builds_and_render_transients_01a02164_20260825-004808.zip`,
+`[local path omitted]`,
 15,908,977 bytes, SHA-256
 `3d180c3baea9e3a266159b41867dcf70e666350b5f225e0d93e91b8e3558bbf4`.
 Its 136 payload entries plus `_cleanup_manifest.csv` open successfully; every
@@ -2531,7 +2531,7 @@ pass to the literal task-local directory `$out`; the intended finalA directory
 contained only console captures. Stop the process before Biber or later passes
 can mutate either root. Archive exactly those two disposable roots as eleven
 files / 1,651,491 bytes in
-`old stuff/o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
+`[local path omitted]`,
 1,208,059 bytes, SHA-256
 `3b98158aeb8ad61ad818d352f340f7d8145a6fc2a8199ca7cd2cbf5bfddb83f7`.
 The ZIP contains an internal cleanup manifest and re-verifies every entry name,
@@ -2591,7 +2591,7 @@ After finalD admission and full-size visual inspection, archive exactly the
 superseded finalB and finalC build trees, the 19 individual rendered page PNGs,
 and seven redundant finalD console captures. The 70 task-owned files total
 5,984,538 loose bytes. The no-overwrite archive is
-`old stuff/o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
+`[local path omitted]`,
 4,665,068 bytes, SHA-256
 `3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`.
 Its 70 payload entries plus internal cleanup manifest open successfully; every
@@ -2661,7 +2661,7 @@ At the explicit cleanup boundary, archive only the admitted-but-now-superseded
 Unit 038 finalD and Unit 039 finalC build trees and their rendered-page sets.
 The four exact task-local directories contain 36 files / 8,287,867 loose bytes.
 The no-overwrite archive is
-`old stuff/o014_superseded_unit038-039_builds_and_renders_01a02164_20260825-154253.zip`,
+`[local path omitted]`,
 7,290,676 bytes, SHA-256
 `833bccd43e990ddf2ad967c0a08cfc84277f5614c665b60c03c00409ceb702d2`.
 The archive opens and every entry name, uncompressed byte count, and SHA-256
@@ -2678,7 +2678,7 @@ After finalD admission, archive the three superseded Unit 041 build candidates
 finalA, finalB, and finalC together with the obsolete finalC render set. The
 four exact task-local directories contain 100 files / 10,539,388 loose bytes.
 The no-overwrite archive is
-`old stuff/o014_unit041_superseded_builds_and_renders_01a02164_20260825-161628.zip`,
+`[local path omitted]`,
 8,798,871 bytes, SHA-256
 `f2cf861907e647d9177784ca0f045fcff8f077a1552ad007a91f02c3422f30ed`.
 The archive opens and every entry name, uncompressed byte count, and SHA-256
@@ -2846,3 +2846,63 @@ and re-verifies with zero mismatch. Freeze Unit 044,
 `2b8a923963fba1f31a9c5f7bfd98e5381a4a1b194f70cd3b7d002fa05a68298e`.
 Keep the full corpus pursuit active and publish Unit 043 through the existing
 GitHub and Zenodo lineages before scaling Unit 044 production.
+
+## D120 - Publish and anonymously verify Unit 043 (2026-08-26)
+
+Advance the existing GitHub repository and Zenodo concept with the admitted
+Unit 043 snapshot; create no competing lineage and publish no Unit 044 source
+or correction beyond O014-C062. GitHub `main` is immutable commit
+`16da6a2d73cae5b53decb49a58b4af684ed42756`, tree
+`5df51ebd754ea81c3638f6f443a81107b8b7e3ec`. Anonymous repository, commit,
+raw-reader, raw-README, branch-head, and codeload checks pass. The 2,129,606-
+byte codeload archive, SHA-256
+`de2ae149a3fe4eaa126c15f13ba592fa11a66f72bac8cf7ceedc203245749482`,
+contains all 138 manifest payload rows plus the two inventories with zero
+missing, extra, size, or hash mismatch.
+
+Advance Zenodo concept `22059751` from record `22102326` to published record
+`22103241`, DOI `10.5281/zenodo.22103241`, version `unit-043`. Publish exactly
+seven reader-first files totaling 1,832,410 bytes: the 275-page reader, the
+61-entry source/backend ZIP, the 11-entry QA/provenance ZIP, CC BY 4.0
+license, README, release manifest, and checksums. Preserve the exact work
+title, source authorship, derivative notice, non-endorsement, partial status,
+untagged-PDF limitation, exact model disclosure, and the single inherited
+organization contributor without placing the organization label in the title
+or description. Anonymous record API, record page, assigned DOI, concept DOI,
+concept-latest endpoint, immutable predecessor, every public file, both ZIP
+manifests, and PDF properties pass with zero mismatch. The sanitized receipt
+is `release/zenodo/unit-043/ZENODO_PUBLICATION_RECEIPT.json`, 7,933 bytes,
+SHA-256
+`7758fba3e2cd59385437a75aed57b10378ae29f0e22b146ede3c935588b2626b`.
+
+Close the Unit 043 release boundary and immediately resume source-order
+production at Unit 044, `chapter3.tex` lines 2553--2713. This publication is
+a partial preservation checkpoint and does not complete the corpus pursuit.
+
+## D121 - Admit Unit 044 and freeze Unit 045 (2026-08-26)
+
+Admit `o014.aljabr2.chapter3.example-lim1` as complete Section 3.13,
+`chapter3.tex` lines 2553--2713, stopping before `sec:Ext-Tor` at line 2714.
+The normalized 161-line witness is 13,478 bytes / SHA-256
+`2b8a923963fba1f31a9c5f7bfd98e5381a4a1b194f70cd3b7d002fa05a68298e`;
+the 51-record map is 14,076 bytes / SHA-256
+`2c376228ea8f711b06db359ab6890b6cf866ed0af222d0ba8adcd1a039aa943f`;
+the final Indonesian target is 19,317 bytes / SHA-256
+`550f7c1d4f7ad08721132b59932d09e5d3eecf0203551b4e0ffcb84702e3d9fc`.
+The target preserves all labels, formulas, references, indexes, and diagrams;
+the sole high-confidence notation repair is O014-C063, disclosed once.
+
+Admit `build/cumulative-unit-044-finalB-20260826`: Biber resolves 22 citekeys,
+MakeIndex accepts 197 term and 98 symbol entries with zero rejection or
+warning, and the final log has no undefined reference/citation or TeX error.
+Promote the byte-identical 282-page reader, 1,389,564 bytes, SHA-256
+`e225bfc588268d4da9bb64978ef4f00ef316e52516c8b4427ca0d838d79d6b05`.
+Strict PDF checks and full-size inspection of physical pages 258--282 pass;
+the untagged/ToUnicode limitation is stated explicitly. The 95-row manifest
+revalidates with zero missing, duplicate, size, or hash mismatch.
+
+Freeze Unit 045, `o014.aljabr2.chapter3.ext-tor`, as the complete next source
+boundary `chapter3.tex` lines 2714--2935, content through line 2934, stopping
+before `sec:K-injectives` at line 2936. Keep the full corpus pursuit active and
+publish Unit 044 through the existing GitHub and Zenodo lineages before
+advancing the next boundary's build.

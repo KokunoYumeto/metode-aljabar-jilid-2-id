@@ -64,7 +64,7 @@
       "O014-C061",
       "O014-C062"
     ],
-    "status": "translated_built_qa_passed_publication_pending"
+    "status": "translated_built_qa_passed_publication_verified"
   },
   "external_terminology_qa": {
     "status": "complete",
@@ -91,35 +91,42 @@
     "next_source_path": "chapter3.tex",
     "next_source_start_line": 2714,
     "next_source_label": "sec:Ext-Tor",
-    "source_correction_candidates": [],
-    "stop_condition": "Freeze, map, and translate exactly through line 2713; do not cross into sec:Ext-Tor at line 2714.",
-    "status": "source_witness_and_mapping_pending"
+    "source_correction_candidates": ["O014-C063"],
+    "target_path": "source/id-ID/chapter3-unit-044.tex",
+    "target_bytes": 19300,
+    "target_sha256": "42adc39d7b7cb6ac6ad0d9fae36a9838a2a6d248ca76df581ee70f5ad9ee7d2f",
+    "segment_map_records": 51,
+    "segment_map_path": "tmp/unit044-segment-map.jsonl",
+    "segment_map_bytes": 14076,
+    "segment_map_sha256": "2c376228ea8f711b06db359ab6890b6cf866ed0af222d0ba8adcd1a039aa943f",
+    "stop_condition": "Translate and QA exactly through line 2713; do not cross into sec:Ext-Tor at line 2714.",
+    "status": "translated_pending_build"
   },
   "publication": {
     "github": {
-      "status": "unit_042_public_anonymous_readback_passed",
+      "status": "unit_043_public_anonymous_readback_passed",
       "repository": "KokunoYumeto/metode-aljabar-jilid-2-id",
       "url": "https://github.com/KokunoYumeto/metode-aljabar-jilid-2-id",
       "branch": "main",
-      "commit": "3a8062fb77b60c456f560523508885445db57c3a",
-      "tree": "147809a3a936e447a20d4287dcd818a8be2610e0",
-      "archive_bytes": 2044848,
-      "archive_sha256": "c576bbc934cfe7a387aff1e5140023a28f6fe838ef04e0d6b503ad84ce35dd48",
+      "commit": "16da6a2d73cae5b53decb49a58b4af684ed42756",
+      "tree": "5df51ebd754ea81c3638f6f443a81107b8b7e3ec",
+      "archive_bytes": 2129606,
+      "archive_sha256": "de2ae149a3fe4eaa126c15f13ba592fa11a66f72bac8cf7ceedc203245749482",
       "receipt_path": "release/github/GITHUB_PUBLICATION_RECEIPT.json",
-      "receipt_sha256": "7c2eaaa5122ac3dd1c6f556709f60a5c2cbb4c65a1f11ca04bbc3be237379533"
+      "receipt_sha256": "1d1a4fe39eb24b144483d7f47775283eb1eec54d6028b93e9afa489ad2a2028d"
     },
     "zenodo": {
-      "status": "unit_042_public_anonymous_readback_passed",
-      "record_id": 22102326,
+      "status": "unit_043_public_anonymous_readback_passed",
+      "record_id": 22103241,
       "concept_record_id": 22059751,
-      "doi": "10.5281/zenodo.22102326",
+      "doi": "10.5281/zenodo.22103241",
       "concept_doi": "10.5281/zenodo.22059751",
-      "version": "unit-042",
+      "version": "unit-043",
       "file_count": 7,
-      "total_bytes": 1774270,
-      "receipt_path": "release/zenodo/unit-042/ZENODO_PUBLICATION_RECEIPT.json",
-      "receipt_sha256": "18bb8cbe7e931c706802337f43902230187395b24e5d766f792791465aec554c",
-      "previous_version_record_id": 22098141,
+      "total_bytes": 1832410,
+      "receipt_path": "release/zenodo/unit-043/ZENODO_PUBLICATION_RECEIPT.json",
+      "receipt_sha256": "7758fba3e2cd59385437a75aed57b10378ae29f0e22b146ede3c935588b2626b",
+      "previous_version_record_id": 22102326,
       "superseded_residual_record_ids": [
         22071302,
         22071377

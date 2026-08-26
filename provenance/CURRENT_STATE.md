@@ -1,10 +1,12 @@
 # O014 current state
 
-Status: active source-order Indonesian production. Units 001--043 are complete,
+Status: active source-order Indonesian production. Units 001--044 are complete,
 admitted, built, and QA-passed without a source gap through `chapter3.tex`
-line 2552. The public lineages currently remain at Unit 042 while Unit 043
-release packaging is in progress. This remains a partial working edition; do not
-complete the pursuit at this or any later checkpoint short of the entire
+line 2713; Unit 043 is public with anonymous byte readback and Unit 044 is
+closed locally for the next publication transaction. Unit 045 is the active
+next boundary at `chapter3.tex` lines 2714--2935. This remains a partial
+working edition; do
+not complete the pursuit at this or any later checkpoint short of the entire
 corpus, independent mastery layer, semantic reader, and final verified release
 set.
 
@@ -897,7 +899,7 @@ and re-verifies with zero missing, duplicate, byte-count, or hash mismatch.
 The output-argument parsing failure that created a literal `$out` directory is
 closed: exactly eleven failed-build files / 1,651,491 bytes were verified in
 the no-overwrite archive
-`old stuff/o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
+`[local path omitted]`,
 SHA-256
 `3b98158aeb8ad61ad818d352f340f7d8145a6fc2a8199ca7cd2cbf5bfddb83f7`,
 then both loose failed roots were deleted. The finalD canonical build and QA
@@ -906,7 +908,7 @@ surfaces are retained.
 After admission, the two superseded overflow-build trees, inspected individual
 page renders, and redundant finalD console captures (70 files / 5,984,538
 bytes) were likewise verified in the no-overwrite archive
-`old stuff/o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
+`[local path omitted]`,
 SHA-256
 `3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`,
 then deleted. Canonical finalD artifacts and the three contact sheets remain.
@@ -1192,3 +1194,63 @@ bytes, SHA-256
 `2b8a923963fba1f31a9c5f7bfd98e5381a4a1b194f70cd3b7d002fa05a68298e`,
 and it stops before `sec:Ext-Tor` at line 2714. This checkpoint remains
 partial and does not complete the corpus pursuit.
+
+Unit 043 is now public and anonymously verified in both existing lineages.
+GitHub `main` is commit
+`16da6a2d73cae5b53decb49a58b4af684ed42756`, tree
+`5df51ebd754ea81c3638f6f443a81107b8b7e3ec`. Its immutable codeload
+archive is 2,129,606 bytes, SHA-256
+`de2ae149a3fe4eaa126c15f13ba592fa11a66f72bac8cf7ceedc203245749482`.
+Anonymous repository, commit, raw-reader, raw-README, and codeload readback
+passes. All 138 manifest and checksum payload rows match, and the public PDF
+is the exact 1,361,656-byte admitted reader. The sanitized GitHub receipt is
+6,620 bytes, SHA-256
+`1d1a4fe39eb24b144483d7f47775283eb1eec54d6028b93e9afa489ad2a2028d`.
+
+Zenodo record `22103241`, DOI `10.5281/zenodo.22103241`, advances existing
+concept `22059751` as version `unit-043`; the immutable Unit 042 predecessor
+`22102326` remains public and no competing concept was created. Exactly seven
+reader-first public files total 1,832,410 bytes. Anonymous record, page, DOI,
+concept DOI, concept-latest, predecessor, and per-file readback pass with zero
+filename, byte, or SHA-256 mismatch. Both downloaded ZIPs revalidate their
+internal manifests, and the downloaded PDF is the exact 275-page, PDF 1.7,
+unencrypted, untagged admitted reader. The exact work title and descriptive
+lead remain free of organization branding, while the one inherited
+organization contributor is retained. The sanitized Zenodo receipt is 7,933
+bytes, SHA-256
+`7758fba3e2cd59385437a75aed57b10378ae29f0e22b146ede3c935588b2626b`.
+
+The complete corpus pursuit remains active. Resume Unit 044 now at the frozen
+authority boundary `o014.aljabr2.chapter3.example-lim1`, `chapter3.tex`
+lines 2553--2713. First materialize the exact 161-line normalized-LF witness
+and ordered stable segment map, then translate complete `sec:lim1` without
+crossing into `sec:Ext-Tor` at line 2714.
+
+## Unit 044 local admission (2026-08-26)
+
+Unit 044 (`o014.aljabr2.chapter3.example-lim1`) is admitted through Section
+3.13, lines 2553--2713, with content through line 2712. Its source witness is
+13,478 bytes / SHA-256
+`2b8a923963fba1f31a9c5f7bfd98e5381a4a1b194f70cd3b7d002fa05a68298e`; its
+51-record map is 14,076 bytes / SHA-256
+`2c376228ea8f711b06db359ab6890b6cf866ed0af222d0ba8adcd1a039aa943f`; and
+its Indonesian target is 19,317 bytes / SHA-256
+`550f7c1d4f7ad08721132b59932d09e5d3eecf0203551b4e0ffcb84702e3d9fc`.
+
+The clean `build/cumulative-unit-044-finalB-20260826` replay is 282 pages;
+the build log is 86,374 bytes / SHA-256
+`4f181259ff748dea5317d4bfae5ae8db2d8911aa5d4697a6e0cb4b89141839a0`. Biber
+resolves 22 citekeys; both indexes have zero rejected entries or warnings;
+the build has no undefined references or citations. The build, checkpoint,
+and promoted reader are byte-identical at 1,389,564 bytes / SHA-256
+`e225bfc588268d4da9bb64978ef4f00ef316e52516c8b4427ca0d838d79d6b05`.
+Strict PDF and 100-dpi page-image inspection cover the transition, all Unit
+044 pages, bibliography, both indexes, and the intentional blank transition;
+the untagged/ToUnicode accessibility limitation remains explicit. The 95-row
+manifest revalidates with zero missing, duplicate, size, or hash mismatch.
+
+The next frozen source-order boundary is Unit 045 (`sec:Ext-Tor`), lines
+2714--2935 inclusive, with substantive content through line 2934 and the
+terminal blank separator at line 2935. It stops before `sec:K-injectives` at
+line 2936. Unit 044 remains a partial checkpoint and does not complete the
+corpus pursuit.

@@ -466,3 +466,9 @@ math.homological.f_acyclic_object,objek F-asiklik,id-ID,O014,active
 math.homological.dimension_shifting,pergeseran dimensi,id-ID,O014,active
 math.homological.universal_cohomological_delta_functor,funktor-δ kohomologis universal,id-ID,O014,active
 math.homological.universal_homological_delta_functor,funktor-δ homologis universal,id-ID,O014,active
+math.homological.inverse_system,sistem invers,id-ID,O014,active
+math.category.countable_product,produk terhitung,id-ID,O014,active
+math.category.countable_coproduct,koproduk terhitung,id-ID,O014,active
+math.homological.exact_countable_product,produk terhitung eksak,id-ID,O014,active
+math.category.shift_morphism,morfisme pergeseran,id-ID,O014,active
+math.category.stable_image,citra stabil,id-ID,O014,active
