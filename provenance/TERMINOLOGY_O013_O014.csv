@@ -413,6 +413,10 @@ math.category.countable_coproduct,countable coproduct,koproduk terhitung,jumlah 
 math.homological.exact_countable_product,exact countable product,produk terhitung eksak,,o014.aljabr2.chapter3.example-lim1,o014_new,Produk terhitung yang funktor produknya eksak; bentuk dualnya koproduk terhitung eksak.
 math.category.shift_morphism,shift morphism,morfisme pergeseran,,o014.aljabr2.chapter3.example-lim1,o014_new,Morfisme T_A yang menggeser komponen sistem invers melalui morfisme transisi.
 math.category.stable_image,stable image,citra stabil,subobjek citra stabil,o014.aljabr2.chapter3.example-lim1,o014_new,Citra Image f^N_k yang stabil untuk semua N cukup besar dibandingkan k.
+math.homological.ext_functor,Ext functor,funktor Ext,funktor $\Ext$,o014.aljabr2.chapter3.ext-tor,o014_new,Bifunktor turunan kanan dari Hom; pertahankan simbol Ext dan lokalkan functor menjadi funktor.
+math.homological.tor_functor,Tor functor,funktor Tor,funktor $\Tor$,o014.aljabr2.chapter3.ext-tor,o014_new,Bifunktor turunan kiri dari hasil kali tensor; pertahankan simbol Tor dan lokalkan functor menjadi funktor.
+math.homological.flat_resolution,flat resolution,resolusi datar,,o014.aljabr2.chapter3.ext-tor,o014_new,Resolusi eksak yang setiap sukunya merupakan modul datar.
+math.homological.kunneth_theorem,Künneth theorem,Teorema Künneth,,o014.aljabr2.chapter3.ext-tor,o014_new,Barisan eksak pendek kanonik yang menghubungkan homologi produk tensor dengan suku Tor.
 math.homological.k_injective_complex,K-injective complex,kompleks K-injektif,,o014.aljabr2.chapter3.overview,o014_new,Kompleks dengan sifat injektivitas homotopis secara keseluruhan.
 math.homological.k_projective_complex,K-projective complex,kompleks K-projektif,,o014.aljabr2.chapter3.overview,o014_new,Kompleks dengan sifat projektivitas homotopis secara keseluruhan.
 math.homological.mapping_cylinder,mapping cylinder,silinder pemetaan,,o014.aljabr2.chapter3.overview,o014_new,Konstruksi kompleks yang berpasangan dengan kerucut pemetaan.

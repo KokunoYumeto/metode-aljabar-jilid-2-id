@@ -1,0 +1,580 @@
+% Unit 045 terjemahan Bahasa Indonesia dari chapter3.tex baris 2714--2935.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter3.ext-tor
+% Cakupan: Bagian 3.14 lengkap.
+
+% segment-id: o014.li2.chapter3.ext-tor.h001
+\section{Contoh: \texorpdfstring{$\Ext$}{Ext} dan \texorpdfstring{$\Tor$}{Tor}}\label{sec:Ext-Tor}
+\hypertarget{o014.aljabr2.chapter3.ext-tor}{ }
+
+% segment-id: o014.li2.chapter3.ext-tor.p001
+Kita akan mengkaji funktor turunan dari $\Hom$ dan $\otimes$. Sebaiknya kita
+memperkenalkan beberapa konsep bantu terlebih dahulu.
+
+% segment-id: o014.li2.chapter3.ext-tor.de001
+\begin{definisi}\label{def:balanced-functor}
+\index{bifunktor!seimbang (balanced)}
+Misalkan $\mathcal{A}_1$, $\mathcal{A}_2$, dan $\mathcal{B}$ merupakan
+kategori abelian, sedangkan bifunktor $F: \mathcal{A}_1 \times \mathcal{A}_2
+\to \mathcal{B}$ (Konvensi \ref{con:bifunctor}) merupakan funktor eksak kiri
+terhadap kedua variabel. Jika untuk setiap objek injektif $I_i \in
+\Obj(\mathcal{A}_i)$ (dengan $i=1,2$),
+\[
+F(I_1, \cdot): \mathcal{A}_2 \to \mathcal{B} \quad\text{dan}\quad
+F(\cdot, I_2): \mathcal{A}_1 \to \mathcal{B}
+\]
+keduanya merupakan funktor eksak, maka $F$ disebut \emph{seimbang}.
+
+Secara dual, jika $F$ eksak kanan terhadap kedua variabel, dan untuk setiap
+objek projektif $P_i \in \Obj(\mathcal{A}_i)$ funktor $F(P_1,\cdot)$ dan
+$F(\cdot,P_2)$ keduanya eksak, maka $F$ juga disebut seimbang.
+\end{definisi}
+
+% segment-id: o014.li2.chapter3.ext-tor.p002
+Berdasarkan dualitas, teorema berikut hanya dinyatakan untuk bifunktor yang
+eksak kiri terhadap kedua variabel.
+
+% segment-id: o014.li2.chapter3.ext-tor.th001
+\begin{teorema}\label{prop:balanced-primer}
+\index[sym1]{RInF@$\mathrm{R}_{\mathrm{I}}^n F$, $\mathrm{R}_{\mathrm{II}}^n F$}
+Misalkan $\mathcal{A}_1$, $\mathcal{A}_2$, dan $\mathcal{B}$ merupakan
+kategori abelian; $\mathcal{A}_1$ dan $\mathcal{A}_2$ mempunyai cukup banyak
+objek injektif. Misalkan bifunktor $F: \mathcal{A}_1\times\mathcal{A}_2\to
+\mathcal{B}$ eksak kiri terhadap kedua variabel. Dengan demikian, kita dapat
+mengambil funktor turunan kanan terhadap setiap variabel. Untuk $X_i \in
+\Obj(\mathcal{A}_i)$ yang tetap, $i=1,2$, tuliskan
+\[
+\mathrm{R}_{\mathrm{I}}^n F(\cdot,X_2):\mathcal{A}_1\to\mathcal{B},\qquad
+\mathrm{R}_{\mathrm{II}}^n F(X_1,\cdot):\mathcal{A}_2\to\mathcal{B}.
+\]
+Jika $F$ seimbang, maka terdapat isomorfisme kanonik bifunktor
+\[
+\mathrm{R}_{\mathrm{I}}^nF(X_1,X_2)\simeq
+\mathrm{R}_{\mathrm{II}}^nF(X_1,X_2).
+\]
+\end{teorema}
+
+% segment-id: o014.li2.chapter3.ext-tor.pf001
+\begin{bukti}
+Argumen berikut bergantung pada teori bikompleks; lihat
+\S\ref{sec:double-cplx} dan \S\ref{sec:double-cplx-coh}. Untuk $i=1,2$,
+ambil resolusi injektif $0\to X_i\to I_i^0\to I_i^1\to\cdots$; untuk
+$n<0$ tetapkan $I_i^n:=0$. Ini mendefinisikan bikompleks
+$F\left(I_1^\bullet,I_2^\bullet\right)$.
+
+Di sisi lain, definisikan kompleks $F(X_1,I_2^\bullet)$ dan
+$F(I_1^\bullet,X_2)$. Pandang keduanya sebagai bikompleks yang masing-masing
+terkonsentrasi pada sumbu vertikal $(0,\bullet)$ dan sumbu horizontal
+$(\bullet,0)$. Karena
+$X_i\rightiso\Ker[I_i^0\to I_i^1]\hookrightarrow I_i^0$, diperoleh dalam
+$\cate{C}^2_f(\mathcal{B})$ morfisme
+\[
+F(X_1,I_2^\bullet)\xrightarrow{\lambda}
+F\left(I_1^\bullet,I_2^\bullet\right)\xleftarrow{\rho}
+F(I_1^\bullet,X_2).
+\]
+Kita akan menunjukkan bahwa $\tot(\lambda)$ dan $\tot(\rho)$ merupakan
+kuasi-isomorfisme.
+
+Pertama-tama, pertimbangkan $\lambda$. Ambil kohomologi horizontal
+$\Hm_{\mathrm{I}}$ pada kedua sisinya; hal ini tidak mengubah
+$F(X_1,I_2^\bullet)$ yang terletak pada sumbu vertikal. Karena
+$F(\cdot,I_2^q)$ merupakan funktor eksak untuk setiap $q$, kita memperoleh
+\[
+\left(\Hm_{\mathrm{I}}F\left(I_1^\bullet,I_2^\bullet\right)\right)^{p,q}
+=\begin{cases}
+0,&p\neq0,\\
+\Ker\left[F(I_1^0,I_2^q)\to F(I_1^1,I_2^q)\right]
+=F(X_1,I_2^q),&p=0.
+\end{cases}
+\]
+Jadi $\Hm_{\mathrm{I}}(\lambda)$ merupakan isomorfisme dari
+$\Hm_{\mathrm{I}}F(X_1,I_2^\bullet)$ ke
+$\Hm_{\mathrm{I}}F(I_1^\bullet,I_2^\bullet)$. Maka
+$\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(\lambda)$ juga isomorfisme. Dengan
+menerapkan Teorema \ref{prop:double-cplx-tot}, diperoleh bahwa
+$\tot(\lambda)$ merupakan kuasi-isomorfisme.
+
+Untuk $\rho$, argumen yang sama memberikan bahwa
+$\Hm_{\mathrm{I}}\Hm_{\mathrm{II}}(\rho)$ merupakan isomorfisme; Teorema
+\ref{prop:double-cplx-tot} lalu menyiratkan bahwa $\tot(\rho)$ juga merupakan
+kuasi-isomorfisme.
+
+Perhatikan bahwa kompleks total $F(X_1,I_2^\bullet)$ tetap merupakan
+kompleks itu sendiri; mengambil $\Hm^n$ menghasilkan
+$\mathrm{R}_{\mathrm{II}}^nF(X_1,X_2)$. Demikian pula, mengambil $\Hm^n$ dari
+$F(I_1^\bullet,X_2)$ atau kompleks totalnya menghasilkan
+$\mathrm{R}_{\mathrm{I}}^nF(X_1,X_2)$. Melalui kompleks total
+$\tot\left(F(I_1^\bullet,I_2^\bullet)\right)$ sebagai perantara, diperoleh
+\[
+\mathrm{R}_{\mathrm{I}}^nF(X_1,X_2)\simeq
+\mathrm{R}_{\mathrm{II}}^nF(X_1,X_2).
+\]
+Karena setiap morfisme $X_i\to Y_i$ dapat diangkat menjadi morfisme di antara
+resolusi injektif, dan pengangkatan tersebut unik hingga homotopi, yang kita
+dapatkan sebenarnya adalah isomorfisme bifunktor
+$\mathrm{R}_{\mathrm{I}}^nF\simeq\mathrm{R}_{\mathrm{II}}^nF$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.ext-tor.rem001
+\begin{catatan}\label{rem:balanced-primer}
+Argumen tersebut sesungguhnya memberikan teknik untuk meresolusikan kedua
+variabel sekaligus, lalu ``menurunkan'' $F$ secara seimbang melalui kompleks
+total dari bikompleks $F(I_1^\bullet,I_2^\bullet)$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter3.ext-tor.p003
+Sekarang ambil $\mathcal{A}$ sebagai kategori abelian dan pertimbangkan
+bifunktor $\Hom=\Hom_{\mathcal{A}}:\mathcal{A}^{\opp}\times\mathcal{A}
+\to\cate{Ab}$. Proposisi \ref{prop:Hom-left-exact} menyatakan bahwa
+$\Hom$ eksak kiri terhadap kedua variabel. Untuk setiap $n\in\Z$ kita buat
+definisi berikut.
+
+% segment-id: o014.li2.chapter3.ext-tor.l001
+\begin{itemize}
+% segment-id: o014.li2.chapter3.ext-tor.i001
+\item Jika $\mathcal{A}$ mempunyai cukup banyak objek projektif, definisikan
+$\Ext^n_{\mathcal{A},\mathrm{I}}(X,Y):=\mathrm{R}^n_{\mathrm{I}}\Hom(X,Y)$,
+yang ditentukan oleh resolusi projektif $X$ di $\mathcal{A}$.
+% segment-id: o014.li2.chapter3.ext-tor.i002
+\item Jika $\mathcal{A}$ mempunyai cukup banyak objek injektif, definisikan
+$\Ext^n_{\mathcal{A},\mathrm{II}}(X,Y):=\mathrm{R}^n_{\mathrm{II}}\Hom(X,Y)$,
+yang ditentukan oleh resolusi injektif $Y$ di $\mathcal{A}$.
+\end{itemize}
+
+% segment-id: o014.li2.chapter3.ext-tor.dp001
+\begin{definisiproposisi}[funktor $\Ext$]\label{def:Ext-classical}
+\index{Ext functor@funktor $\Ext$ ($\Ext$ functor)}
+\index[sym1]{Extn@$\Ext^n$}
+Bifunktor $\Hom_{\mathcal{A}}$ bersifat seimbang. Karena itu, selama kategori
+abelian $\mathcal{A}$ mempunyai cukup banyak objek injektif dan projektif, untuk
+setiap $n\in\Z$ terdapat bifunktor
+\[
+\Ext^n=\Ext^n_{\mathcal{A}}:\mathcal{A}^{\opp}\times\mathcal{A}\to\cate{Ab}
+\]
+dengan
+$\Ext^n_{\mathcal{A}}(X,Y):=\Ext^n_{\mathrm{I}}(X,Y)\simeq
+\Ext^n_{\mathrm{II}}(X,Y)$ (isomorfisme kanonik).
+\end{definisiproposisi}
+
+% segment-id: o014.li2.chapter3.ext-tor.pf002
+\begin{bukti}
+Keseimbangan tepat merupakan konsekuensi dari definisi objek injektif dan
+projektif, sehingga Teorema \ref{prop:balanced-primer} dapat diterapkan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.ext-tor.p004
+Jika $R$ merupakan gelanggang dan $\mathcal{A}=R\dcate{Mod}$ atau
+$\cated{Mod}R$, kita tulis $\Ext^n_{\mathcal{A}}$ sebagai $\Ext^n_R$.
+
+% segment-id: o014.li2.chapter3.ext-tor.p005
+Perhatikan bahwa $\Ext^0=\Hom$, sedangkan $(\Ext^n)_{n\geq0}$, masing-masing
+terhadap variabel $X$ dan $Y$, mempunyai barisan eksak panjang berbentuk
+% segment-id: o014.li2.chapter3.ext-tor.q001
+\begin{gather*}
+\cdots\to\Ext^{n-1}(X',Y)\xrightarrow{\delta^{n-1}}\Ext^n(X'',Y)\to
+\Ext^n(X,Y)\to\Ext^n(X',Y)\to\cdots,\\
+\cdots\to\Ext^{n-1}(X,Y'')\xrightarrow{\delta^{n-1}}\Ext^n(X,Y')\to
+\Ext^n(X,Y)\to\Ext^n(X,Y'')\to\cdots,
+\end{gather*}
+di mana $0\to X'\to X\to X''\to0$ dan
+$0\to Y'\to Y\to Y''\to0$ merupakan barisan eksak pendek yang diberikan.
+
+% segment-id: o014.li2.chapter3.ext-tor.p006
+Jika $\mathcal{A}$ merupakan kategori abelian $\Bbbk$-linear, nilai $\Ext^n$
+tentu dapat ditingkatkan ke dalam kategori $\Bbbk\dcate{Mod}$.
+
+% segment-id: o014.li2.chapter3.ext-tor.rem002
+\begin{catatan}
+Simbol $\Ext$ berarti ``ekstensi'', sebab elemen-elemen $\Ext^1(X,Y)$
+berkorespondensi satu-satu dengan kelas isomorfisme ekstensi
+$0\to Y\to E\to X\to0$ (yakni barisan eksak pendek); $\Ext^n$ yang lebih
+tinggi mempunyai interpretasi serupa. Fakta ini sebaiknya dipahami melalui
+kategori turunan; lihat \S\sourcecrossref{sec:Hom-Ext}{4.5}.
+\end{catatan}
+
+% segment-id: o014.li2.chapter3.ext-tor.p007
+Berdasarkan karakterisasi keeksakan funktor melalui Korolari
+\ref{prop:obstruction-exactness}, segera diperoleh
+
+% segment-id: o014.li2.chapter3.ext-tor.l002
+\begin{itemize}
+% segment-id: o014.li2.chapter3.ext-tor.i003
+\item objek $I$ injektif $\iff \Ext^1(\cdot,I)=0\iff
+\Ext^{\geq1}(\cdot,I)=0$;
+% segment-id: o014.li2.chapter3.ext-tor.i004
+\item objek $P$ projektif $\iff \Ext^1(P,\cdot)=0\iff
+\Ext^{\geq1}(P,\cdot)=0$.
+\end{itemize}
+
+% segment-id: o014.li2.chapter3.ext-tor.ex001
+\begin{contoh}[$\HHm^n$ sebagai $\Ext^n$]\label{eg:HH-Ext}
+\index[sym1]{HH}
+Kembali ke kerangka dasar homologi dan kohomologi Hochschild pada
+\S\ref{sec:HH}: $\Bbbk$ merupakan gelanggang komutatif dan $R$ merupakan
+aljabar-$\Bbbk$; sekarang syaratkan pula bahwa $R$ projektif sebagai
+modul-$\Bbbk$. Tuliskan $\otimes:=\otimes_{\Bbbk}$. Karena modul projektif
+merupakan suku langsung dari modul bebas, $R^{\otimes n}$ tetap merupakan
+modul-$\Bbbk$ projektif.
+\footnote{Atau gunakan hubungan adjoin tensor \cite[Teorema 6.6.5]{Li1}.}
+Jadikan $R\otimes R^{\otimes n}\otimes R$ sebagai modul-$R^e$ kiri, dengan
+$R^e:=R\otimes R^{\opp}$. Karena
+$R\otimes(\cdot)\otimes R:\Bbbk\dcate{Mod}\to R^e\dcate{Mod}$ merupakan
+adjoin kiri dari funktor pelupa \cite[Korolari 6.6.8]{Li1}, funktor ini
+membawa objek projektif ke objek projektif (Proposisi
+\ref{prop:adjoint-injective-projective}). Maka Lema
+\ref{prop:HH-bar-exactness} menunjukkan bahwa kompleks bar $\mathsf{B}R$
+memberikan resolusi projektif $R$ sebagai modul-$R^e$ kiri,
+\begin{equation}\label{eqn:bar-proj-resolution}
+\cdots\to\mathsf{B}_1R\to\mathsf{B}_0R\to R\to0.
+\end{equation}
+Sekarang misalkan $M$ merupakan bimodul $(R,R)$. Dengan memasukkan definisi
+awal kohomologi Hochschild \ref{def:HH}, diperoleh
+\[
+\HHm^n(M)=\Hm^n\left(\Hom_{R^e}(\mathsf{B}R,M)\right)
+=\Ext^n_{R^e}(R,M).
+\]
+\end{contoh}
+
+% segment-id: o014.li2.chapter3.ext-tor.p008
+Topik berikutnya adalah funktor $\Tor$. Tetapkan gelanggang $R$. Kategori
+modul $R\dcate{Mod}$ (atau $\cated{Mod}R$) mempunyai cukup banyak objek
+projektif\footnote{Sesungguhnya, modul bebas selalu projektif; lihat
+\cite[Contoh 6.9.6]{Li1}.}. Hasil kali tensor memberikan bifunktor
+% segment-id: o014.li2.chapter3.ext-tor.q002
+\[
+\otimes_R:\cated{Mod}R\times R\dcate{Mod}\to\cate{Ab},
+\]
+yang eksak kanan terhadap setiap variabel (lihat \cite[Proposisi 6.9.2]{Li1}).
+Terapkan versi eksak kanan dari teori sebelumnya untuk
+mendefinisikan funktor turunan kiri terhadap kedua variabel,
+$\mathrm{L}_{\mathrm{I},n}\otimes_R$ dan
+$\mathrm{L}_{\mathrm{II},n}\otimes_R$; keduanya hanya tak nol untuk $n\geq0$.
+Ingat juga definisi modul datar \cite[Definisi 6.9.4]{Li1}.
+
+% segment-id: o014.li2.chapter3.ext-tor.dp002
+\begin{definisiproposisi}[funktor $\Tor$]\label{def:Tor-classical}
+\index{Tor functor@funktor $\Tor$ ($\Tor$ functor)}
+\index[sym1]{Torn@$\Tor^R_n$}
+Untuk setiap gelanggang $R$, bifunktor $\otimes_R$ bersifat seimbang. Maka,
+untuk setiap $n\in\Z$ dapat didefinisikan bifunktor
+\[
+\Tor_n=\Tor_n^R:\cated{Mod}R\times R\dcate{Mod}\to\cate{Ab}
+\]
+dengan
+$\Tor_n^R(X,Y):=(\mathrm{L}_{\mathrm{I},n}\otimes_R)(X,Y)\simeq
+(\mathrm{L}_{\mathrm{II},n}\otimes_R)(X,Y)$ (isomorfisme kanonik).
+\end{definisiproposisi}
+
+% segment-id: o014.li2.chapter3.ext-tor.pf003
+\begin{bukti}
+Keseimbangan mengikuti dari fakta bahwa setiap modul projektif merupakan
+modul datar \cite[Korolari 6.9.9]{Li1}. Terapkan versi funktor turunan kiri
+dari Teorema \ref{prop:balanced-primer}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.ext-tor.p009
+Kita mempunyai $\Tor^R_0(X,Y)=X\dotimes{R}Y$, sedangkan $(\Tor_n)_{n\geq0}$
+mempunyai barisan eksak panjang berikut:
+% segment-id: o014.li2.chapter3.ext-tor.q003
+\begin{gather*}
+\cdots\to\Tor^R_{n+1}(X'',Y)\xrightarrow{\partial_{n+1}}\Tor^R_n(X',Y)\to
+\Tor^R_n(X,Y)\to\Tor^R_n(X'',Y)\to\cdots,\\
+\cdots\to\Tor^R_{n+1}(X,Y'')\xrightarrow{\partial_{n+1}}\Tor^R_n(X,Y')\to
+\Tor^R_n(X,Y)\to\Tor^R_n(X,Y'')\to\cdots,
+\end{gather*}
+di mana $0\to X'\to X\to X''\to0$ dan
+$0\to Y'\to Y\to Y''\to0$ merupakan barisan eksak pendek yang diberikan.
+
+% segment-id: o014.li2.chapter3.ext-tor.p010
+Kita mengulangi ungkapan yang serupa dengan kasus $\Ext$.
+
+% segment-id: o014.li2.chapter3.ext-tor.l003
+\begin{itemize}
+% segment-id: o014.li2.chapter3.ext-tor.i005
+\item Modul-$R$ kanan $M$ datar $\iff \Tor^R_1(M,\cdot)=0\iff
+\Tor^R_{\geq1}(M,\cdot)=0$;
+% segment-id: o014.li2.chapter3.ext-tor.i006
+\item Modul-$R$ kiri $N$ datar $\iff \Tor^R_1(\cdot,N)=0\iff
+\Tor^R_{\geq1}(\cdot,N)=0$.
+\end{itemize}
+
+% segment-id: o014.li2.chapter3.ext-tor.p011
+Misalkan $M$ merupakan modul-$R$. Meniru definisi resolusi projektif,
+\emph{resolusi datar}\index{resolusidatar@resolusi datar (flat resolution)}
+$M$ didefinisikan sebagai barisan eksak berbentuk
+% segment-id: o014.li2.chapter3.ext-tor.q004
+\[
+\cdots\to F^2\to F^1\to F^0\to M\to0,\qquad
+\text{setiap $F^n$ merupakan modul-$R$ datar}.
+\]
+
+% segment-id: o014.li2.chapter3.ext-tor.p012
+Dengan Korolari \ref{prop:acyclic-resolution} dan pengamatan di atas,
+$\Tor^R_n(X,Y)$ juga dapat dihitung menggunakan resolusi datar $X$ atau $Y$.
+Inilah teknik praktis untuk menghitung $\Tor$, sedangkan resolusi projektif
+terutama berperan pada tingkat teoretis.
+
+% segment-id: o014.li2.chapter3.ext-tor.p013
+Perhitungan semacam ini secara alami juga dapat ``diseimbangkan''. Ambil
+sembarang resolusi datar $\cdots\to P_1\to P_0\to X\to0$ dan
+$\cdots\to Q_1\to Q_0\to Y\to0$. Bentuk bikompleks dalam arti kompleks rantai
+$P_\bullet\dotimes{R}Q_\bullet$, dan tuliskan kompleks totalnya sebagai
+$P\otimes Q$. Versi homologi dari Catatan \ref{rem:balanced-primer}
+memberikan $\Tor_n^R(X,Y)\simeq\Hm_n(P\otimes Q)$; sifat yang diperlukan hanya
+keeksakan $P_p\dotimes{R}(\cdot)$ dan $(\cdot)\dotimes{R}Q_q$, tepat sifat
+yang dijamin oleh kedataran.
+
+% segment-id: o014.li2.chapter3.ext-tor.rem003
+\begin{catatan}[Struktur bimodul]\label{rem:ExtTor-bimodule}
+Tetapkan gelanggang $A$ dan $B$; misalkan $X$ merupakan bimodul $(A,R)$ dan
+$Y$ merupakan bimodul $(R,B)$. Karena $\Tor_n^R$ merupakan bifunktor,
+$\Tor_n^R(X,Y)$ memiliki struktur bimodul kanonik $(A,B)$. Sebagai contoh,
+pertimbangkan perkalian kiri oleh $A$: setiap $a\in A$ memberikan endomorfisme
+$X$ sebagai modul-$R$ kanan, sehingga menginduksi endomorfisme
+$L_a$ pada $\Tor_n^R(X,Y)$; berlaku $L_aL_{a'}=L_{aa'}$ dan
+$L_1=\identity$. Perkalian kanan oleh $B$ diperlakukan serupa pada variabel
+kedua. Untuk $n=0$, kita kembali pada struktur bimodul alami di
+$X\dotimes{R}Y$.
+
+Jika $Y$ dipilih bersama resolusi datarnya sebagai modul-$R$ kiri
+$\cdots\to P_0\to Y\to0$, aksi perkalian kiri $A$ dapat langsung dibaca pada
+kompleks $X\dotimes{R}P_\bullet$: aksi itu berasal dari perkalian kiri $A$
+pada $X$. Perkalian kanan diperlakukan dengan cara yang sama.
+
+Sebagai kasus khusus, jika dipilih homomorfisme gelanggang $R\to S$, maka
+$\Tor_n^R(\cdot,S)$ (atau $\Tor_n^R(S,\cdot)$) meningkat menjadi funktor
+$\cated{Mod}R\to\cated{Mod}S$ (atau $R\dcate{Mod}\to S\dcate{Mod}$).
+
+Argumen serupa menunjukkan bahwa untuk $X$ yang merupakan bimodul $(R,A)$ dan
+$Y$ yang merupakan bimodul $(R,B)$, setiap $\Ext_R^n(X,Y)$ secara alami
+merupakan bimodul $(A,B)$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter3.ext-tor.p014
+Untuk gelanggang komutatif $R$, modul-modul atas $R$ tidak perlu dibedakan
+menjadi kiri dan kanan; kategori yang bersesuaian ditulis $R\dcate{Mod}$. Maka
+setiap modul-$R$ secara alami merupakan bimodul $(R,R)$, sehingga $\Tor_n^R$
+menjadi bifunktor $(R\dcate{Mod})^2\to R\dcate{Mod}$.
+
+% segment-id: o014.li2.chapter3.ext-tor.pr001
+\begin{proposisi}\label{prop:Tor-symmetry}
+Untuk gelanggang komutatif $R$, terdapat isomorfisme kanonik bifunktor
+\[
+\Tor_n^R(X,Y)\simeq\Tor_n^R(Y,X),
+\]
+untuk setiap $n\in\Z$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter3.ext-tor.pf004
+\begin{bukti}
+Ambil resolusi datar $P_\bullet$ dan $Q_\bullet$ masing-masing dari $X$ dan
+$Y$. Tuliskan $P\otimes Q$ sebagai kompleks total dari bikompleks
+$P_\bullet\dotimes{R}Q_\bullet$; definisikan $Q\otimes P$ secara serupa.
+Kendala pertukaran hasil kali tensor \cite[Proposisi 6.5.14]{Li1} memberikan
+isomorfisme kanonik
+% segment-id: o014.li2.chapter3.ext-tor.q005
+\[
+P_p\dotimes{R}Q_q\simeq Q_q\dotimes{R}P_p,\qquad p,q\in\Z.
+\]
+Dengan kata lain,
+$P_\bullet\dotimes{R}Q_\bullet\simeq
+\mathrm{swap}(Q_\bullet\dotimes{R}P_\bullet)$. Terapkan Proposisi
+\ref{prop:double-cplx-swap} untuk memperoleh isomorfisme kanonik kompleks
+total $P\otimes Q\simeq Q\otimes P$. Ini membuktikan pernyataan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.ext-tor.rem004
+\begin{catatan}
+Simbol $\Tor$ berarti ``torsi'', yang berasal dari contoh berikut. Ambil
+ideal kiri $\mathfrak{a}$ pada gelanggang $R$, serta modul-$R$ kanan $X$
+sembarang. Karena modul kiri bebas $R$ datar, terapkan Proposisi
+\ref{prop:dimension-shifting} pada $0\to\mathfrak{a}\to R\to
+R/\mathfrak{a}\to0$ untuk melakukan pergeseran dimensi. Diperoleh
+% segment-id: o014.li2.chapter3.ext-tor.q006
+\begin{align*}
+\Tor^R_1(X,R/\mathfrak{a}) &\simeq \Ker\left[
+X\dotimes{R}\mathfrak{a}\to X\dotimes{R}R\simeq X\right]\\
+&\simeq \left\{\sum_i x_i\otimes a_i\in X\dotimes{R}\mathfrak{a}:
+\sum_i x_i a_i=0\right\},\\
+\Tor^R_n(X,R/\mathfrak{a})&\simeq\Tor^R_{n-1}(X,\mathfrak{a}),\qquad(n>1).
+\end{align*}
+Jika selanjutnya $t\in R$ bukan pembagi nol kanan, dan diambil
+$\mathfrak{a}:=Rt\leftiso R$ (memetakan $r$ ke $rt$), maka
+$\Tor^R_1(X,R/Rt)\simeq\{x\in X:xt=0\}$, yakni submodul torsi-$t$ dari $X$;
+untuk $n>1$, $\Tor^R_n(X,R/Rt)=0$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter3.ext-tor.ex002
+\begin{contoh}[$\HHm_n$ sebagai $\Tor_n$]\label{eg:HH-Tor}
+\index[sym1]{HH}
+Lanjutkan langkah awal Contoh \ref{eg:HH-Ext}, tetapi lemahkan syarat pada
+$R$ menjadi: $R$ merupakan modul datar atas $\Bbbk$. Maka $R^{\otimes n}$
+juga datar. Kendala asosiatif
+$(\cdot)\dotimes{R^e}(R\otimes R^{\otimes n}\otimes R)\simeq
+(\cdot)\otimes R^{\otimes n}$ menunjukkan bahwa
+$R\otimes R^{\otimes n}\otimes R$ merupakan modul-$R^e$ kiri yang datar.
+Jadi, $\mathsf{B}R$ merupakan resolusi datar $R$ sebagai modul-$R^e$ kiri,
+seperti pada \eqref{eqn:bar-proj-resolution}.
+
+Untuk setiap $M$ yang merupakan bimodul $(R,R)$, masukkan definisi awal homologi Hochschild
+\ref{def:HH} untuk memperoleh
+\[
+\HHm_n(M)=\Hm_n\left(M\dotimes{R^e}\mathsf{B}R\right)
+=\Tor_n^{R^e}(M,R).
+\]
+\end{contoh}
+
+% segment-id: o014.li2.chapter3.ext-tor.p015
+Sekarang kita dapat menggabungkan Contoh \ref{eg:HH-Ext} dan
+\ref{eg:HH-Tor} untuk menghitung contoh-contoh homologi dan kohomologi
+Hochschild lainnya. Pertama ambil aljabar polinomial $R=\Bbbk[t]$ dan
+identifikasi $R^e=R\otimes R^{\opp}$ dengan $\Bbbk[x,y]$. Aksi skalar pada
+$R$ sebagai modul-$R^e$ adalah $h(x,y)\cdot f(t)=h(t,t)f(t)$, dan $R$
+mempunyai resolusi bebas
+% segment-id: o014.li2.chapter3.ext-tor.q007
+\[
+0\to R^e\xrightarrow{\text{perkalian dengan }x-y}R^e
+\xrightarrow{f\mapsto f(t,t)}R\to0.
+\]
+Dengan menghitung $\Ext^n_{R^e}(R,\cdot)$ dan $\Tor_n^{R^e}(\cdot,R)$ dari
+resolusi ini, segera diperoleh $\HHm_n(R)\simeq R\simeq\HHm^n(R)$ untuk
+$n\in\{0,1\}$,
+sedangkan untuk $n>1$, $\HHm_n(R)=0=\HHm^n(R)$.
+
+% segment-id: o014.li2.chapter3.ext-tor.p016
+Selanjutnya ambil $R=\Bbbk[t]/(t^2)$, sehingga
+$R^e=\Bbbk[x,y]/(x^2,y^2)$. Untuk modul-$R^e$ $R$ terdapat resolusi bebas
+berperiode $2$,
+% segment-id: o014.li2.chapter3.ext-tor.q008
+\[
+\cdots\xrightarrow{x+y}R^e\xrightarrow{x-y}R^e\xrightarrow{x+y}R^e
+\xrightarrow{\text{perkalian dengan }x-y}R^e\xrightarrow{f\mapsto f(t,t)}R\to0,
+\]
+yang keeksakannya kami serahkan kepada pembaca untuk diverifikasi langsung.
+Untuk setiap modul-$R$ $M$, mengambil $M\dotimes{R^e}(\cdot)$ dan
+$\Hom_{R^e}(\cdot,M)$ masing-masing menghasilkan
+% segment-id: o014.li2.chapter3.ext-tor.q009
+\begin{gather*}
+\cdots\xrightarrow{2t}M\xrightarrow{0}M\xrightarrow{2t}M\xrightarrow{0}M
+\to M\dotimes{R^e}R\to0,\\
+0\to\Hom_{R^e}(R,M)\to M\xrightarrow{0}M\xrightarrow{2t}M
+\xrightarrow{0}M\xrightarrow{2t}\cdots.
+\end{gather*}
+Maka $\HHm_k(M)$ dan $\HHm^k(M)$ hanya bergantung pada $k\bmod2$;
+seandainya hanya dihitung dari definisi, periodisitas ini mungkin sulit
+terlihat.
+
+Jika $\Bbbk$ merupakan lapangan, kita dapat membaca $\HHm_n(M)$ dan
+$\HHm^n(M)$ dari sini, tetapi jawabannya bergantung pada
+$\mathrm{char}(\Bbbk)$. Latihan akan membahas kasus umum
+$R=\Bbbk[t]/(t^n)$.
+
+% segment-id: o014.li2.chapter3.ext-tor.p017
+Hasil berikut sering digunakan dalam topologi aljabar dan sekaligus menjadi
+verifikasi kecil atas materi sebelumnya; hasil ini melibatkan kompleks rantai
+beserta homologinya (Catatan \ref{rem:cochain-vs-chain}). Misalkan
+$C=(C_\bullet,d^C_\bullet)$ (atau $D=(D_\bullet,d^D_\bullet)$) merupakan
+kompleks rantai dari modul-$R$ kanan (atau modul-$R$ kiri). Bentuk
+bikompleks rantai $C_\bullet\otimes D_\bullet$ dan tuliskan kompleks totalnya
+sebagai
+% segment-id: o014.li2.chapter3.ext-tor.q010
+\[
+C\otimes D:=\tot_{\oplus}\left(C_\bullet\otimes D_\bullet\right);
+\]
+subskrip $R$ pada hasil kali tensor dihilangkan. Secara konkret, suku
+berderajat $n$ dari kompleks total $C\otimes D$ ialah
+$\bigoplus_{p+q=n}C_p\otimes D_q$, sedangkan $d_n$ yang dibatasi pada
+$C_p\otimes D_q$ sama dengan $d^C_p\otimes\identity+(-1)^p\identity\otimes
+d^D_q$. Ini memberikan homomorfisme kanonik yang jelas
+\[
+\kappa:\bigoplus_{p+q=n}\Hm_p(C)\otimes\Hm_q(D)\to
+\Hm_n\left(C\otimes D\right).
+\]
+
+% segment-id: o014.li2.chapter3.ext-tor.th002
+\begin{teorema}[Teorema Künneth untuk homologi]\label{prop:Kunneth-homology}
+\index{kunneth@Teorema Künneth (Künneth Theorem)}
+Ambil kompleks rantai $C,D$ seperti di atas. Jika setiap $C_p$ dan
+$\Image(d^C_p)$ merupakan modul-$R$ kanan yang datar, maka terdapat barisan
+eksak pendek kanonik
+% segment-id: o014.li2.chapter3.ext-tor.g001
+\[
+\begin{tikzcd}[column sep=small, every cell/.append style={font = \small}]
+0 \arrow[r] & \displaystyle\bigoplus_{p+q=n} \Hm_p(C) \otimes \Hm_q(D)
+\arrow[r, "\kappa"] & \Hm_n\left(C \otimes D \right) \arrow[r] &
+\displaystyle\bigoplus_{p+q=n-1} \Tor_1^R\left( \Hm_p(C), \Hm_q(D) \right)
+\arrow[r] & 0.
+\end{tikzcd}
+\]
+\end{teorema}
+
+% segment-id: o014.li2.chapter3.ext-tor.pf005
+\begin{bukti}
+Untuk semua $p\in\Z$, definisikan submodul-submodul dari $C_p$ dengan
+$B_p:=\Image(d^C_{p+1})$ dan $Z_p:=\Ker(d^C_p)$. Jadikan keduanya kompleks
+rantai $Z=Z_\bullet$ dan $B=B_\bullet$ dengan menetapkan $d^Z=d^B:=0$.
+Maka terdapat barisan eksak pendek kompleks rantai
+% segment-id: o014.li2.chapter3.ext-tor.g002
+\[
+\begin{tikzcd}[column sep=large]
+0 \arrow[r] & Z \arrow[r] & C \arrow[r, "{d^C=(d^C_p)_p}" inner sep=0.6em]
+& B[-1] \arrow[r] & 0.
+\end{tikzcd}
+\]
+
+Barisan eksak pendek $0\to Z_p\to C_p\xrightarrow{d^C_p}B_{p-1}\to0$
+dan barisan eksak panjang funktor $\Tor$ menyiratkan bahwa $Z_p$ juga datar.
+Karena $B_{p-1}$ datar, barisan eksak
+% segment-id: o014.li2.chapter3.ext-tor.q011
+\[
+0\to Z_p\otimes D_q\to C_p\otimes D_q\to B_{p-1}\otimes D_q\to0
+\]
+tetap eksak. Karena jumlah langsung modul (termasuk jumlah tak hingga)
+mempertahankan keeksakan, diperoleh barisan eksak pendek kompleks rantai
+$0\to Z\otimes D\to C\otimes D\xrightarrow{d^C\otimes\identity_D}
+B[-1]\otimes D\to0$.
+
+Karena $d^Z=d^{B[-1]}=0$, barisan eksak panjang homologi yang bersesuaian,
+berdasarkan kedataran, menyederhana menjadi
+% segment-id: o014.li2.chapter3.ext-tor.q012
+\begin{multline*}
+\overbracket{\displaystyle\bigoplus_{p+q=n+1}B_{p-1}\otimes\Hm_q(D)}^{=
+\bigoplus_{p+q=n}B_p\otimes\Hm_q(D)}\xrightarrow{\partial_{n+1}}
+\displaystyle\bigoplus_{p+q=n}Z_p\otimes\Hm_q(D)\to\Hm_n(C\otimes D)\\
+\to\underbracket{\displaystyle\bigoplus_{p+q=n}B_{p-1}\otimes\Hm_q(D)}_{=
+\bigoplus_{p+q=n-1}B_p\otimes\Hm_q(D)}\xrightarrow{\partial_n}
+\displaystyle\bigoplus_{p+q=n-1}Z_p\otimes\Hm_q(D).
+\end{multline*}
+Yang perlu dijelaskan hanya morfisme penghubung $\partial_{n+1}$ dan
+$\partial_n$. Keduanya berasal dari inklusi $B_p\hookrightarrow Z_p$, hingga
+kemungkinan beberapa tanda positif atau negatif. Untuk melihatnya, kembali ke
+konstruksi eksplisit barisan eksak panjang, yaitu versi homologi dari Proposisi
+\ref{prop:long-exact-sequence-ses}; di sini kita dapat menggunakan penelusuran
+diagram; lihat uraian sebelum \cite[Proposisi 6.8.6]{Li1}. Detailnya diserahkan
+kepada pembaca.
+
+Sebagai korolari, $\Coker(\partial_{n+1})$ dapat diidentifikasi dengan
+$\bigoplus_{p+q=n}\Hm_p(C)\otimes\Hm_q(D)$; monomorfisme darinya ke
+$\Hm_n(C\otimes D)$ adalah $\kappa$.
+
+Akhirnya, $0\to B_p\to Z_p\to\Hm_p(C)\to0$ merupakan resolusi datar
+$\Hm_p(C)$. Karena itu,
+$\Ker(\partial_n)\simeq\bigoplus_{p+q=n-1}\Tor_1^R(\Hm_p(C),\Hm_q(D))$.
+Ini menghasilkan barisan eksak pendek yang dinyatakan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter3.ext-tor.p018
+Perhatikan bahwa jika $R$ merupakan gelanggang pembagian, maka $\kappa$ pasti
+merupakan isomorfisme.
+
+% segment-id: o014.li2.chapter3.ext-tor.p019
+Karena $D$ berperan sebagai koefisien homologi dalam konteks topologi, Teorema
+\ref{prop:Kunneth-homology} pada kasus khusus ketika $D$ terkonsentrasi pada
+suku berderajat nol juga disebut \emph{teorema koefisien universal}.
+Hasil-hasil semacam ini memiliki berbagai variasi; selain itu, struktur
+gelanggang memberikan operasi pada $\Tor$ yang tidak dimiliki bifunktor
+turunan lain. Struktur tersebut tampaknya lebih tepat dirapikan dalam bahasa
+kategori turunan atau barisan spektral.
+\index{teorema koefisien universal@teorema koefisien universal (Universal Coefficient Theorem)}

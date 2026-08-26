@@ -1,11 +1,11 @@
 # O014 current state
 
-Status: active source-order Indonesian production. Units 001--044 are complete,
+Status: active source-order Indonesian production. Units 001--045 are complete,
 admitted, built, and QA-passed without a source gap through `chapter3.tex`
-line 2713; Unit 043 is public with anonymous byte readback and Unit 044 is
-closed locally for the next publication transaction. Unit 045 is the active
-next boundary at `chapter3.tex` lines 2714--2935. This remains a partial
-working edition; do
+line 2935; Unit 044 remains the current publicly verified GitHub/Zenodo
+boundary while Unit 045 is being packaged into those same lineages. Unit 046
+is the active next boundary at `chapter3.tex` lines 2936--3200. This remains a
+partial working edition; do
 not complete the pursuit at this or any later checkpoint short of the entire
 corpus, independent mastery layer, semantic reader, and final verified release
 set.
@@ -899,7 +899,7 @@ and re-verifies with zero missing, duplicate, byte-count, or hash mismatch.
 The output-argument parsing failure that created a literal `$out` directory is
 closed: exactly eleven failed-build files / 1,651,491 bytes were verified in
 the no-overwrite archive
-`[local path omitted]`,
+`local-archive/o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
 SHA-256
 `3b98158aeb8ad61ad818d352f340f7d8145a6fc2a8199ca7cd2cbf5bfddb83f7`,
 then both loose failed roots were deleted. The finalD canonical build and QA
@@ -908,7 +908,7 @@ surfaces are retained.
 After admission, the two superseded overflow-build trees, inspected individual
 page renders, and redundant finalD console captures (70 files / 5,984,538
 bytes) were likewise verified in the no-overwrite archive
-`[local path omitted]`,
+`local-archive/o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
 SHA-256
 `3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`,
 then deleted. Canonical finalD artifacts and the three contact sheets remain.
@@ -1254,3 +1254,87 @@ The next frozen source-order boundary is Unit 045 (`sec:Ext-Tor`), lines
 terminal blank separator at line 2935. It stops before `sec:K-injectives` at
 line 2936. Unit 044 remains a partial checkpoint and does not complete the
 corpus pursuit.
+
+## Unit 044 public release close (2026-08-26)
+
+The existing GitHub edition is public through Unit 044 at commit
+`e0b8335594526f773fc97d41f8916061815758a2`, tree
+`71d46cf1ee43ffe2ac1ed84a5f195f5e1b1d5edd`. Its immutable 2,185,980-byte
+codeload archive has SHA-256
+`7561c4c91708645bab6c4fbca5e2a4b246a77ce616abd71a5e20a006febca013`.
+Anonymous repository, commit, raw-reader, raw-README, codeload, manifest, and
+checksum verification passes with zero mismatch. The sanitized receipt is
+`release/github/GITHUB_PUBLICATION_RECEIPT.json`, 5,881 bytes, SHA-256
+`e487b1b6f51d7ca652d9521e032e36ba169b4c3e0a160bab185538db3ee8f4f9`.
+
+Zenodo record `22104088`, DOI `10.5281/zenodo.22104088`, advances the existing
+concept `22059751`, DOI `10.5281/zenodo.22059751`, as version `unit-044`.
+Immutable Unit 043 record `22103241` remains the immediate predecessor; no
+competing concept was created. Exactly seven reader-first public files total
+2,110,664 bytes. Anonymous record API, record page, version DOI, concept DOI,
+concept-latest resolution, predecessor, and every public file pass. All seven
+downloads match the admitted local bytes and SHA-256 values. The 144-entry
+source/backend ZIP revalidates 143 manifest rows, and the 15-entry
+QA/provenance ZIP revalidates fourteen manifest rows, both with zero missing,
+size, or hash mismatch and no Unit 045 entry. The downloaded reader is the
+exact 282-page PDF 1.7 artifact; it is unencrypted and untagged. The exact work
+title and description lead remain free of organization branding, while the
+one inherited organization contributor is retained. The sanitized receipt is
+`release/zenodo/unit-044/ZENODO_PUBLICATION_RECEIPT.json`, 5,480 bytes,
+SHA-256
+`65e6fb9070e698f2c225036bd4d5b177a19a1c2dc829b7df09a65ba2341365b2`.
+
+Unit 045 is now active from its independently verified Indonesian target at
+`chapter3.tex` lines 2714--2935. Its one forward reference to Chapter 4
+Section 4.5 is represented by `\sourcecrossref`, so the partial reader will not
+contain a broken internal link. This public checkpoint does not complete the
+corpus pursuit.
+
+## Unit 045 local admission and Unit 046 freeze (2026-08-26)
+
+Unit 045 (`o014.aljabr2.chapter3.ext-tor`) is admitted as complete Section
+3.14, `chapter3.tex` lines 2714--2935, with substantive content through line
+2934. Its exact 20,416-byte normalized-LF witness has SHA-256
+`b257f061a7a3f56f8878d1815ac430417c033ef7ff93b214abe13eccb0b1d15a`;
+its 60-record map is 15,479 bytes / SHA-256
+`ffcb362491af688b95c07bd0b15a75bbde5d278028795b0098387c60d0a95278`;
+and its independently reviewed Indonesian target is 26,060 bytes / SHA-256
+`348fbb2121a37a54795a0e68b6fe3c76004294f10ee6a84201e4815abb62db6d`.
+All formulas, labels, references, citations, index entries, footnotes, and
+diagrams pass preservation review. The future `sec:Hom-Ext` reference is
+truthfully represented as source Section 4.5, with no broken partial-reader
+link. No Unit 045 source correction is required.
+
+The backend now contains 45 unique units, 2,438 unique segments, and 477
+synchronized terminology concepts. The admitted unit backend is 33,800 bytes
+/ SHA-256
+`0e441fc4257935faec0a392b7c743d79adcefdad2bc62270fd02d7ab3e4fc6bf`;
+the segment backend is 718,432 bytes / SHA-256
+`23c8f65c060ce384eaf757ed768dbe365f0d4a43ff6520b5e948d73e949be0f9`;
+and the terminology backend is 32,449 bytes / SHA-256
+`515358d2f6279e836655f0716fa5ec3d823d98d66fa62c6b0c9b3c30eddd20ba`.
+The 477-row control ledger is 81,016 bytes / SHA-256
+`f84a44360f61d749faafdf44af57f9e97ad8c89178e449eef6c39c93fcdc54c1`.
+
+The clean `build/cumulative-unit-045-finalA-20260826` replay converges after
+XeLaTeX, Biber, both indexes, and four further XeLaTeX passes. Biber resolves
+22 citekeys; MakeIndex accepts 203 terminology and 103 symbol entries with no
+rejection or warning. The build, checkpoint, and promoted reader are
+byte-identical: PDF 1.7, 290 pages, 1,427,097 bytes, SHA-256
+`39eee75436b826cac1e82fe5d3eb051212625f194bc32b81f2afab5350f95405`.
+Strict structure checks and full-size 120-dpi inspection of the front matter,
+transition, every Unit 045 page, bibliography, and both indexes pass. The
+untagged/ToUnicode accessibility limitation remains explicit. The QA receipt
+`qa/UNIT_045_QA.md` is 7,317 bytes / SHA-256
+`4f0b7bae6440edfe7e25913003cd852ac326e9c042a03410db82c5e6e3e4292e`.
+The 95-row manifest lists 14,213,338 bytes, is 12,316 bytes / SHA-256
+`76aa0f029a1efc908199a845ac192e2ce0583a80377170d588851285c71d1dcd`,
+and revalidates with zero missing, duplicate, size, or hash mismatch.
+
+The next frozen source-order boundary is Unit 046,
+`o014.aljabr2.chapter3.k-injectives`, complete
+Section 3.15 at `chapter3.tex` lines 2936--3200, stopping before the exercise
+block at line 3201. Its witness, 83-record map, and Indonesian draft are
+materialized for independent semantic and source-correction review. Unit 045
+is now packaged for publication through the existing GitHub and Zenodo
+lineages. This partial checkpoint does not complete the corpus pursuit.

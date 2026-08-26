@@ -472,3 +472,7 @@ math.category.countable_coproduct,koproduk terhitung,id-ID,O014,active
 math.homological.exact_countable_product,produk terhitung eksak,id-ID,O014,active
 math.category.shift_morphism,morfisme pergeseran,id-ID,O014,active
 math.category.stable_image,citra stabil,id-ID,O014,active
+math.homological.ext_functor,funktor Ext,id-ID,O014,active
+math.homological.tor_functor,funktor Tor,id-ID,O014,active
+math.homological.flat_resolution,resolusi datar,id-ID,O014,active
+math.homological.kunneth_theorem,Teorema Künneth,id-ID,O014,active

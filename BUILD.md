@@ -2,7 +2,7 @@
 
 ## Toolchain baseline
 
-The admitted Unit 044 artifact was built on Windows with XeLaTeX, Biber 2.21,
+The admitted Unit 045 artifact was built on Windows with XeLaTeX, Biber 2.21,
 and MakeIndex. A complete TeX distribution must provide the packages named by
 `source/AJbook2.cls`, `source/mycommand.sty`, `source/myarrows.sty`, and the
 wrapper. The portable configuration uses TeX Gyre Heros and the Fandol fonts
@@ -31,15 +31,15 @@ makeindex sym1.idx
 Pop-Location
 
 Push-Location source
-1..3 | ForEach-Object {
+1..4 | ForEach-Object {
   xelatex -interaction=nonstopmode -halt-on-error -no-shell-escape -output-directory=../build Al-jabr-2-id-cumulative.tex
 }
 Pop-Location
 $env:BIBINPUTS = $oldBibInputs
 ```
 
-Expected admitted boundary: 282 pages, 1,389,564 bytes, SHA-256
-`e225bfc588268d4da9bb64978ef4f00ef316e52516c8b4427ca0d838d79d6b05`.
+Expected admitted boundary: 290 pages, 1,427,097 bytes, SHA-256
+`39eee75436b826cac1e82fe5d3eb051212625f194bc32b81f2afab5350f95405`.
 Toolchain and platform metadata can change PDF bytes even when the mathematical
 content is unchanged; compare the build log, page count, links, fonts, and
 rendered pages as well as the byte hash. A clean replay may differ in raw PDF
@@ -47,4 +47,4 @@ bytes because of platform job-name and metadata variation; it must still match
 the admitted page count, links, fonts, and visual checks.
 
 The full build and visual-QA receipt is
-[`provenance/UNIT_044_QA.md`](provenance/UNIT_044_QA.md).
+[`provenance/UNIT_045_QA.md`](provenance/UNIT_045_QA.md).
