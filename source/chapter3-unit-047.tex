@@ -1,0 +1,657 @@
+% Unit 047 terjemahan Bahasa Indonesia dari chapter3.tex baris 3201--3425.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter3.exercises
+% Cakupan: Latihan Bab 3 lengkap (26 latihan dan 17 petunjuk).
+
+% segment-id: o014.li2.chapter3.exercises.x001
+\hypertarget{o014.aljabr2.chapter3.exercises}{ }
+\begin{Exercises}
+% segment-id: o014.li2.chapter3.exercises.ex001
+	\item Misalkan $\Bbbk$ gelanggang komutatif. Dengan demikian,
+	$\cate{C}(\Bbbk\dcate{Mod})$ dan $\cate{K}(\Bbbk\dcate{Mod})$ secara alami
+	menjadi kategori-$\Bbbk\dcate{Mod}$ dalam arti Definisi
+	\ref{def:cat-k-linear}. Buktikan bahwa, untuk setiap $n\in\Z$ dan setiap
+	objek $X$ dalam $\cate{C}(\Bbbk\dcate{Mod})$, terdapat isomorfisme kanonik
+	modul-$\Bbbk$
+% segment-id: o014.li2.chapter3.exercises.q001
+	\[
+		\Hm^n(X) \simeq
+		\Hom_{\cate{K}(\Bbbk\dcate{Mod})}(\Bbbk,X[n])
+		\simeq
+		\Hom_{\cate{K}(\Bbbk\dcate{Mod})}(\Bbbk[-n],X).
+	\]
+	Pada ruas kanan, $\Bbbk$ dipandang sebagai kompleks yang terkonsentrasi
+	pada derajat $0$.
+
+% segment-id: o014.li2.chapter3.exercises.ex002
+	\item Latihan ini menghubungkan homotopi antara morfisme dengan
+	isomorfisme kerucut pemetaannya. Misalkan $\mathcal{A}$ kategori aditif dan
+	ambil sebarang pasangan morfisme
+	$f,g\in\Hom_{\cate{C}(\mathcal{A})}(X,Y)$. Bangun bijeksi
+% segment-id: o014.li2.chapter3.exercises.q002
+	\[
+	\left\{
+	\begin{array}{c}
+		s\in\Hom^{-1}(X,Y): \\
+		d^{-1}_{\Hom^\bullet(X,Y)}(s)=f-g
+	\end{array}
+	\right\}
+	\xrightarrow{1:1}
+	\left\{
+	\begin{array}{c}
+		h:\Cone(f)\to\Cone(g),\\
+		\text{morfisme kompleks yang membuat}\\
+		\text{diagram berikut komutatif}
+	\end{array}
+	\right\},
+	\]
+% segment-id: o014.li2.chapter3.exercises.g001
+	\begin{equation*}
+	\begin{tikzcd}[row sep=small]
+		& \Cone(f) \arrow[dr, "\beta(f)"] \arrow[dd, "h"] & \\
+		Y \arrow[ru, "\alpha(f)"] \arrow[rd, "\alpha(g)"'] & & X[1] \\
+		& \Cone(g) \arrow[ru, "\beta(g)"'] &
+	\end{tikzcd}
+	\end{equation*}
+	dan buktikan bahwa setiap morfisme $h$ seperti itu merupakan isomorfisme
+	kompleks. Secara khusus, $f$ dan $g$ homotopik jika dan hanya jika terdapat
+	morfisme $h$ semacam itu.
+
+% segment-id: o014.li2.chapter3.exercises.hn001
+	\begin{hint}
+		Komutativitas diagram pada derajat $n$ ekuivalen dengan persamaan
+		matriks
+% segment-id: o014.li2.chapter3.exercises.q003
+		\[
+			h^n=
+			\begin{pmatrix}
+				\identity_{X^{n+1}}&0\\
+				s^{n+1}&\identity_{Y^n}
+			\end{pmatrix},
+			\quad\text{dengan}\quad
+			s^{n+1}:X^{n+1}\to Y^n.
+		\]
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex003
+	\item (Keeksakan terbelah) Tetapkan kategori abelian $\mathcal{A}$ dan
+	kompleks $X$ di atasnya. Buktikan bahwa pernyataan-pernyataan berikut
+	ekuivalen.
+% segment-id: o014.li2.chapter3.exercises.l001
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.exercises.i001
+		\item $X$ sama dengan $0$ dalam $\cate{K}(\mathcal{A})$;
+% segment-id: o014.li2.chapter3.exercises.i002
+		\item $\identity_X$ homotopik nol;
+% segment-id: o014.li2.chapter3.exercises.i003
+		\item $X$ asiklik dan terdapat
+		$(s^n)_n\in\Hom^{-1}(X,X)$ sedemikian sehingga
+		$d^ns^{n+1}d^n=d^n$ untuk setiap $n$;
+% segment-id: o014.li2.chapter3.exercises.i004
+		\item terdapat keluarga objek $(Y^n)_n$ dalam $\mathcal{A}$ dan
+		isomorfisme kompleks
+		$\Phi:X\rightiso(Y^n\oplus Y^{n+1},\overline d^{\,n})_n$, dengan
+		$\overline d$ dinyatakan oleh matriks
+		$\bigl(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\bigr)$.
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter3.exercises.p001
+	Kompleks yang memenuhi salah satu syarat di atas juga disebut
+	\emph{eksak terbelah}\footnote{Lebih umum, misalkan $X$ kompleks di atas
+	kategori aditif $\mathcal{A}$. Jika terdapat dua keluarga objek $(Y^n)_n$
+	dan $(H^n)_n$ sedemikian sehingga
+	$X^n\simeq Y^n\oplus H^n\oplus Y^{n+1}$ dan $d$ diidentifikasi dengan
+	$\bigl(\begin{smallmatrix}0&0&1\\0&0&0\\0&0&0\end{smallmatrix}\bigr)$,
+	maka $X$ disebut \emph{terbelah}.}.
+	Untuk
+	$X=[\cdots\,0\to A\to B\to C\to0\,\cdots]$, buktikan bahwa syarat ini
+	ekuivalen dengan pernyataan bahwa $X$ merupakan barisan eksak pendek
+	terbelah.
+	\index{kompleks!eksak terbelah (split exact)}
+
+% segment-id: o014.li2.chapter3.exercises.hn002
+	\begin{hint}
+		Cukup buktikan (iii) $\implies$ (iv). Syarat tersebut menyiratkan bahwa
+		$d^{n-1}s^n\in\End_{\mathcal{A}}(X^n)$ idempoten. Dari sini diperoleh
+		dekomposisi $X^n=Y^n\oplus Z^n$ dengan
+		$Y^n=\Image(d^{n-1}s^n)$. Buktikan bahwa
+		$Y^n=\Image(d^{n-1})$ dan bahwa pembatasan $d^n$ memberikan isomorfisme
+		$Z^n\rightiso\Image(d^n)$; kemudian ambil $\Phi$ yang bersesuaian
+		dengan
+		$\bigl(\begin{smallmatrix}ds\\d\end{smallmatrix}\bigr)$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex004
+	\item Tetapkan kategori abelian $\mathcal{A}$. Buktikan bahwa $X$ merupakan
+	objek injektif dalam $\cate{C}(\mathcal{A})$ jika dan hanya jika setiap
+	suku $X$ merupakan objek injektif dalam $\mathcal{A}$ dan $X$ sama dengan
+	$0$ dalam $\cate{K}(\mathcal{A})$. Nyatakan versi untuk objek projektif.
+
+% segment-id: o014.li2.chapter3.exercises.hn003
+	\begin{hint}
+		Untuk arah hanya jika, perhatikan bahwa barisan eksak pendek dalam
+		$\cate{C}(\mathcal{A})$
+		$0\to X\to\Cone(\identity_X)\to X[1]\to0$ terbelah. Proposisi
+		\ref{prop:cone-homotopy} lalu menunjukkan bahwa $X$ asiklik.
+		Ambil suatu seksi $X[1]\to\Cone(\identity_X)$ dan tuliskan sebagai
+		$\bigl(\begin{smallmatrix}1\\-\theta\end{smallmatrix}\bigr)$, dengan
+		$\theta^n:X^{n+1}\to X^n$. Verifikasikan
+		$d_X^{n-1}\theta^{n-1}+\theta^nd_X^n=\identity_{X^n}$ untuk membuktikan
+		bahwa $\identity_X$ homotopik nol.
+
+		Tetapkan $n$. Berdasarkan latihan sebelumnya, uraikan
+		$X^n=Y^n\oplus Y^{n+1}$; tinggal dibuktikan bahwa $Y^n$ injektif.
+		Untuk sebarang morfisme $f:A\to Y^n$ dan monomorfisme
+		$g:A\hookrightarrow B$ dalam $\mathcal{A}$, tinjau diagram komutatif
+		dengan baris eksak di $\cate{C}(\mathcal{A})$
+% segment-id: o014.li2.chapter3.exercises.g002
+		\[
+		\begin{tikzcd}[column sep=large]
+			0 \arrow[r] &
+			{A[-n]} \arrow[r, "{g[-n]}"] \arrow[d, "\Psi"'] &
+			{B[-n]} \arrow[dashed, ld, "\exists"] \\
+			& X &
+		\end{tikzcd}
+		\]
+		dengan $\Psi^n=\bigl(\begin{smallmatrix}f\\0\end{smallmatrix}\bigr)$.
+		Gunakan diagram ini untuk memverifikasi syarat injektivitas $Y^n$.
+
+		Untuk arah jika, tuliskan kembali
+		$X^n=Y^n\oplus Y^{n+1}$ dan deskripsikan secara eksplisit semua
+		morfisme yang mungkin $f:Z\to X$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex005
+	\item Misalkan $\Bbbk$ gelanggang komutatif dan $R$ suatu
+	aljabar-$\Bbbk$ yang, sesuai konvensi buku ini, mempunyai unsur satuan.
+	Tuliskan isomorfisme kanonik
+	$\HHm_0(M_n(R))\simeq\HHm_0(R)$ dan
+	$\HHm^0(M_n(R))\simeq\HHm^0(R)$, dengan $M_n(R)$ aljabar-$\Bbbk$ matriks
+	$n\times n$ di atas $R$. Pada kenyataannya, isomorfisme serupa berlaku
+	pada setiap derajat $m$, baik bagi $\HHm_m$ maupun $\HHm^m$; lihat
+	\cite[Theorem 1.2.4]{Lo98}.
+
+% segment-id: o014.li2.chapter3.exercises.ex006
+	\item Dalam situasi \S\ref{sec:HH}, definisikan subbimodul
+	$\mathrm{Triv}_nR$ dari $\mathsf{B}_nR$, untuk setiap
+	$n\in\Z_{\geq0}$, dengan
+% segment-id: o014.li2.chapter3.exercises.q004
+	\begin{align*}
+		\mathrm{Triv}_nR
+		&:=\sum_{h=1}^n
+		R\otimes
+		(\cdots\otimes
+		\underbracket{\;\Bbbk\;}_{\text{faktor ke-$h$}}
+		\otimes\cdots)\otimes R,
+		\qquad \mathrm{Triv}_0R=0.
+	\end{align*}
+% segment-id: o014.li2.chapter3.exercises.l002
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.exercises.i005
+		\item Verifikasikan bahwa ini menentukan subkompleks
+		$\mathrm{Triv}R$ dari $\mathsf{B}R$, dan bahwa $\mathrm{Triv}R$ eksak.
+% segment-id: o014.li2.chapter3.exercises.hn004
+		\begin{hint}
+			Batasi $(h^n)_n$ dalam bukti Lema
+			\ref{prop:HH-bar-exactness} pada $\mathrm{Triv}R$.
+		\end{hint}
+% segment-id: o014.li2.chapter3.exercises.i006
+		\item Tuliskan $\overline R:=R/\Bbbk$ sebagai modul-$\Bbbk$, lalu
+		definisikan \emph{kompleks bar tereduksi} dari $R$ sebagai kuosien
+% segment-id: o014.li2.chapter3.exercises.q005
+		\[
+			\overline{\mathsf{B}}R
+			:=\mathsf{B}R/\mathrm{Triv}R
+			=\left(R\otimes\overline R^{\otimes n}\otimes R,b_n\right)_{n\geq0}.
+		\]
+		Dengan meniru pola \eqref{eqn:HH-cplx}, sederhanakan
+		$M\dotimes{R^e}\overline{\mathsf{B}}R$ dan
+		$\Hom_{R^e}(\overline{\mathsf{B}}R,M)$.
+% segment-id: o014.li2.chapter3.exercises.i007
+		\item Berikan isomorfisme kanonik
+		$\Hm_n(M\dotimes{R^e}\overline{\mathsf{B}}R)\simeq\HHm_n(M)$ dan
+		$\Hm^n(\Hom_{R^e}(\overline{\mathsf{B}}R,M))\simeq\HHm^n(M)$.
+% segment-id: o014.li2.chapter3.exercises.hn005
+		\begin{hint}
+			Secara umum, fakta ini merupakan konsekuensi teorema tentang
+			kompleks ternormalisasi dalam korespondensi Dold--Kan,
+			\sourcecrossref{prop:Dold-Kan-N-C}{pada \S~8.5}, asalkan
+			$\mathsf{B}R$ dipahami dari sudut pandang
+			\sourcecrossref{eg:HH-comonad}{Contoh pada \S~8.7}.
+		\end{hint}
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter3.exercises.ex007
+	\item Misalkan $\Bbbk$ gelanggang komutatif, sedangkan $\widetilde R$ dan
+	$R$ adalah aljabar-$\Bbbk$ yang, sesuai konvensi buku ini, mempunyai unsur
+	satuan. Andaikan terdapat barisan eksak pendek terbelah sebagai
+	modul-$\Bbbk$
+% segment-id: o014.li2.chapter3.exercises.g003
+	\[
+	\begin{tikzcd}
+		0 \arrow[r] & M \arrow[r] & \widetilde R
+		\arrow[shift left, r, "p"] &
+		R \arrow[r] \arrow[shift left, l, "s"] & 0,
+	\end{tikzcd}
+	\]
+	dengan $M$ ideal dua sisi dalam $\widetilde R$, $ps=\identity_R$, dan
+	$M^2=\{0\}$. Dengan menggunakan $s$, identifikasikan
+	$\widetilde R$ dengan $R\oplus M$.
+% segment-id: o014.li2.chapter3.exercises.l003
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.exercises.i008
+		\item Untuk $m\in M$ dan $r\in R$, ambil sebarang
+		$\widetilde r\in p^{-1}(r)$. Buktikan bahwa $\widetilde rm$ dan
+		$m\widetilde r$ hanya bergantung pada $m$ dan $r$, serta bahwa
+		operasi-operasi ini menjadikan $M$ suatu bimodul $(R,R)$.
+% segment-id: o014.li2.chapter3.exercises.i009
+		\item Buktikan bahwa terdapat pemetaan bilinear $f:R^2\to M$ sedemikian
+		sehingga perkalian dalam $\widetilde R$ ditentukan oleh
+% segment-id: o014.li2.chapter3.exercises.q006
+		\[
+			(r_1,m_1)(r_2,m_2)
+			=(r_1r_2,r_1m_2+m_1r_2+f(r_1,r_2)),
+			\quad r_1,r_2\in R,\quad m_1,m_2\in M.
+		\]
+% segment-id: o014.li2.chapter3.exercises.i010
+		\item Data $(R,\widetilde R,M)$ semacam ini disebut
+		\emph{perluasan kuadrat-nol} dari $R$ oleh $M$. Buktikan bahwa, hingga
+		pengertian isomorfisme yang sesuai, perluasan kuadrat-nol
+		diklasifikasikan oleh $\HHm^2(M)$, dengan unsur nol
+		bersesuaian dengan perluasan trivial $R\times M$.
+% segment-id: o014.li2.chapter3.exercises.hn006
+		\begin{hint}
+			Hitung $\HHm^2(M)$ menggunakan kompleks bar tereduksi dari latihan
+			sebelumnya.
+		\end{hint}
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter3.exercises.ex008
+	\item Lengkapi bukti Lema \ref{prop:CC-cplx}.
+
+% segment-id: o014.li2.chapter3.exercises.ex009
+	\item Dalam kerangka Definisi \ref{def:HC}, verifikasikan untuk kasus
+	khusus $R=\Bbbk$ bahwa:
+% segment-id: o014.li2.chapter3.exercises.l004
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.exercises.i011
+		\item jika $n$ ganjil, maka
+		$\mathrm{HP}_n(\Bbbk)=\mathrm{HC}_n(\Bbbk)=0$;
+% segment-id: o014.li2.chapter3.exercises.i012
+		\item jika $n$ genap (atau genap tak negatif), maka
+		$\mathrm{HP}_n(\Bbbk)$ (atau $\mathrm{HC}_n(\Bbbk)$) isomorfik dengan
+		$\Bbbk$.
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter3.exercises.ex010
+	\item Dalam kerangka Definisi \ref{def:HC} dan Teorema
+	\ref{prop:Connes-exact}, ambil gelanggang polinomial $R=\Bbbk[t]$.
+% segment-id: o014.li2.chapter3.exercises.l005
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.exercises.i013
+		\item Buktikan bahwa $\Omega_{R\mid\Bbbk}$ dalam Contoh
+		\ref{eg:HH1} merupakan modul-$R$ bebas berperingkat $1$, dengan basis
+		$\dd t$.
+% segment-id: o014.li2.chapter3.exercises.i014
+		\item Deskripsikan morfisme penghubung
+		$B:\mathrm{HC}_0(R)\to\mathrm{HH}_1(R)$; perhatikan bahwa kedua ruas
+		isomorfik dengan $R$.
+% segment-id: o014.li2.chapter3.exercises.i015
+		\item Deskripsikan semua $\mathrm{HC}_n(R)$ sejelas mungkin. Untuk
+		$\Bbbk=\Z$, buktikan bahwa
+		$\mathrm{HC}_1(\Z[t])=\bigoplus_{n\geq2}\Z/n\Z$.
+	\end{enumerate}
+% segment-id: o014.li2.chapter3.exercises.hn007
+	\begin{hint}
+		Gunakan barisan eksak panjang dari Teorema
+		\ref{prop:Connes-exact} dan perhitungan $\HHm_n(\Bbbk[t])$ pada derajat
+		tinggi dalam Contoh \ref{eg:HH-Tor}.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex011
+	\item Misalkan $\mathcal{A}$ kategori abelian dan
+	$0\to X\to I^0\to I^1\to\cdots$ barisan eksak dalam
+	$\cate{C}(\mathcal{A})$. Pandang
+	$I=[I^0\to I^1\to\cdots]$ sebagai bikompleks, dengan
+	$I^{p,q}:=(I^p)^q$. Dengan asumsi
+	$I\in\Obj(\cate{C}^2_f(\mathcal{A}))$, buktikan bahwa morfisme yang jelas
+	$X\to\tot(I)$ merupakan kuasi-isomorfisme.
+
+% segment-id: o014.li2.chapter3.exercises.ex012
+	\item Misalkan $X\in\Obj(\cate{C}^2_f(\mathcal{A}))$, dengan
+	$\mathcal{A}$ kategori abelian. Buktikan bahwa, jika kolom ke-$i$
+	$\left(X^{i,\bullet},\dvert\right)$ dan baris ke-$j$
+	$\left(X^{\bullet,j},\dhori\right)$ eksak untuk setiap
+	$i,j\in\Z\smallsetminus\{0\}$, maka untuk setiap $n\in\Z$ terdapat
+	isomorfisme kanonik
+	$\Hm^n(X^{0,\bullet},\dvert)\simeq
+	\Hm^n(X^{\bullet,0},\dhori)$.
+
+% segment-id: o014.li2.chapter3.exercises.hn008
+	\begin{hint}
+		Definisikan funktor pemenggalan kasar
+		$\sigma_{\mathrm{I}}^{\leq n}$ (atau
+		$\sigma_{\mathrm{I}}^{\geq n}$) dari
+		$\cate{C}^2(\mathcal{A})$ ke dirinya sendiri dengan mengganti suku
+		$(X^{i,j})_{(i,j)\in\Z^2}$ untuk $i>n$ (atau $i<n$) dengan $0$ dan
+		membiarkan suku lainnya tetap. Gunakan Teorema
+		\ref{prop:double-cplx-tot} untuk membuktikan bahwa kedua morfisme dalam
+% segment-id: o014.li2.chapter3.exercises.q007
+		\[
+			\text{kolom ke-$0$}
+			=\sigma_{\mathrm{I}}^{\leq0}\sigma_{\mathrm{I}}^{\geq0}(X)
+			\twoheadleftarrow
+			\sigma_{\mathrm{I}}^{\geq0}X
+			\hookrightarrow X
+		\]
+		menginduksi kuasi-isomorfisme pada kompleks total. Lakukan hal yang
+		sama setelah menukar peran baris dan kolom.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex013
+	\item Gunakan Lema \ref{prop:ext-alpha-beta} untuk membuktikan bagian
+	eksistensi $\beta$ dalam Teorema \ref{prop:resolution-homotopy}.
+
+% segment-id: o014.li2.chapter3.exercises.hn009
+	\begin{hint}
+		Cukup bahas kasus pertama. Lema tentang silinder pemetaan,
+		\ref{prop:cone-beta}, memfaktorkan
+		$X\xrightarrow{\alpha}Y$ sebagai
+		$X\xrightarrow{\alpha'}\Cyl(\alpha)\xrightarrow{\psi}Y$, dengan
+		$\alpha'$ monomorfisme dan $\psi$ terbalikkan dalam
+		$\cate{K}(\mathcal{A})$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex014
+	\item Dengan notasi latihan sebelumnya, buktikan bagian ketunggalan
+	$\beta$ dalam Teorema \ref{prop:resolution-homotopy}.
+
+% segment-id: o014.li2.chapter3.exercises.hn010
+	\begin{hint}
+		Cukup bahas kasus pertama. Gunakan kembali silinder pemetaan untuk
+		mereduksi ke kasus ketika setiap
+		$\alpha^n:X^n\hookrightarrow Y^n$ merupakan penyertaan suatu suku
+		jumlah langsung. Misalkan morfisme
+		$\beta_i:Y\to I$ dalam $\cate{C}(\mathcal{A})$, untuk $i=1,2$,
+		memenuhi
+		$\gamma-\beta_i\alpha=d^{-1}_{\Hom^\bullet(X,I)}h_i$, dengan
+		$h_i\in\Hom^{-1}(X,I)$. Ambil kompleks asiklik
+		$C:=\Coker(\alpha)$ dan definisikan
+		$h^n:Y^n\simeq X^n\oplus C^n\to I^{n-1}$ sehingga pembatasannya pada
+		$X^n$ (atau $C^n$) sama dengan $h_1^n-h_2^n$ (atau $0$).
+		Verifikasikan bahwa
+% segment-id: o014.li2.chapter3.exercises.q008
+		\[
+			\beta_1-\beta_2-d^{-1}_{\Hom^\bullet(Y,I)}h:Y\to I
+		\]
+		bernilai $0$ setelah dikomposisikan dengan $\alpha$. Jadi, hingga
+		homotopi, $\beta_1-\beta_2$ memfaktor sebagai
+		$Y\twoheadrightarrow C\to I$; terapkan Lema
+		\ref{prop:resolution-homotopy-aux} pada morfisme kedua.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex015
+	\item Misalkan $\mathcal{A}$ kategori abelian. Buktikan bahwa
+	$(\Hm^n)_{n\geq0}$ merupakan funktor-$\delta$ kohomologis universal dari
+	kategori abelian $\cate{C}^{\geq0}(\mathcal{A})$ (lihat Definisi
+	\ref{def:cplx-cat-variant}) ke $\mathcal{A}$.
+% segment-id: o014.li2.chapter3.exercises.hn011
+	\begin{hint}
+		Untuk menunjukkan bahwa $\Hm^n$ dapat dihapus ketika $n>0$, ambil
+		$\alpha(\identity_X):X\hookrightarrow\Cone(\identity_X)$. Morfisme ini
+		memfaktor melalui pemenggalan kasar
+		$\sigma^{\geq0}\Cone(\identity_X)$. Gunakan Proposisi
+		\ref{prop:cone-homotopy} (i).
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex016
+	\item (Versi kompleks dari barisan eksak Milnor) Misalkan $R$ sebarang
+	gelanggang dan $(X_k,f_k)_{k\geq0}$ suatu objek dalam
+	$\cate{InvSys}(\cate{C}(R\dcate{Mod}))$. Andaikan
+	$(X_k^n,f_k^n)_{k\geq0}$ memenuhi syarat Mittag--Leffler untuk setiap
+	$n\in\Z$. Selanjutnya notasi $f_k$ akan dihilangkan. Ikuti langkah-langkah
+	berikut untuk membangun barisan eksak pendek
+% segment-id: o014.li2.chapter3.exercises.q009
+	\[
+		0\to\lim\nolimits^1_k\Hm^{n-1}(X_k)
+		\to\Hm^n(\varprojlim_kX_k)
+		\to\varprojlim_k\Hm^n(X_k)\to0.
+	\]
+% segment-id: o014.li2.chapter3.exercises.l006
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter3.exercises.i016
+		\item Seperti dalam Teorema \ref{prop:CE-resolution}, definisikan
+		$B_k^n\subset Z_k^n\subset X_k^n$ dan $H_k^n$, lalu jadikan
+		$B_k\subset Z_k\subset X_k$ serta $H_k$ kompleks dengan
+		$d_{B_k}=d_{Z_k}=d_{H_k}=0$. Buktikan bahwa
+		$(B_k^n)_{k\geq0}$ memenuhi syarat Mittag--Leffler untuk setiap $n$.
+% segment-id: o014.li2.chapter3.exercises.i017
+		\item Buktikan bahwa
+		$0\to\varprojlim_kZ_k\to\varprojlim_kX_k
+		\xrightarrow{d}(\varprojlim_kX_k)[1]$ eksak.
+% segment-id: o014.li2.chapter3.exercises.i018
+		\item Definisikan
+		$B^n:=\Image(d^{n-1}:\varprojlim_kX_k^{n-1}\to
+		\varprojlim_kX_k^n)$\footnote{Catatan penerjemah (O014-C067):
+		sumber menghilangkan subskrip $k$ pada limit di kodomain, padahal
+		domain, sistem yang sedang dibahas, dan barisan eksak sesudahnya
+		semuanya memakai $\varprojlim_k$. Target memulihkan subskrip tersebut.},
+		dan jadikan $B$ kompleks dengan $d_B=0$. Buktikan bahwa terdapat
+		barisan eksak pendek
+		$0\to B[1]\to\varprojlim_kB_k[1]\to\lim\nolimits^1_kZ_k\to0$.
+% segment-id: o014.li2.chapter3.exercises.hn012
+		\begin{hint}
+			Gunakan barisan eksak pendek
+			$0\to Z_k\to X_k\xrightarrow{d}B_k[1]\to0$ dan syarat
+			Mittag--Leffler bagi $(X_k^n)_{k\geq0}$.
+		\end{hint}
+% segment-id: o014.li2.chapter3.exercises.i019
+		\item Turunkan isomorfisme
+		$\lim\nolimits^1_kZ_k\rightiso\lim\nolimits^1_kH_k$ dan barisan eksak
+		pendek
+		$0\to\varprojlim_kB_k\to\varprojlim_kZ_k
+		\to\varprojlim_kH_k\to0$.
+% segment-id: o014.li2.chapter3.exercises.hn013
+		\begin{hint}
+			Gunakan barisan eksak pendek
+			$0\to B_k\to Z_k\to H_k\to0$ dan syarat Mittag--Leffler bagi
+			$(B_k^n)_{k\geq0}$.
+		\end{hint}
+% segment-id: o014.li2.chapter3.exercises.i020
+		\item Ambil penyertaan yang sesuai
+		$B\subset\varprojlim_kB_k\subset\varprojlim_kZ_k$, lalu bahas
+		kuosien-kuosien yang bersesuaian untuk memperoleh barisan eksak pendek
+		yang diminta.
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter3.exercises.ex017
+	\item Misalkan $\Bbbk$ lapangan. Definisikan objek $A$ dan $B$ dalam
+	$\cate{InvSys}(\Bbbk\dcate{Mod})$ dengan
+	$A_k:=X^k\Bbbk\llbracket X\rrbracket$ dan
+	$B_k:=X^k\Bbbk[X]$, serta ambil morfisme transisinya sebagai penyertaan.
+	Keduanya tidak memenuhi syarat Mittag--Leffler. Buktikan bahwa
+	$\lim\nolimits^1A=0$, sedangkan
+	$\lim\nolimits^1B\simeq
+	\Bbbk\llbracket X\rrbracket/\Bbbk[X]$.
+% segment-id: o014.li2.chapter3.exercises.hn014
+	\begin{hint}
+		Benamkan sistem ideal tersebut ke dalam sistem gelanggang, lalu gunakan
+		teknik penggeseran dimensi dari Proposisi
+		\ref{prop:dimension-shifting} untuk menghitung $\lim\nolimits^1$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex018
+	\item Misalkan $D$ gelanggang pembagian. Buktikan bahwa
+	$\Ext_D^n$ dan $\Tor_n^D$ bernilai $0$ untuk $n>0$.
+
+% segment-id: o014.li2.chapter3.exercises.ex019
+	\item Untuk setiap gelanggang $R$, rumuskan dengan saksama dan buktikan
+	isomorfisme kanonik
+	$\Tor_n^R(X,Y)\simeq\Tor_n^{R^{\opp}}(Y,X)$.
+
+% segment-id: o014.li2.chapter3.exercises.ex020
+	\item Misalkan daerah integral $R$ merupakan gelanggang ideal utama.
+	Untuk semua modul-$R$ yang dibangun secara hingga $M,N$ dan setiap
+	$n\in\Z_{\geq0}$, deskripsikan $\Ext_R^n(M,N)$ dan $\Tor_n^R(M,N)$ secara
+	eksplisit.
+
+% segment-id: o014.li2.chapter3.exercises.ex021
+	\item Misalkan $M$ modul-$\Z$. Buktikan bahwa
+	$\Tor_1^\Z(\Q/\Z,M)$ merupakan subgrup dari $M$ yang terdiri atas semua
+	unsur torsinya.
+
+% segment-id: o014.li2.chapter3.exercises.ex022
+	\item (Teorema koefisien universal untuk kohomologi) Misalkan $R$
+	gelanggang dan $C=(C_\bullet,d^C_\bullet)$ suatu kompleks rantai
+	modul-$R$ kiri. Untuk sebarang modul-$R$ kiri $M$, penerapan
+	$\Hom_R(\cdot,M)$ suku demi suku menghasilkan kompleks kokrantai
+	$C^\bullet:=\Hom(C_\bullet,M)$; tuliskan kohomologi derajat $n$-nya sebagai
+	$\Hm^n(C,M)$. Andaikan
+	$B_n:=\Image(d_{n+1})$ dan $Z_n:=\Ker(d_n)$ merupakan modul projektif
+	untuk setiap $n\in\Z$, dan tetapkan
+	$H_n:=Z_n/B_n=\Hm_n(C)$. Buktikan bahwa, untuk setiap $n\in\Z$, terdapat
+	barisan eksak pendek kanonik
+% segment-id: o014.li2.chapter3.exercises.q010
+	\[
+		0\to\Ext_R^1(\Hm_{n-1}(C),M)
+		\to\Hm^n(C,M)
+		\to\Hom_R(\Hm_n(C),M)\to0.
+	\]
+	Buktikan pula bahwa, jika $R$ gelanggang ideal utama dan setiap $C_n$
+	bebas, maka syarat di atas selalu terpenuhi.
+	\index{teorema koefisien universal (universal coefficient theorem)}
+
+% segment-id: o014.li2.chapter3.exercises.hn015
+	\begin{hint}
+		Definisikan funktor
+		$D(\cdot):=\Hom_R(\cdot,M)$ dari $(R\dcate{Mod})^{\opp}$ ke
+		$\cate{Ab}$. Gunakan barisan eksak pendek
+		$0\to H_n\to C_n/B_n\to B_{n-1}\to0$ beserta asumsi untuk memperoleh
+		diagram komutatif dengan baris-baris eksak
+% segment-id: o014.li2.chapter3.exercises.g004
+		\[
+		\begin{tikzcd}
+			0 \arrow[r] &
+			D(Z_{n-1}) \arrow[r, "\identity"] \arrow[d] &
+			D(Z_{n-1}) \arrow[r] \arrow[d, "{D(d^C_n)}"] &
+			0 \arrow[r] \arrow[d] & 0 \\
+			0 \arrow[r] &
+			D(B_{n-1}) \arrow[r, "{D(d^C_n)}"' inner sep=0.5em] &
+			D(C_n/B_n) \arrow[r] &
+			D(H_n) \arrow[r] & 0 .
+		\end{tikzcd}
+		\]
+		Buktikan bahwa $d_{D(C)}^{n-1}$ memfaktor sebagai
+		$D(C_{n-1})\twoheadrightarrow D(Z_{n-1})
+		\xrightarrow{D(d^C_n)}D(C_n/B_n)\hookrightarrow D(C_n)$ dan bahwa
+		$D(C_n/B_n)\simeq\Ker(d_C^n)$. Dengan demikian, kokernel morfisme
+		tengah dalam diagram ialah $\Hm^n(C,M)$. Di pihak lain, barisan
+		$0\to B_{n-1}\to Z_{n-1}\to H_{n-1}\to0$ menunjukkan bahwa kokernel
+		morfisme kiri ialah $\Ext_R^1(\Hm_{n-1}(C),M)$. Terapkan Teorema
+		\ref{prop:snake-lemma}.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex023
+	\item Dalam situasi \S\ref{sec:HH}, ambil
+	$R=\Bbbk[t]/(t^n)$, dengan $t$ variabel polinomial dan
+	$n\in\Z_{\geq1}$, sehingga
+	$R^e=\Bbbk[x,y]/(x^n,y^n)$\footnote{Catatan penerjemah (O014-C068):
+	sumber menulis gelanggang koefisien $R[x,y]$. Akan tetapi,
+	$R^e=R\otimes_{\Bbbk}R^{\opp}$ untuk
+	$R=\Bbbk[t]/(t^n)$ secara kanonik ialah
+	$\Bbbk[x,y]/(x^n,y^n)$. Target memulihkan gelanggang koefisien
+	$\Bbbk$ yang diperlukan.}.
+% segment-id: o014.li2.chapter3.exercises.l007
+	\begin{enumerate}
+% segment-id: o014.li2.chapter3.exercises.i021
+		\item Buktikan bahwa kompleks rantai berikut eksak:
+% segment-id: o014.li2.chapter3.exercises.q011
+		\[
+			\cdots\xrightarrow{v}R^e\xrightarrow{u}R^e
+			\xrightarrow{v}R^e\xrightarrow{u}R^e\to R\to0,
+		\]
+		dengan $R^e\to R$ memetakan $f(x,y)$ ke $f(t,t)$ dan
+% segment-id: o014.li2.chapter3.exercises.q012
+		\[
+			u:=x-y,\qquad
+			v:=\sum_{\substack{a+b=n-1\\a,b\geq0}}x^ay^b.
+		\]
+		Deduksikan bahwa, untuk setiap modul-$R$ $M$,
+		$\HHm_{k+2}(M)\simeq\HHm_k(M)$ dan
+		$\HHm^{k+2}(M)\simeq\HHm^k(M)$.
+% segment-id: o014.li2.chapter3.exercises.i022
+		\item Misalkan $\Bbbk$ lapangan. Deskripsikan $\HHm_k(M)$ dan
+		$\HHm^k(M)$ dengan membedakan kasus-kasus $k\geq1$ dan apakah
+		$\mathrm{char}(\Bbbk)$ relatif prima terhadap $n$.
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter3.exercises.ex024
+	\item Untuk sebarang gelanggang $R$ dan $n\in\Z_{\geq0}$, buktikan bahwa
+	$\Tor_n^R$ berkomutasi dengan limit induktif terfilter kecil; yakni,
+% segment-id: o014.li2.chapter3.exercises.q013
+	\[
+		\Tor_n^R(\varinjlim_iX_i,Y)
+		\simeq\varinjlim_i\Tor_n^R(X_i,Y),
+		\qquad
+		\Tor_n^R(X,\varinjlim_iY_i)
+		\simeq\varinjlim_i\Tor_n^R(X,Y_i).
+	\]
+	Bahas apakah terdapat pernyataan serupa untuk funktor $\Ext$.
+
+% segment-id: o014.li2.chapter3.exercises.ex025
+	\item Buktikan bahwa suatu objek $I$ dalam kategori abelian $\mathcal{A}$
+	merupakan objek injektif jika dan hanya jika, ketika dipandang sebagai
+	kompleks, $I$ merupakan K-injektif. Nyatakan versi dualnya.
+% segment-id: o014.li2.chapter3.exercises.hn016
+	\begin{hint}
+		Satu arah mengikuti Contoh \ref{eg:bdd-K-resolution}. Untuk arah
+		sebaliknya, pandang barisan eksak pendek
+		$0\to A\to B\to C\to0$ dalam $\mathcal{A}$ sebagai kompleks asiklik,
+		lalu bangun morfisme dari kompleks tersebut ke $I$ berdasarkan
+		morfisme yang diberikan $A\to I$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter3.exercises.ex026
+	\item (N.\ Nitsure) Misalkan
+	$F:\mathcal{A}\to\mathcal{B}$ suatu funktor eksak kiri di antara kategori
+	abelian. Andaikan $\mathcal{A}$ mempunyai cukup banyak objek injektif dan
+	$X\in\Obj(\mathcal{A})$. Ambil resolusi injektif
+	$0\to X\to I^0\to I^1\to\cdots$ dan resolusi $F$-asiklik
+	$0\to X\to A^0\to A^1\to\cdots$. Tuliskan
+% segment-id: o014.li2.chapter3.exercises.q014
+	\[
+		I=[\cdots\to0\to I^0\to I^1\to\cdots],
+		\qquad
+		A=[\cdots\to0\to A^0\to A^1\to\cdots].
+	\]
+% segment-id: o014.li2.chapter3.exercises.l008
+	\begin{itemize}
+% segment-id: o014.li2.chapter3.exercises.i023
+		\item Lema \ref{prop:resolution-homotopy-classical} menentukan morfisme
+		tunggal $\beta:A\to I$ dalam $\cate{K}(\mathcal{A})$ yang kompatibel
+		dengan $A\leftarrow X\rightarrow I$. Setelah menerapkan $F$, morfisme
+		ini memberikan\footnote{Catatan penerjemah (O014-C069): sumber
+		menulis $\Hm^n(\beta):\Hm^n(A)\to\Hm^n(I)$ dan, pada butir berikutnya,
+		$\Hm^n(A)$. Karena $F$-asiklikitas dipakai untuk menghitung funktor
+		turunan $F$, morfisme dan kompleks yang harus diambil kohomologinya
+		adalah $F(\beta)$, $F(A)$, dan $F(I)$. Target memulihkan penerapan
+		$F$ tersebut.}
+		\[
+			c^n:=\Hm^n(F(\beta)):
+			\Hm^n(F(A))\to\Hm^n(F(I))=\mathrm{R}^nF(X).
+		\]
+% segment-id: o014.li2.chapter3.exercises.i024
+		\item Di pihak lain, Korolari \ref{prop:acyclic-resolution} memberikan
+		isomorfisme, melalui penggeseran dimensi,
+		\[
+			d^n:\Hm^n(F(A))\rightiso\mathrm{R}^nF(X).
+		\]
+	\end{itemize}
+	Buktikan bahwa
+	$d^n=(-1)^{n(n+1)/2}c^n$ untuk setiap $n\geq0$.
+% segment-id: o014.li2.chapter3.exercises.hn017
+	\begin{hint}
+		Inilah isi \cite{Ni09}.
+	\end{hint}
+\end{Exercises}

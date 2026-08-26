@@ -1415,3 +1415,58 @@ heads, bibliography, and both indexes. The author's official 650-page
 Linux/TeX Live/xindy PDF remains authoritative; this 302-page
 Windows/MiKTeX/MakeIndex artifact is a valid partial Indonesian reader and
 makes no pagination-identity claim.
+
+## Frozen cumulative build through Unit 047
+
+The admitted Unit 047 build is
+`build/cumulative-unit-047-finalC-20260826`. It uses the 47-input wrapper
+`source/id-ID/Al-jabr-2-id-cumulative-through-unit-047.tex`, 9,043 bytes,
+SHA-256
+`806568a50c4ec6bbfe396f46eeb009337d977d24b7b752cdbb951f6c1f6bf496`,
+which is byte-identical to the mutable wrapper. The 26-entry bibliography
+`references-cumulative-through-unit-047.bib` and its mutable aliases are
+byte-identical at 9,881 bytes, SHA-256
+`45d10bddaacbc2272a62c15c6d58e46f2bd769e4f32455c8a8cfd525fd33f0f6`.
+
+The clean final replay ran XeLaTeX 26.5 with shell escape disabled, Biber 2.21,
+both bounded MakeIndex jobs, and four further XeLaTeX passes. Passes 3--5 are
+byte-identical at 34,955 bytes, SHA-256
+`e0762d770d4df1ba4a4e9e7db2df9dcbc2df81ed603a75550abc8342033445c3`.
+Biber resolves all 26 citekeys without Biber warning or error. MakeIndex
+accepts 209 terminology and 103 symbol entries with zero rejection or warning.
+The 36,087-byte BBL has SHA-256
+`fd45e12d4dd985d632994c9b4ba5377310cd3e178399ffb7ab2ab1c86b9f782e`;
+the 9,522-byte terminology index has SHA-256
+`29e96ef7fb0d4de580ad0e857c6cdaab33f824d64403a179205f8baa4ae2fce5`;
+and the 3,867-byte symbol index has SHA-256
+`ddd5c27995115d22a8e4ecde7e4e7215a67912c6d87fac858d882614437aef98`.
+
+The final 88,221-byte log, SHA-256
+`26807b53bf991703a1e0b126c3fc47e327dcb95033e27ad5bb1bb85f15d7b9a0`,
+has no TeX/package error, undefined reference/citation, rerun request, missing
+character, or fatal stop. Seven inherited overfull hboxes, zero overfull
+vboxes, 24 underfull hboxes, and seven underfull vboxes remain. Fresh full-size
+render inspection confirms no clipping or boundary crossing.
+
+The build, checkpoint, and cumulative reader are byte-identical: PDF 1.7,
+308 pages, 1,510,819 bytes, SHA-256
+`ad728f05e2069ca0bcaabcba8de5bdf8fcda311b1a022125f46c2c817c16cfec`.
+Strict parsing verifies `/Lang id-ID`, correct complete-Chapter-3 Subject,
+1,362 named destinations, 54 outlines, 1,107 internal links, and 22 URI links.
+Every destination and link rectangle resolves in bounds. The Unit 047 stable
+destination and `Latihan` outline both land on physical page 291. There is no
+form, widget, JavaScript, embedded file, additional action, structure tree,
+`MarkInfo`, or metadata stream. All 55 Poppler font rows are embedded and
+subsetted; fourteen inherited mathematical fonts lack ToUnicode maps, so
+tagged or fully semantic PDF accessibility is not claimed.
+
+Fresh 120-dpi visual QA covers pages 1--6 and 288--308, including every Unit
+047 page, bibliography, both indexes, and intentional blank transitions. The
+contact sheet `qa/render/unit-047-finalC/unit-047-finalC-contact.png` is
+2,981,397 bytes / SHA-256
+`79369f550b60b89792356acc2a9c23aa497613e233677dc2c87eceba23d8e418`.
+The corrected title/attribution scope, exercise heading/bookmark, diagrams,
+formulas, correction footnotes, bibliography, and indexes are legible and
+unclipped. The official 650-page Linux/TeX Live/xindy source PDF remains
+authoritative; this 308-page Windows/MiKTeX/MakeIndex artifact is a valid
+partial Indonesian reader and makes no pagination-identity claim.

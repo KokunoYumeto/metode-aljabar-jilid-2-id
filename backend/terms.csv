@@ -478,3 +478,6 @@ math.homological.flat_resolution,resolusi datar,id-ID,O014,active
 math.homological.kunneth_theorem,Teorema Künneth,id-ID,O014,active
 math.homological.enough_k_injective_complexes,cukup banyak kompleks K-injektif,id-ID,O014,active
 math.homological.enough_k_projective_complexes,cukup banyak kompleks K-projektif,id-ID,O014,active
+math.homological.split_exact_complex,kompleks eksak terbelah,id-ID,O014,active
+math.homological.reduced_bar_complex,kompleks bar tereduksi,id-ID,O014,active
+math.algebra.square_zero_extension,perluasan kuadrat-nol,id-ID,O014,active
