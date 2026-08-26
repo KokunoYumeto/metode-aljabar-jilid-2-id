@@ -65,8 +65,8 @@ surface.
 The backend contains 44 unique units and 2,378 unique segment records after
 admission. Current hashes are:
 
-- `backend/units.jsonl`: 33,047 bytes, SHA-256
-  `a5eb5254e2c9278611c18d29d891b3d82d134d1cb120458a26490dc75fc80f1b`;
+- `backend/units.jsonl`: 33,049 bytes, SHA-256
+  `5343e136e2676b06e57b1d3f6eab96b687d6f5da26ff210f0320e5be600d0d0c`;
 - `backend/segments.jsonl`: 702,953 bytes, SHA-256
   `18f597ec96d1f8f9394b998df7f3679c71b5581323692d99de664df71b87749a`;
 - `backend/terms.csv`: 32,197 bytes, SHA-256
