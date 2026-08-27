@@ -2267,7 +2267,7 @@ canonical translated sources, source slices, segment maps, terminology and
 backend ledgers, controls, receipts, final release artifacts, and credentials.
 
 The no-overwrite archive is
-`C:/Users/Floris/Documents/interlanguage/old stuff/o014_methods_of_algebra_v2_obsolete_builds_readbacks_01a02164_20260824-222605.zip`:
+`C:/Users/the user/Documents/interlanguage/old stuff/o014_methods_of_algebra_v2_obsolete_builds_readbacks_01a02164_20260824-222605.zip`:
 692,700,671 bytes, SHA-256
 `dfccec87a0f8bc71767709969803649cc795ef2b47276de49a4812aa7098cf34`.
 Its `_cleanup_roots.txt` gives the exact 150 archived/deleted roots and
@@ -2397,7 +2397,7 @@ literal directory `$out`, containing only the 1,111-byte failed Unit 025 log
 `Al-jabr-2-id-cumulative-through-unit-025.log` (SHA-256
 `2d1eaf4ef111bd8647c8e788baff24971fe99f1c3ea2cc1318628f81439556eb`).
 Archive that exact file, without overwrite, as
-`C:\Users\Floris\Documents\interlanguage\old stuff\o014_literal-dollar-out_failed-unit025-log_01a02164_20260824.zip`.
+`[workspace]\old stuff\o014_literal-dollar-out_failed-unit025-log_01a02164_20260824.zip`.
 The ZIP is 824 bytes with SHA-256
 `f6aad85381e98388d129b63bdb2c7a1263447216105141beaddb2212f0ebc7db`.
 Its sole entry has the expected name, 1,111 bytes, and the exact source hash;
@@ -2461,7 +2461,7 @@ preflight, finalA, and finalB build directories; the finalA and finalB render
 trees; the finalC individual-page render directories; and the finalC console
 captures. Their total loose size is 17,918,924 bytes. The no-overwrite archive
 is
-`C:\Users\Floris\Documents\interlanguage\old stuff\o014_unit039_superseded_builds_and_render_transients_01a02164_20260825-004808.zip`,
+`[workspace]\old stuff\o014_unit039_superseded_builds_and_render_transients_01a02164_20260825-004808.zip`,
 15,908,977 bytes, SHA-256
 `3d180c3baea9e3a266159b41867dcf70e666350b5f225e0d93e91b8e3558bbf4`.
 Its 136 payload entries plus `_cleanup_manifest.csv` open successfully; every
@@ -2531,7 +2531,7 @@ pass to the literal task-local directory `$out`; the intended finalA directory
 contained only console captures. Stop the process before Biber or later passes
 can mutate either root. Archive exactly those two disposable roots as eleven
 files / 1,651,491 bytes in
-`C:\Users\Floris\Documents\interlanguage\old stuff\o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
+`[workspace]\old stuff\o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
 1,208,059 bytes, SHA-256
 `3b98158aeb8ad61ad818d352f340f7d8145a6fc2a8199ca7cd2cbf5bfddb83f7`.
 The ZIP contains an internal cleanup manifest and re-verifies every entry name,
@@ -2591,7 +2591,7 @@ After finalD admission and full-size visual inspection, archive exactly the
 superseded finalB and finalC build trees, the 19 individual rendered page PNGs,
 and seven redundant finalD console captures. The 70 task-owned files total
 5,984,538 loose bytes. The no-overwrite archive is
-`C:\Users\Floris\Documents\interlanguage\old stuff\o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
+`[workspace]\old stuff\o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
 4,665,068 bytes, SHA-256
 `3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`.
 Its 70 payload entries plus internal cleanup manifest open successfully; every
@@ -2661,7 +2661,7 @@ At the explicit cleanup boundary, archive only the admitted-but-now-superseded
 Unit 038 finalD and Unit 039 finalC build trees and their rendered-page sets.
 The four exact task-local directories contain 36 files / 8,287,867 loose bytes.
 The no-overwrite archive is
-`C:\Users\Floris\Documents\interlanguage\old stuff\o014_superseded_unit038-039_builds_and_renders_01a02164_20260825-154253.zip`,
+`[workspace]\old stuff\o014_superseded_unit038-039_builds_and_renders_01a02164_20260825-154253.zip`,
 7,290,676 bytes, SHA-256
 `833bccd43e990ddf2ad967c0a08cfc84277f5614c665b60c03c00409ceb702d2`.
 The archive opens and every entry name, uncompressed byte count, and SHA-256
@@ -2678,7 +2678,7 @@ After finalD admission, archive the three superseded Unit 041 build candidates
 finalA, finalB, and finalC together with the obsolete finalC render set. The
 four exact task-local directories contain 100 files / 10,539,388 loose bytes.
 The no-overwrite archive is
-`C:\Users\Floris\Documents\interlanguage\old stuff\o014_unit041_superseded_builds_and_renders_01a02164_20260825-161628.zip`,
+`[workspace]\old stuff\o014_unit041_superseded_builds_and_renders_01a02164_20260825-161628.zip`,
 8,798,871 bytes, SHA-256
 `f2cf861907e647d9177784ca0f045fcff8f077a1552ad007a91f02c3422f30ed`.
 The archive opens and every entry name, uncompressed byte count, and SHA-256
@@ -3120,3 +3120,70 @@ SHA-256
 listing 16,306,822 bytes with zero mismatch. Publish this checkpoint through
 the existing GitHub and Zenodo lineages and continue at Unit 048,
 `chapter4.tex` lines 9--60. This admission does not complete the corpus goal.
+
+## D128 - Close Unit 047 public lineages and accept Unit 048 review (2026-08-27)
+
+Close the Unit 047 GitHub boundary at final immutable commit
+`b085f39d2cc933572015a1bdfa4fbd6f516d8982`, tree
+`3a8da8615671109f152dafe1145d15f76795b17c`. Preserve the truthful two-commit
+sequence: content commit `bcb4bbc6453c1cfa7790e9d8b9cbb9ba7447ff22`,
+then one manifest/checksum integrity correction for published LF bytes. Use
+only the final codeload archive, 2,401,830 bytes / SHA-256
+`5170a25e7aae589a81ca342ba16c4795858b7313db31153443c37a6a13fb3f2a`;
+the superseded content-commit archive is not release evidence. Anonymous
+HTML/raw/archive readback and the 158-row manifest replay pass. Preserve the
+sanitized receipt at `release/github/GITHUB_PUBLICATION_RECEIPT.json`, 7,072
+bytes / SHA-256
+`f961f51d0066e0d3a807e0693df9351ae6bb5ca827162412807eb58584729eb7`.
+
+Close the corresponding Zenodo boundary at existing-concept record `22105841`,
+DOI `10.5281/zenodo.22105841`, version `unit-047`. Credential-free download of
+all seven files, both package inventories, the outer manifest/checksums, DOI
+redirects, and latest-version resolution pass with zero mismatch. The visible
+record page actively previews the 308-page PDF and lists it first. Preserve the
+sanitized receipt at
+`release/zenodo/unit-047/ZENODO_PUBLICATION_RECEIPT.json`, 7,254 bytes /
+SHA-256
+`98441fdbdf738f1a28a97ea34245230000cb5618c0627ab2b41f935bada41183`.
+
+Accept the independent Unit 048 comparison after one final wording correction
+to `sifat keterhapusan`. The provisional reviewed target was 13,746 bytes /
+SHA-256
+`c61ac97f8d771b427ea75fbf1b0b363b552c9e9b02fd1491117b40cc64abee17`
+and its 27-record map at 7,141 bytes / SHA-256
+`41dcd96e597d7824fd10e19ff49b5beecd014d5bf1e02eb96a240d08a598481c`.
+Admit O014-C070 for the incorrect right-hand localization label and O014-C071
+for the over-broad complex scope in the classical Ext formula. Proceed through
+backend, terminology, cumulative build, structural/visual QA, and publication
+without crossing the frozen line-60 boundary. This decision does not complete
+the corpus pursuit.
+
+## D129 - Admit the Chapter 4 overview reader (2026-08-27)
+
+Supersede only the provisional target bytes in D128 after the
+meaning-preserving layout shortening. Admit Unit 048 at 13,727 bytes / SHA-256
+`b987c6d3b29c0853a128b8fa73eede0a769c38deea7ee9392ad5d8beb4f206b7`,
+with the same 8,677-byte authority witness at SHA-256
+`800e4d6242edc127ed4db7fa45f98259cea386773d9333055ad170e9b9d971ed`
+and the same 27-record segment map at SHA-256
+`41dcd96e597d7824fd10e19ff49b5beecd014d5bf1e02eb96a240d08a598481c`.
+Preserve all formulas, two diagrams and ten arrows, all source-reference
+targets, and corrections O014-C070--O014-C071. The unit has no citation,
+exercise, hint, answer, or solution.
+
+Admit `build/cumulative-unit-048-finalD-20260827` after the clean converged
+XeLaTeX/Biber/MakeIndex replay. The final log has no fatal, unresolved,
+missing-character, or rerun failure; the seven overfull horizontal boxes are
+inherited and visibly benign. Promote the byte-identical build, checkpoint,
+and cumulative PDF at 314 pages, 1,526,462 bytes / SHA-256
+`8eaf326be418d06f8c75dd4ea255073327a25a267d4be1813417c456a5a19d60`.
+Strict PDF validation and fresh page-image inspection pass, while the inherited
+untagged/ToUnicode limitations remain disclosed.
+
+Freeze `qa/UNIT_048_QA.md` at 8,493 bytes / SHA-256
+`22220a80fdb078d34b728706b9b717f21fb661070cd841b47c2b555417be47ee`
+and the 115-row manifest at 15,051 bytes / SHA-256
+`ca6251302aff86604203e658ac2dd53d7dbe93c279260d681363e8872631bd69`,
+listing 24,929,784 bytes with zero replay mismatch. Publish this checkpoint in
+the existing GitHub and Zenodo lineages, then continue in source order at
+`chapter4.tex` line 62. This admission does not complete the corpus goal.

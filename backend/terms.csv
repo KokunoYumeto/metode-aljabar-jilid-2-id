@@ -481,3 +481,27 @@ math.homological.enough_k_projective_complexes,cukup banyak kompleks K-projektif
 math.homological.split_exact_complex,kompleks eksak terbelah,id-ID,O014,active
 math.homological.reduced_bar_complex,kompleks bar tereduksi,id-ID,O014,active
 math.algebra.square_zero_extension,perluasan kuadrat-nol,id-ID,O014,active
+math.category.autoequivalence,autoekuivalensi,id-ID,O014,active
+math.homological.cohomological_functor,funktor kohomologis,id-ID,O014,active
+math.category.verdier_localization,lokalisasi Verdier,id-ID,O014,active
+math.homological.triangulated_subcategory,subkategori bertriangulasi,id-ID,O014,active
+math.homological.bounded_below_derived_category,kategori turunan terbatas bawah,id-ID,O014,active
+math.homological.bounded_above_derived_category,kategori turunan terbatas atas,id-ID,O014,active
+math.homological.bounded_derived_category,kategori turunan terbatas,id-ID,O014,active
+math.homological.unbounded_derived_category,kategori turunan tak terbatas,id-ID,O014,active
+math.homological.derived_functor_amplitude,amplitudo funktor turunan,id-ID,O014,active
+math.homological.derived_functor_dimension,dimensi funktor turunan,id-ID,O014,active
+math.homological.grothendieck_spectral_sequence,barisan spektral Grothendieck,id-ID,O014,active
+math.homological.derived_hom_functor,funktor RHom,id-ID,O014,active
+math.homological.derived_bifunctor_theory,teori bifunktor turunan,id-ID,O014,active
+math.homological.derived_inverse_limit_functor,funktor Rlim,id-ID,O014,active
+math.homotopy.homotopy_limit,limit homotopi,id-ID,O014,active
+math.homological.derived_tensor_product,hasil kali tensor turunan,id-ID,O014,active
+math.homological.triangulated_bifunctor,bifunktor bertriangulasi,id-ID,O014,active
+math.category.associativity_constraint,kendala asosiativitas,id-ID,O014,active
+math.homological.derived_tensor_hom_adjunction,adjungsi hasil kali tensor turunan-RHom,id-ID,O014,active
+math.homological.k_flat_resolution,resolusi K-datar,id-ID,O014,active
+math.homological.effaceability,keterhapusan,id-ID,O014,active
+math.homological.n_extension,ekstensi-n,id-ID,O014,active
+math.homological.yoneda_ext_theorem,Teorema Yoneda,id-ID,O014,active
+math.homological.unbounded_derived_functor,funktor turunan tak terbatas,id-ID,O014,active

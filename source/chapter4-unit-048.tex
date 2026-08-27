@@ -1,0 +1,248 @@
+% Unit 048 terjemahan Bahasa Indonesia dari chapter4.tex baris 9--60.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.overview
+% Cakupan: ikhtisar Bab 4 sebelum Bagian 4.1.
+
+% segment-id: o014.li2.chapter4.overview.h001
+\chapter{Kategori Bertriangulasi dan Kategori Turunan\texorpdfstring{\hspace{0.1em}}{}}%
+\label{sec:triangulated-derived-cat}
+\hypertarget{o014.aljabr2.chapter4.overview}{ }
+
+% segment-id: o014.li2.chapter4.overview.p001
+Kategori turunan dirintis oleh A.\ Grothendieck dan J.-L.\ Verdier pada
+dasawarsa 1960-an untuk mempelajari teorema dualitas dalam geometri aljabar.
+Perkembangan selanjutnya menunjukkan bahwa kategori turunan menyediakan
+bahasa yang praktis dan ampuh, baik dalam geometri, topologi, maupun teori
+representasi. Informasi yang direkam oleh kategori turunan
+$\cate{D}(\mathcal{A})$ dari kategori abelian $\mathcal{A}$ berada di antara
+kompleks dan kohomologinya. Informasi itu tepat diungkapkan dengan bahasa
+kategori bertriangulasi yang diperkenalkan dalam
+\S\S~\sourcecrossref{sec:triangular-def}{4.1}--%
+\sourcecrossref{sec:triangular-basic}{4.2}: $\cate{D}(\mathcal{A})$ dilengkapi
+autoekuivalensi pergeseran $X\mapsto X[1]$ serta suatu kelas barisan morfisme
+yang disebut segitiga terbedakan (juga disebut segitiga eksak),
+% segment-id: o014.li2.chapter4.overview.q001
+\[
+  X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1],
+  \quad \text{atau disingkat}\quad X\to Y\to Z\xrightarrow{+1} .
+\]
+Segitiga-segitiga tersebut memenuhi aksioma (TR0)--(TR5). Sebagai contoh,
+suatu segitiga terbedakan dapat dirotasi menjadi
+% segment-id: o014.li2.chapter4.overview.q002
+\[
+  Y \xrightarrow{g} Z \xrightarrow{h} X[1] \xrightarrow{-f[1]} Y[1]
+  \quad\text{atau}\quad
+  Z[-1] \xrightarrow{-h[-1]} X \xrightarrow{f} Y \xrightarrow{g} Z .
+\]
+
+% segment-id: o014.li2.chapter4.overview.p002
+Segitiga terbedakan menggantikan barisan eksak pendek dalam kategori kompleks
+$\cate{C}(\mathcal{A})$, meskipun analogi yang lebih tepat ialah dengan
+barisan kofiber dalam teori homotopi. Funktor kohomologis dari kategori
+bertriangulasi ke kategori abelian menyediakan mekanisme untuk menghasilkan
+barisan eksak panjang dari segitiga terbedakan.
+
+% segment-id: o014.li2.chapter4.overview.p003
+Peralihan dari $\cate{C}(\mathcal{A})$ ke $\cate{D}(\mathcal{A})$ merupakan
+pokok bahasan \S~\sourcecrossref{sec:derived-cat}{4.4} dan berlangsung dalam
+dua langkah.
+% segment-id: o014.li2.chapter4.overview.l001
+\begin{enumerate}
+	% segment-id: o014.li2.chapter4.overview.i001
+	\item Langkah pertama beralih dari $\cate{C}(\mathcal{A})$ ke
+	$\cate{K}(\mathcal{A})$. Kategori terakhir dilengkapi funktor pergeseran
+	$X\mapsto X[1]$ dan struktur kategori bertriangulasi. Untuk setiap
+	morfisme $f:X\to Y$, kerucut pemetaannya beserta morfisme kanonik
+	% segment-id: o014.li2.chapter4.overview.q003
+	\[
+	  X \xrightarrow{f} Y \xrightarrow{\alpha(f)} \Cone(f)
+	  \xrightarrow{\beta(f)} X[1]
+	\]
+	membentuk segitiga terbedakan yang bersesuaian hingga isomorfisme. Perangkat
+	untuk langkah ini telah disiapkan pada bagian pertama \CHref{sec:cplx}.
+	% segment-id: o014.li2.chapter4.overview.i002
+	\item Langkah kedua secara formal menambahkan invers bagi semua
+	kuasi-isomorfisme, atau secara ekuivalen menolkan semua kompleks asiklik,
+	melalui lokalisasi. Hasilnya ialah $\cate{D}(\mathcal{A})$, yang mempunyai
+	kumpulan objek yang sama dengan $\cate{C}(\mathcal{A})$ dan mewarisi
+	struktur kategori bertriangulasi dari $\cate{K}(\mathcal{A})$. Langkah ini
+	bertumpu pada teori umum lokalisasi Verdier dalam
+	\S~\sourcecrossref{sec:triangulated-localization}{4.3}. Di sinilah aksioma
+	oktahedral (TR5), aksioma paling rumit dalam definisi kategori
+	bertriangulasi, menjalankan perannya.
+\end{enumerate}
+
+% segment-id: o014.li2.chapter4.overview.p004
+Mengambil kohomologi kompleks menghasilkan funktor kohomologis pada tingkat
+kategori turunan, $\Hm^0:\cate{D}(\mathcal{A})\to\mathcal{A}$, dengan
+$\Hm^n(X):=\Hm^0(X[n])$. Jika proses yang sama dimulai dari kategori kompleks
+terbatas bawah (atau terbatas atas, atau terbatas), diperoleh kategori
+bertriangulasi $\cate{D}^+(\mathcal{A})$ (atau
+$\cate{D}^-(\mathcal{A})$, atau $\cate{D}^{\bdd}(\mathcal{A})$). Kategori
+tersebut juga dapat dipandang sebagai subkategori bertriangulasi penuh dari
+$\cate{D}(\mathcal{A})$, yang masing-masing dicirikan oleh syarat
+$n\ll0$ (atau $n\gg0$, atau $|n|\gg0$) $\implies\Hm^n(X)=0$.
+
+% segment-id: o014.li2.chapter4.overview.p005
+Secara lebih umum, syarat lenyapnya kohomologi dapat dipakai untuk
+mendefinisikan subkategori penuh $\cate{D}^{\geq0}(\mathcal{A})$ dan
+$\cate{D}^{\leq0}(\mathcal{A})$ dari $\cate{D}(\mathcal{A})$, dan funktor
+pemenggalan kompleks tetap dapat didefinisikan pada kategori turunan.
+Funktor kanonik $\mathcal{A}\to\cate{D}(\mathcal{A})$ bersifat setia penuh dan
+mengidentifikasi $\mathcal{A}$ dengan
+$\cate{D}^{\leq0}(\mathcal{A})\cap\cate{D}^{\geq0}(\mathcal{A})$. Jika
+$\mathcal{A}$ mempunyai cukup banyak objek injektif atau projektif, maka
+$\Hom_{\cate{D}(\mathcal{A})}(X,Y[n])\simeq
+\Ext^n_{\mathcal{A}}(X,Y)$, dengan $X$ dan $Y$ objek $\mathcal{A}$ yang
+dipandang sebagai kompleks terkonsentrasi di derajat nol.%
+\footnote{Catatan penerjemah (O014-C071): sumber menyebut $X$ dan $Y$ sebagai
+kompleks pada $\mathcal{A}$. Namun, penyematan setia penuh
+$\mathcal{A}\to\cate{D}(\mathcal{A})$ pada kalimat sebelumnya dan definisi
+$\Ext^n_{\mathcal{A}}$ dalam \S~\ref{sec:Ext-Tor} memberikan rumus ini bagi
+objek $\mathcal{A}$ yang dipandang sebagai kompleks derajat nol; target
+memulihkan cakupan tersebut.}
+Definisi $\Ext^n_{\mathcal{A}}$ diberikan dalam \S~\ref{sec:Ext-Tor}, dan
+semua hal di atas dibahas dalam \S~\sourcecrossref{sec:Hom-Ext}{4.5}.
+
+% segment-id: o014.li2.chapter4.overview.p006
+Untuk funktor eksak kiri $F:\mathcal{A}\to\mathcal{A}'$, funktor turunan
+kanan klasiknya terwujud pada tingkat kategori turunan terbatas bawah sebagai
+$\mathrm{R}F:\cate{D}^+(\mathcal{A})\to\cate{D}^+(\mathcal{A}')$. Funktor
+ini dapat dicirikan sebagai ekstensi Kan kiri; data terkait dituliskan dengan
+diagram $2$-sel berikut.
+% segment-id: o014.li2.chapter4.overview.g001
+\[\begin{tikzcd}
+	\cate{K}^+(\mathcal{A}) \arrow[r, "{\cate{K}F}"] \arrow[d, "Q"'] &
+	\cate{K}^+(\mathcal{A}') \arrow[d, "{Q'}"] \arrow[Rightarrow, ld] \\
+	\cate{D}^+(\mathcal{A}) \arrow[r, "{\mathrm{R}F}"'] &
+	\cate{D}^+(\mathcal{A}')
+\end{tikzcd}\]
+
+Di sini $Q$ dan $Q'$ menyatakan funktor lokalisasi, sementara
+$\mathrm{R}F$ juga harus dilengkapi struktur funktor bertriangulasi. Funktor
+klasik $\mathrm{R}^nF$ diperoleh dengan membatasi $\mathrm{R}F$ pada
+$\mathcal{A}$ lalu mengambil $\Hm^n$. Jika $F$ justru funktor eksak kanan,
+peningkatan funktor turunan kiri klasik $\mathrm{L}_nF$ dituliskan sebagai
+berikut.%
+\footnote{Catatan penerjemah (O014-C070): pada diagram berikut sumber memberi
+label $Q$ pada panah vertikal kanan, sedangkan objek sumber dan targetnya
+masing-masing ialah $\cate{K}^-(\mathcal{A}')$ dan
+$\cate{D}^-(\mathcal{A}')$. Sesuai diagram sebelumnya dan penamaan dalam
+prosa, target memulihkan label $Q'$.}
+% segment-id: o014.li2.chapter4.overview.g002
+\[\begin{tikzcd}
+	\cate{K}^-(\mathcal{A}) \arrow[r, "{\cate{K}F}"] \arrow[d, "Q"'] &
+	\cate{K}^-(\mathcal{A}') \arrow[d, "{Q'}"] \\
+	\cate{D}^-(\mathcal{A}) \arrow[r, "{\mathrm{L}F}"']
+	\arrow[ru, Rightarrow] & \cate{D}^-(\mathcal{A}').
+\end{tikzcd}\]
+
+% segment-id: o014.li2.chapter4.overview.p007
+Keberadaan funktor turunan dan struktur terperinci kategori turunan, seperti
+dalam teori klasik, bergantung pada resolusi kompleks. Resolusi merupakan
+perancah yang diperlukan untuk bekerja secara konkret dengan kategori turunan.
+Rinciannya terdapat dalam
+\S\S~\sourcecrossref{sec:triangulated-functor-localization}{4.6}--%
+\sourcecrossref{sec:bounded-derived-functor}{4.8}. Versi tak terbatas
+$\cate{D}(\mathcal{A})\to\cate{D}(\mathcal{A}')$ mempunyai rumusan serupa
+dan akan dibahas dalam \S~\sourcecrossref{sec:unbounded-derived}{4.11}.
+
+% segment-id: o014.li2.chapter4.overview.p008
+Dengan mempertimbangkan amplitudo funktor turunan, yakni ``pergeseran'' yang
+dihasilkannya pada tingkat kohomologi, kita dapat membahas dimensi funktor
+turunan (Definisi--Proposisi~\sourcecrossref{def:dim-functor}{pada \S~4.7}).
+Di bawah syarat yang sesuai, pembentukan funktor turunan juga kompatibel dengan
+komposisi funktor
+(Teorema~\sourcecrossref{prop:localization-injective}{pada \S~4.8}). Hal ini
+memberikan penjelasan seragam bagi sejumlah barisan spektral dalam teori
+klasik, yang disebut barisan spektral Grothendieck dan dijabarkan dalam
+Teorema~\sourcecrossref{prop:Grothendieck-ss}{pada \S~4.8}. Teori umum
+barisan spektral ditangguhkan sampai Bab~\sourcecrossref{sec:ss}{5}.
+
+% segment-id: o014.li2.chapter4.overview.p009
+Seluruh konstruksi ini dapat dirumuskan untuk kategori bertriangulasi umum dan
+lokalisasi Verdier-nya. Perlu dicatat bahwa dalam penerapan sering dijumpai
+kategori bertriangulasi yang tidak berasal langsung dari kategori abelian,
+atau funktor kohomologis yang bukan $\Hm^n$. Dalam situasi umum itu, peran
+funktor pemenggalan serta $\cate{D}^{\leq0}$ dan $\cate{D}^{\geq0}$ digantikan
+oleh struktur-$t$ pada kategori bertriangulasi, tetapi buku ini tidak membahas
+topik tersebut.
+
+% segment-id: o014.li2.chapter4.overview.p010
+Funktor turunan yang dibahas secara konkret dalam bab ini dibatasi pada contoh
+yang muncul dalam aljabar. Contoh pertama ialah funktor $\RHom$ dalam
+\S~\sourcecrossref{sec:RHom}{4.9}. Funktor ini merupakan versi kategori
+turunan dari funktor $\Ext$ dan melibatkan teori bifunktor turunan. Sejumlah
+keadjungan juga akan ditingkatkan ke kategori turunan dengan prinsip mengganti
+$\Hom$ oleh $\RHom$. Berikutnya,
+\S~\sourcecrossref{sec:Rlim}{4.10} membahas hasil kali dan koproduk dalam
+$\cate{D}(\mathcal{A})$, kemudian memperkenalkan peningkatan dari $\lim^n$
+yang ditulis $\mathrm{R}\lim$. Seperti $\lim^n$, funktor ini mempunyai
+deskripsi ringkas melalui limit homotopi
+(Definisi~\sourcecrossref{def:holim}{pada \S~4.10}), meskipun pada tingkat
+kategori turunan deskripsi tersebut hanya dapat diberikan secara kasar.
+
+% segment-id: o014.li2.chapter4.overview.p011
+Selanjutnya, \S~\sourcecrossref{sec:otimesL}{4.12} memperkenalkan versi
+kategori turunan dari funktor $\Tor$, yaitu hasil kali tensor turunan
+$\otimesL$, suatu bifunktor bertriangulasi. Bagian itu juga membuktikan banyak
+fakta, termasuk kendala asosiativitas
+(Proposisi~\sourcecrossref{prop:otimesL-associativity-constraint}{pada
+\S~4.12}) dan keadjungan versi $\RHom$
+(Teorema~\sourcecrossref{prop:RHom-otimesL-adjunction}{pada \S~4.12}). Seperti
+dalam teori klasik, $\RHom$ dan $\otimesL$ merupakan dua contoh dasar funktor
+turunan. Agar deskripsinya lengkap dan bersih, bagian tersebut memakai
+kategori turunan tak terbatas beserta funktor turunannya. Karena itu diperlukan
+teori dalam \S~\sourcecrossref{sec:unbounded-derived}{4.11}, khususnya konsep
+resolusi K-projektif dan K-datar; dalam konteks teori modul yang dibahas di
+sini, keberadaan resolusi tersebut tidak menjadi masalah.
+
+% segment-id: o014.li2.chapter4.overview.p012
+Terakhir, perlu dikemukakan beberapa kekurangan kategori turunan
+$\cate{D}(\mathcal{A})$.
+% segment-id: o014.li2.chapter4.overview.l002
+\begin{enumerate}
+	% segment-id: o014.li2.chapter4.overview.i003
+	\item Dalam aksioma kategori bertriangulasi, (TR2) menyatakan bahwa setiap
+	morfisme dapat ditempatkan dalam suatu segitiga terbedakan. Segitiga
+	semacam itu unik hingga isomorfisme, tetapi bukan ``hingga isomorfisme
+	unik'' sebagaimana lazim dalam aljabar.
+	% segment-id: o014.li2.chapter4.overview.i004
+	\item Kategori bertriangulasi biasanya tidak mempunyai kernel maupun
+	kokernel, sehingga operasi $\varinjlim$ dan $\varprojlim$ sangat sulit
+	dijalankan. Kerucut pemetaan menyediakan pengganti dalam arti homotopi,
+	tetapi, seperti telah disebutkan, keunikannya dalam kategori turunan
+	bermasalah.
+	% segment-id: o014.li2.chapter4.overview.i005
+	\item Meskipun funktor turunan pada tingkat kategori turunan mempunyai
+	definisi yang jelas, tidak seperti funktor-$\delta$ kohomologis universal,
+	funktor tersebut sulit dicirikan secara sederhana melalui sifat
+	keterhapusan;
+	lihat Proposisi~\ref{prop:erasable-univ-delta}.
+\end{enumerate}
+
+% segment-id: o014.li2.chapter4.overview.p013
+Akar persoalannya ialah bahwa dalam membangun $\cate{D}(\mathcal{A})$, relasi
+homotopi dihapus secara terlalu kasar. Kekurangan ini perlu diatasi dengan
+konstruksi yang lebih tinggi daripada kategori turunan dan mungkin juga lebih
+alami; kategori turunan semestinya hanyalah bayangan dari konstruksi tersebut.
+
+% segment-id: o014.li2.chapter4.overview.n001
+\begin{petunjukbacaan}
+	Sebagian besar isi bab ini merupakan konsep inti dalam teori kategori
+	bertriangulasi dan kategori turunan. Materi sampingan mencakup pembahasan
+	ekstensi-$n$ dalam \S~\sourcecrossref{sec:Hom-Ext}{4.5}, terutama yang
+	berpusat pada Teorema Yoneda
+	(Teorema~\sourcecrossref{prop:Yoneda-Ext}{pada \S~4.5}), serta pembahasan
+	funktor turunan tak terbatas dalam
+	\S~\sourcecrossref{sec:unbounded-derived}{4.11}, yang bertumpu pada teori
+	\S~\ref{sec:K-injectives}. Kedua topik ini merupakan pengetahuan umum bagi
+	para spesialis, tetapi pembaca hendaknya menimbang sendiri kebutuhannya.
+	Jika pembaca hanya membahas funktor turunan antara kategori turunan
+	terbatas bawah atau terbatas atas, semua pernyataan dalam
+	\S~\sourcecrossref{sec:otimesL}{4.12} mengenai resolusi K-projektif (atau
+	K-datar) dapat diganti dengan resolusi projektif (atau datar) dari kompleks
+	terbatas atas tanpa mengganggu alur bacaan. Keabsahan penggantian ini
+	dijamin oleh Proposisi~\sourcecrossref{prop:flat-K-flat}{pada \S~4.11}.
+\end{petunjukbacaan}

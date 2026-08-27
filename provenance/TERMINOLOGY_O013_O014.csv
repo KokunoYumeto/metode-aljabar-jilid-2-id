@@ -61,7 +61,7 @@ math.category.grothendieck_category,Grothendieck category,kategori Grothendieck,
 math.homological.derived_category,derived category,kategori turunan,kategori bentukan,o014.aljabr2.prelude.homology-history,o014_new,ITB 2020 bilingual abstract attests kategori bentukan; turunan retained for precision and alignment with funktor turunan
 math.homological.quasi_isomorphism,quasi-isomorphism,kuasi-isomorfisme,,o014.aljabr2.prelude.homology-history,o014_new,
 math.category.localization,categorical localization,lokalisasi kategoris,,o014.aljabr2.prelude.homology-history,o014_new,
-math.homological.distinguished_triangle,distinguished triangle,segitiga terbedakan,,o014.aljabr2.prelude.homology-history,o014_provisional,English gloss retained at first use; coordinate with O013 before shared reservation
+math.homological.distinguished_triangle,distinguished triangle,segitiga terbedakan,segitiga eksak,o014.aljabr2.prelude.homology-history,o014_provisional,English gloss retained at first use; Unit 048 records the source's explicit exact-triangle alias; coordinate with O013 before shared reservation
 math.homological.shift,shift,pergeseran,,o014.aljabr2.prelude.homology-history,o014_new,
 math.homological.triangulated_category,triangulated category,kategori bertriangulasi,kategori triangulasi; kategori tersegitigakan,o014.aljabr2.prelude.homology-history,o014_provisional,ITB 2020 bilingual abstract attests kategori tersegitigakan; English gloss retained at first use and coordinate with O013 before shared reservation
 math.homotopy.cofiber_sequence,cofiber sequence,barisan kofiber,,o014.aljabr2.prelude.homology-history,o014_provisional,English gloss retained at first use; coordinate with O013 before shared reservation
@@ -167,7 +167,7 @@ math.category.quasi_inverse,quasi-inverse,kuasi-invers,,o014.aljabr2.prelude.con
 math.category.equivalence,equivalence of categories,ekuivalensi antarkategori,ekuivalensi kategori,o014.aljabr2.prelude.conventions,o014_new,
 math.category.category_isomorphism,isomorphism of categories,isomorfisme antarkategori,isomorfisme kategori,o014.aljabr2.prelude.conventions,o014_new,
 math.algebra.zero_divisor,zero divisor,pembagi nol,,o014.aljabr2.prelude.conventions,o014_new,
-math.category.adjunction,adjunction / adjoint pair,adjungsi,pasangan adjoin,o014.aljabr2.prelude.conventions,o014_provisional,Source 385-397; keep adjoin kiri and adjoin kanan as compositional forms
+math.category.adjunction,adjunction / adjoint pair,adjungsi,keadjungan; pasangan adjoin,o014.aljabr2.prelude.conventions,o014_provisional,Source 385-397; keep adjoin kiri and adjoin kanan as compositional forms; Unit 048 uses the attested nominal variant keadjungan
 math.category.adjunction_unit,unit of an adjunction,unit,,o014.aljabr2.prelude.conventions,o014_new,Indexed definition at source 399
 math.category.adjunction_counit,counit of an adjunction,kounit,,o014.aljabr2.prelude.conventions,o014_new,Indexed definition at source 399
 math.category.triangle_identities,triangle identities,identitas segitiga,,o014.aljabr2.prelude.conventions,o014_new,First textual mention at source 384; indexed definition at source 399
@@ -394,7 +394,7 @@ math.set_theory.successor_ordinal,successor ordinal,ordinal penerus,,o014.aljabr
 math.set_theory.limit_ordinal,limit ordinal,ordinal limit,ordinal batas,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Ordinal tak nol yang bukan ordinal penerus.
 math.category.karoubi_envelope,Karoubi envelope,selubung Karoubi,penyelesaian Karoubi,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Kategori yang diperoleh dengan menambahkan secara formal semua suku jumlah langsung.
 math.homological.schanuel_lemma,Schanuel lemma,Lema Schanuel,,o014.aljabr2.chapter2.grothendieck-categories,o014_new,Lema yang membandingkan kernel dua presentasi projektif dari objek yang sama.
-math.homological.complex_homotopy,complex homotopy,homotopi kompleks,homotopi,o014.aljabr2.chapter3.overview,o014_new,Relasi homotopi antara morfisme kompleks.
+math.homological.complex_homotopy,complex homotopy,homotopi kompleks,homotopi; relasi homotopi,o014.aljabr2.chapter3.overview,o014_new,Relasi homotopi antara morfisme kompleks; Unit 048 uses the explicit relation noun phrase.
 math.homological.hom_complex,Hom complex,kompleks Hom,,o014.aljabr2.chapter3.overview,o014_new,Kompleks internal yang suku dan diferensialnya dibentuk dari Hom antara dua kompleks.
 math.homological.total_complex,total complex,kompleks total,,o014.aljabr2.chapter3.overview,o014_new,Kompleks yang diperoleh dengan meratakan bikompleks melalui jumlah langsung atau hasil kali langsung.
 math.homological.long_exact_sequence,long exact sequence,barisan eksak panjang,,o014.aljabr2.chapter3.overview,o014_new,Barisan eksak yang menghubungkan kohomologi atau homologi pada derajat berurutan.
@@ -481,3 +481,27 @@ math.homological.enough_k_projective_complexes,enough K-projectives,cukup banyak
 math.homological.split_exact_complex,split exact complex,kompleks eksak terbelah,kompleks eksak split,o014.aljabr2.chapter3.exercises,o014_new,"Kompleks yang eksak melalui pemisahan pada tiap derajat; bentuk indeks ringkasnya ialah eksak terbelah."
 math.homological.reduced_bar_complex,reduced bar complex,kompleks bar tereduksi,,o014.aljabr2.chapter3.exercises,o014_new,"Kompleks bar setelah bagian satuan direduksi; dipakai untuk perhitungan homologi Hochschild."
 math.algebra.square_zero_extension,square-zero extension,perluasan kuadrat-nol,perluasan berkuadrat nol,o014.aljabr2.chapter3.exercises,o014_new,"Perluasan gelanggang dengan ideal yang kuadratnya nol."
+math.category.autoequivalence,autoequivalence,autoekuivalensi,,o014.aljabr2.chapter4.overview,o014_new,Generic concept first used in the phrase autoekuivalensi pergeseran.
+math.homological.cohomological_functor,cohomological functor,funktor kohomologis,,o014.aljabr2.chapter4.overview,o014_new,Distinct from the already registered cohomological delta-functor.
+math.category.verdier_localization,Verdier localization,lokalisasi Verdier,,o014.aljabr2.chapter4.overview,o014_new,Triangulated-category localization associated with Verdier.
+math.homological.triangulated_subcategory,triangulated subcategory,subkategori bertriangulasi,subkategori triangulasi; subkategori tersegitigakan,o014.aljabr2.chapter4.overview,o014_provisional,Coordinate with the provisional triangulated-category form.
+math.homological.bounded_below_derived_category,bounded-below derived category,kategori turunan terbatas bawah,kategori turunan berbatas bawah,o014.aljabr2.chapter4.overview,o014_new,The D-plus derived category.
+math.homological.bounded_above_derived_category,bounded-above derived category,kategori turunan terbatas atas,kategori turunan berbatas atas,o014.aljabr2.chapter4.overview,o014_new,The D-minus derived category.
+math.homological.bounded_derived_category,bounded derived category,kategori turunan terbatas,kategori turunan berbatas,o014.aljabr2.chapter4.overview,o014_new,The bounded derived category D-b.
+math.homological.unbounded_derived_category,unbounded derived category,kategori turunan tak terbatas,kategori turunan tanpa batas,o014.aljabr2.chapter4.overview,o014_new,The unrestricted derived category.
+math.homological.derived_functor_amplitude,amplitude of a derived functor,amplitudo funktor turunan,amplitudo turunan,o014.aljabr2.chapter4.overview,o014_new,Cohomological displacement range of a derived functor.
+math.homological.derived_functor_dimension,dimension of a derived functor,dimensi funktor turunan,,o014.aljabr2.chapter4.overview,o014_new,Dimension determined from derived-functor amplitude.
+math.homological.grothendieck_spectral_sequence,Grothendieck spectral sequence,barisan spektral Grothendieck,,o014.aljabr2.chapter4.overview,o014_new,Specific spectral sequence associated with composition of derived functors.
+math.homological.derived_hom_functor,derived Hom functor,funktor RHom,Hom turunan; RHom,o014.aljabr2.chapter4.overview,o014_new,Derived-category version of Hom and Ext.
+math.homological.derived_bifunctor_theory,theory of derived bifunctors,teori bifunktor turunan,bifunktor turunan,o014.aljabr2.chapter4.overview,o014_new,Theory required for derived functors in two variables.
+math.homological.derived_inverse_limit_functor,derived inverse-limit functor,funktor Rlim,limit invers turunan; Rlim,o014.aljabr2.chapter4.overview,o014_provisional,Total right-derived inverse-limit functor; distinct from the generic inverse limit.
+math.homotopy.homotopy_limit,homotopy limit,limit homotopi,,o014.aljabr2.chapter4.overview,o014_new,Homotopical replacement underlying the description of Rlim.
+math.homological.derived_tensor_product,derived tensor product,hasil kali tensor turunan,produk tensor turunan; otimesL,o014.aljabr2.chapter4.overview,o014_new,Derived-category version of the tensor product.
+math.homological.triangulated_bifunctor,triangulated bifunctor,bifunktor bertriangulasi,bifunktor triangulasi,o014.aljabr2.chapter4.overview,o014_provisional,Coordinate with the provisional triangulated-category form.
+math.category.associativity_constraint,associativity constraint,kendala asosiativitas,kendala asosiatif,o014.aljabr2.chapter4.overview,o014_new,Coherence constraint for the derived tensor product.
+math.homological.derived_tensor_hom_adjunction,derived tensor-Hom adjunction,adjungsi hasil kali tensor turunan-RHom,keadjungan versi RHom; adjungsi RHom-otimesL,o014.aljabr2.chapter4.overview,o014_provisional,Derived adjunction relating tensor and RHom.
+math.homological.k_flat_resolution,K-flat resolution,resolusi K-datar,,o014.aljabr2.chapter4.overview,o014_new,Resolution by a K-flat complex.
+math.homological.effaceability,effaceability,keterhapusan,sifat keterhapusan,o014.aljabr2.chapter4.overview,o014_new,Nominal property corresponding to an effaceable functor.
+math.homological.n_extension,n-extension,ekstensi-n,ekstensi n,o014.aljabr2.chapter4.overview,o014_new,An n-fold extension used in Yoneda's description of Ext.
+math.homological.yoneda_ext_theorem,Yoneda theorem for Ext and n-extensions,Teorema Yoneda,teorema Yoneda untuk Ext,o014.aljabr2.chapter4.overview,o014_new,The theorem identifying Ext classes with equivalence classes of n-extensions.
+math.homological.unbounded_derived_functor,unbounded derived functor,funktor turunan tak terbatas,funktor turunan tanpa batas,o014.aljabr2.chapter4.overview,o014_new,Derived functor defined on unbounded derived categories.

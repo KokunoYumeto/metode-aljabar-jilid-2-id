@@ -1470,3 +1470,69 @@ formulas, correction footnotes, bibliography, and indexes are legible and
 unclipped. The official 650-page Linux/TeX Live/xindy source PDF remains
 authoritative; this 308-page Windows/MiKTeX/MakeIndex artifact is a valid
 partial Indonesian reader and makes no pagination-identity claim.
+
+## Frozen cumulative build through Unit 048
+
+The admitted Unit 048 build is
+`build/cumulative-unit-048-finalD-20260827`. It uses the 48-input wrapper
+`source/id-ID/Al-jabr-2-id-cumulative-through-unit-048.tex`, 9,146 bytes,
+SHA-256
+`0b79115969e927dc0dbe395405cb17a97a0d05749ced4bca6ccf8c3153c181f6`,
+which is byte-identical to the mutable wrapper. The 26-entry bibliography
+`references-cumulative-through-unit-048.bib` and its mutable alias remain
+byte-identical at 9,881 bytes, SHA-256
+`45d10bddaacbc2272a62c15c6d58e46f2bd769e4f32455c8a8cfd525fd33f0f6`.
+
+FinalA was rejected because integration exposed one new 3.73564-point
+overfull line. FinalB and finalC were interrupted before convergence and are
+not admission evidence. FinalD started in an empty output directory after a
+meaning-preserving prose shortening. It ran XeLaTeX 26.5 with shell escape
+disabled, Biber 2.21, two bounded MakeIndex jobs, and four further
+shell-escape-disabled XeLaTeX passes. Passes 3--5 are byte-identical at 30,807
+bytes, SHA-256
+`6e209ee2bc9d6c6d90475d9e9a95a2d7c06b17eb81a528e4c5ad7cc6d62aea76`.
+Biber resolves all 26 citekeys without warning or error. MakeIndex accepts 209
+terminology and 103 symbol entries with zero rejection or warning. The
+36,087-byte BBL has SHA-256
+`fd45e12d4dd985d632994c9b4ba5377310cd3e178399ffb7ab2ab1c86b9f782e`;
+the 9,522-byte terminology index has SHA-256
+`29e96ef7fb0d4de580ad0e857c6cdaab33f824d64403a179205f8baa4ae2fce5`;
+and the 3,867-byte symbol index has SHA-256
+`ddd5c27995115d22a8e4ecde7e4e7215a67912c6d87fac858d882614437aef98`.
+
+The final 83,923-byte log, SHA-256
+`bba64de5ba2db7d262cd534d33b9ab53477c525e3dfb0a44394ba4541ba06662`,
+has no TeX/package error, undefined control sequence, unresolved reference or
+citation, missing character, rerun request, emergency stop, or fatal error.
+Seven overfull horizontal boxes remain, exactly the seven inherited from Unit
+047; there is no overfull vertical box. Twenty-four underfull horizontal and
+eight underfull vertical boxes remain nonfatal. Full-size inspection confirms
+that no retained warning clips content or crosses the page boundary.
+
+The build PDF, checkpoint, and cumulative reader are byte-identical: PDF 1.7,
+314 pages, 1,526,462 bytes, SHA-256
+`8eaf326be418d06f8c75dd4ea255073327a25a267d4be1813417c456a5a19d60`.
+All pages are 498.9 by 708.66 points at zero rotation. The unencrypted reader
+has `/Lang id-ID`; it remains untagged. Strict parsing verifies 1,377 named
+destinations, 55 outline destinations, 1,115 resolved internal links, and 22
+nonempty URI links. Every destination, coordinate, and all 1,137 link
+rectangles resolve in bounds. There is no malformed action, AcroForm, field,
+widget, JavaScript, embedded file, additional action, structure tree,
+`MarkInfo`, or metadata stream. All 56 Poppler font rows are embedded and
+subsetted; fifteen inherited mathematical/CJK rows lack ToUnicode maps, so
+tagged or fully semantic PDF accessibility is not claimed.
+
+Fresh 120-dpi visual QA covers physical pages 1--6 and 296--314. Unit 048 is
+on physical pages 299--303; bibliography starts at 305, the symbol index at
+309, and the terminology index at 311. Physical pages 2, 4, 298, 304, and 308
+are intentional blank transitions. The front contact sheet is 893,925 bytes /
+SHA-256
+`ce4eef600c44ee152df5182423ba8a4817fe15854a4fce7074f822fbaaf357c9`;
+the tail contact sheet is 4,447,100 bytes / SHA-256
+`b8db8be25409e6aa301637a272eb8ad22644ba03eac48c1171ef19fb62fdbf23`.
+The title and attribution scope, Chapter 4 opener, all five Unit 048 pages,
+both diagrams, disclosed correction notes, reading-tip box, bibliography, and
+indexes are legible and unclipped. The author's official 650-page Linux/TeX
+Live/xindy PDF remains authoritative; this 314-page Windows/MiKTeX/MakeIndex
+artifact is a valid partial Indonesian reader and makes no pagination-identity
+claim.

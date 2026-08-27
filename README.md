@@ -8,12 +8,13 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 
 ## Status
 
-Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 047
-ini mencakup Unit 001–047: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
-dan seluruh Bab 3 (`chapter3.tex` upstream baris 9–3425), termasuk 26 latihan
-dan 17 petunjuk pada penutup Bab 3. Pembaca saat ini berjumlah 308 halaman.
-Produksi berikutnya dimulai pada `chapter4.tex` baris 9 dan berlanjut dalam
-urutan sumber menuju keseluruhan buku resmi 650 halaman.
+Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 048
+ini mencakup Unit 001–048: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
+seluruh Bab 3 (`chapter3.tex` upstream baris 9–3425), dan ikhtisar Bab 4
+(`chapter4.tex` baris 9–60). Penutup Bab 3 tetap memuat 26 latihan dan 17
+petunjuk; ikhtisar Bab 4 tidak menambah latihan atau petunjuk. Pembaca saat ini
+berjumlah 314 halaman. Produksi berikutnya dimulai pada `chapter4.tex` baris 62
+dan berlanjut dalam urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
 yang telah diperiksa, tetapi **belum merupakan PDF bertag** dan tidak diklaim
@@ -37,12 +38,12 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 47 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 48 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 47 unit, 2.616 segmen, dan 482 istilah dalam bentuk modular
+- `backend/`: 48 unit, 2.643 segmen, dan 506 istilah dalam bentuk modular
   (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 047, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 048, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS.txt` mencatat ukuran dan SHA-256 setiap berkas publik.
