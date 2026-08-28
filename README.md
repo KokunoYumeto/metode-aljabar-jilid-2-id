@@ -8,13 +8,14 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 
 ## Status
 
-Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 049
-ini mencakup Unit 001–049: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
+Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 050
+ini mencakup Unit 001–050: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
 seluruh Bab 3 (`chapter3.tex` upstream baris 9–3425), serta Bab 4 melalui
-definisi kategori bertriangulasi dan catatan dualitas (`chapter4.tex` baris
-9–208). Pembaca tetap memuat 63 latihan dan 40 petunjuk aktif; Unit 049 tidak
-menambah latihan atau petunjuk. Pembaca saat ini berjumlah 318 halaman.
-Produksi berikutnya dimulai pada `chapter4.tex` baris 210 dan berlanjut dalam
+funktor kohomologis, barisan eksak panjang, dan akibat untuk segitiga dengan
+objek nol (`chapter4.tex` baris 9–258). Pembaca tetap memuat 63 latihan dan 40
+petunjuk aktif; Unit 050 tidak menambah latihan atau petunjuk. Pembaca saat ini
+berjumlah 320 halaman. Produksi berikutnya dimulai pada `chapter4.tex` baris
+260 dan berlanjut dalam
 urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
@@ -39,12 +40,12 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 49 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 50 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 49 unit, 2.690 segmen, dan 511 istilah dalam bentuk modular
+- `backend/`: 50 unit, 2.704 segmen, dan 511 istilah dalam bentuk modular
   (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 049, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 050, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS.txt` mencatat ukuran dan SHA-256 setiap berkas publik.

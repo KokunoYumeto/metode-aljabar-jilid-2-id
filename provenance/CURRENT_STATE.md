@@ -898,7 +898,7 @@ and re-verifies with zero missing, duplicate, byte-count, or hash mismatch.
 The output-argument parsing failure that created a literal `$out` directory is
 closed: exactly eleven failed-build files / 1,651,491 bytes were verified in
 the no-overwrite archive
-`local-archive/o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
+`[private archival path omitted]`,
 SHA-256
 `3b98158aeb8ad61ad818d352f340f7d8145a6fc2a8199ca7cd2cbf5bfddb83f7`,
 then both loose failed roots were deleted. The finalD canonical build and QA
@@ -907,7 +907,7 @@ surfaces are retained.
 After admission, the two superseded overflow-build trees, inspected individual
 page renders, and redundant finalD console captures (70 files / 5,984,538
 bytes) were likewise verified in the no-overwrite archive
-`local-archive/o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
+`[private archival path omitted]`,
 SHA-256
 `3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`,
 then deleted. Canonical finalD artifacts and the three contact sheets remain.
@@ -1749,3 +1749,79 @@ corollary, three proofs, two TikZ-CD diagrams, five labels, and three references
 with no citation, exercise, hint, or external asset. Stop at blank line 259
 before Section 4.2 at line 260. The Unit 049 publication boundary and frozen
 Unit 050 cursor remain partial and do not complete the corpus pursuit.
+
+## Unit 049 public readback, disclosed Zenodo provenance mismatch, and Unit 050 admission (2026-08-28)
+
+GitHub Unit 049 is publicly closed at final commit
+`e4175bafd6c032b36035cb7b809c7f867c5342dd`, tree
+`232765d768507f4fe3db55a63f327615bf67a740`, direct parent
+`4552f93d6a2deadf33ec84ac4f9f0050dae99e10`. Its anonymous codeload archive
+is 2,501,272 bytes / SHA-256
+`ef0814402c8a704576173052b240b39ea6beebecfceb8a967d5730c08f7cf02e`.
+The public tree has 170 blobs / 4,909,546 bytes; all 168 manifest and checksum
+rows replay with zero mismatch. The exact 318-page PDF is public and legible,
+and the complete archive scan finds no credential, private path, forbidden
+prose branding, or substantive Unit 050 payload. The sanitized GitHub receipt
+is 7,379 bytes / SHA-256
+`fd5a2ac9fb61b6532860b2999b64c145773139220c268d083b5744554f9e735e`.
+
+Zenodo record `22142288`, DOI `10.5281/zenodo.22142288`, version
+`unit-049-r1`, is public/open under the existing concept `22059751`; its seven
+files total 2,356,335 bytes and download anonymously with exact byte and hash
+identity. Signed-out UI verification confirms the 318-page PDF as active
+preview and first file. A post-readback cross-check, however, found that the
+public README and release manifest associate final commit `e4175b...` with
+tree `5c30b0ff44b207d270b21ae6f53458734ad3271d`, which is actually the tree of
+superseded commit `85bdbb...`; the verified final tree is `232765d...`.
+Therefore byte transport and public access pass, but Unit 049 Zenodo
+provenance does not receive an unconditional PASS. The amended 11,435-byte
+receipt has SHA-256
+`754c920dcbf6c707acde63e4d33e5a22dd369d9ba1be276ea36e7dae1ddaaeda`.
+Correct this exact tree field in the next same-concept Unit 050 release rather
+than creating another Unit 049-only version or a competing concept.
+
+Unit 050, `o014.aljabr2.chapter4.cohomological-functors`, is locally admitted
+as `chapter4.tex` lines 210--258. Its normalized authority witness is 3,170
+bytes / SHA-256
+`62fa567b35e1544072e5983e982bc8f87e2c606428496b69f99e165fb7548cdc`;
+its fourteen-record segment map is 4,215 bytes / SHA-256
+`d331af8ffc006ecfd6b64410cbcf28ca93f7c25e6279db572d5d8d7d780ac393`;
+and its independently reviewed Indonesian target is 5,270 bytes / SHA-256
+`dc196a7e89676da7899160d554a42f2ceefe2592de705fdadb332c41f57067f0`.
+All mathematics, labels, references, indexes, proofs, and two diagrams pass.
+The active `kategori abelian` and `korolari` forms are enforced. O014-C072
+discloses and removes the source's redundant second dashed `TS` to `TX` arrow
+while retaining the single labeled `Tk` component.
+
+The backend now contains fifty unique units and 2,704 unique segments; both
+terminology surfaces retain 511 exact-matching concept IDs. The admitted build
+is `build/cumulative-unit-050-finalB-20260828`; rejected finalA only exposed
+the draft's undefined theorem environment and was never promoted. FinalB's
+last three XeLaTeX transcripts are byte-identical, Biber resolves 26 citekeys,
+both indexes accept every entry, and the final log has no fatal, unresolved,
+missing-character, or rerun failure. The seven overfull horizontal boxes are
+exactly inherited and visibly benign.
+
+The build, checkpoint, and promoted cumulative reader are byte-identical:
+PDF 1.7, 320 pages, 1,557,019 bytes / SHA-256
+`8bd85bfe55752a3c22e6e4f366cd198b760c1b78d6ac960e8fae818a52e18285`.
+Strict parsing resolves 1,410 named destinations, 56 outlines, 1,134 internal
+links, 22 URI links, and all 1,156 annotation rectangles. Fresh full-size
+inspection covers the front matter, both Unit 050 pages, bibliography, and
+both indexes with no visual defect. The reader remains untagged and that
+accessibility limitation remains explicit.
+
+Freeze `qa/UNIT_050_QA.md` at 8,110 bytes / SHA-256
+`702dffcbbcd4c4339a273df66b807304e1239c8b97f53b6f1a1585c268dfa2b0`
+and the 135-row manifest at 18,073 bytes / SHA-256
+`6210aa0e8620271e7ed0661116eab02b6b7106d6e77da5f33338823c99e0b4a7`.
+The manifest lists 31,471,282 bytes and replays with zero mismatch. Unit 050 is
+ready for immediate release through the existing GitHub and Zenodo lineages.
+
+Production continues at frozen Unit 051,
+`o014.aljabr2.chapter4.triangulated-basics`, the complete Section 4.2 at
+`chapter4.tex` lines 260--560. Its normalized 25,193-byte / 301-line witness
+has SHA-256
+`020f161ea22eacc84e0e37471baf36dffe891ff73e8cbf7ae7afa066a192e1ef`.
+Stop before Section 4.3 at line 561. Neither the Unit 049 public checkpoint nor
+the Unit 050 admission/release completes the corpus pursuit.

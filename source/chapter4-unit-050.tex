@@ -1,0 +1,107 @@
+% Unit 050 terjemahan Bahasa Indonesia dari chapter4.tex baris 210--258.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.cohomological-functors
+% Cakupan: lema tentang komposisi nol, funktor kohomologis, dan akibat tentang
+% segitiga dengan objek nol; berhenti sebelum Bagian 4.2 pada baris 260.
+
+% segment-id: o014.li2.chapter4.cohomological-functors.le001
+\begin{lema}\label{prop:dt-composite-null}
+	Jika $X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{+1}$ merupakan
+	segitiga terbedakan dalam suatu kategori prabertriangulasi, maka $gf=0$.
+\end{lema}
+
+% segment-id: o014.li2.chapter4.cohomological-functors.pf001
+\begin{bukti}
+	Aksioma (TR1) dan (TR4) memberikan diagram komutatif
+% segment-id: o014.li2.chapter4.cohomological-functors.g001
+	\[\begin{tikzcd}
+		X \arrow[equal, d] \arrow[equal, r] & X \arrow[r] \arrow[d, "f"] & 0 \arrow[d] \arrow[r] & TX \arrow[equal, d] \\
+		X \arrow[r, "f"'] & Y \arrow[r, "g"'] & Z \arrow[r] & TX
+	\end{tikzcd}\]
+	Dari diagram ini segera tampak bahwa $gf=0$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.cohomological-functors.d001
+\begin{definisi}[Funktor kohomologis]\label{def:cohomological-functor}
+	\index{funktor!kohomologis (cohomological functor)}
+	Misalkan $\mathcal{D}$ kategori prabertriangulasi dan $\mathcal{A}$ kategori
+	abelian. Suatu funktor aditif $H: \mathcal{D} \to \mathcal{A}$ yang
+	memenuhi sifat berikut disebut \emph{funktor kohomologis}: untuk setiap
+	segitiga terbedakan di $\mathcal{D}$ yang berbentuk
+	$X \to Y \to Z \xrightarrow{+1}$, barisan yang bersesuaian
+	$HX \to HY \to HZ$ eksak di $\mathcal{A}$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.cohomological-functors.r001
+\begin{catatan}[Barisan eksak panjang funktor kohomologis]\label{rem:cohomological-functor-long}
+	\index{barisan eksak panjang}
+	Untuk suatu funktor kohomologis $H$ dan setiap segitiga terbedakan di
+	$\mathcal{D}$ yang berbentuk $X \to Y \to Z \xrightarrow{+1}$, rotasi
+	berulang dengan (TR3) memperluas barisan eksak dalam
+	Definisi~\ref{def:cohomological-functor} menjadi barisan eksak panjang
+% segment-id: o014.li2.chapter4.cohomological-functors.q001
+	\[ \cdots \to HT^{-1}Z \to HX \to HY \to HZ \to HTX \to HTY \to \cdots . \]
+	Rotasi segitiga menimbulkan beberapa tanda minus, tetapi tidak memengaruhi
+	keeksakan barisan di atas.
+\end{catatan}
+
+% segment-id: o014.li2.chapter4.cohomological-functors.p001
+Contoh dasar funktor kohomologis ialah funktor $\Hom$.
+
+% segment-id: o014.li2.chapter4.cohomological-functors.pr001
+\begin{proposisi}\label{prop:cohomological-Hom-functor}
+	Misalkan $\mathcal{D}$ kategori prabertriangulasi dan $S$ objek di
+	$\mathcal{D}$. Maka funktor
+	$\Hom(S, \cdot): \mathcal{D} \to \cate{Ab}$ dan
+	$\Hom(\cdot, S): \mathcal{D}^{\opp} \to \cate{Ab}$ keduanya merupakan
+	funktor kohomologis.
+
+	Jika $(\mathcal{D}, T)$ bersifat $\Bbbk$-linear, pernyataan yang
+	bersesuaian tetap berlaku dengan $\cate{Ab}$ diganti oleh
+	$\Bbbk\dcate{Mod}$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.cohomological-functors.pf002
+\begin{bukti}
+	Berdasarkan dualitas, cukup menangani $\Hom(S, \cdot)$. Tinjau segitiga
+	terbedakan $X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{+1}$ dan
+	barisan yang bersesuaian
+% segment-id: o014.li2.chapter4.cohomological-functors.q002
+	\[ \Hom(S, X) \xrightarrow{f_*} \Hom(S, Y) \xrightarrow{g_*} \Hom(S, Z). \]
+	Lema~\ref{prop:dt-composite-null} menyiratkan
+	$g_* f_* = (gf)_* = 0$. Di sisi lain, misalkan
+	$h \in \Hom(S, Y)$ memenuhi $g_*(h) = gh = 0$, dan tinjau diagram berikut,
+	yang bagian bergaris penuhnya komutatif.%
+	\footnote{Catatan penerjemah (O014-C072): pada simpul $TS$, sumber
+	menggambar dua panah putus-putus yang berimpit menuju $TX$, satu tanpa label
+	dan satu berlabel $Tk$. Morfisme segitiga hanya mempunyai satu komponen
+	$Tk$ pada posisi ini; target menghapus panah tanpa label yang redundan.}
+% segment-id: o014.li2.chapter4.cohomological-functors.g002
+	\[\begin{tikzcd}
+		S \arrow[dashed, d, "k"'] \arrow[equal, r] & S \arrow[d, "h"] \arrow[r] & 0 \arrow[d] \arrow[r] & TS \arrow[dashed, d, "Tk"] \\
+		X \arrow[r, "f"'] & Y \arrow[r, "g"'] & Z \arrow[r] & TX
+	\end{tikzcd}\]
+	Jika dapat ditemukan $k: S \to X$ seperti ditunjukkan oleh garis
+	putus-putus sehingga seluruh diagram komutatif, maka $f_*(k) = h$. Namun,
+	(TR1) memastikan bahwa kedua baris merupakan segitiga terbedakan. Dengan
+	merotasi bolak-balik menggunakan (TR3), keberadaan $k$ kemudian mengikuti
+	dari (TR4).
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.cohomological-functors.co001
+\begin{korolari}\label{prop:triangle-0-isom}
+	Untuk suatu segitiga berbentuk
+	$X \xrightarrow{f} Y \to 0 \xrightarrow{+1}$ dalam kategori
+	prabertriangulasi, $f$ mesti merupakan isomorfisme.
+\end{korolari}
+
+% segment-id: o014.li2.chapter4.cohomological-functors.pf003
+\begin{bukti}
+	Untuk setiap objek $S$, Proposisi~\ref{prop:cohomological-Hom-functor}
+	memberikan barisan eksak di $\cate{Ab}$
+% segment-id: o014.li2.chapter4.cohomological-functors.q003
+	\[ \underbracket{\Hom(S, T^{-1} 0)}_{= 0} \to \Hom(S, X) \xrightarrow{f_*} \Hom(S, Y) \to \underbracket{\Hom(S, 0)}_{= 0}, \]
+	sehingga $f_*$ merupakan isomorfisme. Karena $S$ sebarang, $f$ merupakan
+	isomorfisme.
+\end{bukti}
