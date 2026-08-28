@@ -1,68 +1,67 @@
-# Metode dalam Aljabar, Jilid 2 — Bahasa Indonesia
+﻿# Metode dalam Aljabar, Jilid 2: Aljabar Linear — Edisi Bahasa Indonesia
 
 Edisi Bahasa Indonesia independen dari *Methods of Algebra, Volume 2: Linear
-Algebra* karya Wen-Wei Li. Repositori ini menyediakan pembaca PDF, sumber
-XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
+Algebra* karya Wen-Wei Li. Repositori ini menyediakan PDF lengkap, sumber
+XeLaTeX yang dapat disunting, ekspor semantik ber-ID stabil, dan—setelah
+distribusinya lolos pemeriksaan—pembaca HTML offline.
 
-[Baca PDF kumulatif saat ini](artifacts/metode-dalam-aljabar-jilid-2-id-cumulative.pdf)
+[Baca PDF edisi Bahasa Indonesia](artifacts/metode-dalam-aljabar-jilid-2-edisi-bahasa-indonesia.pdf)
 
-## Status
+## Status dan cakupan
 
-Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 051
-ini mencakup Unit 001–051: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
-seluruh Bab 3 (`chapter3.tex` upstream baris 9–3425), serta Bab 4 melalui
-sifat-sifat dasar kategori bertriangulasi, lema sembilan, dan catatan
-keterwakilan Brown (`chapter4.tex` baris 9–560). Pembaca tetap memuat 63
-latihan dan 40 petunjuk aktif; Unit 051 tidak menambah latihan atau petunjuk.
-Pembaca saat ini berjumlah 330 halaman. Produksi berikutnya dimulai pada
-`chapter4.tex` baris 561 dan berlanjut dalam
-urutan sumber menuju keseluruhan buku resmi 650 halaman.
+Ini adalah batas edisi lengkap yang telah ditutup untuk rilis.
 
-PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
-yang telah diperiksa, tetapi **belum merupakan PDF bertag** dan tidak diklaim
-sepenuhnya aksesibel. Pembaca HTML semantik/offline masih dalam pengembangan.
+Sumber edisi ini mencakup 146 unit berurutan: Pendahuluan, Bab 1–9, Lampiran
+A–B, daftar pustaka, indeks, 194 latihan, dan 117 petunjuk sumber. Karya sumber
+tidak menyediakan jawaban atau solusi. Dua unit **Jembatan Penguasaan** beserta
+jawaban/solusinya adalah materi tambahan independen, bukan karya Wen-Wei Li;
+asal-usulnya dinyatakan di dalam berkas dan catatan provenans.
 
-## Otoritas sumber
+Backend semantik memuat seluruh 146 unit; rincian hitungan tersedia di `backend/STATUS.md`.
 
-- Karya: Wen-Wei Li, *Methods of Algebra, Volume 2: Linear Algebra*.
+[Buka pembaca HTML offline](reader/index.html). Seluruh aset distribusi disimpan lokal.
+
+PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal,
+tetapi **bukan PDF bertag** dan tidak diklaim sepenuhnya aksesibel. Ketersediaan
+teks yang dapat dipilih tidak dengan sendirinya membuktikan aksesibilitas.
+
+## Otoritas sumber dan lisensi
+
+- Penulis karya sumber: Wen-Wei Li.
+- Judul sumber: *Methods of Algebra, Volume 2: Linear Algebra*.
 - Repositori utama penulis: <https://gitee.com/wen-wei-li/AlJabr-2>.
 - Cermin resmi: <https://github.com/wenweili/AlJabr-2>.
-- Edisi daring yang dibekukan: branch `master`, commit
+- Sumber daring beku: branch `master`, commit
   `9a5803ff77dd3257484cb177f851a73770a59dd3`, tree
   `23bd05c2fb8434278df4fdfb636559a6a2b0d2ff`.
-- Lisensi sumber dan turunan ini: [CC BY 4.0](LICENSE).
+- Lisensi karya sumber dan edisi turunan ini: [CC BY 4.0](LICENSE).
 
-Terjemahan dan perubahan penyajian ditandai sebagai karya turunan. Wen-Wei Li
+Terjemahan, pelokalan, koreksi yang terdokumentasi, metadata, backend semantik,
+dan materi tambahan ditandai sebagai perubahan atau karya tambahan. Wen-Wei Li
 dan Higher Education Press tidak mendukung atau mengesahkan edisi independen
-ini. Rincian otoritas, komponen, dan perubahan tersedia di
-[`provenance/`](provenance/).
+ini. Lihat [`provenance/`](provenance/) untuk rincian sumber, hak komponen,
+koreksi, dan terminologi.
 
 ## Isi repositori
 
-- `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 51 unit terjemahan, bibliografi, kelas, gaya,
-  konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 51 unit, 2.786 segmen, dan 511 istilah dalam bentuk modular
-  (`JSONL`/`CSV`).
-- `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 051, serta manifes.
+- `artifacts/`: PDF pembaca lengkap sebagai artefak utama.
+- `source/`: master lengkap, 146 unit terjemahan, dua jembatan penguasaan,
+  bibliografi, kelas/gaya, konfigurasi, dan aset lisensi yang diperlukan.
+- `backend/`: snapshot ekspor modular (`JSONL`/`CSV`) dan status cakupannya.
+- `reader-source/`: sumber dan skrip pembangunan pembaca HTML offline.
+- `reader/`: distribusi pembaca offline setelah tersedia dan lolos pemeriksaan.
+- `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, dan
+  pernyataan provenans edisi.
 
-Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
-`SHA256SUMS.txt` mencatat ukuran dan SHA-256 setiap berkas publik.
+Lihat [BUILD.md](BUILD.md) untuk pembangunan ulang. Pada batas final,
+`MANIFEST.csv` dan `SHA256SUMS.txt` mencatat ukuran serta SHA-256 setiap berkas
+publik.
 
-Repositori edisi berada di
-[`KokunoYumeto/metode-aljabar-jilid-2-id`](https://github.com/KokunoYumeto/metode-aljabar-jilid-2-id/tree/main).
-Arsip versi bernomor dipelihara pada
-[konsep Zenodo 10.5281/zenodo.22059751](https://doi.org/10.5281/zenodo.22059751).
-
-## Kredit
+## Kredit dan provenans produksi
 
 Teks, matematika, struktur, notasi, sitasi, dan diagram sumber: Wen-Wei Li.
-Terjemahan Bahasa Indonesia, metadata, dan backend: Codex, atas instruksi
-pengguna. Semua perubahan dirilis di bawah CC BY 4.0 dengan atribusi kepada
-sumber.
+Terjemahan Bahasa Indonesia, pelokalan, metadata, backend modular, dan QA:
+**OpenAI Codex gpt-5.6-sol, Ultra**, atas instruksi pengguna. Pengungkapan ini
+tidak menggantikan kredit penulis sumber atau kredit komponen lain.
 
-Provenans produksi: terjemahan Bahasa Indonesia, rekonsiliasi terminologi,
-metadata, backend modular, dan QA diproduksi dengan **OpenAI Codex gpt-5.6-sol,
-Ultra**, atas arahan pengguna. Pengungkapan ini tidak menggantikan kredit
-Wen-Wei Li sebagai penulis karya sumber atau kredit komponen lain.
+

@@ -1,0 +1,494 @@
+% Unit 073 terjemahan Bahasa Indonesia dari chapter6.tex baris 321--556.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.group-homology-cohomology
+% Cakupan: Bagian 6.2 lengkap, ``Homologi dan Kohomologi Grup'';
+% berhenti tepat sebelum Bagian 6.3 pada baris 557.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.h001
+\section{Homologi dan Kohomologi Grup}\label{sec:group-coh-sub}
+\hypertarget{o014.aljabr2.chapter6.group-homology-cohomology}{ }
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p001
+Dalam bagian ini, gelanggang komutatif $\Bbbk$ dan grup $G$ tetap digunakan.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.d001
+\begin{definisi}
+	\index[sym1]{MGMG@$M^G$, $M_G$}
+	Untuk setiap modul-$G$ $M$, definisikan modul-$\Bbbk$
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q001
+	\begin{align*}
+		M^G & := \left\{ m \in M : \forall g \in G, \; gm = m \right\}, \\
+		M_G & := M \big/ \lrangle{gm - m : g \in G, \; m \in M}.
+	\end{align*}
+	Kita menyebut $M^G$ sebagai submodul \emph{invarian} dari $M$, dan $M_G$
+	sebagai modul kuosien \emph{koinvarian} dari $M$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p002
+Pengambilan invarian dan koinvarian masing-masing memberikan funktor
+$\Bbbk$-linear $G\dcate{Mod}\to\Bbbk\dcate{Mod}$. Keduanya dapat dicirikan
+sebagai adjoin bagi funktor inflasi $\mathrm{Infl}$ dari
+Definisi~\ref{def:Res-Infl} dalam kasus $H=G$.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pr001
+\begin{proposisi}\label{prop:inv-coinv-infl}
+	Tinjau funktor
+	$\mathrm{Infl}:=\mathrm{Infl}^G_{\{1\}}:\Bbbk\dcate{Mod}\to
+	G\dcate{Mod}$, yang memetakan setiap modul-$\Bbbk$ $N$ ke modul-$G$
+	dengan aksi trivial $gy=y$. Terdapat dua pasangan adjoin
+% segment-id: o014.li2.chapter6.group-homology-cohomology.g001
+	\[\begin{tikzcd}[row sep=tiny]
+		\mathrm{Infl}: \Bbbk\dcate{Mod} \arrow[shift left, r] & G\dcate{Mod} : (\cdot)^G , \arrow[shift left, l] \\
+		(\cdot)_G: G\dcate{Mod} \arrow[shift left, r] & \Bbbk\dcate{Mod}: \mathrm{Infl}. \arrow[shift left, l]
+	\end{tikzcd}\]
+\end{proposisi}
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pf001
+\begin{bukti}
+	Misalkan $M$ modul-$G$ dan $N$ modul-$\Bbbk$. Menentukan homomorfisme
+	modul-$G$ $\varphi:\mathrm{Infl}(N)\to M$ sama artinya dengan menentukan
+	homomorfisme modul-$\Bbbk$ $\varphi:N\to M$ sedemikian sehingga
+	$\varphi(y)=g\varphi(y)$ selalu berlaku; ini juga sama artinya dengan
+	menentukan homomorfisme modul-$\Bbbk$ $\varphi:N\to M^G$.
+	
+	Di pihak lain, menentukan homomorfisme modul-$\Bbbk$ $\psi:M_G\to N$
+	sama artinya dengan menentukan homomorfisme modul-$\Bbbk$
+	$\varphi:M\to N$ sedemikian sehingga $\varphi(gx-x)=0$ selalu berlaku.
+	Syarat terakhir ekuivalen dengan $\varphi(gx)=g\varphi(x)$, dengan
+	aksi $G$ pada ruas kanan didefinisikan oleh struktur modul-$G$
+	$\mathrm{Infl}(N)$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p003
+Funktor $(\cdot)^G$ dan $(\cdot)_G$ juga dapat dipahami dari sudut pandang
+modul-$\Bbbk[G]$. Berikut ini, melalui homomorfisme augmentasi dalam
+Catatan~\ref{rem:augmentation-kG}, kita memandang $\Bbbk$ sebagai
+bimodul-$(\Bbbk[G],\Bbbk[G])$; dengan kata lain, aksi $G$ pada kedua sisi
+$\Bbbk$ bersifat trivial.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pr002
+\begin{proposisi}\label{prop:inv-coinv-Hom}
+	Dengan mengidentifikasi modul-$G$ dan modul kiri-$\Bbbk[G]$, terdapat
+	isomorfisme alami antarfunktor
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q002
+	\begin{gather*}
+		(\cdot)^G \simeq \Hom_G(\Bbbk, \cdot), \quad  (\cdot)_G \simeq \Bbbk \dotimes{\Bbbk[G]} (\cdot).
+	\end{gather*}
+\end{proposisi}
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pf002
+\begin{bukti}
+	Tinjau modul-$G$ $M$. Berdasarkan Proposisi~\ref{prop:inv-coinv-infl},
+	menentukan homomorfisme modul-$G$ $\varphi:\Bbbk\to M$ sama artinya
+	dengan menentukan homomorfisme modul-$\Bbbk$ $\varphi:\Bbbk\to M^G$.
+	Yang terakhir sama artinya dengan menentukan unsur $M^G$, yaitu
+	$\varphi(1)$. Ini memberikan isomorfisme pertama.
+	
+	Untuk isomorfisme kedua, identifikasikan terlebih dahulu $\Bbbk$ dengan
+	$\Bbbk[G]/\mathfrak{I}$, dengan ideal augmentasi
+	$\mathfrak{I}=\bigoplus_{g\neq1_G}\Bbbk(g-1_G)$. Maka
+	$\Bbbk\dotimes{\Bbbk[G]}M\simeq M/\mathfrak{I}M=M_G$, melalui pemetaan
+	$t\otimes x$ ke citra $tx\in M$ dalam $M_G$. Terbukti.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p004
+Dengan demikian, adjungsi dalam Proposisi~\ref{prop:inv-coinv-infl} dapat
+dipahami sebagai kasus khusus Proposisi~\ref{prop:pullback-two-adjoint}, yaitu
+dengan mengambil homomorfisme trivial $\varphi:G\twoheadrightarrow\{1\}$.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.co001
+\begin{korolari}\label{prop:Ind-invariant}
+	Untuk setiap homomorfisme grup $\varphi:H\to G$, terdapat isomorfisme funktor
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q003
+	\[\begin{array}{rlrl}
+		\Hom_H(\Bbbk[G], \cdot)^G & \rightiso (\cdot)^H, & (\cdot)_H & \rightiso (\Bbbk[G] \dotimes{\Bbbk[H]} \cdot)_G , \\
+		\varphi & \mapsto \varphi(1_G), & (x \;\text{citranya}) & \mapsto (1_G \otimes x \;\text{citranya}) .
+	\end{array}\]
+	Kedua ruas merupakan funktor dari $H\dcate{Mod}$ ke
+	$\Bbbk\dcate{Mod}$. Ruas kiri melibatkan funktor
+	$\Hom_H(\Bbbk[G],\cdot):H\dcate{Mod}\to G\dcate{Mod}$ yang diperkenalkan
+	dalam Proposisi~\ref{prop:pullback-two-adjoint}.
+\end{korolari}
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pf003
+\begin{bukti}
+	Berikut ini, misalkan $N$ modul-$H$. Isomorfisme pertama mengikuti dari
+	adjungsi dalam Proposisi~\ref{prop:pullback-two-adjoint}:
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q004
+	\[ \Hom_G(\Bbbk, \Hom_H(\Bbbk[G], N)) \simeq \Hom_H(\varphi^* \Bbbk, N) = \Hom_H(\Bbbk, N). \]
+	
+	Isomorfisme kedua mengikuti dari kendala asosiativitas hasil kali tensor
+	$\Bbbk\dotimes{\Bbbk[G]}(\Bbbk[G]\dotimes{\Bbbk[H]}N)
+	\simeq\Bbbk\dotimes{\Bbbk[H]}N$. Verifikasi pemetaan eksplisitnya
+	diserahkan kepada pembaca. Sebagai alternatif, pernyataan tersebut juga
+	dapat dibuktikan langsung dengan menunjukkan bahwa pemetaan yang
+	ditampilkan terdefinisi dengan baik dan dapat dibalik.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p005
+Pasangan-pasangan adjoin dalam Proposisi~\ref{prop:inv-coinv-infl} juga
+memastikan bahwa $(\cdot)_G$ eksak kanan dan $(\cdot)^G$ eksak kiri; hal ini
+juga mudah diverifikasi secara langsung.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.d002
+\begin{definisi}[Homologi dan kohomologi grup]\label{def:group-coh-ho}
+	\index{homologi grup dan kohomologi grup (homology/cohomology of groups)}
+	\index[sym1]{HnGM@$\Hm_n(G, M)$, $\Hm^n(G, M)$}
+	Misalkan $G$ suatu grup. \emph{Homologi grup} dengan koefisien dalam $\Bbbk$
+	didefinisikan sebagai funktor turunan kiri dari $(\cdot)_G$:
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q005
+	\[ \Hm_n(G, \cdot) := \mathrm{L}_n (\cdot)_G: G\dcate{Mod} \to \Bbbk\dcate{Mod}, \]
+	sedangkan \emph{kohomologi grup} didefinisikan sebagai funktor turunan
+	kanan dari $(\cdot)^G$:
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q006
+	\[ \Hm^n(G, \cdot) := \mathrm{R}^n (\cdot)^G: G\dcate{Mod} \to \Bbbk\dcate{Mod}, \]
+	dengan $n\in\Z$. Keduanya hanya tak nol untuk $n\geq0$. Definisi serupa
+	juga berlaku bagi modul kanan-$G$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p006
+Mengikuti kebiasaan dalam banyak literatur, jika koefisien tidak disebutkan,
+diandaikan $\Bbbk=\Z$. Dalam hal ini, modul-$G$ sama artinya dengan grup
+aditif yang dilengkapi aksi kiri $G$, dengan aksi grup yang mempertahankan
+penjumlahan.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.e001
+\begin{contoh}\label{eg:group-H1}
+	Tinjau ideal augmentasi
+	$\mathfrak{I}=\bigoplus_{g\neq1_G}\Bbbk(g-1_G)$ dari $\Bbbk[G]$. Untuk
+	setiap modul-$G$ $M$, terdapat
+	$\Hm_0(G,M)\simeq M_G\simeq M/\mathfrak{I}M$; khususnya,
+	$\Hm_0(G,\mathfrak{I})\simeq\mathfrak{I}/\mathfrak{I}^2$.
+
+	Sekarang tinjau barisan eksak pendek
+	$0\to\mathfrak{I}\to\Bbbk[G]\to\Bbbk\to0$, yang morfisme terakhirnya
+	adalah homomorfisme augmentasi. Karena $\Bbbk[G]$ merupakan modul
+	projektif, teknik penggeseran dimensi
+	(Proposisi~\ref{prop:dimension-shifting}) menunjukkan
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q007
+	\[ \Hm_n(G, \Bbbk) \simeq \begin{cases}
+		\Hm_{n-1}(G, \mathfrak{I}), & n \geq 2 \\
+		\Ker\left[ \mathfrak{I}/\mathfrak{I}^2 \to \Bbbk[G]/\mathfrak{I} \right] = \mathfrak{I}/\mathfrak{I}^2 , & n = 1.
+	\end{cases}\]
+\end{contoh}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p007
+Berdasarkan isomorfisme antara $\Bbbk[G]\dcate{Mod}$ dan $G\dcate{Mod}$,
+serta Proposisi~\ref{prop:inv-coinv-Hom}, homologi dan kohomologi grup juga
+dapat ditafsirkan melalui funktor $\Tor$ dan $\Ext$ yang diperkenalkan dalam
+\S\ref{sec:Ext-Tor} sebagai berikut:
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q008
+\begin{equation}\label{eqn:grp-Hm-Tor-Ext}\begin{aligned}
+	\Hm_n(G, M) & \simeq \Tor^G_n(\Bbbk, M) := \Tor^{\Bbbk[G]}_n(\Bbbk, M), \\
+	\Hm^n(G, M) & \simeq \Ext_G^n(\Bbbk, M) := \Ext_{\Bbbk[G]}^n(\Bbbk, M).
+\end{aligned}\end{equation}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p008
+Penafsiran ini kadang-kadang mereduksi persoalan terkait menjadi hasil yang
+telah diketahui dalam teori modul. Berikut ini satu contoh mendasar yang
+tidak sepenuhnya trivial dan melibatkan barisan spektral yang menghubungkan
+$\Ext$ dan $\Tor$.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pr003
+\begin{proposisi}[Teorema koefisien universal untuk homologi dan kohomologi grup]\label{prop:group-UCT}
+	\index{teorema koefisien universal}
+	Ambil $\Bbbk=\Z$. Lengkapi modul-$\Z$ $M$ dengan aksi trivial $G$ sehingga
+	menjadi modul-$G$. Untuk setiap $n\in\Z_{\geq0}$, terdapat barisan eksak pendek
+	kanonik
+% segment-id: o014.li2.chapter6.group-homology-cohomology.g002
+	\[\begin{tikzcd}[row sep=tiny, column sep=small]
+		0 \arrow[r] & \Ext^1_{\Z}\left( \Hm_{n-1}(G, \Z), M \right) \arrow[r] & \Hm^n(G, M) \arrow[r] & \Hom_{\Z}\left( \Hm_n(G, \Z), M \right) \arrow[r] & 0, \\
+		0 \arrow[r] & M \dotimes{\Z} \Hm_n(G, \Z) \arrow[r] & \Hm_n(G, M) \arrow[r] & \Tor^{\Z}_1(M, \Hm_{n-1}(G, \Z)) \arrow[r] & 0;
+	\end{tikzcd}\]
+	Untuk $n=0$, digunakan konvensi $\Hm_{-1}(G,\Z)=0$.
+\end{proposisi}
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pf004
+\begin{bukti}
+	Kita boleh mengandaikan $n\geq1$. Pertama, tinjau kasus kohomologi. Setelah
+	pembaca menguasai kompleks kokrantai standar dan kompleks rantai yang akan
+	diperkenalkan kemudian, barisan eksak pendek tersebut mudah diperoleh
+	dengan memasukkan kompleks rantai
+	$C:=\mathsf{L}\dotimes{\Bbbk[G]}\Z$ dan modul-$\Z$ $M$ ke teorema
+	koefisien universal untuk kohomologi yang diperkenalkan dalam latihan
+	\CHref{sec:cplx}. Perinciannya diserahkan kepada pembaca yang berminat.
+	
+	Di sini kita sajikan argumen lain. Dalam
+	Contoh~\ref{eg:change-of-rings-SS-bis}, ambil homomorfisme gelanggang
+	$R:=\Z[G]\to S:=\Z$ sebagai augmentasi; selain itu, ambil modul kiri-$R$
+	$Y=\Z$ (yaitu modul-$G$ trivial) dan modul kiri-$S$ $X=M$. Barisan eksak
+	pendek dalam contoh tersebut lalu menjadi bentuk yang dicari.
+	
+	Untuk kasus homologi, dengan cara yang sama kita dapat memasukkan kompleks
+	rantai standar ke teorema Künneth untuk homologi
+	\ref{prop:Kunneth-homology}, dengan perincian diserahkan kepada pembaca,
+	atau memahaminya melalui Contoh~\ref{eg:change-of-rings-SS-bis}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p009
+Mengikuti konstruksi yang telah diperkenalkan dalam
+\S\ref{sec:derived-primer}, kita juga dapat mengambil funktor turunan terkait
+untuk kompleks rantai yang terbatas di bawah (atau kompleks kokrantai yang
+terbatas di bawah) $M$. Funktor tersebut disebut hiperhomologi grup (atau
+hiperkohomologi grup). Lebih lanjut, dalam kategori turunan dapat ditinjau
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q009
+\[ \Bbbk \otimesL[{\Bbbk[G]}] M, \quad \RHom_G(\Bbbk, M) := \RHom_{\Bbbk[G]}(\Bbbk, M). \]
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p010
+Berdasarkan \eqref{eqn:grp-Hm-Tor-Ext} dan fakta bahwa funktor $\Ext$ (atau
+$\Tor$) dapat dihitung dengan mengambil resolusi projektif pada variabel
+pertama, resolusi bebas $\mathsf{L}\to\Bbbk$ dari
+Proposisi~\ref{prop:trivial-mod-resolution} langsung memberikan kompleks
+(atau kompleks rantai) konkret untuk menghitung kohomologi (atau homologi)
+grup. Definisi~\ref{def:resolution-trivial-module} menyediakan dua cara untuk
+menjadikan $\mathsf{L}$ kompleks modul kiri-$G$ atau modul kanan-$G$: gunakan
+$\partial_n:\mathsf{L}_n\to\mathsf{L}_{n-1}$ atau gunakan
+	$\partial'_n:\mathsf{L}_n\to\mathsf{L}_{n-1}$. Buku ini akan memilih salah
+	satunya sesuai konteks agar diperoleh bentuk kompleks yang standar,
+tetapi pilihan ini tidak memengaruhi kohomologi kompleks tersebut.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pr004
+\begin{proposisi}[Menghitung kohomologi grup dengan kompleks kokrantai standar]\label{prop:groupcoh-cochain}
+	\index{kompleks kokrantai standar (standard complex)}
+	\index[sym1]{CGM@$C(G, M)$}
+	Untuk setiap modul-$G$ $M$, definisikan \emph{kompleks kokrantai standar}
+	$C(G,M)=(C^n(G,M))_n$, yang terdiri atas modul-$\Bbbk$, sebagai berikut:
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q010
+	\begin{gather*}
+		C^n(G, M) := \left\{ \text{pemetaan}\; f: G^n \to M \right\}, \quad n \in \Z_{\geq 0},
+	\end{gather*}
+	Setiap suku menjadi modul-$\Bbbk$ melalui penjumlahan dan perkalian skalar
+	titik demi titik; suku-suku berderajat negatif didefinisikan sebagai $0$;
+	dan $d^n:C^n(G,M)\to C^{n+1}(G,M)$ didefinisikan oleh
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q011
+	\begin{multline*}
+		(d^n f)(g_1, \ldots, g_{n+1}) = g_1 f(g_2, \ldots, g_{n+1}) \\
+		+ \sum_{k=1}^n (-1)^k f(\ldots, g_k g_{k+1}, \ldots) + (-1)^{n+1} f(g_1, \ldots, g_n).
+	\end{multline*}
+
+	Untuk setiap $n$, terdapat isomorfisme kanonik
+	$\Hm^n(C(G,M))\simeq\Hm^n(G,M)$. Lebih tepatnya, $C(G,M)$ mewakili
+	$\RHom_G(\Bbbk,M)$ dalam kategori turunan.
+\end{proposisi}
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pf005
+\begin{bukti}
+	Tinjau kompleks $\mathsf{L}=(\mathsf{L}_n,\partial_n)_n$. Berdasarkan
+	resolusi bebas modul kiri-$G$ $\mathsf{L}\to\Bbbk$,
+	$\RHom_G(\Bbbk,M)$ diwakili oleh kompleks $\Hom$ berikut
+	(Definisi~\ref{def:Hom-cplx}):
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q012
+	\begin{equation*}
+		\Hom^\bullet(\mathsf{L}, M) = \left[ \cdots \to \Hom_{\Bbbk[G]}(\mathsf{L}_n, M) \xrightarrow{(-1)^{n+1} \partial_{n+1}^*} \Hom_{\Bbbk[G]}(\mathsf{L}_{n+1}, M) \to \cdots \right] ,
+	\end{equation*}
+	yang derajatnya adalah $\ldots,-n,-n-1,\ldots$; tanda $(-1)^{n+1}$
+	berasal dari definisi umum kompleks $\Hom$.
+	
+	Untuk setiap $n\geq0$, gunakan basis
+	$(g_1|\cdots|g_n)$ bagi modul kiri-$\Bbbk[G]$ bebas $\mathsf{L}_n$
+	seperti dalam \eqref{eqn:L-basis}. Dengan demikian,
+% segment-id: o014.li2.chapter6.group-homology-cohomology.g003
+	\[\begin{tikzcd}[row sep=tiny, column sep=tiny]
+		\Hom_G(\mathsf{L}_n, M) \arrow[r, "\sim"] & C^n(G, M) \\
+		\phi \arrow[mapsto, r] & {\left[ f: (g_1, \ldots, g_n) \mapsto \phi\left( (g_1 | \cdots | g_n) \right)\right]} ,
+	\end{tikzcd}\]
+	yang jelas merupakan isomorfisme modul-$\Bbbk$. Langkah kuncinya ialah
+	mengidentifikasi $(-1)^{n+1}\partial_{n+1}^*$ pada $C^n(G,M)$. Tinjau
+	$(-1)^{n+1}\partial_{n+1}^*\phi=(-1)^{n+1}\phi\circ\partial_{n+1}$.
+	Berdasarkan \eqref{eqn:L-basis-partial}, pemetaan ini mengirim
+	$(g_1|\cdots|g_{n+1})\in\mathsf{L}_{n+1}$ ke
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q013
+	\begin{multline*}
+		\phi\left( g_1 (g_2 | \cdots | g_{n+1})\right) + \sum_{k=1}^n (-1)^k \phi\left((\cdots | g_k g_{k+1}| \cdots)\right) + \cdots + (-1)^{n+1} \phi\left((g_1 | \cdots |g_n)\right) \\
+		= g_1 f(g_2, \ldots, g_{n+1}) + \sum_{k=1}^n (-1)^k f(\ldots, g_k g_{k+1}, \ldots) + (-1)^{n+1} f(g_1, \ldots, g_n).
+	\end{multline*}
+	Inilah tepatnya $(d^nf)(g_1,\ldots,g_{n+1})$ dalam
+	pernyataan.\footnote{Koreksi penerjemah: sumber menuliskan argumen hingga
+	$g_n$, tetapi $d^nf\in C^{n+1}(G,M)$ dan perhitungan di atas memakai
+	$(g_1,\ldots,g_{n+1})$.}
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p011
+Kohomologi modul kanan-$G$ $M$ mempunyai deskripsi serupa, yang tidak kita
+ulangi. Berikutnya, kita nyatakan hasil yang bersesuaian bagi homologi grup
+dari modul kiri-$G$; buktinya langsung.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pr005
+\begin{proposisi}[Menghitung homologi grup dengan kompleks rantai standar]\label{prop:grouph-chain}
+	Untuk setiap modul-$G$ $M$ dan $n\in\Z_{\geq0}$, terdapat isomorfisme
+	kanonik
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q014
+	\[ \Hm_n(G, M) \simeq \Hm_n\left( \mathsf{L} \dotimes{\Bbbk[G]} M\right), \quad n \in \Z_{\geq 0}, \]
+	dengan $(\mathsf{L}_n,\partial'_n)_n$ digunakan sebagai struktur kompleks
+	rantai modul kanan-$G$. Ambil basis
+	$(g_1|\cdots|g_n)^\dagger$ bagi modul kanan-$\Bbbk[G]$ bebas
+	$\mathsf{L}_n$ seperti dalam \eqref{eqn:L-basis-right}. Maka
+	$\mathsf{L}_n\dotimes{\Bbbk[G]}M$ diidentifikasi dengan jumlah langsung
+	\footnote{Koreksi penerjemah: sumber menuliskan $\mathsf{L}^n$, sedangkan
+	kompleks rantai dan basis pada kalimat yang sama menggunakan $\mathsf{L}_n$.}
+	$M^{\oplus G^n}$, dan unsur pada suku jumlah langsung yang bersesuaian
+	dengan $(g_1,\ldots,g_n)\in G^n$ dapat dituliskan secara tunggal sebagai
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q015
+	\[ (g_1 | \cdots | g_n)^\dagger \otimes x, \quad x \in M, \]
+	sedangkan, berdasarkan \eqref{eqn:L-basis-partial-right},
+	$\partial'_n\otimes\identity_M:\mathsf{L}_n\dotimes{\Bbbk[G]}M\to
+	\mathsf{L}_{n-1}\dotimes{\Bbbk[G]}M$ dinyatakan oleh
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q016
+	\begin{multline*}
+		(g_1 | \cdots | g_n)^\dagger \otimes x \mapsto \\
+		(g_2 | \cdots | g_n)^\dagger \otimes x + \sum_{k=1}^{n-1} (-1)^k (\cdots | g_k g_{k+1} | \cdots)^\dagger \otimes x \\
+		+ (-1)^n (g_1 | \cdots | g_{n-1})^\dagger \otimes g_n x.
+	\end{multline*}
+
+	Untuk membandingkannya dengan Proposisi~\ref{prop:groupcoh-cochain}, kita
+	menuliskan kompleks rantai di atas sebagai $(C_n(G,M))_n$ dan menyebutnya
+	\emph{kompleks rantai standar}. Dalam kategori turunan, kompleks ini
+	memberikan $\Bbbk\otimesL[{\Bbbk[G]}]M$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p012
+Contoh~\ref{eg:group-H-comonad} nanti akan menjelaskan hubungan antara
+kompleks rantai standar dan konstruksi bar.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p013
+Tentu terdapat pula deskripsi yang bersesuaian bagi homologi modul kanan-$G$
+$M$. Tinjau $M\dotimes{\Bbbk[G]}\mathsf{L}$. Terdapat
+$M\dotimes{\Bbbk[G]}\mathsf{L}_n\simeq M^{\oplus G^n}$, dan unsur pada suku
+jumlah langsung yang bersesuaian dengan $(g_1,\ldots,g_n)$ dapat dituliskan
+secara tunggal sebagai
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q017
+\[ x \otimes (g_1 | \cdots | g_n), \quad x \in M, \]
+sedangkan pemetaan $\identity_M\otimes\partial'_n$ adalah
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q018
+\begin{multline*}
+	x \otimes (g_1 | \cdots | g_n) \mapsto \\
+	x g_1 (g_2 | \cdots | g_n) + \sum_{k=1}^{n-1} (-1)^k x \otimes (\cdots | g_k g_{k+1} | \cdots) \\
+	+ (-1)^n x \otimes (g_1 | \cdots | g_{n-1}).
+\end{multline*}
+Kompleks rantai standar yang bersesuaian tetap dituliskan $(C_n(G,M))_n$.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p014
+Pembaca yang mengenal isi \S\ref{sec:HH} akan mudah mengenali
+kompleks-kompleks ini sebagai kasus khusus kompleks kokrantai dan kompleks
+rantai Hochschild. Berikut pernyataan terperincinya.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pr006
+\begin{proposisi}[Hubungan dengan teori Hochschild]
+	Misalkan $R:=\Bbbk[G]$. Untuk modul kiri-$G$ (atau modul kanan-$G$) $M$,
+	tuliskan $M_+$ (atau ${}_+M$) untuk bimodul-$(R,R)$ yang ditentukan oleh
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q019
+	\[ g_1 x g_2 := g_1 x \; (\text{atau}\; g_1 x g_2 = x g_2 ), \quad g_1 , g_2 \in G, \; x \in M. \]
+	Terdapat isomorfisme kanonik yang kompatibel dengan barisan eksak panjang:
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q020
+	\[ \Hm^n(G, M) \simeq \HHm^n(R, M_+), \quad (\text{atau}\; \Hm_n(G, M) \simeq \HHm_n(R, {}_+ M)), \]
+	dan bahkan kompleks $(C^n(G,M))_n$ (atau kompleks rantai
+	$(C_n(G,M))_n$) isomorfik dengan $(C^n(R,M_+))_n$ (atau
+	$(C_n(R,{}_+M))_n$) dari \eqref{eqn:HH-cplx}.
+\end{proposisi}
+% segment-id: o014.li2.chapter6.group-homology-cohomology.pf006
+\begin{bukti}
+	Perhatikan bahwa $R^{\otimes n}$ merupakan modul-$\Bbbk$ bebas dengan
+	basis $G^n$: unsur $(g_1,\ldots,g_n)$ bersesuaian dengan
+	$g_1\otimes\cdots\otimes g_n\in R^{\otimes n}$. Tinggal membandingkan
+	kompleks kokrantai standar dengan kompleks dari \eqref{eqn:HH-cplx}.
+	Secara konkret, dalam kasus kohomologi, kita memetakan $f:G^n\to M$ ke
+	pemetaan $\Bbbk$-linear $n$-lipat $R^n\to M$ yang bersesuaian. Dalam
+	kasus homologi, kita memetakan
+	$x\otimes(g_1|\cdots|g_n)^\dagger$ ke
+	$(x|g_1|\cdots|g_n)\in C_n(R,{}_+M)$. Perbandingan selanjutnya diserahkan
+	kepada pembaca.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.p015
+Kembali ke pokok bahasan, selanjutnya modul-$G$ yang dibahas selalu diandaikan
+sebagai modul kiri.
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.e002
+\begin{contoh}\label{eg:group-H1-further}
+	Berdasarkan pembahasan di atas, tinjau
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q021
+	\[ \Hm_1(G, \Bbbk) \simeq \frac{\Ker\left[ C_1(G, \Bbbk) \to C_0(G, \Bbbk) \right]}{\Image\left[ C_2(G, \Bbbk) \to C_1(G, \Bbbk) \right]}. \]
+	
+	Setiap unsur $C_1(G,\Bbbk)$ dapat dituliskan secara tunggal sebagai
+	kombinasi $\Bbbk$-linear dari unsur-unsur
+	$[g]:=(g)^\dagger\otimes1$ ($g\in G$). Perhatikan bahwa
+	$C_0(G,\Bbbk)\simeq\Bbbk$ dan
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q022
+	\[ \left( \partial'_1 \otimes \identity_{\Bbbk}\right)[g] = 1 - 1 = 0, \quad \left( \partial'_2 \otimes \identity_{\Bbbk}\right)((g_1 | g_2)^\dagger \otimes 1) = [g_2] - [g_1 g_2] + [g_1]. \]
+	Karena itu, $\Hm_1(G,\Bbbk)$ isomorfik dengan modul-$\Bbbk$ kuosien
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q023
+	\[ Q := \bigoplus_{g \in G} \Bbbk \cdot [g] \bigg/ \lrangle{ [g_1 g_2] - [g_1] + [g_2] : g_1, g_2 \in G }; \]
+	Pemetaan $g\mapsto[g]$ menginduksi homomorfisme grup $a:G\to(Q,+)$.
+	Pemetaan ini mempunyai sifat universal berikut: untuk setiap modul-$\Bbbk$
+	$N$ dan homomorfisme grup $b:G\to(N,+)$, terdapat tepat satu homomorfisme
+	modul-$\Bbbk$ $\varphi:Q\to N$ sedemikian sehingga $b=\varphi a$.
+	Pembaca dipersilakan segera memverifikasi sifat universal ini dan
+	menurunkan darinya isomorfisme kanonik modul-$\Bbbk$
+% segment-id: o014.li2.chapter6.group-homology-cohomology.g004
+	\[\begin{tikzcd}[row sep=tiny]
+		G_{\mathrm{ab}} \dotimes{\Z} \Bbbk \arrow[r, "\sim"] & \Hm_1(G, \Bbbk) \\
+		(g \bmod G_{\mathrm{der}}) \otimes 1 \arrow[mapsto, r] & {[g] \;\text{kelasnya}},
+	\end{tikzcd}\]
+	dengan $G_{\mathrm{ab}}:=G/G_{\mathrm{der}}$ abelianisasi $G$, dan
+	$G_{\mathrm{der}}$ subgrup turunan $G$, seperti dalam
+	\cite[Definisi 4.7.2]{Li1}. Pembaca yang mengetahui latar topologis
+	homologi grup akan mengenali kaitannya dengan teorema Hurewicz dalam teori
+	homologi.
+	
+	Secara alami, kita juga ingin memahami komposisi isomorfisme
+	$\Hm_1(G,\Bbbk)\rightiso\mathfrak{I}/\mathfrak{I}^2$ dari
+	Contoh~\ref{eg:group-H1} dengan isomorfisme di atas. Kita menyatakan bahwa
+	komposisi tersebut diberikan secara konkret oleh
+% segment-id: o014.li2.chapter6.group-homology-cohomology.g005
+	\[\begin{tikzcd}[row sep=tiny]
+		G_{\mathrm{ab}} \otimes \Bbbk \arrow[r, "\sim"] & \mathfrak{I}/\mathfrak{I}^2 \\
+		(g \bmod G_{\mathrm{der}}) \otimes 1 \arrow[mapsto, r] & 1_G - g \;\bmod \mathfrak{I}^2.
+	\end{tikzcd}\]
+	
+	Mengapa demikian? Isomorfisme dalam Contoh~\ref{eg:group-H1} berasal dari
+	$\Hm_1(G,\Bbbk)\to\Hm_0(G,\mathfrak{I})\simeq
+	\mathfrak{I}/\mathfrak{I}^2$ yang diinduksi oleh barisan eksak pendek
+	$0\to\mathfrak{I}\to\Bbbk[G]\to\Bbbk\to0$. Untuk itu, tuliskan diagram
+	komutatif dengan baris-baris eksak berikut:
+% segment-id: o014.li2.chapter6.group-homology-cohomology.g006
+	\[\begin{tikzcd}
+		& & {(g)^\dagger \otimes 1_G} \arrow[phantom, d, "\in" description, sloped] \arrow[mapsto, r] & {[g] = (g)^\dagger \otimes 1} \arrow[phantom, d, "\in" description, sloped] & \\
+		0 \arrow[r] & C_1(G, \mathfrak{I}) \arrow[r] \arrow[d] & C_1(G, \Bbbk[G]) \arrow[r] \arrow[d, "{\partial'_1 \otimes \identity_{\Bbbk[G]}}"] & C_1(G, \Bbbk) \arrow[r] \arrow[d, "{\partial'_0 \otimes \identity_{\Bbbk[G]} = 0}"] & 0 \\
+		0 \arrow[r] & C_0(G, \mathfrak{I}) \arrow[r] & C_0(G, \Bbbk[G]) \arrow[r] & C_0(G, \Bbbk) \arrow[r] & 0 ,
+	\end{tikzcd}\]
+	Pemetaan $\partial'_1\otimes\identity_{\Bbbk[G]}$ mengirim
+	$(g)^\dagger\otimes1_{\Bbbk[G]}$ ke
+	$1_G-g\in C_0(G,\mathfrak{I})=\mathfrak{I}$, dan dengan demikian
+	menentukan unsur $\mathfrak{I}/\mathfrak{I}^2\simeq
+	\Hm_0(G,\mathfrak{I})$.\footnote{Koreksi penerjemah: sumber memakai
+	$C^0$ dan $\Hm^0$, tetapi diagram dan morfisme penghubung yang sedang
+	dihitung adalah homologis, sehingga indeks yang benar ialah $C_0$ dan
+	$\Hm_0$.} Inilah tepatnya konstruksi dalam lema ular.
+\end{contoh}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.r001
+\begin{catatan}\label{rem:Gmod-k}
+	Bentuk kompleks kokrantai standar (atau kompleks rantai standar)
+	menunjukkan bahwa, sebagai grup aditif, $\Hm^n(G,M)$ (atau
+	$\Hm_n(G,M)$) sepenuhnya ditentukan oleh struktur aditif $M$; perkalian
+	dari $\Bbbk$ hanya memberinya struktur modul-$\Bbbk$. Hal ini menunjukkan
+	bahwa kasus $\Bbbk=\Z$ telah menangkap esensi kohomologi (atau homologi)
+	grup, meskipun mengizinkan koefisien umum tidak menimbulkan kesulitan
+	tambahan.
+\end{catatan}
+
+% segment-id: o014.li2.chapter6.group-homology-cohomology.r002
+\begin{catatan}[Versi ternormalisasi]\label{rem:nor-cochain}
+	\index{kompleks kokrantai standar!ternormalisasi (normalized)}
+	\index[sym1]{CGMbar@$\overline{C}(G, M)$}
+	Untuk menghitung $\Hm^n(G,M)$ dan $\Hm_n(G,M)$, kita juga dapat memakai
+	resolusi bebas ternormalisasi
+	$\overline{\mathsf{L}}\to\Bbbk$ dari
+	Proposisi~\ref{prop:trivial-mod-nor-resolution}. Kompleks kokrantai dan
+	kompleks rantai yang bersesuaian masing-masing dituliskan
+	$(\overline{C}^n(G,M))_n$ dan $(\overline{C}_n(G,M))_n$, serta disebut
+	kompleks kokrantai standar ternormalisasi dan kompleks rantai standar
+	ternormalisasi. Keduanya berturut-turut merupakan subkompleks dan kompleks
+	kuosien dari versi semula. Sebagai contoh, untuk kasus kohomologi,
+	deskripsi $\mathsf{L}_n$ dalam \eqref{eqn:nor-cochain} memberikan
+% segment-id: o014.li2.chapter6.group-homology-cohomology.q024
+	\[ \overline{C}^n(G, M) = \left\{\begin{array}{r|l}
+		f \in C^n(G, M) & \exists 1 \leq k \leq n, \; g_k = 1_G \\
+		& \implies f(g_1, \ldots, g_n) = 0
+	\end{array}\right\}. \]
+\end{catatan}

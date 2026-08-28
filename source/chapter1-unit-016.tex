@@ -22,7 +22,7 @@ Satu-satunya petunjuk ialah bahwa ketika $d = Kc$, objek $Gd$ seharusnya
 diambil sebagai $Fc$ hingga isomorfisme. Hal ini mengilhami kita untuk
 menghampiri $Gd$ dengan $\varinjlim$ (atau $\varprojlim$) dari semua $Fc$,
 dengan limit diambil atas semua $c \in \Obj(\mathcal{C})$ dan morfisme
-$Kc \to d$ (atau $d \to Kc$). Kedua arah limit ini akan memiliki sifat
+$Kc \to d$ (atau $d \to Kc$). Kedua arah limit ini akan mempunyai sifat
 universal yang saling dual. Berikut ini kita uraikan konstruksi tersebut.
 
 % segment-id: o014.li2.chapter1.kan-extensions-as-limits.p003
@@ -30,7 +30,7 @@ Diberikan $d \in \Obj(\mathcal{D})$, definisikan kategori $(K/d)$ dan $(d/K)$
 seperti dalam Definisi \ref{def:comma-category}, beserta funktor proyeksi
 % segment-id: o014.li2.chapter1.kan-extensions-as-limits.q001
 \[ \Pi_{/d}: (K/d) \to \mathcal{C}, \quad \Pi_{d/}: (d/K) \to \mathcal{C}. \]
-Selanjutnya perhatian kita tertuju pada funktor komposit
+Selanjutnya kita meninjau funktor komposit
 $F \Pi_{/d}: (K/d) \to \mathcal{E}$ dan
 $F \Pi_{d/}: (d/K) \to \mathcal{E}$, yang masing-masing memetakan objek
 $(c, Kc \to d)$ dan $(c, d \to Kc)$ ke $Fc$. Dengan mengasumsikan bahwa
@@ -159,13 +159,13 @@ akan didasarkan pada funktorialitas ini.
 	\end{equation}
 	Karena $\eta_c$ merupakan morfisme kanonik dari
 	$Fc = F\Pi_{/Kc}(c, Kc \xrightarrow{\identity} Kc)$ ke
-	$(\Lan_K F)(Kc)$, persamaan \eqref{eqn:Kan-limit-aux-2} tidak lain adalah
+	$(\Lan_K F)(Kc)$, persamaan \eqref{eqn:Kan-limit-aux-2} tepat merupakan
 	kasus khusus \eqref{eqn:Kan-limit-aux-1}.
 
 	% segment-id: o014.li2.chapter1.kan-extensions-as-limits.p009
 	Terakhir, kita tunjukkan bahwa transformasi alami
 	$\chi: \Lan_K F \to L$ yang memenuhi \eqref{eqn:Kan-limit-aux-2} bersifat
-	unik. Tetapkan $d$ dan tinjau sembarang objek $(c, Kc \to d)$ dalam $(K/d)$
+	unik. Untuk $d$ tetap, tinjau sembarang objek $(c, Kc \to d)$ dalam $(K/d)$
 	beserta diagram terkait
 	% segment-id: o014.li2.chapter1.kan-extensions-as-limits.g006
 	\[\begin{tikzcd}
@@ -187,7 +187,7 @@ akan didasarkan pada funktorialitas ini.
 	Kan kiri.
 
 	% segment-id: o014.li2.chapter1.kan-extensions-as-limits.p011
-	Sekarang tinjau (iii). Tetapkan $c \in \Obj(\mathcal{C})$. Karena $K$ penuh
+	Sekarang tinjau (iii). Misalkan $c \in \Obj(\mathcal{C})$. Karena $K$ penuh
 	dan setia, mudah dilihat bahwa $(K/Kc)$ mempunyai objek terminal
 	$(c, Kc \xrightarrow{\identity} Kc)$. Morfisme
 	$\eta_c: Fc \to \varinjlim F\Pi_{/Kc}$ berasal dari objek terminal ini dan
@@ -210,7 +210,7 @@ akan didasarkan pada funktorialitas ini.
 	\index{praberkas (presheaf)}
 	Ambil $\mathcal{E} := \cate{Set}$, yang merupakan kategori lengkap dan
 	kolengkap. Tinjau pemetaan kontinu $f: X \to Y$ di antara ruang-ruang
-	topologis. Tetapkan $\mathcal{C} := \cate{Open}_Y$ sebagai kategori yang
+	topologis. Definisikan $\mathcal{C} := \cate{Open}_Y$ sebagai kategori yang
 	objeknya adalah subhimpunan terbuka di $Y$ dan morfismenya adalah pemetaan
 	inklusi di antara subhimpunan terbuka; secara serupa, tetapkan
 	$\mathcal{D} := \cate{Open}_X$. Sekarang definisikan funktor
@@ -219,7 +219,7 @@ akan didasarkan pada funktorialitas ini.
 	$K: \cate{Open}_Y^{\opp} \to \cate{Open}_X^{\opp}$. Pembaca yang mengenal
 	teori berkas akan segera melihat bahwa objek dalam
 	$\cate{Open}_Y^\wedge := \cate{Set}^{\cate{Open}_Y^{\opp}}$, menurut
-	definisi, tidak lain adalah praberkas pada $Y$, sedangkan
+	definisi, tepat merupakan praberkas pada $Y$, sedangkan
 	$K^*: \cate{Open}_X^\wedge \to \cate{Open}_Y^\wedge$ merupakan funktor
 	citra langsung di antara kategori praberkas, yang memetakan praberkas
 	$\mathcal{F}$ pada $X$ ke praberkas pada $Y$ yang diberikan oleh

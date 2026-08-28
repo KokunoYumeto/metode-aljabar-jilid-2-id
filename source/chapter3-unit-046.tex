@@ -16,7 +16,7 @@ yang melibatkan kompleks tak terbatas beserta kategori turunannya membutuhkan
 kelas resolusi yang lebih luas. Teori resolusi K-injektif dan K-projektif
 bermula dari \cite{Spa88}. Bagian ini bertujuan memberikan sejumlah
 persiapan terkait; argumennya mengikuti \cite{stacks}, dan pembaca juga dapat
-merujuk \cite[Chapter 14]{KS06} atau \cite{BN93}.
+merujuk \cite[Bab 14]{KS06} atau \cite{BN93}.
 
 % segment-id: o014.li2.chapter3.k-injectives.de001
 \begin{definisi}[N.\ Spaltenstein]\label{def:K-resolutions}
@@ -135,7 +135,7 @@ pembahasan setelah Teorema
 
 % segment-id: o014.li2.chapter3.k-injectives.th001
 \begin{teorema}\label{prop:K-resolution-homotopy}
-	Tetapkan kuasi-isomorfisme $\alpha:X\to Y$ di
+	Misalkan $\alpha:X\to Y$ suatu kuasi-isomorfisme di
 	$\cate{C}(\mathcal{A})$.
 % segment-id: o014.li2.chapter3.k-injectives.l003
 	\begin{itemize}
@@ -410,7 +410,7 @@ morfisme-morfisme kanonik tersebut menginduksi isomorfisme
 Sekarang tinjau $I_k$. Andaikan $\mathcal{A}$ mempunyai produk terhitung;
 maka $\cate{C}(\mathcal{A})$ juga mempunyai produk terhitung yang dibangun
 suku demi suku. Untuk $A\in\Obj(\cate{C}(\mathcal{A}))$, tinjau diagram
-dalam Lema \ref{prop:K-injective-truncated}. Kita mempunyai
+dalam Lema \ref{prop:K-injective-truncated}. Dengan demikian,
 % segment-id: o014.li2.chapter3.k-injectives.q003
 \[
 I:=\varprojlim_k I_k \quad \text{ada}.
@@ -439,8 +439,8 @@ Diperoleh diagram-diagram komutatif
 	\arrow[ru, "{\beta(\Delta_{\tau A})[-1]}"']
 \end{tikzcd}\end{equation}
 Kedua panah vertikal didefinisikan sebagai penyisipan ke koordinat pertama
-dari kerucut pemetaan; pembaca dapat memeriksanya langsung. Penjelasan lain
-yang lebih berat daripada yang diperlukan menggunakan sifat universal kernel
+dari kerucut pemetaan; pembaca dapat memeriksanya langsung. Penjelasan lain,
+meskipun lebih rumit daripada yang diperlukan, dapat diberikan menggunakan sifat universal kernel
 homotopi (Proposisi \ref{prop:homotopy-kernel-cokernel}).
 
 % segment-id: o014.li2.chapter3.k-injectives.p010
@@ -552,9 +552,9 @@ resolusi K-injektif dari $A$. Langkah terakhir ini memerlukan syarat tambahan.
 
 % segment-id: o014.li2.chapter3.k-injectives.pf007
 \begin{bukti}
-	Lema \ref{prop:K-injective-equiv} mereduksi masalah menjadi pembuktian
-	bahwa $A\to\Cone(\Delta_{\tau A})[-1]$ merupakan kuasi-isomorfisme untuk
-	setiap $A\in\Obj(\cate{C}(\mathcal{A}))$. Tetapkan $n\in\Z$. Karena
+	Lema \ref{prop:K-injective-equiv} menunjukkan bahwa cukup dibuktikan bahwa
+	$A\to\Cone(\Delta_{\tau A})[-1]$ merupakan kuasi-isomorfisme untuk
+	setiap $A\in\Obj(\cate{C}(\mathcal{A}))$. Misalkan $n\in\Z$. Karena
 	produk terhitung eksak, Lema \ref{prop:truncation-ses} memberikan
 	isomorfisme kanonik
 % segment-id: o014.li2.chapter3.k-injectives.q006
@@ -563,7 +563,7 @@ resolusi K-injektif dari $A$. Langkah terakhir ini memerlukan syarat tambahan.
 	\simeq \prod_k \Hm^n\left( \tau^{\geq -k} A \right)
 	\simeq \prod_{k \geq -n} \Hm^n(A).
 	\]
-	Jika objek-objek $\mathcal{A}$ dapat dibahas melalui elemen, maka setelah
+	Jika penalaran dengan elemen dapat digunakan dalam $\mathcal{A}$, maka setelah
 	mengambil $\Hm^n$, morfisme $\Delta_{\tau A}$ berbentuk
 % segment-id: o014.li2.chapter3.k-injectives.g010
 	\[\begin{tikzcd}[row sep=tiny]
@@ -575,7 +575,7 @@ resolusi K-injektif dari $A$. Langkah terakhir ini memerlukan syarat tambahan.
 	Jelas bahwa $\nabla^n$ merupakan epimorfisme (sebuah penampang dapat
 	dituliskan secara eksplisit), sedangkan
 	$\Ker(\nabla^n)=\left\{(a)_{k\geq-n}:a\in\Hm^n(A)\right\}$, yakni bagian
-	diagonal. Pengamatan ini mudah dipindahkan ke kategori $\mathcal{A}$
+	diagonal. Argumen ini mudah diterjemahkan ke kategori $\mathcal{A}$
 	umum. Sekarang tinjau barisan eksak panjang kerucut pemetaan
 % segment-id: o014.li2.chapter3.k-injectives.q007
 	\[
@@ -643,7 +643,7 @@ Dengan membalikkan panah melalui Proposisi
 \end{contoh}
 
 % segment-id: o014.li2.chapter3.k-injectives.p012
-Sesungguhnya, setiap kompleks di atas kategori Grothendieck mempunyai resolusi
+Sesungguhnya, setiap kompleks pada kategori Grothendieck mempunyai resolusi
 K-injektif, dan resolusi K-injektif tersebut dapat dibuat funktorial seperti
 pada Teorema \ref{prop:Grothendieck-injective}. Inilah teorema utama
 \cite{Serp03}; lihat juga \cite[Tag 079P]{stacks}. Hasil itu mencakup

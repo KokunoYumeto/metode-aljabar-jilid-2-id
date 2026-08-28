@@ -1,4 +1,4 @@
-% Draf terjemahan Bahasa Indonesia dari chapter2.tex baris 1245--1563.
+% Terjemahan Bahasa Indonesia dari chapter2.tex baris 1245--1563.
 % Sumber: Methods of Algebra, Volume 2, commit
 % 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
 % stable-unit-id: o014.aljabr2.chapter2.exact-functors-injective-projective-objects
@@ -39,7 +39,8 @@ $\Coker F(f)\to F\Coker(f)$; keduanya membuat diagram berikut komutatif.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p002
 Jika $(X^\bullet,d^\bullet)$ merupakan kompleks dalam kategori abelian, maka
-$(FX^\bullet,Fd^\bullet)$ juga demikian; persoalannya adalah keeksakan.
+$(FX^\bullet,Fd^\bullet)$ juga demikian; yang perlu diperiksa ialah
+keeksakannya.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pr001
 \begin{proposisi}\label{prop:left-right-exact-functor}
@@ -70,10 +71,10 @@ Secara dual, pernyataan berikut juga ekuivalen:
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pf001
 \begin{bukti}
-Berkat dualitas, cukup membahas (L1)--(L3).
+Dengan dualitas, cukup membahas (L1)--(L3).
 
 (L1) $\implies$ (L2). Barisan eksak berbentuk
-$0\to\bullet\to\bullet\to\bullet$ tepat bersesuaian dengan kernel suatu morfisme;
+$0\to\bullet\to\bullet\to\bullet$ berpadanan tepat dengan diagram kernel suatu morfisme;
 lihat penjelasan di bagian akhir \S\ref{sec:cohomology}.
 
 (L2) $\implies$ (L3). Semua $\varprojlim$ berhingga dapat dibangun dari produk
@@ -82,7 +83,7 @@ mempertahankan biproduk; karena $F$ mempertahankan $\Ker$, ia mempertahankan
 semua penyama (Catatan~\ref{rem:equalizer-Ker}). Jadi, $F$ mempertahankan semua
 $\varprojlim$ berhingga.
 
-(L3) $\implies$ (L1) bersifat langsung.
+(L3) $\implies$ (L1) langsung.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p003
@@ -109,14 +110,14 @@ pernyataan berikut ekuivalen:
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pf002
 \begin{bukti}
-(E1) $\implies$ (E2). Diberikan barisan eksak $(X^\bullet,d^\bullet)$ di
-$\mathcal{A}$, uraikan ia menjadi barisan eksak pendek
+(E1) $\implies$ (E2). Ambil barisan eksak $(X^\bullet,d^\bullet)$ di
+$\mathcal{A}$ dan uraikan kompleks tersebut menjadi barisan eksak pendek
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.g002
 \[\begin{tikzcd}
 	0 \arrow[r] & \Ker(d^n) \arrow[r, "{\iota^n}"] & X^n \arrow[r, "{\mathbf{d}^n}"] & \Ker(d^{n+1}) \arrow[r] & 0
 \end{tikzcd}\]
 dengan morfisme $\mathbf{d}^n$ dicirikan oleh
-$d^n=\iota^{n+1}\mathbf{d}^n$; indeks atas $n$ boleh dipilih sembarang, tetapi
+$d^n=\iota^{n+1}\mathbf{d}^n$; indeks $n$ boleh dipilih sebarang, tetapi
 $X^n$ tidak boleh merupakan suku ujung kanan dari barisan eksak.
 
 Berdasarkan asumsi, barisan
@@ -162,7 +163,8 @@ Proposisi~\ref{prop:exact-functor}.
 \end{definisi}
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p005
-Sebagai contoh, ekuivalensi antara kategori abelian tentu merupakan funktor eksak.
+Sebagai contoh, setiap ekuivalensi antara kategori abelian tentu merupakan
+funktor eksak.
 Contoh ekstrem lainnya adalah funktor nol: ia memetakan setiap objek ke objek nol
 dan setiap morfisme ke morfisme nol; funktor ini juga eksak.
 
@@ -201,9 +203,9 @@ Proposisi~\ref{prop:left-right-exact-functor}.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.ex001
 \begin{contoh}[Eksak kiri/kanan dari limit]\label{eg:limit-exactness}
-Misalkan $\mathcal{A}$ merupakan kategori abelian, $I$ kategori sembarang, dan
+Misalkan $\mathcal{A}$ merupakan kategori abelian, $I$ sebarang kategori, dan
 anggap bahwa setiap funktor $\alpha:I\to\mathcal{A}$ memiliki $\varinjlim$ (atau
-$\varprojlim$). Berdasarkan Proposisi~\ref{prop:functor-cat-Abel}, lengkapi
+$\varprojlim$). Berdasarkan Proposisi~\ref{prop:functor-cat-Abel}, bekali
 $\mathcal{A}^I$ dengan struktur kategori abelian. Kita akan menunjukkan bahwa
 funktor $\varinjlim:\mathcal{A}^I\to\mathcal{A}$ (atau $\varprojlim$) eksak kanan
 (atau eksak kiri).
@@ -219,7 +221,7 @@ mempunyai pasangan adjoin
 \end{tikzcd}\]
 Ini merupakan konsekuensi langsung dari sifat universal $\varinjlim$: di
 $\mathcal{A}^I$, memberikan morfisme dari funktor $\alpha:I\to\mathcal{A}$ ke
-$\Delta(L)$ ekuivalen dengan memberikan keluarga morfisme kompatibel
+$\Delta(L)$ ekuivalen dengan memberikan keluarga morfisme yang kompatibel
 $f_i:\alpha(i)\to L$; dengan kata lain, memberikan kerucut dengan dasar $\alpha$
 dan puncak $L$. Lihat ulasan terkait pada \S\ref{sec:limit-functor}.
 \end{contoh}
@@ -232,8 +234,8 @@ antara kategori modul kiri
 \[\begin{tikzcd}[column sep=large]
 	R\dcate{Mod} \arrow[bend left=50, r, "{S \dotimes{R} (\cdot)}"] \arrow[bend right=50, r, "{\Hom_R({}_R S, \cdot)}"'] & S\dcate{Mod} \arrow[l, "{ {}_{R \to S} \mathcal{F} }"]
 \end{tikzcd}\]
-Di sini funktor pelupa ${}_{R\to S}\mathcal{F}$ tidak lain adalah pengubahan
-suatu modul-$S$ menjadi modul-$R$ melalui $f$. Pembahasan funktor
+Di sini funktor pelupa ${}_{R\to S}\mathcal{F}$ tidak lain adalah operasi
+memandang suatu modul-$S$ sebagai modul-$R$ melalui $f$. Pembahasan funktor
 $S\dotimes{R}(\cdot)$ dan $\Hom_R({}_R S,\cdot)$ dapat ditemukan di
 \cite[\S 6.6]{Li1}; di sini ${}_R S$ berarti $S$ dipandang sebagai modul-$R$ kiri.
 Menurut \cite[Korolari 6.6.8]{Li1},
@@ -246,15 +248,15 @@ merupakan pasangan adjoin. Teorema~\ref{prop:exactness-adjoint} kemudian menyira
 \[S\dotimes{R}(\cdot)\ \text{eksak kanan},\quad
 \Hom({}_R S,\cdot)\ \text{eksak kiri},\quad
 {}_{R\to S}\mathcal{F}\ \text{eksak}.\]
-Sifat eksak ini juga dapat diverifikasi langsung secara aljabar. Sebagai contoh,
+Keeksakan ini juga dapat diverifikasi langsung secara aljabar. Sebagai contoh,
 untuk funktor pelupa ${}_{R\to S}\mathcal{F}$, apakah suatu barisan homomorfisme
 modul $\cdots\to M^n\xrightarrow{d^n}M^{n+1}\to\cdots$ merupakan kompleks
-(yaitu $d^{n+1}d^n=0$), atau eksak (yaitu
+(yaitu $d^{n+1}d^n=0$), atau barisan eksak (yaitu
 $\Image(d^n)=\Ker(d^{n+1})$), tidak bergantung pada perkalian di $R$ atau $S$,
 melainkan hanya pada struktur grup aditif dari $M^n$. Dengan kata lain,
 ${}_{\Z\to S}\mathcal{F}:S\dcate{Mod}\to\cate{Ab}$ sudah merupakan funktor eksak.
 Dari sudut pandang lain, kita dapat langsung memeriksa bahwa
-${}_{R\to S}\mathcal{F}$ mempertahankan semua limit; hal ini dapat dicek langsung
+${}_{R\to S}\mathcal{F}$ mempertahankan semua limit; hal ini dapat diperiksa langsung
 dari konstruksi pada \cite[Teorema 6.2.2]{Li1}.
 \end{contoh}
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p008
@@ -274,7 +276,7 @@ isomorfisme kanonik di $\mathcal{B}$
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pf004
 \begin{bukti}
-Persoalan direduksi ke kasus kompleks tiga suku
+Cukup ditinjau kompleks tiga suku
 $X'\xrightarrow{f}X\xrightarrow{g}X''$. Kembali ke definisi
 \eqref{eqn:homology-3}:
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.q004
@@ -316,7 +318,7 @@ $F(\identity_X)=\identity_{FX}=0$, sehingga $\identity_X=0$ dan $X=0$.
 (ii) $\implies$ (iii): Terapkan Proposisi~\ref{prop:exact-preserves-cohomologies}
 pada kohomologi.
 
-(iii) $\implies$ (i): Kondisi ini sudah mengimplikasikan bahwa $F$ eksak.
+(iii) $\implies$ (i): Kondisi ini langsung menyiratkan bahwa $F$ eksak.
 Misalkan $u:X\to Y$ memenuhi $Fu=0$. Karena
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.q005
 \[X\xrightarrow{\identity}X\xrightarrow{u}Y\xrightarrow{\identity}Y,\]
@@ -324,8 +326,8 @@ citra barisan tersebut di bawah $F$ eksak, maka barisan itu sendiri eksak dan $u
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p010
-Bagi pembaca yang mengenal lokalisasi (lihat \S\ref{sec:cat-localization}), ini
-memberikan contoh penting funktor eksak.
+Lokalisasi (lihat \S\ref{sec:cat-localization}) memberikan contoh penting
+funktor eksak.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pr005
 \begin{proposisi}[Keeksakan lokalisasi]\label{prop:Abel-cat-localization}
@@ -360,7 +362,7 @@ dengan $\Bbbk$ gelanggang komutatif, maka $Q$ merupakan funktor antara kategori
 abelian $\Bbbk$-linear. Ini juga merupakan isi Teorema~\ref{prop:localization-additivity}.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p012
-Contoh lain yang sangat penting adalah funktor $\Hom$. Jika $T$ objek dari
+Contoh lain yang sangat penting adalah funktor $\Hom$. Jika $T$ merupakan objek
 kategori abelian $\mathcal{A}$, maka $\Hom(T,\cdot)$ memberikan funktor
 $\mathcal{A}\to\cate{Ab}$, sedangkan $\Hom(\cdot,T)$ memberikan funktor
 $\mathcal{A}^{\opp}\to\cate{Ab}$; pada tingkat morfisme, keduanya memetakan
@@ -370,7 +372,7 @@ aditif.
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p013
 Jika $\mathcal{A}$ kategori abelian $\Bbbk$-linear, funktor $\Hom$ dapat mengambil
 nilai di $\Bbbk\dcate{Mod}$ dan menjadi funktor $\Bbbk$-linear; perluasan ini
-sedikit memengaruhi pembahasan berikutnya sehingga tidak akan diuraikan tersendiri.
+hanya sedikit memengaruhi pembahasan berikutnya sehingga tidak akan diuraikan tersendiri.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pr006
 \begin{proposisi}[$\Hom$ eksak kiri]\label{prop:Hom-left-exact}
@@ -384,7 +386,7 @@ $\Hom(\cdot,T):\mathcal{A}^{\opp}\to\cate{Ab}$ keduanya merupakan funktor eksak 
 Dengan dualitas (menggantikan $\mathcal{A}$ dengan $\mathcal{A}^{\opp}$), cukup
 menangani $\Hom(T,\cdot)$. Persoalannya adalah menunjukkan bahwa
 $\Hom(T,\cdot)$ mempertahankan $\Ker$. Karena $\Ker$ di $\cate{Ab}$ hanyalah
-kernel dalam teori grup, semuanya dapat diterjemahkan melalui sifat universal
+kernel dalam teori grup, pernyataan ini langsung mengikuti dari sifat universal
 $\Ker$.
 \end{bukti}
 
@@ -430,7 +432,7 @@ $\Hom(\cdot,X)$) mempertahankan epimorfisme. Karena itu:
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.lm001
 \begin{lema}\label{prop:inj-proj-split}
-Pertimbangkan barisan eksak pendek
+Tinjau barisan eksak pendek
 $0\to X'\xrightarrow{f}X\xrightarrow{g}X''\to0$ dalam kategori abelian.
 Jika $X'$ objek injektif atau $X''$ objek projektif, barisan eksak pendek ini terbelah.
 \end{lema}
@@ -438,20 +440,21 @@ Jika $X'$ objek injektif atau $X''$ objek projektif, barisan eksak pendek ini te
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pf008
 \begin{bukti}
 Dengan dualitas, tanpa mengurangi keumuman kita dapat mengasumsikan $X'$ objek
-injektif. Dalam pembahasan di atas, pertimbangkan diagram komutatif
+injektif. Gunakan karakterisasi di atas pada diagram komutatif
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.g008
 \[\begin{tikzcd}
 	0 \arrow[r] & X' \arrow[r, "f"] \arrow[d, "{\identity_{X'}}"'] & X \arrow[ld, "\exists r"] \\
 	& X' &
 \end{tikzcd}\]
-kemudian substitusikan $rf=\identity_{X'}$ ke dalam Proposisi~\ref{prop:split-ses}.
+Relasi $rf=\identity_{X'}$ kemudian memenuhi kondisi dalam
+Proposisi~\ref{prop:split-ses}.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.lm002
 \begin{lema}\label{prop:prod-injective-projective}
 Pertimbangkan keluarga objek $(X_i)_{i\in I}$ dalam kategori abelian
 $\mathcal{A}$. Jika koproduk $\coprod_{i\in I}X_i$ (atau produk
-$\prod_{i\in I}X_i$) ada di $\mathcal{A}$, maka koproduk tersebut projektif
+	$\prod_{i\in I}X_i$) ada dalam $\mathcal{A}$, maka koproduk tersebut projektif
 (atau produk tersebut injektif) jika dan hanya jika setiap $X_i$ demikian.
 \end{lema}
 
@@ -465,7 +468,7 @@ $\coprod_{i\in I}X_i$. Sifat universal memberikan isomorfisme funktor
 \rightiso\prod_{i\in I}\Hom_{\mathcal{A}}\left(X_i,-\right):
 \mathcal{A}\to\cate{Ab}.
 \]
-Semua persoalan kini mereduksi pada pengamatan elementer berikut: untuk keluarga
+Cukup digunakan pengamatan elementer berikut: untuk keluarga
 pemetaan $(f_i:A_i\to B_i)_{i\in I}$ dengan $A_i,B_i$ himpunan, pemetaan terinduksi
 $(f_i)_{i\in I}:\prod_{i\in I}A_i\to\prod_{i\in I}B_i$ bersifat surjektif jika dan
 hanya jika setiap $f_i$ surjektif.
@@ -475,14 +478,14 @@ hanya jika setiap $f_i$ surjektif.
 Sebagai contoh, ambil gelanggang $R$. Semua modul-$R$ bebas merupakan objek
 projektif di $R\dcate{Mod}$. Memang, cukup menunjukkan bahwa $R$ sendiri
 projektif; tetapi $\Hom(R,\cdot):R\dcate{Mod}\to\cate{Ab}$ isomorfik dengan funktor
-pelupa $\mathcal{F}:R\dcate{Mod}\to\cate{Ab}$, yang memetakan homomorfisme
-$\varphi:R\to X$ ke $\varphi(1)\in X$. Maka $\Hom(R,\cdot)$ eksak.
+pelupa $\mathcal{F}:R\dcate{Mod}\to\cate{Ab}$ melalui isomorfisme yang memetakan
+homomorfisme $\varphi:R\to X$ ke $\varphi(1)\in X$. Maka $\Hom(R,\cdot)$ eksak.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p016
 Modul bebas sekaligus merupakan generator untuk $R\dcate{Mod}$; lihat Definisi
 \ref{def:generators} dan Contoh~\ref{eg:generators}. Objek injektif yang juga
 merupakan kogenerator (atau objek projektif yang juga generator) sangat berguna.
-Berikut satu karakterisasi sederhana.
+Berikut adalah satu karakterisasi sederhana.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pr007
 \begin{proposisi}[Kogenerator Injektif dan Generator Projektif]\label{prop:injective-cogenerator}
@@ -508,18 +511,19 @@ $\delta=\delta\circ\identity_T\neq\delta\circ0=0$.
 
 Sekarang arah sebaliknya. Kita ingin menunjukkan bahwa jika $h:S\to T$ tak nol,
 maka terdapat $\delta\in\Hom(T,X)$ sehingga $\delta h\neq0$. Perhatikan bahwa
-terdapat $\delta'\in\Hom(\Image(h),X)$ dengan $\delta'\neq0$. Karena pertimbangan
-mengenai epimorfisme, komposisi $S\twoheadrightarrow\Image(h)\xrightarrow{\delta'}X$
+terdapat $\delta'\in\Hom(\Image(h),X)$ dengan $\delta'\neq0$. Karena
+$S\twoheadrightarrow\Image(h)$ merupakan epimorfisme, komposisi
+$S\twoheadrightarrow\Image(h)\xrightarrow{\delta'}X$
 tak nol. Sekarang gunakan sifat injektif $X$ (lihat pembahasan setelah
 Definisi~\ref{def:injective-projective-obj}) untuk memperluas $\delta'$ menjadi
 $\delta:T\to X$.
 
-Pernyataan tentang funktor eksak setia merupakan penerapan langsung
+Pernyataan tentang funktor eksak setia merupakan penerapan langsung dari
 Proposisi~\ref{prop:faithful-exact}.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p017
-Untuk menjalankan aljabar homologi pada kategori abelian, kita sering memerlukan
+Untuk menjalankan aljabar homologis pada kategori abelian, kita sering memerlukan
 adanya cukup banyak objek injektif atau projektif.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.d003
@@ -542,7 +546,7 @@ Misalkan $\mathcal{A}$ kategori abelian.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p018
 Kedua konsep ini saling dual. Cara umum untuk membangun objek injektif atau
-projektif adalah menggunakan adjoin funktor eksak; berikut rinciannya.
+projektif ialah menggunakan funktor adjoin bagi funktor eksak; berikut rinciannya.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.pr008
 \begin{proposisi}\label{prop:adjoint-injective-projective}
@@ -586,14 +590,14 @@ $\mathcal{F}$ eksak dan memiliki adjoin kanan
 $G:=\Hom_{\cate{Ab}}(R,\cdot)$. Proposisi~\ref{prop:adjoint-injective-projective}
 menunjukkan bahwa $G$ memetakan objek injektif di $\cate{Ab}$ ke objek injektif
 di $R\dcate{Mod}$; objek injektif di $\cate{Ab}$ mudah dikarakterisasi: objek
-tersebut hanyalah modul-$\Z$ yang dapat dibagi. Ini merupakan cara standar dalam
+tersebut tepat berupa modul-$\Z$ yang dapat dibagi. Ini merupakan cara standar dalam
 teori modul untuk membangun modul-$R$ injektif dan menunjukkan bahwa
 $R\dcate{Mod}$ memiliki cukup banyak objek injektif; lihat
 \cite[Teorema 6.9.14]{Li1}.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p020
 Di sisi lain, $R\dcate{Mod}$ juga memiliki cukup banyak objek projektif: untuk
-setiap modul-$R$ $X$, ambil himpunan bagian $A\subset X$ yang menghasilkan $X$;
+setiap modul-$R$ $X$, ambil himpunan pembangkit $A\subset X$;
 maka $R^{\oplus A}\twoheadrightarrow X$.
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.ex003
@@ -624,7 +628,7 @@ $\mapsto$ untuk memperbaiki panah penugasan tersebut.}
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.q008
 \[L_0:X\mapsto[X\to0],\quad L_1:X\mapsto[0\to X],\quad
 H:X\mapsto[X\xrightarrow{\identity_X}X],\]
-untuk $X\in\Obj(\mathcal{A})$; definisi pada tingkat morfisme jelas. Kita akan
+untuk $X\in\Obj(\mathcal{A})$; definisi pada tingkat morfisme sudah jelas. Kita akan
 membuktikan hasil berikut.
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.l010
 \begin{compactenum}[(i)]
@@ -642,9 +646,9 @@ membuktikan hasil berikut.
 \end{compactenum}
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p022
-Karena $\varinjlim$ dan $\varprojlim$ di $\mathcal{A}^{\mathbf{2}}$ dibangun suku
-demi suku, funktor $\mathrm{ev}_0,\mathrm{ev}_1$ dan $H,L_0,L_1$ memang eksak.
-Bagian yang tersisa dari (i) dan (ii) berasal dari hubungan adjoin yang dipenuhi
+Karena $\varinjlim$ dan $\varprojlim$ di $\mathcal{A}^{\mathbf{2}}$ dibangun
+objek demi objek, funktor $\mathrm{ev}_0,\mathrm{ev}_1$ dan $H,L_0,L_1$ memang eksak.
+Sisa (i) dan (ii) mengikuti dari hubungan adjoin yang dipenuhi
 oleh $\mathrm{ev}_i$; diagramnya sebagai berikut, dan verifikasinya merupakan
 latihan sederhana:
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.g012
@@ -655,7 +659,7 @@ latihan sederhana:
 \end{tikzcd}\]
 
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p023
-Untuk (iii), pertama-tama bahas kasus objek injektif. Diberikan objek
+Untuk (iii), bahas terlebih dahulu kasus objek injektif. Ambil objek
 $[X_0\xrightarrow{f}X_1]$ di $\mathcal{A}^{\mathbf{2}}$, ambil monomorfisme
 $\epsilon_i:X_i\hookrightarrow I_i$, dengan $I_i$ objek injektif,
 $i\in\{0,1\}$. Dari sini diperoleh dua morfisme di $\mathcal{A}^{\mathbf{2}}$,
@@ -690,4 +694,5 @@ projektif, gunakan funktor $H$ dan $L_1$.
 % segment-id: o014.li2.chapter2.exact-functors-injective-projective-objects.p025
 Pembahasan pada Contoh~\ref{eg:A2-injective-projective} dapat diperluas dari
 $\mathcal{A}^{\mathbf{2}}$ ke kategori funktor umum $\mathcal{A}^{\mathcal{C}}$;
-argumennya tidak mengandung kesulitan hakiki. Latihan bab ini akan menguraikannya.
+argumennya tidak menimbulkan kesulitan baru yang mendasar. Latihan bab ini akan
+menguraikannya.

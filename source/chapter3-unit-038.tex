@@ -29,7 +29,7 @@ abelian.
 \begin{bukti}
 	Ingat kembali definisi $\alpha(f)$ dan $\beta(f)$. Karena keeksakan dapat
 	diperiksa derajat demi derajat (Proposisi~\ref{prop:abelian-cat-cplx}),
-	pernyataan tersebut tereduksi pada keeksakan
+	pernyataan tersebut cukup dibuktikan melalui keeksakan
 % segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q002
 	\[ 0 \to Y^n \xrightarrow{(0, \identity)} X^{n+1} \oplus Y^n \xrightarrow{\text{proyeksi}} X^{n+1} \to 0, \]
 	untuk setiap $n\in\Z$. Inilah isi Proposisi~\ref{prop:biproduct-ses}.
@@ -53,7 +53,7 @@ dari barisan eksak panjang kerucut pemetaan
 $f$, $\alpha(f)$, dan $\beta(f)$.
 
 % segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.p003
-Hasil berikut menunjukkan arah sebaliknya: dari sebarang barisan eksak pendek
+Hasil berikut menunjukkan arah sebaliknya: dari sembarang barisan eksak pendek
 dalam $\cate{C}(\mathcal{A})$, terdapat pula hubungan alami dengan kerucut
 pemetaan. Hubungan ini dapat dibentuk dengan dua cara.
 
@@ -98,7 +98,7 @@ pemetaan. Hubungan ini dapat dibentuk dengan dua cara.
 	komutatif di atas dan definisi kerucut pemetaan, tampak bahwa setiap baris
 	dalam~\eqref{eqn:cone-qis-aux} eksak. Selain itu, mudah dilihat bahwa
 	$\Cone(f)\to\Cone(0\to Z)\simeq Z$ (atau
-	$X[1]\simeq\Cone(X\to0)\to\Cone(g)$) tidak lain ialah $\Phi$ (atau
+	$X[1]\simeq\Cone(X\to0)\to\Cone(g)$) tepat merupakan $\Phi$ (atau
 	$\Phi'$). Setelah diketahui bahwa keduanya merupakan morfisme kompleks,
 	persamaan-persamaan dalam (i) langsung terlihat.
 
@@ -270,7 +270,7 @@ Selanjutnya, kita buktikan hubungan-hubungan tersebut.
 	diagram dalam \cite[\S 6.8]{Li1} memberikan bukti langsung untuk kasus
 	tersebut.
 
-	Untuk kategori abelian umum $\mathcal{A}$, pertama-tama tetapkan
+	Untuk kategori abelian umum $\mathcal{A}$, pertama-tama misalkan
 	$n\in\Z$ dan ambil produk serat
 % segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.q008
 	\[ S := \Coker(d_Y^{n-1}) \dtimes{\Coker(d_Z^{n-1})} \Hm^n(Z). \]
@@ -386,8 +386,8 @@ Selanjutnya, kita buktikan hubungan-hubungan tersebut.
 % segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.pf004
 \begin{bukti}
 	Gunakan notasi Lema~\ref{prop:cone-qis}. Berdasarkan
-	Proposisi~\ref{prop:connecting-eta-delta}, persoalan tereduksi pada
-	pembuktian $(\eta')^n+\eta^n=0$. Namun, persamaan terakhir merupakan akibat
+	Proposisi~\ref{prop:connecting-eta-delta}, cukup dibuktikan bahwa
+	$(\eta')^n+\eta^n=0$. Namun, persamaan terakhir merupakan akibat
 	langsung dari fakta bahwa
 	$\alpha(g)\Phi+\Phi'\beta(f):\Cone(f)\to\Cone(g)$ homotopik nol
 	(Lema~\ref{prop:cone-qis} (ii)).
@@ -395,7 +395,7 @@ Selanjutnya, kita buktikan hubungan-hubungan tersebut.
 
 % segment-id: o014.li2.chapter3.mapping-cone-and-long-exact-sequences.co002
 \begin{korolari}\label{prop:cone-connecting}
-	Diberikan sebarang morfisme $f:X\to Y$ dalam $\cate{C}(\mathcal{A})$,
+	Untuk sembarang morfisme $f:X\to Y$ dalam $\cate{C}(\mathcal{A})$,
 	morfisme penghubung
 	$\xi^n:\Hm^{n+1}(X)\simeq\Hm^n(X[1])\to\Hm^{n+1}(Y)$ dalam barisan
 	eksak panjang~\eqref{eqn:cone-long-exact-sequence} sama dengan
@@ -413,7 +413,7 @@ Selanjutnya, kita buktikan hubungan-hubungan tersebut.
 		0 \arrow[r] & Y \arrow[r, "\alpha(f)"'] \arrow[equal, u] & \Cone(f) \arrow[r, "\beta(f)"'] \arrow[equal, u] & X[1] \arrow[r] & 0
 	\end{tikzcd}\]
 	Morfisme $\psi:\Cone(\alpha(f))\to X[1]$ yang dibahas dalam
-	Lema~\ref{prop:cone-alpha} tidak lain ialah $(0,\beta(f))$ di sini:
+	Lema~\ref{prop:cone-alpha} tepat merupakan $(0,\beta(f))$ di sini:
 	komponen derajat $n$ dari morfisme ini ialah proyeksi dari
 	$Y^{n+1}\oplus\Cone(f)^n=Y^{n+1}\oplus X^{n+1}\oplus Y^n$ ke
 	$X^{n+1}$. Diagram komutatif pada lema tersebut dengan demikian memberikan

@@ -1,0 +1,396 @@
+% Unit 112 terjemahan Bahasa Indonesia dari chapter8.tex baris 1059--1228.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter8.homology-computation
+% Cakupan: Bagian 8.6 lengkap, Perhitungan Homologi, hingga tepat sebelum
+% Bagian 8.7.
+% Perbaikan matematis-redaksional terhadap sumber dicatat pada peta segmen:
+% koefisien H_0, normalisasi ZS, interval Delta^1, indeks diferensial
+% augmentasi, urutan komposisi augmentasi, dan rumus kontraksi E Gamma.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.h001
+\section{Perhitungan Homologi}\label{sec:homology-computation}
+\hypertarget{o014.aljabr2.chapter8.homology-computation}{ }
+% segment-id: o014.aljabr2.chapter8.homology-computation.p001
+Penerapan klasik funktor $\mathrm{C}$ atau $\mathrm{N}$ ialah mendefinisikan
+homologi himpunan simplisial, yang berkaitan erat dengan kajian topologi
+aljabar.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.d001
+\begin{definition}\label{def:free-simplicial-Ab}
+	Untuk setiap $K\in\Obj(\cate{sSet})$, definisikan
+	$\Z K\in\Obj(\cate{sAb})$ dengan mengambil $(\Z K)_n$ sebagai
+	modul-$\Z$ bebas berbasis $K_n$, sedangkan pemetaan $d_i,s_j$ padanya
+	diinduksi oleh pemetaan yang bersesuaian pada $K$. Konstruksi ini
+	memberikan funktor $\Z(\cdot):\cate{sSet}\to\cate{sAb}$.
+\end{definition}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.pr001
+\begin{proposition}\label{prop:free-simplicial-Ab-adjunction}
+	Terdapat adjungsi alami
+	% segment-id: o014.aljabr2.chapter8.homology-computation.g001
+	$\begin{tikzcd}
+		\Z(\cdot):\cate{sSet}\arrow[shift left,r]
+		&\cate{sAb}:\text{pelupa}\arrow[shift left,l]
+	\end{tikzcd}$.
+\end{proposition}
+% segment-id: o014.aljabr2.chapter8.homology-computation.pf001
+\begin{proof}
+	Funktor $\Z(\cdot)$ dan funktor pelupa sama-sama didefinisikan tingkat demi
+	tingkat. Seluruh pernyataan langsung mengikuti adjungsi bebas--pelupa
+	$\cate{Set}\leftrightarrows\cate{Ab}$.
+\end{proof}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p002
+Karena itu, untuk setiap $X\in\Obj(\cate{sAb})$, memberikan morfisme
+$\Z\Delta^n\to X$ sama artinya dengan memberikan suatu unsur $X_n$.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p003
+Selain itu, $\Z(X\times Y)\simeq\Z X\otimes\Z Y$, dengan $\otimes$ di
+ruas kanan dibentuk sebagai $X_n\dotimes{\Z}Y_n$ tingkat demi tingkat.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.d002
+\begin{definition}\label{def:simplicial-set-homology}
+	\index[sym1]{Hn}
+	\index[sym1]{Hnn}
+	Untuk himpunan simplisial $K$ dan setiap $n\in\Z_{\geq0}$, tuliskan
+	$\Hm_n(K;\Z):=\Hm_n\bigl(\mathrm{C}(\Z K)\bigr)$; grup ini disebut
+	\emph{grup homologi ke-$n$ dari $K$}. Konstruksi ini memberikan keluarga
+	funktor $\Hm_n(\cdot;\Z):\cate{sSet}\to\cate{Ab}$.
+	% segment-id: o014.aljabr2.chapter8.homology-computation.l001
+	\begin{itemize}
+		\item Secara lebih umum, untuk modul-$\Z$ $M$, homologi berkoefisien
+		$M$ didefinisikan oleh
+		$\Hm_n(K;M):=\Hm_n\bigl(\mathrm{C}(\Z K)\otimes M\bigr)$, dengan
+		$\mathord\cdot\otimes M$ berarti mengambil
+		$\mathord\cdot\dotimes{\Z}M$ pada setiap suku kompleks rantai.
+
+		\item Kohomologi berkoefisien $M$ didefinisikan oleh
+		$\Hm^n(K;M):=\Hm^n\bigl(\Hom_{\Z}(\mathrm{C}(\Z K),M)\bigr)$, dengan
+		ekspresi di dalam tanda kurung dipandang sebagai kompleks. Berdasarkan
+		sifat universal $\Z(\cdot)$, suku ke-$n$ kompleks ini juga dapat
+		diidentifikasikan dengan
+		% segment-id: o014.aljabr2.chapter8.homology-computation.q001
+		\[
+		\mathrm{Maps}(K_n,M):=\{\text{pemetaan }K_n\to M\}.
+		\]
+		Himpunan ini menjadi modul-$\Z$ melalui operasi titik demi titik, dan
+		homomorfisme diferensialnya diidentifikasi dengan
+		$\sum_i(-1)^i(d_i)^*$.
+	\end{itemize}
+\end{definition}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p004
+Jika $\mathrm{C}(\Z K)$ dalam definisi di atas diganti dengan
+$\mathrm{N}(\Z K)$, grup homologi (atau kohomologi) yang diperoleh isomorfik
+secara kanonik; ini merupakan akibat Teorema~\ref{prop:Dold-Kan-N-C}.
+Penggunaan $\mathrm{N}(\Z K)$ kadang lebih sederhana karena
+Proposisi~\ref{prop:Dold-Kan-v} memberikan
+% segment-id: o014.aljabr2.chapter8.homology-computation.q002
+\[
+\mathrm{N}(\Z K)_n=\bigoplus_{x\in K_n^{\mathrm{nd}}}\Z x.
+\]
+Di sini $K_n^{\mathrm{nd}}\subset K_n$ adalah subhimpunan yang terdiri atas
+simpleks-$n$ nondegenerat, sedangkan pemetaan
+$\mathrm{N}(\Z K)_n\to\mathrm{N}(\Z K)_{n-1}$ diperoleh dengan terlebih
+dahulu mengambil $\sum_{i=0}^n(-1)^id_i$, kemudian memproyeksikan ke bagian
+$K_{n-1}^{\mathrm{nd}}$. Sebagai contoh,
+% segment-id: o014.aljabr2.chapter8.homology-computation.q003
+\begin{align*}
+	\mathrm{N}(\Z\Delta^0)&=\Z\;\text{yang ditempatkan pada derajat $0$},\\
+	\mathrm{C}(\Z\Delta^0)&=
+	\left[\cdots\xrightarrow{1}\Z\xrightarrow{0}\Z
+	\xrightarrow{1}\Z\xrightarrow{0}\Z\right].
+\end{align*}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.eg001
+\begin{example}\label{eg:homology-poset-e}
+	Sebagai kasus khusus yang berguna, misalkan diberikan poset kecil takkosong
+	$(Q,\leq)$ yang mempunyai unsur terkecil $e$. Ini memberikan pemetaan
+	mempertahankan urutan
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q004
+	\[
+	[0]\xrightarrow{0\mapsto e}Q\longrightarrow[0].
+	\]
+	Pandang $Q$ sebagai kategori dan ambil saraf
+	$S:=\mathrm{N}(Q)$ dari Contoh~\ref{eg:nerve-cat}. Berdasarkan definisi
+	asli saraf, kita juga mempunyai $\mathrm{N}([n])=\Delta^n$. Dengan
+	demikian diperoleh morfisme-morfisme dalam $\cate{sSet}$
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q005
+	\[
+	\Delta^0\xrightarrow{i}S\xrightarrow{q}\Delta^0,
+	\qquad qi=\identity_{\Delta^0}.
+	\]
+	Selanjutnya, diperoleh
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q006
+	\begin{gather*}
+		\Z=\mathrm{N}(\Z\Delta^0)
+		\xrightarrow{\mathrm{N}i}\mathrm{N}(\Z S)
+		\xrightarrow{\mathrm{N}q}\Z,
+	\end{gather*}
+	dengan $\Z$ dipandang sebagai kompleks rantai yang ditempatkan pada derajat
+	$0$. Akan ditunjukkan bahwa $\mathrm{N}i$ dan $\mathrm{N}q$ saling invers
+	dalam kategori homotopi kompleks rantai. Khususnya,
+	$\Hm_0(Q;M)\simeq M$, sedangkan
+	$\Hm_n(Q;M)=\{0\}$ untuk $n\neq0$.
+
+	Karena $qi=\identity$, cukup dibangun homotopi dari
+	$\mathrm{N}i\mathrm{N}q$ ke $\identity$. Untuk setiap $n\geq0$, perhatikan
+	bahwa unsur-unsur $S_n^{\mathrm{nd}}$ adalah rantai di $Q$ yang berbentuk
+	$q_0<\cdots<q_n$. Definisikan
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q007
+	\begin{align*}
+		h_n:S_n^{\mathrm{nd}}&\longrightarrow
+		S_{n+1}^{\mathrm{nd}}\cup\{0\},\qquad n\geq0,\\
+		q_0<\cdots<q_n&\longmapsto
+		\begin{cases}
+			e<q_0<\cdots<q_n,&q_0\neq e,\\
+			0,&q_0=e.
+		\end{cases}
+	\end{align*}
+	Perluas pemetaan ini secara linear ke
+	$\Z S_n^{\mathrm{nd}}\simeq\mathrm{N}(\Z S)_n$. Pemetaan tersebut langsung
+	memenuhi syarat-syarat homotopi; rinciannya diserahkan
+	kepada pembaca sebagai latihan.
+\end{example}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p005
+Perhitungan homologi tidak dapat dipisahkan dari homotopi. Di bawah
+korespondensi Dold--Kan, homotopi kompleks rantai mencerminkan homotopi objek
+simplisial, dan yang terakhir dapat didefinisikan secara kombinatorial.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.d003
+\begin{definition}[Homotopi simplisial]\label{def:simplicial-homotopy}
+	\index{homotopi!simplisial (simplicial)}
+	Misalkan $X$ dan $Y$ objek simplisial dalam kategori $\mathcal{C}$, serta
+	$f,g:X\rightrightarrows Y$ sepasang morfisme. Suatu
+	\emph{homotopi simplisial dari $g$ ke $f$} adalah keluarga morfisme
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q008
+	\[
+	h_i=h_i^n:X_n\to Y_{n+1},\qquad0\leq i\leq n,
+	\]
+	yang secara ringkas ditulis $h$ dan memenuhi
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q009
+	\begin{align*}
+		d_0h_0&=f_n,\\
+		d_{n+1}h_n&=g_n,\\
+		d_ih_j&=
+		\begin{cases}
+			h_{j-1}d_i,&0\leq i<j,\\
+			d_ih_{i-1},&1\leq i=j,\\
+			h_jd_{i-1},&i>j+1,
+		\end{cases}\\
+		s_ih_j&=
+		\begin{cases}
+			h_{j+1}s_i,&i\leq j,\\
+			h_js_{i-1},&i>j.
+		\end{cases}
+	\end{align*}
+\end{definition}
+
+% Reference: Weibel, Theorem 8.3.12
+% segment-id: o014.aljabr2.chapter8.homology-computation.p006
+Definisi di atas bersifat kombinatorial. Namun, bila
+$\mathcal{C}=\cate{Set}$, definisi itu sama dengan
+\eqref{eqn:simplicial-homotopy-prep}, yang didasarkan pada intuisi topologis.
+Mengapa demikian? Untuk setiap $n\in\Z_{\geq0}$, tuliskan secara konkret
+$(\Delta^1)_n=\{\alpha_{-1},\ldots,\alpha_n\}$, dengan
+$\alpha_i:[n]\to[1]$ memetakan bilangan $\leq i$ ke $0$ dan bilangan lainnya
+ke $1$. Maka menentukan $H_n:(X\times\Delta^1)_n\to Y_n$ sama artinya dengan
+menentukan $H_{-1}^n,\ldots,H_n^n:X_n\to Y_n$.
+% segment-id: o014.aljabr2.chapter8.homology-computation.l002
+\begin{itemize}
+	\item Untuk data homotopi simplisial $(h_i^n)_{i,n}$, definisikan
+	$H_{-1}^n=g$, $H_n^n=f$, dan
+	$H_i^n=d_{n+1}h_i^n$ untuk $0\leq i\leq n-1$.
+	\item Untuk data $H$ dari diagram komutatif
+	\eqref{eqn:simplicial-homotopy-prep}, definisikan
+	$h_i^n:=H_i^{n+1}s_i:X_n\to Y_{n+1}$.
+\end{itemize}
+Verifikasi langsung menunjukkan bahwa kedua pemetaan tersebut terdefinisi
+dengan baik dan saling invers.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p007
+Untuk kasus $\mathcal{C}=\cate{Ab}$, gantikan saja
+$X\times\Delta^1$ dalam \eqref{eqn:simplicial-homotopy-prep} dengan
+$X\otimes\Z\Delta^1$ dan bekerja dalam $\cate{sAb}$; argumen yang sama
+berlaku tanpa perubahan. Karena itu, hasil berikut sepenuhnya wajar.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.pr002
+\begin{proposition}
+	Tinjau sepasang morfisme $f,g:X\rightrightarrows Y$ dalam
+	$\cate{s}\mathcal{A}$. Jika $h$ homotopi simplisial dari $g$ ke $f$, maka
+	$\bigl(\sum_{j=0}^n(-1)^jh_j^n\bigr)_{n\geq0}$ mendefinisikan homotopi antara
+	$\mathrm{C}f,\mathrm{C}g:\mathrm{C}X\rightrightarrows\mathrm{C}Y$.
+\end{proposition}
+% segment-id: o014.aljabr2.chapter8.homology-computation.pf002
+\begin{proof}
+	Seperti biasa, tuliskan semua morfisme muka $X$ dan $Y$ secara seragam
+	sebagai $d_i$, dan hilangkan superskrip pada $h_j$; ini tidak menimbulkan
+	ambiguitas. Terdapat kesamaan berikut di dalam
+	$\Hom_{\mathcal{A}}(X_n,Y_n)$:
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q010
+	\begin{multline*}
+		\sum_{i=0}^{n+1}(-1)^id_i\sum_{j=0}^n(-1)^jh_j
+		+\sum_{j=0}^{n-1}(-1)^jh_j\sum_{i=0}^n(-1)^id_i\\
+		=f_n-g_n
+		+\sum_{\substack{0\leq i\leq n+1\\0\leq j\leq n\\
+		(i,j)\neq(0,0),(n+1,n)}}(-1)^{i+j}d_ih_j
+		+\sum_{\substack{0\leq i\leq n\\0\leq j\leq n-1}}
+		(-1)^{i+j}h_jd_i.
+	\end{multline*}
+	Jumlah pertama pada baris terakhir dapat ditulis kembali sebagai
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q011
+	\begin{align*}
+		&\sum_{\substack{0\leq i\leq n+1\\i<j\leq n}}
+		(-1)^{i+j}h_{j-1}d_i
+		+\sum_{i=1}^nd_ih_i-\sum_{i=1}^nd_ih_{i-1}
+		+\sum_{\substack{1\leq i\leq n+1\\0\leq j<i-1}}
+		(-1)^{i+j}h_jd_{i-1}\\
+		&\qquad=-\sum_{\substack{0\leq i\leq n\\i\leq j\leq n-1}}
+		(-1)^{i+j}h_jd_i
+		-\sum_{\substack{0\leq i\leq n\\0\leq j<i}}
+		(-1)^{i+j}h_jd_i.
+	\end{align*}
+	Di sini digunakan
+	$1\leq i\leq n\implies d_ih_i=d_ih_{i-1}$. Ekspresi ini membatalkan
+	jumlah kedua dan hanya menyisakan $f_n-g_n$.
+\end{proof}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p008
+Selanjutnya kita meninjau objek semisimplisial teraugmentasi
+(Catatan~\ref{rem:semisimplicial}) dan kompleks rantai yang bersesuaian;
+hasil-hasil ini akan digunakan dalam \S\ref{sec:bar-resolution}. Kecuali
+dinyatakan lain, morfisme augmentasi objek semisimplisial teraugmentasi $X$
+selalu ditulis sebagai $\epsilon:X_0\to X_{-1}$.
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.d004
+\begin{definition}\label{def:augmented-C-cplx}
+	\index[sym1]{CXaug@$\mathrm{C}^{\mathrm{aug}} X$}
+	Untuk objek semisimplisial teraugmentasi $X$ dalam kategori aditif
+	$\mathcal{A}$, kompleks $\mathrm{C}X$ yang bersesuaian dapat diperluas
+	menjadi kompleks rantai
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q012
+	\begin{equation*}
+		\begin{gathered}
+			\mathrm{C}^{\mathrm{aug}}X:=
+			\left[\cdots\xrightarrow{\partial_3}X_2
+			\xrightarrow{\partial_2}X_1
+			\xrightarrow{\partial_1}X_0
+			\xrightarrow{\partial_0:=\epsilon}X_{-1}
+			\to0\to\cdots\right],\\
+			\partial_n:=\sum_{i=0}^n(-1)^id_i:X_n\to X_{n-1},
+			\qquad n\geq1.
+		\end{gathered}
+	\end{equation*}
+\end{definition}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p009
+Dari $\epsilon d_0=\epsilon d_1$ terlihat bahwa
+$\mathrm{C}^{\mathrm{aug}}X$ memang objek
+$\cate{Ch}_{\geq-1}(\mathcal{A})$. Kompleks ini juga dapat dipandang sebagai
+morfisme dalam $\cate{Ch}_{\geq0}(\mathcal{A})$
+% segment-id: o014.aljabr2.chapter8.homology-computation.q013
+\[
+\epsilon:\mathrm{C}X\to
+\underbracket{X_{-1}}_{\text{ditempatkan pada derajat $0$}},
+\qquad\text{$\epsilon$ pada derajat $0$, dan $0$ pada derajat lainnya}.
+\]
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.d005
+\begin{definition}\label{def:contractible-aug}
+	\index{dapat dikontraksi (contractible)}
+	Misalkan $X$ objek semisimplisial teraugmentasi dalam sebarang kategori
+	$\mathcal{C}$. Jika terdapat keluarga morfisme
+	$k_n:X_n\to X_{n+1}$, dengan $n\in\Z_{\geq-1}$, gunakan istilah
+	\emph{dapat dikontraksi dari kiri} atau \emph{dapat dikontraksi dari
+	kanan} bagi $X$, sesuai dengan kolom syarat yang dipenuhi di bawah ini:
+	% segment-id: o014.aljabr2.chapter8.homology-computation.tb001
+	\begin{center}
+	\begin{tabular}{|c|c|}\hline
+		Dapat dikontraksi dari kiri&Dapat dikontraksi dari kanan\\\hline
+		$\epsilon k_{-1}=\identity_{X_{-1}}$
+		&$\epsilon k_{-1}=\identity_{X_{-1}}$\\
+		$d_0k_n=\identity_{X_n}$
+		&$d_{n+1}k_n=\identity_{X_n}$\\
+		$d_ik_n=k_{n-1}d_{i-1}\;(1\leq i\leq n+1,\;n\geq1)$
+		&$d_ik_n=k_{n-1}d_i\;(0\leq i\leq n,\;n\geq1)$\\
+		$d_1k_0=k_{-1}\epsilon$
+		&$d_0k_0=k_{-1}\epsilon$\\\hline
+	\end{tabular}
+	\end{center}
+\end{definition}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.p010
+Periksa bahwa sifat dapat dikontraksi dari kiri dan kanan
+saling dual melalui pembalikan urutan dalam pengertian
+Catatan~\ref{rem:simpDelta-order-reversal}. Selain itu, keduanya merupakan
+sifat ``absolut'': jika $X$ dapat dikontraksi dari kiri (atau kanan), dengan
+data yang bersesuaian $(k_n)_{n\geq-1}$, maka untuk setiap funktor
+$F:\mathcal{C}\to\mathcal{D}$, data $(Fk_n)_{n\geq-1}$ membuat $F(X)$
+dapat dikontraksi dari kiri (atau kanan).
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.eg002
+\begin{example}\label{eg:classifying-contractible}
+	Untuk sembarang monoid $\Gamma$, jadikan $\mathrm{E}\Gamma$ dari
+	Contoh~\ref{eg:classifying-space} himpunan simplisial teraugmentasi dengan
+	$(\mathrm{E}\Gamma)_{-1}=\{1\}$ dan morfisme augmentasi
+	$\epsilon:(\mathrm{E}\Gamma)_0\to(\mathrm{E}\Gamma)_{-1}$ berupa pemetaan
+	konstan. Objek ini dapat dikontraksi dari kanan: untuk $n\geq-1$,
+	definisikan
+	$k_n:(\mathrm{E}\Gamma)_n\to(\mathrm{E}\Gamma)_{n+1}$ melalui
+	$(g_1,\ldots,g_{n+1})\mapsto(g_1,\ldots,g_{n+1},1)$.
+	Pemetaan ini jelas memenuhi $\epsilon k_{-1}=\identity$; setelah
+	definisi diuraikan, pemeriksaan bahwa
+	$d_{n+1}k_n=\identity$,
+	$d_ik_n=k_{n-1}d_i$ untuk $0\leq i\leq n$, $n\geq1$, dan
+	$d_0k_0=k_{-1}\epsilon$ juga langsung.
+
+	Jika $\Bbbk$ gelanggang komutatif, identifikasikan kompleks rantai
+	$\mathrm{C}(\Bbbk\mathrm{E}\Gamma)$ dengan kompleks rantai
+	$\mathsf{L}=(\mathsf{L}_n,\partial'_n)_n$ dari
+	Definisi~\ref{def:resolution-trivial-module}, sebagaimana dalam
+	Contoh~\ref{eg:classifying-space-std-cplx}. Augmentasi
+	$\mathsf{L}\to\Bbbk$ persis merupakan augmentasi resolusi dalam
+	Proposisi~\ref{prop:trivial-mod-resolution}. Menurut proposisi berikut,
+	kontraktibilitas $\mathrm{E}\Gamma$ (dan dengan
+	demikian $\Bbbk\mathrm{E}\Gamma$) memberikan penjelasan topologis bagi
+	fakta bahwa $\mathsf{L}\to\Bbbk$ adalah kuasi-isomorfisme.
+\end{example}
+
+% segment-id: o014.aljabr2.chapter8.homology-computation.pr003
+\begin{proposition}\label{prop:contractible-null-homotopic}
+	Misalkan $\mathcal{A}$ kategori aditif dan $X$ objek semisimplisial
+	teraugmentasi dalam $\mathcal{A}$ yang dapat dikontraksi dari kiri atau
+	kanan. Maka morfisme identitas dari
+	$\mathrm{C}^{\mathrm{aug}}X$ ke dirinya sendiri homotopik terhadap nol.
+\end{proposition}
+% segment-id: o014.aljabr2.chapter8.homology-computation.pf003
+\begin{proof}
+	Pertama, tinjau kasus dapat dikontraksi dari kiri dan ambil keluarga
+	morfisme $k_n:X_n\to X_{n+1}$ dalam definisinya. Definisikan $k_n=0$ untuk
+	$n<-1$ (atau $\partial_n=0$ untuk $n<0$), dan definisikan pula
+	$\partial_0=\epsilon$. Kita hendak menggunakan $(k_n)_n$ sebagai saksi
+	homotopi nol, yakni membuktikan
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q014
+	\[
+	\partial_{n+1}k_n+k_{n-1}\partial_n=\identity_{X_n}.
+	\]
+
+	Untuk $n<-1$, kedua ruas sama dengan $0$. Untuk $n=-1$, ruas kiri sama
+	dengan $\identity_{X_{-1}}$. Untuk $n=0$, ruas kiri ialah
+	$d_0k_0-d_1k_0+k_{-1}\epsilon=\identity_{X_0}$. Untuk $n\geq1$,
+	perhitungan ruas kiri memberikan
+	% segment-id: o014.aljabr2.chapter8.homology-computation.q015
+	\begin{multline*}
+		\sum_{i=0}^{n+1}(-1)^id_ik_n
+		+\sum_{i=0}^n(-1)^ik_{n-1}d_i\\
+		=\identity_{X_n}
+		+\sum_{i=1}^{n+1}(-1)^ik_{n-1}d_{i-1}
+		+\sum_{i=0}^n(-1)^ik_{n-1}d_i
+		=\identity_{X_n}.
+	\end{multline*}
+
+	Untuk kasus dapat dikontraksi dari kanan, cukup gunakan
+	$\bigl((-1)^{n+1}k_n\bigr)_n$ sebagai gantinya.
+\end{proof}

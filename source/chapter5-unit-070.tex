@@ -1,0 +1,269 @@
+% Unit 070 terjemahan Bahasa Indonesia dari chapter5.tex baris 955--1063.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter5.multiplicative-structures
+% Cakupan: Bagian 5.7 lengkap, sebelum latihan.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.h001
+\section{Sekilas tentang struktur perkalian}\label{sec:multiplicative-SS}
+\hypertarget{o014.aljabr2.chapter5.multiplicative-structures}{ }
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p001
+Agar pembahasan sederhana dan konkret, dalam bagian ini kita mengambil
+gelanggang komutatif $\Bbbk$ dan $\mathcal{A}=\Bbbk\dcate{Mod}$; ini sudah
+memadai bagi penerapan klasik. Modul-$\Bbbk$ kita sebut singkat sebagai modul,
+aljabar-$\Bbbk$ sebagai aljabar, dan kita tulis
+$\otimes:=\otimes_{\Bbbk}$.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p002
+Misalkan $I$ monoid komutatif, dengan operasi biner ditulis secara aditif.
+Definisi dari \cite[\S 7.4]{Li1} dapat diringkas sebagai berikut:
+\begin{itemize}
+	\item modul bergradasi-$I$ adalah modul dengan dekomposisi jumlah langsung
+	$M=\bigoplus_{i\in I}M^i$; unsur-unsur dalam $M^i$ disebut unsur homogen
+	berderajat $i$;
+	\item aljabar bergradasi-$I$ adalah modul bergradasi yang dilengkapi
+	homomorfisme $\mu:A\otimes A\to A$, yang juga ditulis sebagai perkalian
+	$xy:=\mu(x\otimes y)$, sedemikian sehingga $A$ menjadi gelanggang dan
+	\[ 1_A\in A^0,\qquad A^i\cdot A^j\subset A^{i+j},
+	\qquad i,j\in I; \]
+	jadi perkalian $\mu$ sepenuhnya ditentukan oleh data
+	$\mu^{i,j}:A^i\otimes A^j\to A^{i+j}$;
+	\item homomorfisme dan isomorfisme antara modul atau aljabar
+	bergradasi-$I$ didefinisikan dengan cara biasa; subaljabar dan ideal
+	bergradasi-$I$ juga didefinisikan dengan cara yang sama.
+\end{itemize}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p003
+Untuk $k\in I$, definisikan pula homomorfisme berderajat $k$ antara modul
+bergradasi-$I$: ini adalah homomorfisme modul $\varphi:M\to N$ yang memenuhi
+$\varphi(M^i)\subset M^{i+k}$ untuk semua $i$, dan ditentukan oleh data
+$(\varphi^i:M^i\to M^{i+k})_{i\in I}$. Untuk $k=0$ kita memperoleh kembali
+homomorfisme dalam arti biasa. Derajat homomorfisme dijumlahkan ketika
+homomorfisme dikomposisikan.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.d001
+\begin{definition}\label{def:dg-algebra-preview}
+	\index{aljabar bergradasi diferensial (differential graded algebra)}
+	Misalkan $I$ monoid komutatif yang dilengkapi homomorfisme
+	$\epsilon:I\to\Z/2\Z$. Sebuah \emph{aljabar bergradasi-$I$ diferensial}
+	dengan diferensial berderajat $k$ adalah aljabar bergradasi-$I$
+	$A=\bigoplus_{p\in I}A^p$ bersama endomorfisme berderajat $k\in I$
+	$d=(d^p)_p:A\to A$ yang memenuhi $d^2=0$ dan aturan Leibniz
+	\[ d(xy)=(dx)\cdot y+(-1)^{\epsilon(p)}x\cdot dy,
+	\qquad x\in A^p,\quad y\in A^{p'},\quad p,p'\in I. \]
+\end{definition}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p004
+Perhatikan bahwa
+$d(1_A)=d(1_A\cdot1_A)=d(1_A)+d(1_A)$, sehingga $d(1_A)=0$. Jelas bahwa
+$\Ker(d)$ merupakan subaljabar bergradasi-$I$ dari $A$, sedangkan
+$\Image(d)$ merupakan ideal dua sisi bergradasi-$I$ dalam $\Ker(d)$. Karena
+itu,
+\[ \Hm(A,d):=\Ker(d)/\Image(d) \]
+tetap merupakan aljabar bergradasi-$I$.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.e001
+\begin{example}
+	Ambil $I=\Z$ dan $\epsilon(p)=p\;\bmod 2$. Untuk setiap kompleks $X$ pada
+	kategori $\Bbbk$-linear $\mathcal{B}$, kompleks $\Hom$
+	$\Hom^\bullet(X,X)$ dari Definisi~\ref{def:Hom-cplx}, bersama
+	$d=d_{\Hom^\bullet(X,X)}$, menjadi aljabar bergradasi-$\Z$ diferensial
+	dengan diferensial berderajat $1$. Pernyataan ini pada dasarnya merupakan
+	isi Lema~\ref{prop:Hom-cplx-Leibniz}. Kita mempunyai
+	\[ \Hm(\Hom^\bullet(X,X),d)=
+	\bigoplus_{n\in\Z}\Hom_{\cate{K}(\mathcal{B})}(X,X[n]), \]
+	dengan perkalian yang berasal dari komposisi morfisme dalam
+	$\cate{K}(\mathcal{B})$.
+\end{example}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.e002
+\begin{example}
+	Ambil $\Bbbk=\CC$, $I=\Z$, dan $\epsilon(p)=p\;\bmod2$. Bentuk
+	diferensial bernilai $\CC$ berderajat $p$ pada manifold mulus
+	$\mathfrak{X}$ membentuk ruang vektor $A^p(\mathfrak{X})$. Definisikan
+	$A(\mathfrak{X}):=\bigoplus_{p=0}^{\dim X}A^p(\mathfrak{X})$. Dengan
+	perkalian $\mu(\omega\otimes\eta):=\omega\wedge\eta$ dan diferensial luar
+	$\dd$, objek ini menjadi aljabar bergradasi-$\Z$ diferensial dengan
+	diferensial berderajat $1$. Aljabar terkait
+	$\Hm(A(\mathfrak{X}),\dd)=\bigoplus_p\Hm^p_{\mathrm{dR}}(\mathfrak{X})$
+	tepat merupakan kohomologi de Rham dari $\mathfrak{X}$; perkalian yang
+	berasal dari $\wedge$ memberinya struktur aljabar bergradasi. Ini merupakan
+	objek fundamental dalam topologi dan isomorfik sebagai aljabar bergradasi
+	dengan cincin kohomologi singular $\mathfrak{X}$.
+
+	Perkalian pada $\Hm(A(\mathfrak{X}),\dd)$ juga memenuhi
+	$xy=(-1)^{pq}yx$, dengan $x$ dan $y$ masing-masing unsur homogen berderajat
+	$p$ dan $q$, karena perkalian pada $A(\mathfrak{X})$ sudah mempunyai sifat
+	ini. Sebagai contoh sederhana yang indah, ruang proyektif kompleks
+	$\mathfrak{X}:=\mathbb{P}^n(\CC)$ menghasilkan aljabar bergradasi
+	$\Hm(A(\mathfrak{X}),\dd)\simeq\CC[t]/(t^{n+1})$, dengan peubah $t$
+	bersesuaian dengan unsur homogen berderajat $2$.
+\end{example}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p005
+Kembali ke pokok pembahasan, dalam bagian ini kita mempertimbangkan kasus-kasus
+berikut:
+\begin{center}\begin{tabular}{|c|c|c|} \hline
+	Singkatan & $I$ & $\epsilon:I\to\Z/2\Z$ \\ \hline
+	Bergradasi tunggal & $\Z$ & $\epsilon(p)=p\;\bmod2$ \\
+	Bergradasi ganda & $\Z^2$ & $\epsilon(p,q)=p+q\;\bmod2$ \\ \hline
+\end{tabular}\end{center}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p006
+Teori ini beririsan dengan Definisi~\ref{def:differential-object},
+tetapi fokus bagian ini adalah perkalian yang belum dibahas sebelumnya.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p007
+Untuk meringankan notasi, selanjutnya berbagai kasus tersebut secara
+bersama-sama kita sebut ``bergradasi''; pembeda utamanya adalah
+superskrip $p$ atau $(p,q)$. Demikian pula, aljabar bergradasi-$I$
+diferensial secara bersama-sama disebut aljabar bergradasi diferensial.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.c001
+\begin{convention}
+	Untuk barisan spektral bergradasi ganda kohomologis $\mathscr{E}$ dalam
+	kasus $\mathcal{A}=\Bbbk\dcate{Mod}$, kita mengidentifikasi setiap halaman
+	$E_r$ dengan modul bergradasi $\bigoplus_{p,q}E_r^{p,q}$ dan memandang
+	$d_r=(d_r^{p,q})_{p,q}$ sebagai endomorfisme berderajat $(r,-r+1)$ pada
+	modul bergradasi $E_r$. Kasus homologis dan kasus bergradasi tunggal
+	diperlakukan dengan cara serupa.
+\end{convention}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p008
+Singkatnya, barisan spektral dengan struktur perkalian adalah barisan spektral
+yang terdiri atas aljabar bergradasi diferensial.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.d002
+\begin{definition}\label{def:mult-ss}
+	\index{barisan spektral!struktur perkalian (multiplicative structure)}
+	Sebuah \emph{struktur perkalian} pada barisan spektral bergradasi ganda
+	kohomologis $\mathscr{E}$ adalah keluarga homomorfisme
+	$\mu_r:E_r\otimes E_r\to E_r$ (yakni ``perkalian'') sedemikian sehingga
+	\begin{itemize}
+		\item setiap $(E_r,\mu_r,d_r)$ menjadi aljabar bergradasi diferensial,
+		dengan diferensial berderajat $(r,-r+1)$;
+		\item $t_{r+1}:\Hm(E_r,d_r)\rightiso E_{r+1}$ dalam data barisan
+		spektral merupakan isomorfisme aljabar bergradasi.
+	\end{itemize}
+	Struktur perkalian pada barisan spektral bergradasi tunggal atau homologis
+	didefinisikan dengan cara serupa.
+\end{definition}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p009
+Pembahasan sebelumnya menunjukkan bahwa $Z_r=\Ker(d_r)$ merupakan subaljabar
+bergradasi dari $E_r$, sedangkan $B_r=\Image(d_r)$ merupakan ideal dua sisi
+bergradasi dari $Z_r$. Karena itu $\Hm(E_r,d_r)$ menjadi aljabar bergradasi;
+	inilah makna tepat Definisi~\ref{def:mult-ss}.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p010
+Lebih lanjut, jika limitnya ada, maka
+$Z_\infty=\bigoplus_{p,q}Z_\infty^{p,q}$ juga merupakan subaljabar bergradasi
+dengan $B_\infty=\bigoplus_{p,q}B_\infty^{p,q}$ sebagai ideal bergradasinya.
+Jadi $E_\infty$ juga merupakan aljabar bergradasi.
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.p011
+\index{aljabar-dg}
+Sebagai contoh, perhatikan aljabar bergradasi diferensial yang diferensialnya
+berderajat $1$, yang disingkat sebagai aljabar-dg. Dengan mengembangkan
+definisi, ini setara dengan kompleks modul-$\Bbbk$
+$X=(X^n,d_X^n)_{n\in\Z}$ sedemikian sehingga
+$X\xlongequal{\text{diidentifikasi}}\bigoplus_nX^n$ dilengkapi perkalian
+$\mu:X\otimes X\to X$ yang memenuhi $X^p\cdot X^{p'}\subset X^{p+p'}$ dan
+aturan Leibniz
+\[ d(xy)=dx\cdot y+(-1)^px\cdot dy,
+	\qquad x\in X^p,\quad y\in X^{p'}. \]
+Sekarang andaikan data $(X,d)$ diperluas menjadi kompleks terfiltrasi
+$(X,d,\mathrm{F}^\bullet X)$. Ingat bahwa ini sudah berarti
+$d(\mathrm{F}^pX)\subset\mathrm{F}^pX$; kita syaratkan pula agar perkalian
+pada $X$ kompatibel dengan filtrasi:
+\[ \mathrm{F}^pX^n\cdot\mathrm{F}^{p'}X^{n'}
+	\subset\mathrm{F}^{p+p'}X^{n+n'}. \]
+Dalam keadaan ini $(X,d,\mu,\mathrm{F}^\bullet X)$ disebut aljabar bergradasi
+diferensial terfiltrasi. Untuk filtrasi terinduksi pada $\Hm(X,d)$, syarat di
+atas memastikan bahwa
+\[ \gr\Hm(X,d)\xlongequal{\text{diidentifikasi}}
+	\bigoplus_{(p,q)\in\Z^2}\gr^p\Hm^{p+q}(X,d) \]
+secara alami menjadi aljabar bergradasi.
+\index{aljabar bergradasi diferensial!terfiltrasi (filtered)}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.t001
+\begin{proposition}\label{prop:dga-mult-ss}
+	Misalkan $(X,d,\mu,\mathrm{F}^\bullet X)$ adalah aljabar bergradasi
+	diferensial terfiltrasi, dengan diferensial berderajat $1$.
+	\begin{enumerate}[(i)]
+		\item Barisan spektral $\mathscr{E}$ dari kompleks terfiltrasi
+		$(X,d,\mathrm{F}^\bullet X)$ mempunyai struktur perkalian kanonik.
+		\item Isomorfisme
+		$E_\infty^{p,q}\simeq\gr^p\Hm^{p+q}(X,d)$ dalam Teorema Konvergensi
+		Klasik~\ref{prop:classical-convergence} sesungguhnya memberikan
+		isomorfisme aljabar bergradasi
+		$E_\infty\simeq\gr\Hm(X,d)$.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Ambil $x\in E_r^{p,q}$ dan $y\in E_r^{p',q'}$. Berdasarkan deskripsi
+	Proposisi~\ref{prop:filtered-cplx-ss}, pilih prapeta
+	\begin{gather*}
+		\widetilde{x}\in\mathrm{F}^pX^{p+q}\cap
+		d^{-1}\left(\mathrm{F}^{p+r}X^{p+q+1}\right),\qquad
+		\widetilde{y}\in\mathrm{F}^{p'}X^{p'+q'}\cap
+		d^{-1}\left(\mathrm{F}^{p'+r}X^{p'+q'+1}\right).
+	\end{gather*}
+	Menurut definisi,
+	\begin{gather*}
+		\widetilde{x}\widetilde{y}\in
+		\mathrm{F}^{p+p'}X^{p+q+p'+q'},\\
+		d(\widetilde{x}\widetilde{y})
+		=d\widetilde{x}\cdot\widetilde{y}
+		+(-1)^{p+q}\widetilde{x}\cdot d\widetilde{y}
+		\in\mathrm{F}^{p+p'+r}X^{p+q+p'+q'+1}.
+	\end{gather*}
+	Jadi $\widetilde{x}\widetilde{y}$ menentukan unsur
+	$xy\in E_r^{p+p',q+q'}$. Perhitungan rutin (silakan periksa) menunjukkan
+	bahwa $xy$ hanya bergantung pada $x$ dan $y$.
+
+	Selanjutnya, $d_r:E_r\xrightarrow{(r,-r+1)}E_r$ diinduksi oleh diferensial
+	$d$ pada $X$. Ini memberikan struktur aljabar bergradasi diferensial pada
+	$E_r$; sifat asosiatif, aturan Leibniz, dan sifat-sifat lainnya semuanya
+	dapat diperiksa pada $(X,d)$. Dengan cara yang sama terlihat bahwa
+	$\Hm(E_r,d_r)\simeq E_{r+1}$ merupakan isomorfisme aljabar bergradasi.
+
+	Pernyataan bahwa isomorfisme kanonik
+	$E_\infty^{p,q}\simeq\gr^p\Hm^{p+q}(X,d)$ dalam teorema konvergensi klasik
+	mempertahankan perkalian juga cukup diverifikasi pada $X$, sehingga
+	tidak perlu diuraikan lagi.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.multiplicative-structures.r001
+\begin{remark}
+	\index{sistem Cartan--Eilenberg (Cartan--Eilenberg system)}
+	Struktur perkalian merupakan alat yang sangat diandalkan dalam topologi.
+	Topologi aljabar tanpa perkalian hampir tidak terbayangkan, atau setidaknya
+	akan terasa hambar. Secara historis, ketika pertama kali menemukan barisan
+	spektral, Leray sudah mempertimbangkan struktur perkalian dan menyebutnya
+	``cincin spektral''. Struktur ini sering sangat menyederhanakan perhitungan
+	barisan spektral dalam topologi. Itulah alasan bagian ini memberi pengantar
+	singkat mengenai struktur perkalian, meskipun hanya menyentuh permukaannya.
+
+	Ada satu kesulitan yang jelas ketika menerapkan
+	Definisi~\ref{def:mult-ss}. Struktur aljabar bergradasi diferensial pada
+	semua $E_r$ harus diberikan sekaligus, sebab dari definisinya saja tidak ada
+	alasan bahwa perkalian pada satu halaman menginduksi perkalian pada halaman
+	berikutnya. Dalam sejumlah keadaan hal ini memang dapat dilakukan, seperti
+	dalam Proposisi~\ref{prop:dga-mult-ss}.
+
+	Dalam kasus umum atau kasus yang sulit dihitung secara manual, konstruksi
+	barisan spektral sering bermula dari data sederhana, misalnya pasangan eksak
+dalam \S\ref{sec:exact-couples}. Karena itu wajar ditanyakan: adakah syarat
+sederhana pada pasangan eksak yang menjamin bahwa barisan spektral terkait
+mempunyai struktur perkalian?
+
+	Tampaknya jawabannya negatif: diperlukan informasi selain pasangan eksak.
+Salah satu konstruksi yang berguna adalah \emph{sistem Cartan--Eilenberg} yang
+juga klasik, bersama hasil kali spektralnya; lihat \cite[II.A]{Dou58}. Sebagai
+penerapan, barisan spektral Serre--Atiyah--Hirzebruch yang sangat penting dalam
+topologi mempunyai struktur perkalian untuk setiap teori kohomologi rampat
+yang multiplikatif. Karena materi ini sudah menyimpang dari garis utama, kita
+berhenti sampai di sini.
+\end{remark}

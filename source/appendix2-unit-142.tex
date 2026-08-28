@@ -1,0 +1,129 @@
+% Terjemahan appendix2.tex, baris sumber 287--415.
+\section{\texorpdfstring{$\IndC$}{Ind}-isasi kategori}\label{sec:Indization}
+Melanjutkan pembahasan dalam \S\ref{sec:ind-pro}, mulai sekarang kita berfokus pada objek ind. Peralihan dari $\mathcal{C}$ ke $\IndC\mathcal{C}$ merupakan teknik penting yang sering disebut $\IndC$-isasi.
+
+\begin{definition}
+	\index{kategori!kofinal-kecil (cofinally small)}
+	Misalkan $I$ suatu kategori. Jika terdapat kategori kecil $J$ beserta funktor kofinal $J \to I$ (Definisi \ref{def:cofinal}), maka $I$ disebut \emph{kofinal-kecil}.
+\end{definition}
+
+\begin{lemma}\label{prop:cofinally-small-sub}
+	Kategori $I$ bersifat kofinal-kecil jika dan hanya jika terdapat subkategori penuh $I'$ sedemikian sehingga funktor inklusi $I' \to I$ merupakan funktor kofinal dan $I'$ merupakan kategori kecil. Jika $I$ terfilter, maka $I'$ juga terfilter.
+\end{lemma}
+\begin{proof}
+	Cukup dijelaskan arah ``hanya jika'' dan bagian terakhir. Ambil funktor kofinal $H: J \to I$ dalam definisi. Ambil $I'$ sebagai subkategori penuh yang terdiri atas semua objek $H(j)$ ($j \in \Obj(J)$); tentu saja subkategori ini kecil. Faktorkan $H$ sebagai
+	\[ J \xrightarrow{H'} I' \xrightarrow{G: \text{funktor inklusi}} I. \]
+	Membuktikan bahwa $G: I' \to I$ kofinal setara dengan membuktikan bahwa kategori koma $(i/G)$ terhubung untuk setiap $i \in \Obj(I)$; lihat Definisi \ref{def:cofinal}. Hal ini mudah diturunkan dari keterhubungan $(i/H)$, dan pemeriksaannya diserahkan kepada pembaca.
+	
+	Untuk sifat terfilter dari subkategori penuh kofinal $I'$, lihat Proposisi \ref{prop:cofinal-filtered}.
+\end{proof}
+
+\begin{proposition}[Mengenali objek ind]\label{prop:recognize-ind}
+	Misalkan $X \in \Obj(\mathcal{C}^\wedge)$. Pernyataan-pernyataan berikut ekuivalen:
+	\begin{enumerate}[(i)]
+		\item $X$ merupakan objek ind atas $\mathcal{C}$;
+		\item kategori $(h_{\mathcal{C}}/X)$ yang muncul dalam Teorema \ref{prop:Yoneda-density} merupakan kategori terfilter yang kofinal-kecil.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Pertama-tama, kita tunjukkan (i) $\implies$ (ii). Untuk sifat terfilter, misalkan $X = \Yinjlim X_i$, dengan indeks $i$ menjelajahi objek-objek suatu kategori kecil terfilter $I$, dan $X_i \in \Obj(\mathcal{C})$. Misalkan $\phi: S \to X$ dan $\phi': S' \to X$ dua objek sebarang dari $(h_{\mathcal{C}}/X)$. Proposisi \ref{prop:Ind-cpt} menunjukkan bahwa terdapat $i$ (atau $i'$) sedemikian sehingga $\phi$ (atau $\phi'$) berfaktor melalui $X_i$ (atau $X_{i'}$). Karena $I$ terfilter, tanpa mengurangi keumuman dapat diasumsikan $i = i'$, sehingga $\phi$ dan $\phi'$ keduanya berfaktor melalui objek $X_i \to X$ dari $(h_{\mathcal{C}}/X)$. Inilah syarat pertama bagi kategori terfilter.
+	
+	Argumen di atas sekaligus menunjukkan bahwa seluruh morfisme kanonik $(X_i \to X)_i$ memberikan funktor kofinal $I \to (h_{\mathcal{C}}/X)$. Jadi, $(h_{\mathcal{C}}/X)$ bersifat kofinal-kecil.
+	
+	Selanjutnya, misalkan diberikan dua morfisme dalam $(h_{\mathcal{C}}/X)$ berbentuk
+	\[\begin{tikzcd}[row sep=small]
+		S \arrow[rr, shift left, "f"] \arrow[rr, shift right, "g"'] \arrow[rd, "\phi"'] & & S' . \arrow[ld, "{\phi'}"] \\
+		& X &
+	\end{tikzcd}\]
+	Kita tahu bahwa $\phi'$ berfaktor melalui suatu $\phi'_i: S' \to X_i$. Kesamaan $\phi' f = \phi' g$ menyiratkan adanya morfisme $\alpha: i \to j$ dalam $I$ sedemikian sehingga $X(\alpha) \phi'_i f = X(\alpha) \phi'_i g$, dengan $X(\alpha): X_i \to X_j$. Ini juga setara dengan mengatakan bahwa $f$ dan $g$ diekualisasikan oleh diagram berikut:
+	\[\begin{tikzcd}
+		S \arrow[r, shift left, "f"] \arrow[r, shift right, "g"'] \arrow[rd, "\phi"'] & S' \arrow[d, "{\phi'}"] \arrow[r, "{X(\alpha) \phi'_i}"] & X_j . \arrow[ld] \\
+		& X &
+	\end{tikzcd}\]
+	Dengan demikian terbukti bahwa $(h_{\mathcal{C}}/X)$ terfilter.
+	
+	Sekarang kita tunjukkan (ii) $\implies$ (i). Teorema \ref{prop:Yoneda-density} menunjukkan bahwa $X$ merupakan $\Yinjlim$ dari funktor $(h_{\mathcal{C}}/X) \to \mathcal{C}^\wedge$ (yang memetakan $\phi: S \to X$ ke $S$). Dengan Lema \ref{prop:cofinally-small-sub}, ambil subkategori penuh kofinal $I$ dari $(h_{\mathcal{C}}/X)$ sedemikian sehingga $I$ merupakan kategori kecil terfilter. Dengan demikian, $X$ dapat dituliskan sebagai objek ind $\Yinjlim X_i$.
+\end{proof}
+
+Funktor $X: \mathcal{C}^{\opp} \to \cate{Set}$ yang mengambil nilai di $\IndC\mathcal{C}$ juga disebut \emph{ind-terwakili}. Proposisi \ref{prop:recognize-ind} setara dengan memberikan suatu kriteria bagi keterwakilan-ind. Secara dual, kita dapat membahas funktor \emph{pro-terwakili} dan memberikan kriterianya.
+
+Hasil-hasil selanjutnya menggunakan istilah dalam Definisi \ref{def:create-limit}.
+
+\begin{proposition}\label{prop:Ind-filtered-colim}
+	Funktor penuh dan setia $\IndC\mathcal{C} \to \mathcal{C}^\wedge$ menciptakan $\varinjlim$ kecil terfilter. Secara khusus, $\IndC\mathcal{C}$ memiliki semua $\varinjlim$ kecil terfilter.
+\end{proposition}
+\begin{proof}
+	Ambil kategori kecil terfilter $I$ dan funktor $\alpha: I \to \IndC\mathcal{C}$, dan tulis $X := \Yinjlim \alpha \in \Obj(\mathcal{C}^\wedge)$. Tujuan kita adalah membuktikan bahwa $X$ terletak dalam $\IndC\mathcal{C}$. Berdasarkan Proposisi \ref{prop:recognize-ind}, cukup dibuktikan bahwa $(h_{\mathcal{C}}/X)$ merupakan kategori terfilter yang kofinal-kecil.
+	
+	Untuk syarat pertama kategori terfilter, ambil $\phi: S \to X$ dan $\phi': S' \to X$. Proposisi \ref{prop:Ind-cpt} menyiratkan adanya $i, i' \in \Obj(I)$ sedemikian sehingga keduanya masing-masing berfaktor melalui $\phi_i: S \to X_i$ dan $\phi'_{i'}: S' \to X_{i'}$;\footnote{Catatan penerjemah: sumber mencetak domain $\phi'_{i'}$ sebagai $S$. Karena $\phi'$ berdomain $S'$, domain yang bertipe benar ialah $S'$.} tanpa mengurangi keumuman, dapat diasumsikan $i = i'$. Karena $X_i$ merupakan objek ind, tuliskan dalam bentuk $\Yinjlim X_{ij}$. Dengan menerapkan sekali lagi Proposisi \ref{prop:Ind-cpt}, dapat diasumsikan bahwa $\phi_i$ dan $\phi'_i$ keduanya berfaktor melalui suatu $X_{ij} \in \Obj(\mathcal{C})$; morfisme kanonik $X_{ij} \to X$ menjadikannya objek dari $(h_{\mathcal{C}}/X)$.
+	
+	Syarat kedua mengenai ekualisasi morfisme ditangani dengan cara yang sama.
+	
+	Sekarang kita periksa bahwa $(h_{\mathcal{C}}/X)$ bersifat kofinal-kecil. Berdasarkan Lema \ref{prop:cofinally-small-sub}, untuk setiap $i$ terdapat himpunan bagian kecil $S_i$ dari $\Obj((h_{\mathcal{C}}/ X_i))$ sedemikian sehingga setiap objek dari $(h_{\mathcal{C}}/ X_i)$ memiliki morfisme menuju suatu objek dalam $S_i$. Tuliskan $F_i: (h_{\mathcal{C}}/ X_i) \to (h_{\mathcal{C}}/ X)$ untuk funktor yang jelas, dan tetapkan
+	\[ S := \bigcup_i F_i(S_i) \;\subset \Obj((h_{\mathcal{C}}/ X)). \]
+	Maka $S$ merupakan himpunan kecil, dan argumen sebelumnya sebenarnya menunjukkan bahwa setiap objek dari $(h_{\mathcal{C}}/ X)$ memiliki morfisme menuju suatu objek dalam $S$. Jadi, $S$ memberikan subkategori penuh kofinal dari $(h_{\mathcal{C}}/ X)$ (terapkan Proposisi \ref{prop:cofinal-filtered}); oleh karena itu, $(h_{\mathcal{C}}/ X)$ bersifat kofinal-kecil.
+\end{proof}
+
+\begin{lemma}\label{prop:Ind-lim}
+	Misalkan $\mathcal{C}$ memiliki $\varprojlim$ hingga. Maka funktor $\IndC\mathcal{C} \to \mathcal{C}^\wedge$ menciptakan $\varprojlim$ hingga, sedangkan $\mathcal{C} \to \IndC\mathcal{C}$ mempertahankan $\varprojlim$ hingga. Secara khusus, $\IndC\mathcal{C}$ memiliki $\varprojlim$ hingga.
+	
+	Dalam keadaan ini, $\varprojlim$ hingga dalam $\IndC\mathcal{C}$ dapat dipertukarkan dengan $\varinjlim$ kecil terfilter.
+\end{lemma}
+\begin{proof}
+	Diketahui bahwa pembenaman $\mathcal{C} \to \mathcal{C}^\wedge$ mempertahankan $\varprojlim$ kecil. Pernyataan dalam paragraf pertama tereduksi menjadi pembuktian bahwa $\IndC\mathcal{C}$ tertutup terhadap $\varprojlim$ hingga dalam $\mathcal{C}^\wedge$.
+	
+	Karena $\mathcal{C} \to \mathcal{C}^\wedge$ mempertahankan $\varprojlim$ kecil, funktor tersebut memetakan objek terminal ke objek terminal. Jadi, masalahnya lebih lanjut tereduksi menjadi membuktikan bahwa $\IndC\mathcal{C}$ tertutup terhadap produk hingga dan ekualiser dalam $\mathcal{C}^\wedge$. Untuk produk dua objek ind $X$ dan $Y$, gunakan Lema \ref{prop:ind-object-morphism} (i) untuk mengambil kategori terfilter $K$ dan menyajikan keduanya sebagai $X = \Yinjlim X_k$ dan $Y = \Yinjlim Y_k$. Kita menyatakan bahwa $\Yinjlim (X_k \times Y_k)$ memberikan $X \times Y$ dalam $\mathcal{C}^\wedge$. Memang, untuk setiap $S \in \Obj(\mathcal{C})$ berlaku
+	\begin{multline*}
+		\left(\Yinjlim (X_k \times Y_k)\right)(S) = \varinjlim_k \left((X_k \times Y_k)(S)\right) = \varinjlim_k (X_k(S) \times Y_k(S)) \\
+		\simeq \varinjlim_k X_k(S) \times \varinjlim_k Y_k(S) = X(S) \times Y(S);
+	\end{multline*}
+	isomorfisme kanonik pada baris kedua menggunakan fakta bahwa $\varinjlim$ kecil terfilter dan $\varprojlim$ hingga dalam $\cate{Set}$ saling dipertukarkan (Proposisi \ref{prop:filtered-finite-exchange}).
+	
+	Selanjutnya, kita tangani ekualiser. Tinjau morfisme $f, g: X \rightrightarrows Y$ di antara objek ind. Berdasarkan Lema \ref{prop:ind-object-morphism} (iii), kita dapat mengasumsikan bahwa $X = \Yinjlim X_i$, $Y = \Yinjlim Y_i$, sedangkan $f, g$ masing-masing berasal dari dua keluarga morfisme $f_i, g_i: X_i \rightrightarrows Y_i$. Ambil $\Ker(f_i, g_i)$ dalam $\mathcal{C}$. Untuk setiap $S \in \Obj(\mathcal{C})$ dan $i$, kita memperoleh diagram ekualiser dalam $\cate{Set}$
+	\[\begin{tikzcd}
+		\Hom_{\mathcal{C}}(S, \Ker(f_i, g_i)) \arrow[r] & \Hom_{\mathcal{C}}(S, X_i) \arrow[r, shift left, "{f_{i, *}}"] \arrow[r, shift right, "{g_{i, *}}"'] & \Hom_{\mathcal{C}}(S, Y_i).
+	\end{tikzcd}\]
+	Ambil $\varinjlim$ terhadap $i$, dan terapkan sekali lagi fakta bahwa $\varinjlim$ kecil terfilter dan $\varprojlim$ hingga dalam $\cate{Set}$ saling dipertukarkan. Maka diperoleh diagram ekualiser
+	\[\begin{tikzcd}
+		\left(\Yinjlim \Ker(f_i, g_i)\right)(S) \arrow[r] & X(S) \arrow[r, shift left, "f"] \arrow[r, shift right, "g"'] & Y(S).
+	\end{tikzcd}\]
+	Ketika $S$ bervariasi, ini menunjukkan bahwa objek ind $\Yinjlim \Ker(f_i, g_i)$ memberikan $\Ker(f, g)$ dalam $\mathcal{C}^\wedge$.
+	
+	Sebenarnya, argumen tersebut menunjukkan bahwa $\varinjlim$ kecil terfilter dan $\varprojlim$ hingga dalam $\mathcal{C}^\wedge$ saling dipertukarkan; hal ini diperiksa dengan mereduksinya ke $\cate{Set}$. Karena $\IndC\mathcal{C} \to \mathcal{C}^\wedge$ menciptakan $\varinjlim$ kecil terfilter (Proposisi \ref{prop:Ind-filtered-colim}) dan $\varprojlim$ hingga, sifat pertukaran tersebut tetap berlaku dalam $\IndC\mathcal{C}$.
+\end{proof}
+
+\begin{lemma}\label{prop:Ind-colim}
+	Misalkan $\mathcal{C}$ memiliki $\varinjlim$ hingga. Maka $\IndC\mathcal{C}$ juga memilikinya, dan $\mathcal{C} \to \IndC\mathcal{C}$ mempertahankan $\varinjlim$ hingga.
+	
+	Dalam keadaan ini, $\IndC\mathcal{C}$ kokomplet.
+\end{lemma}
+\begin{proof}
+	Uraikan $\varinjlim$ hingga menjadi tiga kasus: objek inisial, koproduk dua objek, dan koekualiser.
+	
+	Misalkan $X$ objek inisial dari $\mathcal{C}$. Maka, untuk setiap objek ind $Y = \Yinjlim Y_j$, berlaku $\Hom_{\mathcal{C}^\wedge}(X, Y) \simeq \varinjlim_j \Hom_{\mathcal{C}}(X, Y_j)$, yang jelas merupakan himpunan satu titik. Jadi, $X$ adalah objek inisial dari $\IndC\mathcal{C}$.
+	
+	Selanjutnya, tinjau koproduk objek ind $X$ dan $Y$. Gunakan Lema \ref{prop:ind-object-morphism} (i) untuk mengambil kategori terfilter $K$ dan menyajikan keduanya sebagai $X = \Yinjlim X_k$ dan $Y = \Yinjlim Y_k$. Kita menyatakan bahwa koproduknya diberikan oleh objek ind $\Yinjlim (X_k \sqcup Y_k)$. Untuk setiap objek ind $S = \Yinjlim S_h$,
+	\begin{multline*}
+		\Hom_{\mathcal{C}^\wedge}(\Yinjlim (X_k \sqcup Y_k), S) \simeq \varprojlim_k \varinjlim_h \Hom_{\mathcal{C}}(X_k \sqcup Y_k, S_h) \\
+		\simeq \varprojlim_k \varinjlim_h \left( \Hom_{\mathcal{C}}(X_k, S_h) \times \Hom_{\mathcal{C}}(Y_k, S_h) \right) \\
+		\simeq \varprojlim_k \varinjlim_h \Hom_{\mathcal{C}}(X_k, S_h) \times \varprojlim_k \varinjlim_h \Hom_{\mathcal{C}}(Y_k, S_h),
+	\end{multline*}
+	langkah terakhir menggunakan pertukaran $\varprojlim$ dengan $\varprojlim$, serta pertukaran $\varinjlim$ kecil terfilter dengan $\varprojlim$ hingga dalam $\cate{Set}$. Hasil akhirnya adalah $\Hom_{\mathcal{C}^\wedge}(X, S) \times \Hom_{\mathcal{C}^\wedge}(Y, S)$, dan semua isomorfismenya kanonik.
+	
+	Tinjau kasus koekualiser. Misalkan $f, g: X \rightrightarrows Y$ morfisme di antara objek ind. Berdasarkan Lema \ref{prop:ind-object-morphism} (iii), dapat diasumsikan bahwa $X = \Yinjlim X_i$, $Y = \Yinjlim Y_i$, sedangkan $f, g$ berasal dari dua keluarga morfisme $f_i, g_i: X_i \rightrightarrows Y_i$. Untuk setiap $S \in \Obj(\mathcal{C})$ dan $i$, kita memiliki diagram ekualiser dalam $\cate{Set}$
+	\[\begin{tikzcd}
+		\Hom_{\mathcal{C}}(\Coker(f_i, g_i), S) \arrow[r] &
+		\Hom_{\mathcal{C}}(Y_i, S) \arrow[r, shift left, "{f_i^*}"] \arrow[r, shift right, "{g_i^*}"'] & \Hom_{\mathcal{C}}(X_i, S).
+	\end{tikzcd}\]
+	
+	Jika, melalui pembenaman Yoneda, $\Hom_{\mathcal{C}}$ dituliskan kembali sebagai $\Hom_{\mathcal{C}^\wedge}$ dan $S \in \Obj(\mathcal{C})$ di atas diperluas menjadi objek ind $S = \Yinjlim S_j$, kita tetap memperoleh diagram ekualiser. Alasannya, menurut Proposisi \ref{prop:Ind-Hom}, ini tidak lain adalah hasil mengganti $S$ dengan $S_j$ dalam rumus di atas, lalu menerapkan satu lapisan tambahan $\varinjlim_j$; tetapi ekualiser merupakan suatu $\varprojlim$ hingga, sehingga diawetkan oleh $\varinjlim_j$.
+	
+	Ambil $\varprojlim_i$ dari diagram ekualiser yang diperoleh di atas, lalu pindahkan $\varprojlim_i$ ke dalam variabel pertama $\Hom$, sehingga berubah menjadi $\Yinjlim$. Hasilnya adalah diagram ekualiser dalam $\cate{Set}$
+	\[\begin{tikzcd}
+		\Hom_{\mathcal{C}^\wedge}(\Yinjlim \Coker(f_i, g_i), S) \arrow[r] &
+		\Hom_{\mathcal{C}^\wedge}(Y, S) \arrow[r, shift left, "{f^*}"] \arrow[r, shift right, "{g^*}"'] & \Hom_{\mathcal{C}^\wedge}(X, S).
+	\end{tikzcd}\]
+	Jadi, kita telah memeriksa bahwa $\Yinjlim \Coker(f_i, g_i)$ memenuhi sifat universal yang diperlukan bagi $\Coker(f, g)$ dalam $\IndC\mathcal{C}$.
+	
+	Terakhir, untuk membuktikan bahwa $\IndC\mathcal{C}$ kokomplet, cukup ditunjukkan bahwa kategori tersebut memiliki koproduk kecil. Namun, koproduk kecil pada umumnya dapat dinyatakan sebagai $\varinjlim$ terfilter dari koproduk hingga. Terapkan Proposisi \ref{prop:Ind-filtered-colim}. Ini membuktikan pernyataan tersebut.
+\end{proof}

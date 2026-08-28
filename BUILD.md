@@ -1,50 +1,65 @@
-# Reproducible PDF build
+# Reproducible builds
 
-## Toolchain baseline
+## PDF
 
-The admitted Unit 051 artifact was built on Windows with XeLaTeX, Biber 2.21,
-and MakeIndex. A complete TeX distribution must provide the packages named by
-`source/AJbook2.cls`, `source/mycommand.sty`, `source/myarrows.sty`, and the
-wrapper. The portable configuration uses TeX Gyre Heros and the Fandol fonts
-distributed with TeX Live/MiKTeX. Shell escape is not required and was disabled.
+Master edisi lengkap ialah
+`source/Al-jabr-2-id-complete-draft.tex`. Walaupun nama berkas tersebut
+mempertahankan nama kerja produksi, isi yang dirilis mencakup seluruh 146 unit
+dan judul publiknya tetap *Metode dalam Aljabar, Jilid 2: Aljabar Linear —
+Edisi Bahasa Indonesia*.
 
-The author's 650-page reference PDF is the Linux/TeX Live/xindy baseline. The
-authoritative source can also produce a valid 653-page Windows/MiKTeX/MakeIndex
-fallback. That pagination difference is documented and is not a corpus change.
+Distribusi TeX lengkap harus menyediakan XeLaTeX, Biber, SplitIndex,
+MakeIndex/xindy, serta paket yang diminta oleh `AJbook2.cls`, `mycommand.sty`,
+dan `myarrows.sty`. Fon portabel menggunakan TeX Gyre Heros dan fon Fandol yang
+tersedia dalam TeX Live/MiKTeX. Shell escape tidak diperlukan.
 
-## PowerShell build
-
-Run from the repository root:
+Contoh alur Windows/MiKTeX dengan MakeIndex sebagai fallback:
 
 ```powershell
 New-Item -ItemType Directory -Path build -Force | Out-Null
 Push-Location source
-xelatex -interaction=nonstopmode -halt-on-error -no-shell-escape -output-directory=../build Al-jabr-2-id-cumulative.tex
+xelatex -interaction=nonstopmode -halt-on-error -no-shell-escape `
+  -output-directory=../build Al-jabr-2-id-complete-draft.tex
 Pop-Location
 
 Push-Location build
 $oldBibInputs = $env:BIBINPUTS
 $env:BIBINPUTS = "../source;"
-biber Al-jabr-2-id-cumulative
-makeindex Al-jabr-2-id-cumulative.idx
-makeindex sym1.idx
+biber Al-jabr-2-id-complete-draft
+splitindex Al-jabr-2-id-complete-draft.idx
 Pop-Location
 
 Push-Location source
-1..4 | ForEach-Object {
-  xelatex -interaction=nonstopmode -halt-on-error -no-shell-escape -output-directory=../build Al-jabr-2-id-cumulative.tex
+1..2 | ForEach-Object {
+  xelatex -interaction=nonstopmode -halt-on-error -no-shell-escape `
+    -output-directory=../build Al-jabr-2-id-complete-draft.tex
 }
 Pop-Location
 $env:BIBINPUTS = $oldBibInputs
 ```
 
-Expected admitted boundary: 330 pages, 1,606,437 bytes, SHA-256
-`a34260d5cbb051c4209b7b7e8189ab794fe7656f10ed0bfa4b3491868b936945`.
-Toolchain and platform metadata can change PDF bytes even when the mathematical
-content is unchanged; compare the build log, page count, links, fonts, and
-rendered pages as well as the byte hash. A clean replay may differ in raw PDF
-bytes because of platform job-name and metadata variation; it must still match
-the admitted page count, links, fonts, and visual checks.
+Pada Linux/TeX Live, gunakan konfigurasi xindy yang tertanam dalam master;
+alur penulis (`latexmk`/xindy) tetap menjadi baseline platform sumber.
 
-The full build and visual-QA receipt is
-[`provenance/UNIT_051_QA.md`](provenance/UNIT_051_QA.md).
+PDF resmi penulis berjumlah 650 halaman pada Linux/TeX Live/xindy. Sumber yang
+sama menghasilkan fallback Windows/MiKTeX/MakeIndex 653 halaman yang sah.
+Jumlah halaman edisi Bahasa Indonesia tidak diharapkan sama karena perbedaan
+bahasa, pelokalan, dan materi jembatan independen. Perbandingan build harus
+mencakup log, jumlah halaman, fon, pranala, indeks, dan inspeksi visual—bukan
+hanya kesamaan byte PDF.
+
+## Pembaca HTML offline
+
+Sumber pembangunan berada di `reader-source/`. Jalankan
+`reader-source/build-reader.ps1` dari salinan repositori lengkap. Hasil build
+berada di `reader-source/dist/`; distribusi yang diterima disalin ke `reader/`
+dan harus dapat dibuka melalui `reader/index.html` tanpa jaringan. Jangan
+menganggap hasil antara dalam direktori build sebagai distribusi yang siap
+dirilis.
+
+## Penutupan rilis
+
+Skrip staging di luar repositori menyalin ulang sumber/backend/pembaca dari
+lane kanonis. Mode final menolak penutupan jika backend belum memuat 146 unit
+atau pembaca offline belum memiliki `index.html`; barulah manifes, checksum,
+dan ZIP deterministik dibuat.

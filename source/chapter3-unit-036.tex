@@ -275,7 +275,7 @@ hubungannya dengan automorfisme $\mathrm{swap}$.
 	(Definisi~\ref{def:total-cplx}) dan definisi funktor pergeseran
 	(Definisi~\ref{def:translation-functor}) menunjukkan bahwa $\theta_X$ dan
 	$\theta'_X$ merupakan morfisme kompleks; rinciannya panjang tetapi tidak
-	sulit. Diagram antikomutatif tereduksi pada pengamatan bahwa diagram
+	sulit. Antikomutativitas diagram cukup dibuktikan dengan mengamati bahwa diagram
 % segment-id: o014.li2.chapter3.double-complexes.g006
 	\[\begin{tikzcd}
 		X^{p+1, q+1} \arrow[d, "{(-1)^p \identity}"'] \arrow[r, "\identity"] & X^{p+1, q+1} \arrow[d, "{(-1)^{p+1} \identity}"] \\
@@ -283,7 +283,7 @@ hubungannya dengan automorfisme $\mathrm{swap}$.
 	\end{tikzcd}\]
 	antikomutatif.
 	
-	Sekarang tinjau pernyataan tentang diagram komutatif. Tetapkan
+	Sekarang tinjau pernyataan tentang diagram komutatif. Misalkan
 	$(p,q)\in\Z^2$ dan bandingkan restriksi kedua komposisi pada
 	$(X[1]_{\mathrm{I}}[1]_{\mathrm{II}})^{p,q}$. Telah dijelaskan bahwa
 	$\theta$ lalu $\theta'$ (untuk $X$) dan $\theta'$ lalu $\theta$ (untuk
@@ -317,7 +317,7 @@ yang dimaksud dengan bifunktor?
 	disebut \emph{bifunktor}. Setelah objek
 	$X_i\in\Obj(\mathcal{A}_i)$ ditetapkan, diperoleh funktor satu variabel
 	$F(X_1,\cdot):\mathcal{A}_2\to\mathcal{B}$ dan
-	$F(\cdot,X_2):\mathcal{A}_1\to\mathcal{B}$. Dengan demikian, dapat dibahas
+	$F(\cdot,X_2):\mathcal{A}_1\to\mathcal{B}$. Dengan demikian, kita dapat membahas
 	keaditifan, keeksakan, dan berbagai konsep lain bagi setiap variabel $F$.
 \end{konvensi}
 
@@ -398,7 +398,7 @@ $\cate{K}^2(\mathcal{A})\to\cate{K}(\mathcal{A})$.
 
 % segment-id: o014.li2.chapter3.double-complexes.p017
 Kembali ke bifunktor $F:\mathcal{A}_1\times\mathcal{A}_2\to\mathcal{B}$
-di antara kategori-kategori aditif, dan andaikan $F$ aditif dalam setiap
+antara kategori-kategori aditif, dan andaikan $F$ aditif dalam setiap
 variabel. Berikut adalah versi bifunktor dari \eqref{eqn:KF}.
 
 % segment-id: o014.li2.chapter3.double-complexes.pr004
@@ -418,7 +418,7 @@ variabel. Berikut adalah versi bifunktor dari \eqref{eqn:KF}.
 \begin{bukti}
 	Ambil kasus $\cate{C}_{\oplus}F$ sebagai contoh. Yang perlu ditunjukkan
 	ialah bahwa, untuk morfisme homotopik nol
-	$f_1=d^{-1}g:X_1\to Y_1$ dalam $\cate{C}(\mathcal{A}_1)$ dan sebarang
+	$f_1=d^{-1}g:X_1\to Y_1$ dalam $\cate{C}(\mathcal{A}_1)$ dan sembarang
 	morfisme $f_2:X_2\to Y_2$ dalam $\cate{C}(\mathcal{A}_2)$, morfisme yang
 	bersesuaian $(\cate{C}^2F)(f_1,f_2):\cate{C}^2F(X_1,X_2)\to
 	\cate{C}^2F(Y_1,Y_2)$ homotopik nol. Pilihan yang jelas ialah
@@ -465,8 +465,8 @@ Pernyataan yang sama berlaku jika $\oplus$ diganti dengan $\Pi$.
 		\cate{C}(\mathcal{A})^{\opp} \times \cate{C}(\mathcal{A}) \arrow[d, "\simeq"', "\text{pertukaran}"] \arrow[r, "{(\sigma^{-1}, \identity)}" inner sep=0.6em] & \cate{C}(\mathcal{A}^{\opp}) \times \cate{C}(\mathcal{A}) \arrow[r, "{\cate{C}^2 \Hom(\cdot, \cdot)}" inner sep=0.6em] \arrow[d, "\simeq"', "\text{pertukaran}"] & \cate{C}^2(\cate{Ab}) \arrow[d, "\mathrm{swap}"] \\
 		\cate{C}(\mathcal{A}) \times \cate{C}(\mathcal{A})^{\opp} \arrow[r, "{(\identity, \sigma^{-1})}"' inner sep=0.6em] & \cate{C}(\mathcal{A}) \times \cate{C}(\mathcal{A}^{\opp}) \arrow[r, "{\cate{C}^2 F}"' inner sep=0.6em] & \cate{C}^2(\cate{Ab})
 	\end{tikzcd}\]
-	dan Proposisi~\ref{prop:double-cplx-swap}, persoalan semula tereduksi pada
-	pembuktian adanya isomorfisme kanonik
+	dan Proposisi~\ref{prop:double-cplx-swap}, cukup dibuktikan bahwa terdapat
+	isomorfisme kanonik
 	\[
 		\tot_{\Pi}\Hom^{\bullet,\bullet}(X,Y)
 		\rightiso \Hom^\bullet(X,Y).
@@ -488,7 +488,7 @@ Pernyataan yang sama berlaku jika $\oplus$ diganti dengan $\Pi$.
 	Sekarang tentukan $\tot_{\Pi}\Hom^{\bullet,\bullet}(X,Y)$. Pertama,
 % segment-id: o014.li2.chapter3.double-complexes.q021
 	\[ \left(\tot_{\Pi} \Hom^{\bullet, \bullet}(X, Y)\right)^n = \prod_{p+q=n} \Hom_{\mathcal{A}}\left( X^{-q}, Y^p \right) = \prod_{k \in \Z} \Hom\left( X^k, Y^{k+n} \right) \]
-	(dengan substitusi $k=-q$), yang tidak lain ialah $\Hom^n(X,Y)$.
+	(dengan substitusi $k=-q$), yang tepat merupakan $\Hom^n(X,Y)$.
 	Selanjutnya, deskripsikan
 	$d_{\tot_{\Pi}\Hom^{\bullet,\bullet}(X,Y)}^n$: koordinat $(p,q)$-nya
 	dalam $\Hom^{n+1}(X,Y)$, dengan $p+q=n+1$, berasal dari
@@ -506,6 +506,6 @@ Pernyataan yang sama berlaku jika $\oplus$ diganti dengan $\Pi$.
 	Terbukti.
 
 	Terakhir, jika $\mathcal{A}$ kategori $\Bbbk$-linear, maka
-	$\Hom^{\bullet,\bullet}(X,Y)$ meningkat menjadi funktor bernilai dalam
+	$\Hom^{\bullet,\bullet}(X,Y)$ secara alami menjadi funktor bernilai dalam
 	$\cate{C}^2(\Bbbk\dcate{Mod})$.
 \end{contoh}

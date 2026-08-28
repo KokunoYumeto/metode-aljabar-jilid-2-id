@@ -50,7 +50,7 @@ bersifat penuh dan setia untuk setiap $\mathcal{D}$, dan
 $G \in \Obj\left(\mathcal{D}^{\mathcal{C}}\right)$ isomorfik dengan suatu
 $Q^*(F) = FQ$ jika dan hanya jika $G$ memetakan unsur-unsur $S$ menjadi
 isomorfisme. Funktor $Q$ dalam Definisi \ref{def:cat-localization} secara
-otomatis memiliki sifat ini---bagian penuh dan setianya diberikan oleh
+	otomatis mempunyai sifat ini---bagian penuh dan setianya diberikan oleh
 Proposisi \ref{prop:localization-extra-property}, sedangkan sisanya mudah.}.
 
 % segment-id: o014.li2.chapter1.gabriel-zisman-localization.p003
@@ -100,8 +100,8 @@ Berikut ini kita tunjukkan bahwa lokalisasi unik hingga isomorfisme yang unik.
 \end{bukti}
 
 % segment-id: o014.li2.chapter1.gabriel-zisman-localization.p004
-Masalahnya kini tereduksi menjadi mengkaji keberadaan dan konstruksi
-lokalisasi. Untuk $\mathcal{C}$ dan $S$ yang umum,
+Kini tinggal dikaji keberadaan dan konstruksi lokalisasi. Untuk
+$\mathcal{C}$ dan $S$ yang umum,
 $\mathcal{C}[S^{-1}]$ dapat dikonstruksi dengan menambahkan invers secara
 formal pada $\mathcal{C}$, dengan gagasan yang serupa dengan konstruksi grup
 bebas. Lebih konkret,
@@ -177,7 +177,7 @@ sederhana dari konstruksi di atas.
 	Menurut konstruksi morfisme sebagai zigzag, $f$ terurai sebagai rangkaian
 	morfisme berbentuk $Qa$ atau $(Qs)^{-1}$, dengan
 	$a \in \Mor(\mathcal{C})$ dan $s \in S$. Karena itu, kekomutatifan diagram
-	di atas tereduksi pada sifat yang bersesuaian dari $\varphi$.
+	di atas cukup diperiksa melalui sifat yang bersesuaian dari $\varphi$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter1.gabriel-zisman-localization.d002
@@ -233,7 +233,7 @@ sederhana dari konstruksi di atas.
 \end{konvensi}
 
 % segment-id: o014.li2.chapter1.gabriel-zisman-localization.p007
-Tetapkan $X \in \Obj(\mathcal{C})$. Sesuai dengan konvensi di atas, bagi
+Misalkan $X \in \Obj(\mathcal{C})$. Sesuai dengan konvensi di atas, bagi
 sistem multiplikatif kiri (atau kanan) $S$, definisikan kategori $S_{/X}$
 (atau $S_{X/}$) sebagai berikut.
 \index[sym1]{SX@$S_{/X}, S_{X/}$}
@@ -289,7 +289,7 @@ $\left(S^{\opp}\right)_{X/} = (S_{/X})^{\opp}$.
 	$\begin{tikzcd}[column sep=small]
 		i \arrow[shift left, r, "f"] \arrow[shift right, r, "g"'] & j \arrow[r, "h"] & k
 	\end{tikzcd}$.
-	Inilah semua syarat bagi kategori terfilter.
+	Dengan demikian, semua syarat bagi kategori terfilter terpenuhi.
 \end{bukti}	
 
 % segment-id: o014.li2.chapter1.gabriel-zisman-localization.p008
@@ -384,7 +384,7 @@ dual.
 	sehingga $\varinjlim$ yang bersesuaian tetap berada dalam $\cate{Set}$.
 	Di sini $S_{/X}$ dan
 	$S_{Y/}$ belum tentu merupakan kategori kecil. Namun, pembuktian pernyataan
-	di atas tidak melibatkan ukuran himpunan dan dapat dirumuskan secara tepat
+	di atas tidak melibatkan ukuran himpunan dan dapat dirumuskan dengan tepat
 	agar tidak bergantung pada pilihan semesta Grothendieck.
 \end{bukti}
 
@@ -411,9 +411,9 @@ dikonstruksi.
 \end{definisiproposisi}
 % segment-id: o014.li2.chapter1.gabriel-zisman-localization.pf006
 \begin{bukti}
-	Pertama, tetapkan $(V; t, b)$ dan variasikan $(U; s, a)$ di dalam kelas
-	ekuivalensinya. Berdasarkan \eqref{eqn:localization-sim}, masalahnya adalah
-	membuktikan, bagi diagram komutatif
+	Pertama, biarkan $(V; t, b)$ tetap dan variasikan $(U; s, a)$ di dalam kelas
+	ekuivalensinya. Berdasarkan \eqref{eqn:localization-sim}, cukup dibuktikan,
+	untuk diagram komutatif
 	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.g018
 	\[\begin{tikzcd}
 		& U \arrow[rightarrowtail, ld, "s"'] \arrow[rd, "a"] & W \arrow[rightarrowtail, l, "r"'] \arrow[rd, "c"] & & \\
@@ -439,7 +439,7 @@ dikonstruksi.
 		& W' \arrow[rightarrowtail, lu, "{s'r'}"] \arrow[ru, "{bc'}"'] &
 	\end{tikzcd} \quad \text{komutatif, yaitu}\; (W; sr, bc) \sim (W'; s'r', bc'). \]
 
-	Untuk kasus ketika $(U; s, a)$ ditetapkan dan $(V; t, b)$ divariasikan
+	Untuk kasus ketika $(U; s, a)$ dibiarkan tetap dan $(V; t, b)$ divariasikan
 	dalam kelas ekuivalensinya, argumennya serupa.
 \end{bukti}
 
@@ -470,7 +470,7 @@ dikonstruksi.
 \begin{bukti}
 	Berdasarkan dualitas, kita cukup mengkaji kasus sistem multiplikatif kiri.
 
-	Untuk (i), cukup periksa sifat komposisi morfisme dalam
+	Untuk (i), cukup diperiksa aksioma komposisi morfisme dalam
 	$\mathcal{C}[S^{-1}]^l$. Operasi dalam Definisi--Proposisi
 	\ref{prop:localized-composition} jelas membuat
 	$[X;\identity_X,\identity_X]$ memenuhi syarat morfisme identitas, sehingga
@@ -620,7 +620,7 @@ dikonstruksi.
 
 	Namun, jika $S$ memenuhi syarat berikut, maka
 	$\mathcal{C}[S^{-1}]^l$ (atau $\mathcal{C}[S^{-1}]^r$) memang bukan
-	kategori besar: andaikan $S_{/X}^{\opp}$ (atau $S_{X/}$) memiliki
+	kategori besar: andaikan $S_{/X}^{\opp}$ (atau $S_{X/}$) mempunyai
 	subkategori kecil yang kofinal (Definisi \ref{def:cofinal}) untuk setiap
 	$X\in\Obj(\mathcal{C})$. Menurut Proposisi \ref{prop:cofinal-lim},
 	$\varinjlim$ yang dibicarakan dapat dibatasi pada subkategori tersebut,
@@ -666,7 +666,7 @@ dikonstruksi.
 	\begin{enumerate}[(i)]
 		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i011
 		\item Dalam keadaan ini, $\mathcal{C}[S^{-1}]^l$ (atau
-		$\mathcal{C}[S^{-1}]^r$) memiliki struktur kategori-$\cate{Ab}$
+		$\mathcal{C}[S^{-1}]^r$) mempunyai struktur kategori-$\cate{Ab}$
 		kanonik yang membuat $Q^l$ (atau $Q^r$) menjadi funktor aditif yang
 		pada hakikatnya surjektif.
 		% segment-id: o014.li2.chapter1.gabriel-zisman-localization.i012
@@ -739,7 +739,7 @@ dikonstruksi.
 	tetapi cara yang lebih singkat adalah mengambil
 	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q011
 	\[ \Obj(\mathcal{C}[S^{-1}]) := \Obj(\mathcal{C}), \quad \Hom_{\mathcal{C}[S^{-1}]}(X, Y) := \Hom_{\mathcal{C}}(X, Y) \dotimes{Z(\mathcal{C})} Z(\mathcal{C})[S^{-1}], \]
-	dengan komposisi morfisme didefinisikan secara jelas. Pemeriksaan yang
+	dengan komposisi morfisme didefinisikan sebagaimana biasa. Pemeriksaan yang
 	terkait diserahkan sebagai latihan untuk bab ini.
 \end{contoh}
 
@@ -747,7 +747,7 @@ dikonstruksi.
 \begin{catatan}\label{rem:reflexive-localization}
 	\index{lokalisasi!reflektif (reflective)}
 	Untuk $\mathcal{C}$ dan $S$ yang umum, kasus ketika funktor lokalisasi
-	$Q:\mathcal{C}\to\mathcal{C}[S^{-1}]$ memiliki adjoin kanan yang penuh dan
+	$Q:\mathcal{C}\to\mathcal{C}[S^{-1}]$ mempunyai adjoin kanan yang penuh dan
 	setia sangatlah menarik dan penting. Lokalisasi dengan sifat ini disebut
 	\emph{lokalisasi reflektif}. Teorema Gabriel--Popescu yang akan
 	diperkenalkan dalam Lampiran \S~A.3 merupakan salah satu contoh
@@ -766,5 +766,5 @@ dikonstruksi.
 	% segment-id: o014.li2.chapter1.gabriel-zisman-localization.q012
 	\[ (Q_1, Q_2): \mathcal{C}_1 \times \mathcal{C}_2 \to \mathcal{C}_1[S_1^{-1}] \times \mathcal{C}_2[S_2^{-1}] \]
 	merupakan lokalisasi yang bersesuaian. Pernyataan ini dapat diperumum
-	menjadi produk dari sembarang banyak kategori.
+	menjadi produk dari sebarang keluarga kategori.
 \end{catatan}

@@ -1,0 +1,252 @@
+% Unit 078 terjemahan Bahasa Indonesia dari chapter6.tex baris 1222--1360.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.cyclic-and-free-groups
+% Cakupan: Bagian 6.7 lengkap.
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.h001
+\section{Contoh: grup siklik dan grup bebas}\label{sec:coh-cyclic-free}
+\hypertarget{o014.aljabr2.chapter6.cyclic-and-free-groups}{ }
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p001
+Untuk $m\in\Z_{\geq1}$, dalam bagian ini $C_m$ menyatakan grup siklik berorde
+$m$ dengan generator terpilih $\sigma$, dan operasi grupnya ditulis secara
+multiplikatif. Kita mulai dengan suatu konstruksi umum.
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.d001
+\begin{definition-proposition}\label{def:group-norm}
+	\index[sym1]{nu-G@$\nu$, $\nu^G$}
+	Misalkan $\Bbbk$ gelanggang komutatif. Jika $G$ grup hingga, definisikan
+	\[ \nu=\nu^G:=\sum_{g\in G}g\in\Bbbk[G]. \]
+	Jika $G$ beraksi pada $\Bbbk[G]$ dengan perkalian kiri, maka
+	$\Bbbk[G]^G=\Bbbk\nu$. Jika $G$ grup takhingga, maka
+	$\Bbbk[G]^G=\{0\}$.
+\end{definition-proposition}
+\begin{proof}
+	Untuk $e=\sum_{g\in G}a_gg\in\Bbbk[G]$, syarat
+	$e\in\Bbbk[G]^G$ setara dengan semua koefisien $a_g$ bernilai sama.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p002
+Dengan cara yang sama, jika $G$ hingga maka $\nu$ juga invarian terhadap
+perkalian kanan oleh $G$. Unsur ini terletak di pusat $\Bbbk[G]$.
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.c001
+\begin{convention}\label{con:G-mod-equalizer}
+	Misalkan $A$ modul-$G$. Untuk setiap $e,e'\in\Bbbk[G]$, tuliskan
+	\[ A^{e=e'}:=\{a\in A:ea=e'a\}. \]
+\end{convention}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p003
+Sekarang kita tinjau kohomologi grup dengan koefisien dalam $\Z$. Aljabar grup
+$\Z[C_m]$ komutatif, dan penulisan $1:=1_{C_m}\in\Z[C_m]$ tidak menimbulkan
+kerancuan. Jelas bahwa $A^{C_m}=A^{\sigma=1}$ untuk setiap modul-$C_m$ $A$.
+Dalam keadaan ini,
+\begin{equation*}
+	\nu=1+\sigma+\cdots+\sigma^{m-1}\in\Z[C_m],
+\end{equation*}
+dan kesamaan $(\sigma-1)\nu=\sigma^m-1=0$ dalam $\Z[C_m]$ mengakibatkan
+\[ \nu A\subset A^{\sigma=1},\qquad
+	(\sigma-1)A\subset A^{\nu=0}. \]
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p004
+Sekarang kita tunjukkan bahwa untuk kasus khusus $A=\Z[C_m]$, kedua inklusi
+di atas menjadi kesamaan.
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.l001
+\begin{lemma}\label{prop:cyclic-resolution-prep}
+	Tuliskan $\mathfrak{I}\subset\Z[C_m]$ untuk ideal augmentasi dari
+	Catatan~\ref{rem:augmentation-kG}. Berlaku
+	\begin{align*}
+		\nu\Z[C_m]&=\Z[C_m]^{\sigma=1}=\Z\nu,\\
+		(\sigma-1)\Z[C_m]&=\Z[C_m]^{\nu=0}=\mathfrak{I}.
+	\end{align*}
+\end{lemma}
+\begin{proof}
+	Untuk bagian pertama, telah ditunjukkan bahwa
+	$\Z[C_m]^{\sigma=1}=\Z[C_m]^{C_m}=\Z\nu$. Karena
+	$\nu\sigma^k=\nu=\sigma^k\nu$ untuk semua $k$, berlaku
+	$\nu\Z[C_m]=\Z\nu$.
+
+	Untuk bagian kedua, ambil
+	$e=\sum_{k\in\Z/m\Z}e_k\sigma^k$. Maka
+	$\nu e=(\sum_{k\in\Z/m\Z}e_k)\nu$ bernilai $0$ jika dan hanya jika
+	$\sum_{k\in\Z/m\Z}e_k=0$, yang setara dengan $e\in\mathfrak{I}$. Ini
+	memberikan kesamaan kedua. Selain itu,
+	$\sigma^k-1=(\sigma-1)(1+\cdots+\sigma^{k-1})$ mengakibatkan
+	$\mathfrak{I}\subset(\sigma-1)\Z[C_m]$, sehingga kesamaan pertama juga
+	berlaku.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.l002
+\begin{lemma}\label{prop:cyclic-resolution}
+	Modul-$C_m$ trivial $\Z$ mempunyai resolusi bebas
+	\[ \cdots\xrightarrow{\nu}\Z[C_m]\xrightarrow{\sigma-1}\Z[C_m]
+	\xrightarrow{\nu}\Z[C_m]\xrightarrow{\sigma-1}\Z[C_m]
+	\to\Z\to0, \]
+	dengan $\Z[C_m]\twoheadrightarrow\Z$ homomorfisme augmentasi dan panah
+	lainnya berulang dengan periode $2$.
+\end{lemma}
+\begin{proof}
+	Lema~\ref{prop:cyclic-resolution-prep} memberikan barisan eksak pendek
+	\begin{gather*}
+		0\to\mathfrak{I}\to\Z[C_m]\xrightarrow{\nu}\Z\nu\to0,\\
+		0\to\Z\nu\to\Z[C_m]\xrightarrow{\sigma-1}\mathfrak{I}\to0.
+	\end{gather*}
+	Selain itu, terdapat isomorfisme
+	$\Z\nu\xrightarrow[\sim]{\nu\mapsto1}\Z$. Menyambung kedua barisan secara
+	berselang-seling menghasilkan resolusi yang dinyatakan.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.t001
+\begin{proposition}\label{prop:group-cohomology-cyclic}
+	Misalkan $A$ modul-$C_m$ dan $n\in\Z_{\geq0}$. Terdapat isomorfisme
+	kanonik
+	\begin{align*}
+		\Hm^n(C_m,A)&\simeq
+		\begin{cases}
+			A^{\sigma=1},&n=0,\\
+			A^{\nu=0}/(\sigma-1)A,&n>0\ \text{ganjil},\\
+			A^{\sigma=1}/\nu A,&n>0\ \text{genap},
+		\end{cases}\\
+		\Hm_n(C_m,A)&\simeq
+		\begin{cases}
+			A/(\sigma-1)A,&n=0,\\
+			A^{\sigma=1}/\nu A,&n>0\ \text{ganjil},\\
+			A^{\nu=0}/(\sigma-1)A,&n>0\ \text{genap}.
+		\end{cases}
+	\end{align*}
+\end{proposition}
+\begin{proof}
+	Menurut Lema~\ref{prop:cyclic-resolution}, kohomologi dan homologi $A$
+	masing-masing dihitung oleh kompleks kokrantai dan kompleks rantai satu arah yang
+	berperiode $2$:
+	\begin{gather*}
+		0\to\underbracket{A}_{\text{derajat }0}
+		\xrightarrow{\sigma-1}\underbracket{A}_{\text{derajat }1}
+		\xrightarrow{\nu}A\xrightarrow{\sigma-1}\cdots,\\
+		\cdots\xrightarrow{\sigma-1}A\xrightarrow{\nu}
+		\underbracket{A}_{\text{derajat }1}\xrightarrow{\sigma-1}
+		\underbracket{A}_{\text{derajat }0}\to0.
+	\end{gather*}
+\end{proof}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p005
+Selanjutnya kita mengkaji homologi dan kohomologi grup bebas
+\cite[Definisi 4.8.2]{Li1}, dengan grup siklik takhingga $\Z$ sebagai kasus
+khusus paling sederhana.
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p006
+Tuliskan grup bebas pada himpunan $X$ sebagai $G:=\mathbf{F}(X)$. Mula-mula
+kita jelaskan struktur ideal augmentasi $\mathfrak{I}\subset\Z[G]$.
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.l003
+\begin{lemma}\label{prop:free-group-augmentation}
+	Misalkan $X$ himpunan dan $G:=\mathbf{F}(X)$. Maka $\mathfrak{I}$ merupakan
+	modul-$\Z[G]$ kiri bebas dengan basis
+	$\{x-1_G:x\in X\}$.
+\end{lemma}
+\begin{proof}
+	Tuliskan
+	$X-1_G:=\{x-1_G:x\in X\}\subset\mathfrak{I}$. Mula-mula kita tunjukkan
+	bahwa himpunan ini membangun modul-$\Z[G]$ kiri $\mathfrak{I}$. Untuk
+	setiap $x\in X$, tuliskan $G(x)$ (berturut-turut $G(x^{-1})$) untuk
+	himpunan unsur $G$ yang bentuk tereduksinya berakhir dengan $x$
+	(berturut-turut $x^{-1}$). Maka $G\smallsetminus\{1_G\}$ adalah gabungan
+	takberirisan dari semua $G(x)$ dan $G(x^{-1})$, ketika $x$ merentang
+	$X$. Kita mengetahui bahwa
+	$\{h-1_G:h\in G,\ h\neq1_G\}$ merupakan basis-$\Z$ dari $\mathfrak{I}$,
+	dan
+	\begin{align*}
+		gx\in G(x)&\implies gx-1_G=g(x-1_G)+(g-1_G),\\
+		&\ell(gx)=\ell(g)+1,\\
+		gx^{-1}\in G(x^{-1})&\implies
+		gx^{-1}-1_G=-(gx^{-1})(x-1_G)+(g-1_G),\\
+		&\ell(gx^{-1})=\ell(g)+1.
+	\end{align*}
+	Dengan induksi pada panjang, $X-1_G$ membangun $\mathfrak{I}$.
+
+	Untuk menunjukkan bahwa $X-1_G$ merupakan basis, ambil modul-$G$ sembarang
+	$A$ dan pemetaan $\varphi:X-1_G\to A$. Kita akan menunjukkan bahwa terdapat
+	homomorfisme modul-$G$ $\widetilde{\varphi}:\mathfrak{I}\to A$ yang membuat
+	diagram berikut komutatif:
+	\[\begin{tikzcd}
+		X-1_G \arrow[hookrightarrow,r,"\text{penyertaan}"]
+		\arrow[rd,"\varphi"'] & \mathfrak{I} \arrow[d,"{\widetilde{\varphi}}"]\\
+		& A.
+	\end{tikzcd}\]
+	Karena $X-1_G$ membangun $\mathfrak{I}$, homomorfisme
+	$\widetilde{\varphi}$ dalam diagram ini otomatis tunggal. Jadi cukup
+	membuktikan sifat universal modul bebas.
+
+	Gunakan struktur modul-$G$ pada $A$ untuk membentuk hasil kali
+	semilangsung $E:=A\rtimes G$. Perhatikan pemetaan himpunan $X\to E$ yang
+	memetakan $x$ ke $(\varphi(x-1_G),x)$. Sifat universal grup bebas memperluas
+	pemetaan ini secara tunggal menjadi homomorfisme grup $\Phi:G\to E$.
+	Dengan melihat koordinat kedua, komposisi
+	$G\xrightarrow{\Phi}E\xrightarrow{\text{proyeksi}}G$ sama dengan
+	$\identity_G$. Maka Proposisi~\ref{prop:crossed-semidirect-product}
+	memberikan homomorfisme silang $\psi:G\to A$ sedemikian sehingga
+	$\Phi(g)=(\psi(g),g)$. Selanjutnya, menurut
+	Proposisi~\ref{prop:crossed-augmentation}, homomorfisme silang $\psi$
+	bersesuaian dengan homomorfisme modul-$G$
+	$\widetilde{\varphi}:\mathfrak{I}\to A$ yang memenuhi
+	$\widetilde{\varphi}(g-1_G)=\psi(g)$. Jadi
+	\[ \widetilde{\varphi}(x-1_G)=\psi(x)=\varphi(x-1_G),
+	\qquad x\in X. \]
+	Ini membuktikan pernyataan tersebut.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.t002
+\begin{proposition}\label{prop:free-group-coh}
+	Misalkan $X$ himpunan dan $G:=\mathbf{F}(X)$. Barisan eksak pendek dari
+	homomorfisme augmentasi
+	$0\to\mathfrak{I}\to\Z[G]\to\Z\to0$ merupakan resolusi bebas dari
+	modul-$G$ trivial $\Z$. Sebagai akibatnya:
+	\begin{enumerate}[(i)]
+		\item untuk setiap modul-$G$ $A$,
+		\[ n\geq2\implies\Hm^n(G,A)=0=\Hm_n(G,A); \]
+		\item jika $A$ grup abelian dengan aksi $G$ trivial, maka
+		$\Hm^1(G,A)\simeq A^X$ dan
+		$\Hm_1(G,A)\simeq A^{\oplus X}$.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Bagian pertama dan pernyataan~(i) langsung mengikuti dari
+	Lema~\ref{prop:free-group-augmentation}. Pernyataan~(ii) dapat dibaca dari
+	resolusi bebas serta deskripsi $\mathfrak{I}$ dalam
+	Lema~\ref{prop:free-group-augmentation}; pembaca diminta memeriksanya.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.d002
+\begin{definition}\label{def:group-dim}
+	\index{dimensi!homologis/kohomologis (homological/cohomological)}
+	Untuk grup $G$, definisikan unsur-unsur dari
+	$\Z_{\geq0}\sqcup\{\infty\}$
+	\begin{align*}
+		\mathrm{cd}(G)&:=\sup\{n\in\Z_{\geq0}:\exists M\in\Obj(G\dcate{Mod}),
+		\ \Hm^n(G,M)\neq0\},\\
+		\mathrm{hd}(G)&:=\sup\{n\in\Z_{\geq0}:\exists M\in\Obj(G\dcate{Mod}),
+		\ \Hm_n(G,M)\neq0\}.
+	\end{align*}
+	Besaran $\mathrm{cd}(G)$ (berturut-turut $\mathrm{hd}(G)$) disebut
+	\emph{dimensi kohomologis} (berturut-turut \emph{dimensi homologis}) dari
+	$G$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p007
+Menurut Proposisi~\ref{prop:inv-coinv-Hom}, $\mathrm{cd}(G)$ (berturut-turut
+$\mathrm{hd}(G)$) di atas juga sama dengan dimensi projektif (berturut-turut
+dimensi-$\Tor$) dari modul-$G$ trivial $\Z$. Lihat
+Contoh~\ref{eg:Tor-dimension} dan Proposisi~\ref{prop:id-pd-Ext}.
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.t003
+\begin{corollary}
+	Jika $G$ grup bebas taktrivial, maka
+	$\mathrm{cd}(G)=\mathrm{hd}(G)=1$.
+\end{corollary}
+
+% segment-id: o014.li2.chapter6.cyclic-and-free-groups.p008
+Untuk kohomologi, pernyataan kebalikan dari hasil di atas juga benar:
+$\mathrm{cd}(G)=1$ mengakibatkan $G$ grup bebas. Pernyataan ini dikenal
+sebagai Teorema Stallings--Swan \cite{Sw69}.

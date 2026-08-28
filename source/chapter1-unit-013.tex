@@ -9,7 +9,7 @@
 
 % segment-id: o014.li2.chapter1.limits-through-functors.p001
 Berbagai hubungan antara funktor $F: \mathcal{C} \to \mathcal{D}$ dan limit
-secara garis besar dapat dibagi ke dalam dua arah. Ambil $\varinjlim$ sebagai
+secara garis besar dapat dikelompokkan ke dalam dua arah. Ambil $\varinjlim$ sebagai
 contoh. Diberikan funktor $\alpha: I \to \mathcal{C}$, pertanyaannya adalah:
 % segment-id: o014.li2.chapter1.limits-through-functors.l001
 \begin{itemize}
@@ -63,14 +63,14 @@ $(M, (g_i)_i)$ ialah diagram komutatif
 	\alpha(i) \arrow[bend right, rr, "\alpha(i \to j)"'] \arrow[r, "g_i"] \arrow[ru, "f_i"] & M & \alpha(j) \arrow[l, "{g_j}"'] \arrow[lu, "f_j"']
 \end{tikzcd}\end{equation}
 dengan $i \to j$ berkisar pada $\Mor(I)$; komposisi morfisme didefinisikan
-dengan cara yang jelas. Menurut definisi, $\varinjlim \alpha$ beserta keluarga
+sebagaimana biasa. Menurut definisi, $\varinjlim \alpha$ beserta keluarga
 morfisme kanonik bawaannya
 $\iota_i: \alpha(i) \to \varinjlim \alpha$ merupakan objek awal dari
 $(\alpha / \Delta)$.
 \index{limit}\index[sym1]{lim}
 
 % segment-id: o014.li2.chapter1.limits-through-functors.p005
-Funktor $F$ secara langsung menginduksi funktor
+Funktor $F$ secara alami menginduksi funktor
 $(\alpha/\Delta) \to (F\alpha / \Delta)$, yang memetakan kokonus
 $(L, (f_i)_i)$ ke $(FL, (Ff_i)_i)$. Andaikan $\varinjlim \alpha$ ada. Jika
 $\varinjlim F\alpha$ juga ada, maka dalam $(F\alpha / \Delta)$ terdapat
@@ -123,7 +123,7 @@ $\varinjlim$ berhingga tetapi tidak mempertahankan $\varinjlim$ secara umum.
 
 % segment-id: o014.li2.chapter1.limits-through-functors.p008
 Untuk $\alpha$ tertentu, pernyataan bahwa suatu funktor menciptakan
-$\varinjlim$ (atau $\varprojlim$) setara dengan mengatakan bahwa kokonus (atau
+$\varinjlim$ (atau $\varprojlim$) berarti bahwa kokonus (atau
 konus) di $\mathcal{D}$ yang mendefinisikan limit tersebut dapat diangkat
 secara unik ke $\mathcal{C}$, dan hasil pengangkatan itu memberikan limit yang
 bersesuaian di $\mathcal{C}$. Keunikan tersebut berasal dari syarat dalam
@@ -144,7 +144,7 @@ Proposisi \ref{prop:forget-create} di bawah.
 \end{bukti}
 
 % segment-id: o014.li2.chapter1.limits-through-functors.p009
-Sejalan dengan pembahasan ini, kita perkenalkan sebuah konsep yang berguna.
+Kita juga memperkenalkan konsep berguna berikut.
 
 % segment-id: o014.li2.chapter1.limits-through-functors.d002
 \begin{definisi}\label{def:conservative}
@@ -191,7 +191,7 @@ Sejalan dengan pembahasan ini, kita perkenalkan sebuah konsep yang berguna.
 	\begin{enumerate}
 		% segment-id: o014.li2.chapter1.limits-through-functors.i008
 		\item melengkapi $\varprojlim U\beta$ dengan struktur grup sedemikian
-		hingga setiap $p_i$ merupakan homomorfisme grup, serta menunjukkan bahwa
+		sehingga setiap $p_i$ merupakan homomorfisme grup, serta menunjukkan bahwa
 		struktur grup semacam itu unik;
 		% segment-id: o014.li2.chapter1.limits-through-functors.i009
 		\item memverifikasi sifat universal $\varprojlim \beta$ bagi grup ini
@@ -288,7 +288,7 @@ $(\varphi_j)_{j \in \Obj(J)}$. Karena itu, $\mathrm{ev}_j = p_j \mathcal{F}$.
 \end{proposisi}
 % segment-id: o014.li2.chapter1.limits-through-functors.pf002
 \begin{bukti}
-	Cukup tinjau kasus $\varinjlim$. Untuk (i), tetapkan
+	Cukup tinjau kasus $\varinjlim$. Untuk (i), misalkan
 	$\alpha: I \to \mathcal{C}^J$ dan andaikan $\varinjlim \mathcal{F}\alpha$
 	ada serta diberikan oleh kokonus
 	% segment-id: o014.li2.chapter1.limits-through-functors.q004
@@ -309,7 +309,7 @@ $(\varphi_j)_{j \in \Obj(J)}$. Karena itu, $\mathrm{ev}_j = p_j \mathcal{F}$.
 	Dengan cara ini, $j \mapsto X(j)$ diperluas menjadi funktor
 	$X: J \to \mathcal{C}$, sedangkan
 	$\iota_i: \alpha(i, \cdot) \to X$ membentuk morfisme di
-	$\mathcal{C}^J$. Tidak sulit memverifikasi bahwa
+	$\mathcal{C}^J$. Langsung dapat diverifikasi bahwa
 	$(X, (\iota_i)_i) \in \Obj(\alpha/\Delta)$; selanjutnya kita buktikan
 	bahwa objek ini merupakan objek awal. Karena funktor $\mathcal{F}$
 	konservatif, syarat merefleksikan $\varinjlim$ tidak perlu diverifikasi lagi.
@@ -323,7 +323,7 @@ $(\varphi_j)_{j \in \Obj(J)}$. Karena itu, $\mathrm{ev}_j = p_j \mathcal{F}$.
 		& X(j) \arrow[d, "\varphi_j"] \arrow[r, "{X(j \to j')}" inner sep=0.8em] & X(j') \arrow[d, "\varphi_{j'}"] \\
 		\alpha(i, j) \arrow[ru, "{\iota_{i,j}}"] \arrow[r, "f_{i, j}"' inner sep=0.8em] & L(j) \arrow[r, "{L(j \to j')}"' inner sep=0.8em] & L(j')
 	\end{tikzcd}\]
-	Jika dapat ditunjukkan bahwa bagian persegi komutatif untuk setiap
+	Cukup ditunjukkan bahwa bagian persegi komutatif untuk setiap
 	$j \to j'$, maka keluarga komponen $\varphi$ membentuk morfisme
 	$X \to L$. Bingkai
 	luar sudah diketahui komutatif, sehingga

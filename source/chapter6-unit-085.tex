@@ -1,0 +1,305 @@
+% Unit 085 terjemahan Bahasa Indonesia dari chapter6.tex baris 2458--2603.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.profinite-cohomology-b
+% Cakupan: Bagian 6.12, funktor delta, interpretasi derajat rendah,
+% identifikasi sebagai funktor turunan, induksi profinit, dan Lema Shapiro.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.t001
+\begin{theorem}\label{prop:profinite-cohomology-long}
+	Misalkan $G$ grup profinit dan
+	$0\to M'\xrightarrow{f}M\xrightarrow{f'}M''\to0$ barisan eksak pendek
+	modul-$G$ mulus. Terdapat barisan eksak panjang terkait
+	\begin{multline*}
+		\cdots\to\Hm^{n-1}(G,M'')\xrightarrow{\delta^{n-1}}
+		\Hm^n(G,M')\xrightarrow{\Hm^n(f)}\Hm^n(G,M)\\
+		\xrightarrow{\Hm^n(f')}\Hm^n(G,M'')\xrightarrow{\delta^n}
+		\Hm^{n+1}(G,M')\to\cdots,
+	\end{multline*}
+	dengan konvensi $\Hm^n(G,\cdot)=0$ untuk $n<0$. Homomorfisme penghubung
+	$\delta^n$ natural terhadap morfisme barisan eksak pendek; dengan kata lain,
+	keluarga ini membentuk funktor-$\delta$ kohomologis.
+\end{theorem}
+\begin{proof}
+	Kita bekerja dengan kompleks standar; argumen untuk versi ternormalisasi
+	serupa. Menurut Proposisi~\ref{prop:long-exact-sequence-ses}, cukup buktikan
+	bahwa
+	\[ 0\to C^n(G,M')\to C^n(G,M)\to C^n(G,M'')\to0 \]
+	merupakan barisan eksak pendek. Satu-satunya bagian yang tidak langsung
+	adalah kesurjektifan $C^n(G,M)\to C^n(G,M'')$. Misalkan
+	$u:G^n\to M''$ kontinu. Seperti di atas, terdapat subgrup normal buka
+	$K\lhd G$ sedemikian sehingga $u$ konstan pada setiap koset
+	$K^n\lhd G^n$. Pada setiap koset, pilih sembarang prapeta dalam $M$ dari
+	nilai konstan tersebut.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p001
+Ambil modul-$G$ mulus $M$ dengan topologi diskret. Suku berderajat rendah dari
+kompleks $C(G,M)$ atau $\overline{C}(G,M)$ masih memiliki interpretasi
+langsung.
+\begin{description}
+	\item[($n=0$)] Jelas bahwa $C^0(G,M)=M$ dan
+	$\Hm^0(G,M)=Z^0(G,M)=M^G$. Versi kompleks standar ternormalisasi sama.
+	\item[($n=1$)] Unsur $Z^1(G,M)=\overline{Z}^1(G,M)$ adalah homomorfisme
+	silang kontinu $G\to M$. Secara ekuivalen, unsur tersebut adalah
+	homomorfisme kontinu $\sigma:G\to M\rtimes G$ yang memenuhi
+	$\pi\sigma=\identity_G$, seperti dalam
+	Proposisi~\ref{prop:crossed-semidirect-product}. Di sini
+	$\pi:M\rtimes G\to G$ adalah proyeksi dan $M\rtimes G$ diberi topologi
+	hasil kali. Di sisi lain, unsur $B^1(G,M)$ dibangun oleh homomorfisme silang
+	berbentuk $f_m:g\mapsto gm-m$; homomorfisme ini otomatis kontinu.
+
+	\item[($n=2$)] Andaikan $M$ hingga. Unsur
+	\[ \Hm^2(G,M)\simeq\frac{Z^2(G,M)}{B^2(G,M)}
+	\simeq\frac{\overline{Z}^2(G,M)}{\overline{B}^2(G,M)} \]
+	berkorespondensi secara bijektif dengan kelas ekuivalensi ekstensi grup profinit
+	\[ 1\to M\to E\xrightarrow{\pi}G\to1
+	\qquad\text{(barisan eksak pendek grup)}, \]
+	dengan aksi konjugasi $G$ pada $M$ berasal dari struktur modul-$G$ pada
+	$M$. Dibandingkan dengan versi dalam Definisi~\ref{def:group-ext} dan
+	\eqref{eqn:group-ext-diagram}, ``ekstensi grup profinit'' dan masalah
+	klasifikasinya juga mensyaratkan:
+	\begin{compactitem}
+		\item $E$ merupakan grup profinit, $\pi$ kontinu, dan $M$ disertakan
+		sebagai subgrup tertutup dari $E$;
+		\item ekuivalensi atau isomorfisme ekstensi didefinisikan oleh
+		homomorfisme grup kontinu $E\to E'$, dan pembelahan ekstensi juga
+		didefinisikan secara topologis.
+	\end{compactitem}
+
+	Selain itu, grup automorfisme ekstensi tersebut isomorfik dengan
+	$\overline{Z}^1(G,M)$. Buktinya tidak sulit, tetapi memerlukan sedikit
+	bahasa topologi dan karena itu diserahkan sebagai latihan bab ini; syarat
+	bahwa $M$ hingga bersifat penting.
+\end{description}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p002
+Sekarang kita kembali ke funktor turunan kanan
+$(\mathrm{R}^n(\cdot)^G)_{n\geq0}$. Kita dapat mengkaji nilainya pada sembarang
+kompleks terbatas ke bawah\footnote{Dengan kata lain, mengkaji hiperkohomologi
+grup profinit.}, bahkan operasinya dalam kategori turunan. Namun bagian ini
+hanya membahas modul-$G$ mulus; sisanya menjadi latihan.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.t002
+\begin{proposition}\label{prop:profinite-cohomology-identification}
+	Terdapat isomorfisme funktor-$\delta$ kohomologis
+	\[ (\Hm^n(G,\cdot))_{n\geq0}
+	\simeq(\mathrm{R}^n(\cdot)^G)_{n\geq0}. \]
+\end{proposition}
+\begin{proof}
+	Teorema~\ref{prop:profinite-cohomology-long} menunjukkan bahwa keduanya
+	merupakan funktor-$\delta$ kohomologis, dan pada $n=0$ keduanya sama dengan
+	funktor invarian $(\cdot)^G$. Menurut
+	Proposisi~\ref{prop:erasable-univ-delta}, cukup tunjukkan bahwa
+	$\Hm^n(G,\cdot)$ dapat dihapus untuk $n>0$ dalam arti
+	Definisi~\ref{def:erasable}. Misalkan $M$ modul-$G$ mulus dan sertakan ke
+	dalam modul-$G$ mulus injektif $I$. Untuk setiap subgrup normal buka
+	$K\lhd G$, adjungsi \eqref{eqn:invariant-adjunction-profinite} menunjukkan
+	bahwa $(\cdot)^K$ mempertahankan objek injektif. Jadi $I^K$ merupakan
+	modul-$G/K$ injektif, dan
+	\[ n>0\implies\Hm^n(G,I)
+	=\varinjlim_K\Hm^n(G/K,I^K)=0. \]
+	Sifat dapat dihapus terbukti.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p003
+Berdasarkan Proposisi~\ref{prop:profinite-cohomology-identification}, metode
+\S\ref{sec:change-of-group} dapat diterapkan langsung pada homomorfisme
+kontinu $\varphi:H\to G$ dari grup profinit untuk mendefinisikan operasi
+``tarikan balik'' kohomologi
+\[ \Hm^n(G,M)\to\Hm^n(H,\varphi^*M),\qquad
+	M:\text{ modul-$G$ mulus},\quad n\in\Z_{\geq0}. \]
+Operasi ini kompatibel dengan barisan eksak panjang. Seperti biasa, gunakan
+keeksakan $\varphi^*$ dan sifat funktor-$\delta$ kohomologis universal untuk
+mereduksi masalah ke penyertaan yang jelas pada $n=0$,
+$M^G\hookrightarrow(\varphi^*M)^H$.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p004
+Sebagai kasus khusus, untuk semua $n$ dan semua subgrup tertutup $H$ terdapat
+pemetaan restriksi
+$\mathrm{res}^n:\Hm^n(G,M)\to\Hm^n(H,M)$; di sini
+$\Res^G_HM$ disingkat sebagai $M$.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p005
+Homomorfisme di atas juga dapat dibangun dari homomorfisme-homomorfisme
+\begin{align*}
+	\Hm^n(G/K,M^K)&\xrightarrow{\eqref{eqn:change-of-group-coh}}
+	\Hm^n(H/\varphi^{-1}(K),\varphi_K^*(M^K))\\
+	&\xrightarrow{M^K\subset(\varphi^*M)^{\varphi^{-1}K}}
+	\Hm^n(H/\varphi^{-1}(K),(\varphi^*M)^{\varphi^{-1}K}),
+\end{align*}
+dengan $K$ berkisar atas subgrup normal buka dari $G$. Dengan mereduksi ke
+kasus grup hingga, homomorfisme pada kompleks standar dihitung oleh rumus
+Proposisi~\ref{prop:grp-equiv}. Untuk membuktikan bahwa pemetaan ini memang
+sama dengan pemetaan yang sebelumnya dibangun melalui sifat universal, cukup
+bandingkan kasus $n=0$ dan tunjukkan kompatibilitasnya dengan barisan eksak
+panjang. Kompleks standar memadai untuk kedua hal tersebut.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p006
+Dengan cara serupa, homomorfisme korestriksi dalam
+Definisi--Proposisi~\ref{def:cor} meluas ke grup profinit. Misalkan $H$
+subgrup buka dari $G$. Maka $H$ otomatis tertutup dan $(G:H)$ hingga
+(lihat \S\ref{sec:profinite-groups}). Definisikan homomorfisme
+\[ \mathrm{cor}^n:\Hm^n(H,M)\to\Hm^n(G,M),\qquad
+	M:\text{ modul-$G$ mulus},\quad n\in\Z_{\geq0}, \]
+yang kompatibel dengan barisan eksak panjang dan pada $n=0$ memberikan
+$\nu^{G|H}:M^H\to M^G$.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p007
+Konstruksinya kembali memakai sifat funktor-$\delta$ kohomologis universal,
+tetapi di sini kita perlu mengetahui bahwa
+$\Res^G_H:G\dcate{Mod}^\infty\to H\dcate{Mod}^\infty$ mempertahankan objek
+injektif; ini adalah isi Korolari~\ref{prop:Res-injective-profinite}. Setelah
+fakta tersebut diterima, Proposisi~\ref{prop:res-cor} tetap mempunyai analog:
+untuk semua $n$,
+\[ \mathrm{cor}^n\circ\mathrm{res}^n
+	=(G:H)\cdot\identity_{\Hm^n(G,M)}. \]
+Seperti sebelumnya, pembuktiannya direduksi ke kasus $n=0$.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p008
+Sekarang kita membahas modul terinduksi dalam kasus profinit. Selanjutnya $G$
+selalu merupakan grup profinit. Untuk membedakannya, tuliskan funktor induksi
+dalam kasus tanpa topologi (Definisi~\ref{def:induced-module}) sebagai
+$\Ind^{G,\mathrm{alg}}_H$; menurut Lema~\ref{prop:Ind-as-mappings}, kita
+merealisasikannya sebagai ruang pemetaan.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.d001
+\begin{definition}
+	\index{modul-$G$!terinduksi (induced)}
+	Untuk subgrup tertutup $H$ dari $G$ dan modul-$H$ mulus $N$, lengkapi ruang
+	pemetaan $\mathrm{Maps}(G,N):=\{f:G\to N\}$ dengan operasi penjumlahan dan
+	perkalian skalar titik demi titik, serta aksi kiri $G$
+	\[ (gf)(x)=f(xg),\qquad g,x\in G. \]
+	Definisikan modul-$G$ mulus
+	\begin{align*}
+		\Ind^G_H(N)&:=\{f\in\mathrm{Maps}(G,N)^\infty:
+		\forall h\in H,\ \forall x\in G,\ f(hx)=hf(x)\}\\
+		&=(\Ind^{G,\mathrm{alg}}_H(N))^\infty.
+	\end{align*}
+	Notasi $(\cdot)^\infty$ berasal dari
+	Definisi--Proposisi~\ref{def:smooth-part}. Objek ini disebut modul-$G$
+	terinduksi dari $N$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p009
+Karena $G$ kompak, kemulusan $f\in\Ind^{G,\mathrm{alg}}_H(N)$ ekuivalen
+dengan kontinuitasnya sebagai pemetaan $G\to N$, dengan $N$ diberi topologi
+diskret.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.t003
+\begin{proposition}\label{prop:Ind-injective-profinite}
+	Untuk setiap subgrup tertutup $H$ dari $G$, terdapat pasangan adjoin
+	\[ \Res^G_H:G\dcate{Mod}^\infty
+	\leftrightarrows H\dcate{Mod}^\infty:\Ind^G_H. \]
+	Sebagai akibatnya, $\Ind^G_H$ mempertahankan objek injektif.
+
+	Jika $H$ subgrup buka dari $G$, terdapat pula pasangan adjoin
+	\[ \Ind^G_H:H\dcate{Mod}^\infty
+	\leftrightarrows G\dcate{Mod}^\infty:\Res^G_H. \]
+	Dalam keadaan ini $\Ind^G_H$ juga mempertahankan objek projektif.
+\end{proposition}
+\begin{proof}
+	Berdasarkan adjungsi dalam kasus tanpa topologi dan
+	Definisi--Proposisi~\ref{def:smooth-part}, untuk setiap modul-$G$ mulus $M$
+	dan modul-$H$ mulus $N$ terdapat isomorfisme kanonik
+	\begin{multline*}
+		\Hom_H(\Res^G_H(M),N)
+		\simeq\Hom_G(M,\Ind^{G,\mathrm{alg}}_H(N))\\
+		=\Hom_G(M,\Ind^{G,\mathrm{alg}}_H(N)^\infty)
+		=\Hom_G(M,\Ind^G_H(N)).
+	\end{multline*}
+
+	Sekarang andaikan $H$ buka, sehingga $(G:H)$ hingga. Dari
+	Korolari~\ref{prop:iInd-Ind} kita memperoleh adjungsi tanpa topologi
+	\[ \Hom_H(N,\Res^G_H(M))
+	\simeq\Hom_G(\Ind^{G,\mathrm{alg}}_H(N),M). \]
+	Kita nyatakan bahwa
+	$\Ind^{G,\mathrm{alg}}_H(N)=\Ind^G_H(N)$. Ambil
+	$f\in\Ind^{G,\mathrm{alg}}_H(N)$ dan $x\in G$, lalu pilih subgrup buka
+	$K_0\subset H$ dengan $f(x)\in N^{K_0}$. Definisikan
+	$K:=x^{-1}K_0x$, yang merupakan subgrup buka dari $G$. Maka
+	\[ g\in K\implies xg=xgx^{-1}x\in K_0x
+	\implies f(xg)=f(x). \]
+	Karena $x$ sembarang, pemetaan $f:G\to N$ lokal konstan, sehingga
+	$f\in\Ind^G_H(N)$. Pasangan adjoin kedua terbukti.
+
+	Terakhir, pernyataan tentang pemertahanan objek injektif atau projektif
+	mengikuti dari keeksakan $\Res^G_H$ dan
+	Proposisi~\ref{prop:adjoint-injective-projective}.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.l001
+\begin{lemma}\label{prop:Ind-exact-profinite}
+	Jika $H$ subgrup tertutup dari $G$, maka
+	$\Ind^G_H:H\dcate{Mod}^\infty\to G\dcate{Mod}^\infty$ eksak.
+\end{lemma}
+\begin{proof}
+	Kita telah mengetahui bahwa $\Ind^G_H$ memiliki adjoin kiri, sehingga
+	funktor ini eksak kiri. Tinggal membuktikan bahwa
+	$N_1\twoheadrightarrow N_2$ mengakibatkan
+	$\Ind^G_H(N_1)\twoheadrightarrow\Ind^G_H(N_2)$. Menurut
+	Lema~\ref{prop:profinite-section}, homomorfisme hasil bagi
+	$\pi:G\to H\backslash G$ mempunyai penampang kontinu $s$. Untuk setiap
+	modul-$H$ mulus $N$, terdapat isomorfisme modul-$\Bbbk$
+	\[\begin{tikzcd}[row sep=tiny]
+		\Ind^G_H(N) \arrow[leftrightarrow,r,"\sim"] &
+		\{\text{pemetaan kontinu }H\backslash G\to N\}\\
+		f \arrow[mapsto,r] & {[x\mapsto f(s(x))]}\\
+		{[hs(x)\mapsto hf'(x)]} & f' \arrow[mapsto,l]
+	\end{tikzcd}\]
+	dengan $x\in H\backslash G$ dan $h\in H$. Walaupun isomorfisme ini tidak
+	mempertahankan aksi $G$, ia natural dalam $N$.
+
+	Karena pemetaan kontinu $H\backslash G\to N$ selalu lokal konstan, bekerja
+	pada ruas kanan segera menunjukkan bahwa
+	$\Ind^G_H(N_1)\to\Ind^G_H(N_2)$ surjektif.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.t004
+\begin{corollary}\label{prop:Res-injective-profinite}
+	Jika $H$ subgrup buka dari $G$, maka
+	$\Res^G_H:G\dcate{Mod}^\infty\to H\dcate{Mod}^\infty$
+	mempertahankan objek injektif.
+\end{corollary}
+\begin{proof}
+	Menurut dua hasil sebelumnya, funktor ini memiliki adjoin kiri eksak
+	$\Ind^G_H$.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p010
+Sekarang kita memperoleh versi profinit dari Teorema~\ref{prop:Shapiro}.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.t005
+\begin{proposition}
+	\index{Lema Shapiro}
+	Misalkan $H$ subgrup tertutup dari grup profinit $G$ dan $N$ modul-$H$
+	mulus. Terdapat isomorfisme
+	\[ \Hm^n(G,\Ind^G_H(N))\simeq\Hm^n(H,N),
+	\qquad n\in\Z_{\geq0}. \]
+\end{proposition}
+\begin{proof}
+	Karena $\Ind^G_H$ eksak dan mempertahankan objek injektif
+	(Lema~\ref{prop:Ind-exact-profinite} dan
+	Proposisi~\ref{prop:Ind-injective-profinite}), argumen dalam
+	Teorema~\ref{prop:Shapiro} yang memakai funktor-$\delta$ kohomologis yang
+	dapat dihapus berlaku tanpa perubahan. Ingat bahwa inti argumen tersebut adalah
+	kasus $n=0$, yakni
+	\[ \Ind^G_H(N)^G
+	=(\Ind^{G,\mathrm{alg}}_H(N)^\infty)^G
+	=(\Ind^{G,\mathrm{alg}}_H(N))^G\rightiso N^H. \]
+	Kesamaan pertama adalah definisi, kesamaan kedua mudah, dan isomorfisme
+	terakhir berasal dari Korolari~\ref{prop:Ind-invariant}.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-b.p011
+Selain itu:
+\begin{itemize}
+	\item barisan spektral kohomologis Lyndon--Hochschild--Serre
+	(lihat \S\ref{sec:LHS-SS}) meluas ke keadaan ketika $G$ grup profinit dan
+	$H$ subgrup normal tertutup;
+	\item hasil kali cawan (lihat \S\ref{sec:cup-product}) juga meluas ke grup
+	profinit dengan memakai definisi langsung pada kompleks standar; lihat
+	Definisi--Proposisi~\ref{def:group-cup-3}.
+	\index{hasil kali cawan}
+\end{itemize}
+Pernyataannya tidak berubah, sehingga tidak kita ulangi.

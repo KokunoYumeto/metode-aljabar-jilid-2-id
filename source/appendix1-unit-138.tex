@@ -1,0 +1,117 @@
+% Sumber: authority/upstream/AlJabr-2-9a5803ff77dd3257484cb177f851a73770a59dd3/appendix1.tex, baris 372--487.
+\section{Kategori Abelian yang hingga secara lokal}\label{sec:locally-finite-Abel-cat}
+Tujuan bagian ini adalah memperkenalkan suatu jenis kondisi keterhinggaan pada kategori abelian, yang menyediakan dukungan teknis yang diperlukan bagi \S\ref{sec:Tannaka-coend}. Pembaca disarankan untuk terlebih dahulu menguasai pernyataan Definisi \ref{def:essentially-small-cat}, Definisi \ref{def:locally-finite}, dan Proposisi \ref{prop:subcat-union}, tetapi melewatkan lema-lema dan bukti-bukti sesudahnya. Kita menetapkan semesta Grothendieck $\mathcal{U}$ untuk membahas apa yang dimaksud dengan himpunan kecil dan kategori kecil.
+
+\begin{definition}\label{def:essentially-small-cat}
+	\index{kategori!kecil secara esensial (essentially small)}
+	\index{persoalan ukuran}
+	Jika kategori $\mathcal{C}$ ekuivalen dengan suatu kategori kecil, atau secara ekuivalen $\Obj(\mathcal{C})/\simeq$ merupakan himpunan kecil, maka $\mathcal{C}$ disebut \emph{kecil secara esensial}.
+\end{definition}
+
+Selanjutnya, kita tetapkan medan $\Bbbk$; semua kategori abelian $\mathcal{A}$ yang kita pertimbangkan secara bawaan diasumsikan linear atas $\Bbbk$.
+
+\begin{definition}\label{def:locally-finite}
+	\index{kategori abelian!hingga secara lokal (locally finite)}
+	Terhadap medan $\Bbbk$ yang telah ditetapkan, suatu kategori abelian $\mathcal{A}$ yang kecil secara esensial (Definisi \ref{def:essentially-small-cat}) disebut \emph{hingga secara lokal} jika memiliki sifat-sifat berikut:
+	\begin{equation*}
+		\forall X, Y \in \Obj(\mathcal{A}) \quad
+		\left\{\begin{array}{l}
+			X\; \text{adalah objek dengan panjang hingga (Definisi \ref{def:finite-length-object})}, \\
+			\dim_{\Bbbk} \Hom_{\mathcal{A}}(X, Y) < \infty.
+		\end{array}\right.
+	\end{equation*}
+\end{definition}
+
+\begin{convention}
+	\index[sym1]{X-bracket@$\lrangle{X}$}
+	Untuk kategori abelian $\mathcal{A}$ dan $X \in \Obj(\mathcal{A})$, definisikan subkategori abelian $\lrangle{X}$ dari $\mathcal{A}$ sedemikian sehingga
+	\[ Y \in \Obj(\lrangle{X}) \iff \exists n \in \Z_{\geq 0} \; \text{sedemikian sehingga}\; Y \;\text{merupakan subkuosien dari}\; X^{\oplus n}. \]
+\end{convention}
+
+Mudah dilihat bahwa $\mathcal{A}$ merupakan gabungan semua subkategori $\lrangle{X}$, dan dari $\lrangle{X} \subset \lrangle{X \oplus Y} \supset \lrangle{Y}$ terlihat bahwa gabungan ini terfilter. Yang kita perhatikan adalah kategori abelian yang hingga secara lokal dan berbentuk $\lrangle{X}$.
+
+\begin{proposition}[O.\ Gabber]\label{prop:subcat-union}
+	Misalkan kategori abelian $\mathcal{A}$ hingga secara lokal dan terdapat $X \in \Obj(\mathcal{A})$ sedemikian sehingga $\mathcal{A} = \lrangle{X}$; maka $\mathcal{A}$ memiliki pembangkit projektif.
+\end{proposition}
+
+Bukti memerlukan beberapa persiapan.
+
+\begin{definition}
+	\index{perluasan esensial@perluasan esensial (essential extension)}
+	Dalam sebarang kategori abelian, jika $\alpha: E \twoheadrightarrow Y$ merupakan epimorfisme dan tidak terdapat subobjek sejati $E'$ dari $E$ sedemikian sehingga $\alpha|_{E'}$ merupakan epimorfisme, maka $\alpha$ disebut \emph{perluasan esensial}.
+\end{definition}
+
+\begin{lemma}\label{prop:essential-ext-aux0}
+	Misalkan $S$ adalah objek sederhana dalam sebarang kategori abelian dan $\alpha: E \twoheadrightarrow S$ adalah perluasan esensial. Maka, untuk setiap objek sederhana $T$, pemetaan tarik-balik $\alpha^*: \Hom(S, T) \to \Hom(E, T)$ merupakan isomorfisme.
+\end{lemma}
+\begin{proof}
+	Tarik-balik di sepanjang epimorfisme $\alpha$ selalu injektif; kita buktikan bahwa ia juga surjektif. Ambil $\phi \in \Hom(E, T) \smallsetminus \{0\}$. Karena $\alpha|_{\Ker(\phi)}$ bukan epimorfisme, kesederhanaan $S$ menyiratkan $\Ker(\phi) \subset \Ker(\alpha)$. Morfisme terinduksi $T \simeq E/\Ker(\phi) \twoheadrightarrow E/\Ker(\alpha) \simeq S$ tentu merupakan isomorfisme, sehingga $\Ker(\phi) = \Ker(\alpha)$. Dengan demikian, terdapat $\phi' \in \Hom(S, T)$ sedemikian sehingga $\phi = \phi' \alpha = \alpha^*(\phi')$.
+\end{proof}
+
+Untuk objek $Y$ dengan panjang hingga dalam suatu kategori abelian, multihimpunan faktor-faktor komposisinya, dengan memperhitungkan multiplisitas, dinotasikan dengan $\mathrm{JH}(Y)$ (Definisi--Teorema \ref{def:JH}).
+
+\begin{lemma}\label{prop:essential-ext}
+	Misalkan $\mathcal{A}$ adalah kategori abelian dan $X$ adalah objek dengan panjang hingga. Pertimbangkan objek sederhana $S$ dari $\lrangle{X}$ dan perluasan esensial $\alpha: E \twoheadrightarrow S$. Untuk setiap $Y \in \Obj(\lrangle{X})$, notasikan dengan $\ell_S(Y)$ banyaknya faktor komposisi dalam $\mathrm{JH}(Y)$ yang isomorfik dengan $S$ (dengan menghitung multiplisitas). Maka,
+	\begin{equation}\label{eqn:essential-ext-aux}
+		\dim_{\Bbbk} \Hom(E, Y) \leq \ell_S(Y) \dim_{\Bbbk} \End(S);
+	\end{equation}
+	jika $Y$ adalah objek sederhana, maka kesamaan berlaku.
+	
+	Selain itu, pernyataan-pernyataan berikut saling ekuivalen:
+	\begin{enumerate}[(i)]
+		\item $E$ adalah objek projektif dari $\lrangle{X}$;
+		\item kesamaan dalam \eqref{eqn:essential-ext-aux} berlaku untuk setiap $Y \in \Obj(\lrangle{X})$;
+		\item kesamaan dalam \eqref{eqn:essential-ext-aux} berlaku untuk $Y = X$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	Ruas kanan ketaksamaan \eqref{eqn:essential-ext-aux} yang hendak dibuktikan, sebagai fungsi dari $Y$, bersifat aditif terhadap barisan eksak pendek $0 \to Y' \to Y \to Y'' \to 0$. Di sisi lain, $\Hom(E, \cdot)$ eksak-kiri, sehingga ruas kiri \eqref{eqn:essential-ext-aux} memiliki sifat ``subaditif''
+	\[ \dim_{\Bbbk} \Hom(E, Y) \leq \dim_{\Bbbk} \Hom(E, Y') + \dim_{\Bbbk} \Hom(E, Y''). \]
+	Kesamaan dalam rumus di atas berlaku untuk semua barisan eksak pendek jika dan hanya jika $E$ adalah objek projektif dari $\lrangle{X}$.
+	
+	Jika $Y$ adalah objek sederhana, Lema \ref{prop:essential-ext-aux0} menyiratkan bahwa ruas kiri \eqref{eqn:essential-ext-aux} bernilai $\dim_{\Bbbk} \End(S)$ ketika $Y \simeq S$, dan bernilai $0$ jika tidak; ruas kanannya juga memiliki sifat yang sama, sehingga kesamaan dalam \eqref{eqn:essential-ext-aux} berlaku dalam kasus ini. Untuk $Y$ umum, pertimbangkan deret komposisinya lalu terapkan pembahasan pada paragraf pertama; ini sekaligus memberikan ketaksamaan \eqref{eqn:essential-ext-aux} dan (i) $\implies$ (ii). Sebaliknya, jika kesamaan dalam \eqref{eqn:essential-ext-aux} berlaku, maka $\dim_{\Bbbk} \Hom(E, \cdot)$ bersifat aditif, dan dari sini diperoleh (ii) $\implies$ (i).
+	
+	Jelas bahwa (ii) $\implies$ (iii). Sekarang kita buktikan (iii) $\implies$ (ii). Karena ketaksamaan \eqref{eqn:essential-ext-aux} telah dibuktikan, pembahasan pada paragraf pertama menunjukkan bahwa jika kesamaan di dalamnya berlaku untuk $Y$, maka kesamaan itu juga berlaku untuk $Y'$ dan $Y''$. Diketahui bahwa kesamaan berlaku untuk $X$, sehingga kesamaan itu berlaku untuk semua $X^{\oplus n}$ beserta subkuosien-subkuosiennya; dengan demikian diperoleh (ii).
+\end{proof}
+
+Sekarang kita kembali ke tujuan bagian ini.
+
+\begin{proof}[Proposisi \ref{prop:subcat-union}]
+	Tanpa mengurangi keumuman, anggap $X \neq 0$. Pertama-tama kita buktikan bahwa jika untuk setiap unsur $S$ dari $\mathrm{JH}(X)$ (tanpa menghitung multiplisitas) terdapat epimorfisme $P_S \twoheadrightarrow S$ sedemikian sehingga $P_S$ merupakan objek projektif dari $\lrangle{X}$, maka jumlah langsung $P$ dari semua $P_S$ tersebut merupakan pembangkit projektif dari $\lrangle{X}$.
+	
+	Memang, jumlah langsung $P$ otomatis projektif di dalam $\lrangle{X}$; berdasarkan Proposisi \ref{prop:injective-cogenerator}, cukup dibuktikan bahwa $Y \neq 0 \implies \Hom(P, Y) \neq 0$ untuk semua $Y \in \Obj(\lrangle{X})$. Ambil suatu kuosien sederhana $Y \twoheadrightarrow S$. Sifat projektif $P_S$ memfaktorkan $P_S \twoheadrightarrow S$ sebagai $P_S \to Y \twoheadrightarrow S$, dan ini memberikan morfisme tak nol $P \xrightarrow{\text{proyeksi}} P_S \to Y$.
+	
+	Sekarang pilih objek sederhana $S$ dari $\lrangle{X}$ dan konstruksikan $P_S \twoheadrightarrow S$. Ambil deret komposisi dari $X$
+	\[ X = X_0 \supsetneq \cdots \supsetneq X_r = 0, \quad r \geq 1. \]
+	Untuk $i = 1, \ldots, r$, kita akan secara rekursif mengonstruksi suatu barisan perluasan esensial $P_i \twoheadrightarrow S$ sedemikian sehingga
+	\[ \dim_{\Bbbk} \Hom(P_i, X/X_i) = \ell_S(X/X_i) \dim_{\Bbbk} \End(S). \]
+	Setelah hal ini terbukti, Lema \ref{prop:essential-ext} menunjukkan bahwa $P_r$ merupakan objek projektif dari $\lrangle{X}$, dan $P_S := P_r \twoheadrightarrow S$ adalah yang dicari.
+
+	Ambil $P_1 = S$; Proposisi \ref{prop:essential-ext} menunjukkan bahwa kesamaan tersebut berlaku. Sekarang misalkan $1 \leq i < r$ dan $P_i$ telah dikonstruksi. Ambil basis $\phi_1, \ldots, \phi_n$ dari $\Hom(P_i, X/X_i)$ atas $\Bbbk$. Bentuk produk serat
+	\[\begin{tikzcd}
+		Q_j \arrow[d] \arrow[r, "{\psi_j}"] & X/X_{i+1} \arrow[twoheadrightarrow, d] \\
+		P_i \arrow[r, "{\phi_j}"'] & X/X_i \arrow[phantom, lu, "\Box" description]
+	\end{tikzcd} \quad 1 \leq j \leq n.\]
+	Perhatikan bahwa $Q_j \twoheadrightarrow P_i$ (Proposisi \ref{prop:Abel-cat-pull-push}). Ambil $Q$ sebagai produk serat dari $Q_1, \ldots, Q_n$ di atas $P_i$. Karena produk serat dapat dibentuk secara bertahap, dengan alasan yang sama $Q \to P_i$ merupakan epimorfisme. Sekarang ambil sebarang subobjek $P_{i+1}$ dari $Q$ sedemikian sehingga komposisi $P_{i+1} \hookrightarrow Q \to P_i$, yang dinotasikan dengan $p^{i+1}_i$, merupakan epimorfisme, dan $P_{i+1}$ minimal terhadap sifat ini. Menurut konstruksi ini, komposisi $P_{i+1} \xrightarrow{p^{i+1}_i} P_i \twoheadrightarrow S$ merupakan perluasan esensial. Selain itu, notasikan dengan $t_j$ komposisi $P_{i+1} \hookrightarrow Q \xrightarrow{\text{proyeksi}} Q_j$.
+	
+	Kita menyatakan bahwa $(p^{i+1}_i)^*: \Hom(P_i, X/X_i) \to \Hom(P_{i+1}, X/X_i)$ merupakan isomorfisme. Pertama, pemetaan ini injektif. Selanjutnya, dimensi ruas kiri diketahui sebesar $\ell_S(X/X_i) \dim_{\Bbbk} \End(S)$, sedangkan dimensi ruas kanan dibatasi dari atas oleh bilangan yang sama (Lema \ref{prop:essential-ext}). Pernyataan tersebut terbukti.
+	
+	Selanjutnya, notasikan pemetaan $\Hom(P_{i+1}, X/X_{i+1}) \to \Hom(P_{i+1}, X/X_i)$ dengan $\Phi_i$. Berdasarkan pernyataan di atas, kita dapat mendefinisikan pemetaan linear-$\Bbbk$ dalam arah sebaliknya, $\Psi_i$, yang memetakan $\phi_j p^{i+1}_i$ ke $\psi_j t_j$, untuk $1 \leq j \leq n$. Sekarang kita periksa $\Phi_i \Psi_i = \identity$: dengan meninjau aksinya pada setiap $\phi_j p^{i+1}_i$, mudah dilihat bahwa diagram berikut komutatif:
+	\[\begin{tikzcd}
+		P_{i+1} \arrow[r, "{t_j}"] \arrow[d, "{p^{i+1}_i}"'] & Q_j \arrow[r, "{\psi_j}"] \arrow[ld] & X/X_{i+1} \arrow[twoheadrightarrow, d] \\
+		P_i \arrow[rr, "{\phi_j}"'] & & X/X_i ,
+	\end{tikzcd}\]
+	Ini juga berarti bahwa $\Phi_i(\psi_j t_j) = \phi_j p^{i+1}_i$. Verifikasi selesai.
+	
+	Dengan demikian, kita memperoleh barisan eksak pendek terbelah
+	\[\begin{tikzcd}[row sep=tiny, column sep=small]
+		0 \arrow[r] & \Hom(P_{i+1}, \underbracket{X_i/X_{i+1}}_{\text{objek sederhana}}) \arrow[r] & \Hom(P_{i+1}, X/X_{i+1}) \arrow[r, "{\Phi_i}"] & \Hom(P_{i+1}, X/X_i) \arrow[r] & 0. \\
+		& & & \Hom(P_i , X/X_i) \arrow[u, "\sim" sloped] &
+	\end{tikzcd}\]
+	Proposisi \ref{prop:essential-ext} dan hipotesis rekursif menunjukkan bahwa dimensi pada kedua ujung kiri dan kanan berturut-turut adalah
+	\[ \ell_S(X_i/X_{i+1}) \dim_{\Bbbk} \End(S), \quad \ell_S(X/X_i) \dim_{\Bbbk} \End(S). \]
+	Berdasarkan aditivitas $\ell_S(\cdot)$, suku tengah pun memiliki dimensi yang dikehendaki. Ini membuktikan yang diinginkan.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%

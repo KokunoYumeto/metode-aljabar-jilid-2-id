@@ -1,4 +1,4 @@
-% Draf terjemahan Bahasa Indonesia dari chapter2.tex baris 1564--1754.
+% Terjemahan Bahasa Indonesia dari chapter2.tex baris 1564--1754.
 % Sumber: Methods of Algebra, Volume 2, commit
 % 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
 % stable-unit-id: o014.aljabr2.chapter2.serre-subcategories-and-k0-groups
@@ -11,7 +11,7 @@
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.p001
 Subkategori penuh dari kategori abelian secara otomatis mewarisi struktur
 kategori-$\cate{Ab}$, sehingga kita dapat menanyakan apakah subkategori penuh
-tersebut memiliki sifat kategori aditif atau kategori abelian.
+tersebut merupakan kategori aditif atau kategori abelian.
 
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.d001
 \begin{definisi}\index{kategori abelian!subkategori abelian (abelian subcategory)}
@@ -31,10 +31,10 @@ subkategori abelian jika dan hanya jika kondisi berikut berlaku.
 	\item $0\in\Obj(\mathcal{B})$;
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.i002
 	\item jika $X,Y\in\Obj(\mathcal{B})$, maka $X\oplus Y$ juga dapat dipilih
-	berada di $\mathcal{B}$;
+	sebagai objek $\mathcal{B}$;
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.i003
 	\item untuk setiap morfisme $f:X\to Y$, jika $X,Y\in\Obj(\mathcal{B})$, maka
-	$\Ker(f)$ dan $\Coker(f)$ juga dapat dipilih berada di $\mathcal{B}$.
+		$\Ker(f)$ dan $\Coker(f)$ juga dapat dipilih sebagai objek $\mathcal{B}$.
 \end{itemize}
 \end{proposisi}
 
@@ -45,8 +45,8 @@ Sekarang andaikan kondisi-kondisi di atas berlaku. Maka $\mathcal{B}$ merupakan
 kategori aditif, sedangkan $\iota:\mathcal{B}\to\mathcal{A}$ merupakan funktor
 aditif. Selanjutnya kita tunjukkan bahwa $\iota$ mempertahankan semua
 $\varprojlim$ hingga dan $\varinjlim$ hingga. Pertama, $\iota$ mempertahankan
-$0$ dan jumlah langsung hingga. Selain itu, penyama dapat direpresentasikan
-menggunakan $\Ker$ (Catatan~\ref{rem:equalizer-Ker}), sedangkan kondisi tersebut
+$0$ dan jumlah langsung hingga. Selain itu, penyama dapat dinyatakan sebagai
+$\Ker$ (Catatan~\ref{rem:equalizer-Ker}), sedangkan kondisi tersebut
 menyatakan bahwa subkategori $\mathcal{B}$ tertutup terhadap pengambilan $\Ker$.
 Jadi $\iota$ mempertahankan semua $\varprojlim$ hingga; kasus $\varinjlim$
 bersifat dual.
@@ -153,11 +153,11 @@ $\Ker(F)=\mathcal{T}$.
 \begin{bukti}
 Definisikan
 $S:=\left\{f\in\Mor(\mathcal{A}):\Ker(f),\Coker(f)\in\Obj(\mathcal{T})\right\}$.
-Kita klaim bahwa $S$ merupakan sistem multiplikatif dalam pengertian
+Akan ditunjukkan bahwa $S$ merupakan sistem multiplikatif dalam pengertian
 Definisi~\ref{def:multiplicative-family}.
 
 Jelas bahwa $S$ memuat semua morfisme identitas, sehingga (S1) berlaku.
-Misalkan $f:X\to Y$ dan $g:Y\to Z$ merupakan elemen $S$. Berdasarkan
+Misalkan $f:X\to Y$ dan $g:Y\to Z$ merupakan anggota $S$. Berdasarkan
 barisan eksak yang saling dual,
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.g002
 \begin{gather*}
@@ -191,22 +191,23 @@ Proposisi~\ref{prop:Abel-cat-localization} menyatakan bahwa $Q$ merupakan
 funktor eksak di antara kategori-kategori abelian. Perhatikan bahwa
 $\identity_{QX}=Q(\identity_X)$ sama dengan $0$ jika dan hanya jika terdapat
 $U\in\Obj(\mathcal{A})$ sedemikian sehingga $U\xrightarrow{0}X$ berada dalam
-$S$ (ini merupakan latihan sederhana berdasarkan
-Korolari~\ref{prop:fraction-zero}); hal ini mengimplikasikan
+$S$ (hal ini dapat diperiksa langsung berdasarkan
+Korolari~\ref{prop:fraction-zero}); hal ini menyiratkan
 $X=\Coker[U\xrightarrow{0}X]\in\Obj(\mathcal{T})$. Sebaliknya, jika
 $X\in\Obj(\mathcal{T})$, kita dapat mengambil $U=X$. Jadi
 $\Ker(Q)=\mathcal{T}$.
 
-Selanjutnya, verifikasi sifat universal. Jika $\Ker(F)\supset\mathcal{T}$,
+Selanjutnya, kita verifikasi sifat universal tersebut. Jika $\Ker(F)\supset\mathcal{T}$,
 maka barisan eksak $\Ker(s)\to X\xrightarrow{s\in S}Y\to\Coker(s)$
 menunjukkan bahwa $F$ memetakan setiap unsur $S$ menjadi isomorfisme, dan
 sifat universal lokalisasi menentukan $G$ yang dicari.
 
-Selanjutnya, verifikasi bahwa $G$ eksak.
+Berikutnya, perlu diverifikasi bahwa $G$ eksak.
 Teorema~\ref{prop:localization-additivity} terlebih dahulu memastikan bahwa
 $G$ aditif. Karena setiap morfisme di $\mathcal{A}[S^{-1}]$ dapat, setelah
-dikomposisikan secara sesuai dengan suatu isomorfisme dari $S$, dipastikan
-berasal dari $\mathcal{A}$, maka sifat mempertahankan kernel direduksi menjadi
+dikomposisikan dengan suatu isomorfisme yang berasal dari $S$, direpresentasikan
+oleh morfisme dalam $\mathcal{A}$, maka pemeriksaan bahwa $G$ mempertahankan
+kernel direduksi menjadi
 keeksakan $F$ dan $Q$. Hal yang sama berlaku untuk kokernel. Karena $Q$ pada
 hakikatnya surjektif dan $\Ker(Q)=\mathcal{T}$, karakterisasi sifat setia dapat
 direduksi menjadi pernyataan (ii) dari Proposisi~\ref{prop:faithful-exact}.
@@ -215,7 +216,7 @@ direduksi menjadi pernyataan (ii) dari Proposisi~\ref{prop:faithful-exact}.
 Perhatikan bahwa $\mathcal{A}/\mathcal{T}$ dibangun sebagai lokalisasi, sehingga
 mungkin merupakan “kategori besar”. Latihan akan memberikan deskripsi lain
 tentang $\mathcal{A}/\mathcal{T}$ untuk mengendalikan ukuran kuosien Serre
-dengan asumsi $\mathcal{A}$ merupakan kategori well-powered
+dengan asumsi $\mathcal{A}$ merupakan kategori berdaya-baik
 (Definisi~\ref{def:well-powered}).
 \index{masalah ukuran (size issue)}
 
@@ -233,11 +234,11 @@ eksak $F:R\dcate{Mod}\to R[S^{-1}]\dcate{Mod}$ yang memetakan
 $\mathcal{T}$ ke nol, sehingga sifat universal memberikan funktor eksak
 $G:R\dcate{Mod}/\mathcal{T}\to R[S^{-1}]\dcate{Mod}$. Jelas bahwa
 $\Ker(F)=\mathcal{T}$, sehingga $G$ setia. Selain itu, $G$ pada hakikatnya
-surjektif: pandang sebarang modul-$R[S^{-1}]$ $N$ sebagai modul-$R$;
-silakan verifikasi isomorfisme modul-$R[S^{-1}]$
+surjektif: pandang sebarang modul-$R[S^{-1}]$ $N$ sebagai modul-$R$; dapat
+diperiksa langsung bahwa terdapat isomorfisme modul-$R[S^{-1}]$
 $N\dotimes{R}R[S^{-1}]\simeq N$.
 
-Jadi tersisa membuktikan bahwa $G$ penuh dan setia. Diberikan homomorfisme
+Jadi, tinggal membuktikan bahwa $G$ penuh dan setia. Ambil homomorfisme
 modul-$R[S^{-1}]$
 $\varphi:M_1[S^{-1}]\to M_2[S^{-1}]$, bentuk produk serat
 \footnote{Catatan penerjemah (O014-C029): sumber mendefinisikan $M_0$ sebagai
@@ -246,7 +247,7 @@ memakai pembatasan $\varphi|_{M_0}:M_0\to M_2$. Prapeta di $M_2$ tidak kanonik
 jika $M_2\to M_2[S^{-1}]$ memiliki kernel torsi-$S$, sehingga morfisme tersebut
 tidak terdefinisi. Target menggantinya dengan produk serat kanonik beserta
 kedua proyeksinya.}
-$M_0:=M_1\dtimes{M_2[S^{-1}]}M_2$, di mana pemetaan
+$M_0:=M_1\dtimes{M_2[S^{-1}]}M_2$, dengan pemetaan
 $M_1\to M_2[S^{-1}]$ adalah komposisi
 $M_1\to M_1[S^{-1}]\xrightarrow{\varphi}M_2[S^{-1}]$.
 Tuliskan proyeksi-proyeksinya sebagai $p_1:M_0\to M_1$ dan
@@ -271,7 +272,7 @@ dengan subkategori Serre.
 \index[sym1]{K0@$\mathrm{K}_0$}
 Misalkan $\mathcal{A}$ merupakan kategori abelian. Definisikan grup komutatif
 $\mathrm{K}_0(\mathcal{A})$ sebagai berikut, dengan operasi grup ditulis secara
-aditif. Pertimbangkan modul-$\Z$ bebas $F$ dengan basis
+aditif. Ambil modul-$\Z$ bebas $F$ dengan basis
 $\Obj(\mathcal{A})$; tuliskan elemen yang bersesuaian dengan
 $X\in\Obj(\mathcal{A})$ sebagai $\lrangle{X}\in F$. Misalkan $R\subset F$
 merupakan submodul yang dibangkitkan oleh elemen-elemen berikut:
@@ -279,7 +280,7 @@ merupakan submodul yang dibangkitkan oleh elemen-elemen berikut:
 \[\lrangle{X}-\lrangle{X'}-\lrangle{X''},\quad
 0\to X'\to X\to X''\to0:\ \text{barisan eksak pendek di }\mathcal{A},\]
 maka $\mathrm{K}_0(\mathcal{A}):=F/R$ disebut \emph{grup $\mathrm{K}_0$}
-dari $\mathcal{A}$. Selanjutnya, tuliskan citra
+dari $\mathcal{A}$. Selanjutnya, lambangkan citra
 $X\in\Obj(\mathcal{A})$ di $\mathrm{K}_0(\mathcal{A})$ sebagai $[X]$.
 \end{definisi}
 
@@ -301,7 +302,7 @@ berlaku di $\mathrm{K}_0(\mathcal{A})$.
 	merupakan barisan eksak di $\mathcal{A}$, maka
 	$\sum_{i=1}^{n}(-1)^i[X^i]=0$;
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.i010
-	\item dengan notasi dari \S\ref{sec:Abel-cat-subobjects}, pertimbangkan
+	\item dengan notasi dari \S\ref{sec:Abel-cat-subobjects}, untuk
 	keluarga subobjek $X=X_0\supset\cdots\supset X_r=0$, maka
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.q003
 	\[[X]=\sum_{i=0}^{r-1}[X_i/X_{i+1}].\]
@@ -310,13 +311,13 @@ berlaku di $\mathrm{K}_0(\mathcal{A})$.
 
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.pf004
 \begin{bukti}
-Pertimbangkan barisan eksak pendek $0\to0\to0\to0\to0$; ini memberikan (i).
+Ambil barisan eksak pendek $0\to0\to0\to0\to0$; ini memberikan (i).
 Jika $X\simeq Y$, maka $0\to X\rightiso Y\to0\to0$, bersama dengan (i),
 memberikan (ii). Barisan eksak pendek dari
 Proposisi~\ref{prop:biproduct-ses} memberikan (iii).
 
-Untuk (iv), tambahkan suku-suku nol dan perpanjang barisan eksak ke kiri dan
-kanan hingga tak terhingga. Pertimbangkan barisan eksak pendek
+Untuk (iv), tambahkan suku-suku nol dan perpanjang barisan eksak ke kedua arah
+hingga tak terhingga. Tinjau barisan eksak pendek
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.q004
 \[0\to\Ker(f^i)\to X^i\to\Image(f^i)\to0,\quad i=1,\ldots,n.\]
 Maka
@@ -331,9 +332,9 @@ pendek $0\to X_1\to X_0\to X_0/X_1\to0$.
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.rem001
 \begin{catatan}
 \index{masalah ukuran (size issue)}
-Karena konvensi buku ini adalah merealisasikan grup pada himpunan kecil, dan
-mengingat Lema~\ref{prop:K0-prep} (ii), pendekatan yang sepenuhnya ketat adalah
-mensyaratkan $\mathcal{A}$ memiliki suatu kerangka kecil
+Karena buku ini mengharuskan grup direalisasikan pada himpunan kecil, dan
+mengingat Lema~\ref{prop:K0-prep} (ii), rumusan yang sepenuhnya teliti harus
+mensyaratkan bahwa $\mathcal{A}$ memiliki suatu kerangka kecil
 \cite[Lema 2.2.12]{Li1} ketika mendefinisikan
 $\mathrm{K}_0(\mathcal{A})$. Hal ini tidak banyak berpengaruh di sini.
 \end{catatan}
@@ -342,7 +343,7 @@ $\mathrm{K}_0(\mathcal{A})$. Hal ini tidak banyak berpengaruh di sini.
 \begin{teorema}[Prinsip Euler--Poincaré]\label{prop:EP}
 Misalkan
 $\cdots\to X^i\xrightarrow{d_X^i}X^{i+1}\to\cdots$
-merupakan kompleks di kategori abelian $\mathcal{A}$ dengan hanya berhingga
+merupakan kompleks dalam kategori abelian $\mathcal{A}$ dengan hanya berhingga
 banyak suku tak nol. Maka persamaan
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.q005
 \[\sum_i(-1)^i\left[\Hm^i(X)\right]
@@ -368,13 +369,14 @@ $\mathrm{K}_0(\mathcal{A})$, sehingga diperoleh
 =\sum_i(-1)^i
 \left(\left[\Ker\left(d_X^{i-1}\right)\right]
 +\left[\Ker\left(d_X^i\right)\right]\right).\]
-Ruas kanan saling meniadakan; dengan menata ulang diperoleh
+Suku-suku pada ruas kanan saling meniadakan; dengan menata ulang diperoleh
 $\sum_i(-1)^i[\Hm^i(X)]=\sum_i(-1)^i[X^i]$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.ex003
 \begin{contoh}
-Ambil $\mathcal{A}$ sebagai kategori abelian ruang vektor berdimensi hingga
+Ambil $\mathcal{A}$ sebagai kategori abelian yang terdiri atas ruang vektor
+berdimensi hingga
 di atas gelanggang pembagian $D$. Karena setiap ruang vektor memiliki basis,
 $\mathrm{K}_0(\mathcal{A})=\Z\cdot[D]$. Di sisi lain, pemetaan
 $[X]\mapsto\dim_D X$ menentukan homomorfisme grup
@@ -382,8 +384,8 @@ $\dim:\mathrm{K}_0(\mathcal{A})\to\Z$ yang memetakan $[D]$ ke $1$.
 Jadi $\dim:\mathrm{K}_0(\mathcal{A})\rightiso\Z$.
 
 Jika ruang vektor berdimensi tak hingga diizinkan, grup $\mathrm{K}_0$ akan
-menjadi trivial. Alasannya, untuk setiap ruang vektor-$D$ $V$, pertimbangan
-kardinalitas himpunan memberikan ruang vektor-$D$ $W$ sedemikian sehingga
+menjadi trivial. Alasannya, untuk setiap ruang vektor-$D$ $V$, argumen
+kardinalitas menjamin adanya ruang vektor-$D$ $W$ sedemikian sehingga
 $V\oplus W\simeq W$ dan
 $\dim_D W=\max\{\dim_D V,\aleph_0\}$; akibatnya $[V]=0$.
 \end{contoh}
@@ -407,7 +409,7 @@ Misalkan $\mathcal{T}$ merupakan subkategori Serre dari kategori abelian
 $\mathcal{A}$. Tuliskan kuosien Serre-nya sebagai
 $\mathcal{B}:=\mathcal{A}/\mathcal{T}$. Maka funktor-funktor eksak
 $\mathcal{T}\to\mathcal{A}\xrightarrow{Q}\mathcal{B}$ menginduksi
-homomorfisme yang menghasilkan barisan eksak grup-grup aditif
+barisan eksak grup-grup aditif
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.q008
 \[\mathrm{K}_0(\mathcal{T})\to\mathrm{K}_0(\mathcal{A})
 \xrightarrow{\mathrm{K}_0(Q)}\mathrm{K}_0(\mathcal{B})\to0.\]
@@ -437,8 +439,8 @@ dan $b_j\in\Z$ untuk $j=1,\ldots,m$, sedemikian sehingga persamaan
 \end{equation}
 berlaku dalam modul-$\Z$ bebas dengan basis $\Obj(\mathcal{B})$.
 Karena $Q:\mathcal{A}\to\mathcal{B}$ dibangun melalui lokalisasi dalam
-Teorema~\ref{prop:Serre-quotient}, seperti terlihat dari teorema tersebut
-dan \S\ref{sec:cat-localization}, kita mempunyai:
+Teorema~\ref{prop:Serre-quotient}, teorema tersebut bersama
+\S\ref{sec:cat-localization} memberikan:
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.l004
 \begin{compactitem}
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.i011
@@ -452,14 +454,14 @@ dan \S\ref{sec:cat-localization}, kita mempunyai:
 	=\sum_{j=1}^m b_j\left([Y_j]-[Y'_j]-[Y''_j]\right);
 	\end{equation}
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.i012
-	\item selain itu, setelah menyesuaikan $Y_j$, $Y'_j$, $Y''_j$,
-	dan $f_j$, $g_j$ secara tepat dengan isomorfisme-isomorfisme dari
-	$S$ di $\mathcal{B}$, kita dapat memastikan adanya morfisme
+	\item selain itu, setelah mengganti $Y_j$, $Y'_j$, $Y''_j$,
+	dan $f_j$, $g_j$ melalui isomorfisme di $\mathcal{B}$ yang berasal dari
+	$S$, kita dapat memastikan adanya morfisme
 	$u_j$, $v_j$ di $\mathcal{A}$ sedemikian sehingga
 	$f_j=Q(u_j)$ dan $g_j=Q(v_j)$. Berdasarkan
 	$Q(v_ju_j)=g_jf_j=0$, dan
-	Korolari~\ref{prop:fraction-zero}, kita dapat kembali menyesuaikan
-	dengan $S$ sehingga $v_ju_j=0$.
+	Korolari~\ref{prop:fraction-zero}, kita dapat melakukan penyesuaian lebih
+	lanjut dengan anggota $S$ sehingga $v_ju_j=0$.
 \end{compactitem}
 
 Maka, untuk setiap $1\leq j\leq m$, di $\mathcal{A}$ terdapat barisan eksak
@@ -486,9 +488,9 @@ $\Ker(\mathrm{K}_0(Q))\subset
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.p008
-Menghadapi barisan eksak seperti pada
-Proposisi~\ref{prop:K0-exact-seq}, strategi yang selalu berhasil adalah
-mencoba memperpanjangnya ke kiri, yakni mencari keluarga grup-$K$ tingkat
+Untuk barisan eksak seperti pada
+Proposisi~\ref{prop:K0-exact-seq}, strategi yang selalu berhasil ialah
+mencoba memperpanjangnya ke kiri, yakni mencari keluarga grup K tingkat
 tinggi $\mathrm{K}_i(\cdot)$ untuk $i\in\Z_{\geq0}$, beserta barisan eksak
 kanonik
 % segment-id: o014.li2.chapter2.serre-subcategories-and-k0-groups.q012
@@ -498,9 +500,9 @@ kanonik
 Kita juga berharap bahwa keluarga
 $(\mathrm{K}_i(\mathcal{A}))_{i\geq0}$ memuat informasi mendalam tentang
 $\mathcal{A}$ dan, setidaknya sampai tingkat tertentu, dapat dihitung.
-Materi ini termasuk dalam teori K, yang jangkauan penerapannya dapat diperluas
-ke kategori eksak, yang lebih umum daripada kategori abelian. Karena konstruksi
+Materi ini termasuk dalam teori K, yang jangkauan penerapannya juga mencakup
+kategori eksak, yang lebih umum daripada kategori abelian. Karena konstruksi
 terkait didasarkan pada sudut pandang teori homotopi, buku ini tidak dapat
-menguraikannya secara rinci; pembaca yang berminat dapat merujuk ke
+menguraikannya secara rinci; pembaca yang berminat dapat merujuk pada
 \cite{Lai19}, atau ringkasan di \cite[\S 13.6]{Bu10}.
 \index{kategori eksak (exact category)}

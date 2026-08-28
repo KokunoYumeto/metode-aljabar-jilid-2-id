@@ -1,0 +1,340 @@
+% Unit 130 terjemahan Bahasa Indonesia dari chapter9.tex baris 1457--1625.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter9.hopf-reconstruction
+% Cakupan: Bagian 9.6, rekonstruksi koaljabar, bialjabar, dan antipoda.
+
+\section{Rekonstruksi Aljabar Hopf}\label{sec:Hopf-reconstruction}
+Bagian ini melanjutkan pembahasan dalam \S\ref{sec:Tannaka-coend}. Teorema
+\ref{prop:Tannaka-aux1} membangun koaljabar $\coEnd(\omega)$ dari data
+$(\mathcal{A}, \omega)$ dan mengidentifikasikan $\mathcal{A}$ dengan
+$\catesubd{Comod}{\mathrm{f}}\coEnd(\omega)$. Situasi paling mendasar ialah
+ketika $B = \Bbbk$ merupakan medan. Untuk suatu koaljabar-$\Bbbk$ $L$, ambil
+\begin{gather*}
+	\mathcal{A} := \catesubd{Comod}{\mathrm{f}}L , \\
+	\omega := U: \catesubd{Comod}{\mathrm{f}}L \xrightarrow{\text{lupa}} \cate{Vect}_{\mathrm{f}}(\Bbbk).
+\end{gather*}
+
+Karena $\Bbbk$ medan, Proposisi \ref{prop:Comod-abelian} dengan $B = \Bbbk$
+menunjukkan bahwa $\cated{Comod}L$ merupakan kategori abelian, sedangkan
+$\catesubd{Comod}{\mathrm{f}}L$ yang dibentuk oleh komodul berdimensi hingga
+jelas merupakan subkategori abelian hingga secara lokal. Kini wajar untuk bertanya:
+apakah $\coEnd(\omega)$ yang bersesuaian merekonstruksi data semula $L$, atau
+justru menghasilkan koaljabar baru? Jawabannya, sebagaimana diduga, ialah
+``rekonstruksi'', tetapi diperlukan sedikit argumen.
+
+Langkah pertama ialah memperjelas cara membandingkan $\coEnd(\omega)$ dan
+$L$. Karena $L$ berkoaksi dari kanan pada setiap $\omega(X)$, sifat universal
+menginduksi homomorfisme koaljabar
+\begin{equation}\label{eqn:u-comparison}
+	u: \coEnd(\omega) \to L.
+\end{equation}
+Persoalan semula sama dengan menanyakan apakah $u$ merupakan isomorfisme.
+Kita terlebih dahulu membuktikan sebuah hasil sederhana.
+
+\begin{lemma}\label{prop:comodule-fd-union}
+	Misalkan $\Bbbk$ medan dan $L$ koaljabar-$\Bbbk$, dengan homomorfisme
+	komultiplikasi dinotasikan oleh $\Delta$ dan homomorfisme kounit oleh
+	$\epsilon$. Setiap komodul-$L$ kanan $V$ merupakan gabungan dari
+	subkomodul-subkomodul berdimensi hingga.
+\end{lemma}
+\begin{proof}
+	Misalkan struktur komodul diberikan oleh
+	$\rho: V \to V \dotimes{\Bbbk} L$. Untuk setiap
+	$x \in V \dotimes{\Bbbk} L$, definisikan subruang
+	\[ V(x) := \lrangle{(\identity \otimes \lambda)(x) : \lambda \in \Hom_{\Bbbk}(L, \Bbbk) } \; \subset V ; \]
+	jika $x$ dituliskan secara konkret sebagai
+	$\sum_{i=1}^n v_i \otimes \ell_i$, dengan
+	$\ell_1, \ldots, \ell_n$ bebas linear, maka jelas bahwa
+	$V(x) = \lrangle{v_1, \ldots, v_n}$, sehingga
+	$x \in V(x) \dotimes{\Bbbk} L$.
+	
+	Ambil $v \in V$. Dengan mengambil $x = \rho(v)$ dan
+	$\lambda = \epsilon$, diperoleh $v \in V(\rho(v))$. Selanjutnya kita
+	tunjukkan bahwa
+	$\rho(V(\rho(v))) \subset V(\rho(v)) \dotimes{\Bbbk} L$. Tuliskan lagi
+	$\rho(v) = \sum_i v_i \otimes \ell_i$; persamaan
+	$(\rho \otimes \identity)\rho(v) = (\identity \otimes \Delta)\rho(v)$
+	dalam definisi komodul dapat ditulis sebagai persamaan dalam
+	$V \dotimes{\Bbbk} L \dotimes{\Bbbk} L$
+	\[ \sum_i \rho(v_i) \otimes \ell_i = \sum_i v_i \otimes \Delta(\ell_i). \]
+	
+	Perluas $\ell_1, \ldots, \ell_n$ menjadi suatu basis, lalu kontraksikan
+	dengan basis dualnya. Diperoleh
+	$\rho(v_i) \in V(\rho(v)) \dotimes{\Bbbk} L$ untuk
+	$i = 1, \ldots, n$.
+	
+	Dengan demikian, setiap subruang berdimensi hingga
+	$\lrangle{v_1, \ldots, v_m}$ dari $V$ termuat dalam subkomodul
+	$\sum_{i=1}^m V(\rho(v_i))$, yang jelas berdimensi hingga.
+\end{proof}
+
+\begin{lemma}\label{prop:reconstruction-cat-aux}
+	Dengan notasi di atas, $u: \coEnd(\omega) \to L$ dalam
+	\eqref{eqn:u-comparison} merupakan isomorfisme koaljabar.
+\end{lemma}
+\begin{proof}
+	Kita tunjukkan bahwa semua komodul-$L$ kanan $V$, beserta semua
+	homomorfisme antarkomodul, secara alami terangkat menjadi
+	komodul-$\coEnd(\omega)$ kanan. Untuk $\dim_{\Bbbk} V < \infty$, hal ini
+	merupakan definisi---penerapan Definisi--Proposisi
+	\ref{def:cogebra-L} pada
+	$\mathcal{A} = \catesubd{Comod}{\mathrm{f}}L$ dan $\omega = U$;
+	kasus umum kemudian mengikuti dari Lema
+	\ref{prop:comodule-fd-union}.
+	
+	Sekarang ambil $V=L$ dengan struktur komodul-$L$ kanan yang ditentukan
+	oleh $\Delta$. Struktur komodul-$\coEnd(\omega)$ hasil pengangkatan
+	bersesuaian dengan
+	$\tilde{\Delta}: L \to L \dotimes{\Bbbk} \coEnd(\omega)$. Ini sama
+	dengan mengatakan bahwa bagian segitiga dari diagram berikut komutatif:
+	\[\begin{tikzcd}
+		L \arrow[r, "{\tilde{\Delta}}"] \arrow[rd, "\Delta"'] & L \dotimes{\Bbbk} \coEnd(\omega) \arrow[r, "{\epsilon \otimes \identity}"] \arrow[d, "{\identity \otimes u}"] & \coEnd(\omega) \arrow[d, "u"] \\
+		& L \dotimes{\Bbbk} L \arrow[r, "{\epsilon \otimes \identity}"'] & L,
+	\end{tikzcd}\]
+	dan bagian perseginya jelas juga komutatif. Nyatakan komposisi pada baris
+	pertama sebagai $\gamma$; maka $u\gamma = \identity_L$. Cukup dibuktikan
+	bahwa $\gamma$ surjektif.
+	
+	Misalkan $\rho: V \to V \dotimes{\Bbbk} L$ suatu komodul-$L$ kanan
+	berdimensi hingga. Diagram komutatif dalam definisi
+	\[\begin{tikzcd}
+		V \arrow[r, "\rho"] \arrow[d, "\rho"'] & V \dotimes{\Bbbk} L \arrow[d, "{\identity \otimes \Delta}"] \\
+		V \dotimes{\Bbbk} L \arrow[r, "{\rho \otimes \identity}"'] & V \dotimes{\Bbbk} L \dotimes{\Bbbk} L
+	\end{tikzcd}\]
+	juga sama dengan mengatakan bahwa $\rho$ merupakan homomorfisme
+	komodul-$L$, asalkan $V \dotimes{\Bbbk} L$ dibekali struktur komodul
+	yang berasal dari $L$ dan $\Delta$. Sekarang angkat $V$ secara alami
+	menjadi komodul-$\coEnd(\omega)$, yang bersesuaian dengan
+	$\tilde{\rho}: V \to V \dotimes{\Bbbk} \coEnd(\omega)$; jika komodul
+	$V \dotimes{\Bbbk} L$ diangkat dengan cara serupa, struktur itu
+	bersesuaian dengan
+	$\identity \otimes \tilde{\Delta}: V \dotimes{\Bbbk} L \to V \dotimes{\Bbbk} L \dotimes{\Bbbk} \coEnd(\omega)$. Homomorfisme komodul
+	$\rho$ juga terangkat ke tingkat $\coEnd(\omega)$, yang sama dengan
+	mengatakan bahwa persegi dalam diagram berikut komutatif:
+	\[\begin{tikzcd}
+		V \arrow[r, "\rho"] \arrow[d, "{\tilde{\rho}}"'] & V \dotimes{\Bbbk} L \arrow[d, "{\identity \otimes \tilde{\Delta}}"] & \\
+		V \dotimes{\Bbbk} \coEnd(\omega) \arrow[r, "{\rho \otimes \identity}"' inner sep=0.8em] & V \dotimes{\Bbbk} L \dotimes{\Bbbk} \coEnd(\omega) \arrow[r, "{\identity \otimes \epsilon \otimes \identity}"' inner sep=0.8em] & V \dotimes{\Bbbk} \coEnd(\omega)
+	\end{tikzcd}\]
+	Karena komposisi baris kedua adalah $\identity$, diperoleh
+	$\tilde{\rho} = (\identity_V \otimes \gamma)\rho$. Dapat diperiksa
+	bahwa pemetaan
+	$\alpha_V: V^\vee \dotimes{\Bbbk} V \to \coEnd(\omega)$ yang diinduksi
+	oleh $\tilde{\rho}$ dengan demikian berfaktor sebagai
+	\[ V^\vee \dotimes{\Bbbk} V \xrightarrow{\text{diinduksi oleh $\rho$}} L \xrightarrow{\gamma} \coEnd(\omega). \]
+	
+	Dengan mengingat kembali konstruksi $\coEnd(\omega)$, ketika $V$
+	bervariasi, $\Image(\alpha_V)$ membangkitkan seluruh $\coEnd(\omega)$.
+	Jadi $\gamma$ surjektif.
+\end{proof}
+
+Dapat diduga bahwa jika $L$ bialjabar, maka \eqref{eqn:u-comparison} juga
+merupakan isomorfisme bialjabar. Argumen yang diperlukan seluruhnya rutin
+dan tidak perlu dijabarkan.
+
+\begin{definition}\label{def:Fib-cat}
+	\index[sym1]{Fibk@$\cate{Fib}(\Bbbk)$, $\cate{Fib}^{\otimes}(\Bbbk)$}
+	Untuk medan $\Bbbk$ yang telah dipilih, definisikan kategori
+	$\cate{Fib}(\Bbbk)$ sebagai berikut.
+	\begin{itemize}
+		\item Objeknya ialah data $(\mathcal{A}, \omega)$, dengan
+		$\mathcal{A}$ kategori abelian hingga secara lokal (sehingga $\mathcal{A}$ kecil
+		secara esensial), dan
+		$\omega: \mathcal{A} \to \cate{Vect}_{\mathrm{f}}(\Bbbk)$ funktor
+		setia eksak.
+		\item Morfisme dari $(\mathcal{A}, \omega)$ ke
+		$(\mathcal{A}', \omega')$ ialah data $(F, \alpha)$, dengan
+		$F: \mathcal{A} \to \mathcal{A}'$ funktor dan
+		$\alpha: \omega \rightiso \omega' F$ isomorfisme antarfunktor.
+		Identitas dan komposisi didefinisikan dengan cara yang jelas.
+	\end{itemize}
+	Dengan cara serupa, definisikan kategori
+	$\cate{Fib}^{\otimes}(\Bbbk)$, dengan syarat tambahan berikut:
+	\begin{itemize}
+		\item $\mathcal{A}$ dalam objek $(\mathcal{A}, \omega)$ harus
+		dilengkapi struktur monoidal, dan $\omega$ harus merupakan funktor
+		monoidal;
+		\item $F$ dalam suatu morfisme juga harus merupakan funktor monoidal,
+		dan $\alpha$ harus merupakan isomorfisme antarfunktor monoidal.
+	\end{itemize}
+\end{definition}
+
+Perhatikan bahwa jika $(\mathcal{A}, \omega)$ objek
+$\cate{Fib}^{\otimes}(\Bbbk)$, syarat setia dan eksak menyiratkan bahwa
+$\End_{\mathcal{A}}(\munit) \to \Bbbk$ merupakan monomorfisme
+aljabar-$\Bbbk$; jadi dalam hal ini
+$\End_{\mathcal{A}}(\munit) \rightiso \Bbbk$.
+
+Di sisi lain, nyatakan kategori koaljabar-$\Bbbk$ (atau bialjabar-$\Bbbk$)
+beserta homomorfisme di antaranya sebagai $\Bbbk\dcate{coAlg}$ (atau
+$\Bbbk\dcate{biAlg}$).
+\begin{itemize}
+	\item Terdapat funktor yang jelas
+	$\cate{Fib}(\Bbbk) \to \Bbbk\dcate{coAlg}$ dan
+	$\cate{Fib}^{\otimes}(\Bbbk) \to \Bbbk\dcate{biAlg}$. Keduanya
+	memetakan objek $(\mathcal{A}, \omega)$ ke $\coEnd(\omega)$, sedangkan
+	morfisme $(\mathcal{A}, \omega) \to (\mathcal{A}', \omega')$
+	menginduksi homomorfisme koaljabar atau bialjabar
+	$\coEnd(\omega) \simeq \coEnd(\omega' F) \to \coEnd(\omega')$.
+	\item Terdapat pula funktor ke arah sebaliknya: untuk koaljabar atau
+	bialjabar $L$, ambil data yang bersesuaian
+	$\left(\catesubd{Comod}{\mathrm{f}}L, U \right)$; pada tingkat morfisme,
+	untuk homomorfisme $\phi: L \to L'$, komodul-$L$ kanan $(M, \rho)$
+	menjadi komodul-$L'$ kanan melalui
+	$M \xrightarrow{(\identity \otimes \phi) \rho} M \otimes L'$.
+	Ini memberikan
+	$\left(\catesubd{Comod}{\mathrm{f}}L, U \right) \to \left(\catesubd{Comod}{\mathrm{f}}L', U' \right)$.
+\end{itemize}
+
+\begin{theorem}\label{prop:Tannaka-reconstruction}
+	\index{teorema rekonstruksi}
+	Misalkan $\Bbbk$ medan. Konstruksi di atas memberikan dua pasang funktor
+	yang saling menjadi kuasi-invers
+	\[\begin{tikzcd}[row sep=tiny]
+		\cate{Fib}(\Bbbk) \arrow[shift left, r] & \Bbbk\dcate{coAlg}, \arrow[shift left, l] \\
+		\cate{Fib}^{\otimes}(\Bbbk) \arrow[shift left, r] & \Bbbk\dcate{biAlg}. \arrow[shift left, l]
+	\end{tikzcd}\]
+\end{theorem}
+\begin{proof}
+	Tuliskan funktor-funktor dalam kedua arah sebagai
+	$Z: \star \leftrightarrows \star :Y$. Untuk pasangan pertama, isomorfisme
+	$u$ dalam Lema \ref{prop:reconstruction-cat-aux} memberikan
+	$ZY \rightiso \identity$, sedangkan ekuivalensi $\overline{\omega}$
+	dalam Teorema \ref{prop:Tannaka-aux1} (i) memberikan
+	$\identity \rightiso YZ$.
+	
+	Untuk pasangan kedua, karena telah diketahui bahwa ketika $L$ bialjabar,
+	$u$ dalam \eqref{eqn:u-comparison} juga merupakan isomorfisme bialjabar,
+	dalam situasi monoidal masih berlaku $ZY \rightiso \identity$; sementara
+	itu, $\identity \rightiso YZ$ kini merupakan isi Teorema
+	\ref{prop:Tannaka-aux1} (ii).
+\end{proof}
+
+Sekarang kita tambahkan dualitas yang diperkenalkan dalam
+\S\ref{sec:monoidal-dual} ke dalam kerangka Teorema Rekonstruksi
+\ref{prop:Tannaka-aux1}. Seperti biasa, kita hanya meninjau situasi sederhana
+ketika $B = \Bbbk$ merupakan medan.
+
+\begin{theorem}\label{prop:Tannaka-aux2}
+	Di bawah asumsi Teorema \ref{prop:Tannaka-reconstruction}, andaikan lebih
+	lanjut bahwa $(\mathcal{A}, \omega)$ merupakan objek
+	$\cate{Fib}^{\otimes}(\Bbbk)$, serta $\mathcal{A}$ kaku kiri dan kaku
+	kanan. Maka $\coEnd(\omega)$ merupakan aljabar Hopf.
+\end{theorem}
+\begin{proof}
+	Cukup ditunjukkan bahwa bialjabar $\coEnd(\omega)$ memiliki antipoda.
+	Gunakan kekakuan kiri $\mathcal{A}$ untuk mendefinisikan funktor
+	$X \mapsto {}^* X$. Untuk setiap $X \in \Obj(\mathcal{A})$, karena
+	funktor monoidal mempertahankan dual, diperoleh
+	$\omega({}^* X) \simeq \omega(X)^\vee$; karena struktur monoidal
+	$\cate{Vect}_{\mathrm{f}}(\Bbbk)$ simetris, juga diperoleh
+	$\omega(X) \simeq \omega({}^* X)^\vee$. Sekarang tinjau
+	\[ \phi \in \omega(X)^\vee \simeq \omega({}^* X), \quad x \in \omega(X) \simeq \omega({}^* X)^\vee , \]
+	dengan $X \in \Obj(\mathcal{A})$ sembarang. Dalam notasi Konvensi
+	\ref{con:coend-bracket}, baik $[\phi \otimes x]$ maupun
+	$[x \otimes \phi]$ dengan demikian merupakan unsur $\coEnd(\omega)$.
+	Kita tunjukkan bahwa
+	\begin{equation}\label{eqn:Tannaka-aux2}
+		\text{terdapat pemetaan linear}\; S: \coEnd(\omega) \to \coEnd(\omega), \;\text{yang ditentukan oleh}\; S[\phi \otimes x] = [x \otimes \phi]. 
+	\end{equation}
+
+	Untuk itu, perhatikan bahwa untuk setiap morfisme $f: X \to Y$ dalam
+	$\mathcal{A}$, terdapat diagram komutatif
+	\[\begin{tikzcd}
+		\omega(X) \arrow[r, "{\omega(f)}"] \arrow[d, "\sim"' sloped] & \omega(Y) \arrow[d, "\sim" sloped] \\
+		\omega({}^* X)^\vee \arrow[r, "{\omega({}^* f)^\vee}"' inner sep=0.6em] & \omega({}^* Y)^\vee
+	\end{tikzcd} \quad \begin{tikzcd}
+		\omega(Y)^\vee \arrow[r, "{\omega(f)^\vee}" inner sep=0.6em] \arrow[d, "\sim"' sloped] & \omega(X)^\vee \arrow[d, "\sim" sloped] \\
+		\omega({}^* Y) \arrow[r, "{{}^* f}"'] & \omega({}^* X),
+	\end{tikzcd}\]
+	dengan semua panah vertikal berasal dari isomorfisme dalam paragraf
+	sebelumnya. Untuk $\psi \in \omega(Y)^\vee$ dan
+	$x \in \omega(X)$, terdapat unsur yang bersesuaian
+	$\psi' \in \omega({}^* Y)$ dan $x' \in \omega({}^* X)^\vee$, sedemikian sehingga berturut-turut
+	\[ \omega(f)^\vee (\psi) \leftrightarrow \omega({}^* f)(\psi'), \quad \omega(f)(x) \leftrightarrow \omega({}^* f)^\vee(x'). \]
+	Dengan memasukkan hal ini ke dalam konstruksi dan deskripsi
+	$\coEnd(\omega)$ pada bukti Proposisi
+	\ref{prop:cogebra-L-universal}, terlihat bahwa $\delta_f$ di sana
+	bersesuaian dengan $\delta_{{}^* f}$. Jadi
+	% Koreksi salah ketik pasti pada baris sumber 1578: kelas asal ialah
+	% [\phi \otimes x], sesuai dengan definisi S dalam persamaan di atas.
+	$[\phi \otimes x] \mapsto [x \otimes \phi]$ memang mendefinisikan secara
+	unik pemetaan linear $S$, sehingga \eqref{eqn:Tannaka-aux2}
+	terbukti.
+	
+	Konstruksi pada paragraf sebelumnya juga dapat dilakukan dengan $X^*$
+	sebagai ganti ${}^* X$, sehingga memberikan pemetaan linear
+	$T: \coEnd(\omega) \to \coEnd(\omega)$; pemetaan ini juga dituliskan
+	dalam bentuk $[\phi \otimes x] \mapsto [x \otimes \phi]$. Berdasarkan
+	${}^* (X^*) = X = ({}^* X)^*$, mudah dilihat bahwa
+	$ST = \identity = TS$; khususnya, $S$ merupakan isomorfisme. Ini adalah
+	syarat pertama untuk antipoda.
+	
+	Selanjutnya, nyatakan perkalian, komultiplikasi, unit, dan homomorfisme
+	kounit $\coEnd(\omega)$ masing-masing sebagai $\mu$, $\Delta$, $\eta$,
+	$\epsilon$. Pilih objek $X$ dan basis $v_1, \ldots, v_n$ dari ruang
+	vektor-$\Bbbk$ $\omega(X)$. Nyatakan basis dual dari $\omega(X)^\vee$
+	sebagai $\check{v}_1, \ldots, \check{v}_n$. Nyatakan morfisme-morfisme
+	untuk dual kiri $X$ sebagai
+	\[ \mathrm{ev}_X: {}^* X \otimes X \to \munit, \quad \mathrm{coev}_X: \munit \to X \otimes {}^* X. \]
+	Citra keduanya di bawah $\omega$ merealisasikan dualitas antara
+	$\omega(X)$ dan $\omega({}^* X)$. Ingat bahwa $(\cdot)^\vee$ merupakan
+	dual dalam kategori monoidal simetris $\cate{Vect}_{\mathrm{f}}(\Bbbk)$,
+	tanpa pembedaan kiri dan kanan; mulai sekarang kita dapat
+	mengidentifikasikan
+	\begin{equation*}
+		\omega(\munit) \simeq \omega(\munit)^\vee, \quad \omega(X \otimes {}^* X) \simeq \omega({}^* X \otimes X)^\vee,
+	\end{equation*}
+	dan, secara bersesuaian, mengidentifikasikan $\omega(\mathrm{coev}_X)$
+	dengan $\omega(\mathrm{ev}_X)^\vee$.
+	
+	Untuk setiap $\phi \in \omega(X)^\vee$ dan $x \in \omega(X)$, deskripsi
+	$\Delta$ (atau $\mu$) dalam \eqref{eqn:L-comult} (atau
+	\eqref{eqn:L-tensor}) memberikan
+	\begin{align*}
+		\Delta([\phi \otimes x]) & = \sum_{i=1}^n [\phi \otimes v_i] \otimes [\check{v}_i \otimes x], \\
+		\mu(S \otimes \identity)\Delta([\phi \otimes x]) & = \sum_{i=1}^n \mu\left( [v_i \otimes \phi] \otimes [\check{v}_i \otimes x] \right) \\
+		& = \sum_{i=1}^n \left[ (v_i \otimes \check{v}_i) \otimes (\phi \otimes x) \right] \\
+		& = \left[ \mathrm{coev}_{\omega(X)}(1) \otimes (\phi \otimes x) \right] \\
+		& = \left[ \omega(\mathrm{coev}_X)(1) \otimes (\phi \otimes x) \right].
+	\end{align*}
+	Namun, \eqref{eqn:cogebra-L} menyiratkan bahwa diagram berikut komutatif:
+	\[\begin{tikzcd}
+		\omega(\munit) \otimes \omega({}^* X \otimes X) \arrow[r, "{\omega(\mathrm{coev}_X) \otimes \identity}" inner sep=0.6em] \arrow[d, "{\identity \otimes \omega(\mathrm{ev}_X)}"'] & \omega(X \otimes {}^* X) \otimes \omega(X \otimes {}^* X), \arrow[d, "{[\cdot]}"] \\
+		\omega(\munit) \otimes \omega(\munit) \arrow[d, "\sim"' sloped] \arrow[r, "{[\cdot]}"] & \coEnd(\omega) \\
+		\Bbbk \arrow[ru, "\eta"'] & 
+	\end{tikzcd}\]
+	Oleh karena itu,
+	\begin{gather*}
+		\left[ \omega(\mathrm{coev}_X)(1) \otimes (\phi \otimes x) \right]
+		= \eta\left( \omega(\mathrm{ev}_X)(\phi \otimes x) \right)
+		\xlongequal{\text{\eqref{eqn:L-counit}}} \eta\epsilon\left( \phi \otimes x \right),
+	\end{gather*}
+	yang membuktikan $\mu(S \otimes \identity)\Delta = \eta\epsilon$.
+	Dengan cara serupa,
+	$\mu(\identity \otimes S)\Delta = \eta\epsilon$. Jadi $S$ merupakan
+	antipoda.
+\end{proof}
+
+\begin{corollary}\label{prop:Hopf-vs-dual}
+	Di bawah bijeksi yang diberikan oleh Teorema
+	\ref{prop:Tannaka-reconstruction},
+	\[\begin{tikzcd}
+		\Obj(\cate{Fib}^{\otimes}(\Bbbk))/\simeq \arrow[shift left, r, "{1:1}"] & \Obj(\Bbbk\dcate{biAlg}) /\simeq , \arrow[shift left, l]
+	\end{tikzcd}\]
+	$\mathcal{A}$ dalam objek $(\mathcal{A}, \omega)$ di ruas kiri kaku
+	kiri dan kaku kanan jika dan hanya jika objek $L$ di ruas kanan merupakan
+	aljabar Hopf.
+\end{corollary}
+\begin{proof}
+	Arah ``hanya jika'' mengikuti dari Teorema \ref{prop:Tannaka-aux2},
+	sedangkan arah ``jika'' telah dijelaskan dalam Proposisi
+	\ref{prop:Hopf-module-dual}.
+\end{proof}
+
+Dalam bukti Teorema \ref{prop:Tannaka-aux2}, kekakuan kiri $\mathcal{A}$
+memainkan peran utama; kekakuan kanan hanya digunakan untuk memastikan bahwa
+$S$ merupakan isomorfisme. Jika definisi aljabar Hopf mengizinkan $S$ yang
+tidak dapat dibalik, maka kategori komodul kanan
+$\catesubd{Comod}{\mathrm{f}}L$ hanya kaku kiri; lihat rumus dalam Proposisi
+\ref{prop:Hopf-module-dual}.

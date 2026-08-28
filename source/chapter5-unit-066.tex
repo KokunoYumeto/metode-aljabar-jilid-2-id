@@ -1,0 +1,213 @@
+% Unit 066 terjemahan Bahasa Indonesia dari chapter5.tex baris 350--467.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter5.exact-couples
+% Cakupan: Bagian 5.3 lengkap.
+
+% segment-id: o014.li2.chapter5.exact-couples.h001
+\section{Pasangan eksak}\label{sec:exact-couples}
+\hypertarget{o014.aljabr2.chapter5.exact-couples}{ }
+
+% segment-id: o014.li2.chapter5.exact-couples.p001
+Beberapa jenis barisan spektral yang umum dipakai berasal dari pasangan eksak,
+sebuah temuan W.\ Massey. Untuk menangkap gagasan utamanya, mula-mula kita
+kembali ke kasus tanpa derajat.
+
+% segment-id: o014.li2.chapter5.exact-couples.d001
+\begin{definition}[Pasangan eksak]\label{def:exact-couple}
+	\index{pasangan eksak (exact couple)}
+	Pasangan eksak pada kategori abelian $\mathcal{A}$ adalah diagram eksak
+	berikut dalam $\mathcal{A}$:
+	\[\begin{tikzcd}[column sep=small]
+		D \arrow[rr, "i"] & & D \arrow[ld, "j"] \\
+		& E \arrow[lu, "k"] &
+	\end{tikzcd}\]
+	Morfisme antara data $\mathscr{C}:=(D,E,i,j,k)$ didefinisikan dengan
+	cara yang jelas.
+\end{definition}
+
+% segment-id: o014.li2.chapter5.exact-couples.p002
+Untuk suatu pasangan eksak $\mathscr{C}=(D,E,i,j,k)$, definisikan
+$d:=jk:E\to E$. Maka $dj=jkj=0$ dan $kd=kjk=0$, sehingga $d^2=0$.
+Dari syarat keeksakan segera diperoleh faktorisasi berikut:
+\begin{equation}\label{eqn:exact-couple-aux}
+	\begin{tikzcd}
+		D \arrow[r, "j"] \arrow[twoheadrightarrow, d, "i"'] &
+		\Ker(d) \arrow[twoheadrightarrow, d] \\
+		i(D) \arrow[r, "{\exists!\;j'}"'] & \Hm(E,d)
+	\end{tikzcd} \quad \begin{tikzcd}
+		\Ker(d) \arrow[r, "k"] \arrow[twoheadrightarrow, d] & i(D) \\
+		\Hm(E,d) \arrow[ru, "{\exists!\;k'}"'] &
+	\end{tikzcd}
+\end{equation}
+Selain itu, definisikan $E':=\Hm(E,d)$, $D':=i(D)$, dan
+$i':=i|_{i(D)}:D'\to D'$.
+
+% segment-id: o014.li2.chapter5.exact-couples.l001
+\begin{lemma}
+	Untuk suatu pasangan eksak $\mathscr{C}=(D,E,i,j,k)$, data yang dibangun di
+	atas,
+	\[ \mathscr{C}'=(D',E',i',j',k'):\quad
+	\begin{tikzcd}[column sep=small]
+		D' \arrow[rr, "{i'}"] & & D' \arrow[ld, "{j'}"] \\
+		& E' \arrow[lu, "{k'}"] &
+	\end{tikzcd} \]
+	juga merupakan pasangan eksak.
+\end{lemma}
+\begin{proof}
+	Dengan menelaah \eqref{eqn:exact-couple-aux} dan menggunakan syarat
+	keeksakan, kita memperoleh
+	\begin{align*}
+		\Ker(i') &= i(D)\cap\Ker(i)=\Ker(j)\cap k(E) \\
+		&=\Image\left[\Ker(d)\xrightarrow{k}i(D)\right]=\Image(k'), \\
+		\Ker(j') &= i\left(j^{-1}(jk(E))\right) \\
+		&=i\left(k(E)+\Ker(j)\right)=i\left(i(D)\right)=\Image(i'), \\
+		\Ker(k') &= (\Ker(k)\cap\Ker(d))/\Image(d)
+		=(j(D)\cap\Ker(jk))/\Image(d) \\
+		&=j(D)/\Image(d)=\Image(j').
+	\end{align*}
+	Jadi diagram segitiga yang baru tetap eksak.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.exact-couples.p003
+Dengan mengiterasi prosedur ini diperoleh barisan pasangan eksak
+$(\mathscr{C}_{(r)})_{r\geq1}$, dengan
+$\mathscr{C}_{(1)}=\mathscr{C}$ dan
+$\mathscr{C}_{(r+1)}=\mathscr{C}_{(r)}'$ untuk $r\geq1$. Jika
+$\mathscr{C}_{(r)}=(D_r,E_r,i_r,j_r,k_r)$, maka
+$(E_r,d_r:=j_rk_r)_{r\geq1}$ memberikan suatu barisan spektral.
+
+% segment-id: o014.li2.chapter5.exact-couples.l002
+\begin{lemma}\label{prop:exact-couple-Z-B}
+	Untuk barisan spektral $(E_r,d_r)_{r\geq1}$ yang diperoleh dari pasangan
+	eksak $\mathscr{C}=(D,E,i,j,k)$, definisikan keluarga subobjek
+	$\overline{B}_r\subset\overline{Z}_r$ dari $E=E_1$ menurut
+	\eqref{eqn:spectral-sequence-Z-B}. Garis atas dipakai karena indeksnya
+	dimulai dari $r=1$; lihat Proposisi~\ref{prop:differential-exact-couple} di
+	bawah. Untuk $r\geq0$ berlaku
+	\begin{gather*}
+		\overline{B}_{r+1}=j\left(\Ker(i^r)\right)
+		\subset k^{-1}\left(\Image(i^r)\right)=\overline{Z}_{r+1}; \\
+		\overline{B}_\infty=j\left(\bigcup_{r\geq2}\Ker(i^r)\right)
+		\subset k^{-1}\left(\bigcap_{r\geq2}\Image(i^r)\right)
+		=\overline{Z}_\infty,
+	\end{gather*}
+	dengan syarat $\bigcup_r$ dan $\bigcap_r$ yang bersangkutan ada. Lebih
+	tepatnya, pasangan eksak $\mathscr{C}_{(r+1)}$ secara kanonik isomorfik
+	dengan
+	\[\begin{tikzcd}[column sep=tiny]
+		i^rD \arrow[rr, "i"] & & i^rD \arrow[ld, "{\overline{j}_{r+1}}"] \\
+		& \dfrac{k^{-1}(i^rD)}{j(\Ker(i^r))}
+		\arrow[lu, "{\overline{k}_{r+1}}"] &
+	\end{tikzcd}\]
+	dengan $\overline{k}_{r+1}$ diinduksi oleh $k:E\to D$, sedangkan
+	$\overline{j}_{r+1}$ dicirikan oleh diagram komutatif
+	\[\begin{tikzcd}
+		D \arrow[r, "{i^r}"] \arrow[d, "j"'] &
+		i^rD \arrow[d, "{\overline{j}_{r+1}}"] \\
+		k^{-1}(i^rD) \arrow[twoheadrightarrow, r] &
+		\dfrac{k^{-1}(i^rD)}{j(\Ker(i^r))}.
+	\end{tikzcd}\]
+\end{lemma}
+\begin{proof}
+	Deskripsi pasangan eksak $\mathscr{C}_{(r+1)}$ dapat dibuktikan secara
+	rekursif. Kasus $r=0$ langsung ($i^0=\identity$), sedangkan
+	deskripsi $\overline{B}_{r+1}$ dan $\overline{Z}_{r+1}$ merupakan akibat
+	langsungnya. Karena rinciannya cukup rutin, rincian tersebut tidak dituliskan.
+	Pernyataan $\overline{B}_\infty\subset\overline{Z}_\infty$ mengikuti dari
+	Lema~\ref{prop:image-sum-preimage-intersection}~(ii).
+\end{proof}
+
+% segment-id: o014.li2.chapter5.exact-couples.p004
+Selanjutnya kita jelaskan cara membangun pasangan eksak dari objek diferensial.
+
+% segment-id: o014.li2.chapter5.exact-couples.t001
+\begin{proposition}\label{prop:differential-exact-couple}
+	Misalkan $\alpha:(D,d)\to(D,d)$ adalah monomorfisme dalam $\mathcal{A}_d$,
+	dan tuliskan $d_\alpha$ untuk morfisme yang diinduksi oleh $d$ pada
+	$\Coker(\alpha)$. Maka terdapat pasangan eksak
+	\[\begin{tikzcd}[column sep=tiny]
+		\Hm(D,d) \arrow[rr, "{i=\Hm(\alpha)}"] & &
+		\Hm(D,d) \arrow[ld, "j"] \\
+		& \Hm(\Coker(\alpha),d_\alpha) \arrow[lu, "k"] &
+	\end{tikzcd}\]
+	Ambil prapeta $\overline{B}_{r+1}\subset\overline{Z}_{r+1}$ dalam
+	$E_0:=\Coker(\alpha)$, dan tuliskan
+	\[ 0=:B_0\subset B_1\subset B_2\subset\cdots\subset Z_2\subset Z_1
+	\subset Z_0:=\Coker(\alpha). \]
+	Untuk semua $r\geq0$ berlaku:
+	\begin{itemize}
+		\item $B_{r+1}$ adalah citra
+		$(\alpha^r)^{-1}(dD)\subset D$ dalam $\Coker(\alpha)$;
+		\item $Z_{r+1}$ adalah citra
+		$d^{-1}(\alpha^{r+1}D)\subset D$ dalam $\Coker(\alpha)$;
+		\item $d_{r+1}\in\End(Z_{r+1}/B_{r+1})$ diinduksi oleh
+		$d^{-1}(\alpha^{r+1}D)\xrightarrow{d}\alpha^{r+1}D
+		\xleftarrow[\sim]{\alpha^{r+1}}D$.
+	\end{itemize}
+	Khususnya, terdapat isomorfisme kanonik
+	\[ E_{r+1}\simeq\dfrac{Z_{r+1}}{B_{r+1}}
+	\simeq\dfrac{d^{-1}(\alpha^{r+1}D)+\alpha D}
+	{(\alpha^r)^{-1}(dD)+\alpha D},\qquad r\in\Z_{\geq1}. \]
+\end{proposition}
+\begin{proof}
+	Pasangan eksak tersebut diperoleh dengan menerapkan
+	Lema~\ref{prop:diff-obj-triangle} (dengan
+	$T=\identity_{\mathcal{A}}$) pada barisan eksak pendek dalam
+	$\mathcal{A}_d$
+	\[ 0\to(D,d)\xrightarrow{\alpha}(D,d)
+	\to(\Coker(\alpha),d_\alpha)\to0. \]
+	Khususnya, morfisme $j$ diinduksi oleh
+	$D\twoheadrightarrow\Coker(\alpha)$, sedangkan $k$ pada dasarnya merupakan
+	morfisme penghubung dalam barisan eksak panjang. Deskripsi $B_{r+1}$ tidak
+	lain merupakan versi Lema~\ref{prop:exact-couple-Z-B} yang diangkat ke $E_0$.
+	Untuk $Z_{r+1}$, selain lema tersebut, unsur pentingnya ialah deskripsi
+	morfisme penghubung
+	$k:\Hm(\Coker(\alpha),d_\alpha)\to\Hm(D,d)$. Dengan meninjau kembali
+	konstruksi \eqref{eqn:snake-conn} dan
+	\eqref{eqn:long-exact-sequence-ses-aux}, terlihat bahwa morfisme ini
+	diinduksi oleh morfisme tengah $\overline{d}$ dalam diagram komutatif dengan
+	baris-baris eksak
+	\[\begin{tikzcd}
+		& \Coker(d) \arrow[r] \arrow[d, "\overline{d}"'] &
+		\Coker(d) \arrow[r] \arrow[d, "\overline{d}"'] &
+		\Coker(d_\alpha) \arrow[d, "\overline{d_\alpha}"] \arrow[r] & 0 \\
+		0 \arrow[r] & \Ker(d) \arrow[r, "\alpha"'] &
+		\Ker(d) \arrow[r] & \Ker(d_\alpha) &
+	\end{tikzcd}\]
+	sedangkan $\overline{d}$ sendiri berasal dari $d:D\to D$. Pemeriksaan
+	lainnya cukup panjang tetapi tidak sulit; pembaca dapat memulai dari kasus ketika
+	$\mathcal{A}$ adalah kategori modul.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.exact-couples.p005
+Dengan demikian, barisan spektral yang diberikan oleh objek diferensial dapat
+dimulai dari $0$ dengan mendefinisikan $E_0:=\Coker(\alpha)$ dan
+$d_0:=d_\alpha$.
+
+% segment-id: o014.li2.chapter5.exact-couples.p006
+Untuk kategori abelian dengan translasi $(\mathcal{A},T)$, karena morfisme
+berderajat tetap dapat dikomposisikan dan konsep-konsep seperti keeksakan tetap
+tersedia, teori pasangan eksak mudah diperluas ke keadaan ketika $i,j,k$
+memiliki derajat. Sebagai contoh, dalam situasi yang akan dibahas dalam
+\S\ref{sec:filtered-diff-ss}, kita dapat mempertimbangkan pasangan eksak
+\[\begin{tikzcd}[column sep=tiny]
+	D \arrow[rr, "{-1}"] & & D \arrow[ld, "{+1}"] \\
+	& E \arrow[lu] &
+\end{tikzcd} \xlongequal{\text{dibentangkan}} \left[
+	\begin{tikzcd}[column sep=0ex, every cell/.append style={font=\small}]
+		\cdots & TD \arrow[rr] \arrow[ld] & & D \arrow[rr] \arrow[ld] & &
+		T^{-1}D \arrow[rr] \arrow[ld] & & T^{-2}D \arrow[ld] & \cdots \\
+		\cdots & & TE \arrow[lu] & & E \arrow[lu] & &
+		T^{-1}E \arrow[lu] & & \cdots \arrow[lu]
+	\end{tikzcd}
+\right]. \]
+Tuliskan pasangan eksak ini sebagai $\mathscr{C}$. Perluasan alami
+Lema~\ref{prop:exact-couple-Z-B} ke kasus berderajat memperlihatkan bahwa
+$\mathscr{C}_{(r)}$ berbentuk
+$\begin{tikzcd}[column sep=tiny, row sep=small]
+	\bullet \arrow[rr, "{-1}"] & & \bullet \arrow[ld, "{+r}"] \\
+	& \bullet \arrow[lu] &
+\end{tikzcd}$.
+Karena itu $d_r=j_rk_r$ merupakan morfisme berderajat $r$. Barisan spektral
+yang diperoleh dengan cara ini bergradasi.

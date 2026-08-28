@@ -9,10 +9,10 @@
 \hypertarget{o014.aljabr2.chapter3.hom-complex-and-homotopy}{ }
 
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.p001
-Sebelumnya telah didefinisikan $\Hom$ di antara dua kompleks. Bagian ini
-menjelaskan cara meningkatkannya menjadi suatu kompleks, dan juga cara
-meningkatkan komposisi morfisme menjadi sejenis perkalian pada kompleks.
-Tetapkan kembali $\mathcal{A}$ sebagai kategori aditif. Jika $\Bbbk$ sebarang
+Sebelumnya telah didefinisikan $\Hom$ antara dua kompleks. Bagian ini
+menjelaskan cara menjadikannya suatu kompleks, serta cara menjadikan komposisi
+morfisme sebagai sejenis perkalian pada kompleks. Misalkan kembali
+$\mathcal{A}$ suatu kategori aditif. Jika $\Bbbk$ sembarang
 gelanggang komutatif dan $\mathcal{A}$ kategori $\Bbbk$-linear, semua
 pernyataan dalam bagian ini mempunyai versi $\Bbbk$-linear yang jelas.
 
@@ -36,7 +36,7 @@ $\cate{C}(\mathcal{A})$; jika perlu, kategorinya dibedakan dengan subskrip.
 		(g, f) & \longmapsto gf := \left( g^{k+m} f^k \right)_{k \in \Z}.
 	\end{aligned}\end{equation}
 	Perhatikan bahwa $d_X=(d_X^k)_k\in\Hom^1(X,X)$, dan demikian pula untuk
-	$d_Y$. Berdasarkan definisi ini, tetapkan
+	$d_Y$. Berdasarkan definisi ini, definisikan
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q003
 	\begin{align*}
 		d^n = d_{\Hom^\bullet(X, Y)}^n: \Hom^n\left(X, Y \right) & \longrightarrow \Hom^{n+1}\left(X, Y \right) \\
@@ -68,7 +68,7 @@ $\Hom^0(Y,\underline{Y})$. Untuk setiap $n\in\Z$ diperoleh homomorfisme
 \end{definisiproposisi}
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf001
 \begin{bukti}
-	Pertama-tama, verifikasi $d^{n+1}d^n=0$. Karena
+	Pertama-tama, buktikan $d^{n+1}d^n=0$. Karena
 	$d_Y^2=0=d_X^2$, perhitungan langsung memberikan
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q006
 	\begin{align*}
@@ -115,7 +115,7 @@ Pembuktiannya jauh lebih mudah daripada pernyataannya.
 	\[ (d^{n-m}_{\Hom^\bullet(X, Y[m])} \underline{f})^k = d_{Y[m]}^{k+n-m} \underline{f}^k - (-1)^{n-m} \underline{f}^{k+1} d_X^k : X^k \to Y^{k+n+1}, \]
 	dan ruas ini juga sama dengan
 	$(-1)^m\left(d_Y^{k+n}f^k-(-1)^nf^{k+1}d_X^k\right)$. Argumen untuk
-	$\overline{f}$ serupa: walaupun kasus $\overline{f}$ tidak mempunyai
+	$\overline{f}$ serupa: walaupun kasus $\overline{f}$ tidak memuat
 	tanda $(-1)^m$, tetap ada isomorfisme kompleks $\Hom$; lihat catatan kaki
 	pada Definisi~\ref{def:translation-functor}.
 \end{bukti}
@@ -154,7 +154,7 @@ Operasi perkalian yang didefinisikan dalam
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf004
 \begin{bukti}
 	Melalui Lema~\ref{prop:Hom-cplx-d-translate}, identifikasikan $f$ dengan
-	unsur $\Hom^0(X,Y[n])$, sehingga masalahnya tereduksi pada kasus $n=0$.
+	unsur $\Hom^0(X,Y[n])$, sehingga cukup ditinjau kasus $n=0$.
 	Jelas bahwa $d^0f=0\iff d_Yf=fd_X$.
 \end{bukti}
 
@@ -211,7 +211,7 @@ terhadap penjumlahan, melainkan juga membentuk suatu ideal.
 	Superskrip pada $d$ dihilangkan di bawah ini. Misalkan $f=dh$, dengan
 	$h\in\Hom^{-1}(X,Y[m])$. Dengan memahami komposisi di dalam
 	$\Hom^\bullet$, kita dapat menyingkat $g[m]\circ f$ menjadi $gf$.
-	Lema~\ref{prop:Hom-cplx-Leibniz} mengimplikasikan
+	Lema~\ref{prop:Hom-cplx-Leibniz} memberikan
 	$d(gh)=(dg)h+(-1)^ng(dh)=(-1)^ngf$, sehingga $gf$ homotopik nol. Kasus
 	$g=dh$ serupa.
 \end{bukti}
@@ -254,10 +254,10 @@ alami
 	\Hom_{\cate{K}(\mathcal{A})}\left( X, \prod_{i \in I} Y_i \right) & \simeq \prod_{i \in I} \Hom_{\cate{K}(\mathcal{A})}(X, Y_i) \\
 	\text{atau}\quad \Hom_{\cate{K}(\mathcal{A})}\left( \coprod_{i \in I} X_i, Y \right) & \simeq \prod_{i \in I} \Hom_{\cate{K}(\mathcal{A})}(X_i, Y),
 \end{align*}
-dengan $I$ sebarang himpunan, asalkan $\prod_{i\in I}Y_i$ (atau
+	dengan $I$ sembarang himpunan, asalkan $\prod_{i\in I}Y_i$ (atau
 $\coprod_iX_i$) ada pada tingkat $\cate{C}(\mathcal{A})$. Karena pengambilan
-produk dan pengambilan $\Hm^0$ berkomutasi dalam $\cate{C}(\cate{Ab})$,
-semuanya tereduksi pada isomorfisme kompleks $\Hom$ yang jelas:
+	produk dan pengambilan $\Hm^0$ berkomutasi dalam $\cate{C}(\cate{Ab})$,
+	pernyataan ini cukup dibuktikan melalui isomorfisme kompleks $\Hom$ yang jelas:
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q015
 \begin{align*}
 	\Hom^\bullet\left(X, \prod_i Y_i\right) & \simeq \prod_i \Hom^\bullet(X, Y_i) \\
@@ -293,7 +293,7 @@ pada umumnya bukan kategori abelian.
 		\Hom_n(X, Y) := \prod_{k \in \Z} \Hom\left(X_k, Y_{k+n} \right), \\
 		d_n f = d_Y f - (-1)^n f d_X, \quad f \in \Hom_n(X, Y).
 	\end{gather*}
-	Sesungguhnya, gunakan cara dalam Catatan~\ref{rem:cochain-vs-chain} dengan
+	Sesungguhnya, gunakan konvensi dalam Catatan~\ref{rem:cochain-vs-chain} dengan
 	menetapkan $X^n=X_{-n}$, $d^n=d_{-n}$, dan seterusnya. Maka
 	$\left(\Hom_n(X,Y),d_n\right)_n$ tepat merupakan kompleks rantai yang
 	bersesuaian dengan $\left(\Hom^n(X,Y),d^n\right)_n$:
@@ -324,8 +324,7 @@ Dengan mengambil $\Hm^0$ pada kedua ruas, diperoleh
 	\Hom_{\cate{K}(\mathcal{B})}
 	\bigl(\cate{C}F(X),\cate{C}F(Y)\bigr).
 \]
-Dengan demikian,
-diperoleh funktor $\cate{K}F:\cate{K}(\mathcal{A})\to
+Dengan demikian, diperoleh funktor $\cate{K}F:\cate{K}(\mathcal{A})\to
 \cate{K}(\mathcal{B})$ yang membuat diagram berikut komutatif:
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.g002
 \begin{equation}\label{eqn:KF}\begin{tikzcd}
@@ -348,13 +347,13 @@ Konstruksi-konstruksi ini kompatibel dengan pasangan adjoin.
 	\[\begin{tikzcd}
 		\cate{K}F: \cate{K}(\mathcal{A}) \arrow[shift left, r] & \cate{K}(\mathcal{B}) \arrow[shift left, l] : \cate{K}G
 	\end{tikzcd}\]
-	juga secara alami merupakan pasangan adjoin.
+	secara alami juga membentuk pasangan adjoin.
 \end{proposisi}
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.pf006
 \begin{bukti}
 	Data pasangan adjoin $\varphi$ merupakan keluarga bijeksi
 	$\varphi_{A,B}:\Hom_{\mathcal{B}}(FA,B)\simeq
-	\Hom_{\mathcal{A}}(A,GB)$ yang funktorial dalam $A$ dan $B$.
+	\Hom_{\mathcal{A}}(A,GB)$ yang bersifat funktorial dalam $A$ dan $B$.
 	Proposisi~\ref{prop:automatic-k-morphism} memastikan bahwa bijeksi-bijeksi
 	ini linear, sehingga menginduksi isomorfisme kanonik kompleks
 % segment-id: o014.li2.chapter3.hom-complex-and-homotopy.q019

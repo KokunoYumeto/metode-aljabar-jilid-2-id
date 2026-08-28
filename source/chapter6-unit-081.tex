@@ -1,0 +1,247 @@
+% Unit 081 terjemahan Bahasa Indonesia dari chapter6.tex baris 1632--1739.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.lhs-spectral-sequence-b
+% Cakupan: bukti Teorema LHS, barisan inflasi--restriksi, rumus Hopf,
+% dan struktur perkalian LHS; menutup Bagian 6.9.
+
+% segment-id: o014.li2.chapter6.lhs-spectral-sequence-b.p001
+\begin{proof}
+	Untuk~(i), cukup menyatakan \eqref{eqn:LHS-derived} secara konkret melalui
+	barisan spektral Grothendieck dari Teorema~\ref{prop:Grothendieck-ss}.
+
+	Sekarang kita bahas~(ii). Jika $n=1$, prasyaratnya berlaku secara hampa dan
+	barisan eksak terkait tepat merupakan barisan eksak suku berderajat rendah
+	dalam Teorema~\ref{prop:Grothendieck-ss}; prinsipnya ialah perhitungan tepi
+	dalam Catatan~\ref{rem:edge-computing}. Berikut ini kita meninjau dan
+	memperluas argumen tersebut untuk $n$ umum. Caranya ialah memanfaatkan
+	suku-suku nol dalam barisan spektral.
+
+	Cukup bahas kasus kohomologis. Syaratnya menunjukkan bahwa barisan spektral
+	dalam~(i) memenuhi
+	\[ 1\leq q<n\implies
+	E_2^{p,q}=E_3^{p,q}=\cdots=E_\infty^{p,q}=0. \]
+
+	Ingat bahwa arah $d_r$ adalah
+	$d_r^{p,q}:E_r^{p,q}\to E_r^{p+r,q-r+1}$ dan $E_{r+1}^{p,q}$ merupakan
+	kohomologi $E_r^{p,q}$ terhadap $d_r$. Semua $d$ yang keluar dari
+	$E_{n+1}^{n+1,0}$ (atau masuk ke $E_{n+1}^{0,n}$) bernilai $0$. Karena itu
+	diperoleh barisan eksak horizontal dalam diagram
+	\[\begin{tikzcd}[row sep=small, column sep=scriptsize]
+		& E_\infty^{0,n} \arrow[phantom,d,"\simeq" description,sloped]
+		& & & E_\infty^{n+1,0}
+		\arrow[phantom,d,"\simeq" description,sloped] & \\
+		& \vdots \arrow[phantom,d,"\simeq" description,sloped]
+		& & & \vdots \arrow[phantom,d,"\simeq" description,sloped] & \\
+		0 \arrow[r] & E_{n+2}^{0,n} \arrow[r] &
+		E_{n+1}^{0,n} \arrow[r,"{d^{0,n}_{n+1}}" inner sep=0.6em]
+		\arrow[phantom,d,"\simeq" description,sloped] &
+		E_{n+1}^{n+1,0} \arrow[r]
+		\arrow[phantom,d,"\simeq" description,sloped] &
+		E_{n+2}^{n+1,0} \arrow[r] & 0. \\
+		& & \vdots \arrow[phantom,d,"\simeq" description,sloped] &
+		\vdots \arrow[phantom,d,"\simeq" description,sloped] & & \\
+		& \Hm^n(H,M)^{G/H} \arrow[r,"\sim"] & E_2^{0,n} & E_2^{n+1,0} &
+		\Hm^{n+1}(G/H,M^H) \arrow[l,"\sim"'] &
+	\end{tikzcd}\]
+	Alasan adanya isomorfisme vertikal serupa: segera setelah semua $d$ yang
+	masuk ke atau keluar dari $E_r^{p,q}$ bernilai $0$, terdapat isomorfisme
+	$E_r^{p,q}\simeq E_{r+1}^{p,q}$. Dengan cara yang sama diperoleh
+	\[ \Hm^n(G/H,M^H)\simeq E_2^{n,0}\simeq\cdots
+	\simeq E_\infty^{n,0}. \]
+
+	Selanjutnya, ingat bahwa sasaran barisan spektral
+	$\Hm^{p+q}(G,M)$ mempunyai filtrasi menurun hingga
+	$\cdots\supset\mathrm{F}^k\supset\mathrm{F}^{k+1}\supset\cdots$, dengan
+	$E_\infty^{p,q}\simeq\gr^p\Hm^{p+q}(G,M)$. Pada tepi kuadran pertama hal
+	ini memberikan
+	\begin{align*}
+		E_\infty^{n+1,0}&\simeq\mathrm{F}^{n+1}
+		\subset\Hm^{n+1}(G,M),\\
+		E_\infty^{0,n}&\simeq\Hm^n(G,M)/\mathrm{F}^1.
+	\end{align*}
+
+	Bagaimana menentukan $\mathrm{F}^1\subset\Hm^n(G,M)$? Pada garis
+	$p+q=n$, hanya $(n,0)$ dan $(0,n)$ yang mungkin memenuhi
+	$E_\infty^{p,q}\neq0$. Jadi filtrasi $\Hm^n(G,M)$ berbentuk
+	\[ 0=\mathrm{F}^{n+1}
+	\underbracket{\subset}_{E_\infty^{n,0}}\mathrm{F}^n
+	=\cdots=\mathrm{F}^1
+	\underbracket{\subset}_{E_\infty^{0,n}}\mathrm{F}^0
+	=\Hm^n(G,M). \]
+	Menggabungkan semua isomorfisme dan barisan eksak di atas memberikan hasil
+	yang diminta.
+
+	Pernyataan~(iii) sesuai dengan yang diharapkan, tetapi argumen berikut agak panjang dan
+	dapat dilewati pembaca. Agar ringkas, kita hanya membahas
+	$\Hm^n(G,M)\to\Hm^n(H,M)^{G/H}$; kasus lainnya serupa atau mudah. Ingat
+	konstruksi dalam \S\ref{sec:double-cplx-ss}. Ambil resolusi injektif
+	$M\to I$, dengan $I$ kompleks modul-$G$, lalu ambil resolusi
+	Cartan--Eilenberg $J$ dari kompleks modul-$G/H$ $I^H$
+	(Teorema~\ref{prop:CE-resolution}). Dengan memandang kompleks $I^G$ dan
+	sebagainya sebagai bikompleks yang terkonsentrasi pada sumbu horizontal,
+	diperoleh diagram komutatif bikompleks modul-$\Bbbk$
+	\begin{equation}\label{eqn:LHS-SS-aux}\begin{tikzcd}
+		& J^{G/H} \arrow[hookrightarrow,r] & J \\
+		I^G \arrow[equal,r] & (I^H)^{G/H}
+		\arrow[hookrightarrow,r] \arrow[u] & I^H. \arrow[u]
+	\end{tikzcd}\end{equation}
+
+	Mengikuti konvensi Proposisi~\ref{prop:double-cplx-ss}, operasi mengambil
+	kohomologi bikompleks secara horizontal lalu vertikal ditulis
+	$\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(\cdot)$. Perhatikan hal-hal berikut.
+	\begin{itemize}
+		\item Karena kohomologi horizontal $\Hm_{\mathrm{I}}(J)$ dari resolusi
+		Cartan--Eilenberg memberikan resolusi injektif dari $\Hm^p(I^H)$ pada
+		kolom ke-$p$ ($p\in\Z$), morfisme $I^H\to J$ menginduksi isomorfisme
+		\[ \Hm^n(H,M)=\Hm^n(I^H)
+		=\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(I^H)^{n,0}
+		\rightiso\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(J)^{n,0}. \]
+		\item Catatan~\ref{rem:CE-split} memberikan
+		$\Hm_{\mathrm{I}}(J^{G/H})\simeq\Hm_{\mathrm{I}}(J)^{G/H}$. Karena
+		$\Hm_{\mathrm{I}}(J)$ meresolusi secara vertikal setiap
+		$\Hm^p(H,M)$, sedangkan $(\cdot)^{G/H}$ eksak kiri, penerapan
+		$\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(\cdot)^{n,0}$ pada
+		$J^{G/H}\hookrightarrow J$ bersesuaian dengan
+		\[ \text{homomorfisme penyertaan}\qquad
+		\Hm^n(H,M)^{G/H}\hookrightarrow\Hm^n(H,M). \]
+		\item Telah ditunjukkan bahwa $I^G\hookrightarrow I^H$ pada $\Hm^n$
+		(atau setara dengan itu, pada
+		$\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(\cdot)^{n,0}$) menginduksi
+		homomorfisme kanonik $\Hm^n(G,M)\to\Hm^n(H,M)$.
+	\end{itemize}
+
+	Filtrasikan bikompleks kuadran pertama $J^{G/H}$ secara menurun menurut
+	koordinat vertikal (langkah ke-$p$ adalah bagian dengan koordinat vertikal
+	$\geq p$). Barisan spektral terkait adalah $(E_r^{p,q})_{p,q}$, dengan
+	$r=0,1,\ldots$. Tuliskan $\Ker(d^n)_{n,0}$ untuk proyeksi
+	$\Ker(d^n)$ dari kompleks total $\tot(J^{G/H})$ pada komponen $(n,0)$.
+	Deskripsi $Z_r^{p,q}$ dalam Proposisi~\ref{prop:filtered-cplx-ss}, bersama
+	pengamatan di atas, memberikan
+	\begin{multline}\label{eqn:LHS-SS-aux1}
+		\Ker(d^n)_{n,0}\simeq Z_\infty^{0,n}
+		\subset\cdots\subset Z_2^{0,n}\\
+		\twoheadrightarrow E_2^{0,n}
+		=\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(J^{G/H})^{n,0}
+		\simeq\Hm^n(H,M)^{G/H}.
+	\end{multline}
+
+	Sekarang kita deskripsikan
+	$\Hm^n(G,M)\to\Hm^n(H,M)^{G/H}$. Pilih wakil suatu unsur
+	$\Hm^n(G,M)$ dalam $\Ker[I^{n,G}\to I^{n+1,G}]$, petakan melalui
+	$I^G\to J^{G/H}$ ke $\Ker(d^n)_{n,0}$, lalu ikuti
+	\eqref{eqn:LHS-SS-aux1} ke
+	$\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(J^{G/H})^{n,0}$. Untuk selanjutnya
+	mengambil citranya dalam $\Hm^n(H,M)$, terapkan
+	$\Hm_{\mathrm{II}}\Hm_{\mathrm{I}}(\cdot)^{n,0}$ pada seluruh diagram
+	\eqref{eqn:LHS-SS-aux} dan komposisikan sepanjang
+	\begin{tikzpicture}[scale=0.5, baseline=(O)]
+		\draw[->] (-1,0)--(0,0)--(0,1)--(1,1);
+		\coordinate (O) at (0,0.2);
+	\end{tikzpicture}.
+	Jika sebagai gantinya kita mengikuti
+	\begin{tikzpicture}[scale=0.5, baseline=(O)]
+		\draw[->] (-1,0)--(1,0)--(1,1);
+		\coordinate (O) at (0,0.2);
+	\end{tikzpicture}
+	dan memakai tiga pengamatan di atas, hasilnya sama dengan homomorfisme
+	kanonik $\Hm^n(G,M)\to\Hm^n(H,M)$. Ini membuktikan~(iii).
+\end{proof}
+
+% segment-id: o014.li2.chapter6.lhs-spectral-sequence-b.p002
+Catatan~\ref{rem:LHS-SS-mult} akan memberikan konstruksi kanonik yang mungkin
+lebih alami untuk barisan spektral Lyndon--Hochschild--Serre.
+
+% segment-id: o014.li2.chapter6.lhs-spectral-sequence-b.p003
+\index{barisan eksak inflasi--restriksi (inflation-restriction sequence)}
+Barisan eksak kohomologis di atas juga disebut \emph{barisan eksak
+inflasi--restriksi}, sebab homomorfisme kanonik
+$\Hm^n(G/H,M^H)\to\Hm^n(G,M)$ lazim disebut homomorfisme inflasi, sedangkan
+$\Hm^n(G,M)\to\Hm^n(H,M)^{G/H}$ disebut homomorfisme restriksi. Morfisme yang
+lebih rumit adalah
+\[ \Hm^n(H,M)^{G/H}\to\Hm^{n+1}(G/H,M^H),\qquad
+	\Hm_{n+1}(G/H,M_H)\to\Hm_n(H,M)_{G/H}. \]
+Keduanya disebut pemetaan \emph{transgresi}, sejalan dengan pemetaan
+transgresi dalam teori kelas karakteristik.
+\index{transgresi (transgression)}
+
+% segment-id: o014.li2.chapter6.lhs-spectral-sequence-b.p004
+Sebagai penerapan, kita turunkan secara singkat suatu rumus Hopf untuk
+menghitung $\Hm_2(G,\Z)$ dari presentasi grup $G$. Di sini kita mengambil
+$\Bbbk=\Z$ dan memberi $\Z$ struktur modul-$G$ trivial.
+
+% segment-id: o014.li2.chapter6.lhs-spectral-sequence-b.t001
+\begin{corollary}[H.\ Hopf]\label{prop:Hopf-H2}
+	\index[sym1]{[,]@$[\cdot,\cdot]$}
+	Misalkan $G$ grup dan $G\simeq F/R$, dengan $F$ grup bebas dan
+	$R\lhd F$. Tuliskan $[F,R]$ untuk subgrup dari $R$ yang dibangun oleh
+	unsur-unsur $[f,r]:=frf^{-1}r^{-1}$, dengan $f\in F$ dan $r\in R$.
+	Subgrup ini normal dalam $R$ dan
+	$[F,R]\subset[F,F]:=F_{\mathrm{der}}$. Terdapat isomorfisme
+	\[ \Hm_2(G,\Z)\simeq(R\cap[F,F])/[F,R]. \]
+\end{corollary}
+\begin{proof}
+	Proposisi~\ref{prop:free-group-coh} memberikan $\Hm_2(F,\Z)=0$. Jadi
+	barisan eksak Teorema~\ref{prop:LHS-SS} untuk $n=1$ menjadi
+	\[ 0\to\Hm_2(G,\Z)\to\Hm_1(R,\Z)_G
+	\to\Hm_1(F,\Z)\to\Hm_1(G,\Z)\to0. \]
+	Dengan menafsirkan $\Hm_1$ melalui Contoh~\ref{eg:group-H1-further}, kita
+	memperoleh
+	\[ 0\to\Hm_2(G,\Z)\to\left(\frac{R}{[R,R]}\right)_G
+	\to\frac{F}{[F,F]}\to\frac{G}{[G,G]}\to0. \]
+
+	Aksi $G$ pada $R/[R,R]$ adalah sebagai berikut. Pilih prapeta $f\in F$ dari
+	$g\in G$; dapat diperiksa bahwa aksi $g$ berasal dari aksi konjugasi
+	$f$ pada $R$ (latihan). Untuk $\bar r\in R/[R,R]$ sembarang, pilih prapeta
+	$r\in R$. Maka $g\bar r-\bar r$ (dengan operasi grup ditulis aditif)
+	merupakan citra dari
+	\[ frf^{-1}\cdot r^{-1}\in R
+	\quad\text{(dengan operasi grup ditulis multiplikatif)}. \]
+	Ketika $f$ dan $r$ bervariasi, unsur-unsur tersebut membangun $[F,R]$.
+	Karena itu $(R/[R,R])_G\simeq R/[F,R]$; sisanya mudah.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.lhs-spectral-sequence-b.r001
+\begin{remark}[Struktur perkalian barisan spektral
+Lyndon--Hochschild--Serre]\label{rem:LHS-SS-mult}
+	Dalam kasus kohomologis, tuliskan barisan spektral dari modul-$G$ $M$
+	sebagai $E_r^{p,q}(M)$. Operasi hasil kali cawan yang akan diperkenalkan
+	dalam \S\ref{sec:cup-product}, diterapkan pada kohomologi $G/H$ dan $H$,
+	melengkapi suku $E_2$ dengan struktur perkalian
+	\[ \cup:E_2^{p_1,q_1}(M_1)\otimes E_2^{p_2,q_2}(M_2)
+	\to E_2^{p_1+p_2,q_1+q_2}(M_1\otimes M_2), \]
+	sedangkan sasaran konvergensi barisan spektral juga mempunyai hasil kali
+	cawan, yang diterapkan pada grup $G$:
+	\[ \cup:\Hm^{n_1}(G,M_1)\otimes\Hm^{n_2}(G,M_2)
+	\to\Hm^{n_1+n_2}(G,M_1\otimes M_2). \]
+	Pertanyaannya ialah apakah struktur ini dapat didefinisikan pada
+	setiap halaman, dan apakah $d_r$ mempunyai sifat yang baik terhadapnya,
+	misalnya aturan Leibniz
+	\[ d_r(\alpha_1\cup\alpha_2)
+	=d_r(\alpha_1)\cup\alpha_2
+	+(-1)^{p_1+q_1}\alpha_1\cup(d_r\alpha_2),
+	\qquad \alpha_i\in E_r^{p_i,q_i}(M_i). \]
+
+	Dalam karya asli \cite[hlm.~118--119]{HS53}, Hochschild dan Serre menuliskan
+	langsung suatu filtrasi kanonik pada kompleks standar ternormalisasi
+	$\overline{C}(G,M)$ yang kompatibel dengan hasil kali cawan yang
+	didefinisikan pada tingkat $\overline{C}(G,M)$. Dengan demikian, setiap
+	halaman mewarisi perkalian yang memenuhi sifat-sifat di atas. Secara
+	konkret, mereka mengambil filtrasi menurun
+	$\overline{C}(G,M)=\mathrm{F}^0\supset\mathrm{F}^1\supset\cdots$. Jika
+	$p>n$, suku berderajat $n$ dari kompleks $\mathrm{F}^p$ adalah $0$;
+	jika tidak, suku berderajat $n$ dari $\mathrm{F}^p$ adalah
+	\[ \left\{\begin{array}{r|l}
+		f\in\overline{C}^n(G,M) &
+		(g_1,\ldots,g_n)\ \text{memuat setidaknya }n-p+1\text{ entri dalam }H\\
+		&\implies f(g_1,\ldots,g_n)=0
+	\end{array}\right\}. \]
+	Perinciannya diserahkan sebagai latihan bab ini; pembaca yang berminat atau
+	memerlukannya dapat merujuk pada karya asli.
+
+	Khususnya, $\overline{C}(G,\Bbbk)$ menjadi aljabar bergradasi diferensial
+	terfiltrasi, dan barisan spektral $E_r^{p,q}(\Bbbk)$ mempunyai struktur
+	perkalian terkait (Definisi~\ref{def:mult-ss} dan
+	Proposisi~\ref{prop:dga-mult-ss}). Dari sudut pandang topologi, hal ini sama
+	sekali tidak mengejutkan.
+\end{remark}

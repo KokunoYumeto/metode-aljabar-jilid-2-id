@@ -1,0 +1,326 @@
+% Unit 059 terjemahan Bahasa Indonesia dari chapter4.tex baris 1841--2001.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.rhom
+% Cakupan: Bagian 4.9 lengkap; berhenti sebelum Bagian 4.10 pada baris 2002.
+
+% segment-id: o014.li2.chapter4.rhom.h001
+\section{Contoh: \texorpdfstring{$\RHom$}{RHom}}\label{sec:RHom}
+\hypertarget{o014.aljabr2.chapter4.rhom}{ }
+
+% segment-id: o014.li2.chapter4.rhom.p001
+Dalam bagian ini, $\mathcal{A}$ tetap merupakan kategori abelian. Jika
+$\mathcal{A}$ juga $\Bbbk$-linear, dengan $\Bbbk$ gelanggang komutatif, maka
+semua pernyataan di bagian ini dapat diperkuat dengan mengganti $\cate{Ab}$
+oleh $\Bbbk\dcate{Mod}$.
+
+% segment-id: o014.li2.chapter4.rhom.p002
+Bifunktor
+$\Hom:=\Hom_{\mathcal{A}}:\mathcal{A}^{\opp}\times\mathcal{A}\to\cate{Ab}$
+eksak kiri dalam setiap variabel. Untuk mengkaji bifunktor turunannya dalam
+pengertian Definisi~\ref{def:derived-bifunctor}, kita memerlukan beberapa
+persiapan. Pertama, teori umum \S\ref{sec:bounded-derived-functor} memberikan
+\begin{align*}
+	\cate{C}\Hom: \cate{C}^+(\mathcal{A}^{\opp}) \times \cate{C}^+(\mathcal{A}) & \to \cate{C}^+(\cate{Ab}), \\
+	\cate{K}\Hom: \cate{K}^+(\mathcal{A}^{\opp}) \times \cate{K}^+(\mathcal{A}) & \to \cate{K}^+(\cate{Ab}).
+\end{align*}
+
+% segment-id: o014.li2.chapter4.rhom.p003
+Tuliskan semua funktor lokalisasi sebagai $Q$. Ingat isomorfisme
+$\sigma:\cate{C}^\pm(\mathcal{A}^{\opp})\rightiso
+\cate{C}^{\mp}(\mathcal{A})^{\opp}$ dari
+Definisi--Proposisi~\ref{def:sigma}. Isomorfisme yang diinduksinya pada tingkat
+kategori bertriangulasi $\cate{K}^\pm$ dan $\cate{D}^\pm$ tetap ditulis
+$\sigma$ (Proposisi~\ref{prop:sigma-homotopy}, \ref{prop:derived-cat-op}).
+
+% segment-id: o014.li2.chapter4.rhom.d001
+\begin{definisi}
+	\index{funktor $\RHom$}
+	Jika bifunktor turunan kanan dari $\Hom$ dalam pengertian
+	Definisi~\ref{def:derived-bifunctor} ada, tuliskan bifunktor tersebut sebagai
+	$\RHom=\RHom_{\mathcal{A}}$. Bifunktor ini adalah funktor dari
+	$\cate{D}^+(\mathcal{A}^{\opp})\times\cate{D}^+(\mathcal{A})$ ke
+	$\cate{D}^+(\cate{Ab})$ dan, melalui
+	$\sigma:\cate{D}^{\pm}(\mathcal{A}^{\opp})\rightiso
+	\cate{D}^{\mp}(\mathcal{A})^{\opp}$, juga dapat dipandang sebagai funktor
+	\[ \RHom: \cate{D}^-(\mathcal{A})^{\opp} \times \cate{D}^+(\mathcal{A}) \to \cate{D}^+(\cate{Ab}). \]
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.rhom.l001
+\begin{lema}\label{prop:RHom-bounded-prep}
+	Tuliskan $\mathcal{I}_{\mathcal{A}}$ (atau $\mathcal{P}_{\mathcal{A}}$)
+untuk subkategori penuh objek injektif (atau projektif) dalam $\mathcal{A}$.
+	\begin{compactitem}
+		\item Jika $\mathcal{A}$ mempunyai cukup banyak objek injektif, maka
+		$(\cate{K}^+(\mathcal{A}^{\opp}),
+		\cate{K}^+(\mathcal{I}_{\mathcal{A}}))$ bersifat $\Hom$-injektif.
+		\item Jika $\mathcal{A}$ mempunyai cukup banyak objek projektif, maka
+		$(\cate{K}^+(\mathcal{P}_{\mathcal{A}}^{\opp}),
+		\cate{K}^+(\mathcal{A}))$ bersifat $\Hom$-injektif.
+	\end{compactitem}
+\end{lema}
+% segment-id: o014.li2.chapter4.rhom.pf001
+\begin{bukti}
+	Cukup dibahas kasus dengan cukup banyak objek injektif; kasus projektif
+	sepenuhnya serupa. Kita memverifikasi syarat-syarat
+	Lema~\ref{prop:RF-bifunctor}.
+
+	Pertama, tetapkan $X_1\in\Obj(\mathcal{A})$. Ingat bahwa
+	$\mathcal{I}_{\mathcal{A}}$ bertipe I bagi setiap funktor aditif
+	$F:\mathcal{A}\to\cate{Ab}$
+(Contoh~\ref{eg:injective-gives-F-injectives}); ambil kasus khusus
+$F=\Hom(X_1,\cdot)$.
+
+	Kedua, tetapkan $X_2\in\Obj(\mathcal{I}_{\mathcal{A}})$. Untuk memverifikasi
+	bahwa $\mathcal{A}^{\opp}$ bertipe I relatif terhadap $\Hom(\cdot,X_2)$,
+	perhatikan bahwa kondisi resolusi (I1) terpenuhi secara trivial. Untuk (I2),
+	cukup ditunjukkan bahwa
+	$\Hom(\cdot,X_2):\mathcal{A}^{\opp}\to\cate{Ab}$ merupakan funktor eksak;
+	ini tepat merupakan karakterisasi $X_2$ sebagai objek injektif.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.rhom.p004
+Hasil berikut melibatkan kompleks $\Hom$ dari Definisi~\ref{def:Hom-cplx},
+yang ditulis $\Hom^\bullet$.
+
+% segment-id: o014.li2.chapter4.rhom.t001
+\begin{teorema}\label{prop:RHom}\label{prop:RHom-bounded}
+	\index{kompleks $\Hom$}
+	\index{bikompleks $\Hom$}
+	\index[sym1]{RHom@$\RHom$}
+	Misalkan $\mathcal{A}$ mempunyai cukup banyak objek injektif atau cukup
+	banyak objek projektif.
+	\begin{enumerate}[(i)]
+		\item Bifunktor turunan kanan $\RHom$ ada.
+		\item Jika $\mathcal{A}$ mempunyai cukup banyak objek injektif dan
+		$X_2\to I_2$ merupakan resolusi injektif, maka terdapat isomorfisme yang diinduksi
+		\[ \RHom(QX_1, QX_2) \rightiso Q \Hom^\bullet(X_1, I_2). \]
+		Sebagai kasus khusus, jika $X_1\in\Obj(\mathcal{A})$, maka
+		$\RHom(QX_1,\cdot)\simeq\mathrm{R}(\Hom(X_1,\cdot)):
+		\cate{D}^+(\mathcal{A})\to\cate{D}^+(\cate{Ab})$.
+		\item Jika $\mathcal{A}$ mempunyai cukup banyak objek projektif dan
+		$P_1\to X_1$ merupakan resolusi projektif, maka terdapat isomorfisme yang diinduksi
+		\[ \RHom(QX_1, QX_2) \rightiso Q \Hom^\bullet(P_1, X_2). \]
+		Sebagai kasus khusus, jika $X_2\in\Obj(\mathcal{A})$, maka
+		$\RHom(\cdot,QX_2)\simeq\mathrm{R}(\Hom(\cdot,X_2)):
+		\cate{D}^-(\mathcal{A})^{\opp}\to\cate{D}^+(\cate{Ab})$.
+		\item Terdapat isomorfisme kanonik
+		$\Hm^n\RHom(X,Y)\simeq
+		\Hom_{\cate{D}(\mathcal{A})}(X,Y[n])$, dengan
+		$X\in\Obj(\cate{D}^-(\mathcal{A}))$ dan
+		$Y\in\Obj(\cate{D}^+(\mathcal{A}))$. Jika
+		$X,Y\in\Obj(\mathcal{A})$, ruas kanan tepat merupakan
+		$\Ext^n(X,Y)$ dari Definisi~\ref{def:Ext-general}.
+	\end{enumerate}
+\end{teorema}
+% segment-id: o014.li2.chapter4.rhom.pf002
+\begin{bukti}
+	Berdasarkan Lema~\ref{prop:RHom-bounded-prep} dan pengamatan berikut,
+	pernyataan (i)--(iii) semuanya mengikuti dari penerapan
+	Lema~\ref{prop:RF-bifunctor}:
+	\begin{itemize}
+		\item pada tingkat kompleks, Contoh~\ref{eg:Hom-bicplx} memberikan
+		isomorfisme kanonik
+		$\cate{C}\Hom(\sigma^{-1}(X_1),X_2)\simeq\Hom^\bullet(X_1,X_2)$;
+		\item $P_1\to X_1$ merupakan resolusi projektif dalam
+		$\cate{K}^-(\mathcal{A})$ jika dan hanya jika morfisme yang bersesuaian
+		$\sigma^{-1}(X_1)\to\sigma^{-1}(P_1)$ merupakan resolusi injektif dalam
+		$\cate{K}^+(\mathcal{A}^{\opp})$.
+	\end{itemize}
+
+	Untuk (iv), pertama misalkan $\mathcal{A}$ mempunyai cukup banyak objek
+	injektif. Kita boleh mengandaikan bahwa
+	$Y\in\Obj(\cate{C}^+(\mathcal{A}))$ terdiri atas objek-objek injektif.
+	Dengan mengidentifikasi objek $\cate{K}(\mathcal{A})$ dan
+	$\cate{D}(\mathcal{A})$, Proposisi~\ref{prop:Hom-D-injective} memberikan
+	\[ \Hom_{\cate{D}(\mathcal{A})}(X, Y[n]) \simeq \Hom_{\cate{K}(\mathcal{A})}(X, Y[n]) \simeq \Hm^n \Hom^\bullet(X, Y) \xrightarrow[\sim]{\text{(ii)}} \Hm^n \RHom(X, Y). \]
+	Jika $\mathcal{A}$ mempunyai cukup banyak objek projektif, argumennya
+	sepenuhnya serupa.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.rhom.co001
+\begin{korolari}\label{prop:Ext-reconcilation}
+	Misalkan $X,Y\in\Obj(\mathcal{A})$. Jika $\mathcal{A}$ mempunyai cukup
+	banyak objek injektif (atau projektif), maka $\Ext^n(X,Y)$ dari
+	Definisi~\ref{def:Ext-general} secara kanonik isomorfik dengan
+	$\Ext^n_{\mathcal{A},\mathrm{II}}(X,Y)$ (atau
+	$\Ext^n_{\mathcal{A},\mathrm{I}}(X,Y)$) yang didefinisikan dalam
+	\S\ref{sec:Ext-Tor}.
+\end{korolari}
+% segment-id: o014.li2.chapter4.rhom.pf003
+\begin{bukti}
+	Penerapan langsung Teorema~\ref{prop:RHom} (ii) dan (iii).
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.rhom.d002
+\begin{definisi}
+	\index{dimensi!injektif}
+	\index{dimensi!projektif}
+	\index[sym1]{injdim@$\mathrm{inj.dim}$, $\mathrm{proj.dim}$}
+	Misalkan $X\in\Obj(\mathcal{A})$. Dimensi berikut adalah dimensi funktor
+	turunan kanan dalam pengertian Definisi--Proposisi~\ref{def:dim-functor}.
+	\begin{itemize}
+		\item Jika $\mathcal{A}$ mempunyai cukup banyak objek injektif, dimensi
+		$\mathrm{R}(\Hom(\cdot,X)):
+		\cate{D}^-(\mathcal{A})^{\opp}\to\cate{D}^+(\cate{Ab})$ disebut
+		\emph{dimensi injektif} $X$ dan ditulis $\mathrm{inj.dim}(X)$.
+		\item Jika $\mathcal{A}$ mempunyai cukup banyak objek projektif, dimensi
+		$\mathrm{R}(\Hom(X,\cdot)):
+		\cate{D}^+(\mathcal{A})\to\cate{D}^+(\cate{Ab})$ disebut
+		\emph{dimensi projektif} $X$ dan ditulis $\mathrm{proj.dim}(X)$.
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.rhom.p005
+Untuk $X\in\Obj(\mathcal{A})$ dan
+$n\in\Z_{\geq0}\sqcup\{\infty\}$, suatu resolusi injektif
+$0\to X\to I^0\to I^1\to\cdots$ disebut mempunyai panjang $\leq n$ jika
+$k>n\Rightarrow I^k=0$; resolusi projektif diperlakukan dengan cara yang sama.
+Notasi $\Ext^{\geq m}(Y,X)=0$ berarti
+$k\geq m\Rightarrow\Ext^k(Y,X)=0$, dan demikian pula dalam kasus lain.
+\index{resolusi!panjang}
+
+% segment-id: o014.li2.chapter4.rhom.pr001
+\begin{proposisi}\label{prop:id-pd-Ext}
+	Ambil $n\in\Z_{\geq0}$. Jika $\mathcal{A}$ mempunyai cukup banyak objek
+	injektif, maka
+	\begin{align*}
+		\mathrm{inj.dim}(X) \leq n & \iff \Ext^{\geq n+1}(\cdot, X) = 0 \\
+		& \iff \Ext^{n+1}(\cdot, X) = 0 \iff X\;\text{mempunyai resolusi injektif dengan panjang $\leq n$}.
+	\end{align*}
+
+	Jika $\mathcal{A}$ mempunyai cukup banyak objek projektif, maka
+	\begin{align*}
+		\mathrm{proj.dim}(X) \leq n & \iff \Ext^{\geq n+1}(X, \cdot) = 0 \\
+		& \iff \Ext^{n+1}(X, \cdot) = 0 \iff X\;\text{mempunyai resolusi projektif dengan panjang $\leq n$}.
+	\end{align*}
+\end{proposisi}
+% segment-id: o014.li2.chapter4.rhom.pf004
+\begin{bukti}
+	Cukup dibahas resolusi injektif. Misalkan $\mathrm{inj.dim}(X)\leq n$.
+	Definisi dimensi menyiratkan bahwa untuk setiap $Y\in\Obj(\mathcal{A})$,
+	$\bigl(\mathrm{R}\Hom(\cdot,X)\bigr)(Y)$ berada dalam
+	$\Obj(\cate{D}^{[0,n]}(\cate{Ab}))$, sehingga
+	$\Ext^{\geq n+1}(Y,X)=0$.
+
+	Sekarang misalkan $\Ext^{n+1}(\cdot,X)=0$. Ambil resolusi injektif
+	$0\to X\to I^0\xrightarrow{d^0}\cdots$. Dengan menerapkan pergeseran
+	dimensi dari Proposisi~\ref{prop:dimension-shifting} berulang kali pada
+	barisan eksak pendek
+	\[ 0 \to X \to I^0 \to \Image\left(d_I^0 \right) \to 0, \quad 0 \to \Image\left( d_I^{k-2}\right) \to I^{k-1} \to \Image\left(d_I^{k-1} \right) \to 0 \]
+	untuk $1<k\leq n$, diperoleh
+	\[ \Ext^1\left(\cdot, \Image\left(d_I^{n-1}\right) \right) \simeq \cdots \simeq \Ext^{n+1}\left(\cdot, X \right) = 0. \]
+	Jadi $\Image(d_I^{n-1})$ merupakan objek injektif
+	(Korolari~\ref{prop:obstruction-exactness}). Dengan menggantikan $I^n$ oleh
+	objek ini, diperoleh resolusi injektif dengan panjang $\leq n$.
+
+	Jika $X$ mempunyai resolusi injektif dengan panjang $\leq n$, perhitungan
+	funktor turunan menggunakan resolusi tersebut menunjukkan bahwa untuk setiap
+	$Y\in\Obj(\mathcal{A})$,
+	$\bigl(\mathrm{R}\Hom(\cdot,X)\bigr)(Y)$ berada dalam
+	$\Obj(\cate{D}^{[0,n]}(\cate{Ab}))$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.rhom.p006
+Sejalan dengan Contoh~\ref{eg:Tor-dimension}, dimensi injektif dan dimensi
+projektif juga dapat dipandang sebagai dua jenis ``dimensi $\Ext$'', meskipun
+istilah ini bukan istilah baku.
+
+% segment-id: o014.li2.chapter4.rhom.dp001
+\begin{definisi-proposisi}[Dimensi global]\label{def:global-dim}
+	\index{dimensi!global}
+	\index[sym1]{gldim@$\mathrm{gl.dim}$}
+	Misalkan $\mathcal{A}$ mempunyai cukup banyak objek injektif dan projektif.
+	Maka
+% segment-id: o014.li2.chapter4.rhom.g001
+	\[\begin{tikzcd}[row sep=tiny, column sep=tiny, ampersand replacement=\&]
+		\displaystyle\sup_{X \in \Obj(\mathcal{A})} \mathrm{inj.dim}(X) \arrow[equal, r] \& \inf \left\{ n \in \Z_{\geq 0} \;\middle| \; \Ext^{\geq n+1}(\cdot, \cdot) = 0 \right\} \arrow[equal, r] \& \displaystyle\sup_{X \in \Obj(\mathcal{A})} \mathrm{proj.dim}(X) \\
+		\& \sup\left\{{\begin{array}{r|l}
+			 n \in \Z_{\geq 0} & \exists X, Y \in \Obj(\mathcal{A}) \\
+			 & \Ext^n(X,Y) \neq 0
+		\end{array}}\right\} \arrow[equal, u] \& \text{(dengan konvensi $\inf \emptyset := \infty$)}
+	\end{tikzcd}\]
+	Nilai ini ditulis
+	$\mathrm{gl.dim}(\mathcal{A})\in\Z_{\geq0}\sqcup\{\infty\}$ dan disebut
+	\emph{dimensi global}, atau \emph{dimensi homologis global}, dari
+	$\mathcal{A}$.
+\end{definisi-proposisi}
+% segment-id: o014.li2.chapter4.rhom.pf005
+\begin{bukti}
+	Untuk setiap $n\in\Z_{\geq0}$, Proposisi~\ref{prop:id-pd-Ext} menunjukkan
+	bahwa $n\geq\sup_X\mathrm{inj.dim}(X)$ ekuivalen dengan
+	$\Ext^{\geq n+1}(\cdot,\cdot)=0$. Ambil infimum atas semua $n$ yang
+	memenuhi kondisi tersebut. Kasus $\mathrm{proj.dim}$ persis sama, dan
+	persamaan vertikalnya langsung.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.rhom.p007
+Sebagai contoh, jika $R$ domain ideal utama, setiap submodul dari modul bebas
+$R$ tetap bebas \cite[Lema 6.7.4]{Li1}. Jadi setiap modul $R$, misalnya
+$M$, mempunyai resolusi bebas berbentuk
+$0\to F_1\to F_0\to M\to0$, yang menunjukkan bahwa
+$\mathrm{gl.dim}(R\dcate{Mod})\leq1$.
+
+% segment-id: o014.li2.chapter4.rhom.p008
+Dimensi global merupakan batas atas bagi dimensi semua funktor turunan.
+
+% segment-id: o014.li2.chapter4.rhom.co002
+\begin{korolari}
+	Misalkan $F:\mathcal{A}\to\mathcal{A}'$ funktor eksak kiri (atau eksak
+	kanan) antarkategori abelian, dan $\mathcal{A}$ mempunyai cukup banyak objek
+	injektif serta projektif. Maka dimensi $\mathrm{R}F$ (atau $\mathrm{L}F$)
+	tidak melebihi $\mathrm{gl.dim}(\mathcal{A})$.
+\end{korolari}
+% segment-id: o014.li2.chapter4.rhom.pf006
+\begin{bukti}
+	Definisi dimensi melibatkan amplitudo $\mathrm{R}F$ (atau $\mathrm{L}F$),
+	lihat Definisi~\ref{def:functor-amplitude}. Untuk mengendalikan amplitudo,
+	bagi setiap $X\in\Obj(\mathcal{A})$ gunakan
+	Proposisi~\ref{prop:id-pd-Ext} untuk memilih resolusi injektif (atau
+	projektif) dengan panjang paling banyak $\mathrm{gl.dim}(\mathcal{A})$, lalu
+	hitung $\mathrm{R}F(X)$ (atau $\mathrm{L}F(X)$) menggunakan resolusi itu.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.rhom.p009
+Sebagai penutup bagian ini, kita memberikan hasil bertipe adjungsi.
+
+% segment-id: o014.li2.chapter4.rhom.t002
+\begin{teorema}\label{prop:RHom-adjoint-bounded}
+	Tinjau pasangan funktor aditif adjoin antarkategori abelian
+	$\begin{tikzcd}
+		F: \mathcal{A} \arrow[r, shift left] & \mathcal{A}' \arrow[l, shift left] : G
+	\end{tikzcd}$.
+	Misalkan $\mathcal{A}$ mempunyai cukup banyak objek projektif dan
+	$\mathcal{A}'$ mempunyai cukup banyak objek injektif. Maka terdapat
+	isomorfisme kanonik dalam $\cate{D}^+(\cate{Ab})$
+	\[ \RHom_{\mathcal{A'}}\left(\mathrm{L}F(X), Y\right) \simeq \RHom_{\mathcal{A}}\left(X, \mathrm{R}G(Y) \right), \]
+	dengan $X\in\Obj(\cate{D}^-(\mathcal{A}))$ dan
+	$Y\in\Obj(\cate{D}^+(\mathcal{A}'))$. Sebagai akibat, terdapat
+	isomorfisme kanonik dalam $\cate{Ab}$
+	\[ \Hom_{\cate{D}(\mathcal{A'})}\left(\mathrm{L}F(X), Y\right) \simeq \Hom_{\cate{D}(\mathcal{A})}\left(X, \mathrm{R}G(Y) \right). \]
+\end{teorema}
+% segment-id: o014.li2.chapter4.rhom.pf007
+\begin{bukti}
+	Pilih resolusi projektif $P\to X$ dan resolusi injektif $Y\to I$.
+	Dengan menerapkan Teorema~\ref{prop:RHom}, diperoleh
+	\[ \RHom_{\mathcal{A}}(\mathrm{L}F(QX), QY) \simeq Q\Hom^\bullet\left( \cate{K}F(P), I \right). \]
+	Namun, $\cate{K}F(P)$ diperoleh dengan menerapkan $F$ derajat demi derajat
+	pada kompleks. Dari definisi kompleks $\Hom$ dan adjungsi, ruas kanan
+	isomorfik dengan $Q\Hom^\bullet(P,\cate{K}G(I))$, yang tepat merupakan
+	$\RHom_{\mathcal{A}}(QX,\mathrm{R}G(QY))$.
+
+	Teorema~\ref{prop:resolution-homotopy} menunjukkan bahwa resolusi projektif
+	$X$ unik hingga isomorfisme unik dalam $\cate{K}^-(\mathcal{A})$, dan
+	setiap morfisme dalam $\cate{D}^-(\mathcal{A})$ terangkat secara unik ke
+	resolusi projektif (Proposisi~\ref{prop:Hom-D-injective}). Hal yang sama
+	berlaku bagi resolusi injektif $Y$. Ini cukup untuk menunjukkan bahwa
+	isomorfisme yang dibangun di atas funktorial dalam $(X,Y)$.
+
+	Pernyataan terakhir diperoleh dengan menerapkan $\Hm^0$ pada kedua ruas.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.rhom.p010
+Di sini $\mathrm{L}F$ dan $\mathrm{R}G$ bukan funktor adjoin dalam arti yang
+ketat: yang pertama adalah funktor antarkategori $\cate{D}^-$, sedangkan yang
+kedua antarkategori $\cate{D}^+$. Versi kategori turunan tak terbatas dalam
+\S\ref{sec:unbounded-derived} akan menghilangkan perbedaan ini.

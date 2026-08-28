@@ -1,0 +1,285 @@
+% Unit 103 terjemahan Bahasa Indonesia dari chapter7.tex baris 2679--2827.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter7.exercises-a
+% Cakupan: awal Latihan Bab 7 sampai latihan funktor-dg Hom;
+% dilanjutkan oleh Unit 104 pada baris 2828.
+
+% segment-id: o014.li2.chapter7.exercises-a.ex000
+\begin{Exercises}
+	% segment-id: o014.li2.chapter7.exercises-a.ex001
+	\item Lengkapi argumen yang dihilangkan dalam
+	Definisi~\ref{def:opposite-braided-algebra}, lalu buktikan bahwa untuk
+	aljabar $A$ di atas kategori monoidal simetris $\mathcal{V}$, modul-$A$
+	kiri sama artinya dengan modul-$A^{\opp}$ kanan.
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex002
+	\item Misalkan $\mathcal{V}$ kategori monoidal beranyam dan
+	$(A,\mu_A,\eta_A)$ aljabar di atasnya. Buktikan bahwa jika terdapat
+	morfisme $\mu':A\otimes A\to A$ dan $\eta':\munit\to A$ dalam
+	$\cate{Alg}(\mathcal{V})$ yang membuat $A$ menjadi aljabar di atas
+	$\cate{Alg}(\mathcal{V})$, maka niscaya $\eta'=\eta_A$ dan
+	$\mu'=\mu_A$. Khususnya, dengan menerapkan
+	Lema~\ref{prop:CAlg-mu}, diperoleh bahwa $A$ komutatif. Dengan demikian,
+	buktikan \eqref{eqn:AlgAlg-CAlg}.
+
+	% segment-id: o014.li2.chapter7.exercises-a.hi001
+	\begin{hint}
+		Mudah ditunjukkan bahwa $\eta'=\eta_A$. Untuk $\mu'=\mu_A$, tuliskan
+		$\mu_{A\otimes A}$ bagi perkalian pada $A\otimes A$. Syarat yang
+		diberikan menghasilkan diagram komutatif
+		% segment-id: o014.li2.chapter7.exercises-a.q001
+		\[\begin{tikzcd}[column sep=large]
+			(A \otimes A) \otimes (A \otimes A) \arrow[r, "{\mu' \otimes \mu'}"] \arrow[d, "{\mu_{A \otimes A}}"'] & A \otimes A \arrow[d, "{\mu_A}"] \\
+			A \otimes A \arrow[r, "{\mu'}"'] & A.
+		\end{tikzcd}\]
+		Jika empat salinan $A$ ditempatkan dalam tabel $2\times2$, diagram
+		komutatif tersebut dapat dibayangkan sebagai hukum pertukaran horizontal
+		dan vertikal
+		% segment-id: o014.li2.chapter7.exercises-a.g001
+		\begin{center}\begin{tikzpicture}[baseline=(O)]
+			\matrix (M) [matrix of nodes] {
+				$A$ & $A$ \\
+				$A$ & $A$ \\
+			};
+			\coordinate (O) at (M-1-1.south west);
+			\draw (M-1-1.north west) rectangle (M-1-2.south east);
+			\draw (M-2-1.north west) rectangle (M-2-2.south east);
+		\end{tikzpicture} = \begin{tikzpicture}[baseline=(O)]
+			\matrix (M) [matrix of nodes] {
+				$A$ & $A$ \\
+				$A$ & $A$ \\
+			};
+			\coordinate (O) at (M-1-1.south west);
+			\draw (M-1-1.north west) rectangle (M-2-1.south east);
+			\draw (M-1-2.north west) rectangle (M-2-2.south east);
+		\end{tikzpicture} \quad \begin{tabular}{rl}
+			Horizontal: & kalikan dengan $\mu'$ \\
+			Vertikal: & kalikan dengan $\mu_A$
+		\end{tabular}\end{center}
+		Sekarang argumen untuk $\mu'=\mu_A$ dapat digambarkan sebagai
+		% segment-id: o014.li2.chapter7.exercises-a.g002
+		\begin{center}\begin{tikzpicture}[baseline=(O)]
+			\matrix (M) [matrix of nodes] {
+				$A$ & $A$ \\
+			};
+			\coordinate (O) at (M-1-1.south west);
+			\draw (M-1-1.north west) rectangle (M-1-2.south east);
+		\end{tikzpicture}
+		$=$ \begin{tikzpicture}[baseline=(O)]
+			\matrix (M) [matrix of nodes, every node/.style={anchor=base, minimum width=1.7em, minimum height=1.7em}] {
+				$A$ & $\munit$ \\
+				$\munit$ & $A$ \\
+			};
+			\coordinate (O) at (M-1-1.south west);
+			\draw (M-1-1.north west) rectangle (M-2-1.south east);
+			\draw (M-1-2.north west) rectangle (M-2-2.south east);
+		\end{tikzpicture}
+		$=$ \begin{tikzpicture}[baseline=(O)]
+			\matrix (M) [matrix of nodes, every node/.style={anchor=base, minimum width=1.5em, minimum height=1.7em}] {
+				$A$ & $\munit$ \\
+				$\munit$ & $A$ \\
+			};
+			\coordinate (O) at (M-1-1.south west);
+			\draw (M-1-1.north west) rectangle (M-1-2.south east);
+			\draw (M-2-1.north west) rectangle (M-2-2.south east);
+		\end{tikzpicture}
+		$=$ \begin{tikzpicture}[baseline=(O)]
+			\matrix (M) [matrix of nodes] {
+				$A$ \\
+				$A$ \\
+			};
+			\coordinate (O) at (M-1-1.south west);
+			\draw (M-1-1.north west) rectangle (M-2-1.south east);
+		\end{tikzpicture}\end{center}
+		Cobalah juga menerjemahkannya menjadi diagram komutatif atau persamaan
+		yang bersesuaian.
+	\end{hint}
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex003
+	\item Tinjau aljabar-dg $A$ di atas $\mathcal{A}$
+	(Definisi~\ref{def:dg-algebra}). Periksa bahwa bila $A=\munit$ (objek
+	satuan), konsep modul-$A$ kiri maupun modul-$A$ kanan sama dengan konsep
+	kompleks di atas $\mathcal{A}$.
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex004
+	\item Tetapkan gelanggang komutatif $\Bbbk$. Misalkan $A$ aljabar-dg di
+	atas $\Bbbk\dcate{Mod}$ dan $M$ kompleks. Buktikan bahwa memberikan
+	struktur modul-$A$ kiri pada $M$ sama artinya dengan memberikan
+	homomorfisme aljabar-dg
+	$A\to\End^\bullet(M):=\Hom^\bullet(M,M)$.
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex005
+	\item Misalkan $\Bbbk$ gelanggang komutatif dan $R$ aljabar-dg di atas
+	$\Bbbk\dcate{Mod}$. Untuk modul-$R$ kanan $X$ dan modul-$R$ kiri $Y$,
+	kita masing-masing mengidentifikasi $R$ dan $X,Y$ dengan aljabar-$\Bbbk$
+	dan modul-$\Bbbk$ yang dilengkapi dekomposisi jumlah langsung
+	% segment-id: o014.li2.chapter7.exercises-a.q002
+	\[ R = \bigoplus_n R^n, \quad X = \bigoplus_n X^n, \quad Y = \bigoplus_n Y^n \]
+	serta endomorfisme berderajat $1$, $d$, yang memenuhi $d^2=0$. Karena itu,
+	$X\dotimes{R}Y$ sudah terdefinisi sebagai modul-$\Bbbk$.
+	\begin{enumerate}[(i)]
+		\item Ingat bahwa
+		$X\otimes Y=\bigoplus_n(\bigoplus_{p+q=n}X^p\otimes Y^q)$ sekaligus
+		merupakan modul-$\Bbbk$ dan mempunyai struktur kompleks. Untuk
+		homomorfisme modul-$\Bbbk$ yang jelas
+		$\pi:X\otimes Y\twoheadrightarrow X\dotimes{R}Y$, periksa bahwa
+		$\Ker(\pi)$ adalah subkompleks, sehingga $X\dotimes{R}Y$ mempunyai
+		struktur kompleks kanonik.
+
+		\item Buktikan bahwa jika $X$ bimodul-$(A,R)$ dan $Y$ bimodul-$(R,B)$,
+		dengan $A$ dan $B$ juga aljabar-dg, maka $X\dotimes{R}Y$ secara alami
+		menjadi bimodul-$(A,B)$. Gunakan hal ini untuk memperluas adjoin dalam
+		Proposisi~\ref{prop:tensor-Hom-cplx} ke kasus modul-dg. Kompleks
+		$\Hom^\bullet(Y_B,Z_B)$ dan $\Hom^\bullet({}_AX,{}_AZ)$ yang muncul di
+		sini didefinisikan seperti dalam Contoh~\ref{eg:dg-Hom-cplx}, tetapi
+		tanda-tanda perlu diperhatikan ketika memberikan struktur bimodul-
+		$(A,R)$ dan bimodul-$(R,B)$.
+	\end{enumerate}
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex006
+	\item Tetapkan aljabar-dg $A$ di atas $\mathcal{A}$. Jika
+	$p>0\implies A^p=0$, maka $A$ disebut \emph{nonpositif}. Untuk modul-$A$
+	kiri (atau kanan) $M$ dan $n\in\Z$, ambil subkompleks terpotong
+	$\tau^{\leq n}M$ menurut Definisi~\ref{def:truncation-cplx}. Buktikan
+	bahwa bila $A$ nonpositif:
+	\begin{enumerate}[(i)]
+		\item setiap $d_M^p:M^p\to M^{p+1}$ bersifat $A^0$-linear;
+		\item terdapat barisan eksak pendek modul-$A$
+		$0\to\tau^{\leq n}M\to M\to\tilde\tau^{\geq n+1}M\to0$.
+	\end{enumerate}
+	\index{aljabar dg!tak-positif@tak-positif (non-positive)}
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex007
+	\item Tetapkan aljabar-dg $A$ di atas $\mathcal{A}$. Ingat bahwa semua
+	modul-$A$ kiri membentuk kategori-dg $A\dcate{dgMod}$
+	(Contoh~\ref{eg:dg-Hom-cplx}); Catatan~\ref{rem:dg-homotopy-cat} kemudian
+	memberikan kategori homotopi $\mathrm{h}(A\dcate{dgMod})$. Modul-$A$ kiri
+	$M$ disebut asiklik bila ia asiklik sebagai kompleks; morfisme modul-$A$
+	$f:M\to N$ disebut kuasi-isomorfisme bila ia kuasi-isomorfisme sebagai
+	morfisme kompleks.
+	\begin{enumerate}[(i)]
+		\item Misalkan $M$ modul-$A$ kiri yang strukturnya ditentukan oleh
+		keluarga morfisme dalam $\mathcal{A}$,
+		$\alpha_{A,M}^{p,q}:A^p\otimes M^q\to M^{p+q}$ ($p,q\in\Z$).
+		Tunjukkan bahwa rumus berikut memberikan struktur modul-$A$ kiri pada
+		kompleks $M[1]$:
+		% segment-id: o014.li2.chapter7.exercises-a.q003
+		\[ \alpha_{A, M[1]}^{p, q} := (-1)^p \alpha_{A, M}^{p, q+1} . \]
+		Selanjutnya, tunjukkan bahwa $M\mapsto M[1]$ memberikan funktor-dg dari
+		$A\dcate{dgMod}$ ke dirinya sendiri.
+		\item Untuk sembarang morfisme $f:M\to N$ dalam $A\dcate{dgMod}$,
+		tunjukkan bahwa kerucut pemetaan $\Cone(f)$ memiliki struktur modul-$A$
+		kiri kanonik, yang dalam notasi di atas diberikan oleh
+		% segment-id: o014.li2.chapter7.exercises-a.q004
+		\[ \alpha_{A, \Cone(f)}^{p, q} = \alpha_{A, M[1]}^{p, q} \oplus \alpha_{A, N}^{p, q}. \]
+		\item Mengikuti konstruksi dalam \S\ref{sec:derived-cat}, gunakan kerucut
+		pemetaan untuk membuat $\mathrm{h}(A\dcate{dgMod})$ menjadi kategori
+		triangulasi. Selanjutnya, lakukan pelokalan Verdier pada modul-$A$
+		asiklik, atau, dengan kata lain, tambahkan invers kuasi-isomorfisme,
+		untuk memperoleh kategori turunan $\cate{D}(A\dcate{dgMod})$.
+		Definisikan $\cate{D}^{\star}(A\dcate{dgMod})$ yang bersesuaian untuk
+		$\star\in\{+,-,\bdd\}$.
+		\item Dengan asumsi $A$ nonpositif, perluas
+		Proposisi~\ref{prop:derived-full-faithful-subcat} ke
+		$\cate{D}(A\dcate{dgMod})$ dan
+		$\cate{D}^{\star}(A\dcate{dgMod})$, untuk
+		$\star\in\{+,-,\bdd\}$.
+		% segment-id: o014.li2.chapter7.exercises-a.hi002
+		\begin{hint}
+			Gunakan funktor pemotongan.
+		\end{hint}
+		\item Dengan mengacu pada \S\ref{sec:K-injectives}, definisikan
+		modul-$A$ K-injektif dan K-projektif, lalu gunakan objek-objek ini untuk
+		mendeskripsikan morfisme dalam $\cate{D}(A\dcate{dgMod})$. Tempatkan
+		semuanya dalam kerangka \S\ref{sec:triangulated-functor-localization}
+		untuk membahas hubungannya dengan funktor turunan.
+		\item Untuk modul-$A$ kanan $M$, tunjukkan bahwa kompleks $M[1]$
+		mempunyai struktur modul-$A$ kanan
+		$\alpha_{M[1],A}^{p,q}=\alpha_{M,A}^{p,q+1}$ dan bahwa semua sifat di
+		atas tetap berlaku.
+	\end{enumerate}
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex008
+	\item Misalkan $\mathcal{C}$ kategori-dg di atas $\Bbbk$. Definisikan
+	$\mathcal{C}^{\opp}$ melalui
+	$\Obj(\mathcal{C}^{\opp})=\Obj(\mathcal{C})$ dan, untuk sembarang
+	$X,Y\in\Obj(\mathcal{C}^{\opp})$,
+	$\Hom^\bullet_{\mathcal{C}^{\opp}}(X,Y):=
+	\Hom^\bullet_{\mathcal{C}}(Y,X)$. Definisikan komposisinya sebagai
+	% segment-id: o014.li2.chapter7.exercises-a.q005
+	\begin{align*}
+		\Hom^p_{\mathcal{C}^{\opp}}(Y, Z) \dotimes{\Bbbk} \Hom^q_{\mathcal{C}^{\opp}}(X, Y) & \to \Hom^{p+q}_{\mathcal{C}^{\opp}}(X, Z) \quad p, q \in \Z \\
+		f \otimes g & \mapsto (-1)^{pq} \underbracket{f \circ g}_{\text{operasi dalam }\Hom^\bullet_{\mathcal{C}}}.
+	\end{align*}
+	Periksa bahwa ini memang memberikan kategori-dg $\mathcal{C}^{\opp}$,
+	yang disebut kategori-dg lawan dari $\mathcal{C}$.
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex009
+	\item Tetapkan gelanggang komutatif $\Bbbk$, aljabar-dg $R$ di atas
+	$\Bbbk\dcate{Mod}$, modul-$R$ kanan $X$, dan modul-$R$ kiri $Y$. Buktikan
+	bahwa funktor yang diperkenalkan sebelumnya,
+	% segment-id: o014.li2.chapter7.exercises-a.q006
+	\[ X \dotimes{R} (\cdot): R\dcate{dgMod} \to \cate{C}(\Bbbk), \quad (\cdot) \dotimes{R} Y: \cated{dgMod}R \to \cate{C}(\Bbbk), \]
+	secara alami diangkat menjadi funktor-dg. Rumuskan garis besar hasil yang bersesuaian
+	ketika $X$ atau $Y$ juga mempunyai struktur bimodul.
+
+	% segment-id: o014.li2.chapter7.exercises-a.hi003
+	\begin{hint}
+		Kuncinya ialah mendefinisikan morfisme antarkompleks $\Hom$. Untuk
+		$X\dotimes{R}(\mathord\cdot)$, misalkan $M$ dan $N$ modul-$R$ kiri.
+		Aturan tanda Koszul mensyaratkan citra
+		$f\in\Hom^n_R(M,N)$, yaitu
+		$\identity_X\otimes f\in
+		\Hom^n(X\dotimes{R}M,X\dotimes{R}N)$, didefinisikan oleh
+		% segment-id: o014.li2.chapter7.exercises-a.q007
+		\[ (\identity_X \otimes f)(x \otimes m) = (-1)^{pn} x \otimes f(m), \quad x \in X^p, \; m \in M^q. \]
+		Perlu diperiksa bahwa
+		$\identity_X\otimes d_{\Hom^\bullet}(f)=
+		d_{\Hom^\bullet}(\identity_X\otimes f)$.
+
+		Kasus $(\mathord\cdot)\dotimes{R}Y$ lebih sederhana: cukup ambil
+		$(f\otimes\identity_Y)(m\otimes y)=f(m)\otimes y$.
+	\end{hint}
+
+	% segment-id: o014.li2.chapter7.exercises-a.ex010
+	\item Misalkan $\mathcal{C}$ kategori-dg di atas gelanggang komutatif
+	$\Bbbk$ dan $M\in\Obj(\mathcal{C})$.
+	\begin{enumerate}[(i)]
+		\item Angkat
+		$\Hom^\bullet(M,\mathord\cdot):\mathcal{C}\to\cate{C}(\Bbbk)$ menjadi
+		funktor-dg.
+
+		% segment-id: o014.li2.chapter7.exercises-a.hi004
+		\begin{hint}
+			Misalkan $X,Y\in\Obj(\mathcal{C})$ dan
+			$f\in\Hom^n(X,Y)$. Tetapkan
+			$\mathcal{H}_X=\Hom^\bullet(M,X)$. Citra $f$ harus diambil sebagai
+			% segment-id: o014.li2.chapter7.exercises-a.q008
+			\[ \left[ f_*: g \xmapsto{\text{morfisme berderajat }n} fg \right] \in \Hom^n(\mathcal{H}_X, \mathcal{H}_Y). \]
+			Gunakan definisi kompleks $\Hom$ untuk memeriksa bahwa
+			$(d_{\Hom^\bullet(X,Y)}f)_*=
+			d_{\Hom^\bullet(\mathcal{H}_X,\mathcal{H}_Y)}(f_*)$.
+		\end{hint}
+		\item Angkat
+		$\Hom^\bullet(\mathord\cdot,M):\mathcal{C}\to
+		\cate{C}(\Bbbk)^{\opp}$ menjadi funktor-dg.
+
+		% segment-id: o014.li2.chapter7.exercises-a.hi005
+		\begin{hint}
+			Tetapkan $\mathcal{K}_X=\Hom^\bullet(X,M)$. Aturan tanda Koszul
+			mensyaratkan citra $f\in\Hom^n(X,Y)$ diambil sebagai
+			% segment-id: o014.li2.chapter7.exercises-a.q009
+			\[ \left[\begin{array}{c}
+				f^*: g \xmapsto{\text{morfisme berderajat }n} (-1)^{np} gf \\
+				\forall p \in \Z , \; \forall\; g \in \Hom^p(Y, M)
+			\end{array}\right] \in \Hom^n(\mathcal{K}_Y, \mathcal{K}_X). \]
+			Periksa dengan cermat bahwa
+			\begin{compactitem}
+				\item $(d_{\Hom^\bullet(X,Y)}f)^*=
+				d_{\Hom^\bullet(\mathcal{K}_Y,\mathcal{K}_X)}(f^*)$;
+				\item $(fh)^*$ sama dengan komposisi $h^*$ dan $f^*$ dalam
+				$\Hom^\bullet_{\cate{C}(\Bbbk)}$.
+			\end{compactitem}
+		\end{hint}
+	\end{enumerate}

@@ -10,8 +10,8 @@
 % segment-id: o014.li2.chapter2.first-look-at-complexes.p001
 Titik pangkal bagian ini adalah morfisme-morfisme dalam kategori abelian yang
 memenuhi $gf = 0$, yaitu
-$X \xrightarrow{f} Y \xrightarrow{g} Z$. Ambil komposisi
-$\Ker(g) \hookrightarrow Y \twoheadrightarrow \Coker(f)$ sehingga diperoleh
+$X \xrightarrow{f} Y \xrightarrow{g} Z$. Komposisi
+$\Ker(g) \hookrightarrow Y \twoheadrightarrow \Coker(f)$ memberikan morfisme
 $\Ker(g) \to \Coker(f)$; yang menjadi perhatian kita ialah faktorisasi
 epi--mononya. Ada dua sudut pandang yang saling dual.
 
@@ -74,7 +74,7 @@ epi--mononya. Ada dua sudut pandang yang saling dual.
 	terakhir merupakan monomorfisme, sehingga $\varphi$ pun merupakan
 	monomorfisme.
 
-	Untuk memperoleh (ii), kita nyatakan bahwa terdapat monomorfisme unik
+	Untuk memperoleh (ii), akan ditunjukkan bahwa terdapat monomorfisme unik
 	$\Coker(\varphi) \hookrightarrow \Coker(f)$
 	(atau epimorfisme $\Ker(g) \twoheadrightarrow \Ker(\psi)$) yang membuat
 	diagram berikut komutatif:
@@ -90,12 +90,12 @@ epi--mononya. Ada dua sudut pandang yang saling dual.
 		\Image(g) \arrow[hookrightarrow, u] & \Coker(f) \arrow[twoheadrightarrow, l, "\psi"] & \Ker(\psi) \arrow[hookrightarrow, l, "\text{kanonik}" inner sep=0.6em]
 	\end{tikzcd}
 	\]
-	Jika pernyataan ini diterima, dua faktorisasi epi--mono pada diagram dalam
-	(ii), yaitu bingkai luarnya, dapat langsung dibaca. Isomorfisme pada jalur
-	tengah kemudian diberikan secara unik oleh
+	Setelah pernyataan ini dibuktikan, kedua faktorisasi epi--mono pada (ii)
+	dapat langsung dibaca dari bingkai luar diagram. Isomorfisme pada jalur
+	tengah kemudian ditentukan secara unik oleh
 	Proposisi~\ref{prop:epi-mono-uniqueness}.
 
-	Persoalannya tinggal membangun diagram di atas. Karena kedua diagram saling
+	Jadi, tinggal membangun diagram di atas. Karena kedua diagram saling
 	dual, cukup dibahas diagram kiri.
 	Lema~\ref{prop:mono-epi-ker-coker}~(iii) menunjukkan bahwa
 	$\Coker(\varphi)$ juga dapat diidentifikasi dengan kokernel komposisi
@@ -150,7 +150,7 @@ dari $\Ker(g) \to \Coker(f)$. Seperti yang diharapkan,
 
 % segment-id: o014.li2.chapter2.first-look-at-complexes.pf002
 \begin{bukti}
-	Menurut pola yang sudah dikenal dari
+	Dengan argumen seperti dalam
 	Lema~\ref{prop:epi-mono-morphism}, jika $\Phi$ ada maka morfisme tersebut
 	unik, dan cukup diperiksa bahwa $\Phi$ membuat persegi kanan komutatif.
 	Konstruksinya sebagai berikut. Karena
@@ -181,7 +181,7 @@ dari $\Ker(g) \to \Coker(f)$. Seperti yang diharapkan,
 
 % segment-id: o014.li2.chapter2.first-look-at-complexes.pf003
 \begin{bukti}
-	Ambil morfisme-morfisme $\iota$, $p$, dan seterusnya yang dimiliki
+	Gunakan morfisme-morfisme $\iota$, $p$, dan seterusnya yang terkait dengan
 	biproduk, seperti dalam \eqref{eqn:biproduct-identities}. Berdasarkan
 	funktorialitas pada Proposisi~\ref{prop:homology-functoriality},
 	morfisme-morfisme itu juga menginduksi
@@ -204,21 +204,21 @@ hingga atau produk tak hingga dalam kategori abelian umum.
 % segment-id: o014.li2.chapter2.first-look-at-complexes.d001
 \begin{definisi}[Kompleks]\label{def:complex}
 	\index{kompleks (complex)}
-	Misalkan $\mathcal{A}$ merupakan kategori aditif. Perhatikan suatu barisan
+	Misalkan $\mathcal{A}$ merupakan kategori aditif. Tinjau suatu barisan
 	morfisme dalam $\mathcal{A}$
 	% segment-id: o014.li2.chapter2.first-look-at-complexes.q004
 	\[ \cdots \to X^n \xrightarrow{d^n} X^{n+1} \xrightarrow{d^{n+1}} X^{n+2} \to \cdots. \]
-	Barisan tersebut boleh hanya mempunyai berhingga banyak suku, menjulur tak
+	Barisan tersebut dapat terdiri atas berhingga banyak suku, menjulur tak
 	hingga ke satu atau kedua arah, ataupun membentuk siklus. Jika
 	$d^{n+1} d^n = 0$ untuk setiap $n$, data $(X^n, d^n)_n$ disebut
 	\emph{kompleks}; notasi yang lazim ialah $(X^\bullet, d^\bullet)$,
-	$X^\bullet$, atau $X$. Suku $X^n$ secara konvensional disebut suku dari
-	kompleks $X$ yang berderajat $n$.
+	$X^\bullet$, atau $X$. Suku $X^n$ secara konvensional disebut suku
+	berderajat $n$ dari kompleks $X$.
 \end{definisi}
 
 % segment-id: o014.li2.chapter2.first-look-at-complexes.p004
-Bab ini terutama berfokus pada kasus kategori abelian, tempat kohomologi dan
-keeksakan kompleks dapat dikaji.
+Bab ini terutama berfokus pada kategori abelian, yang memungkinkan kohomologi
+dan keeksakan kompleks dikaji.
 
 % segment-id: o014.li2.chapter2.first-look-at-complexes.d002
 \begin{definisi}[Kohomologi dan barisan eksak]\label{def:cohomology}
@@ -259,8 +259,8 @@ dikaji lebih lanjut di \S~\sourcecrossref{sec:Abel-cplx}{3.6}
 	subskrip, yakni
 	% segment-id: o014.li2.chapter2.first-look-at-complexes.q006
 	\[ \cdots \to X_n \xrightarrow{d_n} X_{n-1} \to \cdots, \quad d_{n-1} d_n = 0, \]
-	semua definisi sebelumnya berlaku tanpa perubahan. Karena asal-usulnya dalam
-	topologi, versi dengan penomoran menaik $(X^\bullet, d^\bullet)$ lazim
+	semua definisi sebelumnya berlaku tanpa perubahan. Karena konvensi yang
+	berasal dari topologi, versi dengan penomoran menaik $(X^\bullet, d^\bullet)$ lazim
 	disebut kompleks kokrantai, sedangkan versi dengan penomoran menurun
 	$(X_\bullet, d_\bullet)$ disebut kompleks rantai. Untuk kompleks rantai $X$
 	dalam kategori abelian, objek
@@ -270,8 +270,8 @@ dikaji lebih lanjut di \S~\sourcecrossref{sec:Abel-cplx}{3.6}
 
 	Dalam aljabar, kompleks (yakni kompleks kokrantai) dan kompleks rantai hanya
 	berbeda dalam notasi, dan peralihan di antara keduanya bersifat langsung.
-	Untuk kategori aditif $\mathcal{A}$, salah satu cara yang seluruhnya
-	dilakukan di dalam kategori itu sendiri ialah mencerminkan indeks dengan
+	Untuk kategori aditif $\mathcal{A}$, salah satu cara yang tetap sepenuhnya
+	berada di dalam kategori tersebut ialah mencerminkan indeks dengan
 	menetapkan
 	% segment-id: o014.li2.chapter2.first-look-at-complexes.q008
 	\[ X^n := X_{-n}, \quad d^n := d_{-n}. \]
@@ -299,7 +299,7 @@ dikaji lebih lanjut di \S~\sourcecrossref{sec:Abel-cplx}{3.6}
 \end{catatan}
 
 % segment-id: o014.li2.chapter2.first-look-at-complexes.p006
-Keeksakan suatu kompleks dapat diperiksa sepotong demi sepotong. Selanjutnya,
+Keeksakan suatu kompleks dapat diperiksa suku demi suku. Selanjutnya,
 bentuk-bentuk khas berikut akan digunakan tanpa penjelasan tambahan.
 
 % segment-id: o014.li2.chapter2.first-look-at-complexes.l003
@@ -319,7 +319,7 @@ bentuk-bentuk khas berikut akan digunakan tanpa penjelasan tambahan.
 	\item[Kernel] Perhatikan kompleks
 	$0 \to X' \xrightarrow{f} X \xrightarrow{g} X''$. Sesuai dengan
 	\eqref{eqn:cplx-transition}, faktorkan $f$ melalui
-	$X' \twoheadrightarrow \Image(f) \hookrightarrow \Ker(g)$. Kita nyatakan
+	$X' \twoheadrightarrow \Image(f) \hookrightarrow \Ker(g)$. Klaimnya ialah
 	bahwa $0 \to X' \to X \to X''$ eksak jika dan hanya jika
 	$X' \to \Ker(g)$ merupakan isomorfisme. Dengan kata lain, hingga
 	isomorfisme, barisan eksak seperti ini selalu berbentuk
@@ -366,7 +366,7 @@ yang dapat disambung menjadi barisan eksak
 $0 \to \Ker(f) \to X \xrightarrow{f} Y \to \Coker(f) \to 0$.
 
 % segment-id: o014.li2.chapter2.first-look-at-complexes.p008
-Selain itu, andaikan $f$ dapat dimasukkan ke dalam suatu barisan eksak
+Selanjutnya, andaikan $f$ dapat dimasukkan ke dalam suatu barisan eksak
 berbentuk
 % segment-id: o014.li2.chapter2.first-look-at-complexes.q012
 \[ L' \xrightarrow{\lambda} L \to X \xrightarrow{f} Y \to R \xrightarrow{\rho} R'' \]

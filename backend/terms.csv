@@ -34,7 +34,7 @@ math.topology.betti_number,bilangan Betti,id-ID,O014,active
 math.algebra.torsion,torsi,id-ID,O014,active
 math.topology.topological_invariant,invarian topologis,id-ID,O014,active
 math.homological.universal_coefficient_theorem,teorema koefisien universal,id-ID,O014,active
-math.homological.cup_product,hasil kali cup,id-ID,O014,active
+math.homological.cup_product,hasil kali cawan,id-ID,O014,active
 math.homotopy.aspherical_space,ruang asferis,id-ID,O014,active
 math.homotopy.homotopy_group,grup homotopi,id-ID,O014,active
 math.homological.group_cohomology,kohomologi grup,id-ID,O014,active
@@ -388,7 +388,7 @@ math.category.strong_generator,generator kuat,id-ID,O014,active
 math.category.injective_cogenerator,kogenerator injektif,id-ID,O014,active
 math.category.small_object_argument,argumen objek kecil,id-ID,O014,active
 math.category.alpha_small_object_relative_to_i,objek alpha-kecil relatif terhadap I,id-ID,O014,active
-math.set_theory.regular_small_cardinal,kardinal kecil regular,id-ID,O014,active
+math.set_theory.regular_small_cardinal,kardinal kecil reguler,id-ID,O014,active
 math.set_theory.transfinite_recursion,rekursi transfinit,id-ID,O014,active
 math.set_theory.successor_ordinal,ordinal penerus,id-ID,O014,active
 math.set_theory.limit_ordinal,ordinal limit,id-ID,O014,active

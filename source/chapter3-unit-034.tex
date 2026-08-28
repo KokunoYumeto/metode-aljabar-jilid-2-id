@@ -10,7 +10,7 @@
 \enlargethispage{2pt}
 
 % segment-id: o014.li2.chapter3.mapping-cone.p001
-Tetapkan kembali suatu kategori aditif $\mathcal{A}$ beserta kategori kompleks
+Misalkan kembali $\mathcal{A}$ suatu kategori aditif beserta kategori kompleks
 yang bersesuaian, $\cate{C}(\mathcal{A})$.
 
 % segment-id: o014.li2.chapter3.mapping-cone.d001
@@ -53,7 +53,7 @@ ditunjukkan oleh perhitungan matriks berikut:
 \begin{contoh}
 	Misalkan $f:X\to Y$ suatu morfisme dalam $\mathcal{A}$. Pandang $X,Y$
 	sebagai objek $\cate{C}(\mathcal{A})$ (terkonsentrasi pada derajat $0$).
-	Maka $\Cone(f)$ tidak lain ialah kompleks $[X\xrightarrow{f}Y]$ (pada
+	Maka $\Cone(f)$ tepat merupakan kompleks $[X\xrightarrow{f}Y]$ (pada
 	derajat $-1,0$, sedangkan semua suku lainnya sama dengan $0$).
 \end{contoh}
 
@@ -90,8 +90,8 @@ landasan bagi seluruh teori selanjutnya.
 % segment-id: o014.li2.chapter3.mapping-cone.d002
 \begin{definisi}\label{def:cone-triangle}
 	\index[sym1]{alphafbetaf@$\alpha(f), \beta(f)$}
-	Tinjau suatu morfisme $f:X\to Y$ dalam $\cate{C}(\mathcal{A})$. Untuknya
-	dapat dikonstruksi morfisme-morfisme kanonik berikut dalam
+	Tinjau suatu morfisme $f:X\to Y$ dalam $\cate{C}(\mathcal{A})$. Dari
+	morfisme ini diperoleh morfisme-morfisme kanonik berikut dalam
 	$\cate{C}(\mathcal{A})$:
 % segment-id: o014.li2.chapter3.mapping-cone.q005
 	\[ Y \xrightarrow{\alpha(f)} \Cone(f) \xrightarrow{\beta(f)} X[1] , \]
@@ -113,14 +113,14 @@ tingkat kompleks dari gagasan dasar dalam teori homotopi.
 
 % segment-id: o014.li2.chapter3.mapping-cone.pr003
 \begin{proposisi}\label{prop:homotopy-kernel-cokernel}
-	Tetapkan suatu morfisme $f:X\to Y$ dalam $\cate{C}(\mathcal{A})$. Terdapat
+	Misalkan $f:X\to Y$ suatu morfisme dalam $\cate{C}(\mathcal{A})$. Terdapat
 	bijeksi-bijeksi kanonik
 % segment-id: o014.li2.chapter3.mapping-cone.g002
 	\[\begin{tikzcd}[row sep=small]
 		\Hom\left( \Cone(f), T \right) \arrow[leftrightarrow, r, "1:1"] & \left\{ (u, h): u \in \Hom(Y,T), \; h: \text{homotopi dari $uf$ ke $0$} \right\}, \\
 		\Hom\left( T, \Cone(f)[-1] \right) \arrow[leftrightarrow, r, "1:1"] & \left\{ (v, k): v \in \Hom(T,X), \; k: \text{homotopi dari $fv$ ke $0$} \right\},
 	\end{tikzcd}\]
-	dengan $T$ sebarang objek $\cate{C}(\mathcal{A})$ dan
+	dengan $T$ sembarang objek $\cate{C}(\mathcal{A})$ dan
 	$\Hom:=\Hom_{\cate{C}(\mathcal{A})}$. Secara lebih eksplisit,
 % segment-id: o014.li2.chapter3.mapping-cone.l001
 	\begin{compactitem}
@@ -213,7 +213,7 @@ itu disebut homotopik nol secara kanonik.
 
 % segment-id: o014.li2.chapter3.mapping-cone.pr004
 \begin{proposisi}\label{prop:cone-homotopy}
-	Tetapkan suatu kategori aditif $\mathcal{A}$.
+	Misalkan $\mathcal{A}$ suatu kategori aditif.
 % segment-id: o014.li2.chapter3.mapping-cone.l003
 	\begin{enumerate}[(i)]
 % segment-id: o014.li2.chapter3.mapping-cone.i005
@@ -221,7 +221,7 @@ itu disebut homotopik nol secara kanonik.
 		$\cate{C}(\mathcal{A})$, maka $\identity_{\Cone(f)}$ homotopik nol
 		secara kanonik.
 % segment-id: o014.li2.chapter3.mapping-cone.i006
-		\item Untuk sebarang morfisme $f:X\to Y$ dalam
+		\item Untuk sembarang morfisme $f:X\to Y$ dalam
 		$\cate{C}(\mathcal{A})$, morfisme-morfisme dalam
 		Definisi~\ref{def:cone-triangle} memenuhi
 % segment-id: o014.li2.chapter3.mapping-cone.q009
@@ -299,7 +299,7 @@ Dalam notasi matriks,
 	matriks $d_{\Cone(\alpha(f))}^n$ diberikan oleh
 % segment-id: o014.li2.chapter3.mapping-cone.q014
 	\[ \begin{pmatrix} -d_Y^{n+1} & 0 & 0 \\ 0 & -d_X^{n+1} & 0 \\ \identity_{Y^{n+1}} & f^{n+1} & d_Y^n \end{pmatrix} : Y^{n+1} \oplus X^{n+1} \oplus Y^n \to Y^{n+2} \oplus X^{n+2} \oplus Y^{n+1}. \]
-	Masalahnya tereduksi pada verifikasi pernyataan-pernyataan berikut dalam
+	Cukup diverifikasi pernyataan-pernyataan berikut dalam
 	$\cate{C}(\mathcal{A})$:
 % segment-id: o014.li2.chapter3.mapping-cone.l004
 	\begin{itemize}
@@ -384,7 +384,7 @@ $X\to\Cyl(f)\xrightarrow{\psi}Y$.
 % segment-id: o014.li2.chapter3.mapping-cone.pf004
 \begin{bukti}
 	Pembaca dapat memverifikasi langsung dari definisi bahwa $\phi$ dan $\psi$
-	memang memberikan morfisme kompleks. Setelah hal ini ditetapkan,
+	memang memberikan morfisme kompleks. Setelah itu,
 	$\psi\circ\phi=\identity_Y$ langsung terlihat. Selanjutnya, untuk
 	membuktikan bahwa $\phi$ dan $\psi$ saling invers dalam
 	$\cate{K}(\mathcal{A})$, seperti pada Lema~\ref{prop:cone-alpha}, ambillah
@@ -403,7 +403,7 @@ $X\to\Cyl(f)\xrightarrow{\psi}Y$.
 
 % segment-id: o014.li2.chapter3.mapping-cone.p011
 Lema~\ref{prop:cone-alpha} bersama Lema~\ref{prop:cone-beta} menunjukkan
-bahwa, hingga isomorfisme dalam $\cate{K}(\mathcal{A})$, sebarang morfisme
+bahwa, hingga isomorfisme dalam $\cate{K}(\mathcal{A})$, sembarang morfisme
 $f:X\to Y$ dapat diganti dengan proyeksi yang jauh lebih sederhana
 $\Cone(\alpha(f))[-1]\to Y$ (atau inklusi $X\to\Cyl(f)$), dan konstruksi ini
 funktorial dalam $f$. Inilah suatu gagasan penting dalam aljabar homologis
@@ -418,7 +418,7 @@ sini kita hanya membahas versi aljabarnya.
 % segment-id: o014.li2.chapter3.mapping-cone.pr005
 \begin{proposisi}\label{prop:cylinder-homotopy}
 	\index[sym1]{CylX@$\Cyl_X$}
-	Misalkan $X$ suatu objek $\cate{C}(\mathcal{A})$ dan tetapkan
+	Misalkan $X$ suatu objek $\cate{C}(\mathcal{A})$ dan definisikan
 	$\mathrm{Cyl}_X:=\mathrm{Cyl}(\identity_X)$. Perhatikan bahwa
 	$\mathrm{Cyl}_X^n=X^{n+1}\oplus X^n\oplus X^n$.
 % segment-id: o014.li2.chapter3.mapping-cone.l005
@@ -438,7 +438,7 @@ sini kita hanya membahas versi aljabarnya.
 		Morfisme-morfisme ini memenuhi $ji_0=\identity_X=ji_1$, dan citra $j$
 		dalam $\cate{K}(\mathcal{A})$ merupakan isomorfisme.
 % segment-id: o014.li2.chapter3.mapping-cone.i013
-		\item Untuk sebarang objek $Y$ dari $\cate{C}(\mathcal{A})$, terdapat
+		\item Untuk sembarang objek $Y$ dari $\cate{C}(\mathcal{A})$, terdapat
 		bijeksi
 % segment-id: o014.li2.chapter3.mapping-cone.q020
 		\begin{align*}
@@ -458,7 +458,7 @@ sini kita hanya membahas versi aljabarnya.
 	$X\to\mathrm{Cyl}(\identity_X)$ dalam Definisi~\ref{def:Cyl}, sedangkan
 	$i_1$ ialah morfisme $\phi:X\to\mathrm{Cyl}(\identity_X)$ dalam
 	Lema~\ref{prop:cone-beta}. Diagram komutatif dalam
-	Lema~\ref{prop:cone-beta} mengimplikasikan bahwa keduanya memberikan
+	Lema~\ref{prop:cone-beta} menunjukkan bahwa keduanya memberikan
 	isomorfisme yang sama dalam $\cate{K}(\mathcal{A})$.
 
 	Untuk $j$, mudah diverifikasi bahwa
@@ -467,7 +467,7 @@ sini kita hanya membahas versi aljabarnya.
 	$ji_0=\identity_X=ji_1$ langsung terlihat. Karena $i_0$ dan $i_1$
 	merupakan isomorfisme dalam $\cate{K}(\mathcal{A})$, demikian pula $j$.
 
-	Untuk (ii), tuliskan sebarang unsur $\tilde{h}$ dari
+	Untuk (ii), tuliskan sembarang unsur $\tilde{h}$ dari
 	$\Hom^0(\mathrm{Cyl}_X,Y)$ dalam bentuk
 	\[
 		\tilde{h}=\left((h^n,g^n,f^n)\right)_{n\in\Z},
@@ -492,7 +492,7 @@ sini kita hanya membahas versi aljabarnya.
 	\index{kerucut pemetaan}\index{silinder pemetaan}
 	Kerucut pemetaan dan silinder pemetaan tentu saja mempunyai versi untuk
 	kompleks rantai (lihat Catatan~\ref{rem:cochain-vs-chain}). Diberikan suatu
-	morfisme kompleks rantai $f:X\to Y$, tetapkan
+	morfisme kompleks rantai $f:X\to Y$, definisikan
 % segment-id: o014.li2.chapter3.mapping-cone.q023
 	\[\begin{array}{rlrl}
 		\Cone(f)_n & :=(X[-1] \oplus Y)_n, &

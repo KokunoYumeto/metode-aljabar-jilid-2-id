@@ -23,14 +23,14 @@ lanjut.
 		X \arrow[r] \arrow[d, "\alpha"'] & Y \arrow[d, "\beta"] \arrow[r] & Z \arrow[d, "\gamma"] \arrow[r] & TX \arrow[d, "T\alpha"] \\
 		X' \arrow[r] & Y' \arrow[r] & Z' \arrow[r] & TX'
 	\end{tikzcd}\]
-	Jika setiap baris merupakan segitiga terbedakan dan sembarang dua di antara
+	Jika setiap baris merupakan segitiga terbedakan dan dua mana pun di antara
 	$\alpha$, $\beta$, dan $\gamma$ merupakan isomorfisme, maka morfisme yang
 	tersisa juga merupakan isomorfisme.
 \end{proposisi}
 
 % segment-id: o014.li2.chapter4.triangulated-basics.pf001
 \begin{bukti}
-	Setelah merotasi secara tepat dengan (TR3), tanpa mengurangi keumuman kita
+	Setelah menerapkan rotasi (TR3) yang sesuai, tanpa mengurangi keumuman kita
 	dapat mengandaikan bahwa $\alpha$ dan $\gamma$ merupakan isomorfisme. Untuk
 	membuktikan bahwa $\beta$ merupakan isomorfisme, cukup dibuktikan bagi setiap
 	objek $S$ bahwa
@@ -56,7 +56,7 @@ $\Hom(\cdot, S)$.
 	$S \in \Obj(\mathcal{D})$, barisan
 % segment-id: o014.li2.chapter4.triangulated-basics.q001
 	\[ \cdots \to \Hom(S, X) \to \Hom(S, Y) \to \Hom(S, Z) \to \Hom(S, TX) \to \cdots \]
-	(atau versi yang bersesuaian dengan $\Hom(\cdot, S)$) semuanya eksak. Jika
+	(atau versi yang bersesuaian dengan $\Hom(\cdot, S)$) eksak. Jika
 	$X_i \to Y_i \to Z_i \xrightarrow{+1}$ merupakan suatu keluarga segitiga
 	terbedakan ($i \in I$), maka
 	$\prod_i X_i \to \prod_i Y_i \to \prod_i Z_i \xrightarrow{+1}$ (atau
@@ -66,7 +66,7 @@ $\Hom(\cdot, S)$.
 	produk dan koproduk bersama hasil \cite[Lema~6.8.3]{Li1}. Perhatikan bahwa,
 	karena $T: \mathcal{D} \to \mathcal{D}$ merupakan suatu ekuivalensi, $T$
 	mesti mempertahankan produk dan koproduk. Proposisi~\ref{prop:dt-3-2} dapat
-	diperluas ke keadaan ketika kedua baris merupakan segitiga khusus (atau
+	diperluas ke kasus ketika kedua baris merupakan segitiga khusus (atau
 	segitiga kokhusus).
 \end{catatan}
 
@@ -80,7 +80,7 @@ $\Hom(\cdot, S)$.
 
 % segment-id: o014.li2.chapter4.triangulated-basics.pf002
 \begin{bukti}
-	Diberikan segitiga-segitiga terbedakan
+	Misalkan diberikan segitiga-segitiga terbedakan
 	$X \xrightarrow{f} Y \to Z \xrightarrow{+1}$ dan
 	$X \xrightarrow{f} Y \to Z' \xrightarrow{+1}$, aksioma (TR4) memberikan
 	morfisme $\gamma$ yang membuat diagram
@@ -153,7 +153,7 @@ Korolari~\ref{prop:Cone-uniqueness} \emph{tidak kanonik}.
 % segment-id: o014.li2.chapter4.triangulated-basics.p004
 Sebaliknya, jika salah satu morfisme dalam suatu segitiga terbedakan adalah
 $0$, segitiga itu berasal dari suatu jumlah langsung. Fakta ini dapat
-diverifikasi dengan merotasinya ke keadaan berikut.
+diverifikasi dengan merotasinya ke bentuk berikut.
 
 % segment-id: o014.li2.chapter4.triangulated-basics.pr002
 \begin{proposisi}\label{prop:dt-sum-1}
@@ -242,9 +242,9 @@ Proposisi~\ref{prop:cohomological-Hom-functor}.
 
 % segment-id: o014.li2.chapter4.triangulated-basics.pf007
 \begin{bukti}
-	Berdasarkan dualitas, cukup ditinjau keadaan ketika $F$ merupakan funktor
+	Berdasarkan dualitas, cukup ditinjau kasus ketika $F$ merupakan funktor
 	bertriangulasi. Korolari~\ref{prop:automatic-additivity} menunjukkan bahwa
-	$G$ aditif. Nyatakan kedua funktor pergeseran pada $\mathcal{D}$ dan
+	$G$ aditif. Tuliskan kedua funktor pergeseran pada $\mathcal{D}$ dan
 	$\mathcal{D}'$ dengan $T$. Dengan memindahkan struktur, kita memperoleh
 	adjungsi baru
 % segment-id: o014.li2.chapter4.triangulated-basics.q004
@@ -276,7 +276,7 @@ Proposisi~\ref{prop:cohomological-Hom-functor}.
 	segitiga terbedakan $X \xrightarrow{f} Y \xrightarrow{g} Z
 	\xrightarrow{+1}$ di $\mathcal{D}'$. Pilih segitiga terbedakan
 	$GX \xrightarrow{Gf} GY \xrightarrow{h} A \xrightarrow{+1}$ di
-	$\mathcal{D}$, ambil citranya di bawah $F$, lalu terapkan (TR3) untuk
+	$\mathcal{D}$, terapkan $F$ kepadanya, lalu gunakan (TR3) untuk
 	memperoleh diagram komutatif
 % segment-id: o014.li2.chapter4.triangulated-basics.g010
 	\begin{equation*}\begin{tikzcd}
@@ -308,7 +308,7 @@ Proposisi~\ref{prop:cohomological-Hom-functor}.
 	\[\begin{tikzcd}[column sep=small, every cell/.append style = {font = \small}]
 		\Hom(FB, X) \arrow[r, "f_*"] & \Hom(FB, Y) \arrow[r, "g_*"] & \Hom(FB, Z) \arrow[r] & \Hom(FB, TX) \arrow[r] & \Hom(FB, TY) ,
 	\end{tikzcd}\]
-	dan karena itu juga eksak. Karena $B$ sebarang,
+	dan karena itu juga eksak. Karena $B$ sembarang,
 	Proposisi~\ref{prop:5-lemma} menyiratkan bahwa $A \to GZ$ merupakan
 	isomorfisme. Jadi,
 	$GX \xrightarrow{Gf} GY \xrightarrow{Gg} GZ \to TGX$ memang merupakan
@@ -331,7 +331,7 @@ Proposisi~\ref{prop:cohomological-Hom-functor}.
 		merupakan funktor bertriangulasi;
 % segment-id: o014.li2.chapter4.triangulated-basics.i002
 		\item jika $F$ merupakan funktor bertriangulasi, maka $F$ dan $G$
-		memberikan ekuivalensi di antara kategori-kategori prabertriangulasi.
+		memberikan ekuivalensi antara kategori-kategori prabertriangulasi.
 	\end{compactenum}
 \end{korolari}
 
@@ -384,14 +384,14 @@ Proposisi~\ref{prop:cohomological-Hom-functor}.
 	$\mathcal{D}$ memenuhi $X, Y, Z \in \Obj(\mathcal{D}')$. Pilih sembarang
 	segitiga terbedakan $X \xrightarrow{f} Y \to Z' \xrightarrow{+1}$ di
 	$\mathcal{D}'$. Dengan menerapkan Korolari~\ref{prop:Cone-uniqueness} di
-	$\mathcal{D}$, kedua segitiga tersebut terlihat isomorfik. Karena
+	$\mathcal{D}$, kedua segitiga tersebut isomorfik. Karena
 	$\mathcal{D}'$ merupakan subkategori penuh, (TR0) menyiratkan bahwa
 	$X \xrightarrow{f} Y \to Z \xrightarrow{+1}$ juga merupakan segitiga
 	terbedakan di $\mathcal{D}'$. Inilah tepatnya struktur prabertriangulasi yang
 	dinyatakan dalam (i).
 
 	Jika struktur prabertriangulasi tersebut ada, maka
-	Korolari~\ref{prop:Cone-uniqueness} yang sudah dikenal menunjukkan bahwa
+	Korolari~\ref{prop:Cone-uniqueness} yang telah dibuktikan menunjukkan bahwa
 	syarat dalam (ii) perlu, sebab setelah rotasi kita selalu dapat mengandaikan
 	$X, Y \in \Obj(\mathcal{D}')$. Sebaliknya, andaikan syarat (ii) terpenuhi,
 	dan definisikan segitiga terbedakan di $\mathcal{D}'$ dengan cara yang
@@ -419,7 +419,7 @@ Proposisi~\ref{prop:cohomological-Hom-functor}.
 	yakni
 % segment-id: o014.li2.chapter4.triangulated-basics.q005
 	\[ \forall X \in \Obj(\mathcal{C}'), \; \forall Y \in \Obj(\mathcal{C}), \quad X \simeq Y \implies Y \in \Obj(\mathcal{C}') . \]
-	Bagi setiap keluarga subkategori penuh $(\mathcal{C}_i)_{i \in I}$, dengan
+	Untuk setiap keluarga subkategori penuh $(\mathcal{C}_i)_{i \in I}$, dengan
 	$I$ tidak kosong, irisannya $\bigcap_{i \in I} \mathcal{C}_i$ menurut
 	definisi merupakan subkategori penuh dari $\mathcal{C}$ yang memenuhi
 	$\Obj\left( \bigcap_{i \in I} \mathcal{C}_i \right)
@@ -462,12 +462,12 @@ kohomologis.
 
 % segment-id: o014.li2.chapter4.triangulated-basics.pf011
 \begin{bukti}
-	Caranya ialah memverifikasi syarat dalam
+	Cukup memverifikasi syarat dalam
 	Definisi--Proposisi~\ref{def:triangulated-subcat} (ii). Ingat bahwa suatu
 	subkategori Serre lemah bersifat jenuh. Karena itu, sifat jenuh dan
 	$T$-invariansi dari $\mathcal{D}_{H, \mathcal{T}}$ sudah jelas. Sekarang
 	tinjau segitiga terbedakan $X \to Y \to Z \xrightarrow{+1}$ di
-	$\mathcal{D}$ yang dua sukunya berasal dari
+	$\mathcal{D}$ yang dua sukunya berada dalam
 	$\mathcal{D}_{H, \mathcal{T}}$. Setelah merotasi, tanpa mengurangi keumuman
 	kita dapat mengandaikan bahwa
 	$X, Z \in \Obj(\mathcal{D}_{H, \mathcal{T}})$. Untuk setiap $n \in \Z$,
@@ -493,8 +493,8 @@ kohomologis.
 
 % segment-id: o014.li2.chapter4.triangulated-basics.p008
 Hasil teknis berikut akan digunakan kemudian dalam
-\S~\sourcecrossref{sec:triangulated-localization}{4.3}; hasil ini bergantung pada aksioma
-oktahedral (TR5).
+\S~\sourcecrossref{sec:triangulated-localization}{4.3}; hasil ini bergantung
+pada aksioma oktahedral (TR5).
 
 % segment-id: o014.li2.chapter4.triangulated-basics.le002
 \begin{lema}[J.-L.\ Verdier]\label{prop:triangulated-9-diag}
@@ -611,8 +611,8 @@ oktahedral (TR5).
 		(X, Y, Z) \xrightarrow[\eqref{eqn:triangulated-9-diag-aux-1}]{(r, m, \identity)} (X'', A, Z) \xrightarrow[\eqref{eqn:triangulated-9-diag-aux-2}]{(\identity, j, t)} (X'', Y'', Z''),
 	\end{gather*}
 	sehingga keduanya merupakan morfisme di antara segitiga-segitiga. Terakhir,
-	tinjau morfisme $(o, p, q, -To)$ dalam diagram. Masalahnya tereduksi menjadi
-	membuktikan bahwa diagram berikut komutatif:
+	tinjau morfisme $(o, p, q, -To)$ dalam diagram. Tinggal dibuktikan bahwa
+	diagram berikut komutatif:
 % segment-id: o014.li2.chapter4.triangulated-basics.g021
 	\[\begin{tikzcd}
 		TX' \arrow[r, "{Tf'}"] & TY' \arrow[r, "{Tg'}"] & TZ' \arrow[r, "{- Th'}"] & T^2 X' \\
@@ -649,7 +649,7 @@ gelanggang komutatif.
 	memerlukannya disarankan merujuk pada
 	\cite[Tags 09SI, 09SM, 0A8E]{stacks}.
 
-	Perhatikan kemiripan keluarga antara Teorema Keterwakilan Brown dan berbagai
+	Perhatikan kemiripan antara Teorema Keterwakilan Brown dan berbagai
 	teorema keterwakilan atau teorema funktor adjoin dalam \S\ref{sec:AFT},
 	\S\ref{sec:Grothendieck-cat}, dan
 	\S~\sourcecrossref{sec:cpt-objects}{A.2}.

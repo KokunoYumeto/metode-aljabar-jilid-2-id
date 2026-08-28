@@ -1,0 +1,219 @@
+% Unit 107 terjemahan Bahasa Indonesia dari chapter8.tex baris 175--281.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter8.simplicial-sets
+% Cakupan: Bagian 8.2 lengkap, ``Himpunan Simplisial'';
+% berhenti tepat sebelum Bagian 8.3 pada baris 282.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.h001
+\section{Himpunan Simplisial}\label{sec:simplicial-set}
+\hypertarget{o014.aljabr2.chapter8.simplicial-sets}{ }
+% segment-id: o014.li2.chapter8.simplicial-sets.p001
+Objek simplisial dari Definisi~\ref{def:simplicial-obj} dalam kasus
+$\mathcal{C}=\cate{Set}$ disebut himpunan simplisial. Dengan semesta
+Grothendieck yang telah dipilih, arti tepat $\cate{Set}$ dalam kerangka
+buku ini adalah kategori semua himpunan kecil; rincian tersebut tidak
+memengaruhi isi bagian ini.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.d001
+\begin{definition}
+	\index{himpunan simplisial@himpunan simplisial (simplicial set)}
+	\index{himpunan kosimplisial@himpunan kosimplisial (cosimplicial set)}
+	Objek simplisial dalam kategori himpunan $\cate{Set}$ disebut
+	\emph{himpunan simplisial}; objek kosimplisial di dalamnya disebut
+	\emph{himpunan kosimplisial}.
+\end{definition}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p002
+Menurut Definisi~\ref{def:simplicial-obj}, semua himpunan simplisial (atau
+kosimplisial) membentuk kategori
+$\cate{sSet}:=\cate{Set}^{\simpDelta^{\opp}}$ (atau
+$\cate{csSet}:=\cate{Set}^{\simpDelta}$).
+\index[sym1]{sSet@$\cate{sSet}, \cate{csSet}$}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.d002
+\begin{definition}\label{def:standard-simplicial-set}
+	\index[sym1]{Delta-n@$\Delta^n$}
+	Untuk setiap $n\in\Z_{\geq0}$, tuliskan $\Delta^n$ untuk himpunan
+	simplisial yang ditentukan oleh
+	$\Hom_{\simpDelta}(\mathord\cdot,[n]):
+	\simpDelta^{\opp}\to\cate{Set}$. Objek ini disebut \emph{simpleks-$n$
+	standar}.
+\end{definition}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p003
+Jadi, $(\Delta^n)_m=\Hom_{\simpDelta}([m],[n])$ adalah himpunan semua
+pemetaan monoton $[m]\to[n]$. Pemetaan
+$(\Delta^n)_{m'}\to(\Delta^n)_m$ yang diinduksi oleh pemetaan monoton
+$\phi:[m]\to[m']$ tepat merupakan penarikan balik pemetaan
+$\phi^*:f\mapsto f\phi$.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.eg001
+\begin{example}\label{eg:boundary-horn}
+	\index[sym1]{partial-Delta-n@$\partial \Delta^n$}
+	\index[sym1]{Lambda-n-k@$\Lambda^n_k$}
+	\index{tanduk@tanduk (horn)}
+	Kita perkenalkan dua subobjek umum dari simpleks-$n$ standar $\Delta^n$.
+	\begin{description}
+		\item[Batas] Definisikan subfunktor $\partial\Delta^n$ dari $\Delta^n$
+		melalui
+		% segment-id: o014.li2.chapter8.simplicial-sets.q001
+		\[ (\partial \Delta^n)_m := \left\{ f: [m] \to [n] \; \text{monoton}, \Image(f) \neq [n] \right\}, \quad m \in \Z_{\geq 0}. \]
+		Bila $m<n$, berlaku
+		$(\partial\Delta^n)_m=(\Delta^n)_m$; bila $m\geq n$, elemen
+		$(\partial\Delta^n)_m$ diperoleh melalui degenerasi berulang dari
+		$(\Delta^n)_h$ untuk $0\leq h<n$.
+		\item[Tanduk] Untuk $0\leq k\leq n$, definisikan subfunktor
+		$\Lambda^n_k$ dari $\Delta^n$ melalui
+		% segment-id: o014.li2.chapter8.simplicial-sets.q002
+		\[ (\Lambda^n_k)_m := \left\{ f: [m] \to [n] \;\text{monoton}, \Image(f) \not\supset [n] \smallsetminus \{k\} \right\}, \quad m \in \Z_{\geq 0}. \]
+		Kita sebut $k$ simpul tanduk tersebut.
+	\end{description}
+
+	Setiap penarikan balik $\phi^*:f\mapsto f\phi$ jelas mempertahankan
+	kondisi di atas, sehingga keduanya merupakan subfunktor. Latihan bab ini
+	akan menunjukkan bagaimana $\Lambda^n_i$ (atau $\partial\Delta^n$) dapat
+	dinyatakan secara tepat sebagai penempelan $n$ (atau $n+1$) salinan
+	$\Delta^{n-1}$.
+\end{example}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p004
+Himpunan simplisial konstan yang diberikan oleh himpunan kosong,
+$\mathrm{const}(\emptyset)$, disingkat $\emptyset$. Dengan demikian,
+$\partial\Delta^0=\emptyset$.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p005
+Dalam \S\ref{sec:geom-realization}, kita akan memberikan interpretasi intuitif
+himpunan simplisial. Khususnya, akan digambarkan citra geometris ketiga objek
+$\Delta^n\supset\Lambda^n_i\supset\partial\Delta^n$.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p006
+Lema Yoneda (Teorema~\ref{prop:Yoneda}) langsung memberikan isomorfisme
+kanonik berikut, dengan $n\in\Z_{\geq0}$ dan
+$X\in\Obj(\cate{sSet})$:
+% segment-id: o014.li2.chapter8.simplicial-sets.q003
+\begin{equation}\begin{gathered}
+	\begin{tikzcd}[row sep=tiny]
+		\Hom_{\cate{sSet}}\left( \Delta^n, X \right) \arrow[r, "\sim"] & X_n \\
+		\phi \arrow[mapsto, r] & \phi([n])(\identity_{[n]})
+	\end{tikzcd} \\
+	\phi([n]): \End([n]) = \Delta^n([n]) \to X([n]) =: X_n.
+\end{gathered}\end{equation}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.d003
+\begin{definition}\label{def:simplex}
+	\index{simpleks@simpleks (simplex)}
+	\index{simpleks!tak terdegenerasi@tak terdegenerasi (non-degenerate)}
+	Elemen $X_n$ disebut \emph{simpleks-$n$} dalam himpunan simplisial $X$.
+	Jika $x\in X_n$ terletak dalam citra suatu $s_j$, ia disebut
+	\emph{degenerat}; jika tidak, ia disebut \emph{nondegenerat}.
+\end{definition}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p007
+Sebagai latihan sederhana, periksa bahwa simpleks-$m$
+nondegenerat dari $\Delta^n$ bersesuaian dengan injeksi monoton
+$[m]\hookrightarrow[n]$; jumlahnya $\binom{n+1}{m+1}$.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p008
+Lebih lanjut, Lema Yoneda memastikan bahwa
+$h_{\simpDelta}:[n]\mapsto\Delta^n$ mendefinisikan funktor yang penuh dan setia
+$\simpDelta\to\cate{sSet}$. Setiap morfisme $f:[m]\to[n]$ dalam
+$\simpDelta$ menginduksi $f:\Delta^m\to\Delta^n$. Memberikan subhimpunan
+beranggota $m+1$, $\{k_0,\ldots,k_m\}\subset[n]$, sama artinya dengan
+memberikan injeksi monoton $[m]\hookrightarrow[n]$. Morfisme yang
+bersesuaian antara simpleks standar juga ditulis
+% segment-id: o014.li2.chapter8.simplicial-sets.q004
+\[ \Delta^m \xrightarrow{\{k_0, \ldots, k_m\}} \Delta^n . \]
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p009
+Makna intuitif himpunan simplisial akan dijelaskan melalui realisasi
+geometris dalam \S\ref{sec:geom-realization}. Sebelum itu, kita perkenalkan
+serangkaian konstruksi abstrak, dimulai dengan join serta kerucut kiri dan
+kanan himpunan simplisial.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p010
+Tuliskan $\cate{FinLin}_+$ untuk subkategori kategori himpunan terurut
+total hingga (atau himpunan terurut linear hingga) $\cate{FinLin}$ yang
+diperoleh dengan membuang himpunan kosong; morfismenya adalah pemetaan
+monoton. Karena $\simpDelta$ merupakan kerangka dari $\cate{FinLin}_+$,
+himpunan simplisial secara ekuivalen dapat dipandang sebagai funktor
+$\cate{FinLin}_+^{\opp}\to\cate{Set}$.
+
+% segment-id: o014.li2.chapter8.simplicial-sets.cv001
+\begin{convention}
+	Misalkan $J$ objek $\cate{FinLin}_+$. Setiap subhimpunan $I\subset J$
+	secara otomatis merupakan himpunan terurut total hingga. Jika juga berlaku
+	% segment-id: o014.li2.chapter8.simplicial-sets.q005
+	\[ \forall (i, j) \in I \times J, \quad j \leq i \implies j \in I, \]
+	$I$ disebut \emph{ruas awal} dari $J$ dan ditulis $I\sqsubset J$.
+\end{convention}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.d004
+\begin{definition}\label{def:simplicial-join}
+	\index{himpunan simplisial!join@join}
+	\emph{Join} $X\star X'$ dari himpunan simplisial $X$ dan $X'$
+	didefinisikan sebagai funktor $\cate{FinLin}_+^{\opp}\to\cate{Set}$
+	berikut:
+	% segment-id: o014.li2.chapter8.simplicial-sets.q006
+	\[ (X \star X')(J) = \bigsqcup_{I \sqsubset J} X(I) \times X'(J \smallsetminus I). \]
+	Di sini (dan hanya di sini), $X(\emptyset)$ dan $X'(\emptyset)$
+	didefinisikan sebagai himpunan satu titik. Untuk setiap pemetaan monoton
+	$f:J_1\to J$ dan $I\sqsubset J$, tetapkan $I_1:=f^{-1}(I)$. Maka
+	$I_1\sqsubset J_1$ dan terdapat pemetaan
+	% segment-id: o014.li2.chapter8.simplicial-sets.q007
+	\[ X(I) \times X'(J \smallsetminus I) \to X(I_1) \times X'(J_1 \smallsetminus I_1). \]
+	Dengan demikian diperoleh morfisme terinduksi
+	$f^*:(X\star X')(J)\to(X\star X')(J_1)$, yang menentukan struktur
+	simplisial pada $X\star X'$.
+\end{definition}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p011
+Terdapat morfisme kanonik $X\to X\star Y\leftarrow Y$. Definisi tersebut
+juga dapat ditulis dalam notasi sebelumnya sebagai
+% segment-id: o014.li2.chapter8.simplicial-sets.q008
+\[ (X \star Y)_n = X_n \sqcup Y_n \sqcup \bigsqcup_{j+k = n-1} X_j \times Y_k . \]
+Morfisme $d_i$ dan $s_i$ diperoleh langsung dari morfisme yang bersesuaian
+pada $X$ dan $Y$. Sebagai contoh, untuk $d_i:(X\star Y)_n\to(X\star Y)_{n-1}$,
+pembatasannya pada subhimpunan $X_n$ dan $Y_n$ adalah $d_i$ semula,
+sedangkan pada subhimpunan $X_j\times Y_k$ diberikan oleh
+% segment-id: o014.li2.chapter8.simplicial-sets.q009
+\begin{equation}\label{eqn:join-formulas}\begin{gathered}
+		d_i(x, y) = \begin{cases}
+			(d_i x, y), & i \leq j, \; j \neq 0 \\
+			(x, d_{i-j-1} y), & i > j, \; k \neq 0,
+		\end{cases} \\
+		j=0 \implies d_0(x, y) = y \in Y_{n-1}, \\
+		k=0 \implies d_n(x, y) = x \in X_{n-1}.
+\end{gathered}\end{equation}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.pr001
+\begin{proposition}\label{prop:join-nd}
+	\index[sym1]{Xnd@$X^{\mathrm{nd}}$}
+	Tuliskan $X_n^{\mathrm{nd}}\subset X_n$ untuk subhimpunan simpleks-$n$
+	nondegenerat dari himpunan simplisial $X$
+	(Definisi~\ref{def:simplex}). Untuk sebarang $X$ dan $Y$, berlaku
+	% segment-id: o014.li2.chapter8.simplicial-sets.q010
+	\[ (X \star Y)^{\mathrm{nd}}_n = X^{\mathrm{nd}}_n \sqcup Y^{\mathrm{nd}}_n \sqcup \bigsqcup_{j+k=n-1} X^{\mathrm{nd}}_j \times Y^{\mathrm{nd}}_k. \]
+\end{proposition}
+% segment-id: o014.li2.chapter8.simplicial-sets.pf001
+\begin{proof}
+	Misalkan $Z$ himpunan simplisial. Untuk sebarang himpunan terurut total
+	hingga tak kosong $J$, elemen $x\in Z(J)$ degenerat jika dan hanya jika
+	terdapat pemetaan monoton surjektif tetapi tidak injektif
+	$f:J\twoheadrightarrow J_0$ sedemikian sehingga
+	$x\in\Image[f^*:Z(J_0)\to Z(J)]$. Pernyataan selebihnya langsung mengikuti
+	pengamatan ini.
+\end{proof}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.d005
+\begin{definition}\label{def:cone-simplicial}
+	\index{himpunan simplisial!kerucut@kerucut (cone)}
+	\emph{Kerucut kiri} dengan alas himpunan simplisial $X$ adalah
+	$X^{\lhd}:=\Delta^0\star X$, sedangkan \emph{kerucut kanan} adalah
+	$X^{\rhd}:=X\star\Delta^0$.
+\end{definition}
+
+% segment-id: o014.li2.chapter8.simplicial-sets.p012
+Interpretasi intuitif kerucut diberikan dalam
+Contoh~\ref{eg:cone-realization}. Latihan akan membahas lebih banyak sifat
+operasi join.

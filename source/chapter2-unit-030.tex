@@ -9,12 +9,12 @@
 \hypertarget{o014.aljabr2.chapter2.grothendieck-categories}{ }
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.p001
-Pernyataan-pernyataan utama dalam bagian ini semuanya dinyatakan relatif
-terhadap pilihan semesta Grothendieck, bukan dengan berbicara tentang kategori
+Semua pernyataan utama dalam bagian ini dirumuskan relatif terhadap pilihan
+semesta Grothendieck, bukan dengan berbicara tentang kategori
 ``besar'' tanpa kualifikasi.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.p002
-Ingat kembali pengertian limit kecil, kelengkapan, dan generator
+Ingat pengertian limit kecil, kelengkapan, dan generator
 (Definisi~\ref{def:generators}).
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.d001
@@ -51,8 +51,7 @@ Contoh~\ref{eg:limit-exactness} telah menunjukkan bahwa $\varinjlim$
 mempertahankan kokernel. Oleh karena itu, menurut
 Catatan~\ref{rem:exactness-mono-epi}, syarat terakhir di atas juga ekuivalen
 dengan pernyataan bahwa setiap $\varinjlim$ kecil terfilter mempertahankan
-monomorfisme. Argumen-argumen berikut memperlihatkan dengan baik kegunaan
-syarat ini.
+monomorfisme. Argumen berikut memperlihatkan kegunaan syarat ini.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.pr001
 \begin{proposisi}\label{prop:Grothendieck-cat-coprod-exact}
@@ -73,7 +72,7 @@ sifat ini juga bertumpu pada keeksakan $\varinjlim$ terfilter.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.pr002
 \begin{proposisi}\label{prop:Grothendieck-cat-intersection}
-Tetapkan suatu himpunan terurut parsial terfilter dan kecil $(I,\leq)$.
+Tetapkan suatu himpunan terurut parsial kecil yang terfilter $(I,\leq)$.
 Misalkan $\mathcal{A}$ kategori Grothendieck, atau secara lebih umum, misalkan
 $\varinjlim:\mathcal{A}^{(I,\leq)}\to\mathcal{A}$ ada dan eksak. Untuk setiap
 % segment-id: o014.li2.chapter2.grothendieck-categories.l002
@@ -97,8 +96,8 @@ dengan notasi dari Konvensi~\ref{con:increasing-union}, kita mempunyai
 Karena $\varinjlim_i$ eksak, morfisme kanonik
 $\iota:\varinjlim_iX_i\to X$ yang ditentukan oleh semua
 $X_i\hookrightarrow X$ dan sifat universal $\varinjlim$ tetap merupakan
-monomorfisme. Jika semua $X_i\hookrightarrow X$ memfaktor melalui suatu
-subobjek $Z\subset X$, sifat universal tersebut memfaktorkan $\iota$ sebagai
+monomorfisme. Jika semua $X_i\hookrightarrow X$ berfaktor melalui suatu
+subobjek $Z\subset X$, sifat universal tersebut memberikan faktorisasi $\iota$ sebagai
 $\varinjlim_iX_i\to Z\subset X$. Jadi
 $\iota:\varinjlim_iX_i\hookrightarrow X$ memang memberikan supremum dari
 $(X_i)_{i\in I}$ di $\mathrm{Sub}_X$. Ini membuktikan persamaan pertama.
@@ -121,8 +120,8 @@ adalah kategori Grothendieck.
 \end{contoh}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.p005
-Untuk mengembangkan teori lebih lanjut, kita memerlukan beberapa persiapan
-yang berkaitan dengan generator.
+Untuk mengembangkan teori ini lebih lanjut, kita memerlukan beberapa persiapan
+mengenai generator.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.d002
 \begin{definisi}\index{generator!kuat (strong)}
@@ -135,13 +134,13 @@ isomorfisme, maka $s$ disebut \emph{generator kuat} dari $\mathcal{C}$.
 % segment-id: o014.li2.chapter2.grothendieck-categories.pr003
 \begin{proposisi}\label{prop:strong-generator-well-powered}
 Misalkan $s$ merupakan generator kuat kategori $\mathcal{C}$ dan, untuk setiap
-objek $X$ serta monomorfisme $S_i\hookrightarrow X$ dengan $i=1,2$, hasil kali serat
+objek $X$ serta monomorfisme $S_i\hookrightarrow X$ dengan $i=1,2$, produk serat
 $S_1\cap S_2:=S_1\dtimes{X}S_2$ ada. Jika
 $\kappa:=|\Hom(s,X)|$, maka $|\mathrm{Sub}_X|\leq2^\kappa$.
 \end{proposisi}
 % segment-id: o014.li2.chapter2.grothendieck-categories.pf003
 \begin{bukti}
-Misalkan $s$ generator kuat dan $X$ sebarang objek. Kita mengklaim bahwa
+Misalkan $s$ generator kuat dan $X$ sebarang objek. Akan ditunjukkan bahwa
 % segment-id: o014.li2.chapter2.grothendieck-categories.g003
 \begin{align*}
 	\mathrm{Sub}_X&\longrightarrow
@@ -178,19 +177,19 @@ monomorfisme $i:S_1\hookrightarrow S_2$, perhatikan pasangan morfisme
 \end{tikzcd}\]
 Jika $i$ bukan isomorfisme, maka $q\neq0$. Jadi, dari definisi generator,
 terdapat $\epsilon\in\Hom(s,S_2)$ sedemikian sehingga
-$q\epsilon\neq0\epsilon=0$; morfisme $\epsilon$ ini tidak dapat memfaktor
+$q\epsilon\neq0\epsilon=0$; morfisme $\epsilon$ ini tidak dapat berfaktor
 melalui $S_1=\Ker(q)$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.c001
 \begin{korolari}\label{prop:Grothendieck-cat-wellpowered}
-Setiap kategori Grothendieck merupakan kategori well-powered sekaligus
-co-well-powered (Definisi~\ref{def:well-powered}).
+Setiap kategori Grothendieck merupakan kategori berdaya-baik sekaligus
+koberdaya-baik (Definisi~\ref{def:well-powered}).
 \end{korolari}
 % segment-id: o014.li2.chapter2.grothendieck-categories.pf005
 \begin{bukti}
-Kategori abelian memiliki semua hasil kali serat hingga, sedangkan setiap
-himpunan $\Hom$ kecil menurut asumsi. Jadi sifat well-powered mengikuti dari
+Kategori abelian memiliki semua produk serat hingga, sedangkan setiap
+himpunan $\Hom$ kecil menurut asumsi. Jadi sifat berdaya-baik mengikuti dari
 Proposisi~\ref{prop:strong-generator-well-powered} dan
 Proposisi~\ref{prop:Abel-strong-generator}. Selain itu, dalam kategori abelian,
 $\mathrm{Sub}_X$ dan $\mathrm{Quot}_X$ selalu memiliki kardinalitas yang sama.
@@ -203,13 +202,13 @@ ini memiliki semua $\varprojlim$ kecil.
 \end{korolari}
 % segment-id: o014.li2.chapter2.grothendieck-categories.pf006
 \begin{bukti}
-Kategori $\mathcal{A}$ kolengkap dan co-well-powered. Terapkan
+Kategori $\mathcal{A}$ kolengkap dan koberdaya-baik. Terapkan
 Korolari~\ref{prop:SAFT-completeness}.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.p006
 Dengan demikian, kategori Grothendieck memiliki semua jumlah langsung kecil
-dan hasil kali langsung kecil. Bagian latihan akan menunjukkan bahwa morfisme
+dan produk langsung kecil. Latihan bab ini akan menunjukkan bahwa morfisme
 kanonik $\delta:\bigoplus_{i\in I}X_i\to\prod_{i\in I}X_i$ dalam
 \eqref{eqn:coprod-prod-delta} merupakan monomorfisme; untuk kategori modul,
 hal ini tentu sudah jelas.
@@ -235,7 +234,7 @@ Korolari~\ref{prop:Grothendieck-cat-rep2}.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.p008
 Sekarang kita akan menunjukkan bahwa kategori Grothendieck memiliki cukup
-banyak objek injektif. Sesungguhnya, kita akan menunjukkan bahwa bukan hanya
+banyak objek injektif. Bahkan, bukan hanya
 monomorfisme $X\hookrightarrow I$ dalam Definisi~\ref{def:enough-injectives}
 yang ada, melainkan juga bahwa $I$ dapat dipilih secara funktorial terhadap
 $X$.
@@ -259,7 +258,7 @@ $A\hookrightarrow B$, semua morfisme $f:A\to I$ dapat diperluas menjadi
 morfisme $B\to I$. Jadi arah ``hanya jika'' jelas.
 
 Sekarang kita buktikan arah sebaliknya. Ingat bahwa $\mathcal{A}$ adalah
-kategori well-powered. Untuk data $I\xleftarrow{f}A\hookrightarrow B$ seperti
+kategori berdaya-baik. Untuk data $I\xleftarrow{f}A\hookrightarrow B$ seperti
 di atas, perhatikan himpunan kecil
 % segment-id: o014.li2.chapter2.grothendieck-categories.q002
 \[\mathcal{S}:=\left\{\begin{array}{r|l}
@@ -274,7 +273,7 @@ memiliki batas atas
 \widetilde{f}:=\varinjlim_{(A',f')\in\mathcal{T}}f':\widetilde{A}\to I.\]
 Lema Zorn menunjukkan bahwa $\mathcal{S}$ memiliki unsur maksimal $(A',f')$.
 Kita hendak membuktikan bahwa $A'=B$. Jika tidak, karena $s$ generator kuat,
-terdapat $g:s\to B$ yang tidak dapat memfaktor melalui $A'\hookrightarrow B$.
+terdapat $g:s\to B$ yang tidak dapat berfaktor melalui $A'\hookrightarrow B$.
 Kita akan menunjukkan bahwa $f'$ dapat diperluas menjadi
 $A'+g(s)\to I$, bertentangan dengan kemaksimalan $(A',f')$.
 
@@ -302,23 +301,23 @@ klaim.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.p009
-Sekarang kita akan memperkenalkan suatu variasi dari apa yang disebut
+Sekarang kita akan memperkenalkan suatu varian dari apa yang disebut
 ``argumen objek kecil''. Pembaca sebaiknya meninjau sekilas
 Definisi~\sourcecrossref{def:regular-cardinal}{A.2.7} dan pembahasan terkait tentang kardinal
-regular; uraian berikut memerlukan operasi serta sifat-sifat dasarnya.
+reguler; uraian berikut memerlukan operasi serta sifat-sifat dasarnya.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.d003
 \begin{definisi}\label{def:I-small}
 	\index{argumen objek kecil (small object argument)}
 	Misalkan $\mathcal{C}$ kategori yang memiliki semua $\varinjlim$ kecil
-	terfilter, $I\subset\Mor(\mathcal{C})$ sebarang himpunan bagian, dan $\alpha$
-	kardinal kecil regular.
+	terfilter, $I\subset\Mor(\mathcal{C})$ suatu himpunan bagian, dan $\alpha$
+	kardinal kecil reguler.
 % segment-id: o014.li2.chapter2.grothendieck-categories.l003
 	\begin{enumerate}[(i)]
 % segment-id: o014.li2.chapter2.grothendieck-categories.i006
 		\item Objek $X\in\Obj(\mathcal{C})$ disebut \emph{objek $\alpha$-kecil
 		relatif terhadap $I$} jika syarat berikut dipenuhi. Misalkan
-		$\widetilde{\alpha}$ kardinal kecil regular dengan
+		$\widetilde{\alpha}$ kardinal kecil reguler dengan
 		$\widetilde{\alpha}\geq\alpha$. Untuk setiap funktor
 		$\beta\mapsto Y_\beta$ dari ordinal $\widetilde{\alpha}$, yang dipandang
 		sebagai kategori kecil terfilter, ke $\mathcal{C}$, jika
@@ -330,7 +329,7 @@ regular; uraian berikut memerlukan operasi serta sifat-sifat dasarnya.
 		(lihat Persamaan~\sourcecrossref{eqn:I-small-gen}{A.2.1}) merupakan bijeksi.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.i007
-		\item Jika $X$ adalah objek $\alpha$-kecil relatif terhadap
+		\item Jika $X$ merupakan objek $\alpha$-kecil relatif terhadap
 		$\Mor(\mathcal{C})$, maka $X$ disebut \emph{objek $\alpha$-kecil}.
 	\end{enumerate}
 \end{definisi}
@@ -342,7 +341,7 @@ $\alpha$-kecil mengakibatkan sifat $\alpha'$-kecil.
 % segment-id: o014.li2.chapter2.grothendieck-categories.le002
 \begin{lema}\label{prop:alpha-small}
 Misalkan $\mathcal{A}$ kategori Grothendieck, $X$ suatu objeknya, dan $\alpha$
-kardinal kecil regular. Jika $\alpha>\kappa:=|\mathrm{Sub}_X|$, maka $X$
+kardinal kecil reguler. Jika $\alpha>\kappa:=|\mathrm{Sub}_X|$, maka $X$
 adalah objek $\alpha$-kecil relatif terhadap semua monomorfisme
 (Definisi~\ref{def:I-small}).
 \end{lema}
@@ -370,7 +369,7 @@ Untuk suatu morfisme $f:X\to\varinjlim_\gamma Y_\gamma$, setiap
 $\beta<\alpha$ menentukan subobjek $f^{-1}(Y_\beta)$ dari $X$. Kita dapat
 mengasumsikan $f^{-1}(Y_\beta)\neq X$ untuk setiap $\beta$, sebab jika tidak,
 tidak ada lagi yang perlu dibuktikan. Ingat bahwa $f^{-1}$ diberikan oleh
-hasil kali serat. Dengan sekali lagi menggunakan keeksakan $\varinjlim$
+produk serat. Dengan sekali lagi menggunakan keeksakan $\varinjlim$
 terfilter, kita memperoleh isomorfisme alami
 % segment-id: o014.li2.chapter2.grothendieck-categories.q005
 \[\varinjlim_\beta f^{-1}(Y_\beta)
@@ -379,14 +378,14 @@ Karena terdapat paling banyak $\kappa$ subobjek $f^{-1}(Y_\beta)$, ada suatu
 himpunan bagian $S$ dari $\alpha$ dengan $|S|\leq\kappa$ sehingga ruas kiri
 dapat diganti oleh $\varinjlim_{\beta\in S}$.
 
-Perhatikan ordinal $\sigma:=\sup S\leq\alpha$. Kita mengklaim bahwa
+Perhatikan ordinal $\sigma:=\sup S\leq\alpha$. Akan ditunjukkan bahwa
 $\sigma<\alpha$. Jika tidak, dari $|S|\leq\kappa<\alpha$ dan
 $|S|\geq\mathrm{cf}(\alpha)$
 (Proposisi~\sourcecrossref{prop:cf-generalities}{A.2.8}~(ii)) akan
-diperoleh $\mathrm{cf}(\alpha)<\alpha$, bertentangan dengan regularitas
+diperoleh $\mathrm{cf}(\alpha)<\alpha$, bertentangan dengan kereguleran
 $\alpha$. Klaim ini memastikan bahwa $f^{-1}(Y_\beta)$ selalu merupakan
 subobjek dari $f^{-1}(Y_\sigma)$ untuk $\beta\in S$. Akibatnya,
-$f^{-1}(Y_\sigma)=X$, sehingga $f$ memfaktor melalui $Y_\sigma$.
+$f^{-1}(Y_\sigma)=X$, sehingga $f$ berfaktor melalui $Y_\sigma$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.th001
@@ -406,7 +405,7 @@ cukup banyak objek injektif.
 \begin{bukti}
 	Pilih suatu generator $s$. Tetapkan $F_0$ sebagai funktor
 	$\identity_{\mathcal{A}}$. Langkah pertama ialah membentuk, untuk setiap
-	objek $X$, diagram pendorong
+	objek $X$, diagram dorong keluar
 % segment-id: o014.li2.chapter2.grothendieck-categories.g007
 	\[\begin{tikzcd}
 		\bigoplus_{Y \in \mathrm{Sub}_s} \bigoplus_{\varphi: Y \to X} Y \arrow[r] \arrow[hookrightarrow, d] & X \arrow[d, "{\varphi(0, 1)_X}"] \\
@@ -447,14 +446,14 @@ cukup banyak objek injektif.
 	fakta bahwa $\varinjlim$ terfilter mempertahankan monomorfisme menentukan
 	pilihan yang jelas bagi $\varphi(\beta,\alpha)$.
 
-	Dengan Lema \sourcecrossref{prop:enough-regular-cardinal}{A.2.10}, pilih kardinal kecil regular
+	Dengan Lema \sourcecrossref{prop:enough-regular-cardinal}{A.2.10}, pilih kardinal kecil reguler
 	$\alpha$ sedemikian sehingga $\alpha>|\mathrm{Sub}_s|$. Kita tunjukkan
 	bahwa $F_\alpha X$ injektif untuk setiap $X$. Diberikan
-	$Y\hookrightarrow s$ dan $f:Y\to F_\alpha X$. Definisi kardinal regular
+	$Y\hookrightarrow s$ dan $f:Y\to F_\alpha X$. Definisi kardinal reguler
 	\sourcecrossref{def:regular-cardinal}{A.2.7} menyiratkan bahwa $\alpha$ merupakan ordinal
 	limit. Dari konstruksi $F_\alpha$, inklusi
 	$\mathrm{Sub}_Y\subset\mathrm{Sub}_s$, dan Lema
-	\ref{prop:alpha-small}, diperoleh bahwa $f$ memfaktor melalui suatu
+	\ref{prop:alpha-small}, diperoleh bahwa $f$ berfaktor melalui suatu
 	$\varphi:Y\to F_\beta X$ dengan $\beta+1<\alpha$. Tinjau diagram
 	komutatif
 % segment-id: o014.li2.chapter2.grothendieck-categories.g008
@@ -484,7 +483,7 @@ cukup banyak objek injektif.
 	$I$ merupakan kogenerator.
 
 	Misalkan $T\in\Obj(\mathcal{A})$ tak nol. Ada morfisme tak nol
-	$s\to T$, yang memfaktor sebagai $s\twoheadrightarrow Q'\hookrightarrow T$.
+	$s\to T$, yang berfaktor sebagai $s\twoheadrightarrow Q'\hookrightarrow T$.
 	Dengan demikian terdapat
 % segment-id: o014.li2.chapter2.grothendieck-categories.q008
 	\[ Q' \stackrel{\text{jelas}}{\hookrightarrow}
@@ -506,7 +505,7 @@ cukup banyak objek injektif.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.p011
-Karakterisasi lebih lanjut bagi kategori Grothendieck diberikan oleh Teorema
+Karakterisasi lain dari kategori Grothendieck diberikan oleh Teorema
 Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 
 % Pemenggalan halaman dipaksakan di sini karena alasan tipografis.
@@ -540,11 +539,11 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 	\ref{def:bichain}.
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn001
 	\begin{hint}
-		Diberikan rantai ganda $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$, penetapan
-		$f\mapsto\beta_n f\alpha_n$ menentukan barisan monomorfisme modul
-		$\Bbbk$
+		Untuk rantai ganda $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$, penetapan
+		$f\mapsto\beta_n f\alpha_n$ menentukan barisan monomorfisme
+		modul-$\Bbbk$
 		$\Hom(X_{n+1},X_{n+1})\hookrightarrow\Hom(X_n,X_n)$. Tunjukkan bahwa
-		morfisme ini merupakan isomorfisme tepat ketika $\alpha_n$ dan
+		morfisme ini merupakan isomorfisme jika dan hanya jika $\alpha_n$ dan
 		$\beta_n$ keduanya merupakan isomorfisme.
 	\end{hint}
 
@@ -581,7 +580,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 % segment-id: o014.li2.chapter2.grothendieck-categories.p012
 	Kategori $\mathrm{kar}(\mathcal{C})$ lazim disebut
 	\emph{selubung Karoubi} dari $\mathcal{C}$; kategori ini diperoleh dengan
-	menambahkan secara formal semua suku jumlah langsung pada $\mathcal{C}$.
+	menambahkan semua suku langsung pada $\mathcal{C}$ secara formal.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn002
 	\begin{hint}
@@ -593,8 +592,8 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 	\end{hint}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.ex005
-	\item Untuk suatu gelanggang $R$, verifikasikan bahwa semua modul projektif
-	$R$ membentuk kategori Karoubi yang bukan kategori abelian.
+	\item Untuk suatu gelanggang $R$, periksa bahwa semua modul-$R$ projektif
+	membentuk kategori Karoubi yang bukan kategori abelian.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.ex006
 	\item Misalkan kategori abelian $\mathcal{A}$ mempunyai semua jumlah
@@ -603,7 +602,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 	$\Sigma\subset\Obj(\mathcal{A})$ merupakan keluarga generator (atau
 	keluarga kogenerator) jika dan hanya jika, untuk setiap
 	$X\in\Obj(\mathcal{A})$, terdapat jumlah langsung kecil (atau produk kecil)
-	$S$ dari unsur-unsur $\Sigma$ beserta epimorfisme $S\twoheadrightarrow X$
+		$S$ dari anggota-anggota $\Sigma$ beserta epimorfisme $S\twoheadrightarrow X$
 	(atau monomorfisme $X\hookrightarrow S$).
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn003
@@ -612,7 +611,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 		ambil morfisme jelas
 % segment-id: o014.li2.chapter2.grothendieck-categories.q010
 		\[ f: \bigoplus_{s \in \Sigma} \bigoplus_{\varphi \in \Hom(s, X)} s \to X; \]
-		setiap morfisme $\varphi$ memfaktor melalui $f$. Karena itu setiap
+		setiap morfisme $\varphi$ berfaktor melalui $f$. Karena itu setiap
 		komposisi $s\xrightarrow{\varphi'}X\to\Coker(f)$ bernilai $0$; simpulkan
 		bahwa $\Coker(f)=0$.
 	\end{hint}
@@ -624,12 +623,12 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn004
 	\begin{hint}
-		Bentuk monomorfisme $(A+B)\cap C\to A$, lalu tunjukkan bahwa ia memfaktor
+		Bentuk monomorfisme $(A+B)\cap C\to A$, lalu tunjukkan bahwa ia berfaktor
 		melalui $A\cap(B+C)$. Anda dapat mencoba dahulu kasus kategori modul.
 	\end{hint}
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.ex008
-	\item Buktikan bahwa kategori abelian modul $\Z$ yang dibangun secara hingga
+	\item Buktikan bahwa kategori abelian modul-$\Z$ yang dibangkitkan secara hingga
 	mempunyai cukup banyak objek projektif, tetapi tidak mempunyai cukup banyak
 	objek injektif.
 
@@ -647,7 +646,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 		X \arrow[r, "{\psi'}"] \arrow[d, "{\phi'}"'] & P \arrow[d, "\phi"] \\
 		Q \arrow[r, "\psi"'] & M \arrow[phantom, lu, "\Box" description] .
 	\end{tikzcd}\]
-	Berikan barisan eksak pendek
+	Tunjukkan bahwa terdapat barisan eksak pendek
 	$0\to L\to X\xrightarrow{\psi'}P\to0$ dan
 	$0\to K\to X\xrightarrow{\phi'}Q\to0$, lalu buktikan bahwa terdapat
 	isomorfisme $K\oplus Q\simeq L\oplus P$.
@@ -660,7 +659,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 	$\cate{Ab}$.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.ex011
-	\item Verifikasikan secara rinci relasi adjoin dalam Contoh
+	\item Periksa secara rinci relasi adjoin dalam Contoh
 	\ref{eg:A2-injective-projective}.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.ex012
@@ -677,7 +676,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 		$c\in\Obj(\mathcal{C})$, definisikan funktor
 		$\mathcal{L}_c:\mathcal{A}\to\mathcal{A}^{\mathcal{C}}$ pada objek
 		dengan
-		$(\mathcal{L}_cX)(c')=\bigoplus_{\Hom(c,c')}X$. Lengkapi definisi pada
+		$(\mathcal{L}_cX)(c')=\bigoplus_{\Hom(c,c')}X$. Lengkapi definisinya pada
 		morfisme sehingga $\mathcal{L}_c$ menjadi adjoin kiri bagi
 		$\mathrm{ev}_c$.
 %		\begin{hint}
@@ -720,7 +719,8 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 			\Hom_{\mathcal{A}}(s, Y(c)) \arrow[r, "\sim"] & \Hom_{\mathcal{A}^{\mathcal{C}}}(\mathcal{L}_c(s), Y) \\
 			\Hom_{\mathcal{A}}(s, X(c)) \arrow[r, "\sim"'] \arrow[u, "{f(c)_*}"] & \Hom_{\mathcal{A}^{\mathcal{C}}}(\mathcal{L}_c(s), X) \arrow[u, "{f_*}"'] .
 		\end{tikzcd}\]
-		Syarat bagi keluarga generator setara dengan pernyataan bahwa, ketika
+		Syarat agar suatu keluarga menjadi keluarga generator setara dengan
+		pernyataan bahwa, ketika
 		$c$ merentang $\Obj(\mathcal{C})$, semua $f_*$ pada kolom kedua
 		menentukan $f$ secara tunggal.
 	\end{hint}
@@ -742,12 +742,12 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn007
 		\begin{hint}
 			% Rujukan: Gelfand--Manin, hlm. 121.
-			Verifikasikan bahwa kategori ini mempunyai sifat universal yang
+			Periksa bahwa kategori ini mempunyai sifat universal yang
 			dinyatakan dalam Teorema \ref{prop:Serre-quotient}.
 		\end{hint}
 % segment-id: o014.li2.chapter2.grothendieck-categories.i019
 		\item Gunakan konstruksi ini untuk menunjukkan bahwa jika $\mathcal{A}$
-		merupakan kategori well-powered (Definisi \ref{def:well-powered}), maka
+		merupakan kategori berdaya-baik (Definisi \ref{def:well-powered}), maka
 		$\mathcal{A}/\mathcal{T}$ juga merupakan kategori-$\mathcal{U}$, dengan
 		$\mathcal{U}$ semesta Grothendieck yang telah dipilih.
 	\end{enumerate}
@@ -763,7 +763,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn008
 	\begin{hint}
-		Gunakan Teorema penyempurnaan Schreier
+		Gunakan Teorema Penghalusan Schreier
 		\ref{prop:Schreier-refinement} untuk menunjukkan bahwa
 		$[X]\mapsto\sum_{i=1}^n[X_i/X_{i-1}]$ memberikan pemetaan invers yang
 		tidak bergantung pada pilihan barisan subobjek.
@@ -791,7 +791,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn009
 	\begin{hint}
-		Ingat dahulu bahwa $\End(X_i)$ gelanggang lokal menyiratkan bahwa $X_i$
+		Ingat bahwa jika $\End(X_i)$ gelanggang lokal, maka $X_i$
 		tak terurai; buktikan langsung atau lihat \cite[Lema 6.12.6]{Li1}.
 		Selanjutnya gunakan \cite[Teorema 6.12.8]{Li1} untuk memperoleh keunikan
 		dekomposisi.
@@ -829,7 +829,8 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 	\item (Karakterisasi jumlah langsung) Misalkan $\mathcal{A}$ kategori
 	Grothendieck. Tinjau $X\in\Obj(\mathcal{A})$ beserta keluarga subobjek
 	$(X_i)_{i\in I}$, dengan $I$ himpunan kecil. Morfisme kanonik
-	$\bigoplus_{i\in I}X_i\to X$ membatasi pada setiap $X_i$ sebagai inklusi
+	$\bigoplus_{i\in I}X_i\to X$ memiliki pembatasan pada setiap $X_i$ yang
+	merupakan inklusi
 	$X_i\hookrightarrow X$. Buktikan bahwa
 	$\bigoplus_{i\in I}X_i\rightiso X$ jika dan hanya jika sifat-sifat berikut
 	terpenuhi.
@@ -857,7 +858,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 % segment-id: o014.li2.chapter2.grothendieck-categories.l009
 	\begin{enumerate}[(i)]
 % segment-id: o014.li2.chapter2.grothendieck-categories.i022
-		\item Lengkapi bukti rigor dari Catatan
+		\item Lengkapi bukti terperinci dari Catatan
 		\ref{rem:Grothendieck-ss-decomp}.
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn012
 		\begin{hint}
@@ -869,7 +870,7 @@ Gabriel--Popescu--Kuhn \sourcecrossref{prop:GP}{A.3.2} dalam lampiran buku ini.
 		subobjek tak nol $Y_0\subset Y$ sedemikian sehingga setiap rantai dalam
 		himpunan terurut parsial
 		$\mathrm{Sub}_{Y_0}\smallsetminus\{Y_0\}$ mempunyai batas atas.
-		Verifikasikan asumsi ini untuk $\mathcal{A}=R\dcate{Mod}$.
+		Periksa asumsi ini untuk $\mathcal{A}=R\dcate{Mod}$.
 % segment-id: o014.li2.chapter2.grothendieck-categories.hn013
 		\begin{hint}
 			Anda dapat mengikuti bagian (iii) $\implies$ (i) dalam bukti

@@ -1,0 +1,381 @@
+% Unit 074 terjemahan Bahasa Indonesia dari chapter6.tex baris 557--739.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.low-degree-cohomology
+% Cakupan: Bagian 6.3 lengkap.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.h001
+\section{Kohomologi berderajat rendah: homomorfisme silang dan ekstensi grup}
+\label{sec:grp-low-degree}
+\hypertarget{o014.aljabr2.chapter6.low-degree-cohomology}{ }
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p001
+Bagian ini bertujuan memperdalam pemahaman tentang $\Hm^1$ dan $\Hm^2$.
+Misalkan $G$ grup dan $\Bbbk$ gelanggang komutatif. Untuk modul-$G$ $M$,
+untuk kompleks standar $C(G,M)$ dalam Proposisi~\ref{prop:groupcoh-cochain},
+definisikan submodul-submodul dari $C^n(G,M)$
+\[ Z^n(G,M):=\Ker(d^n)\supset\Image(d^{n-1})=:B^n(G,M), \]
+dan definisikan pula $B^0(G,M)=0$. Kita mengidentifikasi
+\begin{equation*}
+	\Hm^n(G,M)\quad\text{dengan}\quad Z^n(G,M)/B^n(G,M).
+\end{equation*}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p002
+Karena asal-usulnya dalam topologi, unsur $Z^n(G,M)$ juga disebut
+$n$-\emph{kosiklus}, sedangkan unsur $B^n(G,M)$ disebut
+$n$-\emph{kobatas}.
+\index{kosiklus (cocycle)}
+\index{kobatas (coboundary)}
+\index[sym1]{ZGM@$Z^n(G,M)$}
+\index[sym1]{BGM@$B^n(G,M)$}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p003
+Ingat bahwa $C^n(G,M)$ terdiri atas semua pemetaan $f:G^n\to M$. Bagian
+berderajat rendah dari kompleks standar adalah
+\[\begin{tikzcd}[row sep=tiny, column sep=small]
+	C^0(G,M) \arrow[r,"{d^0}"] & C^1(G,M) \arrow[r,"{d^1}"] & C^2(G,M) \\
+	m \arrow[mapsto,r] & {[g\mapsto gm-m]} & \\
+	& f \arrow[mapsto,r] &
+	{[(g_1,g_2)\mapsto g_1f(g_2)-f(g_1g_2)+f(g_1)]},
+\end{tikzcd}\]
+Khususnya, $Z^0(G,M)=M^G$. Berikutnya kita meninjau kasus $n=1$.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.d001
+\begin{definition}[Homomorfisme silang]\label{def:crossed-homomorphism}
+	\index{homomorfisme silang (crossed homomorphism)}
+	Misalkan $M$ modul-$G$. Unsur-unsur $Z^1(G,M)$ juga disebut
+	\emph{homomorfisme silang} dari $G$ ke $M$; dengan kata lain,
+	homomorfisme silang adalah pemetaan $f:G\to M$ yang memenuhi
+	\[ f(g_1g_2)=g_1f(g_2)+f(g_1),\qquad g_1,g_2\in G. \]
+	Untuk $\Bbbk$ tetap, homomorfisme-homomorfisme ini membentuk
+	modul-$\Bbbk$ terhadap operasi titik demi titik.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p004
+Perhatikan bahwa unsur $B^1(G,M)$ adalah homomorfisme silang berbentuk
+$f_m:g\mapsto gm-m$, dengan $m\in M$.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p005
+Secara umum, homomorfisme silang $f$ selalu memenuhi $f(1_G)=0$ (ambil
+$g_1=g_2=1_G$) dan $g^{-1}f(g)=-f(g^{-1})$ (ambil $g_1=g^{-1}$ dan $g_2=g$).
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.e001
+\begin{example}
+	Jika aksi $G$ pada $M$ trivial, maka homomorfisme silang tepat merupakan
+	homomorfisme dari $G$ ke grup aditif $(M,+)$, dan $B^1(G,M)=\{0\}$. Jadi
+	dalam keadaan ini
+	\[ \Hom_{\cate{Grp}}(G,M)\simeq\Hm^1(G,M). \]
+\end{example}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p006
+Cara lain memahami homomorfisme silang adalah melalui hasil kali semilangsung.
+Untuk modul-$G$ $M$, gunakan aksi $G$ untuk membangun hasil kali semilangsung
+$M\rtimes G$. Unsurnya berbentuk $(m,g)$ dengan $m\in M$, $g\in G$, dan
+terdapat homomorfisme proyeksi $\pi:M\rtimes G\to G$ yang memetakan $(m,g)$
+ke $g$.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.t001
+\begin{proposition}\label{prop:crossed-semidirect-product}
+	Misalkan $M$ modul-$G$. Terdapat bijeksi kanonik
+	\[ Z^1(G,M)\xrightarrow{1:1}
+	\left\{\text{homomorfisme grup }\sigma:G\to M\rtimes G
+	\;\middle|\;\pi\sigma=\identity_G\right\}. \]
+	Pemetaan $\sigma$ di ruas kanan juga disebut penampang dari $\pi$;
+	homomorfisme silang $f$ bersesuaian dengan penampang
+	$\sigma(g)=(f(g),g)$.
+\end{proposition}
+\begin{proof}
+	Pemetaan $\sigma$ yang memenuhi $\pi\sigma=\identity_G$ harus berbentuk
+	$\sigma(g)=(f(g),g)$ untuk suatu pemetaan $f:G\to M$. Berdasarkan definisi
+	hasil kali semilangsung, $\sigma$ merupakan homomorfisme grup jika dan hanya
+	jika dalam $M$ berlaku
+	\[ f(g_1)+g_1f(g_2)=f(g_1g_2),\qquad g_1,g_2\in G. \]
+	Ini tepat definisi homomorfisme silang.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p007
+Homomorfisme silang juga berkaitan dengan ideal augmentasi
+$\mathfrak{I}\subset\Bbbk[G]$ yang diperkenalkan dalam
+Catatan~\ref{rem:augmentation-kG}.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.t002
+\begin{proposition}\label{prop:crossed-augmentation}
+	Untuk setiap modul-$G$ $M$, terdapat isomorfisme kanonik
+	$\Hom_G(\mathfrak{I},M)\rightiso Z^1(G,M)$ yang memetakan homomorfisme
+	$\varphi$ ke homomorfisme silang $f(g)=\varphi(g-1_G)$.
+\end{proposition}
+\begin{proof}
+	Sebagai modul-$\Bbbk$, $\mathfrak{I}$ mempunyai basis
+	$\{g-1_G:g\in G,\;g\neq1_G\}$. Jadi menentukan homomorfisme modul-$\Bbbk$
+	$\varphi:\mathfrak{I}\to M$ setara dengan menentukan pemetaan $f:G\to M$
+	yang memenuhi $f(1_G)=0$, dengan hubungan
+	$f(g)=\varphi(g-1_G)$. Syarat agar $\varphi$ merupakan homomorfisme
+	modul-$G$ adalah
+	$\varphi(g_1(g_2-1_G))=g_1\varphi(g_2-1_G)$. Akan tetapi,
+	\[ \text{ruas kiri}=\varphi(g_1g_2-1_G-g_1+1_G)
+	=f(g_1g_2)-f(g_1),\qquad
+	\text{ruas kanan}=g_1f(g_2). \]
+	Ini tepat syarat homomorfisme silang.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p008
+Untuk langkah berikutnya, yaitu kasus $n=2$, kita harus mengingat kembali
+konsep ekstensi grup. Ambil $\Bbbk=\Z$ dan perkenalkan beberapa istilah.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.d002
+\begin{definition}\label{def:group-ext}
+	\index{ekstensi grup (extension of groups)}
+	Misalkan $A$ grup. Sebuah \emph{ekstensi} $G$ oleh $A$ adalah barisan eksak
+	pendek grup \cite[Definisi 4.3.7]{Li1}
+	\[ 0\to A\to E\xrightarrow{\pi}G\to1. \]
+
+	Selanjutnya ekstensi grup ini cukup dilambangkan dengan $E$. Homomorfisme grup
+	$s:G\to E$ yang memenuhi $\pi s=\identity_G$ disebut suatu
+	\emph{pembelahan} ekstensi tersebut. Dalam keadaan ini, $s$ menyertakan $G$
+	sebagai subgrup dari $E$, dan melalui penyertaan ini $E$ diidentifikasi
+	dengan hasil kali semilangsung $A\rtimes G$. Ekstensi yang mempunyai
+	pembelahan disebut \emph{terbelah}. Untuk rinciannya, lihat
+	\cite[\S 4.3]{Li1}.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p009
+Secara garis besar, teori ekstensi grup mengkaji cara membangun grup yang lebih
+besar dari subgrup normal dan grup hasil bagi. Untuk menghubungkannya dengan
+kohomologi modul-$G$, selanjutnya grup $A$ di atas ditulis sebagai $M$ dan
+disyaratkan komutatif, dengan operasi grup ditulis secara aditif. Ekstensi
+grup semacam ini menentukan homomorfisme grup
+\[ \alpha:G\to\Aut_{\cate{Grp}}(M),\qquad
+	\alpha(g)(x)=exe^{-1},\qquad e\in\pi^{-1}(g)\ \text{dipilih sembarang}. \]
+Dengan demikian $M$ menjadi modul-$G$ melalui $\alpha$; ini merupakan
+invarian paling dasar dari ekstensi grup.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p010
+Untuk modul-$G$ $M$ yang diberikan, kita ingin mengklasifikasikan semua
+ekstensi $G$ oleh $M$ yang $\alpha$-nya tepat merupakan struktur modul-$G$
+pada $M$, hingga ekuivalensi (atau isomorfisme) ekstensi. Ekuivalensi dari
+ekstensi $E$ ke $E'$ didefinisikan secara alami sebagai diagram komutatif grup
+\begin{equation}\label{eqn:group-ext-diagram}\begin{tikzcd}
+	0 \arrow[r] & M \arrow[r] \arrow[equal,d] &
+	E \arrow[r] \arrow[d,"\varphi"] & G \arrow[r] \arrow[equal,d] & 1 \\
+	0 \arrow[r] & M \arrow[r] & E' \arrow[r] & G \arrow[r] & 1.
+\end{tikzcd}\end{equation}
+Pembaca diminta memverifikasi bahwa $\varphi$ dalam diagram tersebut secara
+otomatis merupakan isomorfisme grup, dan bahwa suatu ekstensi terbelah jika
+dan hanya jika ekuivalen dengan hasil kali semilangsung $M\rtimes G$.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.d003
+\begin{definition}
+	\index[sym1]{ExtGM@$\cate{Ext}(G,M)$}
+	Definisikan kategori $\cate{Ext}(G,M)$ dari semua ekstensi $G$ oleh modul-$G$
+	$M$ yang diberikan; morfismenya adalah diagram komutatif
+	\eqref{eqn:group-ext-diagram}.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p011
+Kategori ini merupakan grupoid: semua morfismenya dapat dibalik.
+Mengklasifikasikan ekstensi berarti mendeskripsikan $\cate{Ext}(G,M)$ hingga
+ekuivalensi kategori. Persoalan ini terbagi menjadi dua:
+\begin{itemize}
+	\item mendeskripsikan $\Obj(\cate{Ext}(G,M))/\simeq$, yakni kelas
+	ekuivalensi ekstensi, dan mengenali ekstensi terbelah di antaranya;
+	\item mendeskripsikan morfisme dalam $\cate{Ext}(G,M)$, yakni isomorfisme
+	antara ekstensi.
+\end{itemize}
+Kita mulai dari persoalan kedua yang lebih sederhana. Mula-mula, suatu
+ekstensi $E$ mempunyai kelas automorfisme sederhana berbentuk
+$\Ad_m:e\mapsto mem^{-1}$, dengan $m\in M$ dan operasi grup dalam $E$ ditulis
+secara multiplikatif; automorfisme ini disebut automorfisme dalam. Karena
+alasan abstrak, automorfisme dalam membentuk subgrup normal dari $\Aut(E)$,
+dan grup hasil bagi terkait disebut grup automorfisme luar dari $E$.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p012
+Untuk mengklasifikasikan ekstensi grup, kita perlu memakai kompleks standar
+ternormalisasi $\overline{C}(G,M)$ yang dijelaskan dalam
+Catatan~\ref{rem:nor-cochain} untuk menghitung kohomologi. Definisikan
+\begin{gather*}
+	\overline{C}^n(G,M)\supset\overline{Z}^n(G,M)
+	\supset\overline{B}^n(G,M),\\
+	\Hm^n(G,M)\simeq\overline{Z}^n(G,M)/\overline{B}^n(G,M).
+\end{gather*}
+Kita mempunyai $\overline{C}^0(G,M)=C^0(G,M)=M$. Pembahasan sebelumnya
+tentang homomorfisme silang juga telah menunjukkan bahwa
+$\overline{Z}^1(G,M)=Z^1(G,M)$.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.l001
+\begin{lemma}\label{prop:factor-set-prep}
+	Misalkan $0\to M\to E\xrightarrow{\pi}G\to1$ merupakan objek
+	$\cate{Ext}(G,M)$. Grup automorfismenya secara kanonik isomorfik dengan
+	$\overline{Z}^1(G,M)$, sedangkan grup automorfisme luarnya secara kanonik
+	isomorfik dengan $\Hm^1(G,M)$. Lebih eksplisit, unsur
+	$z\in\overline{Z}^1(G,M)$ bersesuaian dengan automorfisme yang memetakan
+	$e\in E$ ke $z(\pi(e))e$.
+\end{lemma}
+\begin{proof}
+	Untuk sementara tuliskan operasi grup pada $M$ secara multiplikatif. Ambil
+	$E'=E$ dalam diagram komutatif \eqref{eqn:group-ext-diagram}. Untuk setiap
+	$e\in E$ terdapat $z(e)\in M$ tunggal dengan $\varphi(e)=z(e)e$. Jika
+	$m\in M$, maka
+	$\varphi(me)=m\varphi(e)=mz(e)e=z(e)me$, sehingga $z(e)$ hanya bergantung
+	pada citra $e$ dalam $G$; selanjutnya kita menulisnya sebagai pemetaan
+	$z:G\to M$. Sebaliknya, setiap pemetaan $z:G\to M$ menentukan pemetaan
+	$\varphi:E\to E$ melalui $\varphi(e)=z(\pi(e))e$, dan diagram
+	\eqref{eqn:group-ext-diagram} komutatif pada tingkat himpunan.
+
+	Perhatikan pemetaan $z:G\to M$ dan $\varphi$ terkait. Misalkan
+	$g_i=\pi(e_i)$ untuk $i=1,2$. Maka
+	\begin{align*}
+		\varphi(e_1e_2)&=z(g_1g_2)e_1e_2,\\
+		\varphi(e_1)\varphi(e_2)&=z(g_1)e_1z(g_2)e_2\\
+		&=z(g_1)\underbracket{g_1\cdot z(g_2)}_{
+		\text{struktur modul-$G$ pada $M$}}e_1e_2.
+	\end{align*}
+	Jadi $\varphi$ merupakan homomorfisme grup jika dan hanya jika $z$ adalah
+	homomorfisme silang. Jelas bahwa komposisi homomorfisme grup bersesuaian
+	dengan penjumlahan homomorfisme silang. Sekarang ambil $m\in M$.
+	Automorfisme dalam terkait ialah
+	$e\mapsto mem^{-1}=mem^{-1}e^{-1}e$. Jelas bahwa
+	$mem^{-1}e^{-1}\in M$, dan dalam notasi aditif unsur ini adalah
+	$m-\pi(e)m$. Selesai.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.d004
+\begin{definition}
+	Grupoid $\tau^{\leq2}\overline{\cate{C}}(G,M)$ didefinisikan sebagai
+	berikut: himpunan objeknya adalah $\overline{Z}^2(G,M)$, sedangkan himpunan
+	morfismenya adalah
+	\[ \Hom(f,f'):=\{w\in\overline{C}^1(G,M):f'=d^1w+f\}. \]
+	Komposisi morfisme didefinisikan dengan penjumlahan dalam
+	$\overline{C}^1(G,M)$. Dengan demikian, kelas isomorfisme objek berkorespondensi
+	secara bijektif dengan unsur $\Hm^2(G,M)$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p013
+Makna notasinya jelas: $\tau^{\leq2}\overline{\cate{C}}(G,M)$ adalah
+kategori yang ditentukan oleh kompleks terpotong
+$\tau^{\leq2}\overline{C}(G,M)$.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.t003
+\begin{theorem}\label{prop:factor-set}
+	Misalkan $M$ modul-$G$. Kategori $\cate{Ext}(G,M)$ ekuivalen dengan
+	$\tau^{\leq2}\overline{\cate{C}}(G,M)$. Khususnya, kelas ekuivalensi
+	ekstensi $G$ oleh $M$ berkorespondensi satu-satu dengan unsur
+	$\Hm^2(G,M)$, dan kelas ekuivalensi ekstensi terbelah bersesuaian dengan
+	$0\in\Hm^2(G,M)$.
+\end{theorem}
+\begin{proof}
+	Mula-mula kita bangun funktor
+	$\tau^{\leq2}\overline{\cate{C}}(G,M)\to\cate{Ext}(G,M)$. Ambil
+	pemetaan $f:G^2\to M$ dan definisikan operasi biner pada himpunan $M\times G$
+	dengan
+	\[ (m_1,g_1)\cdot(m_2,g_2):=
+	\left(m_1+g_1\cdot m_2+f(g_1,g_2),g_1g_2\right). \]
+	Sifat asosiatif ekuivalen dengan identitas
+	\begin{equation}\label{eqn:grp-2-cocycle}
+		f(g_1,g_2)+f(g_1g_2,g_3)
+		=g_1\cdot f(g_2,g_3)+f(g_1,g_2g_3),
+	\end{equation}
+	yakni $f\in Z^2(G,M)$. Lebih lanjut, $(0,1_G)$ merupakan unsur satuan jika
+	dan hanya jika
+	\[ f(g,1_G)=0=f(1_G,g), \]
+	yakni $f\in\overline{Z}^2(G,M)$. Dengan mengambil
+	$(g_1,g_2,g_3)=(g,g^{-1},g)$ dalam \eqref{eqn:grp-2-cocycle} dan memakai
+	persamaan terakhir, diperoleh
+	\begin{equation}\label{eqn:grp-2-cocycle-inv}
+		f(g,g^{-1})=g\cdot f(g^{-1},g).
+	\end{equation}
+
+	Jadi $M\times G$ memperoleh struktur monoid dari
+	$f\in\overline{Z}^2(G,M)$; tuliskan monoid tersebut sebagai $E$. Ia secara
+	otomatis merupakan grup, sebab dari \eqref{eqn:grp-2-cocycle-inv} diperoleh
+	\[ (0,g)^{-1}=\left(-f(g^{-1},g),g^{-1}\right),\qquad
+	(m,1_G)^{-1}=(-m,1_G). \]
+	Mudah dibuktikan bahwa pemetaan $m\mapsto(m,1_G)$ dan $(m,g)\mapsto g$
+	memberikan ekstensi grup $0\to M\to E\to G\to1$ yang menginduksi tepat
+	aksi $G$ semula pada $M$. Periksalah bahwa $f=0$ bersesuaian dengan
+	hasil kali semilangsung $E=M\rtimes G$.
+
+	Jika selain itu $w\in\overline{C}^1(G,M)$ dan $f':=d^1w+f$, tuliskan
+	ekstensi terkait sebagai $E'$. Pemetaan
+	\[ (m,g)\mapsto(m-w(g),g) \]
+	memberikan isomorfisme dari $E$ ke $E'$. Memang, syarat bahwa pemetaan ini
+	mempertahankan perkalian setara dengan identitas
+	\[ -w(g_1)-g_1\cdot w(g_2)+(d^1w)(g_1,g_2)=-w(g_1g_2), \]
+	yang tepat merupakan definisi $d^1w$.
+
+	Dengan demikian diperoleh funktor
+	$\tau^{\leq2}\overline{\cate{C}}(G,M)\to\cate{Ext}(G,M)$, dan kedua
+	kategori merupakan grupoid. Dengan membandingkan grup automorfisme objek
+	melalui Lema~\ref{prop:factor-set-prep}, funktor ini penuh dan setia. Kini
+	kita tunjukkan bahwa funktor tersebut surjektif esensial.
+
+	Misalkan $E$ objek dalam $\cate{Ext}(G,M)$. Pilih penampang sembarang
+	$s:G\to E$ dari pemetaan $\pi:E\to G$ dalam data ekstensi, yaitu pemetaan
+	yang memenuhi $\pi s=\identity_G$. Ini setara dengan memilih wakil dalam
+	setiap koset $M$ di $E$. Penampang $s$ disebut ternormalisasi jika
+	$s(1_G)=1_E$. Untuk semua $g_1,g_2\in G$, unsur $s(g_1g_2)$ dan
+	$s(g_1)s(g_2)$ mempunyai citra yang sama di bawah $\pi$. Jadi terdapat
+	$f(g_1,g_2)\in M$ tunggal dengan
+	\[ s(g_1)s(g_2)=f(g_1,g_2)s(g_1g_2). \]
+
+	Mudah dibuktikan bahwa sifat asosiatif
+	$(s(g_1)s(g_2))s(g_3)=s(g_1)(s(g_2)s(g_3))$ diterjemahkan menjadi
+	\eqref{eqn:grp-2-cocycle}, yakni $f\in Z^2(G,M)$. Jika $s$ ternormalisasi,
+	maka $f(1_G,g)=0=f(g,1_G)$ untuk semua $g$, yang setara dengan
+	$f\in\overline{Z}^2(G,M)$.
+
+	Untuk penampang ternormalisasi $s$ yang dipilih, beri $M\times G$ struktur
+	grup yang bersesuaian dengan $f$. Perhatikan bijeksi
+	\[ M\times G\xrightarrow{1:1}E,\qquad(m,g)\mapsto ms(g). \]
+	Dari pembahasan di atas, bijeksi ini mempertahankan perkalian grup dan
+	memberikan isomorfisme dalam $\cate{Ext}(G,M)$. Ini menyelesaikan bukti
+	ekuivalensi.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p014
+Dalam bagian terakhir bukti kesurjektifan esensial, mengubah penampang $s$
+setara dengan memilih pemetaan sembarang $h:G\to M$ dan mengambil
+$s'(g):=h(g)s(g)$. Pemetaan $f':G^2\to M$ terkait berubah menjadi
+\begin{align*}
+	f'(g_1,g_2)&=\left(h(g_1)+g_1\cdot h(g_2)-h(g_1g_2)\right)+f(g_1,g_2)\\
+	&=(d^1h)(g_1,g_2)+f(g_1,g_2).
+\end{align*}
+Jika disyaratkan pula $h(1_G)=0$, maka
+$d^1h\in\overline{B}^2(G,M)$. Secara historis, pengamatan ini
+merupakan titik awal hubungan antara ekstensi dan $\Hm^2(G,M)$, sekaligus
+memberikan interpretasi melalui ekstensi grup bagi definisi
+$\overline{Z}^2(G,M)$ dan $\overline{B}^2(G,M)$, meskipun hal itu tidak
+ditonjolkan dalam pembuktiannya.
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.r001
+\begin{remark}\label{rem:Ext-incarnation}
+	Teorema~\ref{prop:factor-set} mengatakan bahwa kompleks
+	$\tau^{\leq2}\overline{C}(G,M)$ merupakan realisasi linear dari kategori
+	ekstensi grup $\cate{Ext}(G,M)$: suku berderajat $2$ mendeskripsikan objek,
+	suku berderajat $1$ mendeskripsikan morfisme, dan yang masih perlu
+	ditafsirkan adalah suku berderajat $0$. Untuk
+	$m\in M=\overline{C}^0(G,M)$, terdapat automorfisme dalam ekstensi grup
+	$\Ad_m:e\mapsto mem^{-1}$, yang trivial jika dan hanya jika
+	$m\in M^G=\Hm^0(G,M)$. Dari sudut pandang automorfisme dalam, kita dapat
+	memandang unsur $M$ sebagai 2-morfisme dalam $\cate{Ext}(G,M)$: untuk
+	$m\in M$ dan
+	$\varphi_1,\varphi_2\in\Hom_{\cate{Ext}(G,M)}(E,E')$,
+	\[ \text{tafsirkan diagram sel-2}\;
+	\begin{tikzcd}[column sep=large]
+		E \arrow[bend left=60,r,"\varphi_1",""' {name=U}]
+		\arrow[bend right=60,r,"\varphi_2"',"" {name=D}] &
+		E' \arrow[Rightarrow,from=U,to=D,"m"]
+	\end{tikzcd}
+	\;\text{sebagai}\;\varphi_2=\Ad_m\varphi_1. \]
+
+	Perhatikan bahwa $\Ad_m\varphi_1=\varphi_1\Ad_m$ dan
+	$\Ad_{m_1}\Ad_{m_2}=\Ad_{m_1+m_2}$. Jadi $\Hm^0(G,M)$ menjadi
+	``grup 2-automorfisme'' dari setiap morfisme $\varphi$. Dalam pengertian
+	ini, kompleks $\tau^{\leq2}\overline{C}(G,M)$ dapat disebut realisasi
+	linear dari 2-kategori $\cate{Ext}(G,M)$. Untuk definisi 2-kategori, lihat
+	\cite[\S 3.5]{Li1}.
+\end{remark}
+
+% segment-id: o014.li2.chapter6.low-degree-cohomology.p015
+Aspek-aspek lain ekstensi grup akan dibahas dalam
+\S\ref{sec:group-ext-revisited}. Sebelumnya, kita perlu memperkenalkan lebih
+banyak operasi pada homologi dan kohomologi grup.

@@ -111,7 +111,7 @@ Dalam keadaan ini, keluarga morfisme $\iota_i: X_i \to Z$ dan
 $p_i: Z \to X_i$ masing-masing menginduksi isomorfisme
 % segment-id: o014.li2.chapter1.additive-categories-kernels-cokernels.q004
 \[ \coprod_{i=1}^n X_i \rightiso Z \rightiso \prod_{i=1}^n X_i. \]
-Berdasarkan konvensi, biproduk yang bersesuaian dengan $n=0$ ditetapkan sebagai
+Menurut konvensi, biproduk yang bersesuaian dengan $n=0$ ditetapkan sebagai
 objek nol.
 
 % segment-id: o014.li2.chapter1.additive-categories-kernels-cokernels.p006
@@ -219,7 +219,7 @@ $\sum_{i=1}^n \iota'_i f_i p_i$.
 % segment-id: o014.li2.chapter1.additive-categories-kernels-cokernels.pr002
 \begin{proposisi}\label{prop:additive-cat-addition}
 	Misalkan $f,g: X \to Y$ merupakan sepasang morfisme dalam kategori aditif
-	$\mathcal{C}$. Maka $f+g$ sama dengan komposisi sepanjang baris pertama
+	$\mathcal{C}$. Maka $f+g$ sama dengan komposisi pada baris pertama
 	dalam diagram komutatif berikut:
 	% segment-id: o014.li2.chapter1.additive-categories-kernels-cokernels.g003
 	\[\begin{tikzcd}
@@ -254,7 +254,7 @@ $\sum_{i=1}^n \iota'_i f_i p_i$.
 		X \sqcup X \arrow[r, "{f \sqcup g}"] \arrow[d] & Y \sqcup Y \arrow[d] \\
 		X \times X \arrow[r, "{f \times g}"'] & Y \times Y
 	\end{tikzcd}\]
-	Akan tetapi, ini tidak lain daripada funktorialitas morfisme $\delta$ dalam
+	Namun, ini tepat merupakan funktorialitas morfisme $\delta$ dalam
 	\eqref{eqn:coprod-prod-delta}, sehingga pembuktiannya langsung.
 \end{bukti}
 
@@ -341,8 +341,8 @@ $\mathcal{C}$, bukan struktur tambahan.
 		beserta $Y \twoheadrightarrow \Coker(f)$ disebut \emph{kokernel} dari
 		$f$.
 	\end{itemize}
-	Secara khusus, kedua komposisi $\Ker(f) \to X \to Y$ dan
-	$X \to Y \to \Coker(f)$ sama dengan $0$ menurut definisi.
+	Secara khusus, menurut definisi kedua komposisi $\Ker(f) \to X \to Y$
+	dan $X \to Y \to \Coker(f)$ sama dengan $0$.
 \end{definisi}
 
 % segment-id: o014.li2.chapter1.additive-categories-kernels-cokernels.p011
@@ -356,8 +356,7 @@ kokernel.
 	morfisme'' tanpa mencantumkan syarat $fg=0$ dan, secara dual, $hf=0$.
 	Kedua syarat itu dipulihkan di sini karena tepat merupakan hipotesis
 	penyama dan kopenyama; lihat koreksi O014-C006.} komposisi
-	$T \xrightarrow{g} X \xrightarrow{0} Y$ tentu merupakan
-	$0$.
+	$T \xrightarrow{g} X \xrightarrow{0} Y$ tentu sama dengan $0$.
 	Karena itu, sifat universal $\Ker(f)=\Ker(f,0)$ sebagai penyama dapat
 	dinyatakan oleh diagram komutatif
 	% segment-id: o014.li2.chapter1.additive-categories-kernels-cokernels.g007
@@ -367,7 +366,7 @@ kokernel.
 	\end{tikzcd}\]
 	% segment-id: o014.li2.chapter1.additive-categories-kernels-cokernels.i017
 	\item Tinjau $\Coker(f)$. Untuk setiap morfisme $h: Y \to T$ dengan
-	$hf=0$, komposisi $X \xrightarrow{0} Y \xrightarrow{h} T$ tentu merupakan
+	$hf=0$, komposisi $X \xrightarrow{0} Y \xrightarrow{h} T$ tentu sama dengan
 	$0$. Karena itu,
 	sifat universal $\Coker(f)=\Coker(f,0)$ sebagai kopenyama dapat dinyatakan
 	oleh diagram komutatif
@@ -526,7 +525,7 @@ mempertahankan kernel (atau kokernel).
 	Pertama, tinjau (i). Berdasarkan dualitas, cukup dibahas kasus
 	monomorfisme. Menurut definisi, $f$ merupakan monomorfisme jika dan hanya
 	jika untuk setiap pasangan morfisme $g_1,g_2: T \to X$ berlaku
-	$f(g_1-g_2)=0 \iff g_1-g_2=0$. Ini sama dengan mengatakan bahwa untuk
+	$f(g_1-g_2)=0 \iff g_1-g_2=0$. Ini setara dengan pernyataan bahwa untuk
 	setiap $g: T \to X$, berlaku $fg=0$ jika dan hanya jika $g$ terfaktorkan
 	sebagai $T \to 0 \to X$. Pernyataan terakhir ini tepat menyatakan bahwa
 	objek nol memenuhi sifat universal $\Ker(f)$.
@@ -614,8 +613,8 @@ $\Image(f)=0=\Coim(f)$.
 	$\Coker(f)=B/\{f(a):a \in A\}$. Langsung dari definisi, $\Image(f)$ adalah
 	citra $f$ dalam pengertian teori himpunan, sedangkan
 	$\Coim(f)=A/\Ker(f)$. Morfisme kanonik
-	$\Coim(f) \to \Image(f)$ dalam \eqref{eqn:strict-morphism} tidak lain
-	daripada isomorfisme kanonik dalam teori modul
+	$\Coim(f) \to \Image(f)$ dalam \eqref{eqn:strict-morphism} tepat
+	merupakan isomorfisme kanonik dalam teori modul
 	$A/\Ker(f) \rightiso \Image(f)$. Karena itu, semua morfisme dalam
 	$R\dcate{Mod}$ bersifat ketat.
 

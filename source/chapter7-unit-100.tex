@@ -1,0 +1,350 @@
+% Unit 100 terjemahan Bahasa Indonesia dari chapter7.tex baris 2141--2305.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter7.module-descent
+% Cakupan: Bagian 7.9 lengkap, ``Penerapan: Penurunan Modul'';
+% berhenti tepat sebelum Bagian 7.10 pada baris 2306.
+
+% segment-id: o014.li2.chapter7.module-descent.h001
+\section{Penerapan: Penurunan Modul}\label{sec:descent-modules}
+\hypertarget{o014.aljabr2.chapter7.module-descent}{ }
+% segment-id: o014.li2.chapter7.module-descent.p001
+Dalam geometri, untuk pasangan adjoin yang diberikan
+% segment-id: o014.li2.chapter7.module-descent.q001
+$\begin{tikzcd}
+	F: \mathcal{C} \arrow[shift left, r] & \mathcal{D}: G \arrow[shift left, l]
+\end{tikzcd}$,
+proses merekonstruksi informasi pada $\mathcal{C}$ dari komodul pada
+$\mathcal{D}$ di bawah koaksi komonad yang bersesuaian biasanya disebut
+\emph{penurunan}. Bagian ini menjelaskannya dalam teori modul.
+\index{desen@desen (descent)}
+
+% segment-id: o014.li2.chapter7.module-descent.p002
+Tinjau homomorfisme gelanggang komutatif $K\to L$. Funktor pelupa yang
+bersesuaian $\mathcal{F}_{L|K}:L\dcate{Mod}\to K\dcate{Mod}$ dapat
+ditempatkan dalam pasangan adjoin
+% segment-id: o014.li2.chapter7.module-descent.q002
+\[\begin{tikzcd}
+	L \dotimes{K} (\cdot): K\dcate{Mod} \arrow[shift left, r] & L\dcate{Mod} : \mathcal{F}_{L|K}, \arrow[shift left, l]
+\end{tikzcd}\]
+Kita akan menerapkan hasil pada paruh kedua \S\ref{sec:Morita} untuk meninjau
+komonad yang bersesuaian pada $L\dcate{Mod}$. Lebih tepatnya, ambil
+$\Bbbk=K$ dan terapkan ``perubahan gelanggang'' dari
+Contoh~\ref{eg:comonad-change-ring}. Selain perbedaan notasi, di sini kita
+memakai modul kiri, bukan modul kanan. Karena hanya gelanggang komutatif yang
+dipertimbangkan, hal ini tidak membawa perbedaan substantif.
+
+% segment-id: o014.li2.chapter7.module-descent.p003
+Berdasarkan deskripsi dalam Contoh~\ref{eg:comonad-change-ring}, komonad yang
+ditentukan pasangan adjoin tersebut pada $L\dcate{Mod}$ ditulis
+$(\mathbf{L},\delta,\epsilon)$ dalam bagian ini, dengan
+% segment-id: o014.li2.chapter7.module-descent.q003
+\[ \mathbf{L} = L \dotimes{K} \mathcal{F}_{L|K}(\cdot), \quad \delta: \mathbf{L} \to \mathbf{L}^2, \quad \epsilon: \mathbf{L} \to \identity. \]
+Selanjutnya, sesuai kebiasaan, funktor pelupa $\mathcal{F}_{L|K}$ akan
+dihilangkan dari berbagai rumus untuk menyederhanakan notasi.
+
+% segment-id: o014.li2.chapter7.module-descent.p004
+Komodul bagi komonad $\mathbf{L}$ adalah data $(M,a)$, dengan $M$ modul-$L$
+dan $a:M\to L\dotimes{K}M$ homomorfisme modul-$L$, yang disyaratkan membuat
+diagram berikut komutatif:
+% segment-id: o014.li2.chapter7.module-descent.q004
+\[\begin{tikzcd}
+	\ell \otimes 1 \otimes m \arrow[phantom, r, "\in" description] & L \dotimes{K} L \dotimes{K} M & L \dotimes{K} M \arrow[l, "{\mathbf{L}a = \identity_L \otimes a}"' inner sep=0.6em] \\
+	\ell \otimes m \arrow[phantom, r, "\in" description] \arrow[mapsto, u] & L \dotimes{K} M \arrow[u, "\delta_M"] & M \arrow[l, "a"] \arrow[u, "a"']
+\end{tikzcd} \quad \begin{tikzcd}
+	\ell m \arrow[phantom, d, "\in" description, sloped] & \ell \otimes m \arrow[phantom, d, "\in" description, sloped] \arrow[mapsto, l] \\
+	M & L \dotimes{K} M \arrow[l, "\epsilon_M"'] \\
+	& M. \arrow[lu, "\identity_M"] \arrow[u, "a"']
+\end{tikzcd}\]
+
+% segment-id: o014.li2.chapter7.module-descent.p005
+Semua komodul $(M,a)$ di bawah komonad $\mathbf{L}$ membentuk kategori
+$L\dcate{Mod}^{\mathbf{L}}$. Versi dual Lema~\ref{prop:T-comparison}
+memberikan faktorisasi
+% segment-id: o014.li2.chapter7.module-descent.q005
+\[ L \dotimes{K} (\cdot) = \left[ K\dcate{Mod} \xrightarrow{\mathbb{K}} L\dcate{Mod}^{\mathbf{L}} \xrightarrow{U^{\mathbf{L}}} L\dcate{Mod} \right] \; \text{sebagai suatu komposisi}. \]
+Funktor $U^{\mathbf{L}}$ adalah funktor pelupa $(M,a)\mapsto M$, sedangkan
+funktor $\mathbb{K}$ memetakan objek $N$ ke $(L\dotimes{K}N,a)$ dengan
+% segment-id: o014.li2.chapter7.module-descent.q006
+\begin{equation}\label{eqn:N-comonad-action}
+	\begin{aligned}
+		a: L \dotimes{K} N & \to L \dotimes{K} (L \dotimes{K} N) \quad \text{(homomorfisme modul-$L$)} \\
+		\ell \otimes x & \mapsto \ell \otimes 1 \otimes x.
+	\end{aligned}
+\end{equation}
+
+% segment-id: o014.li2.chapter7.module-descent.p006
+Pertanyaan utamanya ialah apakah pasangan adjoin tersebut komonadik; dengan
+kata lain, apakah $\mathbb{K}$ merupakan ekuivalensi?
+
+% segment-id: o014.li2.chapter7.module-descent.d001
+\begin{definition}
+	\index{datar setia@datar setia (faithfully flat)}
+	Untuk homomorfisme gelanggang komutatif $K\to L$, jika
+	$L\dotimes{K}(\mathord\cdot):K\dcate{Mod}\to L\dcate{Mod}$ merupakan
+	funktor eksak setia, maka $L$, sebagai aljabar-$K$ komutatif, disebut
+	\emph{datar setia}.
+\end{definition}
+
+% segment-id: o014.li2.chapter7.module-descent.th001
+\begin{theorem}[Penurunan datar]\label{prop:flat-descent}
+	\index{desen!datar@datar (flat)}
+	Misalkan $L$ aljabar-$K$ komutatif yang datar setia. Maka pasangan adjoin
+	$\left(L\dotimes{K}(\mathord\cdot),\mathcal{F}_{L|K}\right)$ bersifat
+	komonadik. Dalam hal ini, suatu kuasi-invers $\mathbb{L}$ dari
+	$K\dcate{Mod}\xrightarrow{\mathbb{K}}L\dcate{Mod}^{\mathbf{L}}$ dapat
+	dideskripsikan melalui diagram penyama dalam $K\dcate{Mod}$:
+	% segment-id: o014.li2.chapter7.module-descent.q007
+	\[\begin{tikzcd}[row sep=tiny]
+		\mathbb{L}(M, a) \arrow[r] & M \arrow[shift left, r, "a"] \arrow[shift right, r, "{m \mapsto 1 \otimes m}"'] & L \dotimes{K} M ,
+	\end{tikzcd} \quad (M, a) \in \Obj\left(L\dcate{Mod}^{\mathbf{L}}\right). \]
+\end{theorem}
+% segment-id: o014.li2.chapter7.module-descent.pf001
+\begin{proof}
+	Proposisi~\ref{prop:Morita-descent} memastikan sifat komonadik, sedangkan
+	versi dual Teorema~\ref{prop:Beck} telah memuat deskripsi funktor kuasi-
+	inversnya.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.module-descent.r001
+\begin{remark}
+	Perlu ditekankan bahwa pada tingkat kategori turunan
+	$\cate{D}(K\dcate{Mod})$ dan $\cate{D}(L\dcate{Mod})$, meskipun pasangan
+	adjoin yang dibahas juga mempunyai versi turunan seperti dalam
+	Contoh~\ref{eg:change-of-ring-adjunction} dan
+	Contoh~\ref{eg:change-of-rings}, tidak ada teorema penurunan yang
+	bersesuaian.
+\end{remark}
+
+% segment-id: o014.li2.chapter7.module-descent.p007
+Bukti penurunan datar ternyata sangat sederhana. Namun, dalam praktik,
+komonad atau data penurunan perlu dideskripsikan dalam bentuk yang mudah
+digunakan; hal inilah yang menjadi tema \S\ref{sec:descent-Galois}. Pada sisa
+bagian ini, definisi $L\dcate{Mod}^{\mathbf{L}}$ akan disusun ulang dalam
+bentuk lain agar mudah dibandingkan dengan pustaka lain. Pada dasarnya,
+ini adalah penulisan konkret ulang dari
+Proposisi~\ref{prop:Morita-comonad} (dalam versi modul kiri, dengan
+$P=L=P^\vee$), meskipun prosesnya agak berliku.
+
+% segment-id: o014.li2.chapter7.module-descent.p008
+Untuk $i=1,2$, tuliskan $\iota_i:L\to L\dotimes{K}L$ bagi homomorfisme yang
+memasukkan unsur ke slot tensor ke-$i$. Untuk sembarang modul-$L$ $M$,
+terdapat isomorfisme kanonik modul-$L$
+% segment-id: o014.li2.chapter7.module-descent.q008
+\begin{align*}
+	L \dotimes{K} M & \rightiso (L \dotimes{K} L) \dotimes{L, \iota_2} M \\
+	\ell \otimes m & \mapsto \ell \otimes 1 \otimes m,
+\end{align*}
+dengan ruas kanan menjadi modul-$L$ melalui $\iota_1$. Menurut adjungsi
+standar dalam teori modul, memberikan homomorfisme modul-$L$
+$a:M\to L\dotimes{K}M$ sama artinya dengan memberikan homomorfisme modul-
+$L\dotimes{K}L$
+% segment-id: o014.li2.chapter7.module-descent.q009
+\begin{equation}\label{eqn:flat-descent-map-aux}\begin{aligned}
+		\tilde{a}: (L \dotimes{K} L) \dotimes{L, \iota_1} M & \to (L \dotimes{K} L) \dotimes{L, \iota_2} M \\
+		1 \otimes 1 \otimes m & \mapsto \sum_{i=1}^n \ell_i \otimes 1 \otimes m_i ;
+\end{aligned}\end{equation}
+di sini ditulis $a(m)=\sum_{i=1}^n\ell_i\otimes m_i$. Karena
+$\iota_1|_K=\iota_2|_K$, bila $M$ berasal dari modul-$K$ $N$, substitusi
+cermat dari \eqref{eqn:N-comonad-action} menunjukkan bahwa $\tilde a$
+menjadi
+$\identity:L\dotimes{K}L\dotimes{K}N\to L\dotimes{K}L\dotimes{K}N$.
+
+% segment-id: o014.li2.chapter7.module-descent.p009
+Selanjutnya, untuk menyingkat notasi, tuliskan
+$L^{\otimes n}:=L\dotimes{K}\cdots\dotimes{K}L$ (sebanyak $n$ faktor).
+Lupakan untuk sementara $L\dcate{Mod}^{\mathbf{L}}$ dan tinjau sembarang
+$\tilde a:L^{\otimes2}\dotimes{L,\iota_1}M\to
+L^{\otimes2}\dotimes{L,\iota_2}M$. Menurut sifat universal hasil kali tensor
+\cite[Proposisi 7.3.4]{Li1}, memberikan sepasang homomorfisme aljabar-$K$
+komutatif $f,g:L\to E$ sama artinya dengan memberikan homomorfisme
+$f\otimes g:L\dotimes{K}L\to E$. Karena itu, dari $\tilde a$ dapat
+didefinisikan homomorfisme modul-$E$
+% segment-id: o014.li2.chapter7.module-descent.q010
+\begin{equation*}
+	\tilde{a}_{gf} := E \dotimes{f \otimes g} \tilde{a}: E \dotimes{L, f} M \to E \dotimes{L, g} M.
+\end{equation*}
+
+% segment-id: o014.li2.chapter7.module-descent.p010
+Ketika $(E,f,g)$ berubah, kita ingin menganalisis kompatibilitas antara
+homomorfisme tersebut. Rumus di atas menunjukkan bahwa
+$(E,f,g):=(L\dotimes{K}L,\iota_1,\iota_2)$ bersifat ``universal'' untuk
+persoalan ini dan bersesuaian dengan $\tilde a$, sedangkan $(E,f,g)$ umum
+diperoleh dengan menerapkan $E\dotimes{f\otimes g}(\mathord\cdot)$ padanya.
+Untuk menguraikan kasus ``universal'', bagi $1\leq i\neq j\leq3$ tuliskan:
+% segment-id: o014.li2.chapter7.module-descent.q011
+\begin{center}\begin{tabular}{|c|c|} \hline
+		$\iota^3_{ij}: L^{\otimes 2} \to L^{\otimes 3}$ & penyisipan ke slot tensor $(i,j)$ \\
+		$\iota^3_i: L \to L^{\otimes 3}$ & penyisipan ke slot tensor ke-$i$ \\ \hline
+\end{tabular}\end{center}
+
+% segment-id: o014.li2.chapter7.module-descent.p011
+Dari \eqref{eqn:flat-descent-map-aux}, definisikan homomorfisme modul-
+$L^{\otimes3}$
+% segment-id: o014.li2.chapter7.module-descent.q012
+\[ \tilde{a}_{ji} := L^{\otimes 3} \dotimes{L, \iota^3_{ij}}\tilde{a} : \; L^{\otimes 3} \dotimes{L, \iota^3_i} M \to L^{\otimes 3} \dotimes{L, \iota^3_j} M. \]
+Di sini digunakan $\iota^3_{ij}\iota_1=\iota^3_i$ dan
+$\iota^3_{ij}\iota_2=\iota^3_j$. Bila $M$ berasal dari modul-$K$, kita dapat
+mengidentifikasi
+% segment-id: o014.li2.chapter7.module-descent.q013
+\[ \tilde{a} \;\text{dengan}\; \identity_{L^{\otimes 2} \dotimes{K} N}, \quad \tilde{a}_{ji} \;\text{dengan}\; \identity_{L^{\otimes 3} \dotimes{K} N}. \]
+Dalam keadaan ini, jelas bahwa
+$\tilde a_{31}=\tilde a_{32}\tilde a_{21}$. Inilah syarat kompatibilitas yang
+dicari. Kegunaannya yang penting ialah
+% segment-id: o014.li2.chapter7.module-descent.q014
+\begin{equation}\label{eqn:cocycle-condition-descent}
+	\tilde{a}_{31} = \tilde{a}_{32} \tilde{a}_{21} \implies
+	\begin{array}{l}
+		\forall f, g, h: L \xrightarrow{K\text{-aljabar}} E, \\
+		\tilde{a}_{hf} = \tilde{a}_{hg} \tilde{a}_{gf};
+	\end{array}
+\end{equation}
+dengan ruas kiri merupakan ``versi universal'' dari ruas kanan.
+
+% segment-id: o014.li2.chapter7.module-descent.d002
+\begin{definition}[Data penurunan]
+	\index{datum desen@datum desen (descent datum)}
+	Definisikan $\mathrm{Desc}_{K\to L}$ sebagai kategori berikut. Objeknya
+	adalah data $(M,\tilde a)$, dengan $M$ modul-$L$ dan
+	$\tilde a:L^{\otimes2}\dotimes{L,\iota_1}M\to
+	L^{\otimes2}\dotimes{L,\iota_2}M$ memenuhi
+	\begin{description}
+		\item[Syarat isomorfisme] $\tilde a$ adalah isomorfisme modul-
+		$L^{\otimes2}$;
+		\item[Syarat kosikel] $\tilde a_{31}=\tilde a_{32}\tilde a_{21}$.
+	\end{description}
+
+	Morfisme dari $(M,\tilde a)$ ke $(M',\tilde a')$ adalah homomorfisme
+	modul-$L$ $f:M\to M'$ yang memenuhi
+	$(\identity^{\otimes2}\otimes f)\tilde a=
+	\tilde a'(\identity^{\otimes2}\otimes f)$. Data $(M,\tilde a)$ ini
+	disebut \emph{data penurunan}.
+\end{definition}
+
+% segment-id: o014.li2.chapter7.module-descent.p012
+Pembahasan sebelum \eqref{eqn:cocycle-condition-descent} menunjukkan bahwa
+$L\dotimes{K}(\mathord\cdot)$ memberikan funktor
+$K\dcate{Mod}\to\mathrm{Desc}_{K\to L}$. Sekarang kita hubungkan data
+penurunan dengan $L\dcate{Mod}^{\mathbf{L}}$.
+
+% segment-id: o014.li2.chapter7.module-descent.le001
+\begin{lemma}\label{prop:descent-data-vs-comodule}
+	Terdapat isomorfisme kategori dari $L\dcate{Mod}^{\mathbf{L}}$ ke
+	$\mathrm{Desc}_{K\to L}$ yang pada objek adalah
+	$(M,a)\leftrightarrow(M,\tilde a)$ dan pada morfisme didefinisikan dengan
+	cara baku.
+
+	Selain itu, syarat isomorfisme dalam definisi
+	$\mathrm{Desc}_{K\to L}$ dapat diganti dengan syarat berikut: definisikan
+	homomorfisme $m:L^{\otimes2}\to L$ melalui
+	$m(\ell\otimes\ell')=\ell\ell'$. Endomorfisme $M\to M$ yang diberikan oleh
+	$L\dotimes{L^{\otimes2},m}\tilde a$ adalah $\identity_M$.
+\end{lemma}
+% segment-id: o014.li2.chapter7.module-descent.pf002
+\begin{proof}
+	Diketahui bahwa memberikan $\tilde a$ sama artinya dengan memberikan
+	$a:M\to L\dotimes{K}M$. Persoalannya ialah mencocokkan syarat pada data
+	penurunan $\tilde a$ dengan syarat pada $a$ agar $(M,a)$ menjadi komodul.
+	Di sinilah bagian kedua pernyataan akan digunakan.
+
+	Syarat komodul adalah hukum koasosiatif dan hukum kounit. Untuk hukum
+	pertama, ekuivalensi antara
+	$\tilde a_{31}=\tilde a_{32}\tilde a_{21}$ dan hukum koasosiatif merupakan
+	pemeriksaan mekanis yang diserahkan kepada pembaca. Untuk hukum kedua,
+	tuliskan $\varphi$ bagi komposisi
+	$M\xrightarrow{a}L\dotimes{K}M\xrightarrow{\epsilon_M}M$. Hukum kounit
+	sama artinya dengan $\varphi=\identity$. Dengan mengingat bahwa
+	$\epsilon_M(\ell\otimes m)=\ell m$, pemeriksaan sederhana serupa memberikan
+	% segment-id: o014.li2.chapter7.module-descent.q015
+	\[ \varphi = L \dotimes{L^{\otimes 2}, m} \tilde{a}. \]
+	Selanjutnya, kita tunjukkan bahwa dengan asumsi
+	$\tilde a_{31}=\tilde a_{32}\tilde a_{21}$, $\tilde a$ adalah isomorfisme
+	jika dan hanya jika $\varphi=\identity_M$. Hal ini menyelesaikan seluruh
+	bukti.
+
+	Misalkan $\tilde a$ isomorfisme. Maka $\varphi$ juga isomorfisme. Dalam
+	\eqref{eqn:cocycle-condition-descent}, ambil $E=L$ dan
+	$f=g=h=\identity_L$. Mudah diperiksa bahwa ruas kanannya menjadi
+	$\varphi=\varphi^2$, sehingga $\varphi=\identity_M$.
+
+Sebaliknya, misalkan $\varphi=\identity_M$. Untuk sembarang homomorfisme
+aljabar-$K$ $f:L\to E$, lakukan perubahan skalar pada $\tilde a$ sepanjang kedua
+	lintasan diagram komutatif
+	% segment-id: o014.li2.chapter7.module-descent.q016
+	\[\begin{tikzcd}
+		L^{\otimes 2} \arrow[rd, "{f \otimes f}"'] \arrow[r, "m"] & L \arrow[d, "f"] \\
+		& E.
+	\end{tikzcd}\]
+	Terlihat bahwa $\tilde a_{ff}=\identity$. Bersama
+	\eqref{eqn:cocycle-condition-descent}, ini menunjukkan bahwa untuk setiap
+	$(E,f,g)$ berlaku $\tilde a_{fg}^{-1}=\tilde a_{gf}$. Khususnya, ``versi
+	universal'' $\tilde a$ juga merupakan isomorfisme. Selesailah bukti.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.module-descent.th002
+\begin{theorem}[Bentuk kedua penurunan datar]\label{prop:flat-descent-2}
+	Misalkan $L$ aljabar-$K$ komutatif yang datar setia. Maka
+	% segment-id: o014.li2.chapter7.module-descent.q017
+	\[ L \dotimes{K} (\cdot): K\dcate{Mod} \to \mathrm{Desc}_{K \to L} \]
+	merupakan ekuivalensi kategori. Salah satu kuasi-inversnya,
+	$\tilde{\mathbb{L}}$, dapat diambil sebagai penyama
+	% segment-id: o014.li2.chapter7.module-descent.q018
+	\[\begin{tikzcd}
+		0 \arrow[r] & \tilde{\mathbb{L}}(M, \tilde{a}) \arrow[r] & M \arrow[shift left, r, "a"] \arrow[shift right, r, "{m \mapsto 1 \otimes m}"'] & L \dotimes{K} M,
+	\end{tikzcd}\]
+	dengan $a$ pemetaan yang bersesuaian dengan $\tilde a$ menurut
+	\eqref{eqn:flat-descent-map-aux}.
+\end{theorem}
+% segment-id: o014.li2.chapter7.module-descent.pf003
+\begin{proof}
+	Berdasarkan Lema~\ref{prop:descent-data-vs-comodule}, pernyataan ini hanya
+	merupakan perumusan ulang Teorema~\ref{prop:flat-descent} tentang penurunan
+	datar.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.module-descent.p013
+Teorema~\ref{prop:flat-descent-2} adalah rumusan penurunan datar yang lazim
+dalam geometri aljabar. Di sana, homomorfisme datar setia $K\to L$
+bersesuaian dengan suatu peliputan objek geometri dalam arti tertentu.
+
+% segment-id: o014.li2.chapter7.module-descent.p014
+Data $\tilde a$ atau $a$ yang bersesuaian kadang-kadang juga dinyatakan
+sebagai homomorfisme modul-$L\dotimes{K}L$ kiri, yaitu homomorfisme
+bimodul-$(L,L)$
+% segment-id: o014.li2.chapter7.module-descent.q019
+\begin{align*}
+	\overline{a}: M \dotimes{K} L & \to L \dotimes{K} M \\
+	m \otimes \ell & \mapsto \sum_{i=1}^n \ell_i \otimes \ell m_i,
+\end{align*}
+dengan tetap mengandaikan
+$a(m)=\sum_{i=1}^n\ell_i\otimes m_i$. Bentuk ini diperoleh dengan
+mengontraksikan hasil kali tensor dalam \eqref{eqn:flat-descent-map-aux} secara
+tepat dan memberikan bentuk yang lebih ringkas. Versi terkontraksi untuk
+$\tilde a_{ji}$ diperoleh dengan cara serupa.
+
+% segment-id: o014.li2.chapter7.module-descent.r002
+\begin{remark}[Penurunan datar bagi aljabar dan modul]\label{rem:flat-descent-alg}
+	Kita dapat membahas lebih lanjut bagaimana aljabar-$L$, atau modul di atas
+	aljabar tersebut, diturunkan ke $K$. Secara konkret, misalkan
+	$(M,a),(M',a')\in\Obj(L\dcate{Mod}^{\mathbf{L}})$ adalah citra dari
+	$N,N'\in\Obj(K\dcate{Mod})$. Ingat bahwa
+	$L\dotimes{K}(\mathord\cdot):K\dcate{Mod}\to L\dcate{Mod}$ adalah funktor
+	monoidal \cite[Proposisi 6.6.10]{Li1}; yakni terdapat isomorfisme kanonik
+	seperti
+	% segment-id: o014.li2.chapter7.module-descent.q020
+	\begin{equation}\label{eqn:change-of-ring-monoidal}\begin{aligned}
+			(L \dotimes{K} N_1) \dotimes{L} (L \dotimes{K} N_2) & \rightiso L \dotimes{K} (N_1 \dotimes{K} N_2) \\
+			(\ell_1 \otimes x) \otimes (\ell_2 \otimes y) & \mapsto \ell_1 \ell_2 \otimes (x \otimes y).
+	\end{aligned}\end{equation}
+	Gunakan ini untuk memberikan $M\dotimes{L}M'$ struktur komodul-
+	$\mathbf{L}$ yang berasal dari $N\dotimes{K}N'$. Sekarang ambil $N'=N$.
+	Memberikan struktur aljabar-$K$ pada $N$ sama artinya dengan memberikan
+	struktur aljabar-$L$ pada $M$ sedemikian sehingga perkalian
+	$M\dotimes{L}M\to M$ dan satuan $L\to M$ keduanya merupakan morfisme dalam
+	$L\dcate{Mod}^{\mathbf{L}}$; semua sifat seperti asosiativitas yang
+	diperlukan bagi aljabar-$K$ berasal dari $M$. Penurunan modul-$M$ ke
+	modul-$N$ harus dipandang dengan cara yang sama. Untuk tujuan ini, data
+	penurunan berbentuk \eqref{eqn:flat-descent-map-aux} mungkin lebih praktis
+	daripada komodul bagi $\mathbf{L}$, karena funktor yang terlibat semuanya
+	monoidal pada $M$, sedangkan $\mathbf{L}$ sendiri bukan funktor monoidal.
+\end{remark}

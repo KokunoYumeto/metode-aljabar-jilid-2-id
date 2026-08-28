@@ -1,0 +1,397 @@
+% Unit 083 terjemahan Bahasa Indonesia dari chapter6.tex baris 2124--2312.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.tate-cohomology
+% Cakupan: Bagian 6.11 lengkap tentang kohomologi Tate; berhenti tepat
+% sebelum Bagian 6.12 tentang kohomologi grup profinit pada baris 2313.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.h001
+\section{Kohomologi Tate}\label{sec:Tate-coh}
+\hypertarget{o014.aljabr2.chapter6.tate-cohomology}{ }
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p001
+Untuk grup hingga $G$ dan gelanggang komutatif $\Bbbk$,
+Definisi--Proposisi~\ref{def:group-norm} memperkenalkan elemen
+$\nu = \sum_{g \in G} g$ dari $\Bbbk[G]^G$. Elemen ini terletak di pusat
+$\Bbbk[G]$. Karena itu, untuk setiap modul-$G$ $M$, pemetaan perkalian
+$x \mapsto \nu x$ memberikan homomorfisme modul-$G$ $M \to M$, yang tetap
+ditulis $\nu$.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p002
+Dari identitas $\nu g = \nu = g \nu$, diperoleh
+$\nu M \subset M^G$ dan $\mathfrak{I}M \subset M^{\nu = 0}$, dengan
+$\mathfrak{I}$ ideal augmentasi dari $\Bbbk[G]$ dan $M^{\nu=0}$ sebagaimana
+dalam Konvensi~\ref{con:G-mod-equalizer}. Dengan demikian, $\nu$ menginduksi
+homomorfisme modul-$\Bbbk$
+% segment-id: o014.li2.chapter6.tate-cohomology.e001
+\begin{equation}\label{eqn:nu-coinv-inv}
+	\nu: M_G \to M^G .
+\end{equation}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p003
+Karena homologi (atau kohomologi) grup dapat dipandang sebagai versi turunan
+dari $M_G$ (atau $M^G$), homomorfisme kanonik $M_G \to M^G$ mengisyaratkan
+adanya jembatan antara homologi dan kohomologi. Misalnya, mengapa tidak
+meninjau kokernelnya dalam suatu arti turunan\footnote{Dari sudut pandang
+topologis: dalam arti homotopi.}? Untuk sementara kita kesampingkan gagasan
+ini dan mendefinisikan kohomologi terkait dengan cara klasik.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.d001
+\begin{definition}[Kohomologi Tate]\label{def:TaHm}
+% segment-id: o014.li2.chapter6.tate-cohomology.x001
+	\index{kohomologi Tate (Tate cohomology)}
+% segment-id: o014.li2.chapter6.tate-cohomology.x002
+	\index[sym1]{HnGMTate@$\TaHm^n(G, M)$}
+	Misalkan $G$ grup hingga dan $M$ modul-$G$. Untuk setiap $n \in \Z$,
+	definisikan
+% segment-id: o014.li2.chapter6.tate-cohomology.g001
+	\begin{align*}
+		\TaHm^n(G, M) & := \Hm^n(G, M) \quad (n \geq 1), \\
+		\TaHm^0(G, M) & := M^G / \nu M \\
+		& = \Coker\left[ \nu: M_G \to M^G \right] \twoheadleftarrow \Hm^0(G, M), \\
+		\TaHm^{-1}(G, M) & := M^{\nu=0} / \mathfrak{I} M \\
+		& = \Ker\left[ \nu: M_G \to M^G \right] \hookrightarrow \Hm_0(G, M), \\
+		\TaHm^{-n}(G, M) & := \Hm_{n-1}(G, M) \quad (n \geq 2).
+	\end{align*}
+	Semua modul ini funktorial terhadap $M$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p004
+Kohomologi Tate sering digunakan dalam teori Galois dan teori bilangan
+aljabar; salah satu contohnya ialah $\TaHm^{-1}$ yang muncul dalam
+\cite[Definisi 9.6.3]{Li1}. Gagasan ini berasal dari J.\ Tate.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p005
+Teori kohomologi yang berguna biasanya memiliki barisan eksak panjang, dan
+kohomologi Tate pun demikian.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.t001
+\begin{theorem}\label{prop:Tate-coh-long}
+	Misalkan $0 \to M' \to M \to M'' \to 0$ barisan eksak pendek modul-$G$.
+	Maka terdapat barisan eksak panjang
+% segment-id: o014.li2.chapter6.tate-cohomology.q001
+	\[ \cdots \to \TaHm^n(G, M) \to \TaHm^n(G, M'') \xrightarrow{\delta^n} \TaHm^{n+1}(G, M') \to \TaHm^{n+1}(G, M) \to \cdots \]
+	yang membentang tak terhingga ke kedua arah. Homomorfisme penghubung
+	$\delta^n$ bersifat funktorial terhadap morfisme antarbarisan eksak
+	pendek, yaitu terhadap diagram komutatif dengan baris-baris eksak
+% segment-id: o014.li2.chapter6.tate-cohomology.g002
+	\[\begin{tikzcd}
+		0 \arrow[r] & M' \arrow[d] \arrow[r] & M \arrow[d] \arrow[r] & M'' \arrow[d] \arrow[r] & 0 \\
+		0 \arrow[r] & L' \arrow[r] & L \arrow[r] & L'' \arrow[r] & 0
+	\end{tikzcd}\]
+\end{theorem}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.pf001
+\begin{proof}
+	Sambungkan barisan eksak panjang homologi dan kohomologi sebagai berikut:
+% segment-id: o014.li2.chapter6.tate-cohomology.g003
+	\[\begin{tikzcd}[column sep=small, every cell/.append style={font = \footnotesize}]
+		\cdots \arrow[r] & \Hm_1(G, M'') \arrow[r] \arrow[d] & \Hm_0(G, M') \arrow[r] \arrow[d, "{N_1}"] & \Hm_0(G, M) \arrow[r] \arrow[d, "N_2"] & \Hm_0(G, M'') \arrow[r] \arrow[d, "N_3"] & 0 \arrow[d] & \\
+		& 0 \arrow[r] & \Hm^0(G, M') \arrow[r] & \Hm^0(G, M) \arrow[r] & \Hm^0(G, M'') \arrow[r] & \Hm^1(G, M') \arrow[r] & \cdots
+	\end{tikzcd}\]
+	Di sini, $N_1,N_2,N_3$ semuanya merupakan homomorfisme yang sebelumnya
+	ditulis $\nu$. Diagram di atas komutatif dan baris-barisnya eksak; satu-satunya
+	hal yang perlu dijelaskan ialah komutativitas kedua persegi yang menyentuh
+	$0$. Hal ini dapat diperiksa secara konkret dengan menggunakan kompleks
+	standar dan kompleks rantai, serta mengingat kembali morfisme penghubung
+	$\Hm_1 \to \Hm_0$ dan $\Hm^0 \to \Hm^1$; verifikasi ini diserahkan sebagai
+	latihan.
+
+	Lema Ular kemudian memberikan barisan eksak
+% segment-id: o014.li2.chapter6.tate-cohomology.g004
+	\[\begin{tikzcd}[row sep=small, column sep=small, every cell/.append style={font = \footnotesize}]
+		\Ker(N_1) \arrow[r] & \Ker(N_2) \arrow[r] & \Ker(N_3) \arrow[r, "{\delta^{-1}}"] & \Coker(N_1) \arrow[r] & \Coker(N_2) \arrow[r] & \Coker(N_3) \\
+		\TaHm^{-1}(G, M') \arrow[equal, u] & \TaHm^{-1}(G, M) \arrow[equal, u] & \TaHm^{-1}(G, M'') \arrow[equal, u] & \TaHm^0(G, M') \arrow[equal, u] & \TaHm^0(G, M) \arrow[equal, u] & \TaHm^0(G, M'') \arrow[equal, u]
+	\end{tikzcd}\]
+	Inilah satu bagian dari barisan eksak yang dicari, sedangkan funktorialitas
+	homomorfisme penghubung $\delta^{-1}$ sudah dijamin oleh Lema Ular.
+	Bagian-bagian lainnya tereduksi ke barisan eksak panjang homologi grup dan
+	kohomologi grup, serta diagram komutatif dengan baris-baris eksak yang
+	dibuktikan pada langkah pertama.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p006
+Selanjutnya kita nyatakan versi Lema Shapiro (Teorema~\ref{prop:Shapiro}) untuk
+kohomologi Tate. Ingat bahwa jika $G$ hingga, maka bagi setiap subgrup $H$ kedua
+funktor induksi
+$\Ind^G_H,\iInd^G_H:H\dcate{Mod}\to G\dcate{Mod}$ berimpit; lihat
+Korolari~\ref{prop:iInd-Ind}. Mulai sekarang, keduanya ditulis $\Ind^G_H$.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.pr001
+\begin{proposition}
+% segment-id: o014.li2.chapter6.tate-cohomology.x003
+	\index{Lema Shapiro}
+	Untuk grup hingga $G$, subgrup $H$, dan modul-$H$ $N$, terdapat
+	isomorfisme kanonik
+% segment-id: o014.li2.chapter6.tate-cohomology.q002
+	\[ \TaHm^n(H, N) \simeq \TaHm^n\left( G, \Ind^G_H(N)\right), \quad n \in \Z. \]
+\end{proposition}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.pf002
+\begin{proof}
+	Untuk $n \geq 1$ atau $n \leq -2$, pernyataan ini tereduksi ke
+	Teorema~\ref{prop:Shapiro}. Selanjutnya, tangani kasus $n=-1,0$.
+	Realisasikan $\Ind^G_H(N)$ sebagai ruang pemetaan melalui
+	Lema~\ref{prop:Ind-as-mappings}. Tuliskan $\nu^G$ (atau $\nu^H$) untuk
+	$\nu$ yang bersesuaian dengan $G$ (atau $H$). Masalahnya tereduksi ke
+	pembuktian bahwa diagram berikut komutatif:
+% segment-id: o014.li2.chapter6.tate-cohomology.g005
+	\[\begin{tikzcd}
+		\Ind^G_H(N)_G \arrow[r, "{\nu^G}"] & \Ind^G_H(N)^G \arrow[d, "\sim" sloped] \\
+		N_H \arrow[u, "\sim" sloped] \arrow[r, "{\nu^H}"'] & N^H
+	\end{tikzcd}\]
+	Isomorfisme-isomorfisme vertikal berasal dari
+	Korolari~\ref{prop:Ind-invariant}. Misalkan $y\in N$, dan tuliskan $[y]$
+	untuk citranya dalam $N_H$. Citra $[y]$ dalam $\Ind^G_H(N)_G$ ialah $[f]$,
+	dengan $f\in\Ind^G_H(N)$ memenuhi $f(1_G)=y$ dan
+	$\Supp(f)\subset H$. Dengan demikian, citra
+	$\nu^Gf:x\mapsto\sum_{g\in G}f(xg)$ dalam $N^H$ ialah
+	$(\nu^Gf)(1_G)=\sum_gf(g)$. Akan tetapi, ini juga sama dengan
+	$\sum_{h\in H}f(h)=\sum_hhf(1_G)=\nu^Hy$. Selesai.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p007
+Argumen tersebut dapat diperkuat untuk menunjukkan bahwa isomorfisme kanonik
+ini kompatibel dengan barisan eksak panjang pada kedua ruas.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.c001
+\begin{corollary}\label{prop:Tate-ind-vanishing}
+	Misalkan $G$ grup hingga. Untuk setiap modul-$\Bbbk$ $N$, berlaku
+% segment-id: o014.li2.chapter6.tate-cohomology.q003
+	\[ \TaHm^n\left(G, \Ind^G_{\{1\}}(N)\right) = 0, \quad n \in \Z. \]
+\end{corollary}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.pf003
+\begin{proof}
+	Jelas bahwa $\TaHm^n(\{1\},N)=0$ untuk setiap $n\in\Z$.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.ex001
+\begin{example}\label{eg:additive-90-finite}
+% segment-id: o014.li2.chapter6.tate-cohomology.x004
+	\index{Teorema Hilbert 90}
+	Misalkan $E|F$ perluasan Galois hingga dari medan-medan, dengan grup Galois
+	$\Gal(E|F)$ beraksi pada $E$. Ambil gelanggang koefisien
+	$\Bbbk=F$ atau $\Z$. Teorema Basis Normal
+	\cite[Teorema 9.5.6]{Li1} setara dengan pernyataan
+	$E\simeq\Ind^{\Gal(E|F)}_{\{1\}}(F)$, sehingga
+	Korolari~\ref{prop:Tate-ind-vanishing} mengakibatkan
+% segment-id: o014.li2.chapter6.tate-cohomology.q004
+	\[ \TaHm^n(\Gal(E|F), E) = 0, \quad n \in \Z; \]
+	oleh sebab itu,
+	$n\geq1\implies\Hm^n(\Gal(E|F),E)=0$. Jika $E|F$ merupakan perluasan
+	siklik dan $n=-1$, hal ini memberikan bukti lain untuk versi aditif
+	Teorema Hilbert 90 yang disebutkan dalam
+	\cite[Teorema 9.6.10]{Li1}. Untuk versi multiplikatif, lihat
+	Contoh~\ref{eg:multiplicative-90-finite}.
+\end{example}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p008
+Untuk $H\subset G$ umum dan modul-$G$ $M$, adjoin kiri dan kanan dari restriksi
+memberikan morfisme kanonik
+% segment-id: o014.li2.chapter6.tate-cohomology.q005
+\[ \epsilon_M: \iInd^G_H(\Res^G_H(M)) \to M, \quad \eta_M: M \to \Ind^G_H(\Res^G_H(M)). \]
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p009
+Berdasarkan deskripsi konkret pasangan adjoin
+(Proposisi~\ref{prop:pullback-two-adjoint}),
+$\epsilon_M(g\otimes x)=gx$, sedangkan $\eta_M(x)=[g\mapsto gx]$.
+Karena itu, $\epsilon_M$ surjektif dan $\eta_M$ injektif. Kembali ke kasus grup
+hingga, diperoleh
+$\iInd^G_{\{1\}}=\Ind^G_{\{1\}}$. Dengan menggunakan $\epsilon_M$ dan
+$\eta_M$, sifat lenyap dalam Korolari~\ref{prop:Tate-ind-vanishing}
+menunjukkan bahwa setiap $\TaHm^n(G,\cdot)$ dapat dihapus sekaligus dapat
+dihapus secara dual (Definisi~\ref{def:erasable}). Oleh karena itu, teknik
+pergeseran dimensi dalam Proposisi~\ref{prop:dimension-shifting} mempunyai
+rumusan sederhana berikut.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.c002
+\begin{corollary}[Pergeseran dimensi]\label{prop:Tate-dim-shift}
+	Untuk setiap modul-$G$ $M$, seperti biasa tuliskan
+	$M$ sebagai singkatan dari $\Res^G_{\{1\}}M$, dan tinjau barisan-barisan
+	eksak pendek
+% segment-id: o014.li2.chapter6.tate-cohomology.g006
+	\begin{gather*}
+		0 \to M' \to \Ind^G_{\{1\}}(M) \xrightarrow{\epsilon_M} M \to 0, \\
+		0 \to M \xrightarrow{\eta_M} \Ind^G_{\{1\}}(M) \to M'' \to 0.
+	\end{gather*}
+	Homomorfisme penghubung yang bersesuaian dalam barisan eksak panjang
+	memberikan isomorfisme kanonik
+% segment-id: o014.li2.chapter6.tate-cohomology.q006
+	\[ \TaHm^{n-1}(G, M'') \rightiso \TaHm^n(G, M) \rightiso \TaHm^{n+1}(G, M'), \quad n \in \Z. \]
+\end{corollary}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.pf004
+\begin{proof}
+	Gabungkan barisan eksak panjang
+	(Teorema~\ref{prop:Tate-coh-long}) dengan sifat lenyap dalam
+	Korolari~\ref{prop:Tate-ind-vanishing}.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p010
+Banyak sifat kohomologi Tate dapat direduksi melalui pergeseran dimensi ke
+kasus $n=0$.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p011
+Kembali ke definisi. Pilih sembarang resolusi projektif $P\to M$ dan resolusi
+injektif $M\to I$ dari modul-$G$ $M$, keduanya dipandang sebagai kompleks, lalu
+tinjau morfisme kompleks $P_G\to I^G$, yang dapat ditampilkan sebagai diagram
+% segment-id: o014.li2.chapter6.tate-cohomology.g007
+\[\begin{tikzcd}
+	\cdots \arrow[r] & 0 \arrow[r] & 0 \arrow[r] & I^{0, G} \arrow[r] & I^{1, G} \arrow[r] & I^{2, G} \arrow[r] & \cdots \\
+	\cdots \arrow[r] & P_{2, G} \arrow[r] \arrow[u] & P_{1, G} \arrow[r] \arrow[u] & P_{0, G} \arrow[u, "\Omega"] \arrow[r] & 0 \arrow[r] \arrow[u] & 0 \arrow[r] \arrow[u] & \cdots
+\end{tikzcd}\]
+Di sini, $\Omega$ merupakan komposisi
+$P_{0,G}\twoheadrightarrow M_G\xrightarrow{\nu}M^G\hookrightarrow I^{0,G}$;
+komutativitasnya jelas. Ambil kerucut pemetaan
+$\Cone\left[P_G\to I^G\right]$, atau dengan kata lain kompleks total dari
+diagram di atas (dengan $P_G$ ditempatkan pada koordinat vertikal $-1$).
+Pembaca diminta memverifikasi bahwa
+% segment-id: o014.li2.chapter6.tate-cohomology.e002
+\begin{equation}\label{eqn:Tate-cone-1}
+	\Hm^n\left( \Cone\left[P_G \to I^G\right] \right) = \TaHm^n(G, M).
+\end{equation}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p012
+Persamaan di atas sebenarnya menunjukkan cara mendefinisikan morfisme kanonik
+$\Bbbk \otimesL[{\Bbbk[G]}] M \to \RHom_G(\Bbbk, M)$ dalam kategori turunan
+$\cate{D}(G)$ dari modul-$G$. Lengkapi morfisme ini menjadi segitiga
+terbedakan di $\cate{D}(G)$,
+% segment-id: o014.li2.chapter6.tate-cohomology.q007
+\[ \Bbbk \otimesL[{\Bbbk[G]}] M \to \RHom_G(\Bbbk, M) \to \mathrm{Tate}(G, M) \xrightarrow{+1}, \]
+sehingga
+$\Hm^n(\mathrm{Tate}(G,M))\simeq\TaHm^n(G,M)$. Masalah konstruksi ini ialah
+bahwa pilihan-pilihan yang berbeda untuk $\mathrm{Tate}(G,M)$ dalam segitiga
+terbedakan saling isomorfik, tetapi isomorfisme-isomorfisme tersebut tidak
+kanonik. Ini merupakan salah satu kekurangan utama teori kategori turunan;
+lihat Korolari~\ref{prop:Cone-uniqueness} beserta penjelasan sesudahnya.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p013
+Namun, andaikan
+$\Bbbk \otimesL[{\Bbbk[G]}] M$ (atau $\RHom_G(\Bbbk,M)$) direpresentasikan
+oleh suatu kompleks terpilih yang terkonsentrasi pada derajat takpositif (atau
+taknegatif), termasuk tetapi tidak terbatas pada $P_G$ (atau $I^G$) dalam
+\eqref{eqn:Tate-cone-1}. Kita tetap dapat mendefinisikan morfisme $\Omega$ dan
+mengambil kerucut pemetaan sebagai $\mathrm{Tate}(G,M)$, lalu menafsirkannya
+sebagai kokernel homotopi dalam arti
+Catatan~\ref{rem:homotopy-kernel-cokernel}.\footnote{Mengambil kernel homotopi
+dari $\Bbbk \otimesL[{\Bbbk[G]}] M \to \RHom_G(\Bbbk, M)$ tidak menghasilkan
+struktur baru; kernel homotopi itu hanya berbeda dari kokernel homotopi dengan
+suatu pergeseran.} Latihan-latihan akan menunjukkan cara menggunakan resolusi
+standar dari $\Bbbk$ sebagai gantinya, sehingga menyediakan lebih banyak alat
+untuk menghitung kohomologi Tate.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p014
+Sekarang kita bahas lebih lanjut kasus khusus grup siklik hingga.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.ex002
+\begin{example}\label{eg:TaHm-periodic}
+	Misalkan $m\in\Z_{\geq1}$ dan $C_m$ grup siklik berorde $m$; pilih sembarang
+	generator $\sigma$ dari $C_m$. Untuk setiap modul-$C_m$ $A$, kita nyatakan
+	bahwa $\TaHm^n(C_m,A)$ ialah $\Hm^n$ dari kompleks berikut
+	($n\in\Z$):
+% segment-id: o014.li2.chapter6.tate-cohomology.q008
+	\[ \cdots \xrightarrow{\sigma-1} A \xrightarrow{\nu} \underbracket{A}_{\text{suku derajat nol}} \xrightarrow{\sigma-1} A \xrightarrow{\nu} A \xrightarrow{\sigma-1} \to \cdots \]
+	Kompleks ini berulang dengan periode $2$. Alasannya, bukti
+	Proposisi~\ref{prop:group-cohomology-cyclic} telah menuliskan secara konkret
+	kompleks-kompleks yang menghitung homologi dan kohomologi; menyambungkan
+	keduanya dengan $\nu$ menghasilkan kerucut pemetaan
+	$\mathrm{Tate}(G,M)$ yang disebutkan sebelumnya, tepat dalam bentuk di
+	atas. Dengan demikian, langsung diperoleh isomorfisme kanonik
+% segment-id: o014.li2.chapter6.tate-cohomology.q009
+	\[ \TaHm^n(C_m, A) \simeq \begin{cases}
+		A^{\nu=0} / (\sigma-1) A, & n\;\text{ganjil} \\
+		A^{\sigma=1} / \nu A, & n\;\text{genap}.
+	\end{cases}\]
+
+	Periodisitas ini menunjukkan bahwa jika
+	$0\to A'\to A\to A''\to0$ merupakan barisan eksak pendek modul-$C_m$,
+	maka barisan eksak panjang dalam Teorema~\ref{prop:Tate-coh-long} termuat
+	dalam segi enam eksak
+% segment-id: o014.li2.chapter6.tate-cohomology.e003
+	\begin{equation}\label{eqn:Herbrand-hexagon}
+		\begin{tikzcd}[column sep=small]
+			& \TaHm^{\text{genap}}(C_m, A') \arrow[r, "f_1"] & \TaHm^{\text{genap}}(C_m, A) \arrow[rd, "f_2"] & \\
+			\Hm^{\text{ganjil}}(C_m, A'') \arrow[ru, "f_6"] & & & \TaHm^{\text{genap}}(C_m, A'') \arrow[ld, "f_3"] . \\
+			& \TaHm^{\text{ganjil}}(C_m, A) \arrow[lu, "f_5"] & \TaHm^{\text{ganjil}}(C_m, A') \arrow[l, "f_4"] &
+		\end{tikzcd}
+	\end{equation}
+\end{example}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.d002
+\begin{definition}
+% segment-id: o014.li2.chapter6.tate-cohomology.x005
+	\index{hasil bagi Herbrand (Herbrand quotient)}
+	Misalkan $A$ modul-$C_m$ ($m\in\Z_{\geq1}$). Dengan asumsi bahwa
+	$\TaHm^n(C_m,A)$ hingga untuk setiap $n$, definisikan bilangan rasional
+	positif
+% segment-id: o014.li2.chapter6.tate-cohomology.q010
+	\[ h(C_m, A) := \frac{\left|\TaHm^{\text{genap}}(C_m, A)\right|}{\left|\TaHm^{\text{ganjil}}(C_m, A)\right|}, \]
+	yang disebut \emph{hasil bagi Herbrand} dari $A$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.p015
+Jika $A$ hingga, maka $\TaHm^n(C_m,A)$ jelas hingga. Perhatikan bahwa banyaknya
+elemen tidak bergantung pada pilihan gelanggang koefisien $\Bbbk$; kita dapat
+memilih $\Bbbk=\Z$. Dalam teori bilangan aljabar, teorema Herbrand berikut
+merupakan hasil yang mendasar dan penting.
+
+% segment-id: o014.li2.chapter6.tate-cohomology.t002
+\begin{theorem}[J.\ Herbrand]
+	Misalkan $m\in\Z_{\geq1}$ dan $C_m$ grup siklik berorde $m$.
+% segment-id: o014.li2.chapter6.tate-cohomology.l001
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter6.tate-cohomology.i001
+		\item Misalkan $0\to A'\to A\to A''\to0$ barisan eksak pendek
+		modul-$C_m$. Jika dua dari $h(C_m,A')$, $h(C_m,A)$, dan
+		$h(C_m,A'')$ terdefinisi, yang ketiga juga terdefinisi secara otomatis;
+		dalam hal ini,
+% segment-id: o014.li2.chapter6.tate-cohomology.q011
+		\[ h(C_m, A) = h(C_m, A') h(C_m, A''). \]
+% segment-id: o014.li2.chapter6.tate-cohomology.i002
+		\item Jika $A$ modul-$C_m$ hingga, maka $h(C_m,A)=1$.
+	\end{enumerate}
+\end{theorem}
+
+% segment-id: o014.li2.chapter6.tate-cohomology.pf005
+\begin{proof}
+	Untuk~(i), perhatikan segi enam eksak
+	\eqref{eqn:Herbrand-hexagon}. Tuliskan
+	$n_i:=|\Image(f_i)|$. Dalam arti perkalian kardinalitas, kardinalitas keenam
+	suku tersebut berturut-turut adalah
+% segment-id: o014.li2.chapter6.tate-cohomology.g008
+	\begin{center}\begin{tikzpicture}[commutative diagrams/every diagram,
+		one/.style={draw, rectangle, minimum size=6mm, rounded corners=3mm},
+		two/.style={draw, rectangle, minimum size=6mm}
+		]
+		\node[one] (P0) at (60:1.75cm) {$n_1 n_2$};
+		\node[two] (P1) at (60+60:1.75cm) {$n_6 n_1$} ;
+		\node[one] (P2) at (60+2*60:1.75cm) {$n_5 n_6$};
+		\node[two] (P3) at (60+3*60:1.75cm) {$n_4 n_5$};
+		\node[one] (P4) at (60+4*60:1.75cm) {$n_3 n_4$};
+		\node[two] (P5) at (0:1.75cm) {$n_2 n_3$};
+	\end{tikzpicture}\end{center}
+
+	Tiga hasil bagi Herbrand bersesuaian dengan hasil bagi suku-suku
+	yang saling berhadapan pada diagram di atas. Jadi, pernyataan~(i) setara
+	dengan pengamatan berikut:
+% segment-id: o014.li2.chapter6.tate-cohomology.l002
+	\begin{itemize}
+% segment-id: o014.li2.chapter6.tate-cohomology.i003
+		\item jika kardinalitas pada kedua ujung dua diagonal bernilai
+		hingga, hal yang sama juga berlaku pada kedua ujung diagonal sisanya;
+% segment-id: o014.li2.chapter6.tate-cohomology.i004
+		\item hasil kali suku-suku dalam kotak bersudut siku-siku sama dengan
+		hasil kali suku-suku dalam kotak bersudut bulat.
+	\end{itemize}
+
+	Untuk~(ii), terdapat barisan-barisan eksak pendek dari modul-$\Z$ hingga
+% segment-id: o014.li2.chapter6.tate-cohomology.q012
+	\[ 0 \to A^{\sigma=1} \to A \xrightarrow{\sigma-1} \mathfrak{I} A \to 0, \quad 0 \to A^{\nu=0} \to A \xrightarrow{\nu} \nu A \to 0; \]
+	di sini, $(\sigma-1)A=\mathfrak{I}A$ merupakan penerapan
+	Lema~\ref{prop:cyclic-resolution-prep}. Oleh karena itu,
+% segment-id: o014.li2.chapter6.tate-cohomology.q013
+	\[ |A^{\sigma=1}| \cdot |\mathfrak{I} A| = |A^{\nu=0}| \cdot |\nu A|, \]
+	yang dapat disusun ulang menjadi
+	$|\TaHm^0(C_m,A)|=|\TaHm^{-1}(C_m,A)|$. Ini membuktikan pernyataan.
+\end{proof}

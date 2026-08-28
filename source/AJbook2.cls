@@ -88,7 +88,7 @@
 
 % 定义在 draftmark=true 模式下显示版本信息的指令
 \RequirePackage[iso, english]{isodate}  % 使 \today 印出 yyyy-mm-dd
-\providecommand{\@AJ@draftstring}{{\color{gray!40}\heiti 未定稿: \today}}
+\providecommand{\@AJ@draftstring}{{\color{gray!40}\heiti Draf: \today}}
 
 \setlength{\parindent}{2em}	% 设置适合于汉语排版的段落缩进
 
@@ -120,9 +120,9 @@
 
 	% 重置目录标题
 	\if@AJ@traditional
-		\renewcommand{\contentsname}{目錄}
+		\renewcommand{\contentsname}{Daftar Isi}
 	\else
-		\renewcommand{\contentsname}{目录}
+		\renewcommand{\contentsname}{Daftar Isi}
 	\fi
 
 	\tableofcontents	% 印出目录
@@ -132,11 +132,11 @@
 \g@addto@macro\appendix{
 	% 为附录重置天眉格式
 	\if@AJ@traditional
-		\renewcommand{\appendixname}{附錄}
-		\renewcommand{\chaptermark}[1]{\markboth{附錄 \thechapter \quad #1}{}}
+		\renewcommand{\appendixname}{Lampiran}
+		\renewcommand{\chaptermark}[1]{\markboth{Lampiran \thechapter \quad #1}{}}
 	\else
-		\renewcommand{\appendixname}{附录}
-		\renewcommand{\chaptermark}[1]{\markboth{附录 \thechapter \quad #1}{}}
+		\renewcommand{\appendixname}{Lampiran}
+		\renewcommand{\chaptermark}[1]{\markboth{Lampiran \thechapter \quad #1}{}}
 	\fi
 	\renewcommand{\sectionmark}[1]{\markright{\S\thesection \quad #1}}
 }
@@ -146,11 +146,11 @@
 	\renewcommand{\em}{\itshape} % 书目部分以斜体表示强调
 	% 汉化参考文献标题
 	\if@AJ@traditional
-		\renewcommand{\refname}{參考文獻}
-		\renewcommand{\bibname}{參考文獻}
+		\renewcommand{\refname}{Daftar Pustaka}
+		\renewcommand{\bibname}{Daftar Pustaka}
 	\else
-		\renewcommand{\refname}{参考文献}
-		\renewcommand{\bibname}{参考文献}
+		\renewcommand{\refname}{Daftar Pustaka}
+		\renewcommand{\bibname}{Daftar Pustaka}
 	\fi
 }
 
@@ -159,19 +159,19 @@
 \DeclareFieldFormat{postnote}{#1}	% 功能是印出 \cite[postnote]{Book}
 \if@AJ@traditional
 	\DefineBibliographyStrings{english}{%
-		in = {刊於},
-		editor = {主編},
-		byeditor = {編者為},
-		backrefpage = {引用於 p.\!},
-		backrefpages = {引用於 pp.\!},
+		in = {dalam},
+		editor = {penyunting},
+		byeditor = {disunting oleh},
+		backrefpage = {dikutip pada hlm.\!},
+		backrefpages = {dikutip pada hlm.\!},
 	}
 	\else
 		\DefineBibliographyStrings{english}{%
-			in = {刊于},
-			editor = {主编},
-			byeditor = {编者为},
-			backrefpage = {引用于 p.\!},
-			backrefpages = {引用于 pp.\!},
+			in = {dalam},
+			editor = {penyunting},
+			byeditor = {disunting oleh},
+			backrefpage = {dikutip pada hlm.\!},
+			backrefpages = {dikutip pada hlm.\!},
 	}
 \fi
 % biblatex 部分第二步: 要求在 doi 和 URL 并存时移除 URL. 仅适用于 Biblatex + Biber. 源码取自 https://tex.stackexchange.com/questions/119136/biblatex-convert-doi-url-into-doi-field  原文如下.
@@ -205,20 +205,20 @@
 
 % 汉化 figure 和 table 环境
 \if@AJ@traditional
-	\renewcommand{\figurename}{圖}
-	\renewcommand{\tablename}{表}
+	\renewcommand{\figurename}{Gambar}
+	\renewcommand{\tablename}{Tabel}
 \else
-	\renewcommand{\figurename}{图}
-	\renewcommand{\tablename}{表}
+	\renewcommand{\figurename}{Gambar}
+	\renewcommand{\tablename}{Tabel}
 \fi
 
 % 汉化 figure 和 table 索引
 \if@AJ@traditional
-	\renewcommand{\listfigurename}{圖片索引}
-	\renewcommand{\listtablename}{表格索引}
+	\renewcommand{\listfigurename}{Daftar Gambar}
+	\renewcommand{\listtablename}{Daftar Tabel}
 \else
-	\renewcommand{\listfigurename}{图片索引}
-	\renewcommand{\listtablename}{表格索引}
+	\renewcommand{\listfigurename}{Daftar Gambar}
+	\renewcommand{\listtablename}{Daftar Tabel}
 \fi
 
 % 将 figure 和 table 索引加入目录: 使用 etoolbox 提供的 patching
@@ -241,10 +241,10 @@
 % 设置习题环境, 置于每章最后: 不用 \section* 以免格式混淆
 \if@AJ@traditional
 	\newenvironment{Exercises}{%
-		\markright{習題}
-		\addcontentsline{toc}{section}{習題}
+		\markright{Latihan}
+		\addcontentsline{toc}{section}{Latihan}
 		\vspace{1em}\begin{center}
-			\Large\CJKfamily{sectionfont} 習題
+			\Large\CJKfamily{sectionfont} Latihan
 		\end{center}\vspace{0.7em}
 		\begin{small}\begin{enumerate}[\bfseries 1.] %
 			}{	% 结束
@@ -252,10 +252,10 @@
 	}
 \else
 	\newenvironment{Exercises}{%
-		\markright{习题}
-		\addcontentsline{toc}{section}{习题}
+		\markright{Latihan}
+		\addcontentsline{toc}{section}{Latihan}
 		\vspace{1em}\begin{center}
-			\Large\CJKfamily{sectionfont} 习题
+			\Large\CJKfamily{sectionfont} Latihan
 		\end{center}\vspace{0.7em}
 		\begin{small}\begin{enumerate}[\bfseries 1.] %
 			}{	% 结束
@@ -271,7 +271,7 @@
 		\quad	% 否则加入空白.
 	\fi
 	\begin{tikzpicture}[baseline=(H.base), every node/.style={signal, draw, very thin, signal to=east, signal from=nowhere, signal pointer angle=120, inner sep=2pt}]
-		\node[anchor=mid west] (H) at (0,0) {\heiti\footnotesize 提示};
+		\node[anchor=mid west] (H) at (0,0) {\heiti\footnotesize Petunjuk};
 	\end{tikzpicture}
 }{}
 
@@ -290,7 +290,7 @@
 		before skip = 0.5cm,
 		top = 3mm,
 		bottom = 3mm,
-		title={閱讀提示}
+		title={Petunjuk Membaca}
 	}
 \else
 	\newtcolorbox{wenxintishi}{
@@ -306,7 +306,7 @@
 		before skip = 0.5cm,
 		top = 3mm,
 		bottom = 3mm,
-		title={阅读提示}
+		title={Petunjuk Membaca}
 	}
 \fi
 
@@ -365,11 +365,11 @@
 	\pagestyle{fancy}
 	\if@AJ@CJKthechapter
 		\renewcommand{\chaptermark}[1]{\markboth{
-			第\zhnumber{\thechapter}章\quad #1
+			Bab \thechapter\quad #1
 			}{}}
 	\else
 		\renewcommand{\chaptermark}[1]{\markboth{
-			第 \thechapter 章\quad #1
+			Bab \thechapter\quad #1
 			}{}}
 	\fi
 	\renewcommand{\sectionmark}[1]{\markright{\S\arabic{chapter}.\arabic{section} \quad #1}}
@@ -405,51 +405,51 @@
 	\setlength{\theorempostskipamount}{2mm}
 	
 	\if@AJ@traditional
-		\newtheorem{theorem}{定理}[section] % 按section编号
-		\newtheorem{corollary}[theorem]{推論}
-		\newtheorem{lemma}[theorem]{引理}
-		\newtheorem{proposition}[theorem]{命題}
-		\newtheorem{definition}[theorem]{定義}
-		\newtheorem{definition-theorem}[theorem]{定義--定理}
-		\newtheorem{definition-proposition}[theorem]{定義--命題}
-		\newtheorem{hypothesis}[theorem]{假設}
-		\newtheorem{conjecture}[theorem]{猜想}
+		\newtheorem{theorem}{Teorema}[section] % 按section编号
+		\newtheorem{corollary}[theorem]{Korolari}
+		\newtheorem{lemma}[theorem]{Lema}
+		\newtheorem{proposition}[theorem]{Proposisi}
+		\newtheorem{definition}[theorem]{Definisi}
+		\newtheorem{definition-theorem}[theorem]{Definisi--Teorema}
+		\newtheorem{definition-proposition}[theorem]{Definisi--Proposisi}
+		\newtheorem{hypothesis}[theorem]{Hipotesis}
+		\newtheorem{conjecture}[theorem]{Konjektur}
 
 		\theorembodyfont{\songti}
-		\newtheorem{example}[theorem]{例}
-		\newtheorem{remark}[theorem]{注記}
-		\newtheorem{convention}[theorem]{約定}
-		\newtheorem{exercise}[theorem]{練習}		% 穿插于文中的习题
+		\newtheorem{example}[theorem]{Contoh}
+		\newtheorem{remark}[theorem]{Catatan}
+		\newtheorem{convention}[theorem]{Konvensi}
+		\newtheorem{exercise}[theorem]{Latihan}		% 穿插于文中的习题
 
 		\theorembodyfont{}
 		\theoremstyle{nonumberplain}
 		\theoremheaderfont{\sffamily\bfseries\CJKfamily{pffont}}
 		\theoremseparator{\enspace}
 		\theoremsymbol{\openbox} % 模拟标准的 Proof 环境
-		\newtheorem{proof}{證明}
+		\newtheorem{proof}{Bukti}
 	\else
-		\newtheorem{theorem}{定理}[section] % 按section编号
-		\newtheorem{corollary}[theorem]{推论}
-		\newtheorem{lemma}[theorem]{引理}
-		\newtheorem{proposition}[theorem]{命题}
-		\newtheorem{definition}[theorem]{定义}
-		\newtheorem{definition-theorem}[theorem]{定义--定理}
-		\newtheorem{definition-proposition}[theorem]{定义--命题}
-		\newtheorem{hypothesis}[theorem]{假设}
-		\newtheorem{conjecture}[theorem]{猜想}
+		\newtheorem{theorem}{Teorema}[section] % 按section编号
+		\newtheorem{corollary}[theorem]{Korolari}
+		\newtheorem{lemma}[theorem]{Lema}
+		\newtheorem{proposition}[theorem]{Proposisi}
+		\newtheorem{definition}[theorem]{Definisi}
+		\newtheorem{definition-theorem}[theorem]{Definisi--Teorema}
+		\newtheorem{definition-proposition}[theorem]{Definisi--Proposisi}
+		\newtheorem{hypothesis}[theorem]{Hipotesis}
+		\newtheorem{conjecture}[theorem]{Konjektur}
 
 		\theorembodyfont{\songti}
-		\newtheorem{example}[theorem]{例}
-		\newtheorem{remark}[theorem]{注记}
-		\newtheorem{convention}[theorem]{约定}
-		\newtheorem{exercise}[theorem]{练习}		% 穿插于文中的习题
+		\newtheorem{example}[theorem]{Contoh}
+		\newtheorem{remark}[theorem]{Catatan}
+		\newtheorem{convention}[theorem]{Konvensi}
+		\newtheorem{exercise}[theorem]{Latihan}		% 穿插于文中的习题
 
 		\theorembodyfont{}
 		\theoremstyle{nonumberplain}
 		\theoremheaderfont{\sffamily\bfseries\CJKfamily{pffont}}
 		\theoremseparator{\enspace}
 		\theoremsymbol{\openbox} % 模拟标准的 Proof 环境
-		\newtheorem{proof}{证明}
+		\newtheorem{proof}{Bukti}
 	\fi
 }
 

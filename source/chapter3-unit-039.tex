@@ -22,7 +22,7 @@ $R\otimes R^{\opp}$.
 \begin{definisi}[Kompleks bar]\label{def:bar-Hochschild}
 	\index{kompleks bar (bar complex)}
 	\index[sym1]{BR@$\mathsf{B}R$}
-	Tetapkan suatu aljabar-$\Bbbk$ $R$. Untuk setiap
+	Misalkan $R$ suatu aljabar-$\Bbbk$. Untuk setiap
 	$n\in\Z_{\geq 0}$, definisikan bimodul $(R,R)$
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.q001
 	\begin{gather*}
@@ -96,7 +96,7 @@ homomorfisme augmentasi.
 	\[ h_n(r_0 | \cdots | r_{n+1})
 		= (1_R | r_0 | \cdots | r_{n+1}), \]
 	lalu perluas secara linear pada $\mathsf{B}'_nR$. Untuk setiap $n\geq0$
-	dan $r_0,\ldots,r_{n+1}\in R$, kita mempunyai
+	dan $r_0,\ldots,r_{n+1}\in R$, diperoleh
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.q005
 	\begin{align*}
 		b_{n+1} h_n \left(r_0 | \cdots | r_{n+1} \right)
@@ -125,7 +125,7 @@ memberikan penjelasan yang alami.
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.cn001
 \begin{konvensi}\label{con:Re-R-R}
 	\index[sym1]{R-e@$R^e$}
-	Tetapkan $R^e:=R\otimes R^{\opp}$. Untuk setiap bimodul $(R,R)$ $M$,
+	Definisikan $R^e:=R\otimes R^{\opp}$. Untuk setiap bimodul $(R,R)$ $M$,
 	termasuk kasus khusus $M=R$, mulai sekarang:
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.l001
 	\begin{compactitem}
@@ -184,7 +184,7 @@ berikut.
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.i003
 	\item Dengan notasi bar, tetap tuliskan unsur
 	$m\otimes r_1\otimes\cdots\otimes r_n$ dari $M\otimes R^{\otimes n}$
-	sebagai $(m|r_1|\cdots|r_n)$. Tetapkan
+	sebagai $(m|r_1|\cdots|r_n)$. Definisikan
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.q009
 	\begin{multline}\label{eqn:HH-cplx-d}
 		d_n(m|r_1|\cdots|r_n)=\\
@@ -196,7 +196,7 @@ berikut.
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.i004
 	\item Identifikasikan unsur $\Hom_{\Bbbk}(R^{\otimes n},M)$ dengan
 	pemetaan $\Bbbk$-multilinear $R^n\to M$ (lihat
-	\cite[\S 7.5]{Li1}). Tetapkan
+	\cite[\S 7.5]{Li1}). Definisikan
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.q010
 	\begin{multline*}
 		(d^nf)(r_1,\ldots,r_{n+1})=\\
@@ -207,7 +207,7 @@ berikut.
 \end{enumerate}
 
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.p007
-Untuk setiap $n\in\Z_{\geq0}$, kita mempunyai isomorfisme
+Untuk setiap $n\in\Z_{\geq0}$, terdapat isomorfisme
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.g002
 \[\begin{tikzcd}[row sep=tiny]
 	M \dotimes{R^e} \mathsf{B}_n R \arrow[leftrightarrow, r, "\sim"]
@@ -302,7 +302,7 @@ sebagai $\Tor$ relatif dan $\Ext$ relatif.
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.q014
 	\[ \HHm^0(M)=\left\{m\in M:\forall r\in R,\;rm=mr\right\}. \]
 	Ruas kanan secara wajar dapat disebut \emph{pusat} dari $M$; ketika
-	$M=R$, ini tidak lain daripada pusat dalam pengertian teori gelanggang.
+	$M=R$, ini tepat merupakan pusat dalam pengertian teori gelanggang.
 
 	Selanjutnya, tinjau $\HHm_0(M)$. Tuliskan $[M,R]$ untuk submodul-$\Bbbk$
 	dari $M$ yang dibangun oleh semua unsur berbentuk $mr-rm$, dengan
@@ -454,7 +454,7 @@ Semua kompleks (atau bikompleks) yang disebutkan selanjutnya secara bawaan
 merupakan kompleks rantai (atau bikompleks rantai).
 
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.p013
-Untuk setiap $n\geq0$, tetapkan
+Untuk setiap $n\geq0$, definisikan
 $N_n:=\identity+t_n+\cdots+(t_n)^n
 \in\End_{\Bbbk}(R^{\otimes(n+1)})$. Definisikan \emph{bikompleks siklik}
 $\mathrm{CC}(R)=(\mathrm{CC}(R)_{p,q})_{(p,q)\in\Z^2}$ sebagai bikompleks
@@ -479,7 +479,7 @@ berikut.
 	& \cdots & p: \text{genap} & p+1: \text{ganjil} & \cdots
 \end{tikzcd}\]
 Semua sukunya merupakan modul-$\Bbbk$, dan semua suku dengan $q<0$
-ditetapkan sebagai $0$. Morfisme $d_q$ dan $d'_q$ didefinisikan dalam
+didefinisikan bernilai $0$. Morfisme $d_q$ dan $d'_q$ didefinisikan dalam
 \eqref{eqn:HH-cplx-d}. Perhatikan bahwa:
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.l003
 \begin{compactitem}
@@ -519,7 +519,7 @@ kasar horizontal (\textit{brutal truncation})
 $\sigma_{\mathrm{I},\leq p}C$ (atau
 $\sigma_{\mathrm{I},\geq p}C$) dengan mengganti $C_{i,j}$ yang memenuhi
 $i>p$ (atau $i<p$) dengan $0$ dan membiarkan semua suku lain tetap.
-Dengan demikian, kita mempunyai barisan eksak pendek bikompleks
+Dengan demikian, diperoleh barisan eksak pendek bikompleks
 (perhatikan urutannya):
 % segment-id: o014.li2.chapter3.exercises-hochschild-homology-and-cohomology.q021
 \begin{equation}\label{eqn:homology-I-brute-truncation}

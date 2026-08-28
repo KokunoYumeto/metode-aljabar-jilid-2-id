@@ -1,0 +1,72 @@
+﻿% Driver TeX4ht tipis; isi buku tetap berasal dari master lengkap.
+%
+% `paralist` mengganti lingkungan list standar dengan implementasi yang pada
+% TeX4ht/MiKTeX 2026 kehilangan keadaan \item. Akibatnya setiap item pertama
+% menghasilkan "perhaps a missing \item" dan pemrosesan array berikutnya dapat
+% macet. Pembaca tidak memerlukan pemadatan tipografis paralist, jadi pertahankan
+% list LaTeX standar dan muat hanya parser label opsional `enumerate`.
+\makeatletter
+\expandafter\def\csname ver@paralist.sty\endcsname{2099/01/01 reader stub}
+\expandafter\def\csname opt@paralist.sty\endcsname{neveradjust,neverdecrease}
+\providecommand{\setdefaultitem}[4]{}
+\providecommand{\paradescriptionlabel}[1]{#1}
+\AddToHook{class/AJbook2/after}{%
+  \RequirePackage{enumerate}%
+  \let\compactitem\itemize
+  \let\endcompactitem\enditemize
+  \let\compactenum\enumerate
+  \let\endcompactenum\endenumerate
+  % paralist.4ht tetap mengenali nama paket stub dan mengharapkan internal
+  % description paralist. Daftar uraian sumber hanya memakai \item[label];
+  % list standar mempertahankan label dan isi tanpa internal tersebut.
+  \let\description\itemize
+  \let\enddescription\enditemize
+  \let\compactdesc\itemize
+  \let\endcompactdesc\enditemize
+  % Tata letak sebaris tidak membantu teknologi asistif; daftar berurutan
+  % semantik merupakan padanan HTML yang lebih kuat.
+  \let\inparaenum\enumerate
+  \let\endinparaenum\endenumerate
+}
+
+% AJbook2 memuat pdfpages untuk sampul PDF opsional, tetapi master aktif
+% memakai coverpage-id.tex. Driver DVI TeX4ht tidak kompatibel dengan
+% pdfpages pada XeTeX, jadi tandai paket yang tak dipakai itu sebagai tersedia.
+\expandafter\def\csname ver@pdfpages.sty\endcsname{2099/01/01 reader stub}
+\providecommand{\includepdf}[2][]{}
+\expandafter\def\csname ver@zhlineskip.sty\endcsname{2099/01/01 reader stub}
+\providecommand{\SetMathEnvironmentSinglespace}[1]{}
+\providecommand{\RestoreMathEnvironmentLeading}[1]{}
+
+% Hook unit dibuat secara deterministik oleh build-reader.ps1 dari seluruh
+% \input aktif pada master. Ia memberi tiap unit/bridge jangkar stabil tanpa
+% mengubah sumber terjemahan.
+\InputIfFileExists{../reader-source/build/reader-unit-hooks.tex}{}{%
+  \PackageError{reader-driver}{reader-unit-hooks.tex tidak ditemukan}{}
+}
+
+% Satu-satunya tabel pada prelude-unit-006 adalah blok tanda tangan tiga
+% baris, bukan data tabular. array.4ht tidak pernah kembali dari \end{tabular}
+% untuk konstruksi tabular-di-dalam-minipage ini. Padanan pembaca berikut
+% mempertahankan tiga barisnya sebagai teks terpusat dan hanya berlaku selama
+% file tersebut diproses.
+\AddToHook{file/prelude-unit-006.tex/before}{%
+  \begingroup
+  \def\tabular#1{\par\begingroup\centering\ignorespaces}%
+  \def\endtabular{\par\endgroup}%
+}
+\AddToHook{file/prelude-unit-006.tex/after}{\endgroup}
+
+\AddToHook{begindocument/end}{%
+  \def\@AJ@coverpage{../reader-source/reader-cover.tex}%
+  \providecommand{\CJKfamily}[1]{}%
+  % Label petunjuk merupakan teks, bukan gambar dekoratif berulang.
+  \renewenvironment{hint}{%
+    \ifvmode\ignorespaces\else\quad\fi
+    \HCode{<span class="hint-label">Petunjuk</span>\Hnewline}%
+  }{}%
+}
+\makeatother
+
+\input{Al-jabr-2-id-complete-draft.tex}
+

@@ -9,8 +9,8 @@
 \hypertarget{o014.aljabr2.prelude.conventions}{ }
 
 % segment-id: o014.li2.prelude.conventions.p001
-Konvensi notasi buku ini sama dengan Jilid I. Walaupun agak panjang, konvensi
-tersebut dirangkum kembali di sini.
+Konvensi notasi dalam buku ini sama dengan yang digunakan dalam Jilid I.
+Walaupun agak panjang, konvensi tersebut dirangkum kembali di sini.
 
 % segment-id: o014.li2.prelude.conventions.h002
 \subsection*{Konvensi Dasar}
@@ -25,9 +25,10 @@ bantu, objek itu disebut terdefinisi dengan baik.
 \index{terdefinisi dengan baik (well-defined)}
 
 % segment-id: o014.li2.prelude.conventions.p003
-Panah $\rightiso$ menyatakan isomorfisme antarobjek; kadang-kadang isomorfisme
-itu ditulis tanpa arah sebagai $\simeq$. Notasi $\xrightarrow{1:1}$ atau
-$\stackrel{1:1}{\longleftrightarrow}$ menyatakan bijeksi antardua himpunan,
+Panah $\rightiso$ menyatakan isomorfisme antara dua objek; kadang-kadang
+isomorfisme itu ditulis tanpa arah sebagai $\simeq$. Notasi
+$\xrightarrow{1:1}$ atau
+$\stackrel{1:1}{\longleftrightarrow}$ menyatakan bijeksi antara dua himpunan,
 yakni korespondensi satu-satu. Notasi berbentuk $F(\cdot)$ dimaksudkan untuk
 menonjolkan peubah pada pemetaan atau funktor $F$.
 
@@ -47,9 +48,9 @@ sederhana ditunjukkan oleh diagram berikut.
 \end{tikzcd} \; \text{komutatif} \stackrel{\text{definisi}}{\iff} g \circ f = h. \]
 
 % segment-id: o014.li2.prelude.conventions.p006
-Dalam diagram ini, $f$, $g$, dan $h$ dapat berupa pemetaan, homomorfisme, atau morfisme
-dalam suatu kategori umum. Diagram komutatif yang lebih rumit dipahami dengan
-cara yang serupa.
+Dalam diagram ini, $f$, $g$, dan $h$ dapat berupa pemetaan, homomorfisme,
+atau morfisme dalam suatu kategori umum. Diagram komutatif yang lebih rumit
+dipahami dengan cara serupa.
 
 % segment-id: o014.li2.prelude.conventions.h003
 \subsection*{Himpunan dan Struktur Urutan}
@@ -66,14 +67,14 @@ $A \smallsetminus B := \left\{a \in A: a \notin B \right\}$, sedangkan gabungan
 saling lepas ditulis $A \sqcup B$. Untuk suatu pemetaan $f: A \to B$, notasi
 $a \mapsto b$ berarti bahwa $a \in A$ dipetakan oleh $f$ ke $b \in B$, dan
 $f|_{A'}$ menyatakan pembatasan $f$ pada himpunan bagian $A' \subset A$.
-Pemetaan identitas pada $A$ ditulis $\identity = \identity_A$. Banyaknya unsur,
-kardinalitas, atau kardinal himpunan $A$ ditulis $|A|$.
+Pemetaan identitas pada $A$ ditulis $\identity = \identity_A$. Banyaknya unsur
+dalam $A$---yakni kardinalitas atau kardinalnya---ditulis $|A|$.
 
 % segment-id: o014.li2.prelude.conventions.p009
 Berdasarkan \cite[Definisi~1.2.1]{Li1}, sebuah \emph{himpunan terurut parsial}
 \index{himpunan terurut parsial (partially ordered set)} ialah himpunan $P$
 yang dilengkapi relasi biner $\leq$ yang refleksif, transitif, dan antisimetris.
-Jika antisimetrisitas tidak disyaratkan, diperoleh \emph{himpunan
+Jika sifat antisimetris tidak disyaratkan, diperoleh \emph{himpunan
 praterurut}. Notasi $x < y$ berarti $x \lneq y$. Himpunan terurut parsial $(P, \leq)$
 sering disingkat menjadi $P$.
 
@@ -82,11 +83,11 @@ sering disingkat menjadi $P$.
 	% segment-id: o014.li2.prelude.conventions.i001
 	\item Jika $m \in P$ memenuhi $\forall x \in P, \; x \geq m \iff x = m$,
 	maka $m$ disebut unsur maksimal dalam $P$. Konsep unsur minimal didefinisikan
-	dengan mengganti $\geq$ oleh $\leq$. Pada umumnya unsur-unsur ini tidak
+	dengan mengganti $\geq$ oleh $\leq$. Pada umumnya, unsur seperti ini tidak
 	tunggal.
 	% segment-id: o014.li2.prelude.conventions.i002
-	\item Misalkan $S$ himpunan bagian dari $P$. Jika $b \in P$ memenuhi
-	$\forall x \in S, \; x \leq b$, maka unsur itu disebut batas atas $S$ dalam $P$.
+	\item Misalkan $S$ adalah himpunan bagian dari $P$. Jika $b \in P$ memenuhi
+	$\forall x \in S, \; x \leq b$, maka $b$ disebut batas atas $S$ dalam $P$.
 	Batas bawah $S$ didefinisikan secara serupa.
 	% segment-id: o014.li2.prelude.conventions.i003
 	\item Jika $b \in P$ merupakan batas atas $S$ dan setiap batas atas lain
@@ -103,9 +104,9 @@ $f^{-1}$ sama-sama mempertahankan urutan, maka $f$ disebut isomorfisme
 antarhimpunan terurut parsial, atau bijeksi yang mempertahankan urutan.
 
 % segment-id: o014.li2.prelude.conventions.p011
-Jika setiap dua unsur himpunan terurut parsial $P$ dapat dibandingkan, maka
-himpunan itu disebut himpunan terurut total. Jika setiap himpunan bagian tak kosong dari
-himpunan terurut total tak kosong $P$ mempunyai unsur terkecil, maka $P$
+Jika setiap pasangan unsur dalam himpunan terurut parsial $P$ dapat dibandingkan,
+maka $P$ disebut himpunan terurut total. Jika $P$ tak kosong dan setiap
+himpunan bagian tak kosongnya mempunyai unsur terkecil, maka $P$
 disebut \emph{himpunan terurut baik}
 \index{himpunan terurut baik (well-ordered set)}. Suatu kelas khusus himpunan
 terurut baik disebut \emph{ordinal}\index{ordinal (ordinal)}, dan setiap dua
@@ -118,7 +119,8 @@ ordinal dapat dibandingkan. Ringkasnya:
 	$\alpha = \left\{ \beta: \text{ordinal}, \; \beta < \alpha \right\}$;
 	% segment-id: o014.li2.prelude.conventions.i005
 	\item jika ordinal $\kappa$, sebagai himpunan, tidak ekuipoten dengan
-	ordinal mana pun yang $< \kappa$, maka ordinal itu disebut \emph{kardinal};
+	ordinal mana pun yang lebih kecil darinya, maka ordinal itu disebut
+	\emph{kardinal};
 	\index{kardinal (cardinal)}
 	% segment-id: o014.li2.prelude.conventions.i006
 	\item kardinalitas $|S|$ suatu himpunan $S$ didefinisikan sebagai ordinal
@@ -165,7 +167,7 @@ pembahasan terkait.
 Konvensi tentang kategori sama dengan \cite[\S~1.5, Definisi~2.1.3]{Li1}:
 semua objek dan semua morfisme suatu kategori $\mathcal{C}$ masing-masing
 membentuk himpunan, yang ditulis $\Obj(\mathcal{C})$ dan $\Mor(\mathcal{C})$.
-Himpunan morfisme di antara dua objek ditulis
+Himpunan morfisme antara dua objek ditulis
 $\Hom_{\mathcal{C}}(\cdot, \cdot)$, atau cukup $\Hom(\cdot, \cdot)$. Morfisme
 identitas objek $X$ ditulis $\identity_X$. Monomorfisme ditandai dengan panah
 $\hookrightarrow$, sedangkan epimorfisme dengan panah $\twoheadrightarrow$;
@@ -196,7 +198,7 @@ monomorfisme juga disebut pembenaman.
 	$(X_1, X_2)$ ke $(Y_1, Y_2)$ adalah unsur
 	$\Hom_{\mathcal{C}_1}(X_1, Y_1) \times
 	\Hom_{\mathcal{C}_2}(X_2, Y_2)$, dan komposisi morfismenya dilakukan per
-	komponen. Dari sini terlihat cara mendefinisikan produk sebarang keluarga
+	komponen. Definisi ini langsung meluas kepada produk sembarang keluarga
 	kategori $\prod_i \mathcal{C}_i$. Dengan cara yang sama didefinisikan
 	$\mathcal{C}^n := \mathcal{C} \times \cdots \times \mathcal{C}$ (sebanyak
 	$n$ faktor), atau lebih umum $\mathcal{C}^I$, dengan $I$ suatu himpunan.
@@ -223,7 +225,7 @@ $\identity_{\mathbf{0}}$.
 % segment-id: o014.li2.prelude.conventions.p018
 Kategori yang memenuhi
 $\Mor(\mathcal{C}) = \left\{ \identity_X : X \in \Obj(\mathcal{C}) \right\}$
-disebut \emph{kategori diskret}. Kategori-kategori ini berkorespondensi satu-satu
+disebut \emph{kategori diskret}. Kategori diskret berkorespondensi satu-satu
 dengan himpunan melalui $\mathcal{C} \mapsto \Obj(\mathcal{C})$.
 \index{kategori!diskret (discrete)}
 
@@ -239,7 +241,7 @@ merupakan himpunan $\mathcal{U}$-kecil untuk semua
 $X, Y \in \Obj(\mathcal{C})$, maka kategori itu disebut kategori
 $\mathcal{U}$.
 \footnote{Dalam banyak pustaka, objek-objek suatu kategori dipahami membentuk
-kelas, sedangkan himpunan $\Hom$ di antara setiap dua objek merupakan himpunan.
+kelas, sedangkan himpunan $\Hom$ antara setiap dua objek merupakan himpunan.
 Dengan demikian, ``kelas'' dalam pustaka tersebut berpadanan dengan himpunan
 dalam buku ini, ``himpunan'' mereka berpadanan dengan himpunan-$\mathcal{U}$
 dalam buku ini, dan ``kategori'' mereka pada dasarnya berpadanan dengan
@@ -251,7 +253,7 @@ membentuk kategori-$\mathcal{U}$ yang ditulis $\cate{Set}$; kategori ini bukan
 kategori $\mathcal{U}$-kecil. Di sisi lain, tanpa memilih $\mathcal{U}$,
 semua himpunan membentuk kelas sejati, bukan kategori dalam pengertian buku ini.
 Serupa dengan itu, $\cate{Grp}$ (atau $\cate{Ab}$) dalam buku ini menyatakan
-kategori semua grup (atau grup abelian) yang dibangun pada
+kategori semua grup (atau grup abelian) yang direalisasikan pada
 himpunan-$\mathcal{U}$; semuanya merupakan kategori-$\mathcal{U}$.
 \index[sym1]{Set@$\cate{Set}$}
 
@@ -270,9 +272,9 @@ disebut \emph{kategori besar}.
 \index{masalah ukuran (size issues)}
 
 % segment-id: o014.li2.prelude.conventions.p023
-Kategori besar sukar dihindari dalam banyak konstruksi, khususnya teori yang
+Kategori besar sukar dihindari dalam banyak konstruksi, khususnya dalam teori yang
 berkaitan dengan kategori funktor atau lokalisasi kategoris. Setiap kali kategori besar
-mungkin muncul dan benar-benar menimbulkan akibat substantif, hal itu akan
+mungkin muncul dan benar-benar menimbulkan konsekuensi substantif, hal itu akan
 ditandai secara eksplisit.
 
 % segment-id: o014.li2.prelude.conventions.h006
@@ -285,8 +287,8 @@ memetakan morfisme $f: X \to Y$ dalam $\mathcal{C}$ ke morfisme
 $Ff: FX \to FY$ dalam $\mathcal{D}$. Jika pemetaan
 $\Hom_{\mathcal{C}}(X, Y) \to \Hom_{\mathcal{D}}(FX, FY)$ bersifat injektif
 (atau bijektif) untuk semua $X$ dan $Y$, maka $F$ disebut setia (atau penuh dan
-setia). Jika setiap objek $\mathcal{D}$ isomorfik dengan suatu $FX$, maka $F$
-disebut pada hakikatnya surjektif.
+setia). Jika setiap objek dalam $\mathcal{D}$ isomorfik dengan suatu $FX$, maka
+$F$ disebut surjektif secara esensial.
 \index{funktor (functor)}
 
 % segment-id: o014.li2.prelude.conventions.p025
@@ -297,7 +299,7 @@ $\mathcal{P} \to \mathcal{Q}$.
 \index{transformasi alami (natural transformation)}
 \index{2-sel (2-cell)}
 % segment-id: o014.li2.prelude.conventions.p026
-Dalam sebagian pustaka, suatu morfisme $\varphi: F \to G$ di antara dua funktor
+Dalam sebagian pustaka, suatu morfisme $\varphi: F \to G$ antara dua funktor
 juga disebut transformasi alami, dan kadang-kadang ditulis dengan panah ganda
 $\varphi: F \Rightarrow G$. Morfisme $\varphi$ terdiri atas keluarga morfisme
 yang kompatibel $(\varphi_X: FX \to GX)_{X \in \Obj(\mathcal{C})}$, dan dapat
@@ -316,7 +318,7 @@ Ketika kelak membahas kategori-$\cate{Ab}$ (lihat
 yang sesuai.
 
 % segment-id: o014.li2.prelude.conventions.p028
-Diberikan funktor-funktor
+Untuk funktor-funktor
 $\begin{tikzcd}
 	\mathcal{B} \arrow[r, "R"] & \mathcal{C} \arrow[shift left, r, "F"] \arrow[shift right, r, "G"'] & \mathcal{D} \arrow[r, "L"] & \mathcal{E}
 \end{tikzcd}$
@@ -325,7 +327,7 @@ $L\varphi: LF \to LG$ dan $\varphi R: FR \to GR$. Di sisi lain, morfisme
 $\varphi: F \to G$ dan $\psi: G \to H$ dapat dikomposisikan menjadi
 $\psi\varphi: F \to H$. Operasi-operasi komposisi ini dapat dinyatakan sebagai
 komposisi $2$-sel, yakni dengan menempelkan diagram. Identitas segitiga yang
-segera akan ditinjau kembali merupakan contoh dasar.
+akan segera ditinjau kembali merupakan contoh dasar.
 
 \index{kategori funktor (functor category)}
 \index[sym1]{DC@$\mathcal{D}^{\mathcal{C}}$}
@@ -333,9 +335,9 @@ segera akan ditinjau kembali merupakan contoh dasar.
 % segment-id: o014.li2.prelude.conventions.p029
 Semua funktor dari kategori $\mathcal{C}$ ke kategori $\mathcal{D}$ membentuk
 kategori funktor $\mathcal{D}^{\mathcal{C}}$, yang juga ditulis
-$\mathrm{Fct}(\mathcal{C}, \mathcal{D})$. Perhatikan bahwa, kecuali
-$\mathcal{C}$ kecil, $\mathcal{D}^{\mathcal{C}}$ sering kali merupakan
-``kategori besar''. Sebagai kasus khusus kategori funktor, untuk
+$\mathrm{Fct}(\mathcal{C}, \mathcal{D})$. Perhatikan bahwa kecuali
+	$\mathcal{C}$ kecil, $\mathcal{D}^{\mathcal{C}}$ sering kali merupakan
+``kategori besar''. Sebagai kasus khusus dari kategori funktor, untuk
 $n \in \Z_{\geq 0}$ dan himpunan terurut total terkait $\mathbf{n}$, kategori
 $\mathcal{C}^{\mathbf{n}}$ dapat dijelaskan sebagai berikut.
 
@@ -348,11 +350,11 @@ $\mathcal{C}^{\mathbf{n}}$ dapat dijelaskan sebagai berikut.
 	$\mathbf{1}^{\mathcal{C}} = \mathbf{1}$;
 	% segment-id: o014.li2.prelude.conventions.i013
 	\item menentukan funktor $\mathbf{1} \to \mathcal{C}$ setara dengan
-	menentukan suatu objek $\mathcal{C}$, sehingga
+	menentukan suatu objek dalam $\mathcal{C}$, sehingga
 	$\mathcal{C}^{\mathbf{1}} \simeq \mathcal{C}$;
 	% segment-id: o014.li2.prelude.conventions.i014
 	\item objek-objek $\mathcal{C}^{\mathbf{2}}$ ialah morfisme dalam
-	$\mathcal{C}$, sedangkan morfisme-morfismenya ialah persegi komutatif di
+	$\mathcal{C}$, sedangkan morfisme-morfismenya ialah persegi komutatif
 	antara morfisme-morfisme tersebut.
 \end{compactitem}
 
@@ -390,7 +392,7 @@ keduanya disebut isomorfisme antarkategori yang saling invers.
 Unsur identitas (atau unsur satuan) suatu grup ditulis $1$ dalam notasi
 multiplikatif, sedangkan unsur identitas grup abelian ditulis $0$ dalam notasi
 aditif. Grup lawan dari $G$, yang urutan perkaliannya dibalik, ditulis
-$G^{\opp}$. Jika $H$ subgrup dari $G$, indeks $H$ dalam $G$ ditulis $(G:H)$;
+$G^{\opp}$. Jika $H$ adalah subgrup dari $G$, indeks $H$ dalam $G$ ditulis $(G:H)$;
 nilainya juga sama dengan banyaknya koset $|G/H|$ atau $|H \backslash G|$.
 \index[sym1]{GH@$(G:H)$}
 
@@ -398,7 +400,7 @@ nilainya juga sama dengan banyaknya koset $|G/H|$ atau $|H \backslash G|$.
 Kecuali dinyatakan lain, gelanggang selalu berarti gelanggang asosiatif dengan
 unsur satuan; demikian pula untuk aljabar atas gelanggang komutatif. Unsur
 satuan perkalian gelanggang $R$ ditulis $1$ atau $1_R$, dan semua unsur
-yang dapat dibalik membentuk grup perkalian $R^\times$. Karakteristik lapangan atau
+yang dapat dibalik membentuk grup perkalian $R^\times$. Karakteristik medan atau
 daerah integral $R$ ditulis $\mathrm{char}(R)$. Gelanggang lawan dari $R$
 ditulis $R^{\opp}$ dan mempunyai urutan perkalian yang berlawanan dengan $R$.
 % Koreksi O014-C002: sumber mengindeks A^{\opp}, padahal paragraf ini
@@ -406,7 +408,7 @@ ditulis $R^{\opp}$ dan mempunyai urutan perkalian yang berlawanan dengan $R$.
 \index[sym1]{Rop@$R^{\opp}$}
 
 % segment-id: o014.li2.prelude.conventions.p035
-Misalkan $r$ unsur tak nol dari gelanggang komutatif $R$. Jika homomorfisme grup
+Misalkan $r$ adalah unsur tak nol dari gelanggang komutatif $R$. Jika homomorfisme grup
 aditif $R \xrightarrow{\text{perkalian dengan}\; r} R$ mempunyai kernel tak
 nol, maka $r$ disebut pembagi nol. Ideal dalam gelanggang komutatif yang
 dihasilkan oleh unsur-unsur $x, y, \ldots$ ditulis $(x, y, \ldots)$.
@@ -419,11 +421,11 @@ suatu monoid, aljabar monoid atas $R$ yang terkait ditulis $R[M]$.
 
 % segment-id: o014.li2.prelude.conventions.p037
 Secara konvensi, $\Z \subset \Q \subset \R \subset \CC$ berturut-turut
-menyatakan gelanggang bilangan bulat, lapangan bilangan rasional, lapangan
-bilangan real, dan lapangan bilangan kompleks. Jika $q$ merupakan pangkat suatu
-bilangan prima, maka $\F_q$ menyatakan lapangan hingga dengan $q$ unsur. Jika
-$F \hookrightarrow E$ suatu pembenaman lapangan, perluasan lapangan terkait,
-atau lapangan perluasannya, ditulis $E|F$ dan derajatnya ditulis $[E:F]$.
+menyatakan gelanggang bilangan bulat, medan bilangan rasional, medan
+bilangan real, dan medan bilangan kompleks. Jika $q$ merupakan pangkat suatu
+bilangan prima, maka $\F_q$ menyatakan medan hingga dengan $q$ unsur. Jika
+$F \hookrightarrow E$ adalah pembenaman medan, perluasan medan terkait,
+atau medan perluasannya, ditulis $E|F$ dan derajatnya ditulis $[E:F]$.
 Jika $E|F$ merupakan perluasan
 Galois, grup Galoisnya ditulis $\Gal(E|F)$.
 \index[sym1]{Gal}
@@ -442,23 +444,23 @@ Galois, grup Galoisnya ditulis $\Gal(E|F)$.
 %transposenya ditulis ${}^t A$; matriks identitas $n \times n$ ditulis $1_{n \times n}$ atau $1$. Untuk matriks $n \times n$ atas gelanggang komutatif, determinan $A$ ditulis $\det A$.
 
 % segment-id: o014.li2.prelude.conventions.p038
-Notasi bagi kategori-kategori yang umum dari beberapa struktur aljabar dasar
-adalah sebagai berikut.
+Notasi untuk kategori-kategori umum yang dibentuk oleh beberapa struktur
+aljabar dasar adalah sebagai berikut.
 
 % segment-id: o014.li2.prelude.conventions.t001
 \begin{center}\small \begin{tabular}{|c|c|}\hline
 	Monoid & $\cate{Mon}$ \\
 	Grup &  $\cate{Grp}$ \\
 	Grup abelian & $\cate{Ab} = \Z\dcate{Mod}$ \\
-	Modul kiri atau kanan atas $R$ & $R\dcate{Mod}$ atau $\cated{Mod}R$ \\
-	Ruang vektor atas $\Bbbk$ & $\cate{Vect}(\Bbbk)$ \\
+	Modul-$R$ kiri atau kanan & $R\dcate{Mod}$ atau $\cated{Mod}R$ \\
+	Ruang vektor-$\Bbbk$ & $\cate{Vect}(\Bbbk)$ \\
 	Bimodul $(R,S)$ & $(R,S)\dcate{Mod}$ \\
-	Aljabar atas $\Bbbk$ & $\Bbbk\dcate{Alg}$ \\
-	Aljabar komutatif atas $\Bbbk$ & $\Bbbk\dcate{CAlg}$
+	Aljabar-$\Bbbk$ & $\Bbbk\dcate{Alg}$ \\
+	Aljabar-$\Bbbk$ komutatif & $\Bbbk\dcate{CAlg}$
 	\\ \hline
 \end{tabular} \quad \begin{tabular}{l}
-	$R$, $S$: gelanggang sebarang, \\
-	$\Bbbk$: lapangan (untuk ruang vektor) \\
+	$R$, $S$: gelanggang sembarang, \\
+	$\Bbbk$: medan (untuk ruang vektor) \\
 	$\Bbbk$: gelanggang komutatif (untuk aljabar) \\
 	kategori modul $\Bbbk\dcate{Mod}$ tidak membedakan kiri dan kanan.
 \end{tabular}\end{center}
@@ -469,22 +471,22 @@ adalah sebagai berikut.
 
 % segment-id: o014.li2.prelude.conventions.p039
 Jika $\Bbbk$ telah dipilih dan $R$ serta $S$ merupakan aljabar atas $\Bbbk$,
-maka ketika membahas bimodul $(R,S)$ secara baku struktur bimodul dianggap
-berasal dari struktur modul kiri atas $R \dotimes{\Bbbk} S^{\opp}$. Dengan kata lain,
-perkalian kiri dan kanan oleh $\Bbbk$ disyaratkan berimpit.
+maka ketika membahas bimodul $(R,S)$, struktur bimodul secara baku dianggap
+berasal dari struktur modul-$R \dotimes{\Bbbk} S^{\opp}$ kiri. Dengan kata lain,
+aksi kiri dan kanan oleh $\Bbbk$ disyaratkan berimpit.
 
 % segment-id: o014.li2.prelude.conventions.p040
-Grup homomorfisme antarsesama modul kiri, ataupun antarsesama modul kanan, atas
-$R$ ditulis dalam bentuk $\Hom_R(X, Y)$. Untuk bimodul $(R,S)$ digunakan notasi serupa,
+Grup homomorfisme antara dua modul-$R$ kiri ataupun dua modul-$R$ kanan
+ditulis dalam bentuk $\Hom_R(X, Y)$. Untuk bimodul $(R,S)$ digunakan notasi serupa,
 $\Hom_{(R, S)}(X, Y)$.
 
 % segment-id: o014.li2.prelude.conventions.p041
-Untuk gelanggang komutatif $R$ dan himpunan multiplikatifnya $U$, lokalisasi
+Untuk gelanggang komutatif $R$ dan suatu himpunan multiplikatif $U$, lokalisasi
 terkait ditulis $R[U^{-1}]$.
 
 % segment-id: o014.li2.prelude.conventions.p042
-Seperti kategori himpunan $\cate{Set}$, grup, gelanggang, modul, dan struktur
-lain di sini secara baku direalisasikan pada himpunan-$\mathcal{U}$, dengan
+Seperti pada kategori himpunan $\cate{Set}$, grup, gelanggang, modul, dan struktur
+lain di sini secara baku dipahami sebagai struktur pada himpunan-$\mathcal{U}$, dengan
 $\mathcal{U}$ semesta Grothendieck yang telah dipilih. Karena itu, setiap
 kategori dalam tabel mempunyai funktor pelupa menuju $\cate{Set}$. Contoh lain
 yang dibahas dalam buku ini, seperti kategori ruang topologis $\cate{Top}$ dan
@@ -503,9 +505,9 @@ $\begin{tikzcd}
 \end{tikzcd}$
 
 % segment-id: o014.li2.prelude.conventions.p044
-Pasangan tersebut juga dilengkapi dengan suatu keluarga bijeksi kanonik
+Pasangan tersebut juga dilengkapi dengan keluarga bijeksi kanonik
 $\varphi_{X, Y}: \Hom_{\mathcal{C}'}\left(FX, Y \right) \rightiso
-\Hom_{\mathcal{C}}\left(X, GY \right)$, yakni morfisme antarfunktor berikut:
+\Hom_{\mathcal{C}}\left(X, GY \right)$, yakni isomorfisme antarfunktor berikut:
 
 % segment-id: o014.li2.prelude.conventions.d005
 \[ \varphi: \Hom_{\mathcal{C}'}\left(F(\cdot), \cdot \right) \rightiso
@@ -528,9 +530,9 @@ itu kemudian ditulis $(F, G)$.
 % segment-id: o014.li2.prelude.conventions.p047
 Dalam pasangan adjoin, $\varphi$ secara ekuivalen dapat dicirikan melalui
 morfisme \emph{unit} $\eta: \identity_{\mathcal{C}} \to GF$ dan morfisme
-\emph{kounit} $\varepsilon: FG \to \identity_{\mathcal{C}'}$. Agar
-$(F, G, \eta, \varepsilon)$ memberikan pasangan adjoin, syarat perlu dan
-cukupnya ialah bahwa morfisme-morfisme tersebut memenuhi
+\emph{kounit} $\varepsilon: FG \to \identity_{\mathcal{C}'}$. Data
+$(F, G, \eta, \varepsilon)$ membentuk pasangan adjoin jika dan hanya jika
+morfisme-morfisme tersebut memenuhi
 \emph{identitas segitiga}
 \index{unit (unit)}
 \index{kounit (counit)}
@@ -565,7 +567,7 @@ Untuk rinciannya, lihat \cite[Catatan~2.6.6]{Li1}.
 \subsection*{Limit}
 
 % segment-id: o014.li2.prelude.conventions.p050
-Perhatikan funktor $\alpha: I \to \mathcal{C}$.
+Tinjau funktor $\alpha: I \to \mathcal{C}$.
 
 % segment-id: o014.li2.prelude.conventions.l005
 \begin{itemize}
@@ -584,9 +586,9 @@ Perhatikan funktor $\alpha: I \to \mathcal{C}$.
 
 % segment-id: o014.li2.prelude.conventions.p051
 Kedua jenis limit tersebut saling dual: $\varinjlim$ dari
-$\alpha: I \to \mathcal{C}$ dan $\varprojlim$ dari
-$\alpha^{\opp}: I^{\opp} \to \mathcal{C}^{\opp}$ merupakan hal yang sama.
-Oleh karena itu, dalam buku ini funktor yang terkait dengan $\varprojlim$ juga
+$\alpha: I \to \mathcal{C}$ dapat diidentifikasi dengan $\varprojlim$ dari
+$\alpha^{\opp}: I^{\opp} \to \mathcal{C}^{\opp}$.
+Oleh karena itu, dalam buku ini funktor yang terkait dengan $\varprojlim$
 sering ditulis dalam bentuk $I^{\opp} \to \mathcal{C}$.
 
 % segment-id: o014.li2.prelude.conventions.p052
@@ -606,11 +608,11 @@ pilihan $\mathcal{U}$.
 \index{kategori!lengkap, kolengkap (complete, cocomplete)}
 
 % segment-id: o014.li2.prelude.conventions.p054
-Untuk menetapkan notasi, selanjutnya kita memilih kategori $\mathcal{C}$ dan
-meninjau kembali beberapa kasus khusus limit yang lazim. Definisi terperinci
+Untuk menetapkan notasi, pilih kategori $\mathcal{C}$ dan
+tinjau kembali beberapa kasus khusus limit yang lazim. Definisi terperinci
 dapat ditemukan dalam \cite[\S~2.7]{Li1} atau buku ajar lain. Dalam
-sifat-sifat universal berikut, $T$ menyatakan sebarang objek dalam
-$\mathcal{C}$, sedangkan $I$ menyatakan sebarang himpunan.
+sifat-sifat universal berikut, $T$ menyatakan sembarang objek dalam
+$\mathcal{C}$, sedangkan $I$ menyatakan sembarang himpunan.
 
 % segment-id: o014.li2.prelude.conventions.t002
 \begin{center}\small\setlength{\tabcolsep}{2.5pt}\begin{tabular}{|c|c|c|c|c|} \hline
@@ -649,7 +651,8 @@ simbol jumlah langsung $\bigoplus_i$ dari teori modul.
 \index[sym1]{oplus@$\oplus$}
 
 % segment-id: o014.li2.prelude.conventions.p056
-Penyama/kopenyama dan produk/koproduk masing-masing merupakan pasangan dual.
+Penyama dan kopenyama, serta produk dan koproduk, masing-masing membentuk
+pasangan dual.
 Pencirian melalui sifat universal tersebut juga dapat ditulis sebagai diagram
 komutatif seperti dalam \cite[\S~2.7]{Li1}, atau ditafsirkan melalui pembenaman
 Yoneda yang akan ditinjau dalam \S\sourcecrossref{sec:Yoneda}{A.1}. Andaikan
@@ -713,9 +716,9 @@ $\iota_i g_i = \iota_j g_j$ untuk semua $i,j$; dari sini diperoleh morfisme
 kanonik $Z \to \coprod_{i \in I} (Z \to X_i)$.
 
 % segment-id: o014.li2.prelude.conventions.p060
-Produk serat yang melibatkan sejumlah berhingga objek
+Produk serat yang melibatkan berhingga banyak objek
 $X_1 \dtimes{Z} X_2 \dtimes{Z} \cdots$, maupun koproduk serat
-$X_1 \dsqcup{Z} X_2 \dsqcup{Z} \cdots$, dapat direduksi ke kasus dua objek.
+$X_1 \dsqcup{Z} X_2 \dsqcup{Z} \cdots$, dapat ditangani dengan mengulang kasus dua objek.
 Perhatikan dua diagram komutatif berikut.
 
 % segment-id: o014.li2.prelude.conventions.d010
@@ -730,8 +733,8 @@ Perhatikan dua diagram komutatif berikut.
 % pada sumber dihapus sebagai artefak sintaksis tanpa muatan matematika.
 
 % segment-id: o014.li2.prelude.conventions.p061
-Kedua diagram tersebut masing-masing disebut diagram \emph{tarik balik} dan diagram
-\emph{dorong keluar}. Morfisme $X \dtimes{Z} Y \to Y$ disebut tarik balik dari
+Kedua diagram tersebut masing-masing disebut diagram \emph{tarik balik} dan
+diagram \emph{dorong keluar}. Morfisme $X \dtimes{Z} Y \to Y$ disebut tarik balik dari
 $X \to Z$, sedangkan $Y \to X \dsqcup{Z} Y$ disebut dorong keluar dari
 $Z \to X$; perhatikan bahwa peran $X$ dan $Y$ simetris. Lebih umum, diagram
 komutatif yang isomorfik dengan diagram-diagram di atas juga masing-masing
@@ -741,7 +744,7 @@ disebut diagram tarik balik dan diagram dorong keluar; lihat
 \index{diagram dorong keluar (pushout diagram)}
 
 % segment-id: o014.li2.prelude.conventions.p062
-Dalam notasi buku ini, pusat persegi pada diagram tarik balik (atau dorong
+Dalam notasi buku ini, bagian tengah persegi pada diagram tarik balik (atau dorong
 keluar) diberi tanda $\Box$ (atau $\boxplus$).
 \index[sym1]{Box@$\Box$, $\boxplus$}
 

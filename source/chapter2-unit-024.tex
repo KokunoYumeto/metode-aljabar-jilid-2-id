@@ -9,7 +9,7 @@
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p001
 Bagian ini memberikan pengantar singkat tentang suatu kelas struktur terurut
-parsial yang disebut kisi. Pembahasan ini akan membantu menjernihkan struktur
+parsial yang disebut kisi. Pembahasan ini akan membantu memperjelas struktur
 kategori abelian.
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p002
@@ -22,7 +22,7 @@ Untuk setiap himpunan bagian $S$ dari suatu himpunan terurut parsial
 $(P, \leq)$, terdapat konsep batas atas, batas bawah, supremum $\sup S$, dan
 infimum $\inf S$. Himpunan bagian $S \subset P$ mempunyai supremum (atau
 infimum) jika dan hanya jika koproduk (atau produk) semua objek dalam $S$
-terdapat di kategori $\mathcal{P}$; dalam hal ini supremum (atau infimum)
+ada dalam kategori $\mathcal{P}$; dalam hal ini supremum (atau infimum)
 tersebut adalah koproduk (atau produk) itu.
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.d001
@@ -52,20 +52,20 @@ $x \wedge 0=0$, $x \vee 0=x=x \wedge 1$, serta $x \vee 1=1$.
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p005
 Dari sudut pandang kategori, $a \wedge b$, $a \vee b$, $1$, dan $0$ masing-masing
 bersesuaian dengan produk dua objek, koproduk dua objek, objek terminal (yakni
-produk kosong), dan objek awal (yakni koproduk kosong) di dalam kategori;
-silakan pembaca memeriksanya.
+produk kosong), dan objek awal (yakni koproduk kosong) di dalam kategori; hal
+ini dapat diperiksa langsung.
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p006
-Untuk memperagakan operasi $\wedge$ dan $\vee$, mari kita buktikan fakta
-berikut. Jika $a^\flat,a,b \in P$ memenuhi $a^\flat \leq a$, maka
+Sebagai ilustrasi operasi $\wedge$ dan $\vee$, buktikan fakta berikut. Jika
+$a^\flat,a,b \in P$ memenuhi $a^\flat \leq a$, maka
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.q001
 \begin{equation}\label{eqn:modular-inequality}
 	a^\flat \vee (a \wedge b) \leq (a^\flat \vee b) \wedge a.
 \end{equation}
-Berdasarkan definisi supremum, pertama-tama masalahnya tereduksi menjadi
-pembuktian $a^\flat \leq (a^\flat \vee b) \wedge a$ dan
+Berdasarkan definisi supremum, mula-mula cukup dibuktikan
+$a^\flat \leq (a^\flat \vee b) \wedge a$ dan
 $(a \wedge b) \leq (a^\flat \vee b) \wedge a$. Berdasarkan definisi infimum,
-hal ini selanjutnya masing-masing tereduksi menjadi pembuktian
+selanjutnya cukup dibuktikan masing-masing ketaksamaan
 \[ a^\flat \leq a^\flat \vee b, \quad a^\flat \leq a, \quad a \wedge b \leq a^\flat \vee b, \quad a \wedge b \leq a; \]
 ketaksamaan ketiga mengikuti dari $a \wedge b \leq b \leq a^\flat \vee b$,
 sedangkan yang lain sudah jelas.
@@ -90,18 +90,18 @@ sedangkan yang lain sudah jelas.
 \end{definisi}
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p007
-Sekarang mari kita tinjau contoh-contoh dasar kisi.
+Sekarang tinjau beberapa contoh dasar kisi.
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.l002
 \begin{itemize}
 	% segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.i003
 	\item Himpunan bilangan bulat positif $\Z_{\geq 1}$ merupakan kisi terhadap
 	relasi keterbagian ($x \mid y \iff x \leq y$):
-	$x \vee y=\mathrm{lcm}(x,y)$ dan $x \wedge y=\mathrm{gcd}(x,y)$. Silakan
-	pembaca memeriksa bahwa kisi ini modular, mempunyai batas bawah $1$, tetapi
+	$x \vee y=\mathrm{lcm}(x,y)$ dan $x \wedge y=\mathrm{gcd}(x,y)$. Pembaca
+	dapat memeriksa bahwa kisi ini modular, mempunyai batas bawah $1$, tetapi
 	tidak mempunyai batas atas.
 
 	% segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.i004
-	\item Ambil sebuah gelanggang $R$ dan modul-$R$ kiri $M$. Himpunan submodulnya
+	\item Ambil gelanggang $R$ dan modul-$R$ kiri $M$. Himpunan submodulnya
 	$\mathrm{Sub}_M$ merupakan kisi modular terbatas terhadap $\subset$:
 	$x \vee y=x+y$ dan $x \wedge y=x \cap y$; batas atasnya adalah $M$ dan batas
 	bawahnya adalah $\{0\}$. Inilah asal-usul istilah ``kisi modular''.
@@ -187,8 +187,8 @@ Sekarang mari kita tinjau contoh-contoh dasar kisi.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p008
-Lema Zassenhaus dalam aljabar elementer (lihat \cite[Lema 4.6.4]{Li1}, lebih
-tepatnya versi teori modulnya) beserta konsekuensi-konsekuensinya dapat
+Lema Zassenhaus dalam aljabar elementer (lihat \cite[Lema 4.6.4]{Li1},
+khususnya versi teori modulnya) beserta konsekuensi-konsekuensinya dapat
 disarikan dengan menggunakan teori kisi.
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.th001
@@ -237,10 +237,10 @@ disarikan dengan menggunakan teori kisi.
 \begin{bukti}
 	Isomorfisme pada bagian terakhir diperoleh dengan menerapkan
 	Proposisi~\ref{prop:lattice-diamond-isom} pada kedua jajaran genjang dalam
-	diagram; pokoknya adalah memeriksa relasi-relasi dalam
+	diagram; yang perlu diperiksa ialah relasi-relasi dalam
 	\eqref{eqn:Zassenhaus-cases}. Perhatikan bahwa diagram simetris kiri--kanan
 	terhadap $u \leftrightarrow v$ dan $u^\flat \leftrightarrow v^\flat$;
-	karena itu, cukup periksa bagian kirinya. Relasi urutan parsial di antara
+	karena itu, cukup memeriksa bagian kirinya. Relasi urutan parsial di antara
 	unsur-unsurnya langsung terlihat. Selanjutnya, untuk kasus $\wedge$,
 	definisi kisi modular memberikan
 	% segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.q008
@@ -302,7 +302,7 @@ penghalusan sejati.
 	dengan $0 \leq i<r$ dan $0 \leq j \leq s$ untuk $x_{i,j}$, serta
 	$0 \leq i \leq r$ dan $0 \leq j<s$ untuk $y_{j,i}$. Maka
 	$x_{i,j+1} \leq x_{i,j}$, $x_{i,0}=x_i$, dan $x_{i,s}=x_{i+1}$, sehingga
-	$\left(x_{i,j}\right)_{i,j}$, menurut urutan ini, memperhalus
+	$\left(x_{i,j}\right)_{i,j}$, dengan urutan tersebut, memperhalus
 	$x_0 \geq \cdots \geq x_r$. Demikian pula,
 	$\left(y_{j,i}\right)_{j,i}$ memperhalus $y_0 \geq \cdots \geq y_s$.
 	Dengan mengambil $u^\flat=x_{i+1}$, $u=x_i$, $v^\flat=y_{j+1}$, dan
@@ -310,7 +310,7 @@ penghalusan sejati.
 	% segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.q013
 	\[ \left[ x_{i, j+1}, x_{i,j} \right] \simeq \left[ y_{j, i+1}, y_{j, i} \right], \]
 	dan isomorfisme ini dapat diuraikan menjadi isomorfisme standar beserta
-	invers-inversnya. Terbuktilah pernyataan tersebut.
+	inversnya. Terbuktilah pernyataan tersebut.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p010
@@ -333,7 +333,7 @@ perhatikan bahwa $r=0$ jika dan hanya jika $a=b$.
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.th003
 \begin{teorema}[Teorema Jordan--Hölder untuk Kisi Modular]\label{prop:lattice-JH}
-	\index{Jordan-Holder@Teorema Jordan--Hölder (Jordan--Hölder Theorem)}
+	\index{Teorema Jordan-Holder@Teorema Jordan--Hölder (Jordan--Hölder Theorem)}
 	Misalkan $a<b$ merupakan unsur kisi modular $(P,\leq)$. Maka setiap dua
 	deret komposisi dari $[a,b]$ mempunyai panjang yang sama dan saling
 	ekuivalen dalam pengertian Definisi~\ref{def:Schreier-equiv}.
@@ -345,8 +345,8 @@ perhatikan bahwa $r=0$ jika dan hanya jika $a=b$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p012
-Persoalan pentingnya ialah menentukan interval dalam himpunan terurut parsial
-mana yang mempunyai deret komposisi. Seperti pada situasi teori modul yang
+Pertanyaan penting berikutnya ialah menentukan interval mana dalam suatu
+himpunan terurut parsial yang mempunyai deret komposisi. Seperti dalam teori modul yang
 sudah dikenal, keberadaan tersebut dapat dijamin oleh syarat rantai naik dan
 rantai menurun.
 
@@ -383,7 +383,7 @@ Definisi~\ref{def:sub-quot-obj}.
 \end{definisi}
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p014
-Sekarang kita kembali ke himpunan terurut parsial umum.
+Sekarang kita kembali membahas himpunan terurut parsial umum.
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.le002
 \begin{lema}\label{prop:lattice-composition-series}
@@ -395,7 +395,7 @@ Sekarang kita kembali ke himpunan terurut parsial umum.
 		diperhalus menjadi suatu deret komposisi; khususnya, $[a,b]$ mempunyai
 		deret komposisi.
 		% segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.i007
-		\item Jika $[a,b]$ diasumsikan merupakan kisi modular dan mempunyai deret
+		\item Jika $[a,b]$ merupakan kisi modular dan mempunyai deret
 		komposisi, maka $[a,b]$ berpanjang hingga.
 	\end{enumerate}
 \end{lema}
@@ -426,7 +426,7 @@ Sekarang kita kembali ke himpunan terurut parsial umum.
 \begin{definisi}\label{def:lattice-length}
 	Misalkan $(P,\leq)$ merupakan kisi modular terbatas yang berpanjang hingga.
 	Pilih sebarang deret komposisi $1=x_0>\cdots>x_r=0$ dari $P$. Bilangan
-	$r \in \Z_{\geq 0}$ disebut \emph{panjang} dari $(P,\leq)$.
+	$r \in \Z_{\geq 0}$ disebut \emph{panjang} $(P,\leq)$.
 \end{definisi}
 
 % segment-id: o014.li2.chapter2.glimpse-of-lattice-theory.p015

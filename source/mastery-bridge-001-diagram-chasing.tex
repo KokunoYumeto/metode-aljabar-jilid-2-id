@@ -1,0 +1,557 @@
+% MATERI INSTRUKSIONAL INDEPENDEN --- BUKAN TEKS SUMBER WEN-WEI LI.
+% stable-unit-id: o014.mastery.diagram-chasing.001
+% provenance: OpenAI Codex gpt-5.6-sol, Ultra
+% license: CC BY 4.0; kompatibel dengan lisensi terjemahan sumber.
+
+\section*{Jembatan Penguasaan 001: Pengejaran Diagram}
+\addcontentsline{toc}{section}{Jembatan Penguasaan 001: Pengejaran Diagram}
+\hypertarget{o014.mastery.diagram-chasing.001}{ }
+\label{mastery:diagram-chasing-001}
+
+\noindent\textbf{Status dan atribusi.}
+Unit ini merupakan materi instruksional independen yang disusun untuk
+mendampingi buku ini. Unit ini bukan bagian dari teks sumber Wen-Wei Li dan
+tidak boleh dinisbatkan kepadanya. Provenans penyusunan:
+\texttt{OpenAI Codex gpt-5.6-sol, Ultra}. Materi ini tersedia berdasarkan
+Creative Commons Attribution 4.0 International
+(CC BY 4.0; \url{https://creativecommons.org/licenses/by/4.0/}), sehingga
+kompatibel dengan lisensi teks sumber.
+
+\subsection*{Peta prasyarat}
+
+Unit ini dapat dibaca setelah menguasai rangkaian prasyarat singkat berikut.
+\begin{compactitem}
+	\item Kernel, kokernel, dan funktorialitasnya:
+	\S\ref{sec:Ker-Coker}, khususnya
+	\eqref{eqn:Ker-Coker-functoriality}.
+	\item Citra, kocitra, dan faktorisasi epi--mono:
+	\S\ref{sec:images}.
+	\item Kategori abelian serta kestabilan epimorfisme dan monomorfisme
+	terhadap tarik balik dan dorong keluar:
+	\S\ref{sec:Abel-cat-def} dan
+	Proposisi~\ref{prop:Abel-cat-pull-push}.
+	\item Kompleks, kohomologi, dan keeksakan:
+	\S\ref{sec:cohomology}, terutama
+	Definisi~\ref{def:cohomology}.
+	\item Konstruksi kategoris morfisme penghubung dan Lema Ular:
+	\S\ref{sec:diagram-lemmas}, Catatan~\ref{rem:connecting-canonical}, dan
+	Teorema~\ref{prop:snake-lemma}.
+\end{compactitem}
+Secara konseptual, alurnya ialah
+\[
+	\text{kernel/kokernel}
+	\Longrightarrow \text{citra dan keeksakan}
+	\Longrightarrow \text{angkat--dorong--turunkan}
+	\Longrightarrow \text{morfisme penghubung}.
+\]
+
+\subsection*{Metode kerja: mulai dari hambatan}
+
+Untuk pengejaran unsur dalam kategori modul, gunakan disiplin berikut.
+\begin{enumerate}
+	\item Tuliskan tepat apa yang harus dibuktikan: keanggotaan dalam kernel,
+	citra, atau kesamaan dua kelas kokernel.
+	\item Mulailah dari unsur yang mengukur hambatan, biasanya unsur kernel
+	atau kelas kokernel.
+	\item Angkat unsur hanya melalui panah yang diketahui surjektif. Dorong
+	unsur sepanjang panah mana pun yang tersedia.
+	\item Gunakan komutativitas untuk memindahkan suatu persamaan ke sisi lain
+	diagram, lalu gunakan keeksakan untuk mengganti pernyataan ``bernilai nol''
+	dengan ``berasal dari citra sebelumnya''.
+	\item Jika suatu pilihan diperlukan, buktikan bahwa selisih dua pilihan
+	lenyap dalam target akhir.
+\end{enumerate}
+Dalam kategori abelian umum, ``unsur'' dapat diganti oleh morfisme dari objek
+uji. Bila pengangkatan tidak tersedia secara langsung, gunakan penutup
+epimorfik sebagaimana dalam Lema~\ref{prop:Abel-cat-exact-aux}. Dengan cara
+ini, pengejaran unsur berikut bukan sekadar heuristik: pengejaran itu merupakan model
+konkret bagi argumen kernel, kokernel, dan faktorisasi.
+
+Sebagai contoh kerja, perhatikan diagram komutatif modul-$R$
+\[
+\begin{tikzcd}
+	0 \arrow[r] & A' \arrow[r, "i"] \arrow[d, "a'"'] & A \arrow[r, "p"] \arrow[d, "a"'] & A'' \arrow[r] \arrow[d, "a''"] & 0 \\
+	0 \arrow[r] & B' \arrow[r, "j"'] & B \arrow[r, "q"'] & B'' \arrow[r] & 0
+\end{tikzcd}
+\]
+dengan kedua baris eksak. Andaikan $a'$ dan $a''$ injektif. Untuk membuktikan
+$a$ injektif, mulai dengan hambatan $x\in\Ker(a)$. Komutativitas memberikan
+$a''p(x)=qa(x)=0$, sehingga injektivitas $a''$ memberi $p(x)=0$. Keeksakan
+baris atas memberi $x=i(x')$ untuk suatu $x'\in A'$. Selanjutnya,
+\[
+	0=a(x)=a i(x')=j a'(x').
+\]
+Karena $j$ dan $a'$ injektif, $x'=0$, jadi $x=0$. Perhatikan pola yang
+berulang: mulai dari kernel, dorong ke kanan, gunakan injektivitas, kembali
+ke kiri melalui keeksakan, lalu gunakan injektivitas sekali lagi.
+
+\subsection*{Latihan dan solusi lengkap}
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex01
+\subsubsection*{Latihan 1 --- Funktorialitas kernel, kokernel, dan citra}
+\hypertarget{o014.mastery.diagram-chasing.001.ex01}{ }
+\label{mastery:diagram-chasing-001-ex01}
+
+Misalkan
+\[
+\begin{tikzcd}
+	A \arrow[r, "f"] \arrow[d, "a"'] & B \arrow[d, "b"] \\
+	A' \arrow[r, "g"'] & B'
+\end{tikzcd}
+\qquad (ga=bf)
+\]
+merupakan persegi komutatif modul-$R$.
+\begin{enumerate}[(i)]
+	\item Bangun homomorfisme alami
+	$\overline a:\Ker(f)\to\Ker(g)$ dan
+	$\overline b:\Coker(f)\to\Coker(g)$.
+	\item Buktikan $b(\Image(f))\subset\Image(g)$, serta bahwa
+	kesamaan berlaku jika $a$ surjektif.
+	\item Buktikan $\Ker(f)=a^{-1}(\Ker(g))$ jika $b$ injektif.
+\end{enumerate}
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol01
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol01}{ }
+Jika $x\in\Ker(f)$, maka $g(a(x))=b(f(x))=0$; jadi
+$a(x)\in\Ker(g)$. Pembatasan $a$ memberikan
+$\overline a:\Ker(f)\to\Ker(g)$. Untuk kokernel, definisikan
+\[
+	\overline b([y])=[b(y)], \qquad [y]\in B/\Image(f).
+\]
+Jika $y$ diganti oleh $y+f(x)$, maka
+$b(y+f(x))=b(y)+g(a(x))$, yang menentukan kelas yang sama modulo
+$\Image(g)$. Jadi $\overline b$ terdefinisi dengan baik. Kedua konstruksi
+ini tepat merupakan konstruksi dalam \eqref{eqn:Ker-Coker-functoriality}.
+
+Selanjutnya,
+\[
+	b(\Image(f))=b(f(A))=g(a(A))\subset g(A')=\Image(g).
+\]
+Jika $a$ surjektif, maka $a(A)=A'$, sehingga inklusi tersebut menjadi
+kesamaan. Terakhir, $x\in\Ker(f)$ selalu menyiratkan
+$a(x)\in\Ker(g)$. Sebaliknya, jika $a(x)\in\Ker(g)$, maka
+$0=g(a(x))=b(f(x))$; injektivitas $b$ memberikan $f(x)=0$. Jadi
+$x\in\Ker(f)$, dan diperoleh
+$\Ker(f)=a^{-1}(\Ker(g))$.
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex02
+\subsubsection*{Latihan 2 --- Irisan, jumlah, dan teorema isomorfisme}
+\hypertarget{o014.mastery.diagram-chasing.001.ex02}{ }
+\label{mastery:diagram-chasing-001-ex02}
+
+Misalkan $U$ dan $V$ submodul dari modul-$R$ $M$. Definisikan
+\[
+	r:U\cap V\longrightarrow U\oplus V,\quad r(w)=(w,-w),
+	\qquad
+	s:U\oplus V\longrightarrow U+V,\quad s(u,v)=u+v.
+\]
+Buktikan bahwa
+\[
+	0\longrightarrow U\cap V\xrightarrow{r}U\oplus V
+	\xrightarrow{s}U+V\longrightarrow0
+\]
+eksak. Gunakan pengejaran kernel dan citra untuk memperoleh isomorfisme
+kanonik
+\[
+	U/(U\cap V)\rightiso (U+V)/V.
+\]
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol02
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol02}{ }
+Jika $r(w)=0$, maka komponen pertama menunjukkan $w=0$; jadi $r$ injektif.
+Selain itu, $s(r(w))=w-w=0$, sehingga $\Image(r)\subset\Ker(s)$. Jika
+$(u,v)\in\Ker(s)$, maka $u+v=0$. Jadi $u=-v$ terletak sekaligus dalam
+$U$ dan $V$, serta
+\[
+	(u,v)=(u,-u)=r(u).
+\]
+Dengan demikian $\Ker(s)=\Image(r)$. Setiap unsur $U+V$ berbentuk $u+v$,
+jadi $s$ surjektif. Barisan tersebut eksak.
+
+Sekarang tinjau homomorfisme
+\[
+	\theta:U\longrightarrow (U+V)/V,\qquad u\longmapsto u+V.
+\]
+Pemetaan ini surjektif karena $(u+v)+V=u+V$. Kernelnya terdiri atas semua
+$u\in U$ yang juga terletak dalam $V$, yakni $U\cap V$. Faktorisasi
+epi--mono, atau Teorema Isomorfisme~\ref{prop:Abel-cat-isom-thm}, memberikan
+isomorfisme kanonik
+$U/(U\cap V)\rightiso (U+V)/V$.
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex03
+\subsubsection*{Latihan 3 --- Lema Lima Pendek}
+\hypertarget{o014.mastery.diagram-chasing.001.ex03}{ }
+\label{mastery:diagram-chasing-001-ex03}
+
+Dalam diagram komutatif
+\[
+\begin{tikzcd}
+	0 \arrow[r] & A' \arrow[r, "i"] \arrow[d, "a'"'] & A \arrow[r, "p"] \arrow[d, "a"'] & A'' \arrow[r] \arrow[d, "a''"] & 0 \\
+	0 \arrow[r] & B' \arrow[r, "j"'] & B \arrow[r, "q"'] & B'' \arrow[r] & 0,
+\end{tikzcd}
+\]
+andaikan kedua baris eksak.
+\begin{enumerate}[(i)]
+	\item Jika $a'$ dan $a''$ injektif, buktikan bahwa $a$ injektif.
+	\item Jika $a'$ dan $a''$ surjektif, buktikan bahwa $a$ surjektif.
+	\item Simpulkan bahwa jika $a'$ dan $a''$ isomorfisme, maka $a$ juga
+	isomorfisme.
+\end{enumerate}
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol03
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol03}{ }
+Untuk (i), ambil $x\in A$ dengan $a(x)=0$. Maka
+$a''p(x)=qa(x)=0$. Karena $a''$ injektif, $p(x)=0$; keeksakan baris atas
+memberi $x=i(x')$. Selanjutnya
+$0=a i(x')=j a'(x')$. Karena $j$ dan $a'$ injektif, $x'=0$, sehingga
+$x=0$.
+
+Untuk (ii), ambil $y\in B$ dan nyatakan $y''=q(y)$. Surjektivitas $a''$
+memberi $x''\in A''$ dengan $a''(x'')=y''$. Karena $p$ surjektif, pilih
+$x\in A$ dengan $p(x)=x''$. Sekarang
+\[
+	q(y-a(x))=y''-a''p(x)=0.
+\]
+Keeksakan baris bawah memberi $y-a(x)=j(y')$ untuk suatu $y'\in B'$.
+Surjektivitas $a'$ memberi $x'\in A'$ dengan $a'(x')=y'$. Maka
+\[
+	y=a(x)+j(a'(x'))=a(x+i(x')).
+\]
+Jadi $a$ surjektif. Jika kedua morfisme luar isomorfisme, (i) dan (ii)
+menunjukkan bahwa $a$ sekaligus injektif dan surjektif, sehingga merupakan
+isomorfisme.
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex04
+\subsubsection*{Latihan 4 --- Lema Sembilan}
+\hypertarget{o014.mastery.diagram-chasing.001.ex04}{ }
+\label{mastery:diagram-chasing-001-ex04}
+
+Perhatikan diagram komutatif modul-$R$
+\[
+\begin{tikzcd}[column sep=small]
+	& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] & \\
+	0 \arrow[r] & A' \arrow[r, "f'"] \arrow[d, "\alpha"'] & B' \arrow[r, "g'"] \arrow[d, "\beta"'] & C' \arrow[r] \arrow[d, "\gamma"'] & 0 \\
+	0 \arrow[r] & A \arrow[r, "f"] \arrow[d, "\overline\alpha"'] & B \arrow[r, "g"] \arrow[d, "\overline\beta"'] & C \arrow[r] \arrow[d, "\overline\gamma"'] & 0 \\
+	0 \arrow[r] & A'' \arrow[r, "f''"] \arrow[d] & B'' \arrow[r, "g''"] \arrow[d] & C'' \arrow[r] \arrow[d] & 0 \\
+	& 0 & 0 & 0 &
+\end{tikzcd}
+\]
+dengan ketiga kolom eksak. Andaikan baris atas dan baris tengah eksak.
+Buktikan bahwa baris bawah juga eksak.
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol04
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol04}{ }
+Pertama kita buktikan bahwa $f''$ injektif. Ambil $a''\in A''$ dengan
+$f''(a'')=0$, lalu angkat $a''$ menjadi $a\in A$. Karena
+$\overline\beta f(a)=f''\overline\alpha(a)=0$, terdapat $b'\in B'$ dengan
+$\beta(b')=f(a)$. Menerapkan $g$ memberi
+\[
+	\gamma(g'(b'))=g(\beta(b'))=g(f(a))=0.
+\]
+Morfisme $\gamma$ injektif, sehingga $g'(b')=0$. Keeksakan baris atas
+memberi $b'=f'(a')$ untuk suatu $a'\in A'$. Maka
+$f(a-\alpha(a'))=0$. Karena $f$ injektif, $a=\alpha(a')$, sehingga
+$a''=\overline\alpha(a)=0$.
+
+Berikutnya, $g''$ surjektif. Untuk $c''\in C''$, pilih $c\in C$ yang
+dipetakan ke $c''$. Surjektivitas $g$ memberi $b\in B$ dengan $g(b)=c$; maka
+$g''(\overline\beta(b))=\overline\gamma(g(b))=c''$.
+
+Tinggal memeriksa keeksakan di $B''$. Komutativitas langsung memberi
+$g''f''=0$. Sebaliknya, ambil $b''\in B''$ dengan $g''(b'')=0$ dan angkat
+$b''$ ke $b\in B$. Karena
+$\overline\gamma(g(b))=g''(\overline\beta(b))=0$, terdapat $c'\in C'$
+dengan $\gamma(c')=g(b)$. Pilih $b'\in B'$ dengan $g'(b')=c'$. Maka
+\[
+	g(b-\beta(b'))=g(b)-\gamma(g'(b'))=0.
+\]
+Keeksakan baris tengah memberi $a\in A$ dengan
+$f(a)=b-\beta(b')$. Setelah dipetakan ke baris bawah, diperoleh
+\[
+	f''(\overline\alpha(a))
+	=\overline\beta(f(a))
+	=\overline\beta(b)=b''.
+\]
+Jadi $\Ker(g'')=\Image(f'')$, dan baris bawah eksak.
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex05
+\subsubsection*{Latihan 5 --- Membangun morfisme penghubung}
+\hypertarget{o014.mastery.diagram-chasing.001.ex05}{ }
+\label{mastery:diagram-chasing-001-ex05}
+
+Kembali ke diagram barisan eksak pendek
+\[
+\begin{tikzcd}
+	0 \arrow[r] & A' \arrow[r, "i"] \arrow[d, "\alpha'"'] & A \arrow[r, "p"] \arrow[d, "\alpha"'] & A'' \arrow[r] \arrow[d, "\alpha''"] & 0 \\
+	0 \arrow[r] & B' \arrow[r, "j"'] & B \arrow[r, "q"'] & B'' \arrow[r] & 0.
+\end{tikzcd}
+\]
+Untuk $x''\in\Ker(\alpha'')$, pilih $x\in A$ dengan $p(x)=x''$.
+Tunjukkan bahwa $\alpha(x)=j(y')$ untuk suatu $y'\in B'$, lalu definisikan
+\[
+	\delta(x''):=[y']\in\Coker(\alpha')=B'/\Image(\alpha').
+\]
+Buktikan bahwa $\delta$ terdefinisi dengan baik, merupakan homomorfisme, dan
+alami terhadap morfisme antara dua diagram semacam ini.
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol05
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol05}{ }
+Karena $x''\in\Ker(\alpha'')$,
+\[
+	q(\alpha(x))=\alpha''(p(x))=\alpha''(x'')=0.
+\]
+Keeksakan baris bawah memberi $\alpha(x)\in\Image(j)$, jadi terdapat
+$y'\in B'$ dengan $j(y')=\alpha(x)$. Unsur $y'$ unik karena $j$ injektif.
+
+Jika $x_1$ merupakan pengangkatan lain dari $x''$, maka
+$x_1-x\in\Ker(p)=\Image(i)$; tuliskan $x_1-x=i(a')$. Jika
+$j(y_1')=\alpha(x_1)$, komutativitas memberi
+\[
+	j(y_1'-y'-\alpha'(a'))
+	=\alpha(x_1)-\alpha(x)-\alpha i(a')=0.
+\]
+Injektivitas $j$ memberi $y_1'-y'=\alpha'(a')$. Jadi
+$[y_1']=[y']$ dalam $\Coker(\alpha')$, dan $\delta$ tidak bergantung pada
+pilihan $x$. Untuk $x_1''$ dan $x_2''$, jumlah pengangkatan yang dipilih dan
+jumlah unsur $y'$ yang bersesuaian merupakan data yang sah bagi
+$x_1''+x_2''$; maka
+$\delta$ aditif dan $R$-linear.
+
+Untuk kealamian, ambil morfisme dari diagram di atas ke diagram serupa yang
+semua perseginya komutatif. Jika $x$ dan $y'$ dipilih untuk $x''$, citra
+$x$ dan $y'$ dalam diagram kedua merupakan pilihan yang sah bagi citra $x''$.
+Karena itu, kedua jalur dalam persegi
+\[
+\begin{tikzcd}
+	\Ker(\alpha'') \arrow[r, "\delta"] \arrow[d] & \Coker(\alpha') \arrow[d] \\
+	\Ker(\widetilde\alpha'') \arrow[r, "\widetilde\delta"'] & \Coker(\widetilde\alpha')
+\end{tikzcd}
+\]
+memetakan $x''$ ke kelas dari citra $y'$ yang sama. Persegi tersebut
+komutatif, sehingga $\delta$ alami. Ini adalah versi berbasis unsur dari sifat
+kanonik dalam Catatan~\ref{rem:connecting-canonical}.
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex06
+\subsubsection*{Latihan 6 --- Membuktikan Lema Ular}
+\hypertarget{o014.mastery.diagram-chasing.001.ex06}{ }
+\label{mastery:diagram-chasing-001-ex06}
+
+Dengan diagram dan $\delta$ dari Latihan 5, buktikan bahwa barisan
+\[
+\begin{aligned}
+	0 \longrightarrow \Ker(\alpha') \longrightarrow \Ker(\alpha)
+	&\longrightarrow \Ker(\alpha'') \xrightarrow{\delta}
+	\Coker(\alpha') \\
+	&\longrightarrow \Coker(\alpha)
+	\longrightarrow \Coker(\alpha'') \longrightarrow 0
+\end{aligned}
+\]
+eksak. Nyatakan dengan jelas di mana keeksakan kedua baris digunakan dalam
+pengejaran.
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol06
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol06}{ }
+Semua panah selain $\delta$ diinduksi oleh $i,p,j,q$. Pemetaan
+$\Ker(\alpha')\to\Ker(\alpha)$ injektif karena $i$ injektif.
+
+Di $\Ker(\alpha)$, ambil $x\in\Ker(\alpha)$ yang memetakan ke nol dalam
+$\Ker(\alpha'')$. Maka $p(x)=0$, sehingga keeksakan baris atas memberi
+$x=i(x')$. Persamaan
+$0=\alpha(x)=j\alpha'(x')$ dan injektivitas $j$ memberi
+$x'\in\Ker(\alpha')$. Inklusi sebaliknya langsung mengikuti dari $pi=0$.
+Jadi barisan eksak
+di $\Ker(\alpha)$.
+
+Di $\Ker(\alpha'')$, unsur yang berasal dari $x\in\Ker(\alpha)$ mempunyai
+$y'=0$ dalam konstruksi Latihan 5, sehingga dipetakan ke nol oleh $\delta$.
+Sebaliknya, andaikan $x''\in\Ker(\alpha'')$ dan $\delta(x'')=0$. Pilih
+$x\in A$ dan $y'\in B'$ seperti dalam konstruksi $\delta$. Karena
+$[y']=0$ dalam $\Coker(\alpha')$, terdapat $a'\in A'$ dengan
+$y'=\alpha'(a')$. Maka
+\[
+	\alpha(x-i(a'))=j(y')-j\alpha'(a')=0,
+	\qquad p(x-i(a'))=x''.
+\]
+Jadi $x''$ berasal dari $\Ker(\alpha)$.
+
+Di $\Coker(\alpha')$, panah berikutnya memetakan $[y']$ ke $[j(y')]$.
+Jika $[y']=\delta(x'')$ dan $x$ merupakan pengangkatan yang dipakai, maka
+$j(y')=\alpha(x)$, sehingga $[j(y')]=0$ dalam $\Coker(\alpha)$. Sebaliknya,
+jika $[j(y')]=0$, terdapat $x\in A$ dengan $j(y')=\alpha(x)$. Komutativitas
+memberi
+\[
+	\alpha''p(x)=q\alpha(x)=qj(y')=0.
+\]
+Jadi $p(x)\in\Ker(\alpha'')$, dan konstruksi tersebut langsung memberikan
+$\delta(p(x))=[y']$.
+
+Di $\Coker(\alpha)$, citra setiap $[y']\in\Coker(\alpha')$ dipetakan ke
+$[qj(y')]=0$. Sebaliknya, andaikan $[b]\in\Coker(\alpha)$ dipetakan ke nol.
+Artinya, $q(b)=\alpha''(x'')$ untuk suatu $x''\in A''$. Surjektivitas $p$
+memberi $x\in A$ dengan $p(x)=x''$. Maka
+\[
+	q(b-\alpha(x))=q(b)-\alpha''p(x)=0.
+\]
+Keeksakan baris bawah memberi $b-\alpha(x)=j(y')$ untuk suatu $y'\in B'$.
+Karena $\alpha(x)$ lenyap dalam $\Coker(\alpha)$, kelas $[b]$ merupakan
+citra $[y']$.
+
+Terakhir, $\Coker(\alpha)\to\Coker(\alpha'')$ surjektif karena $q$ sendiri
+surjektif: angkat wakil mana pun di $B''$ ke $B$. Keeksakan di setiap suku
+telah diperiksa. Inilah Lema Ular
+\ref{prop:snake-lemma} untuk dua barisan eksak pendek modul.
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex07
+\subsubsection*{Latihan 7 --- Menghitung ular secara eksplisit}
+\hypertarget{o014.mastery.diagram-chasing.001.ex07}{ }
+\label{mastery:diagram-chasing-001-ex07}
+
+Terapkan Lema Ular pada diagram grup abelian
+\[
+\begin{tikzcd}
+	0 \arrow[r] & \Z \arrow[r, "\times 6"] \arrow[d, "\times 4"'] & \Z \arrow[r, "\pi"] \arrow[d, "\times 4"'] & \Z/6\Z \arrow[r] \arrow[d, "\times 4"] & 0 \\
+	0 \arrow[r] & \Z \arrow[r, "\times 6"'] & \Z \arrow[r, "\pi"'] & \Z/6\Z \arrow[r] & 0.
+\end{tikzcd}
+\]
+Hitung semua kernel dan kokernel, hitung $\delta$ pada generatornya, lalu
+tuliskan dan verifikasi barisan eksak yang dihasilkan.
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol07
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol07}{ }
+Kedua pemetaan vertikal pertama adalah perkalian dengan $4$ pada $\Z$, jadi
+kernelnya nol dan kokernelnya $\Z/4\Z$. Pada kolom ketiga,
+\[
+	\Ker(\times4:\Z/6\Z\to\Z/6\Z)=\{[0],[3]\}\simeq\Z/2\Z.
+\]
+Citra perkalian dengan $4$ pada $\Z/6\Z$ ialah
+$\{[0],[2],[4]\}$, sehingga kokernelnya isomorfik dengan $\Z/2\Z$.
+
+Untuk menghitung $\delta([3])$, angkat $[3]$ menjadi $3\in\Z$. Pemetaan
+vertikal tengah mengirimkannya ke $12$. Karena $12=6\cdot2$, konstruksi
+morfisme penghubung memberi
+\[
+	\delta([3])=[2]\in\Z/4\Z.
+\]
+Dengan identifikasi generator $[3]\leftrightarrow[1]\in\Z/2\Z$, pemetaan
+$\delta$ ialah $[1]\mapsto[2]$.
+
+Pemetaan dari kokernel pertama ke kokernel kedua diinduksi oleh
+$\times6$, sehingga pada $\Z/4\Z$ sama dengan $\times2$. Pemetaan berikutnya
+ialah reduksi modulo $2$. Jadi barisan Ular menjadi
+\[
+	0\longrightarrow0\longrightarrow0\longrightarrow\Z/2\Z
+	\mathop{\longrightarrow}^{[1]\mapsto[2]}\Z/4\Z
+	\xrightarrow{\times2}\Z/4\Z
+	\xrightarrow{\bmod 2}\Z/2\Z\longrightarrow0.
+\]
+Citra $\delta$ ialah $\{[0],[2]\}=\Ker(\times2)$, sedangkan citra
+$\times2$ juga $\{[0],[2]\}=\Ker(\bmod 2)$. Pemetaan terakhir surjektif,
+dan $\delta$ injektif. Jadi barisan tersebut benar-benar eksak.
+
+% stable-exercise-id: o014.mastery.diagram-chasing.001.ex08
+\subsubsection*{Latihan 8 --- Morfisme penghubung dalam kohomologi}
+\hypertarget{o014.mastery.diagram-chasing.001.ex08}{ }
+\label{mastery:diagram-chasing-001-ex08}
+
+Misalkan
+\[
+	0\longrightarrow A^\bullet\xrightarrow{i}B^\bullet
+	\xrightarrow{q}C^\bullet\longrightarrow0
+\]
+merupakan barisan eksak pendek kompleks kokrantai modul-$R$, eksak pada
+setiap derajat. Untuk kelas $[c]\in\Hm^n(C^\bullet)$, pilih wakil kokitar
+$c\in C^n$ dan pengangkatan $b\in B^n$ dengan $q(b)=c$.
+\begin{enumerate}[(i)]
+	\item Buktikan bahwa terdapat $a\in A^{n+1}$ dengan
+	$i(a)=d_B(b)$, dan bahwa $a$ merupakan kokitar.
+	\item Buktikan bahwa rumus $\partial^n[c]=[a]$ memberikan homomorfisme
+	yang terdefinisi dengan baik
+	$\partial^n:\Hm^n(C^\bullet)\to\Hm^{n+1}(A^\bullet)$.
+	\item Buktikan keeksakan ruas
+	\[
+		\Hm^n(A^\bullet)\longrightarrow\Hm^n(B^\bullet)
+		\longrightarrow\Hm^n(C^\bullet)\xrightarrow{\partial^n}
+		\Hm^{n+1}(A^\bullet)\longrightarrow\Hm^{n+1}(B^\bullet).
+	\]
+	\item Buktikan bahwa $\partial^n$ alami terhadap morfisme barisan eksak
+	pendek kompleks.
+\end{enumerate}
+
+% stable-solution-id: o014.mastery.diagram-chasing.001.sol08
+\paragraph{Solusi.}
+\hypertarget{o014.mastery.diagram-chasing.001.sol08}{ }
+Karena $c$ kokitar,
+\[
+	q(d_Bb)=d_C(qb)=d_Cc=0.
+\]
+Keeksakan pada $B^{n+1}$ memberi
+$d_Bb\in\Image(i^{n+1})$, sehingga ada $a\in A^{n+1}$ dengan
+$i(a)=d_Bb$. Selanjutnya,
+\[
+	i(d_Aa)=d_B(i(a))=d_B^2b=0.
+\]
+Karena $i$ injektif pada derajat $n+2$, diperoleh $d_Aa=0$; jadi $a$
+kokitar.
+
+Jika pengangkatan $b$ diganti oleh $b+i(u)$, maka unsur yang bersesuaian
+berubah dari $a$ menjadi $a+d_Au$, sehingga kelas $[a]$ tidak berubah.
+Jika wakil $c$ diganti oleh $c+d_Cv$, pilih pengangkatan $w\in B^{n-1}$
+dari $v$ dan gunakan $b+d_Bw$ sebagai pengangkatan wakil baru. Karena
+$d_B(b+d_Bw)=d_Bb$, kelas hasilnya tetap $[a]$. Khususnya, jika $c$ suatu
+kokobatas, kita dapat memilih pengangkatan berbentuk $d_Bw$ dan memperoleh
+$a=0$. Jadi $\partial^n$ bergantung hanya pada kelas kohomologi. Penggunaan
+jumlah pengangkatan menunjukkan bahwa $\partial^n$ merupakan homomorfisme.
+
+Kita periksa keeksakan pada setiap suku. Di $\Hm^n(B^\bullet)$,
+citra kelas yang berasal dari $A$ jelas lenyap setelah diterapkan $q$.
+Sebaliknya, jika
+$b\in B^n$ kokitar dan $[q(b)]=0$, tuliskan
+$q(b)=d_Cv$ dan angkat $v$ menjadi $w\in B^{n-1}$. Maka
+$b-d_Bw\in\Ker(q)=\Image(i)$; tuliskan $b-d_Bw=i(a)$. Karena $b-d_Bw$
+kokitar dan $i$ injektif, $a$ juga kokitar. Jadi $[b]$ berasal dari
+$\Hm^n(A^\bullet)$.
+
+Di $\Hm^n(C^\bullet)$, kelas citra dari kokitar $b\in B^n$ mempunyai
+$d_Bb=0$, sehingga dipetakan ke nol oleh $\partial^n$. Sebaliknya, jika
+$\partial^n[c]=0$, konstruksi memberi $i(a)=d_Bb$ dengan $a=d_Au$ untuk
+suatu $u\in A^n$. Maka
+\[
+	d_B(b-i(u))=i(a)-i(d_Au)=0,
+	\qquad q(b-i(u))=c.
+\]
+Jadi $[c]$ berasal dari $\Hm^n(B^\bullet)$.
+
+Di $\Hm^{n+1}(A^\bullet)$, kelas $\partial^n[c]=[a]$ dipetakan ke
+$[i(a)]=[d_Bb]=0$. Sebaliknya, andaikan $a\in A^{n+1}$ kokitar dan
+$[i(a)]=0$ dalam $\Hm^{n+1}(B^\bullet)$. Pilih $b\in B^n$ dengan
+$i(a)=d_Bb$. Unsur $c=q(b)$ merupakan kokitar karena
+$d_Cc=q(d_Bb)=q(i(a))=0$, dan konstruksi memberi
+$\partial^n[c]=[a]$. Bagian barisan yang diminta pun eksak.
+
+Terakhir, ambil morfisme antara dua barisan eksak pendek kompleks. Jika
+$c,b,a$ merupakan data pengejaran di atas, citra ketiganya di barisan kedua
+masih memenuhi
+\[
+	q(b)=c,\qquad i(a)=d_Bb.
+\]
+Karena itu, menerapkan morfisme lebih dahulu lalu membentuk morfisme
+penghubung memberikan kelas yang sama dengan membentuk $\partial^n$ lebih
+dahulu lalu menerapkan morfisme pada kohomologi. Jadi $\partial^n$ alami.
+
+Dengan menjalankan konstruksi ini pada setiap $n$, ruas-ruas eksak tersebut
+menyambung menjadi barisan eksak panjang
+\[
+	\cdots\to\Hm^n(A^\bullet)\to\Hm^n(B^\bullet)\to\Hm^n(C^\bullet)
+	\xrightarrow{\partial^n}\Hm^{n+1}(A^\bullet)\to\Hm^{n+1}(B^\bullet)
+	\to\cdots.
+\]
+Morfisme $\partial^n$ adalah morfisme penghubung yang sama secara konseptual
+dengan morfisme pada Lema Ular: sebuah kokitar diangkat, diferensialnya
+didorong, lalu hasil yang kini berada dalam kernel diturunkan ke suku kiri.

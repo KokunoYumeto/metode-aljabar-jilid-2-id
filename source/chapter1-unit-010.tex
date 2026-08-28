@@ -8,7 +8,7 @@
 \hypertarget{o014.aljabr2.chapter1.images-coimages-strict}{ }
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.p001
-Tetapkan sebuah kategori $\mathcal{C}$. Untuk setiap morfisme $f: X \to Y$,
+Misalkan $\mathcal{C}$ sebuah kategori. Untuk setiap morfisme $f: X \to Y$,
 koproduk serat $Y \dsqcup{X} Y$, jika ada, dilengkapi secara kanonik dengan
 sepasang morfisme $Y \rightrightarrows Y \dsqcup{X} Y$. Secara dual, produk
 serat $X \dtimes{Y} X$, jika ada, dilengkapi secara kanonik dengan sepasang
@@ -19,7 +19,7 @@ proyeksi.
 \begin{definisi}[Citra dan Kocitra]\label{def:Im-Coim}
 	\index{citra (image)} \index[sym1]{imf@$\Image(f)$}
 	\index{kocitra (coimage)} \index[sym1]{coimf@$\Coim(f)$}
-	Misalkan $f: X \to Y$ adalah morfisme dalam kategori $\mathcal{C}$.
+	Misalkan $f: X \to Y$ merupakan morfisme dalam kategori $\mathcal{C}$.
 	Andaikan $Y \dsqcup{X} Y$ ada. Jika penyama
 	$\Ker\left( Y \rightrightarrows Y \dsqcup{X} Y\right)$ ada, penyama ini
 	disebut \emph{citra} dari $f$, dinotasikan dengan $\Image(f)$; citra ini
@@ -41,8 +41,7 @@ proyeksi.
 \end{catatan}
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.p002
-Lema berikut tidak hanya berguna, tetapi juga menjelaskan dengan baik hakikat
-citra dan kocitra.
+Selain berguna, lema berikut memperjelas hakikat citra dan kocitra.
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.lm001
 \begin{lema}\label{prop:Im-Coim-fac}
@@ -73,7 +72,7 @@ citra dan kocitra.
 \end{bukti}
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.p003
-Dengan menerapkan Lema~\ref{prop:Im-Coim-fac} berturut-turut kepada
+Dengan menerapkan Lema~\ref{prop:Im-Coim-fac} secara berurutan pada
 $\Coim(f)$ dan $\Image(f)$, mudah terlihat bahwa terdapat morfisme pembanding
 $\Coim(f) \to \Image(f)$ yang membuat diagram berikut komutatif:
 
@@ -96,13 +95,13 @@ Selain itu, berdasarkan hukum kanselasi kiri (atau kanan) untuk monomorfisme
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.p005
 Sebagai contoh, untuk $\mathcal{C} = \cate{Set}$, semua morfisme bersifat
-ketat, dan citra serta kocitra keduanya dapat diidentifikasi secara kanonik
+ketat, dan citra serta kocitranya dapat diidentifikasi secara kanonik
 dengan citra dalam pengertian teori himpunan. Latihan-latihan bab ini memuat
 lebih banyak contoh.
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.pr001
 \begin{proposisi}\label{prop:Images-f-gf}
-	Diberikan morfisme-morfisme $X \xrightarrow{f} Y \xrightarrow{g} Z$,
+	Untuk morfisme-morfisme $X \xrightarrow{f} Y \xrightarrow{g} Z$,
 	terdapat secara unik morfisme $\alpha: \Coim(f) \to \Image(gf)$ dan
 	morfisme $\beta: \Coim(gf) \to \Image(g)$ yang membuat diagram berikut
 	komutatif:
@@ -119,7 +118,7 @@ lebih banyak contoh.
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.pf002
 \begin{bukti}
-	Untuk versi $\alpha$, keunikan berasal dari hukum kanselasi kanan bagi
+	Untuk $\alpha$, keunikan berasal dari hukum kanselasi kanan bagi
 	epimorfisme $X \twoheadrightarrow \Coim(f)$, sedangkan keberadaannya
 	diperoleh dengan menerapkan versi diagram kanan dari
 	Lema~\ref{prop:Im-Coim-fac} pada diagram
@@ -182,7 +181,7 @@ faktorisasi-faktorisasi ini, tetapi juga dengan morfisme di antaranya.
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.lm003
 \begin{lema}\label{prop:epi-mono-morphism}
-	Tinjau diagram berikut, yang bagian berpanah utuhnya komutatif,
+	Tinjau diagram berikut; bagian dengan anak panah penuh komutatif,
 	% segment-id: o014.li2.chapter1.images-coimages-strict.g005
 	\[\begin{tikzcd}
 		X \arrow[r, "e"] \arrow[d, "a"'] & C \arrow[r, "m"] \arrow[dashed, d, "\varphi"] & Y \arrow[d, "b"] \\
@@ -215,7 +214,7 @@ faktorisasi-faktorisasi ini, tetapi juga dengan morfisme di antaranya.
 	$\varphi e = e' a$ menunjukkan bahwa $\varphi e$ merupakan epimorfisme,
 	sehingga $\varphi$ pun merupakan epimorfisme.
 
-	Argumen di atas membuktikan masing-masing separuh dari (i) dan (ii). Untuk
+	Argumen di atas membuktikan separuh pernyataan (i) dan (ii). Untuk
 	kasus ketika $\varphi$ membuat bagian kanan diagram komutatif dan $m,m'$
 	merupakan monomorfisme, argumennya sepenuhnya serupa, atau secara ekuivalen,
 	merupakan argumen dual.
@@ -223,7 +222,7 @@ faktorisasi-faktorisasi ini, tetapi juga dengan morfisme di antaranya.
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.d003
 \begin{definisi}
-	Tetapkan $f: X \to Y$. Bentuklah kategori $\cate{epi.mono}(f)$ yang
+	Misalkan $f: X \to Y$. Bentuklah kategori $\cate{epi.mono}(f)$ yang
 	objek-objeknya adalah semua faktorisasi epi--mono dari $f$, dengan
 	morfisme-morfismenya didefinisikan sebagai diagram komutatif
 	% segment-id: o014.li2.chapter1.images-coimages-strict.g006
@@ -238,8 +237,8 @@ faktorisasi-faktorisasi ini, tetapi juga dengan morfisme di antaranya.
 Dengan mengambil $a = \identity_X$ dan $b = \identity_Y$ dalam
 Lema~\ref{prop:epi-mono-morphism}, terlihat bahwa $\varphi$ pada diagram di
 atas, jika ada, bersifat unik dan sekaligus merupakan epimorfisme serta
-monomorfisme. Dengan kata lain, $\cate{epi.mono}(f)$ berasal dari sebuah
-himpunan praterurut. Dalam bagian ini, kita hanya meninjau satu kasus khusus
+monomorfisme. Dengan kata lain, $\cate{epi.mono}(f)$ merupakan kategori
+praterurut. Dalam bagian ini, kita hanya meninjau satu kasus khusus
 dari faktorisasi epi--mono.
 
 % segment-id: o014.li2.chapter1.images-coimages-strict.pr003
@@ -253,9 +252,9 @@ dari faktorisasi epi--mono.
 % segment-id: o014.li2.chapter1.images-coimages-strict.pf006
 \begin{bukti}
 	Ambil $C = \Image(f)$ untuk memperoleh keberadaan faktorisasi. Untuk
-	keunikannya, Proposisi~\ref{prop:strict-isomorphism} dan pembahasan
+	membuktikan keunikannya, Proposisi~\ref{prop:strict-isomorphism} dan pembahasan
 	sebelumnya menunjukkan bahwa setiap morfisme dalam $\cate{epi.mono}(f)$
-	merupakan isomorfisme. Jadi, cukuplah memberikan sebuah morfisme
+	merupakan isomorfisme. Jadi, cukup dibangun sebuah morfisme
 	$\varphi: C \to \Image(f)$ dalam $\cate{epi.mono}(f)$. Dengan menerapkan
 	versi diagram kanan dari Lema~\ref{prop:Im-Coim-fac} kepada
 	$X \stackrel{q}{\twoheadrightarrow} C \stackrel{g}{\hookrightarrow} Y$,

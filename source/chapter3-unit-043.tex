@@ -8,11 +8,11 @@
 \section{Funktor turunan klasik}\label{sec:derived-primer}
 \hypertarget{o014.aljabr2.chapter3.classical-derived-functors}{ }
 % segment-id: o014.li2.chapter3.classical-derived-functors.p001
-Tujuan bagian ini adalah menjelaskan, tanpa menggunakan bahasa kategori turunan, cara membahas berbagai funktor turunan kanan (atau funktor turunan kiri) pada kategori abelian yang memiliki cukup banyak objek injektif (atau objek projektif); pembahasan ini sudah mencakup banyak teori kohomologi yang lazim dijumpai dalam penerapan. Definisi konkretnya bergantung pada resolusi injektif (atau resolusi projektif) yang diperkenalkan dalam \S\ref{sec:resolutions}.
+Tujuan bagian ini adalah menjelaskan, tanpa menggunakan bahasa kategori turunan, cara mengonstruksi berbagai funktor turunan kanan (atau funktor turunan kiri) pada kategori abelian yang memiliki cukup banyak objek injektif (atau objek projektif); pembahasan ini sudah mencakup banyak teori kohomologi yang lazim dijumpai dalam penerapan. Definisi konkretnya bergantung pada resolusi injektif (atau resolusi projektif) yang diperkenalkan dalam \S\ref{sec:resolutions}.
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.de001
 \begin{definisi}\label{def:derived-primer}
-	\index{funktorturunan@funktor turunan (derived functor)}
+	\index{funktor turunan@funktor turunan (derived functor)}
 	\index[sym1]{RnF@$\mathrm{R}^n F$}
 	\index[sym1]{LnF@$\mathrm{L}_n F$}
 	Misalkan $F: \mathcal{A} \to \mathcal{B}$ suatu funktor aditif antara kategori-kategori abelian.
@@ -31,7 +31,7 @@ Tujuan bagian ini adalah menjelaskan, tanpa menggunakan bahasa kategori turunan,
 \end{definisi}
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.p002
-Pernyataan ini menyisakan beberapa pertanyaan. Pertama, dalam arti apa funktor-funktor tersebut bergantung pada pilihan resolusi? Kedua, definisi di atas baru diberikan pada tingkat objek; bagaimana meningkatkannya menjadi funktor? Funktor turunan kiri dan kanan jelas saling dual, sehingga di bawah ini kita hanya membahas funktor turunan kanan. Kita mulai dengan pertanyaan kedua dan merumuskan alat dasarnya sebagai sebuah lema.
+Pernyataan ini menyisakan beberapa pertanyaan. Pertama, dalam arti apa funktor-funktor tersebut bergantung pada pilihan resolusi? Kedua, definisi di atas baru diberikan pada tingkat objek; bagaimana memperluasnya menjadi funktor? Funktor turunan kiri dan kanan jelas saling dual, sehingga di bawah ini kita hanya membahas funktor turunan kanan. Kita mulai dengan pertanyaan kedua dan merumuskan alat dasarnya sebagai sebuah lema.
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.le001
 \begin{lema}\label{prop:resolution-homotopy-classical}
@@ -67,7 +67,7 @@ hanya bergantung pada $f$ serta $X \to I$ dan $Y \to J$. Selain itu, setelah res
 \end{gather*}
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.p005
-Dengan mengambil $X = Y$ dan $f = \identity_X$, pembahasan di atas juga menyiratkan bahwa resolusi-resolusi injektif yang berbeda memberikan $(\mathrm{R}^n F)(X)$ yang sama hingga isomorfisme unik. Semua ini menunjukkan bahwa, sebagaimana berbagai objek dalam teori kategori yang dicirikan oleh sifat universal, $\mathrm{R}^n F(X)$ tidak bergantung pada pilihan data bantu (resolusi injektif) hingga isomorfisme kanonik, dan bahwa $\mathrm{R}^n F: \cate{C}^{+}(\mathcal{A}) \to \mathcal{B}$ merupakan funktor aditif.
+Dengan mengambil $X = Y$ dan $f = \identity_X$, pembahasan di atas juga menyiratkan bahwa resolusi-resolusi injektif yang berbeda memberikan nilai $(\mathrm{R}^n F)(X)$ yang isomorfik secara unik. Semua ini menunjukkan bahwa, sebagaimana berbagai objek dalam teori kategori yang dicirikan oleh sifat universal, $\mathrm{R}^n F(X)$ tidak bergantung pada pilihan data bantu (resolusi injektif) hingga isomorfisme kanonik, dan bahwa $\mathrm{R}^n F: \cate{C}^{+}(\mathcal{A}) \to \mathcal{B}$ merupakan funktor aditif.
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.p006
 Berdasarkan konstruksi, jika $F, G: \mathcal{A} \to \mathcal{B}$ keduanya merupakan funktor aditif, maka setiap morfisme $F \to G$ secara kanonik menginduksi $\mathrm{R}^n F \to \mathrm{R}^n G$ untuk setiap $n \in \Z$. Setelah suatu resolusi injektif $X \to I$ dipilih, morfisme $\mathrm{R}^n F (X) \to \mathrm{R}^n G (X)$ secara konkret ditentukan oleh $\cate{C}F(I) \to \cate{C}G(I)$. Secara serupa, morfisme tersebut juga menginduksi $\mathrm{L}_n F \to \mathrm{L}_n G$.
@@ -140,26 +140,26 @@ Berdasarkan konstruksi, jika $F, G: \mathcal{A} \to \mathcal{B}$ keduanya merupa
 		0 \arrow[r] & I \arrow[d] \arrow[r] & J \arrow[d] \arrow[r] & K \arrow[d] \arrow[r] & 0 \\
 		0 \arrow[r] & I' \arrow[r] & J' \arrow[r] & K' \arrow[r] & 0
 	\end{tikzcd}\]
-	Karena setiap $I^n$ dan $(I')^n$ merupakan objek injektif, setelah diagram di atas dikenai $\cate{C}F$, baris-barisnya tetap eksak. Dengan demikian, funktorialitas $\delta^n$ tereduksi pada pernyataan yang bersesuaian dalam Proposisi \ref{prop:long-exact-sequence-ses}.
+	Karena setiap $I^n$ dan $(I')^n$ merupakan objek injektif, setelah diagram di atas dikenai $\cate{C}F$, baris-barisnya tetap eksak. Dengan demikian, funktorialitas $\delta^n$ mengikuti dari pernyataan yang bersesuaian dalam Proposisi \ref{prop:long-exact-sequence-ses}.
 \end{bukti}
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.p007
 Dalam situasi klasik, yang terutama dipertimbangkan ialah pembatasan funktor $\mathrm{R}^n F$ atau $\mathrm{L}_n F$ pada $\mathcal{A}$, yang tetap ditulis dalam bentuk $\mathrm{R}^n F(X)$ atau $\mathrm{L}_n F(X)$, dengan $X \in \Obj(\mathcal{A})$. Funktor-funktor ini dihitung melalui resolusi injektif $0 \to X \to I^0 \to I^1 \to \cdots$ yang ``diratakan'' menjadi barisan eksak (atau resolusi projektif $\cdots \to P^1 \to P^0 \to X \to 0$); lihat penjelasan dalam Contoh \ref{eg:resolution-single}. Dalam literatur awal, funktor turunan yang didefinisikan pada kompleks disebut \emph{funktor hiperturunan}, dan lebih tepat ditangani dengan kategori turunan atau barisan spektral. Oleh karena itu, pembahasan berikut berfokus pada kasus klasik $X \in \Obj(\mathcal{A})$.
-\index{funktorhiperturunan@funktor hiperturunan (hyper-derived functor)}
+\index{funktor hiperturunan@funktor hiperturunan (hyper-derived functor)}
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.p008
 Langkah pertama ialah menyarikan barisan eksak panjang dalam Teorema \ref{prop:long-exact-sequence-primer} ke dalam konsep funktor-$\delta$.
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.de002
 \begin{definisi}\label{def:delta-functor}
-	\index{funktordelta@funktor-$\delta$ ($\delta$-functor)}
+	\index{funktor delta@funktor-$\delta$ ($\delta$-functor)}
 	Misalkan $\mathcal{A}$ dan $\mathcal{B}$ kategori abelian. Suatu keluarga \emph{funktor-$\delta$ kohomologis} dari $\mathcal{A}$ ke $\mathcal{B}$ berarti data berikut:
 % segment-id: o014.li2.chapter3.classical-derived-functors.l003
 	\begin{compactitem}
 % segment-id: o014.li2.chapter3.classical-derived-functors.i005
 		\item suatu keluarga funktor aditif $F^n: \mathcal{A} \to \mathcal{B}$, dengan $n \in \Z_{\geq 0}$;
 % segment-id: o014.li2.chapter3.classical-derived-functors.i006
-		\item untuk setiap barisan eksak pendek $0 \to X \to Y \to Z \to 0$ di $\mathcal{A}$, suatu keluarga morfisme yang ditetapkan $\delta^n: F^n Z \to F^{n+1} X$ (disebut morfisme penghubung), dengan $n \in \Z_{\geq 0}$, yang funktorial terhadap morfisme antarbarisan eksak pendek dan memberikan barisan eksak
+		\item untuk setiap barisan eksak pendek $0 \to X \to Y \to Z \to 0$ di $\mathcal{A}$, suatu keluarga morfisme yang diberikan $\delta^n: F^n Z \to F^{n+1} X$ (disebut morfisme penghubung), dengan $n \in \Z_{\geq 0}$, yang funktorial terhadap morfisme antarbarisan eksak pendek dan memberikan barisan eksak
 % segment-id: o014.li2.chapter3.classical-derived-functors.g008
 		\begin{equation*}\begin{tikzcd}[row sep=large]
 			0 \arrow[r] & F^0(X) \arrow[r] & F^0(Y) \arrow[r] \arrow[phantom, d, ""{coordinate, name=A}] & F^0(Z) \arrow[dll, rounded corners, "{\delta^0}" description, to path={
@@ -190,7 +190,7 @@ Langkah pertama ialah menyarikan barisan eksak panjang dalam Teorema \ref{prop:l
 % segment-id: o014.li2.chapter3.classical-derived-functors.i007
 		\item suatu keluarga funktor aditif $F_n: \mathcal{A} \to \mathcal{B}$, dengan $n \in \Z_{\geq 0}$;
 % segment-id: o014.li2.chapter3.classical-derived-functors.i008
-		\item untuk setiap barisan eksak pendek $0 \to X \to Y \to Z \to 0$ di $\mathcal{A}$, suatu keluarga morfisme penghubung yang ditetapkan $\partial_n: F_n Z \to F_{n-1} X$, yang funktorial terhadap morfisme antarbarisan eksak pendek dan memberikan barisan eksak
+		\item untuk setiap barisan eksak pendek $0 \to X \to Y \to Z \to 0$ di $\mathcal{A}$, suatu keluarga morfisme penghubung yang diberikan $\partial_n: F_n Z \to F_{n-1} X$, yang funktorial terhadap morfisme antarbarisan eksak pendek dan memberikan barisan eksak
 % segment-id: o014.li2.chapter3.classical-derived-functors.g010
 		\begin{equation*}\begin{tikzcd}[row sep=large]
 			\cdots \arrow[r] & F_2(Y) \arrow[r] \arrow[phantom, d, ""{coordinate, name=A}] & F_2(Z) \arrow[dll, rounded corners, "{\partial_2}" description, to path={
@@ -256,7 +256,7 @@ Perhatikan bahwa barisan eksak panjang dalam definisi secara otomatis mengakibat
 Pada umumnya, kita hanya mempertimbangkan funktor turunan kanan untuk funktor eksak kiri dan funktor turunan kiri untuk funktor eksak kanan. Mengapa demikian? Penjelasan elementernya didasarkan pada persoalan melengkapi barisan eksak: misalnya, jika $F$ eksak kiri dan diberikan barisan eksak pendek $0 \to X \to Y \to Z \to 0$ di $\mathcal{A}$, kita ingin memperpanjang barisan eksak $0 \to FX \to FY \to FZ$ sejauh mungkin ke kanan. Funktor turunan kanan menjalankan tepat peran ini.
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.p011
-Untuk $n \geq 1$, lazimnya $\mathrm{R}^n F$ atau $\mathrm{L}_n F$ disebut funktor turunan tingkat tinggi dari $F$, dengan pengertian bahwa funktor-funktor tersebut didefinisikan pada objek-objek $\mathcal{A}$, bukan pada kompleks. Sebagai salah satu penerapan pelengkapan tersebut, korolari berikut menunjukkan bahwa penghalang bagi keeksakan tepat diberikan oleh funktor turunan tingkat tinggi.
+Untuk $n \geq 1$, lazimnya $\mathrm{R}^n F$ atau $\mathrm{L}_n F$ disebut funktor turunan tingkat tinggi dari $F$, dengan pengertian bahwa funktor-funktor tersebut didefinisikan pada objek-objek $\mathcal{A}$, bukan pada kompleks. Sebagai salah satu penerapan prosedur pelengkapan tersebut, korolari berikut menunjukkan bahwa penghalang bagi keeksakan tepat diberikan oleh funktor turunan tingkat tinggi.
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.co001
 \begin{korolari}\label{prop:obstruction-exactness}
@@ -280,7 +280,7 @@ Untuk $n \geq 1$, lazimnya $\mathrm{R}^n F$ atau $\mathrm{L}_n F$ disebut funkto
 \end{bukti}
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.cn002
-\begin{konvensi}\label{con:F-acyclic}\index{objekasiklik@objek $\cdots$-asiklik ($\cdots$-acyclic object)}
+\begin{konvensi}\label{con:F-acyclic}\index{objek asiklik@objek $\cdots$-asiklik ($\cdots$-acyclic object)}
 	Untuk funktor aditif eksak kiri (atau eksak kanan) $F: \mathcal{A} \to \mathcal{B}$, jika semua funktor turunan kanan (atau kiri) tingkat tinggi dari $F$ bernilai $0$ pada $A \in \Obj(\mathcal{A})$, maka $A$ disebut \emph{$F$-asiklik}; misalnya, jika $F$ eksak kiri (atau eksak kanan), Proposisi \ref{prop:derived-primer-long} mengakibatkan bahwa semua objek injektif (atau projektif) bersifat $F$-asiklik.
 \end{konvensi}
 
@@ -289,7 +289,7 @@ Teknik klasik berikut disebut pergeseran dimensi dan sering digunakan dalam argu
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.pr002
 \begin{proposisi}[Pergeseran dimensi]\label{prop:dimension-shifting}
-	\index{pergeserandimensi@pergeseran dimensi (dimension shifting)}
+	\index{pergeseran dimensi@pergeseran dimensi (dimension shifting)}
 	Misalkan funktor aditif $F: \mathcal{A} \to \mathcal{B}$ eksak kiri (atau eksak kanan), dan $\mathcal{A}$ memiliki cukup banyak objek injektif (atau objek projektif). Misalkan terdapat barisan eksak pendek di $\mathcal{A}$
 % segment-id: o014.li2.chapter3.classical-derived-functors.q011
 	\[ 0 \to X \to A \to B \to 0, \quad (\text{atau}\; 0 \to B \to A \to X \to 0 ), \]
@@ -322,16 +322,16 @@ Hasil penting berikutnya menunjukkan bahwa objek-objek $F$-asiklik juga dapat di
 	Misalkan $F: \mathcal{A} \to \mathcal{B}$ eksak kiri (atau eksak kanan), dan terdapat barisan eksak di $\mathcal{A}$
 % segment-id: o014.li2.chapter3.classical-derived-functors.q015
 	\[ 0 \to X  \to A^0 \to A^1 \to \cdots \quad (\text{atau}\; \cdots \to A_1 \to A_0 \to X \to 0 ), \]
-	dengan $A^n$ (atau $A_n$) bersifat $F$-asiklik untuk setiap $n \geq 0$; selain itu, tetapkan $A^{-n} = 0$ (atau $A_{-n} = 0$) untuk setiap $n \geq 1$.\footnote{Catatan penerjemah (O014-C062): sumber tidak membatasi indeks dalam konvensi $A^{-n}=0$ (atau $A_{-n}=0$). Jika konvensi itu juga dikenakan pada $n=0$, maka $A^0=0$ (atau $A_0=0$), bertentangan dengan suku resolusi yang baru saja diperkenalkan. Target memperjelas rentang yang dimaksud, yaitu $n \geq 1$.} Maka, terdapat isomorfisme alami
+	dengan $A^n$ (atau $A_n$) bersifat $F$-asiklik untuk setiap $n \geq 0$; selain itu, definisikan $A^{-n} = 0$ (atau $A_{-n} = 0$) untuk setiap $n \geq 1$.\footnote{Catatan penerjemah (O014-C062): sumber tidak membatasi indeks dalam konvensi $A^{-n}=0$ (atau $A_{-n}=0$). Jika konvensi itu juga dikenakan pada $n=0$, maka $A^0=0$ (atau $A_0=0$), bertentangan dengan suku resolusi yang baru saja diperkenalkan. Target memperjelas rentang yang dimaksud, yaitu $n \geq 1$.} Maka, terdapat isomorfisme alami
 % segment-id: o014.li2.chapter3.classical-derived-functors.q016
 	\[ \mathrm{R}^n F(X) \simeq \Hm^n\left( FA^\bullet \right) \quad \text{atau}\quad \mathrm{L}_n F(X) \simeq \Hm_n\left(FA_\bullet\right). \]
 \end{korolari}
 % segment-id: o014.li2.chapter3.classical-derived-functors.pf006
 \begin{bukti}
-	Cukup buktikan kasus $\mathrm{R}^n F(X)$. Untuk $m \geq 1$, tetapkan
+	Cukup buktikan kasus $\mathrm{R}^n F(X)$. Untuk $m \geq 1$, definisikan
 % segment-id: o014.li2.chapter3.classical-derived-functors.q017
 	\[ B^m := \Image\left[ A^{m-1} \to A^m \right] = \Ker\left[ A^m \to A^{m+1} \right]; \]
-	tetapkan pula $B^0 := X$. Barisan eksak semula kemudian terurai menjadi
+	definisikan pula $B^0 := X$. Barisan eksak semula kemudian terurai menjadi
 % segment-id: o014.li2.chapter3.classical-derived-functors.q018
 	\[ 0 \to B^m \to A^m \to B^{m+1} \to 0, \quad m \in \Z_{\geq 0}. \]
 	Untuk $n=0$, pernyataan tersebut mengikuti karena $F$ mempertahankan kernel: $FX \simeq \Ker[FA^0 \to FA^1]$. Untuk $n \geq 1$, penerapan berulang Proposisi \ref{prop:dimension-shifting} memberikan serangkaian isomorfisme alami
@@ -357,7 +357,7 @@ Dari sifat dapat dihapus ini, kita akan menurunkan sifat universal berikut.
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.de004
 \begin{definisi}\label{def:universal-delta-functor}
-	\index{funktordelta@funktor-$\delta$!universal (universal)}
+	\index{funktor delta@funktor-$\delta$!universal (universal)}
 	Misalkan $(R^n, \delta^n)_{n \geq 0}$ merupakan funktor-$\delta$ kohomologis dari $\mathcal{A}$ ke $\mathcal{B}$. Jika, untuk setiap funktor-$\delta$ kohomologis $(F^n, \delta_F^n)_{n \geq 0}$ dari $\mathcal{A}$ ke $\mathcal{B}$, setiap morfisme $\varphi^0: R^0 \to F^0$ dapat diperluas secara tunggal menjadi morfisme $(\varphi^n)_{n \geq 0}$ di antara kedua funktor-$\delta$ tersebut, maka $(R^n, \delta^n)_{n \geq 0}$ disebut \emph{funktor-$\delta$ kohomologis universal}.
 	
 	Secara dual, misalkan funktor-$\delta$ homologis $(L_n, \partial_n)_{n \geq 0}$ memenuhi sifat berikut: untuk setiap funktor-$\delta$ homologis $(F_n, \partial^F_n)_{n \geq 0}$, setiap morfisme $\varphi_0: F_0 \to L_0$ dapat diperluas secara tunggal menjadi $(\varphi_n)_{n \geq 0}$. Maka, $(L_n, \partial_n)_{n \geq 0}$ disebut \emph{funktor-$\delta$ homologis universal}.
@@ -368,7 +368,7 @@ Tujuan selanjutnya ialah menunjukkan bahwa, untuk funktor eksak kiri (atau eksak
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.le002
 \begin{lema}\label{prop:erasable-aux}
-	Misalkan $E: \mathcal{A} \to \mathcal{B}$ merupakan funktor yang dapat dihapus, $0 \to X \xrightarrow{u} I \xrightarrow{v} B \to 0$ merupakan barisan eksak pendek di $\mathcal{A}$, dan $f: X \to Y$ sebarang morfisme. Maka, terdapat diagram komutatif yang baris-barisnya eksak,
+	Misalkan $E: \mathcal{A} \to \mathcal{B}$ merupakan funktor yang dapat dihapus, $0 \to X \xrightarrow{u} I \xrightarrow{v} B \to 0$ merupakan barisan eksak pendek di $\mathcal{A}$, dan $f: X \to Y$ sembarang morfisme. Maka, terdapat diagram komutatif yang baris-barisnya eksak,
 % segment-id: o014.li2.chapter3.classical-derived-functors.g011
 	\begin{equation*}\begin{tikzcd}
 			0 \arrow[r] & X \arrow[d, "f"'] \arrow[r, "u"] & I \arrow[r, "v"] \arrow[d] & B \arrow[d] \arrow[r] & 0 \\
@@ -384,7 +384,7 @@ Tujuan selanjutnya ialah menunjukkan bahwa, untuk funktor eksak kiri (atau eksak
 		X \arrow[hookrightarrow, r, "u"] \arrow[d, "hf"'] & I \arrow[d] \\
 		J_0 \arrow[r, "k"'] & J \arrow[phantom, lu, "\boxplus" description] ,
 	\end{tikzcd}\]
-	dengan $k$ merupakan monomorfisme menurut Proposisi \ref{prop:Abel-cat-pull-push}. Tetapkan $\iota = kh: Y \to J$ dan $C := \Coker(\iota)$. Pilihan ini memberikan persegi kiri dari diagram yang dicari; persegi kanannya diperoleh dari funktorialitas kokernel.
+		dengan $k$ merupakan monomorfisme menurut Proposisi \ref{prop:Abel-cat-pull-push}. Definisikan $\iota = kh: Y \to J$ dan $C := \Coker(\iota)$. Pilihan ini memberikan persegi kiri dari diagram yang dicari; persegi kanannya diperoleh dari funktorialitas kokernel.
 \end{bukti}
 
 % segment-id: o014.li2.chapter3.classical-derived-functors.pr003
@@ -406,7 +406,7 @@ Tujuan selanjutnya ialah menunjukkan bahwa, untuk funktor eksak kiri (atau eksak
 	\end{tikzcd}\]
 	Berdasarkan eksaknya kedua baris dan sifat universal kokernel, terdapat tepat satu anak panah putus-putus $\varphi^n_X$ yang membuat seluruh diagram komutatif. Hal ini mencirikan $\varphi^n_X$ yang dicari, tetapi untuk saat ini morfisme tersebut masih bergantung pada pilihan $X \hookrightarrow I$.
 	
-	Untuk sebarang morfisme $f: X \to Y$, kita nyatakan bahwa terdapat diagram komutatif yang baris-barisnya eksak,
+	Untuk sembarang morfisme $f: X \to Y$, akan ditunjukkan bahwa terdapat diagram komutatif yang baris-barisnya eksak,
 % segment-id: o014.li2.chapter3.classical-derived-functors.g014
 	\begin{equation}\label{eqn:erasable-univ-delta}\begin{tikzcd}
 		0 \arrow[r] & X \arrow[d, "f"'] \arrow[r] & I \arrow[r] \arrow[d] & B \arrow[d] \arrow[r] & 0 \\
@@ -422,7 +422,7 @@ Tujuan selanjutnya ialah menunjukkan bahwa, untuk funktor eksak kiri (atau eksak
 	\end{tikzcd}\]
 	Dalam diagram ini, setiap muka selain muka kanan komutatif berdasarkan konstruksi, definisi, atau hipotesis rekursif. Karena $R^{n-1} B \to R^n X$ merupakan epimorfisme, argumen standar menunjukkan bahwa muka kanan juga komutatif.
 	
-	Argumen di atas sekaligus menunjukkan bahwa $\varphi^n_X$ tidak bergantung pada pilihan $X \hookrightarrow I$ (ambil $f = \identity_X$ dan perhatikan bahwa, berdasarkan konstruksi dorong keluar dalam bukti Lema \ref{prop:erasable-aux}, dua pembenaman $X \hookrightarrow I_i$ mana pun dapat dipetakan ke satu pembenaman bersama $X \hookrightarrow J$, untuk $i=1,2$), serta bahwa $\varphi^n_X$ funktorial terhadap $X$ (ambil $f$ sebarang). Dengan demikian, konstruksi rekursif $\varphi^n$ telah selesai.
+	Argumen di atas sekaligus menunjukkan bahwa $\varphi^n_X$ tidak bergantung pada pilihan $X \hookrightarrow I$ (ambil $f = \identity_X$ dan perhatikan bahwa, berdasarkan konstruksi dorong keluar dalam bukti Lema \ref{prop:erasable-aux}, dua pembenaman $X \hookrightarrow I_i$ mana pun dapat dipetakan ke satu pembenaman bersama $X \hookrightarrow J$, untuk $i=1,2$), serta bahwa $\varphi^n_X$ funktorial terhadap $X$ (ambil $f$ sembarang). Dengan demikian, konstruksi rekursif $\varphi^n$ telah selesai.
 	
 	Terakhir, kita tunjukkan kompatibilitas keluarga morfisme $\varphi^n$, untuk $n \geq 0$, dengan morfisme penghubung. Untuk barisan eksak pendek
 	\[0 \to X \to Y \to Z \to 0\]

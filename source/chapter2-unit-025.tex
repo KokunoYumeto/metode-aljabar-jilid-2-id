@@ -8,8 +8,8 @@
 \hypertarget{o014.aljabr2.chapter2.direct-sum-decomposition}{ }
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p001
-Pertama-tama, kita membahas cara merepresentasikan morfisme di antara jumlah
-langsung dengan matriks. Argumen yang terkait sepenuhnya sama dengan kasus
+Pertama-tama, kita membahas cara merepresentasikan morfisme antarjumlah
+langsung dengan matriks. Argumennya persis sama seperti dalam
 teori modul \cite[\S 6.3]{Li1}; di sini kita hanya memberikan tinjauan singkat.
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p002
@@ -72,7 +72,7 @@ $\Hom(X'_j, X''_i) \times \Hom(X_k, X'_j) \to \Hom(X_k, X''_i)$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p004
-Masih tinjau dekomposisi jumlah langsung
+Masih dengan dekomposisi jumlah langsung
 $X \simeq \bigoplus_{i=1}^n X_i$, dengan $n\geq 1$ dan
 $X_i\neq 0$ untuk setiap $i$; darinya diperoleh keluarga morfisme
 $\iota_i:X_i\to X$ dan $p_i:X\to X_i$. Untuk setiap $1\leq i\leq n$,
@@ -98,10 +98,10 @@ $\mathcal{A}$.
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p005
 Mulai sekarang, kita selalu memandang suku-suku jumlah langsung $X_i$ sebagai
 subobjek dari $X$ dan menuliskan dekomposisinya sebagai persamaan
-$X=\bigoplus_{i=1}^n X_i$. Jika selanjutnya $\mathcal{A}$ diasumsikan sebagai
-kategori abelian, maka suatu keluarga idempoten
-$e_1,\ldots,e_n\in\End(X)$ yang memenuhi (E1)---(E3), sebaliknya, menentukan
-subobjek-subobjek dari $X$
+$X=\bigoplus_{i=1}^n X_i$. Sebaliknya, jika $\mathcal{A}$ merupakan kategori
+abelian, suatu keluarga idempoten
+$e_1,\ldots,e_n\in\End(X)$ yang memenuhi (E1)---(E3) menentukan subobjek-subobjek
+dari $X$
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.q005
 \[ X_i := \Ker\left( \sum_{j \neq i} e_j \right) = \Image(e_i), \quad i=1, \ldots, n. \]
 Di satu pihak, subobjek-subobjek tersebut dilengkapi dengan monomorfisme
@@ -115,8 +115,8 @@ langsung $X_1,\ldots,X_n$ tidak memerlukan seluruh sifat kategori abelian;
 kita hanya perlu mengasumsikan bahwa $\mathcal{A}$ merupakan
 kategori-$\cate{Ab}$ dengan objek nol dan bahwa setiap idempoten mempunyai
 kernel. Kategori semacam itu disebut \emph{kategori Karoubi} atau
-\emph{kategori pseudoabelian}. Pembahasan lebih lanjut akan diberikan dalam
-bagian latihan bab ini.
+\emph{kategori pseudoabelian}. Hal ini dibahas lebih lanjut dalam latihan bab
+ini.
 \index{kategori!Karoubi (Karoubian)}
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.pr001
@@ -215,8 +215,8 @@ kelas khusus barisan eksak pendek, yang disebut barisan eksak pendek terbelah.
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p008
 Dalam situasi Proposisi~\ref{prop:split-ses}, diberikan $f:X'\to X$ dan
-$g:X\to X''$, morfisme $s$ disebut suatu \emph{penampang} dari $g$ jika
-$gs=\identity_{X''}$, sedangkan $r$ disebut suatu \emph{retraksi} dari $f$
+$g:X\to X''$, morfisme $s$ disebut \emph{penampang} dari $g$ jika
+$gs=\identity_{X''}$, sedangkan $r$ disebut \emph{retraksi} dari $f$
 jika $rf=\identity_{X'}$; istilah-istilah ini berasal dari topologi.
 Keberadaan penampang dan retraksi masing-masing mengakibatkan bahwa $g$
 merupakan epimorfisme dan $f$ merupakan monomorfisme, tetapi kebalikannya tidak
@@ -225,7 +225,7 @@ berlaku.
 \index{retraksi (retract)}
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p009
-Perhatikan pula bahwa keseluruhan pernyataan (i)---(v) dalam proposisi tersebut
+Perhatikan pula bahwa kelima pernyataan (i)---(v) dalam proposisi tersebut
 bersifat swa-dual.
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.d001
@@ -250,8 +250,8 @@ bersifat swa-dual.
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p010
 Kita ingin mempelajari dekomposisi berbentuk
 $X=X_1\oplus\cdots\oplus X_n$, dengan $X\neq 0$ dan setiap $X_i$ merupakan
-objek tak terurai. Persoalannya terbagi menjadi masalah keberadaan dan
-keunikan. Untuk kasus modul, inilah isi Teorema Krull--Remak--Schmidt; lihat
+objek tak terurai. Ada dua persoalan: keberadaan dan keunikan. Untuk kasus
+modul, inilah isi Teorema Krull--Remak--Schmidt; lihat
 \cite[Korolari 6.12.9]{Li1}. Untuk kategori abelian umum, kita memerlukan
 sejumlah persiapan. Pembahasan berikut mengikuti pendekatan \cite{Kr15}.
 
@@ -259,13 +259,14 @@ sejumlah persiapan. Pembahasan berikut mengikuti pendekatan \cite{Kr15}.
 \begin{definisi}\label{def:bichain}
 	\index{syarat rantai ganda (bi-chain condition)}
 	Misalkan $\mathcal{A}$ merupakan sebarang kategori. Suatu \emph{rantai
-	ganda} di dalamnya berarti data $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$,
+	ganda} di dalamnya adalah data $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$,
 	dengan $X_n$ objek dari $\mathcal{A}$ dan
 	% segment-id: o014.li2.chapter2.direct-sum-decomposition.g003
 	$\begin{tikzcd}
 		X_n \arrow[twoheadrightarrow, r, shift left, "\alpha_n"] & X_{n+1} \arrow[hookrightarrow, l, shift left, "\beta_n"]
 	\end{tikzcd}$
-	merupakan morfisme di antaranya, dengan $\alpha_n$ epimorfisme dan $\beta_n$
+	merupakan pasangan morfisme di antara objek-objek tersebut, dengan
+	$\alpha_n$ epimorfisme dan $\beta_n$
 	monomorfisme ($n\in\Z_{\geq 0}$). Suatu objek $X$ dari $\mathcal{A}$
 	dikatakan memenuhi \emph{syarat rantai ganda} jika, untuk setiap rantai
 	ganda $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$ dengan $X_0=X$, morfisme
@@ -307,7 +308,7 @@ Hasil berikut merupakan perumuman dari \cite[Lema 6.11.5]{Li1}.
 	$\Ker(f^\infty)$ yang tidak bergantung pada $n$ untuk $n\gg 0$.
 
 	Dengan demikian, untuk $n\gg 0$, morfisme
-	$\alpha_{2n-1}\cdots\alpha_n:X_n\to X_{2n}$ bersifat invertibel. Nyatakan
+	$\alpha_{2n-1}\cdots\alpha_n:X_n\to X_{2n}$ bersifat invertibel. Notasikan
 	inversnya dengan
 	$\psi:\Image(f^\infty)\rightiso\Image(f^\infty)$, dan tetapkan
 	% segment-id: o014.li2.chapter2.direct-sum-decomposition.q008
@@ -370,7 +371,7 @@ kategori abelian.
 \end{teorema}
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.pf007
 \begin{bukti}
-	Pokok persoalannya adalah membuktikan bahwa $X$ yang memenuhi syarat rantai
+	Yang terutama perlu dibuktikan ialah bahwa $X$ yang memenuhi syarat rantai
 	ganda pasti mempunyai dekomposisi seperti dalam (i). Bagian selebihnya hanya
 	menyangkut operasi aljabar dalam gelanggang-gelanggang $\End$ dan sama dengan
 	\cite[Teorema 6.12.8]{Li1}. Karena itu, untuk bagian berikut kita asumsikan
@@ -388,20 +389,20 @@ kategori abelian.
 
 	Jika $X$ sudah tak terurai, Korolari~\ref{prop:indecomposable-local-ring}
 	menunjukkan bahwa $\End(X)$ merupakan gelanggang lokal; inilah (i). Jika
-	pernyataan (i) tidak berlaku untuk $X$, maka pasti terdapat subobjek tak nol
+	(i) tidak berlaku untuk $X$, maka pasti terdapat subobjek tak nol
 	$X_1,Y_1$ sedemikian sehingga $X=X_1\oplus Y_1$ dan pernyataan (i) tidak
-	berlaku untuk $X_1$. Melanjutkan operasi ini pada $X_1$ memberikan
+	berlaku untuk $X_1$. Mengulangi proses ini pada $X_1$ memberikan
 	$X_1=X_2\oplus Y_2$; iterasi menghasilkan rantai ganda
 	$(X_n,\alpha_n,\beta_n)_{n=0}^\infty$, dengan
 	$\alpha_n:X_n\twoheadrightarrow X_{n+1}$ dan
 	$\beta_n:X_{n+1}\hookrightarrow X_n$ berasal dari
-	$X_n=X_{n+1}\oplus Y_{n+1}$. Morfisme-morfisme ini tidak pernah merupakan
+	$X_n=X_{n+1}\oplus Y_{n+1}$. Tidak satu pun morfisme ini merupakan
 	isomorfisme dan $X_0:=X$, bertentangan dengan syarat rantai ganda. Ini
 	membuktikan pernyataan tersebut.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.p014
-Dalam penerapan, hal pentingnya adalah mengetahui kapan syarat rantai ganda
+Dalam penerapan, yang penting adalah mengetahui kapan syarat rantai ganda
 berlaku. Berikut ini salah satu syarat yang mencukupi.
 
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.pr003
@@ -412,15 +413,15 @@ berlaku. Berikut ini salah satu syarat yang mencukupi.
 \end{proposisi}
 % segment-id: o014.li2.chapter2.direct-sum-decomposition.pf008
 \begin{bukti}
-	Diberikan rantai ganda $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$ dengan
+	Ambil rantai ganda $(X_n,\alpha_n,\beta_n)_{n=0}^\infty$ dengan
 	$X_0=X$. Maka
 	\[
 		\left(\Image(\beta_0\cdots\beta_n)\right)_{n=0}^\infty
 	\]
 	merupakan rantai
 	menurun dalam himpunan terurut parsial $\mathrm{Sub}_X$. Karena setiap
-	$\beta_n$ merupakan monomorfisme, untuk $n\gg 0$ syarat Artinian memberikan
-	diagram komutatif
+	$\beta_n$ merupakan monomorfisme, untuk $n\gg 0$ syarat Artinian menjamin
+	adanya diagram komutatif
 	% segment-id: o014.li2.chapter2.direct-sum-decomposition.g004
 	\[\begin{tikzcd}
 		X_{n+1} \arrow[d, "\beta_n"'] \arrow[r, "\sim"] & \Image(\beta_0 \cdots \beta_n) \arrow[d, "\sim" sloped] \arrow[hookrightarrow, r] & X_0 \\

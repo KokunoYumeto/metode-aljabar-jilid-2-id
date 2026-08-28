@@ -49,8 +49,8 @@ kategori-$\cate{Ab}$.
 
 % segment-id: o014.li2.chapter1.linear-categories-over-commutative-rings.e001
 \begin{contoh}
-	Kategori-$\Bbbk\dcate{Mod}$ yang hanya mempunyai satu objek tidak lain
-	adalah aljabar-$\Bbbk$. Korespondensinya diberikan oleh
+	Kategori-$\Bbbk\dcate{Mod}$ yang hanya mempunyai satu objek tepat
+	merupakan aljabar-$\Bbbk$. Korespondensinya diberikan oleh
 	$\mathcal{A} \mapsto \End_{\mathcal{A}}(\star)$, dengan
 	$\Obj(\mathcal{A}) = \{\star\}$.
 \end{contoh}
@@ -110,7 +110,7 @@ kategori-$\Bbbk\dcate{Mod}$ dipahami bersifat $\Bbbk$-linear.
 Hal ini sama artinya dengan mengganti kategori-$\cate{Ab}$ dengan
 kategori-$\Bbbk\dcate{Mod}$ dalam pembahasan \S\ref{sec:Ker-Coker}. Sebagian
 besar hasil mengenai kategori aditif dalam bab ini dapat diperluas ke situasi
-$\Bbbk$-linear dengan argumen yang sama persis. Satu-satunya pengecualian
+$\Bbbk$-linear dengan argumen yang sama tanpa perubahan. Satu-satunya pengecualian
 berkaitan dengan Korolari~\ref{prop:automatic-additivity}: dalam kategori
 aditif, penjumlahan pada himpunan $\Hom$ dapat dicirikan oleh sifat kategori itu
 sendiri, tetapi hal ini tidak berlaku bagi perkalian skalar oleh $\Bbbk$.
@@ -124,7 +124,7 @@ Berikut ini beberapa hasil mengenai sifat $\Bbbk$-linear. Ingat bahwa
 $Z(\mathcal{A}) := \End(\identity_{\mathcal{A}})$. Unsur-unsurnya merupakan
 morfisme dari funktor identitas $\identity_{\mathcal{A}}$ ke dirinya sendiri,
 yang ditulis sebagai $(a_X)_{X \in \Obj(\mathcal{A})}$ dengan
-$a_X \in \End_{\mathcal{A}}(X)$. Terhadap komposisi morfisme, pusat tersebut
+$a_X \in \End_{\mathcal{A}}(X)$. Dengan operasi komposisi morfisme, pusat tersebut
 merupakan monoid komutatif; lihat \cite[Definisi 2.3.8,
 Proposisi 2.3.9]{Li1}. Jika $\mathcal{A}$ merupakan kategori-$\cate{Ab}$, maka
 $Z(\mathcal{A})$ menjadi gelanggang komutatif terhadap komposisi dan
@@ -157,10 +157,10 @@ $(a_X)_X + (b_X)_X := (a_X+b_X)_X$.
 % segment-id: o014.li2.chapter1.linear-categories-over-commutative-rings.pf001
 \begin{bukti}
 	Syarat yang mencirikan
-	$(a_X)_{X \in \Obj(\mathcal{A})} \in Z(\mathcal{A})$ tepatlah
+	$(a_X)_{X \in \Obj(\mathcal{A})} \in Z(\mathcal{A})$ adalah
 	$f \circ a_X = a_Y \circ f$ untuk setiap $f \in \Hom(X,Y)$. Jika
 	$\mathcal{A}$ dilengkapi dengan struktur kategori-$\Bbbk\dcate{Mod}$,
-	tetapkan $a_X := a \cdot \identity_X$. Sifat bilinear memberikan
+	definisikan $a_X := a \cdot \identity_X$. Sifat bilinear memberikan
 	\[
 		f \circ a_X = f \circ (a \cdot \identity_X)
 		= (a f) \circ \identity_X

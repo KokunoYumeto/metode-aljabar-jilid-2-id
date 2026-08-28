@@ -1,0 +1,274 @@
+% Unit 053 terjemahan Bahasa Indonesia dari chapter4.tex baris 623--722.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.verdier-localization
+% Cakupan: akhir Bagian 4.3, dari konstruksi $S\mathcal{N}$ dan lokalisasi
+% Verdier sampai hubungan lokalisasi dengan subkategori; berhenti sebelum
+% Bagian 4.4 pada baris 723.
+
+% segment-id: o014.li2.chapter4.verdier-localization.pr001
+\begin{proposisi}
+	\index[sym1]{SN@$S\mathcal{N}$}
+	Misalkan $\mathcal{N}$ subkategori bertriangulasi jenuh dari suatu kategori
+	bertriangulasi $\mathcal{D}$ (Definisi--Proposisi~\ref{def:triangulated-subcat},
+	Konvensi~\ref{con:saturated-intersection}). Maka
+% segment-id: o014.li2.chapter4.verdier-localization.q001
+	\[ S\mathcal{N} := \left\{\begin{array}{r|l}
+		s \in \Mor(\mathcal{D}) & \exists \;\text{segitiga terbedakan}\; X \xrightarrow{s} Y \to Z \xrightarrow{+1} \\
+		& \text{sedemikian sehingga}\; Z \in \Obj(\mathcal{N})
+	\end{array}\right\} \]
+	merupakan sistem multiplikatif yang kompatibel dengan triangulasi.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.verdier-localization.pf001
+\begin{bukti}
+	Karena $\mathcal{N}$ tertutup terhadap pergeseran, dengan merotasi segitiga
+	terlihat bahwa $S\mathcal{N}$ memenuhi (ST1). Selanjutnya, tinjau diagram
+	komutatif dalam (ST2) dan andaikan $\alpha, \beta \in S\mathcal{N}$.
+	Lema~\ref{prop:triangulated-9-diag} memberikan diagram
+% segment-id: o014.li2.chapter4.verdier-localization.g001
+	\[\begin{tikzcd}
+		{} & {} & {} & {} \\
+		X'' \arrow[u, "+1"] \arrow[r] & Y'' \arrow[u, "+1"] \arrow[r] & Z'' \arrow[u, "+1"] \arrow[r, "+1"] & {} \\
+		X \arrow[r] \arrow[u] & Y \arrow[r] \arrow[u] & Z \arrow[r, "+1"] \arrow[u] & {}\\
+		X' \arrow[r] \arrow[u, "\alpha"] & Y' \arrow[r] \arrow[u, "\beta"] & Z' \arrow[r, "+1"] \arrow[u, "\gamma"] & {}
+	\end{tikzcd}\]
+	sedemikian sehingga setiap baris dan kolom merupakan segitiga terbedakan,
+	semua persegi komutatif, dan $(\alpha, \beta, \gamma)$ memberikan suatu
+	morfisme di antara segitiga-segitiga. Dengan menerapkan sifat jenuh
+	$\mathcal{N}$, fakta bahwa $\alpha, \beta \in S$, dan
+	Korolari~\ref{prop:Cone-uniqueness}, terlihat bahwa
+	$X'', Y'' \in \Obj(\mathcal{N})$. Definisi subkategori bertriangulasi jenuh
+	selanjutnya menyiratkan $Z'' \in \Obj(\mathcal{N})$, sehingga
+	$\gamma \in S$. Ini memverifikasi (ST2).
+
+	Berikutnya kita verifikasi aksioma-aksioma sistem multiplikatif
+	(Definisi~\ref{def:multiplicative-family}). Karena
+	$0 \in \Obj(\mathcal{N})$, aksioma (S1) mengikuti dari (TR1).
+
+	Untuk memverifikasi (S2), misalkan $f, g \in S\mathcal{N}$. Pilih segitiga
+	terbedakan $X \xrightarrow{f} Y \to Z' \xrightarrow{+1}$ dan
+	$Y \xrightarrow{g} Z \to X' \xrightarrow{+1}$ dengan
+	$Z', X' \in \Obj(\mathcal{N})$, lalu gunakan (TR2) untuk memilih segitiga
+	terbedakan $X \xrightarrow{gf} Z \to Y' \xrightarrow{+1}$. Penerapan (TR5)
+	memberikan segitiga terbedakan $Z' \to Y' \to X' \xrightarrow{+1}$.
+	Karena itu, sifat subkategori bertriangulasi jenuh menyiratkan
+	$Y' \in \Obj(\mathcal{N})$, yakni $gf \in S\mathcal{N}$.
+
+	Untuk memverifikasi (S3), tinjau morfisme-morfisme
+	$X \xrightarrow{s \in S\mathcal{N}} Z \xleftarrow{f} Y$. Pilih segitiga
+	terbedakan $X \xrightarrow{s} Z \xrightarrow{h} N \xrightarrow{+1}$ dengan
+	$N \in \Obj(\mathcal{N})$, lalu gunakan (TR2) untuk memilih segitiga
+	$Y \xrightarrow{hf} N \to U \xrightarrow{+1}$. Terapkan (TR4) pada bagian
+	bergaris penuh dari diagram
+% segment-id: o014.li2.chapter4.verdier-localization.g002
+	\[\begin{tikzcd}
+		Y \arrow[r, "hf"] \arrow[d, "f"'] & N \arrow[r] \arrow[equal, d] & U \arrow[r, "+1"] \arrow[dashed, d] & TY \arrow[dashed, d, "Tf"] \\
+		Z \arrow[r, "h"'] & N \arrow[r] & TX \arrow[r, "-Ts"'] & TZ
+	\end{tikzcd}\]
+	untuk memperoleh morfisme-morfisme yang ditunjukkan dengan garis putus-putus
+	dan dengan demikian suatu morfisme di antara segitiga-segitiga terbedakan.
+	Setelah dirotasi, diperoleh unsur $s': W := T^{-1} U \to Y$ dari
+	$S\mathcal{N}$, morfisme yang sesuai $f': W \to X$, beserta diagram komutatif
+	yang dipersyaratkan dalam (S3):
+% segment-id: o014.li2.chapter4.verdier-localization.g003
+	\[\begin{tikzcd}
+		X \arrow[d, "{s \in S\mathcal{N}}"'] & W \arrow[d, "{s' \in S\mathcal{N}}"] \arrow[l, "{f'}"'] \\
+		Z & Y \arrow[l, "f"] .
+	\end{tikzcd}\]
+
+	Untuk memverifikasi (S4), dalam aksioma itu gantikan $(f, g)$ dengan
+	$(f-g, 0)$. Cukup dibuktikan pernyataan berikut: untuk suatu
+	morfisme $f: X \to Y$, jika terdapat $s: Y \to W$ dengan
+	$s \in S\mathcal{N}$ dan $sf = 0$, maka terdapat $t: Z \to X$ dengan
+	$t \in S\mathcal{N}$ dan $ft = 0$. Untuk membuktikannya, pilih segitiga
+	terbedakan $N \to Y \xrightarrow{s} W \xrightarrow{+1}$ dengan
+	$N \in \Obj(\mathcal{N})$. Karena $\Hom(X, \cdot)$ merupakan funktor
+	kohomologis dan $sf=0$, terdapat $h \in \Hom(X, N)$ sedemikian sehingga
+	$f$ mempunyai faktorisasi $X \xrightarrow{h} N \to Y$. Pilih segitiga
+	terbedakan $Z \xrightarrow{t} X \xrightarrow{h} N \xrightarrow{+1}$;
+	maka $t \in S\mathcal{N}$. Di sisi lain, $ht=0$
+	(Lema~\ref{prop:dt-composite-null}) menyiratkan $ft = 0$. Jadi, (S4)
+	terpenuhi.
+
+	Argumen untuk versi dual (S3) dan (S4) persis sama.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.verdier-localization.th001
+\begin{teorema}[Lokalisasi Verdier]\label{prop:Verdier-localization}
+	\index{lokalisasi!Verdier}
+	\index[sym1]{DN@$\mathcal{D}/\mathcal{N}$}
+	Misalkan $\mathcal{N}$ subkategori bertriangulasi jenuh dari
+	$\mathcal{D}$. Definisikan
+	$\mathcal{D}/\mathcal{N} := \mathcal{D}\left[ (S\mathcal{N})^{-1}\right]$
+	(yang mungkin merupakan kategori ``besar''), dengan struktur bertriangulasi
+	dari Proposisi~\ref{prop:localization-triangulated}. Maka funktor lokalisasi
+	$Q: \mathcal{D} \to \mathcal{D}/\mathcal{N}$ mempunyai sifat-sifat berikut.
+% segment-id: o014.li2.chapter4.verdier-localization.l001
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.verdier-localization.i001
+		\item Untuk setiap morfisme $f: X \to Y$ dalam $\mathcal{D}$, berlaku
+		$Qf = 0$ jika dan hanya jika $f$ dapat difaktorkan sebagai
+		$X \to N \to Y$ dengan $N \in \Obj(\mathcal{N})$; khususnya, $Q$
+		memetakan $\mathcal{N}$ ke $0$.
+% segment-id: o014.li2.chapter4.verdier-localization.i002
+		\item Untuk setiap kategori prabertriangulasi $\mathcal{E}$ dan funktor
+		bertriangulasi $F: \mathcal{D} \to \mathcal{E}$, jika $F$ memetakan
+		$\mathcal{N}$ ke $0$, maka $F$ terfaktorkan secara unik sebagai
+		$\mathcal{D} \xrightarrow{Q} \mathcal{D}/\mathcal{N}
+		\xrightarrow{\overline{F}} \mathcal{E}$, dengan $\overline{F}$ suatu
+		funktor bertriangulasi.
+% segment-id: o014.li2.chapter4.verdier-localization.i003
+		\item Untuk setiap kategori abelian $\mathcal{A}$ dan funktor kohomologis
+		$H: \mathcal{D} \to \mathcal{A}$, jika $H$ memetakan $\mathcal{N}$ ke
+		$0$, maka $H$ terfaktorkan secara unik sebagai
+		$\mathcal{D} \xrightarrow{Q} \mathcal{D}/\mathcal{N}
+		\xrightarrow{\overline{H}} \mathcal{A}$, dengan $\overline{H}$ suatu
+		funktor kohomologis.
+	\end{enumerate}
+\end{teorema}
+
+% segment-id: o014.li2.chapter4.verdier-localization.pf002
+\begin{bukti}
+	Untuk (i), jika $f$ mempunyai faktorisasi $X \to N \to Y$, maka $Qf = 0$.
+	Memang, rotasi $N \to 0 \to TN \xrightarrow{+1}$ dari segitiga terbedakan
+	$N \xrightarrow{\identity_N} N \to 0 \xrightarrow{+1}$ menunjukkan bahwa
+	$N \to 0$ dipetakan menjadi suatu isomorfisme dalam
+	$\mathcal{D}/\mathcal{N}$. Sebaliknya, jika $Qf = 0$, maka terdapat morfisme
+	$s: M \to X$ dengan $s \in S\mathcal{N}$ dan $fs = 0$
+	(Korolari~\ref{prop:fraction-zero}). Menurut definisi $S\mathcal{N}$,
+	terdapat diagram komutatif yang setiap barisnya merupakan segitiga
+	terbedakan (bagian bergaris penuh):
+% segment-id: o014.li2.chapter4.verdier-localization.g004
+	\[\begin{tikzcd}
+		M \arrow[r, "s"] \arrow[d] & X \arrow[d, "f"] \arrow[r] & N \arrow[r] \arrow[dashed, d] & TM \arrow[dashed, d] \\
+		0 \arrow[r] & Y \arrow[r, "{\identity_Y}"'] & Y \arrow[r] & 0
+	\end{tikzcd} \quad (N \in \Obj(\mathcal{N})), \]
+	Dengan (TR4), diperoleh morfisme-morfisme yang ditunjukkan dengan garis
+	putus-putus sehingga seluruh diagram komutatif. Diagram ini memberikan
+	faktorisasi $f$ sebagai $X \to N \to Y$.
+
+	Tinjau situasi dalam (ii). Misalkan $s \in S\mathcal{N}$ dan masukkan $s$
+	ke dalam segitiga terbedakan
+	$X \xrightarrow{s} Y \to N \xrightarrow{+1}$ dengan
+	$N \in \Obj(\mathcal{N})$. Maka
+	$FX \xrightarrow{Fs} FY \to 0 \xrightarrow{+1}$ merupakan segitiga
+	terbedakan dalam $\mathcal{E}$. Korolari~\ref{prop:triangle-0-isom}
+	menunjukkan bahwa $Fs$ merupakan isomorfisme. Sifat universal kemudian
+	memberikan faktorisasi unik $H = \overline{F} \circ Q$, dengan
+	$\overline{F}$ suatu funktor aditif. Mengingat deskripsi struktur
+	bertriangulasi pada $\mathcal{D}/\mathcal{N}$
+	(Proposisi~\ref{prop:localization-triangulated}), mudah diverifikasi bahwa
+	$\overline{F}$ mempertahankan pergeseran dan segitiga; perinciannya
+	diserahkan kepada pembaca.
+
+	Tinjau situasi dalam (iii). Sekali lagi, masukkan $s \in S\mathcal{N}$ ke
+	dalam segitiga terbedakan $X \xrightarrow{s} Y \to N \xrightarrow{+1}$.
+	Dengan menerapkan $H$, diperoleh barisan eksak
+	$\underbracket{HT^{-1} N}_{=0} \to HX \xrightarrow{Hs} HY \to
+	\underbracket{HN}_{=0}$, sehingga $Hs$ merupakan isomorfisme. Sifat universal
+	kemudian memberikan faktorisasi unik $H = \overline{H} \circ Q$, dengan
+	$\overline{H}$ suatu funktor aditif. Untuk memverifikasi bahwa $\overline{H}$
+	merupakan funktor kohomologis, ingat bahwa segitiga-segitiga terbedakan dalam
+	$\mathcal{D}/\mathcal{N}$ isomorfik dengan citra segitiga-segitiga
+	terbedakan dalam $\mathcal{D}$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.verdier-localization.ex001
+\begin{contoh}\label{eg:cohomological-functor-multiplicative}
+	\index{kuasi-isomorfisme}
+	\index[sym1]{SHSNH@$S_H$, $S\mathcal{N}_H$}
+	Funktor kohomologis memberikan suatu kelas penting sistem multiplikatif yang
+	kompatibel dengan triangulasi. Misalkan $H: \mathcal{D} \to \mathcal{A}$
+	suatu funktor kohomologis. Untuk morfisme $f: X \to Y$ dalam $\mathcal{D}$,
+	jika $H(T^n f)$ merupakan isomorfisme dalam $\mathcal{A}$ untuk setiap
+	$n \in \Z$, maka $f$ disebut $H$-\emph{kuasi-isomorfisme}. Semua
+	$H$-kuasi-isomorfisme membentuk himpunan $S_H \subset \Mor(\mathcal{D})$.
+	Himpunan ini jelas memenuhi (ST1), sedangkan (ST2) merupakan akibat dari
+	barisan eksak panjang suatu funktor kohomologis
+	(Catatan~\ref{rem:cohomological-functor-long}) bersama
+	Proposisi~\ref{prop:5-lemma}.
+
+	Di sisi lain, definisikan $\mathcal{N}_H$ seperti dalam
+	Contoh~\ref{eg:subcat-N-H}. Ini merupakan subkategori bertriangulasi jenuh,
+	sehingga $S\mathcal{N}_H$ dapat didefinisikan. Keduanya mempunyai hubungan
+	sederhana berikut.
+\end{contoh}
+
+% segment-id: o014.li2.chapter4.verdier-localization.pr002
+\begin{proposisi}\label{prop:cohomological-functor-multiplicative}
+	Misalkan $H: \mathcal{D} \to \mathcal{A}$ suatu funktor kohomologis. Maka
+	$S\mathcal{N}_H = S_H$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.verdier-localization.pf003
+\begin{bukti}
+	Misalkan $f: X \to Y$ suatu morfisme dalam $\mathcal{D}$. Perluas $f$
+	menjadi segitiga terbedakan
+	$X \xrightarrow{f} Y \to N \xrightarrow{+1}$. Ingat bahwa $N$ unik hingga
+	isomorfisme. Karena itu, barisan eksak panjang suatu funktor kohomologis
+	menyiratkan
+% segment-id: o014.li2.chapter4.verdier-localization.q002
+	\[ f \;\text{merupakan $H$-kuasi-isomorfisme} \iff \forall n, \; H(T^n N) = 0, \]
+	dan ruas kanan setara dengan $N \in \Obj(\mathcal{N}_H)$. Ini membuktikan
+	pernyataan.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.verdier-localization.p001
+Dengan demikian, terdapat sekurang-kurangnya dua cara untuk melokalkan pada
+$S_H$: menambahkan invers bagi unsur-unsur $S_H$, atau menolkan
+$\mathcal{N}_H$. Ini memberikan dua sifat universal bagi lokalisasi Verdier
+$Q: \mathcal{D} \to \mathcal{D}/\mathcal{N}_H
+= \mathcal{D}[S_H^{-1}]$.
+
+% segment-id: o014.li2.chapter4.verdier-localization.p002
+Terakhir, kita bahas hubungan antara lokalisasi dan subkategori. Misalkan
+$\mathcal{N}$ dan $\mathcal{I}$ subkategori bertriangulasi dari kategori
+bertriangulasi $\mathcal{D}$, dengan $\mathcal{N}$ jenuh. Maka
+$\mathcal{N} \cap \mathcal{I}$ juga merupakan subkategori bertriangulasi jenuh
+dari $\mathcal{I}$. Sifat universal lokalisasi Verdier kemudian menentukan
+funktor bertriangulasi
+$i: \mathcal{I}/(\mathcal{N} \cap \mathcal{I}) \to \mathcal{D}/\mathcal{N}$.
+
+% segment-id: o014.li2.chapter4.verdier-localization.p003
+Perhatikan fakta sederhana berikut. Sistem
+$S(\mathcal{N} \cap \mathcal{I})$ yang didefinisikan relatif terhadap
+$\mathcal{N} \cap \mathcal{I} \subset \mathcal{I}$ memenuhi
+% segment-id: o014.li2.chapter4.verdier-localization.q003
+\begin{equation}\label{eqn:S-N-D}
+	S(\mathcal{N} \cap \mathcal{I}) = S\mathcal{N} \cap \Mor(\mathcal{I}).
+\end{equation}
+Inklusi $\subset$ jelas. Untuk inklusi $\supset$, andaikan suatu morfisme
+$f: X \to Y$ dalam $\mathcal{I}$ dapat dimasukkan ke segitiga terbedakan
+$X \xrightarrow{f} Y \to N \xrightarrow{+1}$ dalam $\mathcal{D}$ dengan
+$N \in \Obj(\mathcal{N})$. Korolari~\ref{prop:Cone-uniqueness} menunjukkan
+bahwa $N$ isomorfik dengan suatu objek dalam $\mathcal{I}$. Karena
+$\mathcal{N}$ jenuh, kita boleh mengambil
+$N \in \Obj(\mathcal{N} \cap \mathcal{I})$, sehingga
+$f \in S(\mathcal{N} \cap \mathcal{I})$.
+
+% segment-id: o014.li2.chapter4.verdier-localization.pr003
+\begin{proposisi}\label{prop:triangulated-i-equiv}
+	Misalkan $\mathcal{N}$, $\mathcal{D}$, dan $\mathcal{I}$ seperti di atas,
+	dan andaikan ``syarat resolusi'' berikut terpenuhi: untuk setiap
+	$X \in \Obj(\mathcal{D})$, terdapat $U \in \Obj(\mathcal{I})$ dan suatu
+	morfisme $U \to X$ yang termasuk dalam $S\mathcal{N}$. Dalam keadaan ini,
+	$i: \mathcal{I}/(\mathcal{N} \cap \mathcal{I})
+	\to \mathcal{D}/\mathcal{N}$ merupakan ekuivalensi kategori
+	bertriangulasi.
+
+	Kesimpulan yang sama tetap berlaku jika syarat resolusi diganti dengan:
+	untuk setiap $X \in \Obj(\mathcal{D})$, terdapat
+	$U \in \Obj(\mathcal{I})$ dan suatu morfisme $X \to U$ yang termasuk dalam
+	$S\mathcal{N}$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.verdier-localization.pf004
+\begin{bukti}
+	Proposisi~\ref{prop:injective-localization} menyiratkan bahwa $i$ merupakan
+	ekuivalensi, dan Korolari~\ref{prop:triangulated-equivalence} menunjukkan
+	bahwa ekuivalensi tersebut bertriangulasi.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.verdier-localization.p004
+Hasil di atas akan digunakan dalam kajian funktor turunan.

@@ -1,0 +1,86 @@
+% Sumber: authority/upstream/AlJabr-2-9a5803ff77dd3257484cb177f851a73770a59dd3/appendix2.tex, baris 416--501.
+\section{\texorpdfstring{$\IndC$}{Ind}-isasi dan perluasan funktor}\label{sec:Indization-functor}
+Kita melanjutkan pembahasan pada bagian sebelumnya, tetapi mengalihkan fokus kepada funktor.
+
+\begin{definition-proposition}[$\IndC$-isasi funktor]\label{def:Ind-functor}
+	Misalkan $F: \mathcal{C} \to \mathcal{D}$ adalah funktor. Maka terdapat funktor kanonik $\IndC F: \IndC\mathcal{C} \to \IndC\mathcal{D}$ sedemikian sehingga diagram berikut komutatif hingga isomorfisme kanonik:
+	\[\begin{tikzcd}
+		\IndC\mathcal{C} \arrow[r, "{\IndC F}"] & \IndC \mathcal{D} \\
+		\mathcal{C} \arrow[u] \arrow[r, "F"'] & \mathcal{D}. \arrow[u]
+	\end{tikzcd}\]
+	Untuk setiap objek ind $X = \Yinjlim X_i$ pada $\mathcal{C}$, terdapat isomorfisme kanonik $(\IndC F)(X) \simeq \Yinjlim F(X_i)$.
+\end{definition-proposition}
+\begin{proof}
+	Teorema kepadatan pembenaman Yoneda \ref{prop:Yoneda-density} menyajikan secara kanonik setiap $X \in \Obj(\mathcal{C}^\wedge)$ sebagai
+	\[ X \simeq \Yinjlim_{\phi: S \to X} S, \]
+	dengan data pada ruas kanan diindeks oleh kategori $(h_{\mathcal{C}}/X)$. Untuk objek ind $X$, kita ingin mendefinisikan
+	\[ (\IndC F)(X) := \Yinjlim_{\phi: S \to X} F(S), \]
+	yang tentu saja kanonik; persoalannya adalah menunjukkan bahwa ruas kanan merupakan objek ind pada $\mathcal{D}$. Menurut Proposisi \ref{prop:recognize-ind}, $(h_{\mathcal{C}}/X)$ adalah kategori terfilter yang kecil secara kofinal. Dengan Lema \ref{prop:cofinally-small-sub}, pilih subkategori penuh kofinalnya $I$ sedemikian sehingga $I$ merupakan kategori kecil terfilter. Dengan demikian, $(\IndC F)(X)$ disajikan sebagai $\varinjlim$ kecil terfilter yang diindeks oleh $I$, sehingga $(\IndC F)(X)$ memang merupakan objek ind.
+	
+	Untuk objek ind $X = \Yinjlim X_i$ yang diberikan, pembuktian Proposisi \ref{prop:recognize-ind} telah menunjukkan bahwa keluarga morfisme kanonik $(X_i \to X)_i$ memberikan funktor kofinal $I \to (h_{\mathcal{C}}/X)$; dari sini segera diperoleh $(\IndC F)(X) \simeq \Yinjlim F(X_i)$. Dengan mengambil $X \in \Obj(\mathcal{C})$ dan $I$ sebagai poset terfilter yang hanya memiliki satu objek, diperoleh diagram komutatif yang diinginkan, hingga isomorfisme kanonik.
+\end{proof}
+
+\begin{lemma}\label{prop:Ind-hat-functor-prep}
+	Misalkan $F: \mathcal{C} \to \mathcal{D}$ adalah funktor. Jika $\mathcal{C}$ dan $\mathcal{D}$ memiliki $\varinjlim$ berhingga (atau $\varprojlim$ berhingga), dan $F$ mempertahankan $\varinjlim$ (atau $\varprojlim$) tersebut, maka funktor $\IndC F: \IndC\mathcal{C} \to \IndC\mathcal{D}$ yang dikonstruksi dalam Definisi--Proposisi \ref{def:Ind-functor} juga mempertahankannya.
+\end{lemma}
+\begin{proof}
+	Keberadaan $\varinjlim$ berhingga (atau $\varprojlim$ berhingga) dalam $\IndC\mathcal{C}$ dan $\IndC\mathcal{D}$ telah dijamin oleh Lema \ref{prop:Ind-colim} (atau Lema \ref{prop:Ind-lim}). Dengan meninjau kembali pembuktiannya, terlihat bahwa semua $\varinjlim$ (atau $\varprojlim$) yang dipertimbangkan di sana dideskripsikan ``indeks demi indeks'', asalkan objek-objek ind dan morfisme-morfisme yang dibahas disejajarkan secara tepat; sementara itu, $\IndC F$ juga memiliki deskripsi yang bersesuaian. Dengan demikian, persoalannya tereduksi pada asumsi bahwa $F: \mathcal{C} \to \mathcal{D}$ mempertahankan $\varinjlim$ berhingga (atau $\varprojlim$ berhingga).
+\end{proof}
+
+\begin{lemma}\label{prop:IndF-vs-Yoneda}
+	Misalkan $F: \mathcal{C} \to \mathcal{D}$ adalah funktor dan $\mathcal{C}$ adalah kategori kecil. Tuliskan $F^\wedge: \mathcal{C}^\wedge \to \mathcal{D}^\wedge$ untuk funktor yang diperoleh dengan menerapkan \eqref{eqn:Yoneda-F-tilde} pada komposisi $\mathcal{C} \xrightarrow{F} \mathcal{D} \xrightarrow{h_{\mathcal{D}}} \mathcal{D}^\wedge$. Hingga isomorfisme, diagram berikut komutatif:
+	\[\begin{tikzcd}
+		\IndC\mathcal{C} \arrow[r, "{\IndC F}"] \arrow[d] & \IndC\mathcal{D} \arrow[d] \\
+		\mathcal{C}^\wedge \arrow[r, "{F^\wedge}"'] & \mathcal{D}^\wedge ,
+	\end{tikzcd}\]
+	dengan semua funktor vertikal merupakan pembenaman yang jelas.
+	
+	Sebagai akibatnya, $\IndC F$ mempertahankan $\varinjlim$ kecil terfilter.
+\end{lemma}
+\begin{proof}
+	Ingat bahwa $\mathcal{D}^\wedge$ kokomplet, sehingga $F^\wedge$ memang dapat didefinisikan. Untuk bagian pertama, ambil objek ind $X = \Yinjlim X_i$ pada $\mathcal{C}$, dengan $i$ berjalan melalui kategori kecil terfilter $I$, atau lebih umum lagi, kategori terfilter yang kecil secara kofinal; yang terakhir ini secara kanonik dapat diambil sebagai $(h_{\mathcal{C}}/X)$. Menurut konstruksi \eqref{eqn:Yoneda-F-tilde}, citranya di bawah $F^\wedge$ adalah $\Yinjlim F(X_i)$ di dalam $\mathcal{D}^\wedge$. Menurut pembuktian Definisi--Proposisi \ref{def:Ind-functor}, ini juga tepat merupakan citra $(\IndC F)(X)$ di dalam $\mathcal{D}^\wedge$.
+	
+	Untuk bagian kedua, Proposisi \ref{prop:Yoneda-F-tilde} telah menyatakan bahwa $F^\wedge$ mempertahankan $\varinjlim$ kecil. Karena funktor-funktor vertikal dalam diagram menciptakan $\varinjlim$ kecil terfilter (Proposisi \ref{prop:Ind-filtered-colim}), segera diperoleh bahwa $\IndC F$ mempertahankan $\varinjlim$ kecil terfilter.
+\end{proof}
+
+\begin{definition-proposition}\label{def:Ind-hat-functor}
+	Misalkan $F: \mathcal{C} \to \mathcal{D}$ adalah funktor dan kategori $\mathcal{D}$ memiliki $\varinjlim$ kecil terfilter. Definisikan $\hat{F}: \IndC\mathcal{C} \to \mathcal{D}$ sebagai funktor komposit
+	\[ \IndC\mathcal{C} \xrightarrow{\IndC F} \IndC\mathcal{D} \xrightarrow[\text{Proposisi \ref{prop:Ind-adjunction}}]{\sigma} \mathcal{D}; \]
+	jika $X = \Yinjlim X_i$ adalah objek ind pada $\mathcal{C}$, maka terdapat isomorfisme kanonik $\hat{F}(X) \simeq \varinjlim_i F(X_i)$; khususnya, komposisi $\hat{F}$ dengan pembenaman $\mathcal{C} \to \IndC\mathcal{C}$ isomorfik dengan $F$.
+	
+	Jika selanjutnya $\mathcal{C}$ dan $\mathcal{D}$ memiliki $\varinjlim$ berhingga, dan $F$ mempertahankan $\varinjlim$ tersebut, maka $\hat{F}$ juga mempertahankannya.
+\end{definition-proposition}
+\begin{proof}
+	Bagian pertama tidak lebih dari menggabungkan pernyataan-pernyataan terkait dalam Proposisi \ref{prop:Ind-adjunction} dan Definisi--Proposisi \ref{def:Ind-functor}.
+	
+	Untuk bagian kedua, Lema \ref{prop:Ind-hat-functor-prep} menunjukkan bahwa $\IndC F$ mempertahankan $\varinjlim$ berhingga. Di sisi lain, karena $\sigma$ memiliki funktor adjoin kanan, ia juga mempertahankan $\varinjlim$.
+\end{proof}
+
+Ketika $\mathcal{C}$ adalah kategori kecil, Definisi--Proposisi \ref{def:Ind-hat-functor} dapat diperkuat lebih lanjut.
+
+\begin{proposition}\label{prop:Ind-hat-small}
+	Misalkan $F: \mathcal{C} \to \mathcal{D}$ adalah funktor, $\mathcal{C}$ adalah kategori kecil, dan $\mathcal{D}$ memiliki $\varinjlim$ kecil terfilter. Maka $\hat{F}: \IndC\mathcal{C} \to \mathcal{D}$ mempertahankan semua $\varinjlim$ kecil terfilter.
+\end{proposition}
+\begin{proof}
+	Lema \ref{prop:IndF-vs-Yoneda} telah menunjukkan bahwa $\IndC F$ mempertahankan $\varinjlim$ kecil terfilter, sedangkan $\sigma$ memiliki adjoin kanan.
+\end{proof}
+
+\begin{proposition}[Mengenali $\IndC$-isasi]\label{prop:recognition-Ind}
+	Misalkan $\mathcal{C}$ memiliki $\varinjlim$ kecil terfilter dan $\mathcal{C}'$ adalah subkategori penuh dari $\mathcal{C}$. Funktor pembenaman $\iota: \mathcal{C}' \to \mathcal{C}$ menginduksi funktor $\hat{\iota}: \IndC(\mathcal{C}') \to \mathcal{C}$ dengan cara dalam Definisi--Proposisi \ref{def:Ind-hat-functor}. Misalkan $\mathcal{C}'$ memenuhi syarat-syarat berikut:
+	\begin{itemize}
+		\item semua objek $\mathcal{C}'$ merupakan objek kompak dalam $\mathcal{C}$ (Definisi \ref{def:cpt-objects}),
+		\item setiap objek $\mathcal{C}$ dapat disajikan sebagai $\varinjlim$ kecil terfilter dari objek-objek dalam $\mathcal{C}'$.
+	\end{itemize}
+	Maka $\hat{\iota}$ merupakan ekuivalensi.
+\end{proposition}
+\begin{proof}
+	Menurut konstruksi, $\hat{\iota}$ memetakan objek ind $\Yinjlim X_i$ pada $\mathcal{C}'$ ke $\varinjlim X_i$ dalam $\mathcal{C}$; di sini $I \to \mathcal{C}'$ adalah funktor yang diberikan dan $I$ merupakan kategori kecil terfilter. Menurut asumsi, setiap objek $\mathcal{C}$ dapat disajikan dalam bentuk ini, sehingga $\hat{\iota}$ surjektif secara esensial.
+	
+	Selanjutnya, kita buktikan bahwa $\hat{\iota}$ penuh dan setia. Pertimbangkan objek-objek ind $\Yinjlim X_i$ dan $\Yinjlim Y_j$ pada $\mathcal{C}'$. Berdasarkan kekompakan objek-objek $\mathcal{C}'$ di dalam $\mathcal{C}$, argumen yang serupa dengan Proposisi \ref{prop:Ind-Hom} menyiratkan
+	\begin{gather*}
+		\Hom_{\mathcal{C}}\left( \varinjlim_i X_i, \; \varinjlim_j Y_j\right) \simeq \varprojlim_i \varinjlim_j \Hom_{\mathcal{C}'}(X_i, Y_j).
+	\end{gather*}
+	Ini merupakan bijeksi kanonik. Dengan demikian, pernyataan tersebut terbukti.
+\end{proof}
+
+Sebaliknya, jika $\mathcal{C} = \IndC(\mathcal{C}')$, maka $\mathcal{C}'$ terbenam sebagai subkategori penuh dari $\mathcal{C}$ dan memenuhi semua syarat di atas.

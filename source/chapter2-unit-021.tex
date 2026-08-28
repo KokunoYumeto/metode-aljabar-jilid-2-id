@@ -8,9 +8,9 @@
 \hypertarget{o014.aljabr2.chapter2.abelian-category-definition}{ }
 
 % segment-id: o014.li2.chapter2.abelian-category-definition.p001
-Pada \S~\ref{sec:Ker-Coker} telah diperkenalkan pengertian
-kategori-$\cate{Ab}$ dan kategori aditif. Kategori abelian yang dikaji dalam
-bab ini merupakan suatu kelas kategori aditif dengan sifat-sifat khusus.
+Pada \S~\ref{sec:Ker-Coker} telah diperkenalkan kategori-$\cate{Ab}$ dan
+kategori aditif. Kategori abelian yang dikaji dalam bab ini membentuk kelas
+khusus kategori aditif.
 
 % segment-id: o014.li2.chapter2.abelian-category-definition.d001
 \begin{definisi}[Kategori abelian]
@@ -65,10 +65,10 @@ perhatikan bahwa, jika $\mathcal{A}$ merupakan kategori-$\cate{Ab}$, maka untuk
 setiap\footnote{Jika tidak ingin $\mathcal{A}^I$ menjadi kategori besar,
 anggaplah $I$ kecil. Hal ini tidak membawa dampak substantif di sini.} kategori
 $I$,
-kategori funktor $\mathcal{A}^I$ juga secara alami merupakan
-kategori-$\cate{Ab}$. Caranya, untuk funktor
-$F, G: I \rightrightarrows \mathcal{A}$, penjumlahan dalam
-$\Hom_{\mathcal{A}^I}(F, G)$ didefinisikan secara objek demi objek melalui
+	kategori funktor $\mathcal{A}^I$ juga secara alami merupakan
+	kategori-$\cate{Ab}$. Untuk funktor
+	$F, G: I \rightrightarrows \mathcal{A}$, penjumlahan dalam
+	$\Hom_{\mathcal{A}^I}(F, G)$ didefinisikan pada setiap objek melalui
 $(\varphi_i)_i + (\psi_i)_i := (\varphi_i + \psi_i)_i$.
 
 % segment-id: o014.li2.chapter2.abelian-category-definition.pr002
@@ -79,9 +79,9 @@ $(\varphi_i)_i + (\psi_i)_i := (\varphi_i + \psi_i)_i$.
 % segment-id: o014.li2.chapter2.abelian-category-definition.pf002
 \begin{bukti}
 	Berdasarkan Proposisi~\ref{prop:forget-create}, produk dan koproduk hingga,
-	serta kernel dan kokernel, dalam $\mathcal{A}^I$ dibangun secara objek demi
-	objek. Citra dan kocitra suatu morfisme, dan karena itu juga morfisme kanonik
-	$\Coim \to \Image$, dibangun secara objek demi objek. Dengan demikian,
+	serta kernel dan kokernel, dalam $\mathcal{A}^I$ dibangun pada setiap objek.
+	Citra dan kocitra suatu morfisme, dan karena itu juga morfisme kanonik
+	$\Coim \to \Image$, dibangun dengan cara yang sama. Dengan demikian,
 	semua syarat kategori abelian bagi $\mathcal{A}^I$ dapat direduksi menjadi
 	syarat-syarat yang sama bagi $\mathcal{A}$.
 \end{bukti}
@@ -137,7 +137,7 @@ Hasil berikut akan digunakan berulang kali.
 \end{proposisi}
 % segment-id: o014.li2.chapter2.abelian-category-definition.pf003
 \begin{bukti}
-	Cukup ditangani kasus diagram tarik balik. Kita nyatakan bahwa
+	Cukup ditangani kasus diagram tarik balik. Akan ditunjukkan bahwa
 	% segment-id: o014.li2.chapter2.abelian-category-definition.l001
 	\begin{compactitem}
 		% segment-id: o014.li2.chapter2.abelian-category-definition.i001
@@ -147,7 +147,7 @@ Hasil berikut akan digunakan berulang kali.
 		\item $(g, -b): X' \oplus Y \to Y'$ merupakan epimorfisme.
 	\end{compactitem}
 
-	Pernyataan mengenai $\Ker$ memang mengikuti deskripsi
+	Pernyataan mengenai $\Ker$ langsung mengikuti deskripsi
 	$X \simeq X' \dtimes{Y'} Y$ sebagai kernel dalam
 	Catatan~\ref{rem:Abel-cat-fibered-product}. Selain itu, karena
 	$g = (g, -b) \iota_1$, sifat epimorfisme $g$ mengakibatkan
@@ -163,8 +163,8 @@ Hasil berikut akan digunakan berulang kali.
 		X \arrow[r, "f"] \arrow[d, "-a"'] & Y \arrow[d, "-b"] \\
 		X' \arrow[r, "g"'] & Y'
 	\end{tikzcd}\]
-	merupakan diagram dorong keluar. Dengan mengomposisikan kedua kolom
-	masing-masing dengan automorfisme $-\identity_X$ dan $-\identity_Y$,
+	merupakan diagram dorong keluar. Dengan mengomposisikan masing-masing kolom
+	dengan automorfisme $-\identity_X$ dan $-\identity_Y$,
 	diperoleh kembali diagram semula, yang tetap merupakan diagram dorong
 	keluar. Dalam kasus dorong keluar, telah diketahui bahwa
 	$\Coker(f) \rightiso \Coker(g)$
@@ -186,7 +186,5 @@ Hasil berikut akan digunakan berulang kali.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.abelian-category-definition.p006
-Untuk sebarang gelanggang $R$, semua hasil di atas tentu sudah dikenal bagi
-kategori modul kiri $R\dcate{Mod}$; hal yang sama berlaku bagi kategori modul
-kanan.
-
+Untuk sebarang gelanggang $R$, semua hasil di atas sudah lazim bagi kategori
+modul kiri $R\dcate{Mod}$; hal yang sama berlaku bagi kategori modul kanan.

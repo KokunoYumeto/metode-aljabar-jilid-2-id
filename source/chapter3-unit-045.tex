@@ -60,7 +60,7 @@ Jika $F$ seimbang, maka terdapat isomorfisme kanonik bifunktor
 Argumen berikut bergantung pada teori bikompleks; lihat
 \S\ref{sec:double-cplx} dan \S\ref{sec:double-cplx-coh}. Untuk $i=1,2$,
 ambil resolusi injektif $0\to X_i\to I_i^0\to I_i^1\to\cdots$; untuk
-$n<0$ tetapkan $I_i^n:=0$. Ini mendefinisikan bikompleks
+$n<0$ definisikan $I_i^n:=0$. Ini mendefinisikan bikompleks
 $F\left(I_1^\bullet,I_2^\bullet\right)$.
 
 Di sisi lain, definisikan kompleks $F(X_1,I_2^\bullet)$ dan
@@ -119,8 +119,8 @@ $\mathrm{R}_{\mathrm{I}}^nF\simeq\mathrm{R}_{\mathrm{II}}^nF$.
 
 % segment-id: o014.li2.chapter3.ext-tor.rem001
 \begin{catatan}\label{rem:balanced-primer}
-Argumen tersebut sesungguhnya memberikan teknik untuk meresolusikan kedua
-variabel sekaligus, lalu ``menurunkan'' $F$ secara seimbang melalui kompleks
+Argumen tersebut sesungguhnya memberikan teknik untuk membentuk resolusi bagi
+kedua variabel sekaligus, lalu ``menurunkan'' $F$ secara seimbang melalui kompleks
 total dari bikompleks $F(I_1^\bullet,I_2^\bullet)$.
 \end{catatan}
 
@@ -128,7 +128,7 @@ total dari bikompleks $F(I_1^\bullet,I_2^\bullet)$.
 Sekarang ambil $\mathcal{A}$ sebagai kategori abelian dan pertimbangkan
 bifunktor $\Hom=\Hom_{\mathcal{A}}:\mathcal{A}^{\opp}\times\mathcal{A}
 \to\cate{Ab}$. Proposisi \ref{prop:Hom-left-exact} menyatakan bahwa
-$\Hom$ eksak kiri terhadap kedua variabel. Untuk setiap $n\in\Z$ kita buat
+$\Hom$ eksak kiri terhadap kedua variabel. Untuk setiap $n\in\Z$ gunakan
 definisi berikut.
 
 % segment-id: o014.li2.chapter3.ext-tor.l001
@@ -145,7 +145,7 @@ yang ditentukan oleh resolusi injektif $Y$ di $\mathcal{A}$.
 
 % segment-id: o014.li2.chapter3.ext-tor.dp001
 \begin{definisiproposisi}[funktor $\Ext$]\label{def:Ext-classical}
-\index{Ext functor@funktor $\Ext$ ($\Ext$ functor)}
+\index{funktor Ext@funktor $\Ext$ ($\Ext$ functor)}
 \index[sym1]{Extn@$\Ext^n$}
 Bifunktor $\Hom_{\mathcal{A}}$ bersifat seimbang. Karena itu, selama kategori
 abelian $\mathcal{A}$ mempunyai cukup banyak objek injektif dan projektif, untuk
@@ -183,7 +183,7 @@ $0\to Y'\to Y\to Y''\to0$ merupakan barisan eksak pendek yang diberikan.
 
 % segment-id: o014.li2.chapter3.ext-tor.p006
 Jika $\mathcal{A}$ merupakan kategori abelian $\Bbbk$-linear, nilai $\Ext^n$
-tentu dapat ditingkatkan ke dalam kategori $\Bbbk\dcate{Mod}$.
+secara alami dapat dipandang sebagai objek dalam kategori $\Bbbk\dcate{Mod}$.
 
 % segment-id: o014.li2.chapter3.ext-tor.rem002
 \begin{catatan}
@@ -238,7 +238,7 @@ awal kohomologi Hochschild \ref{def:HH}, diperoleh
 \end{contoh}
 
 % segment-id: o014.li2.chapter3.ext-tor.p008
-Topik berikutnya adalah funktor $\Tor$. Tetapkan gelanggang $R$. Kategori
+Topik berikutnya adalah funktor $\Tor$. Misalkan $R$ suatu gelanggang. Kategori
 modul $R\dcate{Mod}$ (atau $\cated{Mod}R$) mempunyai cukup banyak objek
 projektif\footnote{Sesungguhnya, modul bebas selalu projektif; lihat
 \cite[Contoh 6.9.6]{Li1}.}. Hasil kali tensor memberikan bifunktor
@@ -255,7 +255,7 @@ Ingat juga definisi modul datar \cite[Definisi 6.9.4]{Li1}.
 
 % segment-id: o014.li2.chapter3.ext-tor.dp002
 \begin{definisiproposisi}[funktor $\Tor$]\label{def:Tor-classical}
-\index{Tor functor@funktor $\Tor$ ($\Tor$ functor)}
+\index{funktor Tor@funktor $\Tor$ ($\Tor$ functor)}
 \index[sym1]{Torn@$\Tor^R_n$}
 Untuk setiap gelanggang $R$, bifunktor $\otimes_R$ bersifat seimbang. Maka,
 untuk setiap $n\in\Z$ dapat didefinisikan bifunktor
@@ -288,7 +288,7 @@ di mana $0\to X'\to X\to X''\to0$ dan
 $0\to Y'\to Y\to Y''\to0$ merupakan barisan eksak pendek yang diberikan.
 
 % segment-id: o014.li2.chapter3.ext-tor.p010
-Kita mengulangi ungkapan yang serupa dengan kasus $\Ext$.
+Seperti pada kasus $\Ext$, diperoleh karakterisasi berikut.
 
 % segment-id: o014.li2.chapter3.ext-tor.l003
 \begin{itemize}
@@ -302,7 +302,7 @@ Kita mengulangi ungkapan yang serupa dengan kasus $\Ext$.
 
 % segment-id: o014.li2.chapter3.ext-tor.p011
 Misalkan $M$ merupakan modul-$R$. Meniru definisi resolusi projektif,
-\emph{resolusi datar}\index{resolusidatar@resolusi datar (flat resolution)}
+\emph{resolusi datar}\index{resolusi datar@resolusi datar (flat resolution)}
 $M$ didefinisikan sebagai barisan eksak berbentuk
 % segment-id: o014.li2.chapter3.ext-tor.q004
 \[
@@ -328,7 +328,7 @@ yang dijamin oleh kedataran.
 
 % segment-id: o014.li2.chapter3.ext-tor.rem003
 \begin{catatan}[Struktur bimodul]\label{rem:ExtTor-bimodule}
-Tetapkan gelanggang $A$ dan $B$; misalkan $X$ merupakan bimodul $(A,R)$ dan
+Misalkan $A$ dan $B$ gelanggang; misalkan $X$ merupakan bimodul $(A,R)$ dan
 $Y$ merupakan bimodul $(R,B)$. Karena $\Tor_n^R$ merupakan bifunktor,
 $\Tor_n^R(X,Y)$ memiliki struktur bimodul kanonik $(A,B)$. Sebagai contoh,
 pertimbangkan perkalian kiri oleh $A$: setiap $a\in A$ memberikan endomorfisme
@@ -344,7 +344,7 @@ kompleks $X\dotimes{R}P_\bullet$: aksi itu berasal dari perkalian kiri $A$
 pada $X$. Perkalian kanan diperlakukan dengan cara yang sama.
 
 Sebagai kasus khusus, jika dipilih homomorfisme gelanggang $R\to S$, maka
-$\Tor_n^R(\cdot,S)$ (atau $\Tor_n^R(S,\cdot)$) meningkat menjadi funktor
+$\Tor_n^R(\cdot,S)$ (atau $\Tor_n^R(S,\cdot)$) secara alami menjadi funktor
 $\cated{Mod}R\to\cated{Mod}S$ (atau $R\dcate{Mod}\to S\dcate{Mod}$).
 
 Argumen serupa menunjukkan bahwa untuk $X$ yang merupakan bimodul $(R,A)$ dan
@@ -418,7 +418,7 @@ $R\otimes R^{\otimes n}\otimes R$ merupakan modul-$R^e$ kiri yang datar.
 Jadi, $\mathsf{B}R$ merupakan resolusi datar $R$ sebagai modul-$R^e$ kiri,
 seperti pada \eqref{eqn:bar-proj-resolution}.
 
-Untuk setiap $M$ yang merupakan bimodul $(R,R)$, masukkan definisi awal homologi Hochschild
+Untuk setiap $M$ yang merupakan bimodul $(R,R)$, gunakan definisi awal homologi Hochschild
 \ref{def:HH} untuk memperoleh
 \[
 \HHm_n(M)=\Hm_n\left(M\dotimes{R^e}\mathsf{B}R\right)
@@ -452,7 +452,7 @@ berperiode $2$,
 \cdots\xrightarrow{x+y}R^e\xrightarrow{x-y}R^e\xrightarrow{x+y}R^e
 \xrightarrow{\text{perkalian dengan }x-y}R^e\xrightarrow{f\mapsto f(t,t)}R\to0,
 \]
-yang keeksakannya kami serahkan kepada pembaca untuk diverifikasi langsung.
+yang keeksakannya diserahkan kepada pembaca untuk diverifikasi langsung.
 Untuk setiap modul-$R$ $M$, mengambil $M\dotimes{R^e}(\cdot)$ dan
 $\Hom_{R^e}(\cdot,M)$ masing-masing menghasilkan
 % segment-id: o014.li2.chapter3.ext-tor.q009
@@ -466,7 +466,7 @@ Maka $\HHm_k(M)$ dan $\HHm^k(M)$ hanya bergantung pada $k\bmod2$;
 seandainya hanya dihitung dari definisi, periodisitas ini mungkin sulit
 terlihat.
 
-Jika $\Bbbk$ merupakan lapangan, kita dapat membaca $\HHm_n(M)$ dan
+Jika $\Bbbk$ merupakan medan, kita dapat membaca $\HHm_n(M)$ dan
 $\HHm^n(M)$ dari sini, tetapi jawabannya bergantung pada
 $\mathrm{char}(\Bbbk)$. Latihan akan membahas kasus umum
 $R=\Bbbk[t]/(t^n)$.
@@ -487,7 +487,7 @@ subskrip $R$ pada hasil kali tensor dihilangkan. Secara konkret, suku
 berderajat $n$ dari kompleks total $C\otimes D$ ialah
 $\bigoplus_{p+q=n}C_p\otimes D_q$, sedangkan $d_n$ yang dibatasi pada
 $C_p\otimes D_q$ sama dengan $d^C_p\otimes\identity+(-1)^p\identity\otimes
-d^D_q$. Ini memberikan homomorfisme kanonik yang jelas
+	d^D_q$. Ini memberikan homomorfisme kanonik
 \[
 \kappa:\bigoplus_{p+q=n}\Hm_p(C)\otimes\Hm_q(D)\to
 \Hm_n\left(C\otimes D\right).
@@ -575,6 +575,6 @@ Karena $D$ berperan sebagai koefisien homologi dalam konteks topologi, Teorema
 suku berderajat nol juga disebut \emph{teorema koefisien universal}.
 Hasil-hasil semacam ini memiliki berbagai variasi; selain itu, struktur
 gelanggang memberikan operasi pada $\Tor$ yang tidak dimiliki bifunktor
-turunan lain. Struktur tersebut tampaknya lebih tepat dirapikan dalam bahasa
+turunan lain. Struktur tersebut lebih tepat dirumuskan dalam bahasa
 kategori turunan atau barisan spektral.
 \index{teorema koefisien universal@teorema koefisien universal (Universal Coefficient Theorem)}

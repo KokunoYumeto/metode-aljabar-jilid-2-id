@@ -1,0 +1,335 @@
+% Unit 091 terjemahan Bahasa Indonesia dari chapter7.tex baris 712--891.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter7.closed-structure-dgcat
+% Cakupan: Bagian 7.4 lengkap, ``Studi Kasus: Struktur Tertutup pada
+% Kategori-dg''; berhenti tepat sebelum Bagian 7.5 pada baris 892.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.h001
+\section{Studi Kasus: Struktur Tertutup pada Kategori-dg}\label{sec:dg-closed}
+\hypertarget{o014.aljabr2.chapter7.closed-structure-dgcat}{ }
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p001
+Sebelumnya telah dibahas struktur kategori monoidal tertutup pada
+$\cate{Cat}$, dengan $\otimes$ berasal dari produk kategori biasa
+$\mathcal{C}_1\times\mathcal{C}_2$. Di sisi lain, relatif terhadap gelanggang
+komutatif $\Bbbk$ yang dipilih, Definisi~\ref{def:dgCat} memperkenalkan
+kategori-dg, yakni kategori yang diperkaya atas
+$(\cate{C}(\Bbbk\dcate{Mod}),\otimes)$. Bagian ini bertujuan menunjukkan bahwa
+semua kategori-dg kecil juga membentuk kategori monoidal tertutup
+$\cate{dgCat}_{\Bbbk}$. Kategori ini dapat dipandang sebagai versi
+linearisasi sekaligus versi kompleks dari $\cate{Cat}$ dan muncul secara
+alami serta berguna dalam banyak keadaan. Yang diperlukan hanyalah beberapa
+konstruksi yang panjang tetapi tidak sulit.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p002
+Langkah pertama ialah mengangkat produk kategori biasa menjadi produk
+tensor kategori-dg. Hal ini melibatkan struktur anyaman simetris pada
+$(\cate{C}(\Bbbk\dcate{Mod}),\otimes)$.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.d001
+\begin{definition}\label{def:dgCat-tensor}
+	Misalkan $\mathcal{C}_1$ dan $\mathcal{C}_2$ kategori-dg di atas $\Bbbk$.
+	Definisikan kategori-dg baru $\mathcal{C}_1\otimes\mathcal{C}_2$ dengan
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q001
+	\begin{align*}
+		\Obj(\mathcal{C}_1 \otimes \mathcal{C}_2) & := \Obj(\mathcal{C}_1) \times \Obj(\mathcal{C}_2), \\
+		\Hom_{\mathcal{C}_1 \otimes \mathcal{C}_2}^\bullet((X, X'), (Y, Y')) & := \Hom_{\mathcal{C}_1}^\bullet(X, Y) \otimes \Hom_{\mathcal{C}_2}^\bullet(X', Y'),
+	\end{align*}
+	dan tetapkan $\identity_X\otimes\identity_{X'}$ sebagai satuan dari
+	$\Hom_{\mathcal{C}_1\otimes\mathcal{C}_2}^\bullet((X,X'),(X,X'))$.
+	Komposisi morfisme didefinisikan melalui
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q002
+	\[\begin{tikzcd}
+		\left( \Hom_{\mathcal{C}_1}^\bullet(Y, Z) \otimes \Hom_{\mathcal{C}_2}^\bullet(Y', Z')\right) \otimes
+		\left( \Hom_{\mathcal{C}_1}^\bullet(X, Y) \otimes \Hom_{\mathcal{C}_2}^\bullet(X', Y') \right) \arrow[d, "\sim" sloped] \\
+		\left( \Hom_{\mathcal{C}_1}^\bullet(Y, Z) \otimes \Hom_{\mathcal{C}_1}^\bullet(X, Y) \right) \otimes
+		\left( \Hom_{\mathcal{C}_2}^\bullet(Y', Z') \otimes \Hom_{\mathcal{C}_2}^\bullet(X', Y') \right) \arrow[d] \\
+		\Hom_{\mathcal{C}_1}^\bullet(X, Z) \otimes \Hom_{\mathcal{C}_2}^\bullet(X', Z')
+	\end{tikzcd}\]
+	dengan isomorfisme di dalamnya berasal dari struktur anyaman Koszul dan
+	kendala asosiativitas.
+\end{definition}
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p003
+Dari simetri struktur anyaman dapat diperiksa bahwa
+$\mathcal{C}_1\otimes\mathcal{C}_2$ secara alami ekuivalen dengan
+$\mathcal{C}_2\otimes\mathcal{C}_1$. Tuliskan $\Bbbk$ untuk kategori-dg yang
+hanya mempunyai satu objek dan kompleks endomorfisme $\Bbbk$. Mudah
+dibuktikan bahwa $\Bbbk\otimes\mathcal{C}$ ekuivalen dengan
+$\mathcal{C}\otimes\Bbbk$.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.d002
+\begin{definition}\label{def:dgCat-as-cat}
+	\index[sym1]{dgCat@$\cate{dgCat}_{\Bbbk}$}
+	Misalkan $\Bbbk$ gelanggang komutatif. Tuliskan $\cate{dgCat}_{\Bbbk}$
+	untuk kategori semua kategori-dg kecil di atas $\Bbbk$. Kategori ini adalah
+	kategori monoidal simetris dengan satuan $\Bbbk$.
+\end{definition}
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p004
+Pembatasan pada kategori kecil tentu dimaksudkan untuk menghindari persoalan
+teori himpunan. Manfaat utamanya ialah bahwa semua funktor antara dua kategori
+kecil $\mathcal{C}$ dan $\mathcal{D}$ yang diberikan membentuk himpunan kecil.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p005
+Langkah kedua ialah memperkaya himpunan $\Hom$ antara funktor-dg menjadi
+kompleks.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.d003
+\begin{definition}
+	Misalkan $F,G:\mathcal{C}\to\mathcal{D}$ funktor-dg antara kategori-dg.
+	Untuk setiap $n\in\Z$, suatu morfisme berderajat $n$ dari $F$ ke $G$
+	didefinisikan sebagai data
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q003
+	\[ \phi = \left( \phi_X \right)_{X \in \Obj(\mathcal{C})}, \quad \phi_X \in \Hom_{\mathcal{D}}^n(FX, GX), \]
+	dengan syarat bahwa untuk semua $m\in\Z$, $X,Y\in\Obj(\mathcal{C})$, dan
+	$f\in\Hom^m_{\mathcal{C}}(X,Y)$, berlaku persamaan berikut dalam
+	$\Hom^{n+m}_{\mathcal{D}}(FX,GY)$:
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q004
+	\[ (Gf) \phi_X = (-1)^{nm} \phi_Y (Ff); \]
+	komposisi dalam rumus ini dipahami sebagai morfisme dalam
+	$\Bbbk\dcate{Mod}$
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q005
+	\begin{gather*}
+		\Hom^m_{\mathcal{D}}(GX, GY) \otimes \Hom^n_{\mathcal{D}}(FX, GX) \to \Hom^{m+n}_{\mathcal{D}}(FX, GY), \\
+		\Hom^n_{\mathcal{D}}(FY, GY) \otimes \Hom^m_{\mathcal{D}}(FX, FY) \to \Hom^{m+n}_{\mathcal{D}}(FX, GY).
+	\end{gather*}
+	Modul-$\Bbbk$ yang terdiri atas semua morfisme berderajat $n$
+	$\phi:F\to G$ ditulis $\iHom^n(F,G)$.
+\end{definition}
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p006
+Kondisi di atas dapat dipandang sebagai pernyataan bahwa diagram morfisme
+berderajat
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.q006
+\[\begin{tikzcd}
+	FX \arrow[r, "{\phi_X}"] \arrow[d, "Ff"'] & GX \arrow[d, "Gf"] \\
+	FY \arrow[r, "{\phi_Y}"'] & GY
+\end{tikzcd} \quad
+\begin{array}{cc}
+	\phi: \text{berderajat }n \\
+	f: \text{berderajat }m
+\end{array}\]
+komutatif hingga tanda $(-1)^{nm}$ yang diwajibkan oleh aturan tanda Koszul.
+Secara ketat, ``morfisme berderajat'' tersebut bukanlah morfisme, melainkan
+harus dipahami sebagai unsur kompleks $\Hom$.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.dp001
+\begin{definition-proposition}
+	Untuk funktor-dg $F,G:\mathcal{C}\to\mathcal{D}$ dan setiap $n\in\Z$,
+	homomorfisme berikut dapat didefinisikan:
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q007
+	\[ d^n = d^n_{\iHom^\bullet(F, G)}: \iHom^n(F, G) \to \iHom^{n+1}(F, G). \]
+
+	Untuk setiap $\phi=(\phi_X)_{X\in\Obj(\mathcal{C})}$, tetapkan
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q008
+	\[ (d^n \phi)_X := d^n_{\Hom^\bullet(FX, GX)}(\phi_X). \]
+	Hal ini membuat $\left(\iHom^n(F,G),d^n\right)_{n\in\Z}$ menjadi kompleks
+	$\iHom^\bullet(F,G)$.
+\end{definition-proposition}
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.pf001
+\begin{proof}
+	Pertama-tama, periksa bahwa $d^n\phi$ memang termasuk
+	$\iHom^{n+1}(F,G)$. Misalkan $f\in\Hom^m_{\mathcal{C}}(X,Y)$. Terapkan
+	$d^{m+n}$ pada kedua ruas
+	$(Gf)\phi_X=(-1)^{nm}\phi_Y(Ff)$ (subskrip
+	$\Hom^\bullet(FX,GY)$ dihilangkan); diperoleh
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q009
+	\begin{align*}
+		d^{m+n}((Gf) \phi_X) & = (d^m Gf) \phi_X + (-1)^m (Gf) (d^n \phi_X) \\
+		& = G (d^m f) \phi_X + (-1)^m (Gf) (d^n \phi)_X \\
+		& = (-1)^{n(m+1)} \phi_Y F(d^m f) + (-1)^m (Gf) (d^n \phi)_X, \\
+		(-1)^{nm} d^{m+n}(\phi_Y (Ff)) & = (-1)^{nm} (d^n \phi_Y) Ff + (-1)^{nm+n} \phi_Y d^n(Ff) \\
+		& = (-1)^{nm} (d^n \phi)_Y Ff + (-1)^{nm+n} \phi_Y F(d^m f).
+	\end{align*}
+	Dari kesamaan kedua ekspresi itu segera diperoleh
+	$(Gf)(d^n\phi)_X=(-1)^{(n+1)m}(d^n\phi)_YFf$.
+
+	Kedua, karena $\Hom^\bullet(FX,GX)$ adalah kompleks,
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q010
+	\begin{align*}
+		(d^{n+1} d^n \phi)_X & = d^{n+1}_{\Hom^\bullet(FX, GX)}((d^n \phi)_X) \\
+		& = d^{n+1}_{\Hom^\bullet(FX, GX)} d^n_{\Hom^\bullet(FX, GX)} \phi_X = 0.
+	\end{align*}
+	Jadi, diperoleh kompleks $\iHom^\bullet(F,G)$.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p007
+Untuk tiga funktor-dg $F,G,H:\mathcal{C}\to\mathcal{D}$, terdapat operasi
+komposisi
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.q011
+\begin{equation}\label{eqn:dgfct-iHom}\begin{aligned}
+	\iHom^a(G, H) \otimes \iHom^b(F, G) & \to \iHom^{a+b}(F, H) \\
+	\psi \otimes \phi & \mapsto \psi\phi := \left( \psi_X \phi_X \right)_{X \in \Obj(\mathcal{C})},
+\end{aligned}\end{equation}
+dengan $a,b\in\Z$. Operasi ini juga asosiatif dan memenuhi
+$d^{a+b}(\psi\phi)=(d^a\psi)\phi+(-1)^a\psi(d^b\phi)$. Menurut definisi,
+	semuanya cukup diperiksa pada
+$\Hom^\bullet_{\mathcal{D}}$. Komposisi ini harus dipahami sebagai komposisi
+vertikal morfisme berderajat, yang digambarkan sebagai
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.q012
+\[\begin{tikzcd}
+	\mathcal{C}
+	\arrow[bend left=70, rr, "F", ""' name=U]
+	\arrow[rr, "G" name=MM, ""' name=M]
+	\arrow[bend right=70, rr, "" name=D, "H"'] & &
+	\arrow[Rightarrow, to path=(U) -- (MM) \tikztonodes, "\phi"] \arrow[Rightarrow, to path=(M) -- (D) \tikztonodes, "\psi"] \mathcal{D}
+\end{tikzcd}  \quad \text{dikomposisikan menjadi} \quad \begin{tikzcd}
+	\mathcal{C}
+	\arrow[bend left=50, rr, "F", ""' name=U]
+	\arrow[bend right=50, rr, "" name=D, "H"']
+	& & \arrow[Rightarrow, to path=(U) -- (D) \tikztonodes, "\psi \phi"] \mathcal{D} .
+\end{tikzcd}\]
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p008
+Tinjau kasus khusus $n=0$. Syarat untuk
+$\phi=(\phi_X)_X\in\iHom^0(F,G)$ sama artinya dengan
+$(Gf)\phi_X=\phi_Y(Ff)$ untuk semua $f\in\Hom^m(X,Y)$, sedangkan syarat
+$d^0\phi=0$ sama artinya dengan
+$\phi_X\in\Ker\left(d^0_{\Hom^\bullet(FX,GX)}\right)$ untuk setiap
+	$X\in\Obj(\mathcal{C})$. Jadi, unsur modul-$\Bbbk$
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.q013
+\[ \Ker\left[ \iHom^0(F, G) \xrightarrow{d^0} \iHom^1(F, G) \right] \]
+tepat merupakan morfisme $\phi:F\to G$ antara funktor-dg $F$ dan $G$ dalam
+pengertian klasik.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p009
+Langkah berikutnya ialah memperkaya kategori funktor antara kategori-dg
+menjadi versi dg.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.d004
+\begin{definition}
+	Untuk sembarang kategori-dg $\mathcal{C}$ dan $\mathcal{D}$, definisikan
+	kategori-dg $\iHom(\mathcal{C},\mathcal{D})$ sebagai berikut.
+	\begin{itemize}
+		\item Objek-objeknya adalah semua funktor-dg
+		$F:\mathcal{C}\to\mathcal{D}$.
+		\item Untuk sembarang funktor-dg $F,G:\mathcal{C}\to\mathcal{D}$,
+		kompleks $\Hom$ antara keduanya didefinisikan sebagai
+		$\iHom^\bullet(F,G)$ yang telah didefinisikan di atas.
+		\item Operasi komposisi
+		$\iHom^\bullet(G,H)\otimes\iHom^\bullet(F,G)\to
+		\iHom^\bullet(F,H)$ didefinisikan seperti dalam
+		\eqref{eqn:dgfct-iHom}; operasi ini disebut komposisi vertikal.
+	\end{itemize}
+\end{definition}
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p010
+Jika $\mathcal{C}$ dan $\mathcal{D}$ keduanya kategori-dg kecil, maka
+$\iHom(\mathcal{C},\mathcal{D})$ juga kecil: himpunan objeknya merupakan
+himpunan kecil.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p011
+Dalam Definisi~\ref{def:dgCat-tensor}, kita telah mendefinisikan hasil kali tensor
+dua kategori-dg, sehingga kategori $\cate{dgCat}_{\Bbbk}$ dari
+Definisi~\ref{def:dgCat-as-cat} menjadi kategori monoidal simetris terhadap
+$\otimes$. Kini hubungan antara $\otimes$ dan $\iHom$ dapat dinyatakan dengan
+jelas sebagai berikut.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.pr001
+\begin{proposition}\label{prop:dgCat-closed}
+	Kategori monoidal simetris $\cate{dgCat}_{\Bbbk}$ adalah tertutup. Hom
+	internalnya diberikan oleh $\iHom(\mathcal{C},\mathcal{D})$ yang
+	didefinisikan di atas, dengan $\mathcal{C}$ dan $\mathcal{D}$ merentang
+	semua kategori-dg kecil.
+\end{proposition}
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.pf002
+\begin{proof}
+	Kuncinya ialah memberikan isomorfisme kanonik
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q014
+	\[ \Hom_{\cate{dgCat}_{\Bbbk}}(\mathcal{C} \otimes \mathcal{D}, \mathcal{E}) \simeq \Hom_{\cate{dgCat}_{\Bbbk}}(\mathcal{C}, \iHom(\mathcal{D}, \mathcal{E}) ). \]
+
+	Jika struktur dg diabaikan, masalahnya mudah: memberikan
+	$F:\mathcal{C}\times\mathcal{D}\to\mathcal{E}$ sama artinya dengan
+	memberikan funktor $\mathcal{C}\to\mathcal{E}^{\mathcal{D}}$ yang
+	memetakan objek $X$ ke funktor
+	$F(X,\mathord\cdot):\mathcal{D}\to\mathcal{E}$. Pokok persoalannya ialah
+	syarat pada tingkat $\Hom$ agar sebuah funktor menjadi funktor-dg.
+
+	Menurut definisi, membuat $F$ menjadi funktor-dg sama artinya dengan
+	mengangkat pemetaan pada himpunan $\Hom$ menjadi morfisme kompleks
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q015
+	\[ F_{X, Y, Z, W}: \Hom^\bullet_{\mathcal{C}}(X, Y) \otimes \Hom^\bullet_{\mathcal{D}}(Z, W) \to \Hom^\bullet_{\mathcal{E}}(F(X, Z), F(Y, W)), \]
+	yang dituntut funktorial dalam keempat peubah. Dengan membahas kedua peubah
+	dari $F$ secara terpisah, data ini dapat diuraikan menjadi dua bagian:
+	\begin{itemize}
+		\item untuk setiap $X\in\Obj(\mathcal{C})$, funktor
+		$F(X,\mathord\cdot)$ diangkat menjadi funktor-dg;
+		\item diberikan keluarga morfisme
+		$F_{X,Y,Z}:\Hom^\bullet_{\mathcal{C}}(X,Y)\to
+		\Hom^\bullet_{\mathcal{E}}(F(X,Z),F(Y,Z))$ yang funktorial dalam ketiga
+		peubah.
+	\end{itemize}
+	Sebagai ilustrasi, $F_{X,Y,Z,W}(f\otimes g)$ diperoleh dari
+	$F_{X,Y,Z}(f)$ dengan menggunakan
+	$g\in\Hom^b_{\mathcal{D}}(Z,W)$ melalui $F(Y,\mathord\cdot)$. Data pada butir
+	kedua sama artinya dengan keluarga morfisme
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q016
+	\[ \Hom^\bullet_{\mathcal{C}}(X, Y) \to \iHom^\bullet(F(X, \cdot), F(Y, \cdot)), \]
+	yang funktorial dalam $X$ dan $Y$. Kesimpulannya, memberikan funktor-dg
+$F$ sama artinya dengan memberikan funktor-dg dari $\mathcal{C}$ ke
+$\iHom(\mathcal{D},\mathcal{E})$.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p012
+Bersama teori dalam \S\ref{sec:closed-monoidal}, pembahasan di atas
+menunjukkan bahwa $\cate{dgCat}_{\Bbbk}$ diperkaya atas dirinya sendiri:
+untuk sembarang kategori-dg kecil $\mathcal{C}$ dan $\mathcal{D}$, objek
+$\iHom$ antara keduanya tetap merupakan kategori-dg.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.p013
+Karena $\otimes$ dan $\iHom$ saling menentukan melalui adjungsi
+\eqref{eqn:closed-monoidal-adj0}, setelah menerima definisi salah satu di
+antara $\otimes$ dan $\iHom$, definisi yang lain setidaknya sama wajarnya.
+
+% segment-id: o014.li2.chapter7.closed-structure-dgcat.r001
+\begin{remark}
+	Dengan Proposisi~\ref{prop:dgCat-closed} di tangan, sifat umum kategori
+	monoidal tertutup menunjukkan bahwa untuk tiga kategori-dg kecil sembarang
+	$\mathcal{C}$, $\mathcal{D}$, dan $\mathcal{E}$, komposisi funktor dapat
+	diangkat menjadi funktor-dg
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q017
+	\[ \iHom(\mathcal{D}, \mathcal{E}) \otimes \iHom(\mathcal{C}, \mathcal{D}) \to \iHom(\mathcal{C}, \mathcal{E}). \]
+	Pada tingkat objek, funktor tersebut memetakan $(G,F)$ ke $GF$; pada
+	tingkat kompleks $\Hom$, funktor itu ditulis
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q018
+	\begin{equation}\begin{gathered}\label{eqn:dgCat-fct-compose}
+		\begin{tikzcd}[row sep=small, column sep=small]
+			\iHom^\bullet(G_1, G_2) \otimes \iHom^\bullet(F_1, F_2) \arrow[r] \arrow[equal, d] & \iHom^\bullet(G_1 F_1, G_2 F_2) \\
+			\Hom^\bullet_{ \iHom(\mathcal{D}, \mathcal{E}) \otimes \iHom(\mathcal{C}, \mathcal{D}) }((G_1, F_1), (G_2, F_2)) &
+		\end{tikzcd} \\
+		F_i: \mathcal{C} \to \mathcal{D}, \quad G_i: \mathcal{D} \to \mathcal{E}, \quad i = 1, 2 .
+	\end{gathered}\end{equation}
+
+	Operasi di atas dapat dibayangkan sebagai komposisi horizontal morfisme
+	antara funktor-dg, dengan diagram
+	% segment-id: o014.li2.chapter7.closed-structure-dgcat.q019
+	\[ \begin{tikzcd}
+		\mathcal{C} \arrow[bend left=50, r, "F_1", ""' name=LU] \arrow[bend right=50, r, "" name=LD, "F_2"'] &
+		\mathcal{D} \arrow[bend left=50, r, "G_1", ""' name=RU] \arrow[bend right=50, r, "" name=RD, "G_2"'] &
+		\arrow[Rightarrow, to path=(LU) -- (LD) \tikztonodes, "\phi"] \arrow[Rightarrow, to path=(RU) -- (RD) \tikztonodes, "\psi"] \mathcal{E}
+	\end{tikzcd} \quad \text{dikomposisikan menjadi} \quad \begin{tikzcd}
+		\mathcal{C}
+		\arrow[bend left=50, rr, "G_1 F_1", ""' name=U]
+		\arrow[bend right=50, rr, "" name=D, "G_2 F_2"']
+		& & \arrow[Rightarrow, to path=(U) -- (D) \tikztonodes, "\psi \phi"] \mathcal{E} .
+	\end{tikzcd} \]
+	Karena ini memberikan funktor, \eqref{eqn:dgCat-fct-compose} niscaya
+	\begin{inparaenum}[(a)]
+		\item asosiatif,
+		\item komutatif dengan penarikan balik (atau pendorongan maju) sepanjang
+		morfisme berderajat dalam kategori-dg
+		$\iHom(\mathcal{D},\mathcal{E})$ (atau
+		$\iHom(\mathcal{C},\mathcal{D})$).
+	\end{inparaenum}
+	Namun, operasi dalam (b) tidak lain adalah komposisi vertikal yang
+	diperkenalkan dalam \eqref{eqn:dgfct-iHom}. Dengan demikian, kita melihat
+	bahwa urutan komposisi vertikal dan horizontal dapat dipertukarkan.
+
+	Untuk funktor antara kategori biasa, morfisme antara funktor-funktor itu juga memiliki
+	komposisi vertikal dan horizontal yang saling komutatif. Hal ini dapat
+	dipahami sebagai sifat kategori tertutup Kartesius $\cate{Cat}$ (atau
+	dengan memandangnya sebagai kategori-$2$; lihat
+	\cite[Contoh 3.5.3]{Li1}). Sifat $\cate{dgCat}_{\Bbbk}$ di atas adalah versi
+	dg, atau versi aljabar linear, dari sifat tersebut.
+\end{remark}

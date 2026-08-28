@@ -1,0 +1,887 @@
+% Unit 088 terjemahan Bahasa Indonesia dari chapter7.tex baris 1--418.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter7.monoidal-algebras
+% Cakupan: pembukaan Bab 7 dan Bagian 7.1 lengkap tentang aljabar dalam
+% kategori monoidal; berhenti tepat sebelum Bagian 7.2 pada baris 419.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.h001
+\chapter{Teori Monad}\label{sec:monads}
+\hypertarget{o014.aljabr2.chapter7.monoidal-algebras}{ }
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p001
+Titik awal bab ini, \S\ref{sec:alg-in-monoidal-cat}, ialah aljabar di atas
+kategori monoidal $(\mathcal{V},\otimes)$. Yang dimaksud ialah objek
+$A\in\Obj(\mathcal{V})$ yang dilengkapi perkalian
+$\mu:A\otimes A\to A$ dan morfisme unit $\eta:\mathbf{1}\to A$, serta
+	memenuhi hukum asosiativitas dan hukum unit. Konsep ini merupakan padanan konsep monoid,
+sedangkan aljabar-$\Bbbk$ di atas gelanggang komutatif $\Bbbk$ merupakan
+contoh tipikal. Aljabar-aljabar tersebut membentuk kategori
+$\cate{Alg}(\mathcal{V})$. Bila $(\mathcal{V},\otimes)$ memiliki sifat
+komutatif yang lebih kuat, $\cate{Alg}(\mathcal{V})$ pun memiliki struktur dan
+sifat tambahan. Situasi terbaik terjadi ketika $\mathcal{V}$ merupakan
+kategori monoidal simetris; dalam hal ini $\cate{Alg}(\mathcal{V})$ juga
+merupakan kategori monoidal simetris.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p002
+Untuk suatu aljabar $A$, modul-$A$ kiri ialah objek $M$ dari $\mathcal{V}$
+bersama morfisme perkalian skalar $\mu_M:A\otimes M\to M$ yang memenuhi hukum
+asosiativitas dan unit; modul kanan dan bimodul didefinisikan serupa. Karena
+	kompleks menjadi objek utama buku ini, langkah yang wajar ialah
+mengambil kategori abelian $\mathcal{A}$ dengan koproduk terhitung serta
+bifunktor aditif eksak kanan
+$\otimes:\mathcal{A}\times\mathcal{A}\to\mathcal{A}$, memperluas $\otimes$
+ke tingkat kompleks dengan kompleks total, lalu meninjau kategori monoidal
+$(\cate{C}(\mathcal{A}),\otimes)$ yang biasanya diberi struktur anyaman Koszul
+\eqref{eqn:Koszul-braiding}. Dengan demikian, aljabar-dg dan modul-dg muncul
+secara alami sebagai kelanjutan teori; ``dg'' adalah singkatan dari
+``diferensial bergradasi''. Inilah pokok bahasan
+\S\ref{sec:dga-monoidal}.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p003
+Kita juga mengetahui bahwa himpunan $\Hom$ dalam $\cate{C}(\mathcal{A})$ dapat
+diperluas menjadi kompleks $\Hom$, dan komposisi morfisme dapat diangkat
+ke tingkat kompleks $\Hom$; khususnya, kompleks endomorfisme
+$\End^\bullet(X)$ suatu objek $X$ menjadi aljabar-dg. Generalisasi pengamatan
+ini menghasilkan gagasan kategori-dg (Definisi~\ref{def:dgCat}), dan antara
+kategori-dg dapat dibicarakan funktor-dg. Setelah pengantar singkat mengenai
+kategori monoidal tertutup dalam \S\ref{sec:closed-monoidal}, pada
+\S\ref{sec:dg-closed} akan dijelaskan bahwa kategori $\cate{dgCat}$ dari semua
+kategori-dg kecil bersifat tertutup. Artinya, seluruh funktor-dg antara dua
+kategori-dg kecil $\mathcal{C}$ dan $\mathcal{D}$ membentuk suatu
+kategori-dg $\iHom(\mathcal{C},\mathcal{D})$.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p004
+Berbagai struktur-dg muncul secara alami sekaligus menjadi alat penting dalam
+aljabar linear. Namun, bab ini hanya memberikan pengantar ringkas, dan
+\S\ref{sec:bialgebra} akan beralih kepada koaljabar dan komodul di atas
+kategori monoidal $\mathcal{V}$. Keduanya tidak lain adalah aljabar dan modul
+di atas kategori monoidal lawan $\mathcal{V}^{\opp}$. Secara lebih konkret,
+koaljabar $C$ dilengkapi koperkalian $\Delta:C\to C\otimes C$ dan morfisme
+kounit $\epsilon:C\to\munit$, sedangkan komodul kiri $M$ dilengkapi
+koperkalian skalar $\rho:M\to C\otimes M$; hukum asosiativitas dan unitnya
+merupakan versi dengan semua panah dibalik.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p005
+Jika $\mathcal{V}$ merupakan kategori monoidal beranyam, struktur aljabar dan
+koaljabar yang saling kompatibel $(A,\mu,\eta,\Delta,\epsilon)$ pada objek $A$
+disebut bialjabar, dan bialjabar yang dilengkapi antipoda disebut aljabar Hopf
+(Definisi~\ref{def:Hopf-algebra}). Dalam kasus konkret
+$\mathcal{V}=\Bbbk\dcate{Mod}$, konsep-konsep ini diilhami oleh geometri dan
+topologi. Sebagai contoh, kohomologi grup Lie, atau lebih umum grup-H, secara
+alami menjadi aljabar Hopf; kelompok kuantum merupakan kelas contoh penting
+lainnya. Selain itu, aljabar grup $\Bbbk[G]$ dari sembarang grup $G$ juga
+merupakan aljabar Hopf.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p006
+Sekarang kita memperkenalkan pelaku utama \S\ref{sec:Beck}, yang sekaligus
+menjadi judul bab ini: monad. Untuk sembarang kategori $\mathcal{C}$, kategori
+endofunktor $\mathcal{C}^{\mathcal{C}}$ menjadi kategori monoidal ketat terhadap
+komposisi, dan monad tidak lain adalah aljabar dalam
+$\mathcal{C}^{\mathcal{C}}$, sedangkan komonad merupakan versi dualnya.
+Walaupun sederhana, konsep ini memainkan peranan penting dalam aljabar,
+geometri, dan ilmu komputer. Salah satu kegunaan menonjol monad ialah
+menjelaskan berbagai ``resolusi standar'' dalam aljabar homologis, misalnya
+$\mathsf{B}R$ yang muncul dalam \S\ref{sec:HH} atau $\mathsf{L}$ dalam
+\S\ref{sec:G-mod}; aspek ini akan dikaji dalam
+\S\ref{sec:bar-resolution}.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p007
+Monad dan komonad terutama berasal dari pasangan adjungsi
+% segment-id: o014.li2.chapter7.monoidal-algebras.g001
+\[\begin{tikzcd}
+	F: \mathcal{C} \arrow[shift left, r] & \mathcal{D}: G \arrow[shift left, l].
+\end{tikzcd}\]
+Pasangan ini menentukan monad $T$ pada $\mathcal{C}$ dan komonad $L$ pada
+$\mathcal{D}$, yang melalui unit $\eta$ dan kounit $\varepsilon$ dari adjungsi
+dinyatakan sebagai
+% segment-id: o014.li2.chapter7.monoidal-algebras.g002
+\[\begin{array}{|c|c|}\hline
+	\text{monad} & \text{komonad} \\ \hline
+	T := GF & L := FG \\
+	\mu := \left[ T^2 \xrightarrow{G\varepsilon F} T \right] & \delta := \left[ L \xrightarrow{F\eta G} L^2 \right] \\
+	\eta : \identity_{\mathcal{C}} \to T & \varepsilon: L \to \identity_{\mathcal{D}} \\ \hline 
+\end{array}\]
+Pasangan adjungsi tersebut secara alami menginduksi funktor
+$\mathbb{K}:\mathcal{D}\to\mathcal{C}^T$ (atau
+$\mathcal{C}\to\mathcal{D}^L$), dengan $\mathcal{C}^T$ (atau
+$\mathcal{D}^L$) menyatakan kategori modul di bawah aksi monad (atau versi
+komonadnya). Jika $\mathbb{K}$ merupakan ekuivalensi, pasangan adjungsi itu
+disebut monadik (atau komonadik). Ini berarti informasi dalam $\mathcal{D}$
+(atau $\mathcal{C}$) dapat direkonstruksi dari aksi monad (atau komonad) di sisi
+lain. Teorema Beck~\ref{prop:Beck} memberikan karakterisasi yang praktis bagi
+monadisitas.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p008
+Langkah berikutnya ialah teori Morita dalam \S\ref{sec:Morita}, suatu tema
+klasik dalam teori gelanggang. Bagian pertama membahas funktor antara
+kategori modul kiri atau kanan yang mempertahankan $\varinjlim$ kecil (atau
+$\varprojlim$). Teorema~\ref{prop:Morita} menyatakan bahwa semuanya berasal
+dari pengambilan hasil kali tensor (atau $\Hom$) dengan suatu bimodul $P$.
+Hal ini sekaligus menegaskan kedudukan istimewa bimodul dalam teori gelanggang
+dan modul: bimodul menyediakan sarana yang cukup untuk ``mengubah gelanggang''.
+Dari sini diperoleh karakterisasi teoretis-modul bagi ekuivalensi kategori
+modul kiri $A\dcate{Mod}$ dan $B\dcate{Mod}$, yang disebut ekuivalensi Morita
+(Definisi--Proposisi~\ref{def:Morita-equiv}); karakterisasi untuk modul kiri
+dan kanan sepenuhnya sama.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p009
+Untuk pasangan adjungsi yang ditentukan oleh bimodul-$(A,B)$ $P$, pada bagian
+kedua kita menelaah monad dan komonad terkait beserta modul-modulnya. Dengan
+asumsi bahwa $P$ merupakan modul-$B$ projektif yang dibangkitkan secara hingga,
+Proposisi~\ref{prop:Morita-comonad} menyatakannya secara eksplisit sebagai
+aljabar dalam kategori monoidal $(A,A)\dcate{Mod}$ dan koaljabar dalam
+$(B,B)\dcate{Mod}$. Dari landasan ini mudah diperoleh penyempurnaan ekuivalensi
+Morita (Teorema~\ref{prop:Morita-refined},
+Korolari~\ref{prop:Morita-refined-symm}).
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p010
+Teori Morita membahas kategori modul yang diberikan. Sebagai pelengkap, dalam
+\S\ref{sec:module-cat} kita mengkaji cara agar suatu kategori abelian
+$\mathcal{A}$ ekuivalen dengan kategori modul kanan atas suatu gelanggang $R$.
+Jawabannya melibatkan pembangkit projektif kompak dari $\mathcal{A}$
+(Teorema~\ref{prop:identify-ModR}). Kita juga akan memberikan syarat cukup
+untuk versi yang dibangkitkan secara hingga
+(Teorema~\ref{prop:identify-ModR-fg}).
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p011
+Kembali ke teorema monadisitas Beck, paruh pertama
+\S\ref{sec:descent-modules} memberikan penerapan sederhana dalam teori modul,
+yang disebut penurunan datar untuk modul. Untuk homomorfisme gelanggang
+komutatif $K\to L$, hasil ini menjelaskan cara merekonstruksi modul-$K$ dari
+modul-$L$ yang dikenai aksi komonad perubahan gelanggang $\mathbf{L}$. Teknik
+penurunan banyak digunakan dalam geometri, dan paruh kedua
+\S\ref{sec:descent-modules} merumuskan kembali syarat aksi $\mathbf{L}$ dalam
+bentuk yang lazim digunakan dalam geometri. Semua ini bertumpu pada persiapan
+dalam \S\ref{sec:Morita}.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p012
+Sebagai kasus khusus penurunan datar, dalam \S\ref{sec:descent-Galois} diambil
+$L|K$ sebagai perluasan Galois medan, lalu hasil sebelumnya dirumuskan kembali
+melalui aksi grup Galois $\Gal(L|K)$. Teknik ini disebut penurunan Galois.
+Teorema utamanya, Teorema~\ref{prop:Galois-descent}, menyatakan bahwa kategori
+ruang vektor-$K$ ekuivalen dengan kategori ruang vektor-$L$ yang dilengkapi
+aksi semilinear mulus $\Gal(L|K)$. Latihan akan memberikan bukti langsung
+lainnya.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p013
+Berdasarkan penurunan datar atau kasus khususnya, penurunan Galois, berbagai
+struktur seperti aljabar dan modul dapat diturunkan lebih lanjut. Dalam
+\S\ref{sec:Galois-H1} kita meninjau sejenis data yang dinyatakan melalui ruang
+vektor beserta pangkat tensornya. Kemudian, dengan teknik penurunan Galois dan
+kohomologi grup, klasifikasi data tersebut direduksi menjadi kohomologi grup
+nonabelian $\Hm^1$. Walaupun tujuannya hanya memperagakan teknik, hal ini sudah
+membantu menjernihkan beberapa persoalan dasar aljabar, misalnya klasifikasi
+bentuk kuadratik takdegenerat.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.rn001
+\begin{petunjukbacaan}
+	Bab ini secara garis besar terbagi menjadi tiga bagian. Bagian pertama
+(\S\S\ref{sec:alg-in-monoidal-cat}---\ref{sec:bialgebra}) memperkenalkan aljabar
+	di atas kategori monoidal, struktur-dg, dan aljabar Hopf; tema-tema ini
+	memiliki tempat yang alami dan penting dalam aljabar. Bagian kedua
+	(\S\S\ref{sec:Beck}---\ref{sec:module-cat}) berpusat pada monad dan teori
+	Morita terkait. Bagian ketiga
+	(\S\S\ref{sec:descent-modules}---\ref{sec:Galois-H1}) membahas metode
+	penurunan. Ketiganya kurang lebih disusun berurutan, tetapi struktur-dg dan
+	kategori-dg tidak diperlukan untuk pembahasan berikutnya. \CHref{sec:simplicial}
+	dan \CHref{sec:duality} dalam buku ini akan menggunakan beberapa hasil dari
+	bagian kedua. Bahan lanjutan lainnya terdapat dalam latihan bab ini.
+\end{petunjukbacaan}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.h002
+\section{Aljabar di Atas Kategori Monoidal}\label{sec:alg-in-monoidal-cat}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p014
+Untuk suatu gelanggang komutatif $\Bbbk$, kita mengetahui bahwa aljabar-$\Bbbk$
+merupakan struktur perkalian yang ditumpangkan pada modul-$\Bbbk$. Definisinya
+dapat dinyatakan menggunakan bifunktor hasil kali tensor
+$\otimes=\otimes_{\Bbbk}$ pada $\Bbbk\dcate{Mod}$ dan diagram komutatif.
+Intinya ialah $(\Bbbk\dcate{Mod},\otimes)$ membentuk kategori monoidal dengan
+unit $\munit:=\Bbbk$. Ketika membahas aljabar-$\Bbbk$ komutatif dan berbagai
+variannya, peranan sentral dipegang oleh struktur anyaman
+$c(X,Y):X\otimes Y\rightiso Y\otimes X$ pada kategori monoidal ini, dengan
+sifat simetris $c(Y,X)c(X,Y)=\identity$. Lihat \cite[\S 7.4]{Li1}.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p015
+\index{kategori monoidal (monoidal category)}
+Setelah dirumuskan dalam bahasa yang sesuai, teori ini mencakup
+\emph{kategori monoidal} umum dan \emph{kategori monoidal simetris}. Mengikuti
+\cite[Definisi 3.1.1, 3.1.2]{Li1}, konvensi bagian ini\footnote{Definisi dalam
+literatur lain mungkin sedikit berbeda, tetapi konsep kategori monoidal yang
+dihasilkan tetap ekuivalen.} mendefinisikan kategori monoidal sebagai data
+$(\mathcal{V},\otimes,a,\munit,\iota)$, yang sering disingkat menjadi
+$\mathcal{V}$ atau $(\mathcal{V},\otimes)$, dengan
+% segment-id: o014.li2.chapter7.monoidal-algebras.l001
+\begin{compactitem}
+	\item $\otimes: \mathcal{V} \times \mathcal{V} \to \mathcal{V}$ adalah bifunktor;
+	\item $a(X, Y, Z): (X \otimes Y) \otimes Z \rightiso X \otimes (Y \otimes Z)$ adalah morfisme kanonik yang disebut kendala asosiativitas ($X, Y, Z \in \Obj(\mathcal{V})$), dan memenuhi aksioma segilima;
+	\item $\munit = \munit_{\mathcal{V}} \in \Obj(\mathcal{V})$ adalah unit;
+	\item $\iota: \munit \otimes \munit \rightiso \munit$.
+\end{compactitem}
+Dari sini diperoleh keluarga isomorfisme kanonik
+$\munit \otimes X \xrightarrow[\sim]{\lambda_X} X \xleftarrow[\sim]{\rho_X} X \otimes \munit$;
+menurut \cite[Lema 3.1.5]{Li1}, isomorfisme-isomorfisme ini memenuhi
+$\lambda_{\munit}=\iota=\rho_{\munit}$. Semuanya disebut kendala unit dan
+selanjutnya tidak akan dituliskan secara eksplisit.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p016
+Suatu \emph{struktur anyaman} pada kategori monoidal adalah isomorfisme antara
+bifunktor, yang dituliskan sebagai
+% segment-id: o014.li2.chapter7.monoidal-algebras.q001
+\[ c = \left( c(X, Y): X \otimes Y \rightiso Y \otimes X\right)_{X, Y \in \Obj(\mathcal{V})}, \]
+yang disyaratkan kompatibel dengan kendala asosiativitas dan unit; lihat
+\cite[Definisi 3.3.1]{Li1}. Kategori monoidal yang dilengkapi struktur anyaman
+tertentu disebut \emph{kategori monoidal beranyam}. Jika
+$c(Y,X)c(X,Y)=\identity_{X\otimes Y}$ selalu berlaku, data tersebut disebut
+\emph{kategori monoidal simetris}.
+\index{struktur anyaman (braid structure)}
+\index[sym1]{cXY@$c(X, Y)$}
+\index{kategori monoidal!beranyam (braided)}
+\index{kategori monoidal!simetris (symmetric)}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.d001
+\begin{definisi}[Aljabar]\label{def:algebra-monoidal}
+	\index{aljabar (algebra)}
+	Aljabar di atas kategori monoidal $\mathcal{V}$ berarti data
+	$(A,\mu,\eta)$, dengan
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q002
+	\[ A \in \Obj(\mathcal{V}), \quad \mu = \mu_A: A \otimes A \to A, \quad \eta = \eta_A: \munit \to A, \]
+	sedemikian sehingga diagram-diagram berikut komutatif:
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g003
+	\begin{equation*}\begin{gathered}
+		\begin{tikzcd}
+			\munit \otimes A \arrow[r, "{\eta \otimes \identity}"] \arrow[rd, "\sim"' sloped] & A \otimes A \arrow[d, "\mu"] & A \otimes \munit \arrow[l, "{\identity \otimes \eta}"'] \arrow[ld, "\sim"' sloped] \\
+			& A &
+		\end{tikzcd} \quad
+		\begin{tikzcd}[column sep=tiny]
+			(A \otimes A) \otimes A \arrow[rr, "{a(A, A, A)}", "\sim"'] \arrow[d, "{\mu \otimes \identity}"'] & & A \otimes (A \otimes A) \arrow[d, "{\identity \otimes \mu}"] \\
+			A \otimes A \arrow[r, "\mu"'] & A & A \otimes A \arrow[l, "\mu"] .
+		\end{tikzcd}
+	\end{gathered}\end{equation*}
+	Dengan demikian, $\mu$ dapat dipandang sebagai operasi perkalian pada $A$,
+	sedangkan $\eta$ sebagai morfisme unitnya.
+	
+	Morfisme dari aljabar $(A,\mu,\eta)$ ke $(A',\mu',\eta')$ didefinisikan
+	sebagai morfisme $\phi:A\to A'$ dalam $\mathcal{V}$ yang membuat diagram
+	berikut komutatif:
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g004
+	\[\begin{tikzcd}
+		\munit \arrow[r, "\eta"] \arrow[rd, "{\eta'}"'] & A \arrow[d, "\phi"] \\
+		& A'
+	\end{tikzcd} \quad \begin{tikzcd}
+		A \otimes A \arrow[d, "\mu"'] \arrow[r, "{\phi \otimes \phi}"] & A' \otimes A' \arrow[d, "{\mu'}"] \\
+		A \arrow[r, "\phi"'] & A' .
+	\end{tikzcd}\]
+\end{definisi}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p017
+Kita sering menyingkat $(A,\mu,\eta)$ menjadi $A$. Dalam beberapa literatur,
+aljabar juga disebut gelanggang atau monoid di dalam $\mathcal{V}$, dan
+terkadang disebut aljabar asosiatif untuk menekankan hukum asosiativitas yang
+ditampilkan oleh diagram komutatif kedua.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p018
+Konsep modul memiliki generalisasi yang serupa.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.d002
+\begin{definisi}[Modul]\label{def:module-algebra}
+	\index{modul (module)}
+	Misalkan $(A,\mu,\eta)$ aljabar di atas $\mathcal{V}$. Modul-$A$ kiri
+	didefinisikan sebagai data $(M,\mu_M)$, dengan
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q003
+	\[ M \in \Obj(\mathcal{V}), \quad \mu_M: A \otimes M \to M, \]
+	yang membuat diagram-diagram berikut komutatif:
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g005
+	\[\begin{tikzcd}
+		\munit \otimes M \arrow[r, "{\eta \otimes \identity}"] \arrow[rd, "\sim"' sloped] & A \otimes M \arrow[d, "{\mu_M}"] \\
+		& M
+	\end{tikzcd} \quad \begin{tikzcd}[column sep=small]
+		(A \otimes A) \otimes M \arrow[rr, "{a(A, A, M)}", "\sim"'] \arrow[d, "{\mu_M \otimes \identity}"'] & & A \otimes (A \otimes M) \arrow[d, "{\identity \otimes \mu_M}"] \\
+		A \otimes M \arrow[r, "{\mu_M}"'] & M & A \otimes M \arrow[l, "{\mu_M}"] .
+	\end{tikzcd}\]
+	Jadi $\mu_M$ dapat dipandang sebagai perkalian skalar pada modul.
+	
+	Sesuai konvensi, modul $(M,\mu_M)$ disingkat menjadi $M$. Morfisme dari $M$
+	ke $M'$ didefinisikan sebagai morfisme $\psi:M\to M'$ dalam $\mathcal{V}$
+	yang membuat diagram berikut komutatif:
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g006
+	\[\begin{tikzcd}
+		A \otimes M \arrow[d, "{\mu_M}"'] \arrow[r, "{\identity \otimes \psi}"] & A \otimes M' \arrow[d, "{\mu_{M'}}"] \\
+		M \arrow[r, "\psi"'] & M' .
+	\end{tikzcd}\]
+	
+	Modul-$A$ kanan didefinisikan dengan cara serupa. Jika $M$ sekaligus memiliki
+	struktur modul-$A$ kiri dan modul-$B$ kanan yang membuat diagram berikut
+	komutatif,
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g007
+	\[\begin{tikzcd}[column sep=small]
+		(A \otimes M) \otimes B \arrow[rr, "{a(A, M, B)}", "\sim"'] \arrow[d, "{\mu_M^A \otimes \identity}"'] & & A \otimes (M \otimes B) \arrow[d, "{\identity \otimes \mu_M^B}"] \\
+		M \otimes B \arrow[r, "{\mu_M^B}"'] & M & A \otimes M , \arrow[l, "{\mu_M^A}"]
+	\end{tikzcd}\]
+	maka $M$ disebut bimodul-$(A,B)$; morfisme antara dua bimodul semacam ini
+	ialah morfisme $\psi:M\to M'$ yang sekaligus merupakan morfisme modul-$A$
+	kiri dan modul-$B$ kanan.
+\end{definisi}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p019
+Jika $M$ merupakan modul-$A$ kiri dan $N$ modul-$B$ kanan, maka $M\otimes N$
+secara alami menjadi bimodul-$(A,B)$.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.r001
+\begin{catatan}[Unit sebagai aljabar]\label{rem:unit-algebra}
+	Sebagai contoh, $\munit$ menjadi aljabar dengan
+	$\mu_{\munit}:=\iota$ dan $\eta_{\munit}:=\identity_{\munit}$. Diagram
+	komutatif yang diperlukan mengikuti sifat-sifat standar $\munit$ dan
+	$\iota:\munit\otimes\munit\rightiso\munit$; lihat
+	\cite[Lema 3.1.5]{Li1}. Untuk setiap aljabar $A$ terdapat tepat satu
+	morfisme $\munit\to A$, dan morfisme itu haruslah $\eta_A$.
+	
+	Serupa dengan itu, mudah dilihat bahwa setiap $M\in\Obj(\mathcal{V})$
+	memiliki tepat satu struktur modul-$\munit$ kiri (atau kanan), yaitu dengan
+	mengambil $\mu_M:\munit\otimes M\to M$ sebagai kendala unit dari
+	$\mathcal{V}$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p020
+Tujuan berikutnya ialah membahas
+% segment-id: o014.li2.chapter7.monoidal-algebras.l002
+\begin{inparaenum}[(a)]
+	\item komutativitas aljabar,
+	\item hasil kali tensornya.
+\end{inparaenum}
+Keduanya berkaitan erat dan sama-sama memerlukan struktur anyaman pada
+$\mathcal{V}$. Kita mulai dari komutativitas.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.d003
+\begin{definisi}\label{def:opposite-braided-algebra}
+	\index[sym1]{Aop}
+	Dengan menggunakan berbagai sifat alami struktur anyaman, terlihat bahwa
+	jika $A$ merupakan aljabar di atas kategori monoidal beranyam $\mathcal{V}$,
+	maka mengganti $\mu$ dengan $\mu\circ c(A,A)$ dan membiarkan data lain tetap
+	memberikan lagi aljabar di atas $\mathcal{V}$. Aljabar ini didefinisikan
+	sebagai \emph{aljabar lawan} $A^{\opp}$ dari $A$. Verifikasinya panjang
+	tetapi tidak sulit, dan diserahkan sebagai latihan bab ini.
+\end{definisi}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p021
+Dari funktorialitas struktur anyaman, jika $\phi:A_1\to A_2$ merupakan
+morfisme, maka ia juga merupakan morfisme dari $A_1^{\opp}$ ke
+$A_2^{\opp}$.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.d004
+\begin{definisi}\label{def:calg-monoidal}
+	\index{aljabar!komutatif (commutative)}
+	Untuk aljabar $A$ di atas kategori monoidal beranyam $\mathcal{V}$, $A$
+	disebut \emph{aljabar komutatif} jika diagram berikut komutatif dalam
+	$\mathcal{V}$:
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g008
+	\[\begin{tikzcd}
+		A \otimes A \arrow[rd, "{\mu_A}"'] \arrow[rr, "{c(A, A)}", "\sim"'] & & A \otimes A . \arrow[ld, "{\mu_A}"] \\
+		& A &
+	\end{tikzcd}\]
+	Dengan kata lain, kita mensyaratkan perkalian $\mu_A$ memenuhi hukum
+	komutatif. Rumusan ekuivalennya adalah $A=A^{\opp}$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p022
+Aljabar $\munit$ dari Catatan~\ref{rem:unit-algebra} merupakan contoh sederhana
+aljabar komutatif; diagram komutatif yang diperlukan mengikuti
+kompatibilitas struktur anyaman $c$ dengan kendala unit.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p023
+Tetap misalkan $\mathcal{V}$ kategori monoidal beranyam. Seperti dalam kasus
+gelanggang komutatif, untuk dua aljabar sembarang $A$ dan $B$, struktur anyaman
+$c$ memberikan struktur aljabar kanonik pada $A\otimes B$:
+% segment-id: o014.li2.chapter7.monoidal-algebras.l003
+\begin{itemize}
+	\item Perkalian $\mu_{A \otimes B}$ diambil sebagai komposisi
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g009
+	\begin{multline*}
+		(A \otimes B) \otimes (A \otimes B) \rightiso (A \otimes (B \otimes A)) \otimes B \\
+		\xrightarrow{(\identity_A \otimes c(B, A)) \otimes \identity_B} (A \otimes (A \otimes B)) \otimes B \\
+		\rightiso (A \otimes A) \otimes (B \otimes B) \xrightarrow{\mu_A \otimes \mu_B} A \otimes B ,
+	\end{multline*}
+	semua panah tanpa label berasal dari kendala asosiativitas. Dalam notasi
+	diagram anyaman, komposisi ini tergambar sebagai berikut:
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g010
+	\begin{center}\begin{tikzpicture}[baseline=(braid)]
+		\pic[
+			braid/number of strands=4,
+			braid/every strand/.style={black},
+			name prefix=braid
+		]
+		at (0, 0) {braid = {s_2}};
+		\coordinate (braid) at ($(braid-1-s)!0.5!(braid-1-e)$);
+		\node[above] at (braid-1-s) {$A$};
+		\node[above] at (braid-2-s) {$B$};
+		\node[above] at (braid-3-s) {$A$};
+		\node[above] at (braid-4-s) {$B$};
+		
+		\coordinate (MA) at ($(braid-1-e)!0.5!(braid-3-e)$);
+		\draw[->] (MA) -- ($(MA) + (0, -2em)$) node[below] {$A$};
+		\draw[fill=white] ([yshift=0.5em, xshift=-0.5em] braid-1-e) rectangle ([yshift=-1em, xshift=0.5em] braid-3-e);
+		\node at ([yshift=-0.25em] MA) {$\mu_A$};
+		
+		\coordinate (MB) at ($(braid-2-e)!0.5!(braid-4-e)$);
+		\draw[->] (MB) -- ($(MB) + (0, -2em)$) node[below] {$B$};
+		\draw[fill=white] ([yshift=0.5em, xshift=-0.5em] braid-2-e) rectangle ([yshift=-1em, xshift=0.5em] braid-4-e);
+		\node at ([yshift=-0.25em] MB) {$\mu_B$};
+	\end{tikzpicture}\end{center}
+	
+	\item Unit $\eta_{A \otimes B}$ diambil sebagai komposisi
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q004
+	\[ \munit \xrightarrow[\sim]{\iota^{-1}} \munit \otimes \munit \xrightarrow{\eta_A \otimes \eta_B} A \otimes B. \]
+\end{itemize}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p024
+Untuk memverifikasi bahwa ini memang aljabar, syarat-syarat dalam
+Definisi~\ref{def:algebra-monoidal} dapat diturunkan dari sifat-sifat yang
+bersesuaian pada $(A,\mu_A,\eta_A)$ dan $(B,\mu_B,\eta_B)$ hanya dengan
+menggunakan $c$ (untuk menukar urutan $\otimes$), $\iota$ (untuk menggandakan
+unit), dan kendala asosiativitas (untuk mengubah letak tanda kurung).
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p025
+Jika $M$ merupakan modul-$A$ kiri dan $N$ modul-$B$ kiri, maka $M\otimes N$
+secara alami menjadi modul-$(A\otimes B)$ kiri. Konstruksi dan verifikasinya
+sama dengan paragraf sebelumnya, dengan $c$ digunakan untuk menukar posisi.
+Kasus modul kanan pun serupa.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p026
+Untuk aljabar $\munit$ yang didefinisikan dalam
+Catatan~\ref{rem:unit-algebra}, jelas bahwa
+$\munit\otimes A\simeq A\simeq A\otimes\munit$, dengan isomorfisme yang
+diberikan oleh kendala unit $\mathcal{V}$.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.r002
+\begin{catatan}\label{rem:Alg-otimes-functorial}
+	Konstruksi di atas funktorial terhadap $A$ dan $B$: jika $A\to A'$ dan
+	$B\to B'$ merupakan morfisme aljabar, maka demikian pula morfisme terkait
+	$A\otimes B\to A'\otimes B'$. Fakta lain yang panjang tetapi tidak sulit
+	ialah bahwa bila $A,B,C$ semuanya aljabar, kendala asosiativitas
+	$(A\otimes B)\otimes C\rightiso A\otimes(B\otimes C)$ merupakan morfisme
+	aljabar.
+\end{catatan}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.le001
+\begin{lema}\label{prop:CAlg-mu}
+	Misalkan $A$ aljabar di atas kategori monoidal beranyam $\mathcal{V}$. Maka
+	$A$ komutatif jika dan hanya jika perkalian
+	$\mu_A:A\otimes A\to A$ merupakan morfisme aljabar.
+\end{lema}
+% segment-id: o014.li2.chapter7.monoidal-algebras.pf001
+\begin{bukti}
+	Agar $\mu_A$ merupakan morfisme aljabar, diperlukan dua syarat. Syarat
+	mengenai unit ekuivalen dengan komutativitas diagram
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g011
+	\[\begin{tikzcd}[column sep=large]
+		\munit \otimes \munit \arrow[d, "\iota"'] \arrow[r, "{\eta_A \otimes \eta_A}"] & A \otimes A \arrow[d, "{\mu_A}"] \\
+		\munit \arrow[r, "{\eta_A}"'] & A
+	\end{tikzcd}\]
+	dan syarat ini berlaku otomatis karena $A$ adalah aljabar. Syarat yang
+	tersisa ialah komutativitas diagram
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g012
+	\begin{equation*}
+		\begin{tikzcd}[column sep=large]
+			(A \otimes A) \otimes (A \otimes A) \arrow[r, "{\mu_A \otimes \mu_A}"] \arrow[d, "{\mu_{A \otimes A}}"'] & A \otimes A \arrow[d, "{\mu_A}"] \\
+			A \otimes A \arrow[r, "{\mu_A}"'] & A
+		\end{tikzcd}
+	\end{equation*}
+	Identifikasikan sudut kiri atas dengan
+	$A\otimes(A\otimes A)\otimes A$ melalui kendala asosiativitas. Berdasarkan
+	asosiativitas $\mu_A$, komposisi dalam diagram sepanjang
+	\begin{tikzpicture}[scale=0.5, baseline=(O)]
+		\draw[->] (0, 0) -- (1, 0) -- (1, -0.7);
+		\coordinate (O) at (0, -0.5);
+	\end{tikzpicture}
+	sama dengan
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q005
+	\[ A \otimes (A \otimes A) \otimes A \xrightarrow{\identity \otimes \mu_A \otimes \identity} A \otimes A \otimes A \xrightarrow{\text{perkalian}} A . \]
+	Di sisi lain, definisi $\mu_{A\otimes A}$ dan asosiativitas $\mu_A$
+	menunjukkan bahwa komposisi dalam diagram sepanjang
+	\begin{tikzpicture}[scale=0.5, baseline=(O)]
+		\draw[->] (0, 0) -- (0, -0.7) -- (1, -0.7);
+		\coordinate (O) at (0, -0.5);
+	\end{tikzpicture}
+	sama dengan
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q006
+	\[ A \otimes (A \otimes A) \otimes A \xrightarrow{\identity \otimes (\mu_A c(A,A) ) \otimes \identity} A \otimes A \otimes A \xrightarrow{\text{perkalian}} A . \]
+	Jadi $\mu_Ac(A,A)=\mu_A$ mengakibatkan diagram semula komutatif, yakni
+	$\mu_A$ merupakan morfisme aljabar.
+	
+	Untuk implikasi sebaliknya, ambil
+	$f\in\left\{\mu_A,\mu_Ac(A,A)\right\}$. Kita mempunyai diagram komutatif
+	sederhana
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g013
+	\[\begin{tikzcd}
+		A \otimes (A \otimes A) \otimes A \arrow[r, "{\identity \otimes f \otimes \identity}"] & A \otimes A \otimes A \arrow[r, "{\text{perkalian}}"] & A . \\
+		A \otimes A \arrow[u, "{\eta_A \otimes \identity \otimes \eta_A}"] \arrow[r, "f"'] & A \arrow[ru, "\identity"'] \arrow[u, "{\eta_A \otimes \identity \otimes \eta_A}"] &
+	\end{tikzcd}\]
+	Jika $\mu_A$ merupakan morfisme aljabar, pembahasan sebelumnya menunjukkan
+	bahwa baris pertama memberikan komposisi yang sama untuk kedua pilihan $f$.
+	Dengan memperhatikan baris kedua diperoleh
+	$\mu_A=\mu_Ac(A,A)$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.le002
+\begin{lema}\label{prop:c-as-isom-alg}
+	Misalkan $A$ dan $B$ aljabar di atas kategori monoidal simetris
+	$\mathcal{V}$. Maka $c(A,B):A\otimes B\to B\otimes A$ merupakan isomorfisme
+	aljabar.
+\end{lema}
+% segment-id: o014.li2.chapter7.monoidal-algebras.pf002
+\begin{bukti}
+	Dua diagram komutatif harus diverifikasi untuk $c(A,B)$. Diagram pertama
+	ialah
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g014
+	\[\begin{tikzcd}[row sep=tiny]
+		& \munit \otimes \munit \arrow[ld, "\sim" sloped] \arrow[dd, "{c(\munit, \munit)}"] \arrow[r, "{\eta_A \otimes \eta_B}"] & A \otimes B \arrow[dd, "{c(A, B)}"] \\
+		\munit & & \\
+		& \munit \otimes \munit \arrow[lu, "\sim"' sloped] \arrow[r, "{\eta_B \otimes \eta_A}"'] & B \otimes A
+	\end{tikzcd}\]
+	Komutativitas bagian kanan merupakan akibat funktorialitas $c$, sedangkan
+	bagian kiri mengikuti kompatibilitas $c$ dengan kendala unit
+	\cite[(3.12)]{Li1}. Untuk diagram kedua, yang menyatakan bahwa $c(A,B)$
+	mempertahankan perkalian, argumennya didasarkan pada simetri struktur anyaman
+	dan persis sama dengan bagian akhir \cite[\S 7.4]{Li1}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.pr001
+\begin{proposisi}
+	Misalkan $A$ dan $B$ aljabar komutatif di atas kategori monoidal simetris
+	$\mathcal{V}$. Maka $A\otimes B$ juga komutatif.
+\end{proposisi}
+% segment-id: o014.li2.chapter7.monoidal-algebras.pf003
+\begin{bukti}
+	Cukup ditunjukkan bahwa perkalian $\mu_{A\otimes B}$ merupakan morfisme
+	aljabar. Ingat definisi $\mu_{A\otimes B}$ dan terapkan
+	Lema~\ref{prop:c-as-isom-alg} untuk menangani $c(B,A)$, asumsi komutativitas
+	$A,B$ bersama Lema~\ref{prop:CAlg-mu} untuk menangani $\mu_A,\mu_B$, serta
+	Catatan~\ref{rem:Alg-otimes-functorial} tentang funktorialitas $\otimes$.
+	Maka setiap bagian komposisi tersebut merupakan morfisme aljabar.
+\end{bukti}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p027
+Di atas telah didefinisikan aljabar, modul, dan morfisme di antaranya. Semua
+struktur ini membentuk kategori, dengan notasi
+% segment-id: o014.li2.chapter7.monoidal-algebras.t001
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|} \hline
+	struktur & aljabar & aljabar komutatif & modul-$A$ kiri & modul-$B$ kanan & bimodul-$(A,B)$ \\ \hline
+	kategori & $\cate{Alg}(\mathcal{V})$ & $\cate{CAlg}(\mathcal{V})$ & $A\dcate{Mod}$ & $\cated{Mod}B$ & $(A,B)\dcate{Mod}$ \\ \hline
+	syarat & {\small $\mathcal{V}$: kategori monoidal} & {\small $\mathcal{V}$: kategori monoidal beranyam} & {\small $A$: aljabar} & {\small $B$: aljabar} & {\small $A, B$: aljabar} \\ \hline
+\end{tabular}\end{center}
+\index[sym1]{Alg@$\cate{Alg}(\cdot)$}
+\index[sym1]{CAlg@$\cate{CAlg}(\cdot)$}
+\index[sym1]{Mod}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p028
+Pembahasan di atas juga menunjukkan bahwa
+$\cate{Alg}(\mathcal{V})$ dan $\cate{CAlg}(\mathcal{V})$ pada umumnya
+memiliki struktur yang lebih sedikit daripada $\mathcal{V}$. Jika tingkat struktur diberi label
+angka, situasinya dapat digambarkan secara kasar sebagai
+% segment-id: o014.li2.chapter7.monoidal-algebras.g015
+\[\begin{tikzcd}[row sep=small]
+	0 & 1 & 2 & \infty \\
+	\text{kategori} & \text{kategori monoidal} \arrow[l, "{\cate{Alg}}"'] & \text{kategori monoidal beranyam} \arrow[shift right, l, "{\cate{Alg}}"'] \arrow[shift left, bend left, ll, "{\cate{CAlg}}"'] & \text{kategori monoidal simetris} \arrow[loop right, "{\cate{Alg}, \cate{CAlg}}"]
+\end{tikzcd}\]
+Selain itu, apabila $\cate{Alg}(\mathcal{V})$ atau
+$\cate{CAlg}(\mathcal{V})$ menjadi kategori monoidal terhadap $\otimes$,
+unitnya selalu $\munit$.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p029
+Ingat bahwa Lema~\ref{prop:CAlg-mu} menyatakan bahwa aljabar komutatif di atas
+kategori monoidal beranyam $\mathcal{V}$ secara otomatis memberikan aljabar di
+atas kategori monoidal $\cate{Alg}(\mathcal{V})$, dengan mengambil perkalian
+$A\otimes A\to A$ sama dengan perkalian $A$. Bahkan, inilah satu-satunya
+pilihan yang mungkin. Dari sini muncul pengamatan sederhana, menarik, dan
+penting: terdapat ekuivalensi kategori
+% segment-id: o014.li2.chapter7.monoidal-algebras.e001
+\begin{equation}\label{eqn:AlgAlg-CAlg}
+	\cate{Alg}\left(\cate{Alg}(\mathcal{V}) \right) \simeq \cate{CAlg}(\mathcal{V}), \quad \mathcal{V}:\;\text{kategori monoidal beranyam}.
+\end{equation}
+Fakta-fakta ini bertumpu pada apa yang disebut \emph{argumen
+Eckmann--Hilton}; pembuktiannya sengaja diserahkan sebagai latihan bab ini
+yang dilengkapi petunjuk.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.e002
+\begin{contoh}\label{eg:Cartesius-monoidal}
+	Misalkan kategori $\mathcal{C}$ mempunyai hasil kali hingga. Khususnya,
+	terdapat hasil kali kosong, yakni objek terminal, yang dinotasikan dengan
+	$\munit$. Untuk setiap dua objek $X,Y$ terdapat isomorfisme kanonik
+	$c(X,Y):X\times Y\rightiso Y\times X$. Dengan data ini,
+	$(\mathcal{C},\times)$ menjadi kategori monoidal simetris dengan unit
+	$\munit$. Kita dapat membahas aljabar di atas $\mathcal{C}$, yang juga
+	disebut objek monoid di dalam $\mathcal{C}$\footnote{Untuk kategori semacam
+	ini, \cite[\S 4.11]{Li1} juga membahas objek grup, tetapi sifat invers tidak
+	dapat dirumuskan dalam kategori monoidal umum.}, beserta versi komutatifnya.
+	\begin{itemize}
+		\item Jika $\mathcal{C}=\cate{Set}$, himpunan satu titik adalah unit $\munit$. Aljabar yang bersesuaian adalah monoid, dan aljabar komutatif yang bersesuaian adalah monoid komutatif.
+		\item Jika $\mathcal{C}=\cate{Top}$, aljabar yang bersesuaian adalah monoid topologis, dan aljabar komutatif yang bersesuaian adalah monoid topologis komutatif.
+	\end{itemize}
+	
+	Di sisi lain, ambil gelanggang komutatif $\Bbbk$, beri
+	$\Bbbk\dcate{Mod}$ struktur kategori monoidal simetris melalui
+	$\otimes=\otimes_{\Bbbk}$, dengan $\Bbbk$ sebagai unit $\munit$ dan
+	struktur anyaman yang ditentukan oleh $x\otimes y\mapsto y\otimes x$.
+	Aljabar (atau aljabar komutatif) yang bersesuaian tepat merupakan aljabar
+	(atau aljabar komutatif) dalam pengertian aljabar biasa; lihat
+	\cite[Definisi 7.1.1]{Li1}.
+\end{contoh}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p030
+Dalam situasi konkret ini, perkalian aljabar $A$ sering langsung ditulis
+sebagai perkalian unsur $xy=x\cdot y$, dan unit langsung diidentifikasikan
+dengan unsur $1_A$, sehingga notasi $\mu_A,\eta_A$ dapat dihilangkan.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.e003
+\begin{contoh}[Modul bergradasi dan aljabar bergradasi]\label{eg:graded-module}
+	\index{modul bergradasi, aljabar bergradasi (graded module, graded algebra)}
+	Tetapkan kategori abelian $\mathcal{A}$ dan himpunan tak kosong $I$. Objek
+	$\mathcal{A}^I$ disebut objek bergradasi-$I$ dan ditulis dalam bentuk
+	$M=(M^i)_{i\in I}$, sedangkan morfisme di antaranya ditulis
+	$(f^i:M^i\to N^i)_{i\in I}$. Lazimnya $M^i\in\Obj(\mathcal{A})$ (atau
+	$f^i\in\Mor(\mathcal{A})$) disebut komponen derajat $i$ dari $M$ (atau
+	$f$). Untuk kasus khusus $I=\Z$ atau $\Z^n$, hal ini telah berulang kali
+	dijelaskan dalam \S\ref{sec:additive-cplx}, \S\ref{sec:triangular-def},
+	\S\ref{sec:grading-filtration}, dan lain-lain.
+	
+	Demi kekonkretan, untuk sementara ambil $\mathcal{A}:=\Bbbk\dcate{Mod}$,
+	dengan $\Bbbk$ gelanggang komutatif. Objek bergradasi-$I$ dalam
+	$\mathcal{A}$ juga disebut modul bergradasi-$I$. Misalkan selanjutnya $I$
+	monoid. Definisikan bifunktor $\otimes$ pada kategori $\mathcal{A}^I$ dengan
+	% segment-id: o014.li2.chapter7.monoidal-algebras.e004
+	\begin{equation}\label{eqn:graded-module}
+		(M \otimes N)^i := \bigoplus_{jk=i} M^j \otimes N^k, \quad (f \otimes g)^i := \bigoplus_{jk=i} f^j \otimes g^k .
+	\end{equation}
+	Selain itu, definisikan $\munit$ sebagai $\Bbbk$ yang terkonsentrasi pada
+	komponen $i=1_I$ (yakni unit $I$). Data ini menjadikan $\mathcal{A}^I$
+	kategori monoidal. Syarat unit $\eta_A:\munit=\Bbbk\to A$ secara otomatis
+	memastikan $1_A:=\eta_A(1)\in A^0$.
+	
+	Dalam kasus khusus ketika $I$ komutatif, kita kembali pada modul
+	bergradasi-$I$ dan aljabar bergradasi-$I$ yang diperkenalkan dalam
+	\cite[Definisi 7.4.1]{Li1}.
+
+	Tetap ambil $\mathcal{A}=\Bbbk\dcate{Mod}$ dan syaratkan $(I,+)$ sebagai
+	monoid komutatif. Setiap homomorfisme aditif
+	$\epsilon:I\to\Z/2\Z$ menjadikan $\Bbbk\dcate{Mod}^I$ kategori monoidal
+	simetris dengan \emph{struktur anyaman Koszul} yang dicirikan oleh
+	% segment-id: o014.li2.chapter7.monoidal-algebras.e005
+	\begin{equation}\label{eqn:Koszul-braiding}\begin{aligned}
+		M^a \otimes N^b & \to N^b \otimes M^a \\
+		x \otimes y & \mapsto (-1)^{\epsilon(a)\epsilon(b)} y \otimes x ,
+	\end{aligned}\end{equation}
+	dengan $a,b\in I$. Aljabar komutatif yang bersesuaian tepat merupakan
+	aljabar $\epsilon$-komutatif dalam pengertian
+	\cite[Definisi 7.4.3]{Li1}. Berbagai persamaan atau definisi yang dihasilkan
+	darinya secara kolektif disebut \emph{aturan tanda Koszul}. Setiap kali
+	posisi tensor ditukar, tandanya harus diubah menurut aturan ini.
+	\index{aturan tanda Koszul (Koszul sign rule)}
+	
+	Sebagai contoh, syarat agar $A$ menjadi aljabar komutatif ditulis secara
+	eksplisit sebagai
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q007
+	\[ x y = (-1)^{\epsilon(a) \epsilon(b)} yx, \quad x \in A^a, \; y \in A^b. \]
+	
+	Situasi tipikal ialah
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q008
+	\[ I \in \{\Z, \Z_{\geq 0} \}, \quad \epsilon(a) := a \;\bmod 2 , \]
+	dengan aljabar $\epsilon$-komutatif yang bersesuaian disebut aljabar
+	bergradasi antikomutatif dalam buku yang dirujuk di atas. Karena struktur
+	anyaman ini muncul di mana-mana dalam kajian objek bergradasi-$\Z$, istilah
+	\emph{komutatif bergradasi} lebih tepat.
+	
+	Sekarang kembali ke kategori abelian $\mathcal{A}$ yang lebih umum dan
+	$(I,+,\epsilon)$ seperti di atas. Untuk menggeneralisasi konstruksi tadi,
+	kita perlu memperluas $\mathcal{A}$ menjadi kategori monoidal simetris
+	$(\mathcal{A},\otimes)$ sedemikian sehingga
+	% segment-id: o014.li2.chapter7.monoidal-algebras.l004
+	\begin{itemize}
+		\item $\mathcal{A}$ adalah kategori abelian dan koproduk (yakni jumlah langsung) berbentuk seperti dalam \eqref{eqn:graded-module} ada;
+		\item $\otimes:\mathcal{A}\times\mathcal{A}\to\mathcal{A}$ merupakan funktor aditif pada setiap variabel dan mempertahankan koproduk tersebut.
+	\end{itemize}
+	Dalam keadaan ini, $\otimes$ dan struktur anyaman Koszul pada
+	$\mathcal{A}^I$ masih dapat didefinisikan dengan cara yang sama, sehingga
+	$(\mathcal{A}^I,\otimes)$ menjadi kategori monoidal simetris. Unitnya tetap
+	diberikan oleh unit $\munit$ dari $\mathcal{A}$, dipandang sebagai objek
+	bergradasi-$I$ yang terkonsentrasi pada derajat nol.
+	
+	Untuk $(\mathcal{A},\otimes)$ umum, semua verifikasi sama dengan kasus
+	$\Bbbk\dcate{Mod}$. Satu-satunya perbedaan ialah bahwa ``unsur'' suatu objek
+	tidak lagi bermakna dalam kasus umum.
+\end{contoh}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.cv001
+\begin{konvensi}
+	Dalam kasus khusus $\mathcal{A}=\Bbbk\dcate{Mod}$, konvensi umum ialah
+	memandang modul bergradasi-$I$ $(M^i)_{i\in I}$ sebagai modul yang dilengkapi
+	dekomposisi jumlah langsung $M=\bigoplus_{i\in I}M^i$, sedangkan morfisme di
+	antaranya disyaratkan mempertahankan komponen jumlah langsung.
+\end{konvensi}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.e006
+\begin{contoh}\label{eg:superspace}
+	\index{ruang vektor super (super vector space)}
+	Dalam konstruksi di atas ($\mathcal{A}=\Bbbk\dcate{Mod}$), ambil $\Bbbk$
+	medan dengan $\mathrm{char}(\Bbbk)\neq2$,
+	$I=\Z/2\Z=\{0,1\}$, dan $\epsilon=\identity_{\Z/2\Z}$. Kategori monoidal
+	simetris yang bersesuaian dinotasikan
+	$\cate{Vect}^-_{\Z/2\Z}(\Bbbk)$; objeknya dapat dipandang sebagai ruang
+	vektor-$\Bbbk$ yang dilengkapi dekomposisi jumlah langsung
+	$V=V_0\oplus V_1$, dan disebut pula \emph{ruang vektor super}. Dari sinilah
+	muncul istilah-istilah yang lazim dalam aljabar linear dan fisika matematis,
+	seperti aljabar super dan aljabar super komutatif.
+\end{contoh}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p031
+Terakhir, kita membahas pengaruh funktor monoidal longgar terhadap aljabar.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.d005
+\begin{definisi}\label{def:lax-monoidal}
+	\index{funktor!monoidal, monoidal longgar, monoidal longgar kanan (monoidal, lax monoidal, right lax monoidal)}
+	Misalkan $\mathcal{V}$ dan $\mathcal{V}'$ kategori monoidal. Menurut
+	\cite[Catatan 3.1.8]{Li1}, funktor monoidal longgar kanan dari $\mathcal{V}$
+	ke $\mathcal{V}'$, yang di sini disingkat menjadi \emph{funktor monoidal
+	longgar}, berarti data $(F,\xi_F,\varphi_F)$, dengan
+	$F:\mathcal{V}\to\mathcal{V}$ suatu funktor dan morfisme
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q009
+	\[ \xi_F: F(\cdot) \otimes F(\cdot) \to F(\cdot \otimes \cdot), \quad \varphi_F: \munit_{\mathcal{V}'} \to F\left( \munit_{\mathcal{V}} \right), \]
+	yang tunduk pada serangkaian syarat kompatibilitas dengan struktur monoidal.
+	Data $(F,\xi_F,\varphi_F)$ sering disingkat menjadi $F$.
+	
+	Jika $\mathcal{V}$ dan $\mathcal{V}'$ keduanya kategori monoidal beranyam
+	(atau simetris), dan $F$ juga membuat diagram berikut komutatif, maka $F$
+	disebut funktor beranyam, atau dikatakan kompatibel dengan struktur anyaman:
+	% segment-id: o014.li2.chapter7.monoidal-algebras.g016
+	\[\begin{tikzcd}[column sep=huge]
+		F(X) \otimes F(Y) \arrow[r, "{\xi_F(X, Y)}"] \arrow[d, "{c'(FX, FY)}"'] & F(X \otimes Y) \arrow[d, "{Fc(X, Y)}"] \\
+		F(Y) \otimes F(X) \arrow[r, "{\xi_F(Y, X)}"'] & F(Y \otimes X) .
+	\end{tikzcd}\]
+
+	Jika $\xi_F$ dan $\varphi_F$ dalam data funktor monoidal longgar keduanya
+	isomorfisme, funktor tersebut disebut \emph{funktor monoidal}.
+\end{definisi}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p032
+Tentu kita juga dapat membahas morfisme antara funktor-funktor monoidal
+longgar, yang disebut pula transformasi alami:
+% segment-id: o014.li2.chapter7.monoidal-algebras.q010
+\[ \theta = (\theta_X)_{X \in \Obj(\mathcal{V})}: F \to G, \quad F, G: \mathcal{V} \to \mathcal{V}' . \]
+Di samping syarat-syarat transformasi alami, kita mensyaratkan bahwa $\theta$
+membuat diagram berikut komutatif:
+% segment-id: o014.li2.chapter7.monoidal-algebras.g017
+\[\begin{tikzcd}[column sep=huge]
+	F(X) \otimes F(Y) \arrow[r, "{\xi_F(X, Y)}"] \arrow[d, "{\theta_X \otimes \theta_Y}"'] & F(X \otimes Y) \arrow[d, "{\theta_{X \otimes Y}}"] \\
+	G(X) \otimes G(Y) \arrow[r, "{\xi_G(X, Y)}"'] & G(X \otimes Y)
+\end{tikzcd} \quad \begin{tikzcd}
+	\munit_{\mathcal{V}'} \arrow[r, "{\varphi_F}"] \arrow[rd, "{\varphi_G}"'] & F(\munit_{\mathcal{V}}) \arrow[d, "{\theta_{\munit_{\mathcal{V}}}}"] \\
+	& G(\munit_{\mathcal{V}}) .
+\end{tikzcd}\]
+
+Jika $F$ dan $G$ merupakan funktor monoidal, definisi di atas sebenarnya
+ekuivalen dengan \cite[Definisi 3.1.10]{Li1}; di sana $\varphi_F$ dan
+$\varphi_G$ disebut isomorfisme ``standar''. Dengan demikian dapat dibahas
+ekuivalensi antara kategori monoidal atau kategori monoidal beranyam.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.pr002
+\begin{proposisi}\label{prop:lax-monoidal-Alg}
+	Funktor monoidal longgar $F$ menginduksi funktor
+	$\cate{Alg}(\mathcal{V})\to\cate{Alg}(\mathcal{V}')$. Jika $A$ aljabar di
+	atas $\mathcal{V}$, maka $F$ menginduksi
+	$A\dcate{Mod}\to F(A)\dcate{Mod}$, dan seterusnya.
+
+	Jika selain itu $\mathcal{V}$ dan $\mathcal{V}'$ kategori monoidal beranyam
+	dan $F$ funktor beranyam, maka $F$ juga menginduksi
+	$\cate{CAlg}(\mathcal{V})\to\cate{CAlg}(\mathcal{V}')$, sedangkan
+	$\cate{Alg}(\mathcal{V})\to\cate{Alg}(\mathcal{V}')$ merupakan funktor
+	monoidal longgar. Jika lebih lanjut $\mathcal{V},\mathcal{V}'$ keduanya
+	simetris, maka $\cate{CAlg}(\mathcal{V})\to\cate{CAlg}(\mathcal{V}')$ juga
+	demikian.
+\end{proposisi}
+% segment-id: o014.li2.chapter7.monoidal-algebras.pf004
+\begin{bukti}
+	Misalkan $A$ aljabar di atas $\mathcal{V}$. Definisikan perkalian
+	$\mu_{FA}$ sebagai
+	$FA\otimes FA\to F(A\otimes A)\xrightarrow{F\mu_A}FA$, dan unit $\eta_{FA}$
+	sebagai
+	$\munit_{\mathcal{V}'}\to F(\munit_{\mathcal{V}})\xrightarrow{F\eta_A}FA$.
+	Verifikasi selebihnya bersifat rutin.
+\end{bukti}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.e007
+\begin{contoh}\label{eg:ev0-monoidal}
+	Tinjau kategori abelian monoidal simetris $\mathcal{A}$ dan $\mathcal{A}^I$
+	dari Contoh~\ref{eg:graded-module}. Definisikan funktor
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q011
+	\[ \mathrm{ev}_0: \mathcal{A}^I \to \mathcal{A}, \quad \left(M^i\right)_{i \in I} \mapsto M^0. \]
+	Funktor ini eksak sekaligus monoidal longgar simetris: cukup ambil
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q012
+	\[ \xi_{\mathrm{ev}_0}(M, N): M^0 \otimes N^0 \to (M \otimes N)^0 := \bigoplus_{i+j=0} M^i \otimes N^j \]
+	sebagai morfisme yang jelas, dan
+	$\varphi_{\mathrm{ev}_0}:\munit\to\munit$ sebagai identitas. Dengan demikian,
+	$A\mapsto A^0$ menginduksi funktor monoidal longgar
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q013
+	\[ \cate{Alg}(\mathcal{A}^I) \to \cate{Alg}(\mathcal{A}), \quad \cate{CAlg}(\mathcal{A}^I) \to \cate{CAlg}(\mathcal{A}). \]
+\end{contoh}
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.p033
+Catatan berikut membahas aljabar di atas kategori monoidal umum $\mathcal{V}$.
+Ingat bahwa ordinal hingga berkorespondensi satu-satu dengan $\Z_{\geq0}$;
+ordinal hingga $\mathbf{n}$ yang bersesuaian dengan $n$ diidentifikasikan
+dengan himpunan terurut total berunsur $n$, yaitu
+$\{0,\ldots,n-1\}$ dengan $0\leq1\leq2\leq\cdots$.
+
+% segment-id: o014.li2.chapter7.monoidal-algebras.r003
+\begin{catatan}[Aljabar berjalan]\label{rem:walking-algebra}
+	\index{aljabar!berjalan (walking)}
+	\index[sym1]{FinOrd@$\cate{FinOrd}$}
+	Pemetaan $f:A\to B$ antara himpunan terurut sebagian disebut
+	mempertahankan urutan jika
+	$a\leq a'\implies f(a)\leq f(a')$. Selanjutnya, tuliskan $\cate{FinOrd}$
+	untuk kategori ordinal hingga yang morfismenya adalah pemetaan
+	mempertahankan urutan antara ordinal. Kategori ini menjadi kategori
+	monoidal ketat terhadap
+	$\mathbf{n}\otimes\mathbf{m}:=\mathbf{n}+\mathbf{m}$. Morfisme
+	$f\otimes g:\mathbf{n}\otimes\mathbf{m}\to\mathbf{n}'\otimes\mathbf{m}'$
+	memetakan $n$ unsur pertama (atau $m$ unsur terakhir) dengan $f$ (atau $g$),
+	dan objek $\mathbf{0}$ adalah unit\footnote{Di sini $\mathbf{1}$ selalu
+	menyatakan ordinal; unit kategori monoidal $\mathcal{V}$ dinotasikan terpisah
+	dengan $\munit_{\mathcal{V}}$.}. Jadikan $\mathbf{1}$ aljabar di atas
+	$\cate{FinOrd}$: ambil unit $\emptyset=\mathbf{0}\hookrightarrow\mathbf{1}$
+	dan perkalian
+	$\mathbf{1}\otimes\mathbf{1}=\mathbf{2}\twoheadrightarrow\mathbf{1}$.
+	Diagram komutatif yang terkait sama sekali tidak sulit diverifikasi.
+	
+	Ordinal $\mathbf{1}$ (atau $\mathbf{2}$) dapat dipandang sebagai objek
+	(atau morfisme) ``berjalan''. Alasannya, untuk sembarang kategori
+	$\mathcal{C}$, menentukan funktor $\mathbf{1}\to\mathcal{C}$ (atau
+	$\mathbf{2}\to\mathcal{C}$) setara dengan menentukan objek (atau morfisme)
+	dalam $\mathcal{C}$. Sekarang tinjau kategori monoidal $\mathcal{V}$. Kita
+	klaim terdapat isomorfisme kategori
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q014
+	\[
+		\left\{ \mathcal{V}\;\text{-aljabar}\; A \right\} \simeq \left\{ \text{funktor monoidal}\; F: \cate{FinOrd} \to \mathcal{V} \right\},
+	\]
+	yang juga berarti bahwa $\cate{FinOrd}$ adalah ``aljabar berjalan''.
+	Pertama, bagi funktor monoidal
+	$F:\cate{FinOrd}\to\mathcal{V}$, definisikan $A:=F(\mathbf{1})$. Sebagai
+	kasus khusus sederhana dari Proposisi~\ref{prop:lax-monoidal-Alg}, $A$
+	secara alami menjadi aljabar di atas $\mathcal{V}$: perkalian
+	$\mu:A\otimes A\to A$ adalah $F(\mathbf{2}\twoheadrightarrow\mathbf{1})$,
+	sedangkan unit $\eta:\munit_{\mathcal{V}}\to A$ adalah
+	$F(\mathbf{0}\hookrightarrow\mathbf{1})$.
+	
+	Sebaliknya, dari aljabar $(A,\mu,\eta)$ di atas $\mathcal{V}$, definisikan
+	funktor monoidal $F:\cate{FinOrd}\to\mathcal{V}$ dengan
+	% segment-id: o014.li2.chapter7.monoidal-algebras.q015
+	\[ F(\mathbf{n}) = A^{\otimes n} := \underbracket{A \otimes (A \otimes (\cdots))}_{n\;\text{salinan}\; A}, \quad A^{\otimes 0} := \munit_{\mathcal{V}}, \]
+	Untuk $f:\mathbf{n}\to\mathbf{m}$, jika $f$ injektif, maka
+	$F(f):A^{\otimes n}\to A^{\otimes m}$ diperoleh dengan menyisipkan
+	$\eta:\munit_{\mathcal{V}}\to A$ di luar citra $f$; jika $f$ surjektif,
+	$F(f)$ diperoleh dengan memakai $\mu:A\otimes A\to A$ untuk menggabungkan
+	secara bertahap faktor-faktor dalam setiap serat. Kendala asosiativitas dan
+	sifat-sifat lain kategori monoidal memastikan operasi ini terdefinisi dengan
+	baik. Pemetaan umum $f$ memiliki faktorisasi surjektif--injektif yang unik,
+	dan dengan cara ini $F$ didefinisikan pada morfisme. Funktorialitasnya
+	jelas. Tidak sulit memverifikasi bahwa kedua konstruksi saling invers.
+\end{catatan}

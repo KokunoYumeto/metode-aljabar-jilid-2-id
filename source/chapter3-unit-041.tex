@@ -9,7 +9,7 @@
 \hypertarget{o014.aljabr2.chapter3.double-complex-cohomology}{ }
 
 % segment-id: o014.li2.chapter3.double-complex-cohomology.p001
-Bagian ini bertujuan mengkaji kohomologi bikompleks $X$ pada arah horizontal
+Bagian ini bertujuan mengkaji kohomologi bikompleks $X$ dalam arah horizontal
 atau vertikal, serta hubungannya dengan kohomologi kompleks total. Hasil-hasil
 terkait akan digunakan untuk mengkaji funktor turunan dari bifunktor; cara
 pembuktiannya mengikuti \cite[\S 12.5]{KS06}.
@@ -87,7 +87,7 @@ $\tot_{\oplus}(X) = \tot_{\Pi}(X)$. Dengan demikian, diperoleh funktor aditif
 $\tot: \cate{C}^2_f(\mathcal{A}) \to \cate{C}(\mathcal{A})$.
 
 % segment-id: o014.li2.chapter3.double-complex-cohomology.p005
-Sekarang buat pengamatan sederhana tetapi perlu berikut. Untuk objek $X$ dari
+Sekarang perhatikan fakta sederhana tetapi penting berikut. Untuk objek $X$ dari
 $\cate{C}^2_f(\mathcal{A})$ dan $n \in \Z$, terdapat himpunan bagian
 berhingga $S \subset \Z^2$ sedemikian sehingga
 $\Hm^n\left( \tot(X) \right)$ sepenuhnya ditentukan oleh data
@@ -103,17 +103,17 @@ $\left( X^{p,q}, \dhori^{p, q} , \dvert^{p,q} \right)_{(p, q) \in S}$.
 \begin{bukti}
 	Misalkan $X \xrightarrow{f} Y \xrightarrow{g} Z$ merupakan barisan eksak dalam
 	$\cate{C}^2_f(\mathcal{A})$. Dengan mengingat definisi-definisi terkait,
-	misalnya Proposisi~\ref{prop:abelian-cat-cplx}, persoalannya ialah
-	membuktikan bahwa, untuk setiap $n \in \Z$, barisan
+	misalnya Proposisi~\ref{prop:abelian-cat-cplx}, cukup dibuktikan bahwa,
+	untuk setiap $n \in \Z$, barisan
 % segment-id: o014.li2.chapter3.double-complex-cohomology.q003
 	\[ \bigoplus_{p+q=n} X^{p,q} \xrightarrow{\bigoplus_{p+q=n} f^{p,q}} \bigoplus_{p+q=n} Y^{p,q} \xrightarrow{\bigoplus_{p+q=n} g^{p,q}} \bigoplus_{p+q=n} Z^{p,q} \]
 	eksak dalam $\mathcal{A}$. Karena jumlah langsung tersebut berhingga,
-	semuanya tereduksi pada keeksakan
+	pernyataan ini mengikuti dari keeksakan
 	$X^{p,q} \xrightarrow{f^{p,q}} Y^{p,q} \xrightarrow{g^{p,q}} Z^{p,q}$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter3.double-complex-cohomology.p006
-Walaupun lema berikut tampak rumit, lema ini semata-mata merupakan pengolahan
+Walaupun lema berikut tampak rumit, lema ini hanya merupakan penguraian
 definisi dan berlaku untuk setiap kategori aditif $\mathcal{A}$.
 
 % segment-id: o014.li2.chapter3.double-complex-cohomology.le002
@@ -149,7 +149,7 @@ definisi dan berlaku untuk setiap kategori aditif $\mathcal{A}$.
 	\[
 		\cate{C}^{[h-1, h]}(\cate{C}(\mathcal{A})),
 	\]
-	yang terkonsentrasi pada derajat $h-1$ dan $h$. Oleh karena itu, dengan menetapkan
+	yang terkonsentrasi pada derajat $h-1$ dan $h$. Oleh karena itu, jika didefinisikan
 	\[
 		Z := F_{\mathrm{I}}^{-1}
 		\Cone\left( \identity_{Y_{\mathrm{I}}[-h]} \right),
@@ -261,11 +261,11 @@ $\dhori = 0 = \dvert$.
 \end{teorema}
 % segment-id: o014.li2.chapter3.double-complex-cohomology.pf004
 \begin{bukti}
-	Syarat tersebut ekuivalen dengan mengatakan bahwa morfisme
+	Syarat tersebut ekuivalen dengan syarat bahwa morfisme
 	$\Hm_{\mathrm{I}}^n(f): \Hm_{\mathrm{I}}^n(X) \to
 	\Hm_{\mathrm{I}}^n(Y)$ dalam $\cate{C}(\mathcal{A})$ merupakan
 	kuasi-isomorfisme untuk setiap $n \in \Z$. Langkah pertama pembuktian
-	ialah mereduksi ke kasus ketika
+	ialah mereduksi pembuktian ke kasus ketika
 % segment-id: o014.li2.chapter3.double-complex-cohomology.q010
 	\begin{equation}\label{eqn:double-cplx-tot-aux}
 		q \ll 0 \implies \tilde{\tau}_{\mathrm{I}}^{\leq q}(X) = 0 = \tilde{\tau}_{\mathrm{I}}^{\leq q}(Y).
@@ -318,8 +318,8 @@ $\dhori = 0 = \dvert$.
 		\tot\left( \tau_{\mathrm{I}}^{\leq q} Y \right) \arrow[r] & \tot\left( \tilde{\tau}_{\mathrm{I}}^{\leq q} Y \right)
 	\end{tikzcd}\]
 	Oleh karena itu, jika $\beta_q$ merupakan kuasi-isomorfisme, maka
-	$\alpha_q$ juga demikian. Karena untuk $q \ll 0$, $\alpha_q$ tidak lain
-	daripada $0 \rightiso 0$, secara rekursif diperoleh bahwa $\alpha_q$ dan
+	$\alpha_q$ juga demikian. Karena untuk $q \ll 0$, $\alpha_q$ tepat
+	merupakan $0 \rightiso 0$, secara rekursif diperoleh bahwa $\alpha_q$ dan
 	$\beta_q$ merupakan kuasi-isomorfisme untuk setiap $q$.
 	
 	Ingat bahwa $n \in \Z$ telah dipilih. Dengan alasan yang serupa dengan
@@ -359,6 +359,6 @@ memberikan pembuktian lain yang didasarkan pada barisan spektral.
 	$\tot(X)$ eksak.
 
 	Argumen untuk kasus eksak pada kolom sama persis. Sebagai alternatif,
-	kedua kasus dapat dialihkan satu ke yang lain dengan menggunakan
+	kedua kasus dapat diturunkan satu dari yang lain dengan menggunakan
 	Proposisi~\ref{prop:double-cplx-swap}.
 \end{bukti}

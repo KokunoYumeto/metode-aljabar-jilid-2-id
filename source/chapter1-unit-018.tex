@@ -23,7 +23,7 @@ komutatif berikut?
 % segment-id: o014.li2.chapter1.kan-extensions-along-localization.p002
 Karena $F$ belum tentu memetakan morfisme dalam $S$ ke isomorfisme, funktor
 yang ditunjukkan oleh anak panah putus-putus itu belum tentu ada. Meskipun
-demikian, kita masih dapat mencari pendekatan optimal bagi masalah ekstensi
+demikian, kita masih dapat mencari hampiran terbaik bagi masalah ekstensi
 tersebut, yakni ekstensi Kan kiri $(\Lan_Q F, \eta)$ dan ekstensi Kan kanan
 $(\Ran_Q F, \varepsilon)$. Mulai sekarang, data $\eta$ dan $\varepsilon$ akan
 dihilangkan dari notasi. Tujuan bagian ini ialah mencari syarat-syarat cukup
@@ -33,8 +33,8 @@ keunikannya. Hasil-hasil ini akan digunakan dalam kajian funktor turunan;
 lihat \S~4.6.
 
 % segment-id: o014.li2.chapter1.kan-extensions-along-localization.p003
-Gagasan untuk menangani masalah ini ialah memilih subkategori $\mathcal{C}$
-secara saksama. Kita melanjutkan konvensi dari
+Gagasan untuk menangani masalah ini ialah memilih secara saksama suatu
+subkategori dari $\mathcal{C}$. Kita melanjutkan konvensi dari
 \S\ref{sec:cat-localization}: morfisme yang termasuk dalam $S$ ditandai
 dengan $\rightarrowtail$.
 
@@ -45,7 +45,7 @@ Argumen dalam bagian ini tidak melibatkan asumsi mengenai ukuran himpunan.
 \begin{proposisi}\label{prop:subcat-localization}
 	Misalkan $\mathcal{I}$ suatu subkategori penuh dari $\mathcal{C}$ dan
 	$S \subset \Mor(\mathcal{C})$ suatu sistem multiplikatif kiri (atau
-	kanan). Tetapkan $T := S \cap \Mor(\mathcal{I})$.
+	kanan). Definisikan $T := S \cap \Mor(\mathcal{I})$.
 % segment-id: o014.li2.chapter1.kan-extensions-along-localization.l001
 	\begin{enumerate}[(i)]
 % segment-id: o014.li2.chapter1.kan-extensions-along-localization.i001
@@ -231,7 +231,7 @@ sistem multiplikatif kiri bersifat dual.
 		& {\mathcal{I}[T^{-1}]} \arrow[u, "\iota_Q"] \arrow[ru, "{F'}"'] &
 	\end{tikzcd}\]
 
-	Pilih sembarang funktor kuasi-invers dari $\iota_Q$ dan nyatakan funktor
+	Pilih sembarang funktor kuasi-invers dari $\iota_Q$ dan notasikan funktor
 	itu dengan $\iota_Q^{-1}$. Kita
 	akan menunjukkan bahwa $F' \circ \iota_Q^{-1}$ memberikan ekstensi Kan
 	kiri $\Lan_Q F$, atau secara ekuivalen, bahwa $\Lan_Q F$ ada dan
@@ -242,8 +242,8 @@ sistem multiplikatif kiri bersifat dual.
 	$\Pi_{/\underline{X}}: (Q/\underline{X}) \to \mathcal{C}$, dengan
 	$\underline{X} := QX \in
 	\Obj\left(\mathcal{C}[S^{-1}]\right)$. Berdasarkan Teorema
-	\ref{prop:Kan-limit} (i), keberadaan $\Lan_Q F$ tereduksi pada pembuktian
-	bahwa $\varinjlim F \Pi_{/\underline{X}}$ ada untuk setiap
+	\ref{prop:Kan-limit} (i), untuk membuktikan keberadaan $\Lan_Q F$ cukup
+	dibuktikan bahwa $\varinjlim F \Pi_{/\underline{X}}$ ada untuk setiap
 	$\underline{X}$.
 
 	Selanjutnya, gunakan, dari Lema
@@ -265,7 +265,7 @@ sistem multiplikatif kiri bersifat dual.
 	Tujuan kita ialah membuktikan keberadaan
 	$\varinjlim F\Pi_{/\underline{X}}$, atau secara ekuivalen, keberadaan
 	$\varinjlim_{[X \rightarrowtail U]} FU$. Masalah semula hanya bergantung
-	pada kelas isomorfisme $\underline{X}$, sehingga (i) mereduksinya pada
+	pada kelas isomorfisme $\underline{X}$, sehingga (i) mereduksinya ke
 	kasus $X \in \Obj(\mathcal{I})$. Akan tetapi, diagram berikut memberikan
 	suatu morfisme dalam $S_{X/}$:
 % segment-id: o014.li2.chapter1.kan-extensions-along-localization.g007
@@ -278,7 +278,7 @@ sistem multiplikatif kiri bersifat dual.
 	\end{equation*}
 	Semua anak panah berlabel $\rightarrowtail$ menjadi isomorfisme setelah
 	diterapkan $F$. Ini menunjukkan bahwa dalam kasus ini
-	$\varinjlim FU$ bukan hanya ada, melainkan juga bernilai konstan $FX$;
+	$\varinjlim FU$ bukan saja ada, tetapi juga bernilai konstan $FX$;
 	perhatikan bahwa hal ini sekaligus menunjukkan
 	$F' \simeq (\Lan_Q F) \circ \iota_Q$. Dengan demikian, (ii) terbukti.
 
@@ -306,7 +306,7 @@ sistem multiplikatif kiri bersifat dual.
 	kedua hanya mengharuskan $F$ memetakan
 	$T := S \cap \Mor(\mathcal{I})$ ke isomorfisme. Khususnya, untuk setiap
 	funktor $M: \mathcal{E} \to \mathcal{F}$, syarat pada $F$ langsung
-	diturunkan kepada $MF: \mathcal{C} \to \mathcal{F}$.
+	diwarisi oleh $MF: \mathcal{C} \to \mathcal{F}$.
 
 	Kita hanya membahas kasus $\Lan_Q F$. Dengan notasi dari bukti Proposisi
 	\ref{prop:injective-localization}, $\Lan_Q F$ secara konkret diambil

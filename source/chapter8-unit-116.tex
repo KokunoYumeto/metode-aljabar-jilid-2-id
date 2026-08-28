@@ -1,0 +1,305 @@
+% Unit 116 terjemahan Bahasa Indonesia dari chapter8.tex baris 1566--1703.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter8.bisimplicial-b
+% Cakupan: Bagian 8.8 dari peta Eilenberg--Zilber hingga struktur monoidal.
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.p001
+Definisi~\ref{def:bisimplicial-diagonal} memberikan funktor aditif
+$d:\cate{s}^2\mathcal{A}\to\cate{s}\mathcal{A}$. Tujuan bagian ini ialah
+menjelaskan, dengan asumsi $\mathcal{A}$ kategori abelian, hubungan di antara
+funktor-funktor
+% segment-id: o014.li2.chapter8.bisimplicial-b.q001
+\[ \tot \circ \mathrm{C}^2 , \; \mathrm{C} \circ d: \; \cate{s}^2 \mathcal{A} \rightrightarrows \cate{Ch}_{\geq 0}(\mathcal{A}). \]
+Hubungan ini melibatkan shuffle-$(p,q)$ $\sigma$ dari
+Definisi~\ref{def:pq-shuffle} dan tandanya $\sgn(\sigma)$ dari
+Definisi~\ref{def:pq-shuffle-sgn}.
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.d001
+\begin{definition}\label{def:Eilenberg-Zilber}
+	\index{peta Eilenberg-Zilber@peta Eilenberg--Zilber}
+	\index{peta Alexander-Whitney@peta Alexander--Whitney}
+	Misalkan $\mathcal{A}$ kategori aditif dan $X$ objek bisimplisial dalam
+	$\mathcal{A}$. Untuk $(p,q)\in\Z_{\geq0}^2$ yang ditetapkan, tuliskan
+	$n:=p+q$.
+	\begin{enumerate}[(i)]
+		\item Definisikan $\overline{\mathrm{EZ}}_{p,q}:X_{p,q}\to X_{n,n}$
+		sebagai
+		% segment-id: o014.li2.chapter8.bisimplicial-b.q002
+		\[ \overline{\mathrm{EZ}}_{p, q} := \sum_{\sigma: (p,q)\text{-shuffle}}
+			\sgn(\sigma) \left( \sigma_- \times \sigma_+ : [n] \times [n] \to [p] \times [q] \right)^*. \]
+		Suatu argumen panjang tetapi langsung, yang tidak kita sertakan di sini,
+		menunjukkan bahwa peta-peta tersebut berpadu membentuk
+		morfisme kompleks rantai yang disebut \emph{morfisme shuffle} atau
+		\emph{morfisme Eilenberg--Zilber}:
+		% segment-id: o014.li2.chapter8.bisimplicial-b.q003
+		\[ \overline{\mathrm{EZ}}: \tot(\mathrm{C}^2 X) \to \mathrm{C}(dX). \]
+		\item Definisikan
+		$\overline{\mathrm{AW}}_n:=\sum_{p+q=n}\overline{\mathrm{AW}}_{p,q}:
+		\mathrm{C}(dX)_n\to\tot(\mathrm{C}^2X)_n$, dengan
+		$\overline{\mathrm{AW}}_{p,q}:X_{n,n}\to X_{p,q}$ didefinisikan
+		sebagai $(\lambda^n_p\times\rho^n_q)^*$, tempat
+		% segment-id: o014.li2.chapter8.bisimplicial-b.q004
+		\[\begin{array}{rl}
+			\lambda^n_p: [p] \hookrightarrow [n], & i \mapsto i, \\
+			\rho^n_q: [q] \hookrightarrow [n], & i \mapsto n - q + i.
+		\end{array}\]
+		Dengan cara serupa, peta-peta ini berpadu membentuk morfisme
+		kompleks rantai
+		$\overline{\mathrm{AW}}:\mathrm{C}(dX)\to\tot(\mathrm{C}^2X)$,
+		yang disebut \emph{morfisme Alexander--Whitney}.
+	\end{enumerate}
+\end{definition}
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.p002
+Morfisme-morfisme ini funktorial bukan hanya terhadap $X$, melainkan juga
+terhadap kategori $\mathcal{A}$ dan funktor-funktor di antara kategori
+semacam itu. Morfisme-morfisme tersebut mula-mula diperkenalkan dalam
+topologi, dalam kaitannya dengan homologi hasil kali ruang.
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.p003
+Selanjutnya kita perkenalkan versi ternormalisasi dari
+$\overline{\mathrm{EZ}}$ dan $\overline{\mathrm{AW}}$.
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.p004
+Misalkan $\mathcal{A}$ kategori abelian bermonoidal sedemikian rupa sehingga
+$\otimes:\mathcal{A}\times\mathcal{A}\to\mathcal{A}$ aditif dalam setiap
+variabel. Ambil $A,B\in\Obj(\cate{s}\mathcal{A})$. Karena
+$\mathrm{C}^2(A\boxtimes B)=\mathrm{C}A\boxtimes\mathrm{C}B$, kita punya
+% segment-id: o014.li2.chapter8.bisimplicial-b.q005
+\[ \mathrm{C}A \otimes \mathrm{C}B := \tot\left( \mathrm{C}A \boxtimes \mathrm{C}B \right) = \tot \, \mathrm{C}^2 (A \boxtimes B). \]
+Kita juga menggunakan notasi yang disederhanakan
+% segment-id: o014.li2.chapter8.bisimplicial-b.q006
+\begin{gather*}
+	A \otimes B := d(A \boxtimes B), \\
+	\mathrm{N}A \otimes \mathrm{N}B := \tot\left( \mathrm{N}A \boxtimes \mathrm{N}B \right).
+\end{gather*}
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.l001
+\begin{lemma}\label{prop:EZ-aux}
+	\index[sym1]{EZ@$\overline{\mathrm{EZ}}, \mathrm{EZ}$}
+	\index[sym1]{AW@$\overline{\mathrm{AW}}, \mathrm{AW}$}
+	Tinjau kategori abelian bermonoidal $\mathcal{A}$ di atas. Ingat bahwa
+	untuk setiap $Y\in\Obj(\cate{s}(\mathcal{A}))$,
+	Proposisi~\ref{prop:Dold-Kan-v} mengidentifikasikan $\mathrm{N}Y$
+	dengan $\mathrm{C}Y/\text{bagian degenerat}$. Di bawah identifikasi ini,
+	morfisme $\overline{\mathrm{AW}}$ dan $\overline{\mathrm{EZ}}$ masing-masing
+	berfaktor secara unik melalui diagram komutatif berikut:
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q007
+	\[\begin{tikzcd}
+		\mathrm{C}A \otimes \mathrm{C}B \arrow[r, "{\overline{\mathrm{EZ}}}"] \arrow[twoheadrightarrow, d] & \mathrm{C}(A \otimes B) \arrow[r, "{\overline{\mathrm{AW}}}"] \arrow[twoheadrightarrow, d] & \mathrm{C}A \otimes \mathrm{C}B \arrow[twoheadrightarrow, d] \\
+		\mathrm{N}A \otimes \mathrm{N}B \arrow[r, "\mathrm{EZ}"'] & \mathrm{N}(A \otimes B) \arrow[r, "{\mathrm{AW}}"'] & \mathrm{N}A \otimes \mathrm{N}B .
+	\end{tikzcd}\]
+\end{lemma}
+\begin{proof}
+	Untuk $\mathrm{AW}$, cukup diverifikasi, untuk semua
+	$p,q\geq0$ dan $n:=p+q$, persamaan morfisme dalam $\simpDelta$
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q008
+	\begin{align*}
+		\lambda^n_p \circ \mathrm{s}^j & = \mathrm{s}^j \circ \lambda^{n+1}_{p+1}, \\
+		\rho^n_q \circ \mathrm{s}^j & = \mathrm{s}^{j+n-q} \circ \rho^{n+1}_{q+1},
+	\end{align*}
+	dengan syarat pada $j$ masing-masing $0\leq j\leq p$ dan
+	$0\leq j\leq q$. Verifikasi ini langsung.
+
+	Untuk $\mathrm{EZ}$, misalkan $\sigma$ sebuah shuffle-$(p,q)$ dan
+	$0\leq j\leq p-1$. Tinjau pembatasan
+	$\overline{\mathrm{EZ}}_{p,q}$ pada $\Image(s_j)\otimes B_q$.
+	Pembahasan sebelumnya mengenai shuffle-$(p,q)$ menunjukkan bahwa
+	terdapat tepat satu $0\leq k<n:=p+q$ sedemikian rupa sehingga
+	$\sigma_-(k)=j$ dan $\sigma_-(k+1)=j+1$; pada saat yang sama
+	$\sigma_+(k+1)=\sigma_+(k)$. Ini memberikan persamaan dalam
+	$\simpDelta$
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q009
+	\begin{align*}
+		\mathrm{s}^j \sigma_- \underbracket{\mathrm{d}^k \mathrm{s}^k}_{[n] \leftarrow [n]} & = \mathrm{s}^j \sigma_- : [n] \to [p-1] , \\
+		\sigma_+ \mathrm{d}^k \mathrm{s}^k & = \sigma_+ : [n] \to [q] .
+	\end{align*}
+
+	Dengan menarik balik sepanjang persamaan-persamaan ini, kita melihat bahwa
+	$\overline{\mathrm{EZ}}_{p,q}|_{\Image(s_j)\otimes B_q}$ terkandung
+	dalam bagian yang degenerat melalui $s_k$. Kasus $0\leq j\leq q-1$
+	dan $\overline{\mathrm{EZ}}_{p,q}|_{A_p\otimes\Image(s_j)}$ ditangani
+	dengan cara yang sama.
+\end{proof}
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.p005
+Hasil berikut juga disebut teorema Eilenberg--Zilber yang diperumum.
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.th001
+\begin{theorem}[S.\ Eilenberg, J.\ A.\ Zilber, P.\ Cartier]\label{prop:Eilenberg-Zilber}
+	\index{teorema Eilenberg-Zilber@teorema Eilenberg--Zilber}
+	Misalkan $\mathcal{A}$ kategori abelian dan
+	$X\in\Obj(\cate{s}^2\mathcal{A})$. Morfisme kanonik yang didefinisikan
+	di atas,
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q010
+	$\begin{tikzcd}
+		\tot \left(\mathrm{C}^2(X)\right) \arrow[shift left, r, "\overline{\mathrm{EZ}}"] & \mathrm{C}(d(X)) \arrow[shift left, l, "\overline{\mathrm{AW}}"]
+	\end{tikzcd}$
+	saling invers pada tingkat homologi; khususnya, keduanya
+	kuasi-isomorfisme.
+\end{theorem}
+\begin{proof}
+	% Reference: Kerodon, Proof of Theorem 2.5.7.14
+	Karena $\cate{s}^2\mathcal{A}\simeq\cate{s}(\cate{s}\mathcal{A})$ dan
+	$\cate{Ch}^2_{\geq0}(\mathcal{A})\simeq
+	\cate{Ch}_{\geq0}(\cate{Ch}_{\geq0}(\mathcal{A}))$, korespondensi
+	Dold--Kan memiliki versi ganda, yang tetap kita tulis sebagai ekuivalensi
+	kategori
+	$\Gamma:\cate{Ch}^2_{\geq0}(\mathcal{A})\to\cate{s}^2\mathcal{A}$.
+	Karena itu, kita boleh mengandaikan $X=\Gamma A$ untuk
+	$A\in\Obj(\cate{Ch}^2_{\geq0}(\mathcal{A}))$. Jika
+	$p+q>n$ mengakibatkan $A_{p,q}=0$, kita katakan bahwa $A$ berderajat
+	$\leq n$.
+
+	Mula-mula andaikan $\mathcal{A}=\cate{Ab}$, dengan struktur monoidal
+	dari hasil kali tensor $\otimes=\otimes_{\Z}$. Perhatikan bahwa
+	$\tot$, $\mathrm{C}^2$, $\mathrm{C}$, dan $d$ semuanya funktor aditif
+	eksak kanan dan mempertahankan jumlah langsung sebarang. Morfisme
+	kanonik $\overline{\mathrm{EZ}}$ dan $\overline{\mathrm{AW}}$ juga
+	kompatibel dengan jumlah langsung sebarang. Tuliskan $A$ sebagai
+	gabungan terfilter subobjek-subobjek hingga. Karena kolimit
+	terfilter $\varinjlim$ mempertahankan homologi, masalah tereduksi pada
+	kasus $A$ berderajat $\leq n$ untuk suatu $n\geq0$ tetap. Kita
+	berargumen dengan induksi pada $n$.
+
+	Trunkasi brutal pada $A$ memberikan barisan eksak pendek
+	$0\to A'\to A\to A''\to0$, dengan
+	\begin{compactitem}
+		\item $A'$ berderajat $\leq n-1$;
+		\item semua suku tak nol $A''$ terletak pada bagian $p+q=n$;
+		\item barisan eksak pendek itu terbelah pada setiap biderajat $(p,q)$.
+	\end{compactitem}
+	Deskripsi funktor $\Gamma$ memperlihatkan bahwa
+	$0\to\Gamma A'\to\Gamma A\to\Gamma A''\to0$ juga barisan eksak pendek
+	yang terbelah suku demi suku dalam $\cate{s}^2\cate{Ab}$. Secara ketat,
+	di sini diperlukan versi ganda $\Gamma$, tetapi bentuknya serupa.
+
+	Dengan demikian diperoleh diagram komutatif dengan baris-baris eksak
+	dari kompleks rantai
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q011
+	\[\begin{tikzcd}
+		0 \arrow[r] & \tot\left( \mathrm{C}^2(\Gamma A') \right) \arrow[shift left, d, "\overline{\mathrm{EZ}}"] \arrow[r] & \tot\left( \mathrm{C}^2(\Gamma A) \right) \arrow[shift left, d] \arrow[r] & \tot\left( \mathrm{C}^2(\Gamma A'') \right) \arrow[shift left, d] \arrow[r] & 0 \\
+		0 \arrow[r] & \mathrm{C}(d\Gamma A') \arrow[shift left, u, "\overline{\mathrm{AW}}"] \arrow[r] & \mathrm{C}(d\Gamma A) \arrow[shift left, u] \arrow[r] & \mathrm{C}(d\Gamma A'') \arrow[shift left, u] \arrow[r] & 0.
+	\end{tikzcd}\]
+	Diagram ini secara induktif mereduksi masalah ke kasus $A''$. Dengan
+	kata lain, di bawah hipotesis induksi, masalah semula hanya bergantung
+	pada $(A_{p,q})_{p+q=n}$.
+
+	Karena itu, kita cukup menangani kasus ketika $A$ adalah jumlah
+	langsung beberapa salinan
+	$C\otimes(\mathrm{N}(\Z\Delta^p)\boxtimes
+	\mathrm{N}(\Z\Delta^q))$, dengan $p+q=n$ dan
+	$C\in\Obj(\cate{Ab})$. Selanjutnya kita dapat mereduksinya ke satu
+	salinan untuk satu pasangan $(p,q)$, lalu mengeluarkan $\identity_C$
+	dari semua pemetaan untuk mereduksi pada kasus khusus $C=\Z$.
+	Perhatikan bahwa bagian $\mathrm{N}(\Z\Delta^p)$ pada derajat kurang dari
+	$p$ tidak memengaruhi masalah; hal yang sama berlaku dengan $q$ sebagai
+	pengganti $p$. Sejalan dengan itu,
+	$X=\Gamma A\simeq\Z(\Delta^p\times\Delta^q)$. Berdasarkan
+	Teorema~\ref{prop:Dold-Kan-N-C} dan Lema~\ref{prop:EZ-aux}, cukup
+	dibuktikan bahwa
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q012
+	\begin{equation}\label{eqn:Eilenberg-Zilber-aux}
+		\begin{tikzcd}
+			\mathrm{N}(\Z\Delta^p) \otimes \mathrm{N}(\Z\Delta^q) \arrow[shift left, r, "\mathrm{EZ}"] & \mathrm{N}(\Z(\Delta^p \times \Delta^q)) \arrow[shift left, l, "\mathrm{AW}"]
+		\end{tikzcd}
+		\; \text{saling invers pada tingkat homologi.}
+	\end{equation}
+
+	Poset $[p]$, $[q]$, dan $[p]\times[q]$ masing-masing memiliki elemen
+	terkecil $0$ atau $(0,0)$, sehingga ekuivalensi homotopi $\mathrm{N}i$
+	dan $\mathrm{N}q$ dari Contoh~\ref{eg:homology-poset-e} berlaku. Mudah
+	diperiksa bahwa diagram berikut komutatif:
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q013
+	\begin{equation*}\begin{tikzcd}
+		\Z \otimes \Z \arrow[d, "{\mathrm{N}i \otimes \mathrm{N}i}"'] \arrow[r, "\sim", "\text{standar}"'] & \Z \arrow[d, "{\mathrm{N}i}"] \arrow[r, "\sim", "\text{standar}"'] & \Z \otimes \Z \arrow[d, "{\mathrm{N}i \otimes \mathrm{N}i}"'] \\
+		\mathrm{N}(\Z\Delta^p) \otimes \mathrm{N}(\Z\Delta^q) \arrow[r, "\mathrm{EZ}"'] & \mathrm{N}(\Z(\Delta^p \times \Delta^q)) \arrow[r, "\mathrm{AW}"'] & \mathrm{N}(\Z\Delta^p) \otimes \mathrm{N}(\Z\Delta^q).
+	\end{tikzcd}\end{equation*}
+	Baris pertama terkonsentrasi pada derajat nol, dan isomorfisme standar
+	$\Z\otimes\Z\simeq\Z$ memetakan $1\otimes1$ ke $1$. Verifikasi
+	komutativitas hanya melibatkan suku berderajat nol dari $\mathrm{EZ}$
+	dan $\mathrm{AW}$, sehingga langsung. Ini membuktikan
+	\eqref{eqn:Eilenberg-Zilber-aux}.
+
+	Sekarang kita kembali ke kategori $\mathcal{A}$ yang lebih umum. Andaikan terdapat funktor
+	setia eksak (Proposisi~\ref{prop:faithful-exact})
+	$F:\mathcal{A}\to\cate{Ab}$. Secara definisi, $\tot$, $\mathrm{C}^2$,
+	$\mathrm{C}$, dan $d$ komutatif dengan $F$, sedangkan
+	$\overline{\mathrm{EZ}}$ dan $\overline{\mathrm{AW}}$ jelas kompatibel
+	dengan $F$. Sifat setia dan eksak lalu mereduksi masalah ke kasus yang
+	telah diketahui, yaitu $\mathcal{A}=\cate{Ab}$.
+
+	Jika $\mathcal{A}$ memiliki generator projektif, misalnya
+	$\mathcal{A}=\cated{Mod}R$ untuk suatu gelanggang $R$, selalu ada
+	funktor setia eksak menuju $\cate{Ab}$. Untuk kategori abelian umum
+	$\mathcal{A}$, keberadaan $F$ dijamin oleh Teorema Freyd--Mitchell
+	\ref{prop:FM}; untuk itu, semesta Grothendieck dapat diperbesar
+	seperlunya agar $\mathcal{A}$ menjadi kategori kecil.
+\end{proof}
+
+% segment-id: o014.li2.chapter8.bisimplicial-b.r001
+\begin{remark}[Struktur monoidal]
+	Misalkan $\mathcal{A}$ kategori monoidal dan $\otimes$ aditif dalam
+	setiap variabel. Lema~\ref{prop:EZ-aux} telah memberikan
+	morfisme kanonik berbentuk
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q014
+	\[\begin{tikzcd}[row sep=tiny]
+		\mathrm{C}A \otimes \mathrm{C}B \arrow[r, "{\overline{\mathrm{EZ}}}"] & \mathrm{C}(A \otimes B) \arrow[r, "{\overline{\mathrm{AW}}}"] & \mathrm{C}A \otimes \mathrm{C}B, \\
+		\mathrm{N}A \otimes \mathrm{N}B \arrow[r, "\mathrm{EZ}"'] & \mathrm{N}(A \otimes B) \arrow[r, "{\mathrm{AW}}"'] & \mathrm{N}A \otimes \mathrm{N}B
+	\end{tikzcd}\]
+	untuk $A,B\in\Obj(\cate{s}\mathcal{A})$. Kasus khusus teorema
+	Eilenberg--Zilber yang diperumum untuk $X=A\boxtimes B$ menyatakan
+	bahwa morfisme-morfisme tersebut saling invers pada tingkat homologi.
+	Ingatlah bahwa $\cate{Ch}_{\geq0}(\mathcal{A})$ juga kategori monoidal
+	(Contoh~\ref{eg:tensor-bisimplicial}), dan terdapat morfisme yang jelas
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q015
+	\[\begin{tikzcd}[column sep=large]
+		\munit \;\text{pada derajat nol} \arrow[r, "\sim"] & \mathrm{N}(\mathrm{const}(\munit)) \arrow[shift left, r, "\text{inklusi}"] & \mathrm{C}(\mathrm{const}(\munit)). \arrow[shift left, l, "\text{hasil bagi bagian degenerat}"]
+	\end{tikzcd}\]
+
+	Dari sudut pandang abstrak, morfisme shuffle (atau morfisme
+	Alexander--Whitney) memberikan struktur funktor
+	monoidal longgar kanan (atau longgar kiri) pada $\mathrm{C}$ dan
+	$\mathrm{N}$; lihat \cite[Catatan 3.1.8]{Li1}. Untuk morfisme shuffle,
+	secara kasar ini berarti bahwa $\overline{\mathrm{EZ}}_{p,q}$ dan
+	$\mathrm{EZ}_{p,q}$ memenuhi asosiativitas dan kompatibel dengan unit;
+	kasus $\overline{\mathrm{AW}}$ dan $\mathrm{AW}$ bersifat dual.
+	Pernyataan-pernyataan ini pun dapat diverifikasi secara langsung,
+	meskipun panjang. Misalnya, asosiativitas morfisme shuffle melibatkan
+	\eqref{eqn:shuffle-sign-1}, sedangkan kasus morfisme Alexander--Whitney
+	lebih sederhana.
+
+	Jika $\mathcal{A}$ kategori monoidal simetris,
+	$\overline{\mathrm{EZ}}$ dan $\mathrm{EZ}$ juga mempertahankan struktur
+	braid Koszul yang diperkenalkan dalam \eqref{eqn:Koszul-braiding}.
+	Untuk $\overline{\mathrm{EZ}}$, hal ini setara dengan komutativitas
+	diagram berikut dalam $\mathcal{A}$:
+	% segment-id: o014.li2.chapter8.bisimplicial-b.q016
+	\[\begin{tikzcd}
+		(\mathrm{C}A)_p \otimes (\mathrm{C}B)_q \arrow[r, "{\overline{\mathrm{EZ}}_{p, q}}"] \arrow[d, "{(-1)^{pq} \mathrm{swap}}"'] & \mathrm{C}(A \otimes B)_{p+q} \arrow[d, "{\mathrm{C}(\mathrm{swap})}"] \\
+		(\mathrm{C}B)_q \otimes (\mathrm{C}A)_p \arrow[r, "{\overline{\mathrm{EZ}}_{q, p}}"'] & \mathrm{C}(B \otimes A)_{q+p}.
+	\end{tikzcd}\]
+	Di sini $p,q\in\Z_{\geq0}$. Peta $\mathrm{swap}$ pada kedua kolom
+	berasal dari struktur braid
+	$c(X,Y):X\otimes Y\rightiso Y\otimes X$ pada $\mathcal{A}$ beserta
+	aksinya yang terinduksi suku demi suku pada objek simplisial; peta
+	itu sendiri tidak melibatkan tanda. Bukti langsung mengikuti definisi
+	dan \eqref{eqn:shuffle-sign-0}. Sebaliknya,
+	$\overline{\mathrm{AW}}$ dan $\mathrm{AW}$ tidak selalu kompatibel
+	dengan struktur braid.
+
+	Secara garis besar, funktor korespondensi Dold--Kan $\mathrm{N}$ dari
+	Teorema~\ref{prop:Dold-Kan}, beserta versi tak ternormalisasinya
+	$\mathrm{C}$, bersifat monoidal baik dalam arti longgar kanan maupun
+	longgar kiri. Data yang diperlukan masing-masing diberikan oleh
+	morfisme shuffle dan morfisme Alexander--Whitney. Jika $\mathcal{A}$
+	kategori monoidal simetris, struktur funktor monoidal longgar kanan itu
+	juga simetris. Konsep funktor monoidal bilonggar
+	\cite[Chapters 3, 5]{AM10} memberikan perumusan yang lebih tepat bagi
+	struktur-struktur tersebut.
+
+	% Morfisme shuffle juga memberi penjelasan a priori bagi braid Koszul:
+	% swap pada objek simplisial tidak melibatkan tanda, dan melalui
+	% korespondensi Dold--Kan ia menjadi braid Koszul pada kompleks rantai.
+\end{remark}

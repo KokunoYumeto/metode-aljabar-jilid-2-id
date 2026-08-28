@@ -8,7 +8,7 @@
 \section{Resolusi}\label{sec:resolutions}
 \hypertarget{o014.aljabr2.chapter3.resolutions}{ }
 % segment-id: o014.li2.chapter3.resolutions.p001
-Misalkan $\mathcal{A}$ suatu kategori abelian. Tinjau kompleks $X \in \Obj(\cate{C}(\mathcal{A}))$. Jika $X^n$ merupakan objek injektif (atau objek projektif) di $\mathcal{A}$ untuk setiap $n \in \Z$, maka $X$ dikatakan terdiri atas objek-objek injektif (atau objek-objek projektif). Jangan lupakan fakta sepele bahwa $0$ sekaligus merupakan objek injektif dan objek projektif.
+Misalkan $\mathcal{A}$ suatu kategori abelian. Tinjau kompleks $X \in \Obj(\cate{C}(\mathcal{A}))$. Jika $X^n$ merupakan objek injektif (atau objek projektif) di $\mathcal{A}$ untuk setiap $n \in \Z$, maka $X$ dikatakan terdiri atas objek-objek injektif (atau objek-objek projektif). Perhatikan pula fakta sederhana bahwa $0$ sekaligus merupakan objek injektif dan objek projektif.
 
 % segment-id: o014.li2.chapter3.resolutions.de001
 \begin{definisi}\label{def:resolutions}
@@ -55,7 +55,7 @@ Dengan mengganti $\mathcal{A}$ oleh $\mathcal{A}^{\opp}$, yakni dengan membalik 
 \end{contoh}
 
 % segment-id: o014.li2.chapter3.resolutions.p003
-Persoalannya ialah keberadaan resolusi injektif atau projektif. Berdasarkan dualitas, kita cukup terlebih dahulu membahas konstruksi resolusi injektif. Kasus yang paling sederhana tetaplah $X \in \Obj(\mathcal{A})$. Andaikan $\mathcal{A}$ memiliki cukup banyak objek injektif; lihat Definisi \ref{def:enough-injectives}. Pertama-tama, pilih sembarang monomorfisme $X \to I^0$ dengan $I^0$ objek injektif. Secara rekursif, andaikan telah diperoleh barisan eksak
+Pertanyaan selanjutnya menyangkut keberadaan resolusi injektif atau projektif. Berdasarkan dualitas, kita cukup terlebih dahulu membahas konstruksi resolusi injektif. Kasus yang paling sederhana tetaplah $X \in \Obj(\mathcal{A})$. Andaikan $\mathcal{A}$ memiliki cukup banyak objek injektif; lihat Definisi \ref{def:enough-injectives}. Pertama-tama, pilih sembarang monomorfisme $X \to I^0$ dengan $I^0$ objek injektif. Secara rekursif, andaikan telah diperoleh barisan eksak
 % segment-id: o014.li2.chapter3.resolutions.q005
 \[ 0 \to X \to I^0 \to \cdots \to I^n, \quad n \geq 0, \]
 dengan $I^0, \ldots, I^n$ semuanya objek injektif. Pada langkah awal $n=0$, objek kokernel yang digunakan ialah $\Coker\left[ X \to I^0\right]$; untuk $n \geq 1$, objek itu ialah $\Coker\left[ I^{n-1} \to I^n\right]$. Dalam kedua kasus, pilih objek injektif $I^{n+1}$ dan monomorfisme dari objek kokernel tersebut ke $I^{n+1}$. Dengan mengambil komposisinya, kita memperoleh $I^n \to I^{n+1}$ sedemikian sehingga $0 \to X \to \cdots \to I^{n+1}$ juga eksak. Mengulangi operasi ini menghasilkan resolusi injektif dari $X$.
@@ -85,7 +85,7 @@ Dengan asumsi bahwa $\mathcal{A}$ memiliki cukup banyak objek projektif, konstru
 \end{teorema}
 % segment-id: o014.li2.chapter3.resolutions.pf001
 \begin{bukti}
-	Berdasarkan dualitas, berikut ini hanya dibahas versi dengan $X$ berasal dari $\cate{C}^+(\mathcal{A})$. Untuk (i), secara rekursif andaikan telah diperoleh diagram komutatif
+	Berdasarkan dualitas, cukup dibahas kasus $X$ dalam $\cate{C}^+(\mathcal{A})$. Untuk (i), secara rekursif andaikan telah diperoleh diagram komutatif
 % segment-id: o014.li2.chapter3.resolutions.g002
 	\[\begin{tikzcd}
 		\cdots \arrow[r] & X^{n-1} \arrow[r, "{d_X^{n-1}}"] \arrow[d, "{f^{n-1}}"'] & X^n \arrow[r, "{d_X^n}"] \arrow[d, "{f^n}"] & X^{n+1} \arrow[r] & \cdots \\
@@ -127,7 +127,7 @@ Dengan asumsi bahwa $\mathcal{A}$ memiliki cukup banyak objek projektif, konstru
 	\end{align*}
 	berdasarkan \eqref{eqn:resolution-existence-aux0} dan sifat monomorfisme $f^n$, pemetaan ini jelas merupakan isomorfisme. Perpanjangan ke kanan berhasil.
 
-	Sekarang akan dijelaskan cara memodifikasi $I^n$ dalam keadaan umum agar tereduksi ke kasus ketika \eqref{eqn:resolution-existence-aux0} berlaku. Tinjau morfisme kanonik
+	Sekarang akan dijelaskan cara memodifikasi $I^n$ dalam keadaan umum untuk mereduksi pembuktian ke kasus ketika \eqref{eqn:resolution-existence-aux0} berlaku. Tinjau morfisme kanonik
 % segment-id: o014.li2.chapter3.resolutions.g004
 	\[\begin{tikzcd}
 		I^n \arrow[hookrightarrow, shift left, r, "\iota_1"] & I^n \oplus \left( X^n / \Image\left( d_X^{n-1} \right) \right) \arrow[twoheadrightarrow, shift left, l, "p_1"] \arrow[twoheadrightarrow, shift right, r, "p_2"'] & X^n / \Image\left( d_X^{n-1} \right) \arrow[hookrightarrow, shift right, l, "\iota_2"'] & X^n \arrow[twoheadrightarrow, l, "q"'] .
@@ -150,11 +150,11 @@ Dengan asumsi bahwa $\mathcal{A}$ memiliki cukup banyak objek projektif, konstru
 
 % segment-id: o014.li2.chapter3.resolutions.co001
 \begin{korolari}
-	Misalkan $\mathcal{A}$ memiliki cukup banyak objek injektif (atau objek projektif). Maka, $X \in \Obj(\cate{C}(\mathcal{A}))$ memiliki resolusi injektif $X \to I$ (atau resolusi projektif $P \to X$) jika dan hanya jika $\Hm^n(X) = 0$ untuk $n \ll 0$ (atau $n \gg 0$).
+	Misalkan $\mathcal{A}$ memiliki cukup banyak objek injektif (atau objek projektif). Maka $X \in \Obj(\cate{C}(\mathcal{A}))$ memiliki resolusi injektif $X \to I$ (atau resolusi projektif $P \to X$) jika dan hanya jika $\Hm^n(X) = 0$ untuk $n \ll 0$ (atau $n \gg 0$).
 \end{korolari}
 % segment-id: o014.li2.chapter3.resolutions.pf002
 \begin{bukti}
-	Ambil kasus resolusi injektif sebagai contoh. Syarat kuasi-isomorfisme dalam definisi resolusi memberikan arah ``hanya jika''. Di sisi lain, untuk $m \ll 0$, funktor pemenggalan memberikan kuasi-isomorfisme $X \to \tau^{\geq m} X \in \Obj(\cate{C}^+(\mathcal{A}))$. Dengan demikian, arah ``jika'' tereduksi ke Proposisi \ref{prop:resolution-existence}.
+	Ambil kasus resolusi injektif sebagai contoh. Syarat kuasi-isomorfisme dalam definisi resolusi memberikan arah ``hanya jika''. Di sisi lain, untuk $m \ll 0$, funktor pemenggalan memberikan kuasi-isomorfisme $X \to \tau^{\geq m} X \in \Obj(\cate{C}^+(\mathcal{A}))$. Dengan demikian, arah ``jika'' mengikuti dari Proposisi \ref{prop:resolution-existence}.
 \end{bukti}
 
 % segment-id: o014.li2.chapter3.resolutions.p005
@@ -162,7 +162,7 @@ Nilai teoretis resolusi injektif atau projektif dapat dilihat dari hasil dasar b
 
 % segment-id: o014.li2.chapter3.resolutions.th002
 \begin{teorema}\label{prop:resolution-homotopy}
-	Tetapkan suatu kuasi-isomorfisme $\alpha: X \to Y$ di $\cate{C}(\mathcal{A})$.
+	Misalkan $\alpha: X \to Y$ suatu kuasi-isomorfisme di $\cate{C}(\mathcal{A})$.
 % segment-id: o014.li2.chapter3.resolutions.l003
 	\begin{itemize}
 % segment-id: o014.li2.chapter3.resolutions.i005
@@ -204,7 +204,7 @@ Pendekatan mana pun yang dipilih tidak dapat lepas dari sifat berikut.
 \end{lema}
 % segment-id: o014.li2.chapter3.resolutions.pf003
 \begin{bukti}
-	Cukuplah menangani kasus $I$. Tetapkan $\alpha \in \Hom_{\cate{C}(\mathcal{A})}(X,I)$. Kita mencari suatu keluarga morfisme $h^n: X^n \to I^{n-1}$ sedemikian sehingga
+	Cukup bahas kasus $I$. Misalkan $\alpha \in \Hom_{\cate{C}(\mathcal{A})}(X,I)$. Kita mencari suatu keluarga morfisme $h^n: X^n \to I^{n-1}$ sedemikian sehingga
 % segment-id: o014.li2.chapter3.resolutions.q013
 	\begin{equation}\label{eqn:alpha-homotopy-aux}
 		\alpha^n = d_I^{n-1} h^n + h^{n+1} d_X^n , \quad n \in \Z.
@@ -274,7 +274,7 @@ Dari sudut pandang kategori turunan, informasi yang diberikan oleh Teorema \ref{
 
 % segment-id: o014.li2.chapter3.resolutions.le003
 \begin{lema}\label{prop:split-differential}
-	Misalkan $A, C \in \Obj(\cate{C}(\mathcal{A}))$. Untuk setiap $n \in \Z$, definisikan $B^n := A^n \oplus C^n$, yang dilengkapi dengan morfisme jelas $A^n \xrightarrow{i^n} B^n \xrightarrow{p^n} C^n$. Kita memiliki bijeksi
+	Misalkan $A, C \in \Obj(\cate{C}(\mathcal{A}))$. Untuk setiap $n \in \Z$, definisikan $B^n := A^n \oplus C^n$, yang dilengkapi dengan morfisme jelas $A^n \xrightarrow{i^n} B^n \xrightarrow{p^n} C^n$. Terdapat bijeksi
 % segment-id: o014.li2.chapter3.resolutions.q016
 	\[ \begin{gathered}
 		\Hom_{\cate{C}(\mathcal{A})}(C, A[1]) \xrightarrow{1:1} \\
@@ -293,14 +293,14 @@ Dari sudut pandang kategori turunan, informasi yang diberikan oleh Teorema \ref{
 \end{lema}
 % segment-id: o014.li2.chapter3.resolutions.pf005
 \begin{bukti}
-	Setelah diketahui bahwa $(B^n, d_B^n)_n$ merupakan kompleks dan bahwa $(i^n)_n$ serta $(p^n)_n$ merupakan morfisme kompleks, keeksakan $0 \to A \to B \to C \to 0$ dapat diperiksa suku demi suku dan tidak menyisakan persoalan.
+	Setelah diketahui bahwa $(B^n, d_B^n)_n$ merupakan kompleks dan bahwa $(i^n)_n$ serta $(p^n)_n$ merupakan morfisme kompleks, keeksakan $0 \to A \to B \to C \to 0$ langsung diperoleh dengan memeriksanya suku demi suku.
 	
-	Syarat perlu dan cukup agar $d_B^n i^n = i^{n+1} d_A^n$ dan $d_C^n p^n = p^{n+1} d_B^n$ selalu berlaku ialah bahwa terdapat suatu keluarga $\delta^n: C^n \to A^{n+1}$ sedemikian sehingga $d_B^n$ dapat dinyatakan sebagai matriks segitiga atas dalam pernyataan. Persoalannya tereduksi menjadi pencirian $(\delta^n)_n$ yang membuat $d_B^{n+1} d_B^n = 0$. Perhitungan rutin memberikan syarat perlu dan cukup $d_A^{n+1} \delta^n + \delta^{n+1} d_C^n = 0$, yakni $d_{A[1]}^n \delta^n = \delta^{n+1} d_C^n$.
+	Syarat perlu dan cukup agar $d_B^n i^n = i^{n+1} d_A^n$ dan $d_C^n p^n = p^{n+1} d_B^n$ selalu berlaku ialah bahwa terdapat suatu keluarga $\delta^n: C^n \to A^{n+1}$ sedemikian sehingga $d_B^n$ dapat dinyatakan sebagai matriks segitiga atas dalam pernyataan. Dengan demikian, cukup dicirikan keluarga $(\delta^n)_n$ yang membuat $d_B^{n+1} d_B^n = 0$. Perhitungan rutin memberikan syarat perlu dan cukup $d_A^{n+1} \delta^n + \delta^{n+1} d_C^n = 0$, yakni $d_{A[1]}^n \delta^n = \delta^{n+1} d_C^n$.
 \end{bukti}
 
 % segment-id: o014.li2.chapter3.resolutions.pr001
 \begin{proposisi}[Lema Tapal Kuda (Horseshoe Lemma)]\label{prop:horseshoe}
-	\index{lematapalkuda@Lema Tapal Kuda (Horseshoe Lemma)}
+	\index{lema tapal kuda@Lema Tapal Kuda (Horseshoe Lemma)}
 	Misalkan $0 \to A \to B \to C \to 0$ suatu barisan eksak pendek di $\cate{C}(\mathcal{A})$, dengan $A, B, C \in \Obj(\cate{C}^+(\mathcal{A}))$. Ambil sembarang resolusi injektif $\epsilon: A \to I$ dan $\eta: C \to K$ yang memiliki sifat-sifat seperti dalam Teorema \ref{prop:resolution-existence}. Maka data tersebut dapat diperluas menjadi diagram komutatif yang eksak pada baris-barisnya di $\cate{C}^+(\mathcal{A})$,
 % segment-id: o014.li2.chapter3.resolutions.g011
 	\[\begin{tikzcd}
@@ -311,7 +311,7 @@ Dari sudut pandang kategori turunan, informasi yang diberikan oleh Teorema \ref{
 \end{proposisi}
 
 % segment-id: o014.li2.chapter3.resolutions.p009
-Pembaca dapat mencoba memberikan pembuktian yang relatif sederhana untuk kasus khusus $A, B, C \in \Obj(\mathcal{A})$.
+Pembaca dapat mencoba membuktikan kasus khusus $A, B, C \in \Obj(\mathcal{A})$ dengan argumen yang relatif sederhana.
 
 % segment-id: o014.li2.chapter3.resolutions.pf006
 \begin{bukti}
@@ -390,7 +390,7 @@ Resolusi Cartan--Eilenberg yang akan diperkenalkan dapat dibayangkan sebagai res
 % segment-id: o014.li2.chapter3.resolutions.i014
 		\item Ambil $N \in \Z$ sedemikian sehingga $n < N \implies X^n = 0$. Maka, untuk semua $(p, q) \in \Z^2$, berlaku $p < N \implies I^{p, q} = 0$.
 % segment-id: o014.li2.chapter3.resolutions.i015
-		\item Untuk setiap $p \in \Z$, kita memiliki resolusi injektif dari $X^p \in \Obj(\mathcal{A})$,
+		\item Untuk setiap $p \in \Z$, diperoleh resolusi injektif dari $X^p \in \Obj(\mathcal{A})$,
 % segment-id: o014.li2.chapter3.resolutions.q022
 		\[ 0 \to X^p \xrightarrow{\epsilon^p} I^{p, 0} \xrightarrow{\dvert^{p, 0}} I^{p, 1} \xrightarrow{\dvert^{(p, 1)}} \cdots . \]
 % segment-id: o014.li2.chapter3.resolutions.i016
@@ -458,6 +458,6 @@ $\epsilon$ juga dapat dipandang sebagai morfisme bikompleks $X \to I$, asalkan $
 	Resolusi Cartan--Eilenberg memberikan cara lain yang tidak langsung untuk membangun resolusi injektif bagi $X \in \Obj(\cate{C}^+(\mathcal{A}))$. Pertama, pandang $X$ sebagai bikompleks yang terkonsentrasi pada baris ke-$0$. Mudah dilihat bahwa $\epsilon: X \to I$ menjadi morfisme di $\cate{C}^2_f(\mathcal{A})$. Dalam notasi \S\ref{sec:double-cplx-coh}, ambil terlebih dahulu kohomologi pada arah vertikal $\Hm_{\mathrm{II}}$ dari $X$ dan $I$, lalu kohomologi pada arah horizontal $\Hm_{\mathrm{I}}$. Morfisme terinduksi $\Hm_{\mathrm{I}} \Hm_{\mathrm{II}} (X) \to \Hm_{\mathrm{I}} \Hm_{\mathrm{II}} (I)$ merupakan isomorfisme. Dengan demikian, Teorema \ref{prop:double-cplx-tot} menunjukkan bahwa
 % segment-id: o014.li2.chapter3.resolutions.q029
 	\[ \tot(\epsilon): X = \tot(X) \to \tot(I) \]
-	merupakan kuasi-isomorfisme di $\cate{C}^+(\mathcal{A})$. Perhatikan bahwa $\tot^n(I)$ merupakan jumlah langsung hingga dari objek-objek injektif untuk setiap $n \in \Z$. Dengan demikian, kita memperoleh resolusi injektif $X \to \tot(I)$.
+	merupakan kuasi-isomorfisme di $\cate{C}^+(\mathcal{A})$. Perhatikan bahwa $\tot^n(I)$ merupakan jumlah langsung hingga dari objek-objek injektif untuk setiap $n \in \Z$. Dengan demikian, diperoleh resolusi injektif $X \to \tot(I)$.
 \end{catatan}
 	

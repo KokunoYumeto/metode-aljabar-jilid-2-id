@@ -1,0 +1,743 @@
+% Unit 072 terjemahan Bahasa Indonesia dari chapter6.tex baris 1--320.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.overview-g-modules-resolutions
+% Cakupan: pembukaan Bab 6 dan Bagian 6.1 lengkap tentang modul-G serta
+% resolusi bebas standar dan ternormalisasi; berhenti tepat sebelum Bagian 6.2
+% pada baris 321.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.h001
+\chapter{Homologi dan Kohomologi Grup}\label{sec:group-coh}
+\hypertarget{o014.aljabr2.chapter6.overview-g-modules-resolutions}{ }
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p001
+Misalkan $G$ suatu grup dan $\Bbbk$ suatu gelanggang komutatif. Yang dimaksud
+dengan modul-$G$ ialah modul-$\Bbbk$ yang dilengkapi aksi kiri $G$ yang linear;
+aksinya ditulis sebagai perkalian kiri. Dalam banyak situasi, $\Bbbk$ biasanya
+diambil sama dengan $\Z$. Semua modul-$G$ membentuk kategori abelian
+$G\dcate{Mod}$, yang isomorfik dengan $\Bbbk[G]\dcate{Mod}$, dengan
+$\Bbbk[G]$ aljabar grup dari $G$. Untuk modul-$G$ $M$, definisikan
+modul-$\Bbbk$
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q001
+\begin{align*}
+	\text{invarian} \quad M^G & := \left\{x \in M: \forall g \in G, \; gx=x \right\}, \\
+	\text{koinvarian} \quad M_G & := M / \lrangle{gx-x: g \in G, x \in M}.
+\end{align*}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p002
+Dari sudut pandang aljabar, kohomologi $\Hm^n(G,M)$ dan homologi
+$\Hm_n(G,M)$ dari modul-$G$ $M$ masing-masing merupakan nilai pada $M$ dari
+funktor turunan kanan $(\cdot)^G$ dan funktor turunan kiri $(\cdot)_G$, dengan
+$n\in\Z_{\geq0}$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p003
+Homologi dan kohomologi grup memiliki sejarah yang cukup panjang. Sekitar tahun
+1935, W.\ Hurewicz mengkaji ruang topologis tersambung lintasan $E$ yang grup
+homotopi tingkat tingginya memenuhi
+$n>1\implies\pi_n(E)=0$. Ia membuktikan bahwa grup homologi dan kohomologinya
+sepenuhnya ditentukan oleh grup fundamental $\pi_1(E)$; ini mungkin merupakan
+rumusan kohomologi grup paling awal yang tercatat. Seiring kemajuan pesat
+aljabar homologis pada abad ke-20, kohomologi dan homologi grup segera
+memperoleh rumusan aljabar murni dan digunakan untuk menangani persoalan dalam
+aljabar itu sendiri. Dewasa ini, keduanya telah menjadi perangkat dasar dalam
+teori bilangan, topologi, dan geometri.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p004
+Di sisi lain, $\Hm^n(G,M)$ dan $\Hm_n(G,M)$ masing-masing dapat diidentifikasi
+dengan $\Ext^n(\Bbbk,M)$ dan $\Tor_n(\Bbbk,M)$ dalam
+$\Bbbk[G]\dcate{Mod}$, dengan $\Bbbk$ dipandang sebagai modul-$G$ trivial.
+Dengan menghitung $\Ext$ dan $\Tor$ melalui suatu resolusi projektif dari
+$\Bbbk$, diperoleh deskripsi lain bagi $\Hm^n(G,M)$ dan $\Hm_n(G,M)$. Bahkan,
+kita akan memberikan resolusi kanonik
+$\mathsf{L}\to\Bbbk$ bagi $\Bbbk$ sebagai modul kiri (atau kanan)
+$\Bbbk[G]$. Dari resolusi tersebut diperoleh kompleks kokrantai standar
+$(C^n(G,M))_n$ (atau kompleks rantai $(C_n(G,M))_n$) yang menyajikan
+$\Hm^n(G,M)$ (atau $\Hm_n(G,M)$); lihat
+Proposisi~\ref{prop:groupcoh-cochain} dan \ref{prop:grouph-chain}. Selanjutnya,
+\S\S\ref{sec:homology-computation}---\ref{sec:bar-resolution} akan menafsirkan
+resolusi kanonik ini dari sudut pandang teori simpleks.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p005
+Hal-hal di atas merupakan isi utama
+\S\S\ref{sec:G-mod}---\ref{sec:group-coh-sub}. Bab ini memakai dua sudut
+pandang sekaligus: teori klasik funktor turunan (khususnya funktor-$\delta$
+universal beserta karakterisasinya) dan kategori turunan. Kelebihan teori
+klasik ialah nuansa operasionalnya, sedangkan kategori turunan menyediakan
+informasi yang lebih halus daripada tiap-tiap grup kohomologi atau homologi dan
+sering kali juga menawarkan gagasan yang lebih jernih. Kompleks kokrantai atau
+rantai standar memberikan informasi yang paling terperinci dan kanonik, sebab
+konstruksi itu bekerja pada tingkat kompleks.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p006
+Dalam \S\ref{sec:grp-low-degree}, kita akan memberikan penafsiran konkret bagi
+$\Hm^1$ dan $\Hm^2$: keduanya berturut-turut bersesuaian dengan homomorfisme
+silang dan kelas ekuivalensi ekstensi $G$ oleh grup abelian. Makna terperinci
+ekstensi grup dapat dilihat pada Definisi~\ref{def:group-ext}. Bahkan, jika
+semua ekstensi grup dari $G$ oleh $M$ disusun menjadi 2-kategori
+$\cate{Ext}(G,M)$, pemenggalan
+$\tau^{\leq2}\overline{C}(G,M)$ dari kompleks standar ternormalisasi tepat
+merupakan suatu perwujudan linear dari $\cate{Ext}(G,M)$; inilah isi
+Catatan~\ref{rem:Ext-incarnation}.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p007
+Untuk sembarang homomorfisme grup $\varphi:H\to G$ dan modul-$G$ $M$, dapat
+didefinisikan tarikan balik $\varphi^*M$ sebagai modul-$H$. Berdasarkan
+konstruksi umum dalam teori modul, adjoin kanan dan adjoin kiri dari
+$\varphi^*$ dapat dituliskan dengan mudah. Jika $\varphi$ merupakan inklusi
+suatu subgrup, $\varphi^*$ disebut funktor restriksi modul-$G$ dan juga ditulis
+$\Res^G_H$, sedangkan adjoin kanan (atau kirinya) ditulis $\Ind^G_H$ (atau
+$\iInd^G_H$); keduanya disebut funktor induksi. Sifat-sifatnya akan menjadi
+pokok bahasan \S\ref{sec:induced-module}. Secara khusus, kita akan membuktikan
+apa yang disebut Lema Shapiro (Teorema~\ref{prop:Shapiro}):
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q002
+\[ \Hm^n\left(G, \Ind^G_H(N)\right) \simeq \Hm^n(H, N), \quad \Hm_n\left(G, \iInd^G_H(N)\right) \simeq \Hm_n(H, N). \]
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p008
+Melanjutkan pembahasan umum tentang $\varphi^*$,
+\S\ref{sec:change-of-group} akan mendefinisikan keluarga homomorfisme kanonik
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q003
+\[ \Hm^n(G, M) \to \Hm^n(H, \varphi^* M), \quad \Hm_n(H, \varphi^* M) \to \Hm_n(G, M). \]
+Homomorfisme ini dapat dipadukan dengan funktorialitas kohomologi atau homologi,
+sehingga setiap homomorfisme ekuivarian $f:M\to N$ (atau $f:N\to M$)
+menginduksi homomorfisme kanonik yang bersesuaian, yaitu $\Hm^n(f)$ (atau
+$\Hm_n(f)$), dengan $M$ modul-$G$ dan $N$ modul-$H$; lihat
+Definisi~\ref{def:change-of-group-equiv}. Untuk kasus khusus $n=2$,
+\S\ref{sec:group-ext-revisited} akan menafsirkan homomorfisme kanonik tersebut
+dari sudut pandang ekstensi grup.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p009
+Untuk memperoleh gambaran konkret, \S\ref{sec:coh-cyclic-free} membahas contoh
+grup siklik hingga dan grup bebas. Argumen yang digunakan memadukan teknik
+teori grup dan kohomologi secara serasi. Dimensi kohomologis dan
+dimensi homologis grup (Definisi~\ref{def:group-dim}) juga akan muncul pada
+saat yang tepat.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p010
+Nuansa konkret teori grup berlanjut dalam \S\ref{sec:group-finite-index}. Untuk
+kasus $(G:H)$ hingga, kita akan menyatakan sifat-sifat lebih lanjut dari funktor
+restriksi dan induksi; bahkan, dalam keadaan ini
+$\Ind^G_H=\iInd^G_H$. Definisi--Proposisi~\ref{def:cor} akan memberikan
+keluarga homomorfisme kanonik
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q004
+\[ \mathrm{cor}^n: \Hm^n(H, M) \to \Hm^n(G, M), \quad \mathrm{cor}_n: \Hm_n(G, M) \to \Hm_n(H, M), \]
+dengan $M$ suatu modul-$G$ dan $\Res^G_HM$ juga disingkat menjadi $M$ untuk
+menghemat notasi. Homomorfisme ini disebut korestriksi dan arahnya berlawanan
+dengan homomorfisme kanonik yang diinduksi oleh $H\hookrightarrow G$ (yaitu
+restriksi, yang ditulis $\mathrm{res}^n$ dan $\mathrm{res}_n$). Keduanya
+memenuhi identitas dasar
+$\mathrm{cor}^n\mathrm{res}^n=(G:H)$ dan
+$\mathrm{res}_n\mathrm{cor}_n=(G:H)$
+(Proposisi~\ref{prop:res-cor}), sedangkan kasus khusus
+$\mathrm{cor}_1:\Hm_1(G,\Z)\to\Hm_1(H,\Z)$ menjadi homomorfisme transfer
+klasik dalam teori grup,
+$\mathrm{Ver}_{G|H}:G_{\mathrm{ab}}\to H_{\mathrm{ab}}$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p011
+Misalkan $H$ subgrup normal dari $G$ dan $M$ modul-$G$. Dalam keadaan ini,
+$\Hm^q(H,M)$ dan $\Hm_q(H,M)$ menjadi modul-$(G/H)$. Barisan spektral
+Lyndon--Hochschild--Serre yang dibahas dalam \S\ref{sec:LHS-SS},
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q005
+\begin{align*}
+	E_2^{p, q} = \Hm^p(G/H, \Hm^q(H, M)) & \Rightarrow \Hm^{p+q}(G, M), \\
+	E^2_{p, q} = \Hm_p(G/H, \Hm_q(H, M)) & \Rightarrow \Hm_{p+q}(G, M),
+\end{align*}
+merupakan perangkat tingkat lanjut yang mutlak diperlukan dalam teori
+kohomologi dan homologi grup; lihat Teorema~\ref{prop:LHS-SS}. Informasi dalam
+barisan eksak suku-suku berderajat rendahnya sangat berguna. Barisan spektral
+Lyndon--Hochschild--Serre sekaligus merupakan penerapan barisan spektral
+Grothendieck dan berasal dari suatu filtrasi kanonik pada kompleks standar.
+Deskripsi terakhir memberikan informasi yang lebih halus, misalnya struktur
+multiplikatif yang disebutkan dalam Catatan~\ref{rem:LHS-SS-mult}.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p012
+Lebih tepatnya, operasi multiplikatif pada kohomologi grup ialah hasil kali
+cawan yang berasal dari topologi. Dalam \S\ref{sec:cup-product}, kita akan
+mendekatinya dari dua sudut pandang. Pertama, hasil kali cawan dipahami sebagai
+pencerminan alami operasi hasil kali tensor modul-$G$; bahasa kategori turunan
+membantu dalam hal ini. Kedua, rumusnya dituliskan langsung pada tingkat
+kompleks standar (Definisi--Proposisi~\ref{def:group-cup-3}). Deskripsi kedua
+tentu merupakan perwujudan eksplisit dari deskripsi pertama. Kunci penurunannya
+ialah mengangkat $\Bbbk\rightiso\Bbbk\otimes\Bbbk$ secara tepat menjadi
+``pembenaman diagonal''
+$\Delta:\mathsf{L}\to\mathsf{L}\otimes\mathsf{L}$; beberapa tanda dalam
+argumen ini perlu ditangani dengan hati-hati.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p013
+Jika $G$ hingga, kohomologi Tate $\TaHm^n(G,M)$ yang diperkenalkan dalam
+\S\ref{sec:Tate-coh} memadukan kohomologi dan homologi. Konstruksinya bergantung
+pada homomorfisme kanonik yang khas bagi grup hingga,
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q006
+\[ \nu: M_G \to M^G, \quad (\text{citra dari }x \in M) \mapsto \sum_{g \in G} gx. \]
+Untuk $n\geq1$ (atau $n\leq-2$), kohomologi Tate sama dengan $\Hm^n(G,M)$
+(atau $\Hm_{-n-1}(G,M)$), sedangkan untuk $n=0$ (atau $n=-1$), kohomologi
+tersebut sama dengan $\Coker(\nu)$ (atau $\Ker(\nu)$). Kohomologi Tate tetap
+memenuhi sifat-sifat seperti barisan eksak panjang dan Lema Shapiro. Dalam
+banyak hal, teori ini bahkan lebih mudah dioperasikan daripada kohomologi atau
+homologi dan mempunyai penerapan yang sangat menonjol dalam teori bilangan.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p014
+Teori di atas hanya membahas grup diskret; kasus grup yang dilengkapi topologi
+jauh lebih rumit. Grup profinit $G$ dan modul-$G$ mulus yang dibahas dalam
+\S\ref{sec:profinite-cohomology} merupakan salah satu kasus khusus yang
+sederhana sekaligus berguna; latar belakangnya terdapat dalam
+\S\ref{sec:profinite-groups}. Pada dasarnya, teori ini tetap bersifat aljabar.
+Kohomologi yang bersesuaian dapat dipahami sebagai funktor
+turunan kanan, atau secara ekuivalen didefinisikan sebagai $\varinjlim$ dari
+kohomologi grup hingga; versi kontinu kompleks standar menyediakan cara
+perhitungan lain. Dalam teori bilangan, kasus utama yang diminati ialah ketika
+$G$ merupakan grup Galois atau grup fundamental aritmetika.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p015
+Terakhir, \S\ref{sec:nonabelian-coh} memperkenalkan kohomologi grup nonabelian.
+Untuk grup nonabelian, biasanya hanya $\Hm^0$ dan $\Hm^1$ yang dapat
+didefinisikan, sehingga barisan eksak panjangnya pun terbatas
+(Teorema~\ref{prop:nonabelian-long}). Teori ini sangat sesuai untuk
+mengklasifikasikan objek geometri atau aljabar, sebab grup simetri objek-objek
+tersebut kerap nonabelian. Beberapa contoh akan dibahas kemudian dalam
+\S\ref{sec:Galois-H1}. Konstruksi-konstruksi ini juga berlaku bagi grup
+profinit.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.n001
+\begin{petunjukbacaan}
+	Peran gelanggang koefisien $\Bbbk$ dalam bab ini bersifat sekunder dan sering
+	diambil sama dengan $\Z$; lihat penjelasan dalam
+	Catatan~\ref{rem:Gmod-k}. Pembaca dapat menyesuaikan dengan kebutuhannya dan
+	melewati argumen yang melibatkan kategori turunan; langkah ini tidak akan
+	mengganggu sebagian besar penerapan klasik. Secara khusus, hasil kali cawan
+	pada kohomologi dapat diperlakukan sepenuhnya melalui operasi eksplisit
+	dalam Definisi--Proposisi~\ref{def:group-cup-3}. Konsep modul-$G$ (lihat
+	\S\ref{sec:G-mod}) sesekali muncul sebagai contoh atau latihan dalam bab-bab
+	berikutnya dan biasanya hanya melibatkan definisi dasar. Pengecualiannya
+	ialah \S\ref{sec:descent-Galois} dan \S\ref{sec:Galois-H1}, yang masing-masing
+	memakai modul-$G$ mulus untuk grup profinit beserta kohomologinya. Selain itu,
+	pembaca yang berminat pada teori bilangan sebaiknya menguasai isi
+	\S\S\ref{sec:Tate-coh}---\ref{sec:nonabelian-coh}.
+\end{petunjukbacaan}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.h002
+\section{Modul-\texorpdfstring{$G$}{G} dan Resolusinya}\label{sec:G-mod}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p016
+Kecuali dinyatakan lain, dalam bagian ini $\Bbbk$ selalu merupakan gelanggang
+komutatif dan $G$ suatu grup. Tuliskan unsur identitas grup $G$ sebagai $1_G$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.d001
+\begin{definisi}\label{def:G-mod}
+	\index{modul-$G$}
+	\index[sym1]{G-Mod@$G\dcate{Mod}$}
+	Suatu \emph{modul-$G$} dengan koefisien dalam $\Bbbk$ ialah modul-$\Bbbk$
+	$M$ yang dilengkapi aksi kiri $G$. Aksi kiri $G\times M\to M$ ditulis
+	sebagai perkalian dan memenuhi
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q007
+	\begin{align*}
+		g(m + m') & = gm + gm', \\
+		g(tm) & = t(gm),
+	\end{align*}
+	untuk sembarang $g\in G$, $t\in\Bbbk$, dan $m,m'\in M$. Dengan kata lain,
+	$M$ dilengkapi aksi $G$ yang linear.
+
+	Homomorfisme $f:M_1\to M_2$ antara dua modul-$G$ didefinisikan sebagai
+	homomorfisme modul-$\Bbbk$ $f:M_1\to M_2$ yang memenuhi sifat ekuivarian
+	$f(gm_1)=gf(m_1)$ untuk sembarang $g\in G$ dan $m_1\in M_1$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p017
+Secara tegas, struktur di atas seharusnya disebut modul-$G$ kiri. Modul-$G$
+kanan dapat didefinisikan dengan cara yang sepenuhnya serupa dan sama artinya
+dengan modul-$G^{\opp}$ kiri. Jika tidak menimbulkan kekeliruan, gelanggang
+koefisien $\Bbbk$ dihilangkan dari notasi dan kategori semua modul-$G$ ditulis
+$G\dcate{Mod}$. Kategori ini $\Bbbk$-linear
+(Definisi~\ref{def:k-linear-cat}).
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.ex001
+\begin{contoh}\label{eg:trivial-G-mod}
+	\index{modul-$G$!trivial (trivial)}
+	Lengkapi $\Bbbk$ dengan aksi trivial $G$, yaitu $gm=m$. Objek yang diperoleh
+	disebut \emph{modul-$G$ trivial} dan cukup ditulis $\Bbbk$.
+\end{contoh}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.d002
+\begin{definisi}
+	Misalkan $M$ suatu modul-$G$. Jika submodul-$\Bbbk$ $N\subset M$ tertutup
+	terhadap aksi $G$, maka $N$ disebut submodul-$G$. Lengkapi modul hasil bagi
+	$M/N$ dengan aksi $G$ melalui $g(m+N)=gm+N$; objek ini disebut modul-$G$
+	hasil bagi yang bersesuaian.
+\end{definisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p018
+Dari $G$ dapat dibangun aljabar grup $\Bbbk[G]$; lihat
+\cite[Definisi 5.6.3]{Li1}. Setiap unsurnya dapat ditulis secara unik dalam
+bentuk $\sum_{g\in G}a_gg$, dengan hanya berhingga banyak koefisien
+$a_g\in\Bbbk$ yang tak nol. Mulai sekarang, $G$ dipandang sebagai himpunan
+bagian dari $\Bbbk[G]$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pr001
+\begin{proposisi}\label{prop:G-mod-kG}
+	Terdapat isomorfisme kategori
+	$G\dcate{Mod}\rightiso\Bbbk[G]\dcate{Mod}$ sebagai berikut. Isomorfisme ini
+	mempertahankan modul-$\Bbbk$ yang mendasarinya. Jika $M$ suatu modul-$G$,
+	perkalian skalarnya sebagai modul kiri $\Bbbk[G]$ berasal dari homomorfisme
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q008
+	\[ \Bbbk[G] \dotimes{\Bbbk} M \to M, \quad (\sum_g a_g g) \otimes m \mapsto \sum_g a_g (gm), \]
+	sedangkan homomorfisme modul-$G$ bersesuaian dengan homomorfisme modul
+	$\Bbbk[G]$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf001
+\begin{bukti}
+	Funktor invers ditentukan sebagai berikut. Untuk suatu modul kiri $\Bbbk[G]$
+	$M$, gunakan pembenaman monoid multiplikatif $G\hookrightarrow\Bbbk[G]$
+	untuk membuat $G$ beraksi dari kiri pada $M$, sehingga $M$ menjadi modul-$G$.
+	Tanpa kesulitan dapat diverifikasi bahwa kedua arah terdefinisi dengan baik
+	dan saling invers.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p019
+Sebagai akibatnya, $G\dcate{Mod}$ merupakan kategori abelian $\Bbbk$-linear,
+sebab demikian pula $\Bbbk[G]\dcate{Mod}$. Sifat-sifat submodul-$G$ dan
+modul-$G$ hasil bagi cukup diterjemahkan ke kasus modul $\Bbbk[G]$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.d003
+\begin{definisi}\label{def:HomG}
+	\index[sym1]{HomG@$\Hom_G$}
+	Tuliskan $\Hom$ dalam $G\dcate{Mod}$ sebagai $\Hom_G$. Di bawah korespondensi
+dalam Proposisi~\ref{prop:G-mod-kG}, objek ini juga sama dengan
+	$\Hom_{\Bbbk[G]}$ dalam $\Bbbk[G]\dcate{Mod}$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p020
+Beberapa operasi dasar pada modul-$\Bbbk$ mudah diangkat ke konteks modul-$G$:
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.l001
+\begin{description}
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.i001
+	\item[Jumlah langsung dan produk langsung] Untuk suatu keluarga modul-$G$
+	$(M_i)_{i\in I}$, lengkapi modul-$\Bbbk$ $\prod_{i\in I}M_i$ dan
+	$\bigoplus_{i\in I}M_i$ dengan aksi kiri $G$
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q009
+	\[ g (m_i)_{i \in I} := (gm_i)_{i \in I}, \]
+	yang disebut aksi diagonal. Dengan aksi ini, $\prod_{i\in I}M_i$ dan
+	$\bigoplus_{i\in I}M_i$ menjadi modul-$G$.
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.i002
+	\item[Hasil kali tensor] Untuk modul-$G$ $M$ dan $N$, lengkapi
+	$M\otimes N:=M\dotimes{\Bbbk}N$ dengan aksi kiri diagonal $G$:
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q010
+	\[ g (x \otimes y) = gx \otimes gy, \quad x \in M, \quad y \in N ; \]
+	karena $(x,y)\mapsto gx\otimes gy$ merupakan pemetaan bilinear, rumus ini
+	terdefinisi dengan baik. Jelas bahwa
+	$x\otimes y\mapsto y\otimes x$ mendefinisikan isomorfisme modul-$G$
+	$M\otimes N\simeq N\otimes M$.
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.i003
+	\item[Modul $\Hom$] Untuk modul-$G$ $M$ dan $N$, homomorfisme
+	modul-$\Bbbk$ di antaranya membentuk modul-$\Bbbk$
+	$\Hom(M,N):=\Hom_{\Bbbk}(M,N)$. Lengkapi $\Hom(M,N)$ dengan aksi kiri $G$
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q011
+	\[ ({}^g f)(x) = g(f(g^{-1} x)), \quad f \in \Hom(M, N), \quad x \in M, \]
+	dengan $g^{-1}$ dan $g$ di ruas kanan masing-masing berasal dari aksi kiri
+	$G$ pada $M$ dan $N$. Sebagai komposisi tiga homomorfisme modul-$\Bbbk$,
+	${}^gf$ berada dalam $\Hom(M,N)$. Dengan demikian, ${}^gf$ dapat dipahami
+	sebagai ``konjugasi'' $gfg^{-1}$, dan sifat-sifat yang diperlukan untuk
+	struktur modul-$G$ pun menjadi jelas.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.i004
+	\item[Modul kontragradien] Dalam konstruksi modul $\Hom$, ambil
+	$N=\Bbbk$ sebagai modul-$G$ trivial. Dengan demikian, $\Hom(M,\Bbbk)$
+	menjadi modul-$G$ yang disebut modul kontragradien dari $M$. Aksi $G$ padanya
+	diberikan oleh ${}^gf=f\circ g^{-1}$.
+	\index{modul-$G$!kontragradien (contragredient)}
+\end{description}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p021
+Semua konstruksi ini funktorial terhadap $M$ dan $N$. Definisi tersebut segera
+memberikan
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q012
+\begin{align*}
+	\Hom_G(M, N) & = \Hom(M, N)^G \\
+	& := \left\{f \in \Hom(M, N): \forall g \in G, \; {}^g f = f \right\}.
+\end{align*}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p022
+Sehubungan dengan isomorfisme kategori dalam
+Proposisi~\ref{prop:G-mod-kG}, jumlah langsung dan produk langsung modul-$G$
+masing-masing ialah jumlah langsung dan produk langsung modul $\Bbbk[G]$.
+Struktur modul-$G$ pada hasil kali tensor dan modul $\Hom$ sedikit lebih rumit;
+dari sudut pandang teori modul, struktur tersebut sesungguhnya bersesuaian
+dengan struktur aljabar Hopf pada $\Bbbk[G]$
+(Contoh~\ref{eg:group-Hopf-algebra}). Pembaca yang berminat dapat
+membandingkannya dengan pembahasan terkait dalam \S\ref{sec:bialgebra} dan
+\S\ref{sec:duality-examples}; kita tidak akan menguraikannya di sini.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pr002
+\begin{proposisi}\label{prop:Gmod-monoidal}
+	Terhadap operasi hasil kali tensor, $G\dcate{Mod}$ menjadi kategori monoidal
+	simetris dengan modul-$G$ trivial $\Bbbk$ sebagai objek unit.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf002
+\begin{bukti}
+	Ini merupakan akibat langsung dari definisi di atas.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p023
+Selain itu, isomorfisme kanonik yang lazim dalam $\Bbbk\dcate{Mod}$,
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.g001
+\begin{equation*}
+	\begin{tikzcd}[row sep=tiny]
+		\Hom(L \otimes M, N) \arrow[leftrightarrow, r, "\sim"] & \Hom(L, \Hom(M, N)) \\
+		\varphi \arrow[mapsto, r] & {\left[ w \mapsto \varphi(w \otimes (\cdot)) \right]} \\
+		{\left[ w \otimes x \mapsto \psi(w)(x) \right]} & \psi \arrow[mapsto, l]
+	\end{tikzcd}
+\end{equation*}
+juga terangkat ke tingkat modul-$G$. Jika $L$, $M$, dan $N$ merupakan
+modul-$G$, dan hasil kali tensor serta $\Hom$ di atas dilengkapi struktur
+modul-$G$ yang telah didefinisikan, maka kedua arah merupakan isomorfisme
+modul-$G$; pembaca dipersilakan memverifikasinya dengan teliti.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p024
+Sebagai akibatnya, ${}^g\varphi=\varphi$ ekuivalen dengan
+${}^g\psi=\psi$, sehingga diperoleh adjungsi
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.e001
+\begin{equation}\label{eqn:G-mod-tensor-Hom}
+	\begin{tikzcd}
+		\Hom_G(L \otimes M, N) \arrow[leftrightarrow, r, "\sim"] & \Hom_G(L, \Hom(M, N)),
+	\end{tikzcd}
+\end{equation}
+dengan $L$, $M$, dan $N$ semuanya modul-$G$. Berikut sebuah penerapan
+sederhana.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pr003
+\begin{proposisi}\label{prop:group-tensor-proj}
+	Misalkan $L$ dan $M$ modul-$G$, dengan $L$ projektif sebagai modul-$G$ dan
+	$M$ projektif sebagai modul-$\Bbbk$. Maka $L\otimes M$ projektif sebagai
+	modul-$G$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf003
+\begin{bukti}
+	Adjungsi \eqref{eqn:G-mod-tensor-Hom} menunjukkan bahwa funktor
+	$(\cdot)\otimes M:G\dcate{Mod}\to G\dcate{Mod}$ mempunyai adjoin kanan eksak
+	$\Hom(M,\cdot)$. Karena itu,
+	Proposisi~\ref{prop:adjoint-injective-projective} menyiratkan bahwa
+	$(\cdot)\otimes M$ mempertahankan objek projektif.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.d004
+\begin{definisi}[Restriksi dan inflasi]\label{def:Res-Infl}
+	\index{modul-$G$!restriksi/inflasi (restriction/inflation)}
+	\index[sym1]{ResGH@$\Res^G_H$}
+	\index[sym1]{InflGH@$\mathrm{Infl}^G_{G/H}$}
+	Untuk setiap homomorfisme grup $\varphi:H\to G$, terdapat funktor yang
+	bersesuaian
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q013
+	\[ \varphi^*: G\dcate{Mod} \to H\dcate{Mod}; \]
+	bagi modul-$G$ $M$, citranya oleh $\varphi^*$ ialah modul-$\Bbbk$ yang sama,
+	$M$, dengan aksi $H$ yang diberikan oleh $hm:=\varphi(h)m$. Dua kasus penting
+	dari funktor $\varphi^*$ ialah:
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.l002
+	\begin{description}
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.i005
+		\item[Restriksi] Untuk subgrup $H\subset G$, ambil
+		$\varphi:H\hookrightarrow G$. Funktor yang bersesuaian
+		$\Res^G_H:G\dcate{Mod}\to H\dcate{Mod}$ membatasi aksi grup pada $H$.
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.i006
+		\item[Inflasi] Untuk subgrup normal $H\lhd G$, ambil
+		$\varphi:G\twoheadrightarrow G/H$. Funktor yang bersesuaian
+		$\mathrm{Infl}^G_{G/H}:(G/H)\dcate{Mod}\to G\dcate{Mod}$ menarik balik
+		aksi grup ke $G$.
+	\end{description}
+\end{definisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p025
+Perhatikan bahwa jika terdapat rangkaian homomorfisme grup
+$H\xrightarrow{\varphi}G\xrightarrow{\psi}F$, maka funktor-funktor yang
+bersesuaian memenuhi $\varphi^*\psi^*=(\psi\varphi)^*$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p026
+Jika sudut pandang aljabar grup dipakai, homomorfisme $\varphi:H\to G$ meluas
+menjadi homomorfisme aljabar-$\Bbbk$ $\Bbbk[H]\to\Bbbk[G]$, dan funktor yang
+bersesuaian $\Bbbk[G]\dcate{Mod}\to\Bbbk[H]\dcate{Mod}$ tepat bersesuaian
+dengan $\varphi^*$. Funktor ini juga dapat dinyatakan melalui hasil kali tensor
+sebagai
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.e002
+\begin{equation}\label{eqn:G-module-pullback-tensor}
+	\varphi^* M \simeq \Bbbk[G] \dotimes{\Bbbk[G]} M, \quad \Bbbk[G] \;\text{melalui $\varphi$ dipandang sebagai bimodul}\; (\Bbbk[H], \Bbbk[G]).
+\end{equation}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p027
+Adjoin kiri dan adjoin kanan dari funktor $\varphi^*$, beserta isomorfisme
+adjungsi yang bersesuaian, dapat dituliskan secara eksplisit.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pr004
+\begin{proposisi}\label{prop:pullback-two-adjoint}
+	Gunakan notasi di atas. Untuk suatu homomorfisme grup $\varphi:H\to G$,
+	sembarang modul-$G$ $M$, dan sembarang modul-$H$ $N$, terdapat isomorfisme
+	kanonik modul-$\Bbbk$ berikut:
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.g002
+	\[\begin{tikzcd}[row sep=tiny]
+		\Hom_H(\varphi^* M, N) \arrow[leftrightarrow, r, "\sim"] & \Hom_G\left( M, \Hom_H(\Bbbk[G], N) \right) \\
+		\theta \arrow[mapsto, r] & {[x \mapsto [G \ni g \mapsto \theta(gx)] ]} \\
+		{[x \mapsto \xi(x)(1_G)]} & \xi, \arrow[mapsto, l] \\
+		\Hom_H(N, \varphi^* M) \arrow[leftrightarrow, r, "\sim"] & \Hom_G\left( \Bbbk[G] \dotimes{\Bbbk[H]} N, M \right) \\
+		\psi \arrow[mapsto, r] & {[g \otimes y \mapsto g\psi(y)]} \\
+		{[y \mapsto \eta(1_G \otimes y) ]} & \eta \arrow[mapsto, l].
+	 \end{tikzcd}\]
+	Di sini, $\Bbbk[G]$ dipandang sekaligus sebagai bimodul
+	$(\Bbbk[H],\Bbbk[G])$ dan bimodul $(\Bbbk[G],\Bbbk[H])$. Dengan cara ini,
+	$\Hom_H(\Bbbk[G],N)$ dan $\Bbbk[G]\dotimes{\Bbbk[H]}N$ dilengkapi struktur
+	modul-$G$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf004
+\begin{bukti}
+	Uraikan langsung definisinya untuk memverifikasi bahwa kedua pasang pemetaan
+	merupakan homomorfisme modul-$\Bbbk$ yang terdefinisi dengan baik;
+	perhitungannya tidak rumit. Setelah hal ini diverifikasi, sifat saling invers
+	menjadi jelas. Cara lain ialah menerapkan teori umum dalam
+	\cite[Korolari 6.6.8]{Li1}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p028
+Karena $G\dcate{Mod}$ kategori abelian, resolusi projektif dan resolusi
+injektif modul-$G$ dapat dibahas secara alami. Untuk tema bab ini, yang paling
+penting ialah resolusi projektif dari modul-$G$ trivial $\Bbbk$. Resolusi
+tersebut tidak hanya ada, tetapi juga mempunyai pilihan yang kanonik dan
+eksplisit.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.d005
+\begin{definisi}\label{def:resolution-trivial-module}
+	Misalkan $G$ suatu grup. Untuk setiap $n\in\Z_{\geq0}$, definisikan
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q014
+	\[ \mathsf{L}_n := \text{modul-$\Bbbk$ bebas dengan basis $G^{n+1}$}, \]
+	yang unsur-unsurnya ditulis sebagai kombinasi linear-$\Bbbk$ dari
+	$(g_0,\ldots,g_n)\in G^{n+1}$. Untuk setiap $n\geq1$, definisikan
+	homomorfisme
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q015
+	\begin{align*}
+		\partial_n, \partial'_n: \mathsf{L}_n & \to \mathsf{L}_{n-1}, \\
+		\partial_n\left( g_0, \ldots, g_n \right) & = \sum_{k=0}^n (-1)^{n-k} (\ldots, \widehat{g_k}, \ldots), \\
+		\partial'_n\left( g_0, \ldots, g_n \right) & = \sum_{k=0}^n (-1)^k (\ldots, \widehat{g_k}, \ldots),
+	\end{align*}
+	dengan $\widehat{g_k}$ menandakan bahwa suku tersebut dihilangkan; jadi,
+	$\partial'_n=(-1)^n\partial_n$. Definisikan pula homomorfisme
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q016
+	\[ \partial_0 = \partial'_0: \mathsf{L}_0 \to \Bbbk, \quad (g_0) \mapsto 1. \]
+
+	Definisikan aksi
+	$g(g_0,\ldots,g_n)=(gg_0,\ldots,gg_n)$ (atau
+	$(g_0,\ldots,g_n)g=(g_0g,\ldots,g_ng)$) agar $\mathsf{L}_n$ menjadi
+	modul-$G$ kiri (atau kanan), dan lengkapi $\Bbbk$ dengan aksi trivial $G$.
+	Dengan demikian, setiap $\partial_n$ dan $\partial'_n$ merupakan
+	homomorfisme modul-$G$ kiri (atau kanan).
+\end{definisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p029
+Jelas bahwa $(\mathsf{L}_n,\partial_n)_n$ dan
+$(\mathsf{L}_n,\partial'_n)_n$ hanya berbeda melalui pembalikan
+$(g_0,\ldots,g_n)\mapsto(g_n,\ldots,g_0)$. Pembalikan ini berkomutasi dengan
+aksi kiri maupun kanan $G$, sehingga cukup ditangani salah satu dari
+$\partial_n$ dan $\partial'_n$ untuk semua sifat berikut.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.r001
+\begin{catatan}\label{rem:augmentation-kG}
+	\index{homomorfisme augmentasi (augmentation homomorphism)}
+	Jika $\mathsf{L}_0$ diidentifikasi dengan $\Bbbk[G]$, maka
+	$\partial_0=\partial'_0:\mathsf{L}_0\to\Bbbk$ diidentifikasi dengan
+	pemetaan
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q017
+	\[ \Bbbk[G] \to \Bbbk, \quad \sum_g a_g g \mapsto \sum_g a_g; \]
+	jelas bahwa pemetaan ini juga merupakan homomorfisme surjektif aljabar
+	$\Bbbk$. Pemetaan tersebut disebut \emph{homomorfisme augmentasi} dari
+	$\Bbbk[G]$, dan kernelnya
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q018
+	\[ \mathfrak{I} := \left\{ \sum_g a_g g : \sum_g a_g = 0 \right\} \]
+	disebut \emph{ideal augmentasi} dari $\Bbbk[G]$. Sebagai modul-$\Bbbk$,
+	$\mathfrak{I}$ jelas terurai terhadap basis berikut:
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q019
+	\[ \mathfrak{I} = \bigoplus_{\substack{g \in G \\ g \neq 1_G}} \Bbbk (g - 1_G). \]
+	\index{ideal augmentasi (augmentation ideal)}
+	\index[sym1]{I-aug@$\mathfrak{I}$}
+\end{catatan}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.le001
+\begin{lema}\label{prop:L-acyclic}
+	Kompleks
+	$\cdots\to\mathsf{L}_n\xrightarrow{\partial_n}\cdots
+	\xrightarrow{\partial_0}\Bbbk\to0$ yang didefinisikan di atas eksak. Jika
+	dipandang sebagai kompleks modul-$\Bbbk$, morfisme identitasnya homotopik nol.
+	Pernyataan yang sama berlaku jika $\partial_n$ diganti dengan $\partial'_n$.
+\end{lema}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf005
+\begin{bukti}
+	Cukup bahas versi $\partial'_n$. Untuk setiap $n\geq1$, perhatikan bahwa
+	$\partial'_{n-1}\partial'_n$ memetakan $(g_0,\ldots,g_n)$ ke suatu jumlah
+	unsur berbentuk
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q020
+	\[ \pm (\ldots, \widehat{g_p}, \ldots, \widehat{g_q}, \ldots), \quad 0 \leq p < q \leq n. \]
+	Tanda-tandanya saling meniadakan berpasangan, sehingga diperoleh suatu
+	kompleks; verifikasi sederhananya diserahkan kepada pembaca.
+
+	Selanjutnya, untuk setiap $n\geq0$, definisikan homomorfisme modul-$\Bbbk$
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q021
+	\[ s_n: \mathsf{L}_n \to \mathsf{L}_{n+1}, \quad (g_0, \ldots, g_n) \mapsto (1_G, g_0, \ldots, g_n), \]
+	dan definisikan $s_{-1}:\Bbbk\to\mathsf{L}_0$ dengan memetakan
+	$1\in\Bbbk$ ke $1_G\in\mathsf{L}_0$. Mudah dilihat bahwa
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q022
+	\[ \partial'_{n+1} s_n + s_{n-1} \partial'_n = \identity_{\mathsf{L}_n} \]
+	untuk setiap $n\geq-1$, dengan konvensi $\mathsf{L}_{-1}:=\Bbbk$ dan
+	$\partial'_{-1}:=0$. Hal ini menunjukkan bahwa
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q023
+	\[ \cdots \to \mathsf{L}_n \xrightarrow{\partial'_n} \cdots \xrightarrow{\partial'_0} \Bbbk \to 0 \]
+	memiliki morfisme identitas yang homotopik nol sebagai kompleks
+	modul-$\Bbbk$, sehingga kompleks tersebut eksak.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.x001
+\index[sym1]{L-cplx@$\mathsf{L}$, $\overline{\mathsf{L}}$}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p030
+Tuliskan kompleks
+$\cdots\to\mathsf{L}_n\xrightarrow{\partial_n}\cdots\to\mathsf{L}_0\to0$
+sebagai $\mathsf{L}$. Kompleks ini dapat dipandang sebagai kompleks pada
+derajat $\ldots,-n,\ldots,0$, atau sebagai kompleks rantai pada derajat
+$\ldots,n,\ldots,0$. Dalam kedua pandangan tersebut,
+$\partial_0=\partial'_0$ memberikan morfisme $\mathsf{L}\to\Bbbk$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p031
+Kompleks dan morfisme ini dapat dipahami baik sebagai kompleks modul-$G$ kiri
+maupun sebagai kompleks modul-$G$ kanan. Berdasarkan simetri, kita terutama akan
+menyatakan versi kiri.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pr005
+\begin{proposisi}\label{prop:trivial-mod-resolution}
+	Morfisme $\mathsf{L}\to\Bbbk$ yang didefinisikan di atas memberikan resolusi
+	bebas dari modul-$G$ trivial $\Bbbk$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf006
+\begin{bukti}
+	Ketika $(h_1,\ldots,h_n)\in G^n$ bervariasi,
+	$(1_G,h_1,\ldots,h_n)$ merentang suatu basis dari $\mathsf{L}^n$ sebagai
+	modul kiri $\Bbbk[G]$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p032
+Ada pula resolusi bebas kanonik dari $\Bbbk$ yang lebih ringkas dan kadang-kadang
+lebih praktis daripada $\mathsf{L}$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.dp001
+\begin{definisi-proposisi}[Kompleks ternormalisasi]
+	Untuk setiap $n>0$, definisikan $\mathrm{Triv}_n\subset\mathsf{L}_n$ sebagai
+	submodul-$G$ yang dihasilkan oleh unsur-unsur
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q024
+	\[ (g_0, \ldots, g_n) \in G^{n+1}, \quad \exists\, 0 \leq k < n, \; g_k = g_{k+1}. \]
+	Definisikan pula $\mathrm{Triv}_0=0$. Baik terhadap $\partial_n$ maupun
+	$\partial'_n$, objek-objek ini membentuk subkompleks $\mathrm{Triv}$ dari
+	$\mathsf{L}$. Normalisasi $\mathsf{L}$ kemudian didefinisikan sebagai
+	kompleks hasil bagi
+	$\overline{\mathsf{L}}:=\mathsf{L}/\mathrm{Triv}$. Jika dipandang sebagai
+	kompleks modul-$\Bbbk$, morfisme identitas pada $\mathrm{Triv}$ homotopik nol.
+\end{definisi-proposisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf007
+\begin{bukti}
+	Jelas bahwa $\mathrm{Triv}_n$ invarian terhadap
+	$(g_0,\ldots,g_n)\mapsto(g_n,\ldots,g_0)$, sehingga versi $\partial_n$ dan
+	$\partial'_n$ tidak berbeda; cukup ditangani versi terakhir. Jika
+	$(g_0,\ldots,g_n)$ memenuhi $g_k=g_{k+1}$, maka dalam
+	$\partial'_n(g_0,\ldots,g_n)=
+	\sum_i(-1)^i(\ldots,\widehat{g_i},\ldots)$, suku-suku yang bersesuaian dengan
+	$i=k,k+1$ saling meniadakan, sedangkan suku-suku lain berada dalam
+	$\mathrm{Triv}_{n-1}$. Ini membuktikan bahwa objek-objek tersebut membentuk
+	subkompleks.
+
+	Untuk menunjukkan bahwa morfisme identitas $\mathrm{Triv}$ homotopik nol
+	sebagai kompleks modul-$\Bbbk$, cukup batasi homotopi
+	$s_n:\mathsf{L}_n\to\mathsf{L}_{n+1}$ dalam pembuktian
+	Lema~\ref{prop:L-acyclic} pada $\mathrm{Triv}_n$, untuk $n\geq0$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p033
+Berdasarkan konstruksi, $\mathsf{L}\to\Bbbk$ bernilai nol pada
+$\mathrm{Triv}$, sehingga memfaktor melalui
+$\overline{\mathsf{L}}\to\Bbbk$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pr006
+\begin{proposisi}\label{prop:trivial-mod-nor-resolution}
+	Morfisme $\overline{\mathsf{L}}\to\Bbbk$ yang didefinisikan di atas
+	memberikan resolusi bebas dari modul-$G$ trivial $\Bbbk$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.pf008
+\begin{bukti}
+	Pertama, setiap
+	$\overline{\mathsf{L}}_n=\mathsf{L}_n/\mathrm{Triv}_n$ merupakan modul-$G$
+	bebas: suatu basis diberikan oleh citra
+	$(1_G,h_1,\ldots,h_n)\in G^{n+1}$ dengan $h_1\neq1_G$ dan
+	$h_k\neq h_{k+1}$ untuk $1\leq k<n$.
+
+	Kedua, keasiklikan $\mathrm{Triv}$ menyiratkan bahwa
+	$\mathsf{L}\to\overline{\mathsf{L}}$ merupakan kuasi-isomorfisme. Karena
+	itu, Proposisi~\ref{prop:trivial-mod-resolution} menyiratkan bahwa
+	$\overline{\mathsf{L}}\to\Bbbk$ merupakan kuasi-isomorfisme.
+\end{bukti}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p034
+Untuk penerapan selanjutnya, akan lebih praktis menyatakan basis dalam bentuk
+``bar'' berikut. Pertama, untuk bilangan bulat $a\leq b$ dan suatu rangkaian
+unsur $(g_a,\ldots,g_b)\in G^{b-a+1}$, perkenalkan notasi singkat
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.q025
+\[ g_{[a, b]} := g_a g_{a+1} \cdots g_b. \]
+Sebagai modul-$G$ kiri, basis $\mathsf{L}_n$ dapat diambil sebagai
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.e003
+\begin{equation}\label{eqn:L-basis}
+	(g_1 | \cdots | g_n) := \left( 1_G, g_{[1, 1]}, g_{[1, 2]}, \ldots, g_{[1, n]} \right), \quad (g_1, \ldots, g_n) \in G^n.
+\end{equation}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p035
+Perhatikan bahwa
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.e004
+\begin{equation}\label{eqn:L-basis-partial}\begin{aligned}
+	\partial_n (g_1 | \ldots | g_n) & = (-1)^n \left( g_{[1, 1]}, \ldots, g_{[1, n]}\right) + (-1)^{n-1} \left(1_G, g_{[1, 2]}, \ldots, g_{[1, n]}\right) \\
+	& \quad + \cdots + \left( 1_G, g_{[1, 1]}, \ldots, g_{[1, n-1]}\right) \\
+	& = (-1)^n g_1 (g_2 | \cdots | g_n) + \sum_{k=1}^{n-1} (-1)^{n-k} (\cdots | g_k g_{k+1}| \cdots) \\
+	& \quad + (g_1 | \cdots |g_{n-1}), \\
+	\partial'_n(g_1 | \cdots | g_n) & = g_1 (g_2 | \cdots | g_n) + \sum_{k=1}^{n-1} (-1)^k (\cdots | g_k g_{k+1}| \cdots) \\
+	& \quad + (-1)^n (g_1 | \cdots |g_{n-1}).
+\end{aligned}\end{equation}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p036
+Sekarang tinjau bayangan cermin dari \eqref{eqn:L-basis}. Ambil basis
+$\mathsf{L}_n$ sebagai modul-$G$ kanan berupa
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.e005
+\begin{equation}\label{eqn:L-basis-right}
+	(g_1 | \cdots | g_n)^\dagger := \left( g_{[1, n]}, \ldots, g_{[n-1, n]} , g_{[n, n]}, 1_G \right), \quad (g_1, \ldots, g_n) \in G^n.
+\end{equation}
+Dengan demikian,
+$\partial'_n(g_1|\cdots|g_n)^\dagger=
+(-1)^n\partial_n(g_1|\cdots|g_n)^\dagger$ sama dengan
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.e006
+\begin{multline}\label{eqn:L-basis-partial-right}
+	\left( g_{[2, n]}, \ldots, g_{[n, n]}, 1_G \right) - \left( g_{[1, n]}, g_{[3, n]}, \ldots, g_{[n, n]}, 1_G \right) + \cdots \\
+	+ (-1)^n \left( g_{[1, n-1]}, \ldots, g_{[n-1, n-1]} \right) g_n  \\
+	= (g_2 | \cdots | g_n)^\dagger + \sum_{k=1}^{n-1} (-1)^k (\cdots | g_k g_{k+1} | \cdots)^\dagger \\
+	+ (-1)^n (g_1 | \cdots | g_{n-1})^\dagger g_n.
+\end{multline}
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.p037
+Kasus kompleks ternormalisasi mengikuti dengan cara yang sama: basis
+$\overline{\mathsf{L}}_n$ sebagai modul-$G$ kiri atau kanan masing-masing
+dapat diambil berupa
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.e007
+\begin{equation}\label{eqn:nor-cochain}
+	(g_1| \cdots | g_n) \quad \text{atau} \quad (g_1 | \cdots | g_n)^\dagger \quad \bmod \mathrm{Triv}_n,
+\end{equation}
+dengan syarat $g_k\neq1_G$ untuk setiap $1\leq k\leq n$.
+
+% segment-id: o014.li2.chapter6.overview-g-modules-resolutions.r002
+\begin{catatan}
+	Resolusi di atas mempunyai penafsiran topologis yang mendalam:
+	$\mathsf{L}$ ialah kompleks rantai yang diberikan oleh torsor universal
+	$\mathrm{E}G$ di atas ruang pengklasifikasi $\mathrm{B}G$; lihat
+	Contoh~\ref{eg:classifying-space-std-cplx} dan
+	\ref{eg:classifying-contractible}.
+\end{catatan}

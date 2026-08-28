@@ -9,7 +9,7 @@
 
 % segment-id: o014.li2.chapter1.subquotients.p001
 Pertama-tama, kita mengingat kembali pengertian monomorfisme dan
-epimorfisme. Tetapkan sebuah kategori $\mathcal{C}$.
+epimorfisme. Misalkan $\mathcal{C}$ sebuah kategori.
 
 % segment-id: o014.li2.chapter1.subquotients.l001
 \begin{itemize}
@@ -28,7 +28,7 @@ epimorfisme. Tetapkan sebuah kategori $\mathcal{C}$.
 \index{epimorfisme (epimorphism)}
 
 % segment-id: o014.li2.chapter1.subquotients.p002
-Dengan segera terlihat bahwa $f: X \to Y$ merupakan monomorfisme jika dan
+Langsung terlihat bahwa $f: X \to Y$ merupakan monomorfisme jika dan
 hanya jika $f_*: \Hom(T, X) \to \Hom(T, Y)$ injektif untuk setiap $T$;
 $f: X \to Y$ merupakan epimorfisme jika dan hanya jika
 $f^*: \Hom(Y, T) \to \Hom(X, T)$ injektif untuk setiap $T$. Sifat
@@ -41,7 +41,7 @@ hanya jika $f^{\opp}$ merupakan epimorfisme.
 	maka sifat universal menunjukkan bahwa morfisme kanonik
 	$\iota: \Ker(f,g) \to X$ merupakan monomorfisme. Secara dual, jika
 	kopenyama $\Coker(f,g)$ ada, maka morfisme kanonik
-	$p: Y \to \Coker(f,g)$ merupakan epimorfisme. Pengamatan sederhana lainnya
+	$p: Y \to \Coker(f,g)$ merupakan epimorfisme. Pengamatan sederhana lain
 	ialah sebagai berikut: jika $\mathcal{C}$ mempunyai objek nol, yang menurut
 	konvensi dinotasikan dengan $0$, maka $0 \to X$ merupakan monomorfisme dan
 	$X \to 0$ merupakan epimorfisme. Pembaca dipersilakan memeriksa
@@ -50,7 +50,7 @@ hanya jika $f^{\opp}$ merupakan epimorfisme.
 
 % segment-id: o014.li2.chapter1.subquotients.pr001
 \begin{proposisi}\label{prop:epi-mono-isomorphism}
-	Tinjau morfisme-morfisme $X \xrightarrow{a} Y \xrightarrow{b} Z$. Andaikan bahwa
+	Tinjau morfisme-morfisme $X \xrightarrow{a} Y \xrightarrow{b} Z$. Andaikan
 	$b$ merupakan monomorfisme atau $a$ merupakan epimorfisme. Maka
 	$ba: X \to Z$ merupakan isomorfisme jika dan hanya jika $a$ dan $b$
 	keduanya merupakan isomorfisme.
@@ -58,8 +58,8 @@ hanya jika $f^{\opp}$ merupakan epimorfisme.
 
 % segment-id: o014.li2.chapter1.subquotients.pf001
 \begin{bukti}
-	Salah satu arah sudah jelas. Selanjutnya, andaikan bahwa $ba$ merupakan
-	isomorfisme dan $b$ merupakan monomorfisme. Tetapkan
+	Salah satu arah sudah jelas. Selanjutnya, andaikan $ba$ merupakan
+	isomorfisme dan $b$ merupakan monomorfisme. Definisikan
 	$c := a(ba)^{-1}: Z \to Y$; maka $bc = \identity_Z$. Selain itu,
 	$b(cb) = (bc)b = b$. Karena $b$ merupakan monomorfisme, hukum kanselasi
 	kiri memberikan $cb = \identity_Y$. Jadi, $b$ merupakan isomorfisme, dan
@@ -71,8 +71,8 @@ hanya jika $f^{\opp}$ merupakan epimorfisme.
 Dalam kategori yang lazim digunakan dalam aljabar, seperti $\cate{Set}$,
 $\cate{Ab}$, dan $R\dcate{Mod}$, sifat monomorfisme dan epimorfisme suatu
 morfisme masing-masing ekuivalen dengan sifat injektif dan surjektifnya
-sebagai pemetaan. Dalam contoh-contoh ini, kita juga dapat membahas lebih jauh
-himpunan bagian, subgrup, dan sebagainya. Konsep tersebut dapat diperluas ke
+sebagai pemetaan. Dalam contoh-contoh tersebut, kita juga dapat membicarakan
+himpunan bagian, subgrup, dan sebagainya. Konsep itu dapat diperluas ke
 kategori umum, tetapi diperlukan satu langkah tambahan. Kita akan
 merumuskannya dengan bahasa himpunan terurut parsial.
 
@@ -94,7 +94,7 @@ setara dengan adanya diagram komutatif
 \end{tikzcd}\]
 
 % segment-id: o014.li2.chapter1.subquotients.p005
-Keunikan memberikan $g_2 g_1 = \identity_{S_1}$, dan dengan cara yang sama
+Keunikan memberikan $g_2 g_1 = \identity_{S_1}$, dan demikian pula
 $g_1 g_2 = \identity_{S_2}$. Dengan kata lain, $S_1$ dan $S_2$ ekuivalen jika
 dan hanya jika terdapat isomorfisme $g: S_1 \rightiso S_2$ sehingga
 $f_2 g = f_1$; isomorfisme ini pun unik. Tentu saja, inilah argumen baku
@@ -120,7 +120,7 @@ submodul, dan subruang.
 \begin{definisi}\label{def:sub-quot-obj}
 	\index{subobjek (subobject)} \index[sym1]{SubX@$\mathrm{Sub}_X$}
 	\index{objek kuosien (quotient object)} \index[sym1]{QuotX@$\mathrm{Quot}_X$}
-	Tetapkan kategori $\mathcal{C}$ dan sebuah objek $X$ di dalamnya. Kelas
+	Misalkan $\mathcal{C}$ sebuah kategori dan $X$ sebuah objek di dalamnya. Kelas
 	ekuivalensi dari monomorfisme berbentuk $S \hookrightarrow X$ (atau dari epimorfisme
 	berbentuk $X \twoheadrightarrow Q$) menurut relasi ekuivalensi di atas
 	disebut \emph{subobjek} (atau \emph{objek kuosien}) dari $X$. Kelas-kelas
@@ -159,10 +159,10 @@ Ingatlah bahwa $f_*: \Hom(\cdot, S) \to \Hom(\cdot, X)$ bersifat injektif.
 \end{bukti}
 
 % segment-id: o014.li2.chapter1.subquotients.p009
-Andaikan bahwa $\mathcal{C}$ mempunyai objek nol dan
+Andaikan $\mathcal{C}$ mempunyai objek nol dan
 $(X_i)_{i \in I}$ merupakan suatu keluarga objek. Untuk setiap
 $(i,j) \in I \times I$, definisikan $\delta_{ij} \in \Hom(X_i, X_j)$ sebagai
-berikut: jika $i=j$, ambil $\delta_{ij} = \identity$; jika tidak, tetapkan
+berikut: jika $i=j$, ambil $\delta_{ij} = \identity$; jika tidak, ambil
 $\delta_{ij}$ sebagai morfisme nol. Jika produk dan koproduk dari
 $(X_i)_{i \in I}$ ada, maka $(\delta_{ij})_{i,j}$ menentukan morfisme kanonik
 
@@ -186,10 +186,9 @@ kategori umum.
 
 % segment-id: o014.li2.chapter1.subquotients.pf003
 \begin{bukti}
-	Berdasarkan dualitas, cukup menangani kasus monomorfisme. Misalkan
+	Berdasarkan dualitas, cukup dibahas kasus monomorfisme. Misalkan
 	$p_2: X \dtimes{Z} Y \to Y$ adalah morfisme kanonik yang diberikan oleh
-	produk serat. Untuk setiap objek $T$, masalahnya cukup direduksi menjadi
-	pembuktian bahwa
+	produk serat. Untuk setiap objek $T$, cukup dibuktikan bahwa
 	% segment-id: o014.li2.chapter1.subquotients.g002
 	\[\begin{tikzcd}
 		\Hom(T,X) \dtimes{\Hom(T,Z)} \Hom(T,Y) & \\
@@ -230,15 +229,15 @@ Kita kembali ke pembahasan subobjek dan objek kuosien.
 % segment-id: o014.li2.chapter1.subquotients.d002
 \begin{definisi}\label{def:subquotient}
 	\index{subkuosien (subquotient)}
-	Diberikan sembarang kategori $\mathcal{C}$ beserta objek-objek $X$ dan $Y$
-	di dalamnya. Jika $Y$ dapat direalisasikan sebagai objek kuosien dari suatu
+	Misalkan $\mathcal{C}$ kategori sembarang dan $X,Y$ objek di dalamnya. Jika
+	$Y$ dapat direalisasikan sebagai objek kuosien dari suatu
 	subobjek dari $X$, maka $Y$ disebut \emph{subkuosien} dari $X$.
 \end{definisi}
 
 % segment-id: o014.li2.chapter1.subquotients.p012
 Jika yang ditinjau adalah subobjek dari objek kuosien, hal itu sama dengan
 membahas subkuosien dalam $\mathcal{C}^{\opp}$. Hasil berikut menunjukkan
-bahwa, untuk suatu kelas kategori, kedua cara tersebut memberikan pengertian
+bahwa, untuk kelas kategori tertentu, kedua cara tersebut memberikan pengertian
 yang sama. Kelas ini mencakup kategori abelian yang akan dipelajari kemudian;
 lihat Korolari~\sourcecrossref{prop:Abel-cat-subquotient}{2.1.7}.
 
@@ -254,7 +253,7 @@ lihat Korolari~\sourcecrossref{prop:Abel-cat-subquotient}{2.1.7}.
 % segment-id: o014.li2.chapter1.subquotients.pf005
 \begin{bukti}
 	Tinjau diagram subkuosien $Y \twoheadleftarrow Z \hookrightarrow X$ dalam
-	$\mathcal{C}$. Tetapkan $W := X \dsqcup{Z} Y$. Morfisme $X \to W$ adalah
+	$\mathcal{C}$. Definisikan $W := X \dsqcup{Z} Y$. Morfisme $X \to W$ adalah
 	dorong keluar dari $Z \to Y$, sehingga merupakan epimorfisme menurut
 	Lema~\ref{prop:mono-pullback}; morfisme $Y \to W$ adalah dorong keluar dari
 	$Z \to X$, sehingga merupakan monomorfisme menurut hipotesis. Jadi,
@@ -265,9 +264,9 @@ lihat Korolari~\sourcecrossref{prop:Abel-cat-subquotient}{2.1.7}.
 \end{bukti}
 
 % segment-id: o014.li2.chapter1.subquotients.p013
-Setelah sifat ``objek kuosien dari subobjek = subobjek dari objek kuosien'' di
-atas tersedia, dapat disimpulkan bahwa subkuosien dari subkuosien tetap
-merupakan subkuosien.
+Berdasarkan kesetaraan ``objek kuosien dari subobjek = subobjek dari objek
+kuosien'' yang baru dibuktikan, subkuosien dari subkuosien tetap merupakan
+subkuosien.
 
 % segment-id: o014.li2.chapter1.subquotients.p014
 Definisi subkuosien tidak menentukan bagaimana subkuosien itu direalisasikan

@@ -1,0 +1,159 @@
+% O014 / D80 — Methods of Algebra, Volume 2 — id-ID
+% Sumber: appendix2.tex, baris 138--286 (inklusif)
+% ID stabil unit: o014.aljabr2.appendix-b.ind-pro-objects
+\section{Tentang objek-ind dan objek-pro}\label{sec:ind-pro}
+Mulai bagian ini, tetapkan suatu semesta Grothendieck $\mathcal{U}$; istilah
+kategori kecil dan himpunan kecil selanjutnya mengacu pada pilihan tersebut.
+Kecuali dinyatakan lain, kategori tanpa kualifikasi berarti
+kategori-$\mathcal{U}$ (selain itu disebut ``kategori besar''). Ingat bahwa
+$\cate{Set}$ menyatakan kategori himpunan kecil.
+
+Misalkan $\mathcal{C}$ suatu kategori. Pada \S\ref{sec:Yoneda} kita mengingat kembali dua pembenaman Yoneda
+\[ h_{\mathcal{C}}: \mathcal{C}\to \mathcal{C}^\wedge, \quad k_{\mathcal{C}}: \mathcal{C} \to \mathcal{C}^\vee. \]
+Keduanya tentu saling dual. Perhatikan bahwa, kecuali $\mathcal{C}$ kecil, $\mathcal{C}^\wedge$ dan $\mathcal{C}^\vee$ pada umumnya merupakan kategori besar. Jika tidak menimbulkan kekeliruan, selanjutnya kita sering menghilangkan funktor $h_{\mathcal{C}}$ atau $k_{\mathcal{C}}$ dari notasi.
+
+Ingat hasil-hasil \cite[Proposisi 2.7.8, 2.7.9]{Li1}:
+\begin{itemize}
+	\item $\mathcal{C}^\wedge$ mempunyai semua $\varinjlim$ kecil dan $\varprojlim$ kecil, yang dikonstruksi titik demi titik dalam $\cate{Set}$;
+	\item secara umum, pembenaman Yoneda $\mathcal{C}\to \mathcal{C}^\wedge$ mempertahankan $\varprojlim$, tetapi tidak mempertahankan $\varinjlim$.
+\end{itemize}
+Mengikuti kebiasaan di sana\footnote{Notasi ini diperkenalkan oleh P.\ Deligne.}, dalam bagian ini $\varinjlim$ dari $\alpha:I\to\mathcal{C}^\wedge$ akan dinyatakan secara khusus sebagai
+\[ \Yinjlim \alpha \;\text{atau}\; \Yinjlim \alpha(i), \]
+dengan indeks $i$ menjelajahi $\Obj(I)$. Ini dimaksudkan untuk membedakannya dari $\varinjlim$ dalam $\mathcal{C}$.
+\index[sym1]{lim-quot@$\Yinjlim$, $\Yprojlim$}
+
+Secara dual, $\varprojlim$ dalam $\mathcal{C}^\vee$ yang diperoleh melalui konstruksi titik demi titik kita nyatakan dengan $\Yprojlim$, sebab secara umum $\mathcal{C}\to\mathcal{C}^\vee$ mempertahankan $\varinjlim$ tetapi tidak mempertahankan $\varprojlim$.
+
+Teorema kepadatan \ref{prop:Yoneda-density} menyatakan bahwa setiap objek dalam $\mathcal{C}^\wedge$ dapat ditulis sebagai $\Yinjlim$ dari objek-objek dalam $\mathcal{C}$. Objek-ind adalah objek yang dapat ditulis sebagai $\Yinjlim$ terfilter, sedangkan versi dualnya dalam $\mathcal{C}^\vee$ disebut objek-pro.
+
+\begin{definition}
+	\index{objek-ind (ind-object)}
+	\index{objek-pro (pro-object)}
+	\index[sym1]{IndC@$\IndC\mathcal{C}$}
+	\index[sym1]{ProC@$\ProC\mathcal{C}$}
+	Misalkan $\mathcal{C}$ suatu kategori.
+	\begin{itemize}
+		\item Jika $X\in\Obj(\mathcal{C}^\wedge)$ dapat ditulis sebagai $\Yinjlim X_i$, dengan indeks menjelajahi suatu kategori kecil terfilter $I$ dan $X_i\in\Obj(\mathcal{C})$ (data ini sama dengan suatu funktor $I\to\mathcal{C}$), maka $X$ disebut \emph{objek-ind} di atas $\mathcal{C}$.
+		
+		\item Jika $X\in\Obj(\mathcal{C}^\vee)$ dapat ditulis sebagai $\Yprojlim X_i$, dengan indeks menjelajahi suatu kategori kecil terfilter $I$ dan $X_i\in\Obj(\mathcal{C})$ (data ini sama dengan suatu funktor $I^{\opp}\to\mathcal{C}$), maka $X$ disebut \emph{objek-pro} di atas $\mathcal{C}$.
+	\end{itemize}
+	
+	Semua objek-ind membentuk kategori $\IndC\mathcal{C}$ dan semua objek-pro membentuk kategori $\ProC\mathcal{C}$; keduanya masing-masing merupakan subkategori penuh dari $\mathcal{C}^\wedge$ dan $\mathcal{C}^\vee$.
+\end{definition}
+
+Dengan demikian, terdapat funktor setia-penuh
+$\mathcal{C}\to\IndC\mathcal{C}$ dan
+$\mathcal{C}\to\ProC\mathcal{C}$. Korolari \ref{prop:Ind-Pro-size} akan
+mengendalikan ukuran $\IndC\mathcal{C}$ dan $\ProC\mathcal{C}$ serta
+menunjukkan bahwa keduanya bukan kategori besar.
+
+Langsung dari definisi, $(\IndC\mathcal{C})^{\opp}\simeq\ProC(\mathcal{C}^{\opp})$. Selanjutnya, tanpa keterangan tambahan kita akan menuliskan objek-ind (atau objek-pro) dalam bentuk $\Yinjlim X_i$ (atau $\Yprojlim Y_i$); ingat bahwa penyajian ini tidak tunggal.
+
+\begin{proposition}\label{prop:Ind-Hom}
+	Misalkan $X=\Yinjlim X_i$ dan $Y=\Yinjlim Y_j$ objek-ind di atas $\mathcal{C}$. Maka terdapat bijeksi kanonik
+	\[ \Hom_{\IndC \mathcal{C}}(X, Y) \simeq \varprojlim_i \varinjlim_j \Hom_{\mathcal{C}}(X_i, Y_j). \]
+	Demikian pula, untuk objek-pro $X=\Yprojlim X_i$ dan $Y=\Yprojlim Y_j$, kita mempunyai
+	\[ \Hom_{\ProC \mathcal{C}}(X, Y) \simeq \varprojlim_j \varinjlim_i \Hom_{\mathcal{C}}(X_i, Y_j). \]
+	Semua limit pada ruas kanan dipahami berada dalam $\cate{Set}$.
+\end{proposition}
+\begin{proof}
+	Untuk objek-ind, kita mempunyai
+	\begin{align*}
+		\Hom_{\mathcal{C}^\wedge}\left(\Yinjlim X_i, \Yinjlim Y_j \right) & = \varprojlim_i \Hom_{\mathcal{C}^\wedge}\left( X_i, \Yinjlim Y_j \right) & (\because\; \varinjlim \; \text{dalam $\mathcal{C}^{\wedge}$}) \\
+		& = \varprojlim_i \left[ \left( \Yinjlim Y_j \right)(X_i) \right] & (\because\; \text{Teorema \ref{prop:Yoneda}}) \\
+		& = \varprojlim_i \varinjlim_j \Hom_{\mathcal{C}}(X_i, Y_j) & (\because\; \text{konstruksi }\Yinjlim).
+	\end{align*}
+	Dua kesamaan terakhir juga dapat dipandang sebagai perwujudan kekompakan $X_i$ dalam $\mathcal{C}^\wedge$ (Proposisi \ref{prop:Ind-cpt}). Kasus objek-pro bersifat dual.
+\end{proof}
+
+\begin{corollary}\label{prop:Ind-Pro-size}
+	Kategori $\IndC\mathcal{C}$ dan $\ProC\mathcal{C}$ yang dikonstruksi di atas, sama seperti $\mathcal{C}$, merupakan kategori-$\mathcal{U}$.
+\end{corollary}
+\begin{proof}
+	Setiap $\Hom_{\mathcal{C}}(X_i,Y_j)$ dalam Proposisi \ref{prop:Ind-Hom} adalah himpunan kecil-$\mathcal{U}$, sedangkan $\varprojlim$ dan $\varinjlim$ juga diambil atas kategori kecil.
+\end{proof}
+
+Perhatikan bahwa definisi $\IndC\mathcal{C}$ dan $\ProC\mathcal{C}$ bergantung pada pilihan semesta $\mathcal{U}$. Untuk hubungan persis di antara keduanya dan $\mathcal{U}$, lihat \cite[Proposisi 6.1.21]{KS06}; kita tidak akan mendalaminya di sini.
+
+Semua struktur aljabar dalam contoh-contoh berikut secara bawaan direalisasikan pada himpunan kecil.
+
+\begin{example}\label{eg:Ind-Vect}
+	Misalkan $\Bbbk$ suatu medan. Nyatakan kategori ruang vektor $\Bbbk$ berdimensi hingga dengan $\cate{Vect}_{\mathrm{f}}(\Bbbk)$ dan kategori semua ruang vektor $\Bbbk$ dengan $\cate{Vect}(\Bbbk)$. Kita akan menunjukkan bahwa
+	\[ \IndC \cate{Vect}_{\mathrm{f}}(\Bbbk) \;\text{ekuivalen dengan}\; \cate{Vect}(\Bbbk). \]
+	
+	Definisikan funktor $\IndC\cate{Vect}_{\mathrm{f}}(\Bbbk)\to\cate{Vect}(\Bbbk)$ dengan memetakan $\Yinjlim V_i$ ke $V:=\varinjlim_i V_i$ dalam $\cate{Vect}(\Bbbk)$. Untuk menunjukkan bahwa funktor ini setia-penuh, kuncinya adalah
+	\[ \Hom_{\Bbbk}(V, W) \simeq \varprojlim_i \varinjlim_j \Hom_{\Bbbk}(V_i, W_j). \]
+	Memang, menentukan suatu pemetaan linear $f:V\to W$ sama dengan menentukan keluarga kompatibel pemetaan linear $f_i:V_i\to W$, sedangkan deskripsi konkret $\varinjlim$ terfilter dalam $\cate{Vect}(\Bbbk)$ menunjukkan bahwa setiap $f_i$ memfaktor melalui suatu $W_j$.
+	
+	Funktor $\IndC\cate{Vect}_{\mathrm{f}}(\Bbbk)\to\cate{Vect}(\Bbbk)$ juga surjektif secara esensial. Sebab, untuk setiap ruang vektor $\Bbbk$, semua subruang berdimensi hingganya $V^\flat$ membentuk poset terfilter terhadap inklusi, dan terdapat isomorfisme kanonik $\varinjlim V^\flat\rightiso V$ dalam $\cate{Vect}(\Bbbk)$.
+\end{example}
+
+Argumen serupa yang bahkan lebih sederhana menunjukkan bahwa $\cate{Set}$ ekuivalen dengan $\IndC\cate{FinSet}$, dengan $\cate{FinSet}$ kategori himpunan kecil hingga. Perhatikan bahwa $\cate{FinSet}$ dan $\cate{Vect}_{\mathrm{f}}(\Bbbk)$ sama-sama ``kecil secara esensial'': kelas isomorfisme objeknya membentuk himpunan kecil. Karena itu, objek-ind merupakan konstruksi yang menghasilkan ``yang besar dari yang kecil''.
+
+Contoh semacam ini tidak ada habisnya; Proposisi \ref{prop:recognition-Ind} akan memberikan kriteria terpadu untuk mengenali ind-isasi suatu kategori.
+
+\begin{example}\label{eg:profinite-group}
+	Nyatakan kategori grup hingga dengan $\cate{FinGrp}$ dan kategori grup profinit pada Definisi \ref{def:profinite-group} dengan $\cate{proFinGrp}$. Kita akan menunjukkan bahwa $\cate{proFinGrp}$ ekuivalen dengan $\ProC\cate{FinGrp}$.
+	
+	Definisikan funktor $\ProC\cate{FinGrp}\to\cate{proFinGrp}$ dengan memetakan $\Yprojlim G_i$ ke $G:=\varprojlim_iG_i$ dalam kategori grup topologis $\cate{TopGrp}$, dengan setiap $G_i$ diberi topologi diskret. Menurut definisi, data $(G_i)_i$ berasal dari funktor $I^{\opp}\to\cate{TopGrp}$, dengan $I$ kategori kecil terfilter; tetapi Catatan \ref{rem:filtered-poset} menunjukkan bahwa $I$ dapat pula diambil sebagai poset terfilter. Seperti pada Contoh \ref{eg:Ind-Vect}, ekuivalensi tereduksi pada pembuktian bahwa
+	\begin{compactitem}
+		\item $G$ di atas merupakan grup profinit;
+		\item $\Hom_{\cate{TopGrp}}(G,H)\simeq\varprojlim_j\varinjlim_i\Hom_{\cate{FinGrp}}(G_i,H_j)$;
+		\item setiap grup profinit dapat ditulis sebagai $\varprojlim$ kecil terfilter dari grup hingga.
+	\end{compactitem}
+	Namun, ketiga hal ini tepat merupakan isi Catatan \ref{rem:profinite-group-lim}.
+\end{example}
+
+Apabila $\mathcal{C}$ sendiri sudah mempunyai $\varinjlim$ kecil terfilter, terdapat pula hubungan dalam arah sebaliknya antara $\IndC\mathcal{C}$ dan $\mathcal{C}$. Kita sekaligus berikan pernyataan dual untuk objek-pro.
+
+\begin{proposition}\label{prop:Ind-adjunction}
+	Andaikan bahwa untuk setiap kategori kecil terfilter $I$ dan funktor $\alpha:I\to\mathcal{C}$ (atau $\beta:I^{\opp}\to\mathcal{C}$), $\varinjlim\alpha$ (atau $\varprojlim\beta$) selalu ada. Maka funktor pembenaman $\iota:\mathcal{C}\to\IndC\mathcal{C}$ (atau $\mathcal{C}\to\ProC\mathcal{C}$) mempunyai adjoin kiri $\sigma:\IndC\mathcal{C}\to\mathcal{C}$ (atau adjoin kanan $\tau:\ProC\mathcal{C}\to\mathcal{C}$), dengan $\sigma\iota\simeq\identity_{\mathcal{C}}$ (atau $\tau\iota\simeq\identity_{\mathcal{C}}$).
+	
+	Secara konkret, jika $X=\Yinjlim X_i$ (atau $X=\Yprojlim X_i$), maka terdapat isomorfisme kanonik $\sigma(X)\simeq\varinjlim_iX_i$ (atau $\tau(X)\simeq\varprojlim_iX_i$).
+\end{proposition}
+\begin{proof}
+	Cukup tangani versi ind. Berdasarkan \cite[Proposisi 2.6.9]{Li1}, keberadaan adjoin kiri $\sigma$ ekuivalen dengan keterwakilan funktor
+	\[ \Hom_{\mathcal{C}^\wedge}(X, \cdot): \mathcal{C} \to \cate{Set} \]
+untuk setiap objek-ind $X$. Untuk itu, tuliskan $X=\Yinjlim X_i$. Funktor di atas isomorfik dengan
+	\[ \varprojlim_i \Hom_{\mathcal{C}}(X_i, \cdot) \simeq \Hom_{\mathcal{C}}\left( \varinjlim_i X_i, \cdot\right). \]
+Ini sekaligus membuktikan keberadaan adjoin kiri $\sigma$ dan memberikan deskripsi yang diminta.
+\end{proof}
+
+Untuk keperluan teori, kita sering ingin ``menyelaraskan'' morfisme-morfisme dalam $\IndC\mathcal{C}$ atau $\ProC\mathcal{C}$. Hasil berikut melakukannya.
+
+\begin{lemma}\label{prop:ind-object-morphism}
+	Misalkan $X$ dan $Y$ objek-ind (atau objek-pro) di atas $\mathcal{C}$.
+	\begin{enumerate}[(i)]
+		\item Terdapat kategori kecil terfilter $K$ dan funktor $\gamma,\delta:K\to\mathcal{C}$ (atau $K^{\opp}\to\mathcal{C}$) sedemikian sehingga $X=\Yinjlim\gamma$ dan $Y=\Yinjlim\delta$ (atau $X=\Yprojlim\gamma$ dan $Y=\Yprojlim\delta$).
+		\item Jika $f:X\to Y$ suatu morfisme, maka data pada (i) dapat dipilih bersama suatu morfisme funktor $\varphi:\gamma\to\delta$ sedemikian sehingga $f$ sama dengan $\Yinjlim\varphi$ (atau $\Yprojlim\varphi$).
+		
+		\item Lebih umum, untuk sepasang morfisme $f,g:X\rightrightarrows Y$, data dapat dipilih sedemikian sehingga keduanya direpresentasikan oleh $\Yinjlim$ (atau $\Yprojlim$) dari sepasang morfisme $\varphi,\psi:\gamma\to\delta$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	Cukup tangani versi ind. Untuk (i), mula-mula andaikan $X$ dan $Y$ masing-masing berasal dari funktor $\alpha:I\to\mathcal{C}$ dan $\beta:J\to\mathcal{C}$. Definisikan $K$ sebagai kategori produk $I\times J$; ingat bahwa objeknya adalah pasangan $(i,j)\in\Obj(I)\times\Obj(J)$ dan $\Hom_K((i,j),(i',j')):=\Hom_I(i,i')\times\Hom_J(j,j')$. Mudah dilihat bahwa $K$ adalah kategori kecil terfilter dan kedua funktor proyeksi
+	\[ I \leftarrow K \rightarrow J, \quad i \mapsfrom (i, j) \mapsto j \]
+bersifat kofinal (Definisi \ref{def:cofinal}); hal ini dapat diperiksa langsung dari definisi. Definisikan $\gamma$ dan $\delta$ masing-masing sebagai komposisi proyeksi tersebut dengan $\alpha$ dan $\beta$. Proposisi \ref{prop:cofinal-lim} lalu menyiratkan $\Yinjlim\alpha=\Yinjlim\gamma$ dan $\Yinjlim\beta=\Yinjlim\delta$.
+	
+	Untuk (ii), kita sesuaikan konstruksi sebagai berikut. Kali ini definisikan $K$ sebagai kategori yang objeknya adalah tripel $(i,j,t)$ yang membentuk diagram komutatif
+	\[\begin{tikzcd}
+		\alpha(i) \arrow[d, "\text{kanonik}"'] \arrow[r, "t"] & \beta(j) \arrow[d, "\text{kanonik}"] \\
+		X \arrow[r, "f"'] & Y,
+	\end{tikzcd}\]
+sedangkan morfismenya didefinisikan oleh diagram segitiga komutatif yang jelas. Kita mempunyai funktor $I\leftarrow K\rightarrow J$ yang pada objek diberikan oleh $i\mapsfrom(i,j,t)\mapsto j$. Definisikan kembali $\gamma$ dan $\delta$ sebagai komposisi funktor-funktor ini dengan $\alpha$ dan $\beta$. Pembaca diminta memverifikasi bahwa
+	\begin{compactitem}
+		\item $K$ adalah kategori kecil terfilter;
+		\item kedua funktor $I\leftarrow K\rightarrow J$ bersifat kofinal;
+		\item data $t$ memberikan morfisme $\varphi:\gamma\to\delta$.
+	\end{compactitem}
+	
+Fakta-fakta ini cukup untuk memberikan diagram komutatif yang diminta:
+	\[\begin{tikzcd}[column sep=large]
+		\Yinjlim \gamma \arrow[r, "{\Yinjlim \varphi}"] \arrow[d, "\sim"' sloped] & \Yinjlim \delta \arrow[d, "\sim" sloped] \\
+		X \arrow[r, "f"'] & Y.
+	\end{tikzcd}\]
+	
+	Untuk pasangan morfisme $f,g:X\rightrightarrows Y$ pada (iii), argumennya serupa: objek $K$ harus didefinisikan sebagai kuadruplet $(i,j,s,t)$, dengan $s,t:\alpha(i)\rightrightarrows\beta(j)$. Rinciannya diserahkan kepada pembaca.
+\end{proof}
+
+Hasil di atas secara alami menggeneralisasi ke sebarang banyaknya morfisme hingga $f,g,\ldots\in\Hom_{\IndC\mathcal{C}}(X,Y)$.

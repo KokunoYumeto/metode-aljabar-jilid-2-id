@@ -32,7 +32,7 @@ berkaitan erat dengan ukuran himpunan.
 \index{masalah ukuran (size issues)}
 
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.p002
-Langkah pertama ialah merumuskan kembali keberadaan funktor adjoin dengan cara
+Langkah pertama ialah merumuskan kembali keberadaan funktor adjoin dalam bentuk
 yang sesuai. Berdasarkan dualitas, berikut ini hanya dinyatakan kasus adjoin
 kiri.
 
@@ -50,7 +50,7 @@ $(d,c\xrightarrow{f}Gd)$.
 \end{lema}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf001
 \begin{bukti}
-	Tetapkan $c$. Menentukan morfisme
+	Misalkan $c$ tetap. Menentukan morfisme
 	$(d_0,c\xrightarrow{\beta_0}Gd_0)\to
 	(d,c\xrightarrow{\beta}Gd)$ dalam $(c/G)$ sama artinya dengan menentukan
 	$\alpha:d_0\to d$ sedemikian sehingga diagram
@@ -72,7 +72,7 @@ $(d,c\xrightarrow{f}Gd)$.
 	dasar argumen berikut.
 
 	Andaikan $G$ mempunyai adjoin kiri $F$, dan ambil
-	$c\in\Obj(\mathcal{C})$. Kita menyatakan bahwa $Fc$, bersama dengan
+	$c\in\Obj(\mathcal{C})$. Kita akan menunjukkan bahwa $Fc$, bersama dengan
 	morfisme unit adjungsi $\eta_c:c\to G(Fc)$, memberikan objek awal dari
 	$(c/G)$. Tinjau sembarang $(d,c\xrightarrow{\beta}Gd)$. Pemetaan
 	$\Hom_{\mathcal{D}}(Fc,d)\to\Hom_{\mathcal{C}}(c,Gd)$ dalam
@@ -94,7 +94,7 @@ $(d,c\xrightarrow{f}Gd)$.
 		\varphi_{c, d}: \Hom_{\mathcal{D}}(Fc, d) & \to \Hom_{\mathcal{C}}(c, Gd) \\
 		\alpha & \mapsto (G\alpha) \eta_c.
 	\end{align*}
-	Bijeksi-bijeksi ini jelas funktorial dalam $c$ dan $d$. Jadi
+	Bijeksi-bijeksi ini jelas bersifat funktorial dalam $c$ dan $d$. Jadi
 	$(F,G,\varphi)$ menentukan pasangan adjoin dengan unit $\eta$.
 \end{bukti}
 
@@ -138,7 +138,7 @@ $\Pi_{c/}:(c/G)\to\mathcal{D}$ dari Definisi
 \begin{proposisi}\label{prop:comma-cat-completeness}
 	Misalkan kategori $\mathcal{D}$ lengkap dan funktor
 	$G:\mathcal{D}\to\mathcal{C}$ mempertahankan semua $\varprojlim$ kecil.
-	Tetapkan $c\in\Obj(\mathcal{C})$.
+	Misalkan $c\in\Obj(\mathcal{C})$ tetap.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.l001
 	\begin{enumerate}[(i)]
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i001
@@ -153,20 +153,20 @@ $\Pi_{c/}:(c/G)\to\mathcal{D}$ dari Definisi
 \end{proposisi}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf003
 \begin{bukti}
-	Untuk (i), sifat konservatifnya jelas. Pokok persoalannya ialah bahwa untuk
+	Untuk (i), sifat konservatifnya jelas. Inti argumennya ialah bahwa untuk
 	setiap $\beta:J\to(c/G)$ yang diberikan, yang memetakan
 	$j\in\Obj(J)$ ke $(d_j,c\xrightarrow{f_j}Gd_j)$, kita dapat mengangkat
 	$\varprojlim_jd_j$ beserta morfisme proyeksinya menjadi
 	$(\varprojlim_jd_j,c\xrightarrow{f}G(\varprojlim_jd_j))$, lalu
 	menunjukkan bahwa objek ini memberikan $\varprojlim\beta$. Secara
-	eksplisit, ambil $f$ sebagai komposit pada baris pertama diagram komutatif
+	eksplisit, definisikan $f$ sebagai komposit pada baris pertama diagram komutatif
 	berikut:
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.g004
 	\[\begin{tikzcd}
 		c \arrow[r, "{\exists!}"] \arrow[rd, "{f_{j'}}"'] & \varprojlim_j Gd_j \arrow[d] & G (\varprojlim_j d_j) \arrow[l, "\exists!"', "\sim"] \arrow[ld] \\
 		& Gd_{j'} &
 	\end{tikzcd} \quad j' \in \Obj(J). \]
-	Pemeriksaan selebihnya bersifat rutin dan dihilangkan; lihat contoh-contoh
+	Verifikasi selebihnya rutin dan dihilangkan; lihat contoh-contoh
 	terkait dalam \S\ref{sec:limit-functor}.
 
 	Pernyataan (ii) mengikuti dari kelengkapan $\mathcal{D}$ dan (i).
@@ -188,7 +188,7 @@ $\Pi_{c/}:(c/G)\to\mathcal{D}$ dari Definisi
 	\[ (d', c \to Gd') \dtimes{(d, c \to Gd)} (d', c \to Gd') = \left( d' \dtimes{d} d' , \; c \to G\left( d' \dtimes{d} d' \right) \right) . \]
 	Ruas kiri dapat diidentifikasi dengan $(d',c\to Gd')$, dan kedua morfisme
 	proyeksinya bersesuaian dengan $\identity_{d'}$. Akibatnya,
-	$d'\dtimes{d}d'$ dapat diidentifikasi dengan $d'$ dengan cara yang sama.
+	$d'\dtimes{d}d'$ dapat diidentifikasi dengan $d'$ melalui identifikasi yang sama.
 	Dengan kata lain, $\iota$ mono.
 \end{bukti}
 
@@ -219,7 +219,7 @@ $\Pi_{c/}:(c/G)\to\mathcal{D}$ dari Definisi
 	$y\in\Obj(\mathcal{E})$, pilih sembarang morfisme $e\to y$, dan tuliskan
 	komposit $x\xrightarrow{i}e\to y$ sebagai $f$. Untuk sembarang
 	$g:x\to y$, tinjau penyama $j:\Ker(f,g)\hookrightarrow x$. Terdapat
-	morfisme $k:e\to\Ker(f,g)$. Dengan demikian, kita mempunyai
+	morfisme $k:e\to\Ker(f,g)$. Dengan demikian, diperoleh
 	$ijk:e\to e$. Jika dalam
 	\eqref{eqn:jointly-weak-initial-obj-aux} kita ambil
 	$\psi=\identity_x$, diperoleh
@@ -265,12 +265,12 @@ umum.
 	Cukup bahas (i). Ambil $c\in\Obj(\mathcal{C})$. Lema
 	\ref{prop:adjoint-vs-comma} menyatakan bahwa $G$ mempunyai adjoin kiri
 	jika dan hanya jika $(c/G)$ mempunyai objek awal. Syarat himpunan solusi
-	tepat mengatakan bahwa $(c/G)$ mempunyai keluarga awal lemah
+	berarti bahwa $(c/G)$ mempunyai keluarga awal lemah
 	$\left\{(d_i,c\to Gd_i):i\in I\right\}$, dengan $I$ suatu himpunan
 	kecil. Karena objek awal merupakan kasus khusus objek awal lemah, arah
-	``hanya jika'' jelas. Untuk arah sebaliknya, Lema
-	\ref{prop:jointly-weak-initial-obj} mereduksi persoalan lebih lanjut menjadi
-	pembuktian bahwa $(c/G)$ lengkap. Namun, inilah isi Proposisi
+	``hanya jika'' jelas. Untuk arah sebaliknya, menurut Lema
+	\ref{prop:jointly-weak-initial-obj} tinggal dibuktikan bahwa $(c/G)$
+	lengkap. Namun, inilah isi Proposisi
 	\ref{prop:comma-cat-completeness} (ii).
 \end{bukti}
 
@@ -361,7 +361,7 @@ Kedua konsep ini jelas saling dual.
 
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.e002
 \begin{contoh}\label{eg:generators}
-	Mari tinjau beberapa contoh awal generator dan kogenerator.
+	Kita tinjau beberapa contoh awal generator dan kogenerator.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.l004
 	\begin{itemize}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i008
@@ -387,7 +387,7 @@ Kedua konsep ini jelas saling dual.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i010
 		\item Misalkan $R$ suatu gelanggang. Dalam $R\dcate{Mod}$, $R$
 		merupakan generator karena menentukan homomorfisme modul-$R$
-		$R\to M$ sama artinya dengan menentukan suatu elemen dari $M$. Dengan
+		$R\to M$ sama artinya dengan menentukan suatu unsur dari $M$. Dengan
 		mengambil koproduk, terlihat bahwa setiap modul-$R$ bebas tak nol juga
 		merupakan generator.
 
@@ -411,14 +411,15 @@ $(\mathrm{Quot}_e,\twoheadleftarrow)$ yang diperkenalkan dalam Definisi
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.d003
 \begin{definisi}\label{def:well-powered}
 	\index{kategori!well-powered, well-copowered}
-	Suatu kategori $\mathcal{E}$ disebut \emph{well-powered} (atau
-	\emph{well-copowered}) jika, untuk setiap $e\in\Obj(\mathcal{E})$,
+	Suatu kategori $\mathcal{E}$ disebut \emph{berdaya-baik}
+	(\emph{well-powered}) atau \emph{koberdaya-baik}
+	(\emph{well-copowered}) jika, untuk setiap $e\in\Obj(\mathcal{E})$,
 	$\mathrm{Sub}_e$ (atau $\mathrm{Quot}_e$) merupakan himpunan kecil.
 \end{definisi}
 
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.p010
-Dalam bagian ini, sifat well-powered akan dipadukan dengan kelengkapan. Untuk
-setiap elemen $\mathrm{Sub}_e$, pilih sebuah wakil $s\hookrightarrow e$.
+Dalam bagian ini, sifat berdaya-baik akan dipadukan dengan kelengkapan. Untuk
+setiap unsur $\mathrm{Sub}_e$, pilih sebuah wakil $s\hookrightarrow e$.
 Dengan demikian, untuk setiap subhimpunan $S\subset\mathrm{Sub}_e$, kita
 dapat membicarakan ada atau tidaknya produk serat
 $\prod_{s\in S}\left(s\hookrightarrow e\right)$ tanpa bergantung pada
@@ -429,25 +430,25 @@ $S\subset\mathrm{Quot}_e$.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.l005
 \begin{itemize}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i012
-	\item Jika $\mathcal{E}$ lengkap, maka sifat well-powered menyiratkan
+	\item Jika $\mathcal{E}$ lengkap, maka sifat berdaya-baik menyiratkan
 	bahwa, untuk setiap $e$, semua subhimpunan $S\subset\mathrm{Sub}_e$
 	mempunyai produk serat.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i013
-	\item Jika $\mathcal{E}$ kolengkap, maka sifat well-copowered menyiratkan
+	\item Jika $\mathcal{E}$ kolengkap, maka sifat koberdaya-baik menyiratkan
 	bahwa, untuk setiap $e$, semua subhimpunan $S\subset\mathrm{Quot}_e$
 	mempunyai koproduk serat.
 \end{itemize}
 
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.le005
 \begin{lema}\label{prop:cogenerator-initial-obj}
-	Misalkan $\mathcal{E}$ kategori lengkap yang well-powered. Jika terdapat
+	Misalkan $\mathcal{E}$ kategori lengkap yang berdaya-baik. Jika terdapat
 	keluarga kogenerator $\Sigma\subset\Obj(\mathcal{E})$, maka
 	$\mathcal{E}$ mempunyai objek awal.
 \end{lema}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf007
 \begin{bukti}
 	Ambil $e:=\prod_{s\in\Sigma}s$. Misalkan $x$ produk serat dari semua
-	elemen $\mathrm{Sub}_e$ (hanya pada langkah ini syarat well-powered
+	unsur $\mathrm{Sub}_e$ (hanya pada langkah ini syarat berdaya-baik
 	digunakan). Kita buktikan bahwa $x$ merupakan objek awal dari
 	$\mathcal{E}$.
 
@@ -489,7 +490,7 @@ $S\subset\mathrm{Quot}_e$.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.l007
 		\begin{compactitem}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i015
-			\item $\mathcal{D}$ lengkap dan well-powered, serta $G$
+			\item $\mathcal{D}$ lengkap dan berdaya-baik, serta $G$
 			mempertahankan semua $\varprojlim$ kecil;
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i016
 			\item terdapat keluarga kogenerator
@@ -501,7 +502,7 @@ $S\subset\mathrm{Quot}_e$.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.l008
 		\begin{compactitem}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i018
-			\item $\mathcal{C}$ kolengkap dan well-copowered, serta $F$
+			\item $\mathcal{C}$ kolengkap dan koberdaya-baik, serta $F$
 			mempertahankan semua $\varinjlim$ kecil;
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.i019
 			\item terdapat keluarga generator
@@ -528,15 +529,15 @@ $S\subset\mathrm{Quot}_e$.
 	$\Pi_{c/}:(c/G)\to\mathcal{D}$ merupakan funktor konservatif yang
 	mempertahankan monomorfisme; karena itu, $\Pi_{c/}$ menginduksi pembenaman
 	pelestari urutan $\mathrm{Sub}_e\hookrightarrow\mathrm{Sub}_d$. Dengan
-	demikian, $(c/G)$ terbukti well-powered.
+	demikian, $(c/G)$ terbukti berdaya-baik.
 \end{bukti}
 
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.co001
 \begin{korolari}\label{prop:SAFT-completeness}
-	Jika kategori lengkap yang well-powered $\mathcal{D}$ mempunyai keluarga
+	Jika kategori lengkap yang berdaya-baik $\mathcal{D}$ mempunyai keluarga
 	kogenerator $\Sigma$, maka $\mathcal{D}$ kolengkap.
 
-	Secara dual, jika kategori kolengkap yang well-copowered $\mathcal{C}$
+	Secara dual, jika kategori kolengkap yang koberdaya-baik $\mathcal{C}$
 	mempunyai keluarga generator $\Sigma$, maka $\mathcal{C}$ lengkap.
 \end{korolari}
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.pf009
@@ -560,7 +561,7 @@ $S\subset\mathrm{Quot}_e$.
 	\cite[Teorema 7.7.2]{Xiong}, mudah dibuktikan bahwa $\cate{CHaus}$ lengkap dan
 	bahwa $\iota$ mempertahankan semua $\varprojlim$ kecil (rinciannya
 	diserahkan kepada pembaca). Selain itu, himpunan kuasa dari suatu himpunan
-	kecil tetap kecil; jadi $\cate{CHaus}$ well-powered. Teorema
+	kecil tetap kecil; jadi $\cate{CHaus}$ berdaya-baik. Teorema
 	\ref{prop:SAFT} (i) karena itu memberikan adjoin kiri
 	$C:\cate{Top}\to\cate{CHaus}$ bagi $\iota$. Dalam topologi himpunan-titik,
 	$C(X)$ disebut \emph{kompaktifikasi Stone--Čech} dari ruang $X$; unit
@@ -575,7 +576,7 @@ Teorema funktor adjoin dapat memberikan syarat cukup bagi keterwakilan suatu
 funktor. Untuk pengantar tentang funktor terwakili, lihat
 \cite[Definisi 2.5.2]{Li1} atau definisi funktor terwakili dalam
 Lampiran \S~A.1.
-Pokoknya adalah pengamatan berikut. Jika funktor
+Intinya ialah pengamatan berikut. Jika funktor
 $G:\mathcal{D}\to\cate{Set}$ mempunyai adjoin kiri $F$, maka $G$
 terwakili. Memang, tinjau himpunan satu titik $\{\mathrm{pt}\}$ dan
 $r_G:=F(\{\mathrm{pt}\})$; bijeksi kanonik
@@ -585,7 +586,7 @@ menyiratkan $G\simeq\Hom_{\mathcal{D}}(r_G,\cdot)$.
 
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.co002
 \begin{korolari}\label{prop:cogenerator-representability}
-	Jika kategori lengkap yang well-powered $\mathcal{D}$ mempunyai keluarga
+	Jika kategori lengkap yang berdaya-baik $\mathcal{D}$ mempunyai keluarga
 	kogenerator $\Sigma$, maka funktor $G:\mathcal{D}\to\cate{Set}$
 	terwakili jika dan hanya jika $G$ mempertahankan semua $\varprojlim$ kecil.
 \end{korolari}
@@ -885,7 +886,7 @@ menyiratkan $G\simeq\Hom_{\mathcal{D}}(r_G,\cdot)$.
 	funktor pelupa dari kategori grup ke kategori himpunan.
 % segment-id: o014.li2.chapter1.adjoint-functor-theorem.hn009
 	\begin{hint}
-		Misalkan $x\neq y$ elemen-elemen dari $X$. Terdapat grup $H$ beserta
+		Misalkan $x\neq y$ unsur-unsur dari $X$. Terdapat grup $H$ beserta
 		pemetaan himpunan $f:X\to U(H)$ sedemikian sehingga $f(x)\neq f(y)$.
 	\end{hint}
 

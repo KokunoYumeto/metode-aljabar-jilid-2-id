@@ -1,0 +1,582 @@
+% Unit 102 terjemahan Bahasa Indonesia dari chapter7.tex baris 2472--2678.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter7.galois-descent-h1
+% Cakupan: Bagian 7.11 lengkap, hubungan penurunan Galois dengan kohomologi
+% nonabelian H^1, hingga tepat sebelum Latihan.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.h001
+\section{Kaitan antara Penurunan Galois dan
+\texorpdfstring{$\Hm^1$}{H1}}\label{sec:Galois-H1}
+\hypertarget{o014.aljabr2.chapter7.galois-descent-h1}{ }
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p001
+Metode penurunan merupakan alat yang ampuh untuk mengklasifikasikan berbagai
+objek aljabar atau geometri; pernyataan umumnya memerlukan bahasa geometri
+aljabar. Demi kemudahan penyajian, dalam bagian ini kita membuat dua asumsi
+penyederhanaan.
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.l001
+\begin{enumerate}
+	\item Kita hanya menggunakan penurunan Galois
+	(Teorema~\ref{prop:Galois-descent} beserta pembahasan sesudahnya), tanpa
+	menggunakan penurunan datar atau teknik yang lebih umum.
+	\item Buku ini sedapat mungkin memakai bahasa aljabar, khususnya aljabar
+	linear, untuk menjelaskan contoh. Karena itu, ruang lingkup masalah
+	klasifikasi harus dipersempit. Sesungguhnya, yang akan dibahas hanyalah
+	satu kelas tensor dalam ruang vektor berdimensi hingga.
+\end{enumerate}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p002
+Sudut pandang ini secara alami mengarah ke kohomologi nonabelian
+$\Hm^1$ dari grup Galois. Pembahasan berikut bertumpu pada perangkat dari
+\S\ref{sec:nonabelian-coh} dan \S\ref{sec:descent-Galois}. Karena kita perlu
+mengizinkan perluasan Galois takhingga, kita juga tetap menggunakan bahasa
+grup profinit; lihat \S\ref{sec:profinite-groups}. Pertama-tama, kita
+perkenalkan notasi yang diperlukan.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.cv001
+\begin{convention}
+	Dalam bagian ini, tetapkan medan $K$ dan tuliskan
+	$\otimes:=\otimes_K$. Untuk ruang vektor-$K$ berdimensi hingga $V$,
+	tuliskan $V^\vee$ bagi ruang dualnya. Untuk setiap
+	$(p,q)\in\Z_{\geq0}^2$, perkenalkan notasi
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q001
+	\[
+	T^{p,q}V:=V^{\otimes p}\otimes(V^\vee)^{\otimes q}.
+	\]
+	Mengikuti kebiasaan dalam geometri diferensial, unsur-unsur
+	$T^{p,q}V$ disebut \emph{tensor bertipe $(p,q)$ pada $V$}.
+	\index{tensor}
+\end{convention}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p003
+Setiap isomorfisme $g:V\to V'$ antara ruang vektor-$K$ berdimensi hingga
+secara alami menginduksi
+$T^{p,q}V\rightiso T^{p,q}V'$; demi kemudahan, isomorfisme yang diinduksi ini
+tetap dilambangkan dengan $g$. Selain itu, sifat berdimensi hingga memberikan
+isomorfisme kanonik
+$(V_1\otimes V_2)^\vee\simeq V_1^\vee\otimes V_2^\vee$.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p004
+Dalam masalah klasifikasi yang dibahas pada bagian ini, objek utamanya adalah
+data berbentuk berikut, yang didefinisikan di atas medan $K$:
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q002
+\begin{equation}\label{eqn:tensor-data}
+	\mathbf{t}=(V,I,(t_i,p_i,q_i)_{i\in I}),
+\end{equation}
+dengan
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.l002
+\begin{itemize}
+	\item $V$: ruang vektor-$K$ berdimensi hingga;
+	\item $I$: suatu himpunan (yang boleh kosong);
+	\item $(p_i,q_i)$: keluarga pasangan bilangan bulat taknegatif, dengan
+	$i$ merentang $I$;
+	\item $t_i\in T^{p_i,q_i}V$: keluarga tensor, dengan $i$ merentang $I$.
+\end{itemize}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p005
+Dengan kata lain, kita mempelajari suatu keluarga tensor bertipe tertentu
+dalam ruang vektor berdimensi hingga. Untuk data lain
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q003
+\[
+\mathbf{t}'=(V',I,(t'_i,p_i,q_i)_{i\in I}),
+\]
+jika terdapat isomorfisme ruang vektor-$K$ $g:V\rightiso V'$ sedemikian
+sehingga $gt_i=t'_i$ untuk setiap $i$, maka $g$ disebut isomorfisme antara
+kedua data tersebut dan kita tuliskan
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q004
+\[
+g\mathbf{t}=\mathbf{t}'\quad\text{atau}\quad
+g:\mathbf{t}\rightiso\mathbf{t}'.
+\]
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p006
+Kita hendak mengklasifikasikan data $\mathbf{t}$ ini hingga isomorfisme,
+atau lebih lanjut mengklasifikasikan data $\mathbf{t}$ yang memenuhi
+syarat-syarat tambahan. Syarat tersebut harus dapat dirumuskan secara
+aljabar dan dipertahankan oleh isomorfisme. Meskipun kerangka teorinya
+terbatas pada aljabar linear, jangkauan penerapannya sudah cukup luas.
+Berikut beberapa kasus khusus.
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.l003
+\begin{enumerate}
+	\item Tinjau data $(V,b)$, dengan
+	$b\in(V^\vee)^{\otimes2}$ tensor bertipe $(0,2)$. Mengklasifikasikan data
+	ini sama dengan mengklasifikasikan bentuk bilinear pada $V$. Kita juga
+	dapat memberlakukan syarat bahwa $b$ simetris, antisimetris, takdegenerat,
+	dan sebagainya; semuanya merupakan syarat ``aljabar''. Bentuk multilinear
+	dapat diperlakukan secara serupa.
+	\item Kita juga dapat mengklasifikasikan
+	$(V,\varphi_1,\ldots,\varphi_n)$, dengan
+	$\varphi_i\in V\otimes V^\vee$ tensor bertipe $(1,1)$. Karena
+	$V\otimes V^\vee\simeq\End_K(V)$, ini sama dengan mengklasifikasikan $V$
+	bersama suatu keluarga endomorfisme linear. Berbagai relasi aljabar dapat
+	diberlakukan, misalnya komutativitas antara endomorfisme tersebut.
+	\item Selanjutnya, tinjau data $(V,\mu)$, dengan
+	$\mu\in V\otimes(V^\vee)^{\otimes2}$ tensor bertipe $(1,2)$, yang juga
+	dapat dipandang sebagai unsur $\Hom_K(V\otimes V,V)$. Ini sama dengan
+	mengklasifikasikan $V$ bersama suatu operasi ``perkalian'' bilinear
+	$V\times V\to V$. Jika operasi itu disyaratkan asosiatif dan mempunyai
+	unsur satuan (yang terakhir dapat dipandang sebagai tensor bertipe
+	$(1,0)$), maka syarat tersebut sama dengan menjadikan $V$ aljabar-$K$.
+	Kita juga dapat memberlakukan syarat lain pada $\mu$ untuk mempelajari
+	beragam struktur seperti aljabar Lie dan aljabar Jordan.
+\end{enumerate}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p007
+Secara lebih umum, \eqref{eqn:tensor-data} dapat diperluas sewajarnya
+untuk membahas klasifikasi suatu keluarga subruang vektor, atau setidaknya
+garis, di dalam $T^{p,q}V$. Karena keterbatasan ruang, hal ini tidak dibahas
+lebih lanjut.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.d001
+\begin{definition}
+	Untuk ruang vektor-$K$ berdimensi hingga $V$, tuliskan $\GL(V)$ bagi grup
+	automorfisme linearnya. Untuk data $\mathbf{t}$ seperti dalam
+	\eqref{eqn:tensor-data}, definisikan subgrup dari $\GL(V)$
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q005
+	\[
+	G(\mathbf{t}):=\{g\in\GL(V):g\mathbf{t}=\mathbf{t}\}.
+	\]
+\end{definition}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p008
+Pilih suatu basis bagi $V$ dan tuliskan syarat $gt_i=t_i$ dalam koordinat
+untuk setiap $i\in I$. Dengan demikian, $G(\mathbf{t})$ dipotong di dalam
+$\GL(V)$ oleh suatu keluarga persamaan polinomial. Dalam contoh-contoh di
+atas, jika $\mathbf{t}$ bersesuaian dengan bentuk bilinear simetris (atau
+antisimetris) takdegenerat $b:V\times V\to K$, maka $G(\mathbf{t})$ yang
+bersesuaian ialah grup ortogonal $\mathrm{O}(V,b)$ (atau grup simplektik
+$\mathrm{Sp}(V,b)$). Jika $\mathbf{t}$ adalah tensor bertipe
+$(0,\dim V)$ yang diberikan oleh determinan, maka $G(\mathbf{t})$ yang
+bersesuaian ialah grup linear khusus
+$\SL(V):=\{g:\det g=1\}$.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.d002
+\begin{definition}\label{def:tL}
+	Untuk setiap perluasan medan $L|K$ dan ruang vektor-$K$ $V$, tuliskan
+	$V_L:=L\dotimes{K}V$, yang dipandang sebagai ruang vektor-$L$. Melalui
+	isomorfisme kanonik ruang vektor-$L$
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q006
+	\[
+	(T^{p,q}V)_L\simeq T^{p,q}(V_L),
+	\]
+	setiap data $\mathbf{t}$ pada $V$ yang berbentuk
+	\eqref{eqn:tensor-data} menginduksi data $\mathbf{t}_L$ pada $V_L$, yang
+	didefinisikan di atas medan perluasan $L$.
+\end{definition}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p009
+Perluasan medan tidak mengubah bagian numerik data tersebut,
+$(\dim V,I,(p_i,q_i)_i)$.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p010
+Ingat bahwa bila $L|K$ merupakan perluasan Galois,
+$\Gal(L|K)$ beraksi secara mulus dan semilinear pada $V_L$
+(Lema~\ref{prop:Galois-descent-action}); aksi dituliskan dari kiri.
+Sesungguhnya, grup itu beraksi secara mulus dan semilinear pada setiap
+$T^{p,q}(V_L)$ (Definisi~\ref{def:semilinear-action}), secara ``diagonal''
+pada hasil kali tensor dan melalui
+$\check v\mapsto\check v\sigma^{-1}$ pada ruang dual $V^\vee$ (aksi
+kontragradien, atau ``langkah invers''). Relatif terhadap isomorfisme di atas, subruang invariannya
+adalah
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q007
+\[
+T^{p,q}(V_L)^{\Gal(L|K)}=T^{p,q}V.
+\]
+Ini tidak lain adalah penurunan Galois pada tingkat objek. Tingkat morfisme
+dinyatakan oleh hasil berikut.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.lm001
+\begin{lemma}
+	Misalkan $V$ dan $W$ ruang vektor-$K$ berdimensi hingga. Untuk setiap
+	$h\in\Hom_L(V_L,W_L)$ dan $\sigma\in\Gal(L|K)$, definisikan
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q008
+	\[
+	{}^\sigma h:=\sigma h\sigma^{-1}:V_L\to W_L.
+	\]
+	Pemetaan ini tetap linear-$L$. Rumus tersebut memberikan aksi mulus dan
+	semilinear $\Gal(L|K)$ pada ruang vektor-$L$
+	$\Hom_L(V_L,W_L)$. Aksi ini kompatibel dengan komposisi pemetaan linear,
+	dan
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q009
+	\[
+	\Hom_L(V_L,W_L)^{\Gal(L|K)}=\Hom_K(V,W).
+	\]
+	Di sini $\Hom_K(V,W)$ ditanamkan ke dalam $\Hom_L(V_L,W_L)$ melalui
+	$f\mapsto f_L:=\identity_L\otimes f$.
+\end{lemma}
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.pf001
+\begin{proof}
+	Pembaca dapat langsung memeriksa bahwa ${}^\sigma h$ memang pemetaan
+	linear-$L$. Untuk kemulusan, pilih basis bagi $V$ dan $W$, lalu
+	identifikasikan unsur-unsur $\Hom_L(V_L,W_L)$ dengan matriks. Grup
+	$\Gal(L|K)$ kemudian beraksi dengan cara baku pada setiap entri matriks.
+	Karena $h$ hanya melibatkan sejumlah hingga entri matriks, semuanya
+	termuat dalam suatu subperluasan hingga $E|K$ dari $L|K$. Oleh karena itu,
+	subgrup buka $\Gal(L|E)$ memfiksasi $h$. Pernyataan lain tentang aksi
+	$(\sigma,h)\mapsto{}^\sigma h$ mudah diperiksa.
+
+	Kesamaan
+	$\Hom_L(V_L,W_L)^{\Gal(L|K)}=\Hom_K(V,W)$ merupakan akibat langsung
+	penurunan Galois, dan juga mudah dilihat langsung dengan matriks.
+\end{proof}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p011
+Dengan mengambil kasus khusus $V=W$, kita melihat bahwa $\Gal(L|K)$ beraksi
+pada $\GL(V_L)$ melalui $(\sigma,g)\mapsto{}^\sigma g$, dan
+$\GL(V_L)^{\Gal(L|K)}=\GL(V)$.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.lm002
+\begin{lemma}
+	Untuk data $\mathbf{t}$ berbentuk \eqref{eqn:tensor-data}, aksi mulus
+	$\Gal(L|K)$ pada $\GL(V_L)$ mempertahankan $G(\mathbf{t}_L)$. Dengan
+	demikian, $G(\mathbf{t}_L)$ menjadi grup-$\Gal(L|K)$ mulus dalam
+	pengertian Catatan~\ref{rem:pro-finite-coh-nonabelian}; subgrup invariannya
+	memenuhi
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q010
+	\[
+	G(\mathbf{t}_L)^{\Gal(L|K)}=G(\mathbf{t}).
+	\]
+\end{lemma}
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.pf002
+\begin{proof}
+	Misalkan $g\in G(\mathbf{t}_L)$ dan $\sigma\in\Gal(L|K)$. Maka
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q011
+	\[
+	({}^\sigma g)\mathbf{t}_L
+	=({}^\sigma g)(\sigma\mathbf{t}_L)
+	=\sigma g\sigma^{-1}(\sigma\mathbf{t}_L)
+	=\sigma(g\mathbf{t}_L)
+	=\sigma(\mathbf{t}_L)
+	=\mathbf{t}_L.
+	\]
+	Jadi, aksi $\Gal(L|K)$ mempertahankan $G(\mathbf{t}_L)$. Pernyataan
+	lainnya langsung diperoleh.
+\end{proof}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p012
+Dalam praktik, klasifikasi data \eqref{eqn:tensor-data} biasanya menjadi
+lebih sederhana setelah memperluas medan ke medan $L$ yang cukup besar.
+Sebagai contoh, kelas isomorfisme bentuk kuadratik takdegenerat di atas medan
+tertutup aljabar sepenuhnya ditentukan oleh dimensinya, sedangkan situasinya
+lebih rumit di atas medan umum seperti $\R$, $\Q_p$, atau $\Q$.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p013
+Syarat seperti ketakdegeneratan atau asosiativitas perkalian yang dikenakan
+	dalam berbagai masalah klasifikasi di atas biasanya dapat diperiksa setelah
+	sembarang perluasan medan. Karena itu, masalahnya terbagi menjadi dua bagian:
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.l004
+\begin{enumerate}
+	\item Di atas medan $L$ yang cukup besar, klasifikasikan data berbentuk
+	\eqref{eqn:tensor-data} yang memenuhi syarat yang diinginkan; pilihan
+	khasnya adalah mengambil $L$ sebagai medan tertutup separabel.
+	\item Pilih data $\mathbf{t}_0$ yang didefinisikan di atas $K$, ambil
+	perluasan Galois $L|K$ yang cukup besar, lalu pelajari data $\mathbf{t}$
+	yang memenuhi $\mathbf{t}_L\simeq\mathbf{t}_{0,L}$.
+\end{enumerate}
+Bagian pertama dapat disebut geometris, sedangkan bagian kedua aritmetis.
+Bagian ini berfokus pada bagian aritmetis, yang memotivasi definisi berikut.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.d003
+\begin{definition}
+	Misalkan $\mathbf{t}_0$ data berbentuk \eqref{eqn:tensor-data} yang
+	didefinisikan di atas medan $K$, dan misalkan $L|K$ suatu perluasan
+	Galois. Tetapkan
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q012
+	\[
+	\mathcal{T}(\mathbf{t}_0):=
+	\left\{
+	\begin{array}{r|l}
+		\mathbf{t}:\text{ data berbentuk \eqref{eqn:tensor-data}}
+		& \text{terdapat isomorfisme }h:\mathbf{t}_{0,L}\rightiso\mathbf{t}_L \\
+		\text{yang didefinisikan di atas medan $K$}&
+	\end{array}
+	\right\}.
+	\]
+	Tuliskan pula
+	$\mathscr{T}(\mathbf{t}_0):=\mathcal{T}(\mathbf{t}_0)/\simeq$.
+\end{definition}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p014
+Definisi ini hanya mensyaratkan keberadaan isomorfisme $h$, tanpa menetapkan
+pilihan tertentu; setiap dua pilihan berbeda melalui perkalian kanan dengan
+suatu unsur $G(\mathbf{t}_{0,L})$. Tuliskan
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q013
+\[
+\Gamma:=\Gal(L|K),\qquad\text{dilengkapi topologi Krull}.
+\]
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p015
+Jika $\sigma\in\Gamma$ dan
+$h:\mathbf{t}_{0,L}\rightiso\mathbf{t}_L$ (yakni
+$h(\mathbf{t}_{0,L})=\mathbf{t}_L$), maka
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q014
+\[
+{}^\sigma h(\mathbf{t}_{0,L})
+={}^\sigma h(\sigma\mathbf{t}_{0,L})
+=\sigma(h(\mathbf{t}_{0,L}))
+=\sigma(\mathbf{t}_L)
+=\mathbf{t}_L.
+\]
+Karena itu, terdapat pemetaan tunggal
+$c:\Gamma\to G(\mathbf{t}_{0,L})$ sedemikian sehingga
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q015
+\[
+{}^\sigma h=hc(\sigma),\qquad \sigma\in\Gal(L|K).
+\]
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p016
+Dari
+${}^{\sigma\tau}h={}^\sigma(hc(\tau))={}^\sigma h\cdot
+{}^\sigma c(\tau)=h\cdot c(\sigma)\cdot{}^\sigma c(\tau)$, diperoleh
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q016
+\[
+c(\sigma\tau)=c(\sigma)\cdot{}^\sigma c(\tau),
+\qquad \sigma,\tau\in\Gamma.
+\]
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p017
+Tanpa mengurangi keumuman, andaikan $\mathbf{t}_0$ dan $\mathbf{t}$
+masing-masing direalisasikan pada ruang $V$ dan $W$, sehingga
+$h\in\Hom_L(V_L,W_L)$. Karena aksi $\Gamma$ mulus, terdapat subgrup buka
+$\Gamma_0\subset\Gamma$ yang memfiksasi $h$; akibatnya, $c$ terfaktorkan
+melalui $\Gamma/\Gamma_0$.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p018
+Jika pilihan $h$ diubah menjadi $h'=ha$, dengan
+$a\in G(\mathbf{t}_{0,L})$, maka $c'$ yang bersesuaian memenuhi
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q017
+\[
+c'(\sigma)=(h')^{-1}\cdot{}^\sigma h'
+=a^{-1}\cdot h^{-1}\cdot{}^\sigma h\cdot{}^\sigma a
+=a^{-1}\cdot c(\sigma)\cdot{}^\sigma a.
+\]
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p019
+Dengan membandingkan hasil di atas satu demi satu dengan
+Definisi~\ref{def:nonabelian-H} tentang $\Hm^1$ nonabelian, serta menggunakan
+Catatan~\ref{rem:pro-finite-coh-nonabelian} untuk versi profinit, kita
+memperoleh pemetaan
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q018
+\begin{equation}\label{eqn:Galois-H1-prep}
+	\begin{aligned}
+		\mathcal{T}(\mathbf{t}_0)&\longrightarrow
+		\Hm^1\left(\Gamma,G(\mathbf{t}_{0,L})\right),\\
+		\mathbf{t}&\longmapsto[c]:=\text{kelas ekuivalensi }c.
+	\end{aligned}
+\end{equation}
+Pemetaan ini kanonik dan tidak bergantung pada pilihan data bantu apa pun.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p020
+Ingat pula bahwa
+$\Hm^1\left(\Gamma,G(\mathbf{t}_{0,L})\right)$ pada umumnya bukan grup,
+tetapi merupakan himpunan bertitik yang titik pangkalnya diwakili oleh
+pemetaan konstan $\Gamma\to G(\mathbf{t}_{0,L})$ dengan nilai automorfisme
+identitas $1$. Di sisi lain, $\mathcal{T}(\mathbf{t}_0)$ juga mempunyai titik
+pangkal yang jelas, yaitu $\mathbf{t}_0$, demikian pula himpunan hasil bagi
+$\mathscr{T}(\mathbf{t}_0)$. Pemetaan \eqref{eqn:Galois-H1-prep} jelas
+mempertahankan titik pangkal, sebagaimana tampak dengan mengambil
+$h=\identity$.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.t001
+\begin{theorem}\label{prop:Galois-H1}
+	Untuk data $\mathbf{t}_0$ dan perluasan Galois $L|K$ seperti di atas,
+	dengan $\Gamma:=\Gal(L|K)$, pemetaan \eqref{eqn:Galois-H1-prep}
+	menginduksi bijeksi yang mempertahankan titik pangkal
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q019
+	\[
+	\mathscr{T}(\mathbf{t}_0)\;\xrightarrow{1:1}\;
+	\Hm^1\left(\Gamma,G(\mathbf{t}_{0,L})\right).
+	\]
+\end{theorem}
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.pf003
+\begin{proof}
+	Pertama, kita tunjukkan bahwa \eqref{eqn:Galois-H1-prep} terfaktorkan melalui
+	$\mathscr{T}(\mathbf{t}_0)$. Misalkan
+	$f:\mathbf{t}\rightiso\mathbf{t}'$, sehingga
+	$f_L:\mathbf{t}_L\rightiso\mathbf{t}'_L$. Dari
+	$h:\mathbf{t}_{0,L}\rightiso\mathbf{t}_L$ diperoleh
+	$f_Lh:\mathbf{t}_{0,L}\rightiso\mathbf{t}'_L$. Karena
+	${}^\sigma f_L=f_L$, berlaku
+	$(f_Lh)^{-1}\cdot{}^\sigma(f_Lh)=h^{-1}\cdot{}^\sigma h$, sehingga $c$
+	yang bersesuaian tidak berubah.
+
+	Selanjutnya, kita tunjukkan bahwa
+	$\mathscr{T}(\mathbf{t}_0)\to
+	\Hm^1\left(\Gamma,G(\mathbf{t}_{0,L})\right)$ injektif. Misalkan diberikan
+	data $\mathbf{t}$, $\mathbf{t}'$, dan isomorfisme
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q020
+	\[
+	\mathbf{t}'_L\xleftarrow[\sim]{h'}\mathbf{t}_{0,L}
+	\xrightarrow[\sim]{h}\mathbf{t}_L,
+	\]
+	serta terdapat $a\in G(\mathbf{t}_{0,L})$ yang memenuhi
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q021
+	\[
+	(h')^{-1}\cdot{}^\sigma h'
+	=a^{-1}\cdot h^{-1}\cdot{}^\sigma h\cdot{}^\sigma a,
+	\qquad\sigma\in\Gamma.
+	\]
+	Karena itu,
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q022
+	\[
+	ha(h')^{-1}
+	={}^\sigma h\cdot{}^\sigma a\cdot{}^\sigma(h')^{-1},
+	\qquad\sigma\in\Gamma.
+	\]
+	Dengan kata lain,
+	$ha(h')^{-1}:\mathbf{t}'_L\rightiso\mathbf{t}_L$ invarian terhadap aksi
+	$\Gamma$, sehingga turun menjadi isomorfisme
+	$\mathbf{t}'\rightiso\mathbf{t}$.
+
+	Terakhir, kita tunjukkan bahwa
+	$\mathscr{T}(\mathbf{t}_0)\to
+	\Hm^1\left(\Gamma,G(\mathbf{t}_{0,L})\right)$ surjektif. Ambil
+	$c\in Z^1(\Gamma,G(\mathbf{t}_{0,L}))$. Karena
+	$c(\sigma)\in\GL(V_L)$, kita dapat menggunakannya untuk mendefinisikan
+	aksi $\Gamma$ baru, yang dilambangkan dengan $\odot$, pada $V_L$:
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q023
+	\[
+	\sigma\odot v:=c(\sigma)(\sigma v),
+	\qquad\sigma\in\Gamma,\quad v\in V_L.
+	\]
+
+	Dari $c(\identity)=1$ dan
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q024
+	\[
+	\sigma\odot(\tau\odot v)
+	=c(\sigma)\sigma(c(\tau)(\tau v))
+	=c(\sigma)\bigl({}^\sigma c(\tau)(\sigma\tau v)\bigr)
+	=(\sigma\tau)\odot v,
+	\]
+	terlihat bahwa $\odot$ memang aksi $\Gamma$, sedangkan kemulusan $c$
+	memastikan bahwa $\odot$ tetap merupakan aksi mulus dan semilinear.
+	Definisikan ruang vektor-$K$
+	$W:=(V_L)^{\Gamma,\;\odot\text{-aksi}}$. Berdasarkan penurunan Galois,
+	kita memperoleh isomorfisme ruang vektor-$L$ yang mempertahankan aksi
+	semilinear $\Gamma$,
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q025
+	\begin{gather*}
+		h:(V_L,\;\odot\text{-aksi})\rightiso
+		(W_L,\;\text{aksi alami}),\\
+		w\in W\implies h(w)=1\otimes w.
+	\end{gather*}
+
+	Di sisi lain, $\Gamma$ juga beraksi secara semilinear melalui $\odot$ pada
+	setiap $T^{p,q}(V_L)$ (lihat pembahasan setelah Definisi~\ref{def:tL}),
+	dan karena $c(\sigma)\in G(\mathbf{t}_{0,L})$, berlaku
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q026
+	\[
+	\sigma\odot\mathbf{t}_{0,L}
+	=c(\sigma)(\sigma\mathbf{t}_{0,L})
+	=c(\sigma)\mathbf{t}_{0,L}
+	=\mathbf{t}_{0,L}.
+	\]
+	Karena itu, $\mathbf{t}_{0,L}$ turun relatif terhadap $\odot$ menjadi data
+	$\mathbf{t}$ pada $W$, yang dicirikan oleh
+	$h(\mathbf{t}_{0,L})=\mathbf{t}_L$.
+
+	Dengan demikian, $\mathbf{t}\in\mathcal{T}(\mathbf{t}_0)$. Isomorfisme
+	$h$ yang bersesuaian memenuhi
+	$\sigma(h(v))=h(\sigma\odot v)=(hc(\sigma)\sigma)(v)$, yakni identitas
+	$\sigma h=hc(\sigma)\sigma$. Menuliskannya kembali sebagai
+	$h^{-1}\cdot{}^\sigma h=c(\sigma)$ memperlihatkan bahwa $\mathbf{t}$
+	dipetakan ke $[c]$ oleh \eqref{eqn:Galois-H1-prep}. Ini membuktikan
+	pernyataan tersebut.
+\end{proof}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p021
+Penerapan yang paling sederhana dan langsung adalah sebagai berikut. Hasil
+ini merupakan akibat dari fakta umum bahwa setiap ruang vektor berdimensi hingga
+mempunyai basis, sehingga dimensi menentukan kelas isomorfisme ruang vektor
+berdimensi hingga.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.t002
+\begin{theorem}[Teorema Hilbert 90: versi $\GL$]\label{prop:Hilbert-90-GL}
+	\index{Hilbert 90}
+	Misalkan $V$ ruang vektor-$K$ berdimensi hingga dan $L|K$ perluasan
+	Galois. Dengan demikian, $\Gamma:=\Gal(L|K)$ beraksi secara mulus pada
+	grup $\GL(V_L)$. Maka
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q027
+	\[
+	\Hm^1(\Gamma,\GL(V_L))=1.
+	\]
+\end{theorem}
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.pf004
+\begin{proof}
+	Terapkan Teorema~\ref{prop:Galois-H1}, tetapi ambil data $\mathbf{t}_0$
+	dengan $I=\emptyset$. Dengan kata lain, data tersebut hanya menentukan
+	suatu ruang vektor-$K$ berdimensi hingga $V$, tanpa tensor apa pun. Dalam
+	kasus ini, unsur-unsur $\mathscr{T}(\mathbf{t}_0)$ berkorespondensi
+	satu-satu dengan kelas isomorfisme ruang vektor-$K$ $W$ yang memenuhi
+	$W_L\simeq V_L$, atau ekuivalen dengan $\dim W=\dim V$. Jelas hanya ada
+	satu kelas isomorfisme demikian.
+\end{proof}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p022
+Serupa dengan itu, di atas medan berkarakteristik $\neq2$, fakta umum bahwa
+setiap ruang simplektik $(V,\omega)$ mempunyai basis simplektik mengarah ke
+hasil berikut.
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.t003
+\begin{theorem}
+	Misalkan $\mathrm{char}(K)\neq2$, $V$ ruang vektor-$K$, dan
+	$\omega:V\times V\to K$ bentuk bilinear antisimetris takdegenerat (juga
+	disebut \emph{bentuk simplektik}, sedangkan data $(V,\omega)$ disebut
+	\emph{ruang simplektik}). Grup simplektik yang bersesuaian didefinisikan
+	sebagai
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q028
+	\begin{align*}
+		\Sp(V)&=\Sp(V,\omega)\\
+		&:=\{g\in\GL(V):\forall v_1,v_2\in V,\;
+		\omega(gv_1,gv_2)=\omega(v_1,v_2)\}.
+	\end{align*}
+
+	Misalkan $L|K$ suatu perluasan Galois. Definisikan secara serupa grup
+	$\Sp(V_L)$ beserta aksi $\Gamma:=\Gal(L|K)$ padanya; aksi ini mulus. Maka
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q029
+	\[
+	\Hm^1(\Gamma,\Sp(V_L))=1.
+	\]
+\end{theorem}
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.pf005
+\begin{proof}
+	Data $\mathbf{t}_0$ yang ditinjau terdiri atas ruang $V$ dan tensor
+	$\omega$ bertipe $(0,2)$. Sifat takdegenerat dan antisimetris suatu bentuk
+	bilinear dapat diperiksa setelah sembarang perluasan medan. Oleh karena itu,
+	unsur-unsur $\mathscr{T}(\mathbf{t}_0)$ berkorespondensi satu-satu dengan
+	kelas isomorfisme ruang simplektik $(W,\eta)$ di atas $K$ yang memenuhi
+	$(W_L,\eta_L)\simeq(V_L,\omega_L)$. Berdasarkan teorema struktur untuk
+	ruang simplektik, yakni bahwa dimensinya menentukan kelas isomorfismenya,
+	data $(W,\eta)$ tersebut membentuk satu kelas isomorfisme saja.
+\end{proof}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.eg001
+\begin{example}\label{eg:multiplicative-90-finite}
+	Ambil $\dim V=1$ dalam Teorema~\ref{prop:Hilbert-90-GL}. Karena
+	$\GL(V_L)\simeq L^\times$ dengan aksi $\Gamma$ baku, diperoleh
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q030
+	\[
+	\Hm^1(\Gamma,L^\times)=0.
+	\]
+	Karena $L^\times$ abelian, notasi aditif digunakan dalam persamaan ini.
+	Jika $L|K$ hingga, persamaan tersebut dapat ditulis menggunakan kohomologi
+	Tate dari Definisi~\ref{def:TaHm} sebagai
+	$\TaHm^1(\Gamma,L^\times)=0$.
+
+	Jika selanjutnya $L|K$ disyaratkan siklik, periodisitas yang dinyatakan
+	dalam Contoh~\ref{eg:TaHm-periodic} memberikan
+	% segment-id: o014.aljabr2.chapter7.galois-descent-h1.q031
+	\[
+	\TaHm^{-1}(\Gamma,L^\times)
+	\simeq\TaHm^1(\Gamma,L^\times)=0.
+	\]
+	Dengan demikian, kita memperoleh kembali secara alami Teorema Hilbert 90
+	versi multiplikatif; lihat \cite[Teorema 9.6.9]{Li1}.
+\end{example}
+
+% segment-id: o014.aljabr2.chapter7.galois-descent-h1.p023
+Secara umum, menghitung $\Hm^1$ secara langsung untuk mengklasifikasikan
+objek matematika mungkin cukup sulit. Manfaatnya terletak pada sudut pandang
+baru yang diberikannya, serta pada tersedianya perangkat kohomologis seperti
+barisan eksak panjang (Teorema~\ref{prop:nonabelian-long}) bagi kajian masalah
+klasifikasi.

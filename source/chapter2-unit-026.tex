@@ -9,12 +9,12 @@
 
 % segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p001
 Pada bagian ini, tetapkan suatu kategori abelian $\mathcal{A}$. Untuk setiap
-objek $X$ dalam $\mathcal{A}$, himpunan terurut parsial subobjek-subobjeknya
+objek $X$ dalam $\mathcal{A}$, himpunan subobjeknya yang terurut parsial
 dilambangkan dengan $(\mathrm{Sub}_X, \subset)$, mengikuti konvensi dalam
 \S\ref{sec:subquot}.
 
 % segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p002
-Hasil-hasil dalam bagian ini sudah dikenal baik untuk kasus
+Hasil-hasil dalam bagian ini sudah sangat dikenal untuk kasus
 $\mathcal{A}=R\dcate{Mod}$, dengan $R$ sebarang gelanggang; tetapi untuk
 kategori abelian diperlukan argumen yang berbeda.
 
@@ -28,8 +28,8 @@ kategori abelian diperlukan argumen yang berbeda.
 		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i001
 		\item Untuk suatu subobjek $X'$ dari $X$, \emph{kuosien} yang
 		bersesuaian didefinisikan sebagai
-		$X/X':=\Coker[X'\to X]$; secara alami, objek ini merupakan objek
-		kuosien dari $X$. Setiap epimorfisme
+		$X/X':=\Coker[X'\to X]$; objek ini secara alami merupakan kuosien
+		dari $X$. Setiap epimorfisme
 		$f:X\twoheadrightarrow X''$ dapat dipandang sebagai kuosien $X$ oleh
 		$\Ker(f)$.
 		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i002
@@ -59,11 +59,11 @@ Secara lebih umum, untuk sebarang himpunan $I$ dan keluarga subobjek
 $(X_i)_{i\in I}$ dari $X$, metode yang sama memberikan definisi yang baik
 bagi $\bigcap_{i\in I}X_i$ (atau $\sum_{i\in I}X_i$), asalkan produk seratnya
 di atas $X$ (atau koproduknya $\bigsqcup_{i\in I}X_i$ dalam $\mathcal{A}$)
-ada. Peran definisi ini dijelaskan oleh fakta berikut.
+ada. Arti penting definisi ini tampak dalam fakta berikut.
 
 % segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pr001
 \begin{proposisi}\label{prop:subobject-inf-sup}
-	Diberikan suatu keluarga subobjek $(X_i)_{i\in I}$ dari $X$. Jika produk
+	Ambil suatu keluarga subobjek $(X_i)_{i\in I}$ dari $X$. Jika produk
 	seratnya di atas $X$ (atau koproduknya $\bigsqcup$ dalam $\mathcal{A}$)
 	ada, masing-masing objek tersebut memberikan infimum (atau supremum) dari
 	$(X_i)_{i\in I}$ dalam himpunan terurut parsial
@@ -131,8 +131,8 @@ ada. Peran definisi ini dijelaskan oleh fakta berikut.
 
 % segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.p005
 Bagian ini berfokus pada struktur $(\mathrm{Sub}_X,\subset)$, tetapi versi
-objek kuosien $(\mathrm{Quot}_X,\twoheadleftarrow)$ tidak berbeda secara
-hakiki. Hal ini berdasarkan bijeksi pembalik urutan yang jelas
+dalam hal objek kuosien $(\mathrm{Quot}_X,\twoheadleftarrow)$ sepenuhnya
+sepadan. Hal ini mengikuti dari bijeksi pembalik urutan yang jelas
 $\mathrm{Sub}_X\simeq\mathrm{Quot}_X$: subobjek $X'$ dan objek kuosien $X''$
 saling bersesuaian jika dan hanya jika keduanya dapat ditempatkan dalam suatu
 barisan eksak pendek $0\to X'\to X\to X''\to0$. Karena itu, versi tersebut
@@ -146,8 +146,8 @@ tidak akan dibahas secara terpisah.
 	$X'\hookrightarrow X$ dan $Y'\hookrightarrow Y$, tuliskan
 	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q003
 	\[ f^{-1}(Y') := X \dtimes{Y} Y', \quad f(X') := \Image\left[ X' \hookrightarrow X \xrightarrow{f} Y \right]; \]
-	yang pertama merupakan prabayang $Y'$ dan subobjek dari $X$, sedangkan
-	yang kedua merupakan citra $X'$ dan subobjek dari $Y$. Konstruksi ini
+	objek pertama merupakan prabayang $Y'$ dan subobjek dari $X$, sedangkan
+	objek kedua merupakan citra $X'$ dan subobjek dari $Y$. Konstruksi ini
 	memberikan pemetaan yang mempertahankan urutan dalam dua arah:
 	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g003
 	$\begin{tikzcd}
@@ -166,7 +166,7 @@ tidak akan dibahas secara terpisah.
 		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q004
 		\[ X' \subset f^{-1}(Y') \iff f(X') \subset Y'. \]
 		% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.i004
-		\item Diberikan keluarga elemen $(X'_i)_{i\in I}$ dari
+		\item Untuk keluarga subobjek $(X'_i)_{i\in I}$ dari
 		$\mathrm{Sub}_X$ (atau $(Y'_i)_{i\in I}$ dari
 		$\mathrm{Sub}_Y$),\footnote{Catatan penerjemah (O014-C025): sumber
 		memperkenalkan keluarga $(X_i)$ dan $(Y_i)$ tanpa tanda prima, sedangkan
@@ -192,7 +192,7 @@ tidak akan dibahas secara terpisah.
 	Definisi~\ref{def:subobject-image} menetapkannya sebagai
 	$\Image[X'\to X\to Y]$, yakni citra dan subobjek dari $Y$. Target memakai
 	istilah yang sesuai dengan objek tersebut.} Lema~\ref{prop:Im-Coim-fac}
-	menunjukkan bahwa diagram seperti itu berkorespondensi satu-satu dengan
+	menunjukkan bahwa diagram seperti itu berpadanan secara bijektif dengan
 	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.g005
 	\[\begin{tikzcd}
 		X' \arrow[r] \arrow[d, hookrightarrow] & f(X') \arrow[hookrightarrow, d] \arrow[dashed, r, "\exists"] & Y' \arrow[hookrightarrow, ld] \\
@@ -264,8 +264,8 @@ tidak akan dibahas secara terpisah.
 Dengan kata lain, $B$ merupakan komplemen dari $A$ dalam kisi
 $\mathrm{Sub}_X$ (Definisi~\ref{def:modular-lattice}) jika dan hanya jika
 $(i,j):A\oplus B\rightiso X$; kondisi terakhir ini juga sering ditulis
-sebagai persamaan $A\oplus B=X$. Bertolak dari fakta ini, kita dapat secara
-rekursif menggunakan bahasa teori kisi untuk mencirikan apakah $X$ dapat
+sebagai persamaan $A\oplus B=X$. Berdasarkan fakta ini, kita dapat menggunakan
+bahasa teori kisi secara rekursif untuk menentukan apakah $X$ dapat
 dinyatakan sebagai jumlah langsung dari sejumlah hingga subobjek yang
 diberikan, $X_1,\ldots,X_n$; hasilnya serupa dengan kasus teori modul. Untuk
 keluarga subobjek tak hingga, pada umumnya kita perlu bekerja dalam kategori
@@ -335,7 +335,7 @@ ke kategori abelian umum $\mathcal{A}$.
 		0 \arrow[r] & Z \arrow[r] \arrow[equal, d] & Y \arrow[r] \arrow[hookrightarrow, d] & Y/Z \arrow[dashed, d, "\exists!"] \arrow[r] & 0 \\
 		0 \arrow[r] & Z \arrow[r] & X \arrow[r, "\pi"'] & \overline{X} \arrow[r] & 0
 	\end{tikzcd}\]
-	Panah putus-putus berasal dari funktorialitas kokernel
+	Anak panah bergaris putus-putus berasal dari funktorialitas kokernel
 	\eqref{eqn:Ker-Coker-functoriality}. Dengan menerapkan
 	Teorema~\ref{prop:snake-lemma}, segera diperoleh
 	$\Ker[Y/Z\to\overline{X}]=0$ dan
@@ -383,7 +383,7 @@ ke kategori abelian umum $\mathcal{A}$.
 	Proposisi~\ref{prop:biproduct-sum-intersection} menyatakan bahwa persegi
 	kirinya merupakan diagram dorong keluar. Karena diagram dorong keluar mempertahankan
 	kokernel (Proposisi~\ref{prop:pull-back-ker}), $\theta$ merupakan
-	isomorfisme, sebagaimana ingin dibuktikan.
+	isomorfisme, sebagaimana dikehendaki.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.co002
@@ -402,7 +402,7 @@ ke kategori abelian umum $\mathcal{A}$.
 % segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.pf006
 \begin{bukti}
 	Cukup menangani kasus diagram tarik balik. Karena penarikan balik sepanjang
-	$f$ dapat dilakukan secara bertahap, persoalan tereduksi pada dua kasus: $f$
+	$f$ dapat dilakukan secara bertahap, cukup ditinjau dua kasus: $f$
 	merupakan epimorfisme atau $f$ merupakan monomorfisme. Jika $f$ merupakan
 	epimorfisme, Proposisi~\ref{prop:Abel-cat-pull-push} menyatakan bahwa
 	persegi tengah juga merupakan diagram dorong keluar; dalam hal ini $c$
@@ -415,7 +415,7 @@ ke kategori abelian umum $\mathcal{A}$.
 	\end{tikzcd}\]
 	Proposisi~\ref{prop:Abel-cat-pull-push} menyatakan bahwa
 	$W\to\Image(g)\dtimes{Z}Y$ merupakan epimorfisme, sehingga
-	$\Coker(g')=\Coker(g'')$. Dengan demikian, persoalan tereduksi pada kasus
+	$\Coker(g')=\Coker(g'')$. Dengan demikian, cukup ditinjau kasus
 	ketika $f$ dan $g$ keduanya merupakan monomorfisme. Dalam hal ini
 	$W=Y\cap X$, dan $c$ berfaktor sebagai
 	$Y/(Y\cap X)\rightiso(Y+X)/X\hookrightarrow Z/X$.
@@ -432,7 +432,7 @@ ke kategori abelian umum $\mathcal{A}$.
 	Kita sudah mengetahui bahwa $(\mathrm{Sub}_X,\subset)$ merupakan kisi
 	terbatas. Sekarang tinjau sebarang interval $[Y_1,Y_2]$ dalam
 	$\mathrm{Sub}_X$. Lema~\ref{prop:modularity-criterion} mereduksi persoalan
-	pada pernyataan berikut: untuk setiap $A,B,C\in[Y_1,Y_2]$,
+	menjadi pernyataan berikut: untuk setiap $A,B,C\in[Y_1,Y_2]$,
 	% segment-id: o014.li2.chapter2.subobjects-and-isomorphism-theorems.q008
 	\begin{equation}\label{eqn:Abel-cat-interval-complement}
 		\left( A, B \;\text{keduanya merupakan komplemen dari}\; C, \; A \subset B \right) \implies A = B.

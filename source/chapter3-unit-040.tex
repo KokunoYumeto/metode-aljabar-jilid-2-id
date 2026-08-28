@@ -9,7 +9,7 @@
 \hypertarget{o014.aljabr2.chapter3.truncation-functors}{ }
 
 % segment-id: o014.li2.chapter3.truncation-functors.p001
-Pada awal bagian ini, tetapkan suatu kategori aditif $\mathcal{A}$.
+Pada awal bagian ini, misalkan $\mathcal{A}$ suatu kategori aditif.
 
 % segment-id: o014.li2.chapter3.truncation-functors.de001
 \begin{definisi}\label{def:cplx-cat-variant}
@@ -28,7 +28,7 @@ Pada awal bagian ini, tetapkan suatu kategori aditif $\mathcal{A}$.
 	Secara lebih umum, untuk $-\infty \leq s \leq t \leq +\infty$,
 	gunakan $\cate{C}^{[s,t]}(\mathcal{A})$ untuk subkategori penuh yang
 	terdiri atas kompleks-kompleks yang memenuhi
-	$n \notin [s, t] \implies X^n = 0$, dan tetapkan
+	$n \notin [s, t] \implies X^n = 0$, dan definisikan
 % segment-id: o014.li2.chapter3.truncation-functors.q002
 	\[ \cate{C}^{\geq s}(\mathcal{A}) := \cate{C}^{[s, +\infty]}(\mathcal{A}), \quad \cate{C}^{\leq t}(\mathcal{A}) := \cate{C}^{[-\infty, t]}(\mathcal{A}). \]
 \end{definisi}
@@ -52,7 +52,7 @@ Selain itu, $\mathcal{A}$ secara alami diidentifikasikan dengan
 $\cate{C}^{\geq 0}(\mathcal{A}) \cap \cate{C}^{\leq 0}(\mathcal{A})$.
 
 % segment-id: o014.li2.chapter3.truncation-functors.p004
-Untuk setiap $\star \in \{+, -, \bdd\}$, gagasan homotopi morfisme
+Untuk setiap $\star \in \{+, -, \bdd\}$, konsep homotopi antarmorfisme
 (Definisi~\ref{def:homotopy}) dapat dibatasi pada
 $\cate{C}^{\star}(\mathcal{A})$. Dengan demikian,
 Definisi~\ref{def:cplx-homotopy-cat} mempunyai perumuman berikut.
@@ -67,8 +67,7 @@ Definisi~\ref{def:cplx-homotopy-cat} mempunyai perumuman berikut.
 
 % segment-id: o014.li2.chapter3.truncation-functors.p005
 Mulai sekarang, kita mensyaratkan bahwa $\mathcal{A}$ merupakan kategori
-abelian. Kita akan
-mengkaji cara memenggal bagian kompleks $X$ yang berderajat $< n$ (atau
+abelian. Kita akan mengkaji cara memenggal bagian kompleks $X$ yang berderajat $< n$ (atau
 $> n$). Gagasan naif ialah mengganti semua suku pada bagian tersebut dengan
 $0$. Walaupun sederhana, cara ini mengacaukan kohomologi; karena itu, kita
 memperkenalkan versi yang lebih halus.
@@ -100,7 +99,7 @@ memperkenalkan versi yang lebih halus.
 % segment-id: o014.li2.chapter3.truncation-functors.p006
 Jelas bahwa $\tau^{\leq n}$, $\tilde{\tau}^{\leq n}$,
 $\tau^{\geq n}$, dan $\tilde{\tau}^{\geq n}$ semuanya merupakan funktor
-aditif. Kita mempunyai
+aditif. Berlaku
 $\tau^{\leq n} = [-n] \circ \tau^{\leq 0} \circ [n]$; hal yang sama berlaku
 bagi $\tilde{\tau}^{\leq n}$, $\tau^{\geq n}$, dan
 $\tilde{\tau}^{\geq n}$.
@@ -229,7 +228,7 @@ $\cate{K}(\mathcal{A})$.
 \end{definisiproposisi}
 % segment-id: o014.li2.chapter3.truncation-functors.pf003
 \begin{bukti}
-	Misalkan $h \in \Hom^{-1}(X, Y)$. Untuk kasus $\tau^{\leq n}$, tetapkan
+	Misalkan $h \in \Hom^{-1}(X, Y)$. Untuk kasus $\tau^{\leq n}$, definisikan
 	$\overline{h}^n := h^n \circ \bigl(\Ker(d_X^n) \hookrightarrow X^n\bigr)$.
 	Definisikan $\overline{h} \in
 	\Hom^{-1}\left( \tau^{\leq n} X, \tau^{\leq n} Y \right)$ menurut
@@ -242,7 +241,7 @@ $\cate{K}(\mathcal{A})$.
 	Mudah dilihat bahwa
 	$\tau^{\leq n}\left( d^{-1} h \right) = d^{-1} \overline{h}$.
 	
-	Untuk kasus $\tau^{\geq n}$, sebagai gantinya tetapkan
+	Untuk kasus $\tau^{\geq n}$, sebagai gantinya definisikan
 	$\underline{h}^{n+1} := \bigl(Y^n \twoheadrightarrow
 	\Coker(d_Y^{n-1})\bigr) \circ h^{n+1}$, lalu gunakan ini untuk
 	mendefinisikan $\underline{h} \in

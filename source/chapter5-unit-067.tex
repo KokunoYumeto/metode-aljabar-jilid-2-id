@@ -1,0 +1,270 @@
+% Unit 067 terjemahan Bahasa Indonesia dari chapter5.tex baris 468--577.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter5.filtered-differential-spectral-sequence
+% Cakupan: Bagian 5.4 lengkap.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.h001
+\section{Barisan spektral objek diferensial terfiltrasi}
+\label{sec:filtered-diff-ss}
+\hypertarget{o014.aljabr2.chapter5.filtered-differential-spectral-sequence}{ }
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p001
+Sepanjang bagian ini, kita bekerja dengan kategori abelian dengan translasi
+$(\mathcal{A},T)$.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.d001
+\begin{definition}\label{def:filtered-diffop}
+	\index{objek diferensial!terfiltrasi (filtered)}
+	Objek $(X,d)\in\Obj((\mathcal{A},T)_d)$ yang dilengkapi filtrasi
+	$\left(\mathrm{F}^\bullet X,d_{\mathrm{F}^\bullet X}\right)$ disebut
+	\emph{objek diferensial terfiltrasi} pada $(\mathcal{A},T)$. Dalam keadaan
+	ini, $\gr^pX$ juga dilengkapi secara alami dengan
+	$\gr^pd:\gr^pX\to T\gr^pX$, sehingga
+	$(\gr^pX,\gr^pd)\in\Obj((\mathcal{A},T)_d)$.
+\end{definition}
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p002
+Karena $d_{\mathrm{F}^pX}$ pada subobjek $\mathrm{F}^pX$ sebaiknya dipahami
+sebagai restriksi $d:X\to TX$, selanjutnya kita tetap menuliskannya sebagai
+$d$. Definisi serupa dapat diberikan untuk filtrasi menaik, dengan pernyataan
+yang sepenuhnya dual.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p003
+Kita kembali ke barisan spektral. Bagian sebelumnya menjelaskan cara membangun
+pasangan eksak dari objek diferensial. Sekarang perhatikan objek diferensial
+terfiltrasi $(X,d,\mathrm{F}^\bullet X)$ pada $\mathcal{A}$. Tuliskan
+$S:(Y^p)_p\mapsto(Y^{p+1})_p$ untuk funktor translasi standar pada
+$\mathcal{A}^{\Z}$; jelas bahwa $S$ berkomutasi dengan $T$ yang bekerja pada
+setiap $Y^p$. Karena itu morfisme yang akan dibahas mempunyai dua jenis
+derajat: ``derajat filtrasi'' yang bersesuaian dengan $S$, dan ``derajat
+internal'' yang bersesuaian dengan $T$. Untuk sementara kita berfokus pada
+yang pertama.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p004
+Karena filtrasi tersebut menurun, terdapat monomorfisme
+\[ \alpha:\left(\mathrm{F}^{p+1}X,d\right)_{p\in\Z}
+	\hookrightarrow S^{-1}\left(\mathrm{F}^{p+1}X,d\right)_{p\in\Z}
+	=\left(\mathrm{F}^{p}X,d\right)_{p\in\Z}. \]
+Dengan demikian,
+$E_0:=\Coker(\alpha)=\left(\gr^pX,\gr^pd\right)_{p\in\Z}$ dan
+$E_1^p=\Hm(\gr^pX,\gr^pd)$.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p005
+Pandang $\alpha$ sebagai morfisme berderajat $-1$ dalam
+$\mathcal{A}^{\Z}$ (terhadap $S$). Dengan menerapkan
+Proposisi~\ref{prop:differential-exact-couple}, kita memperoleh pasangan eksak
+berderajat pada $\mathcal{A}^{\Z}$:
+\[\mathscr{C}=\left[\begin{tikzcd}[column sep=tiny]
+	\Hm\left(\mathrm{F}^{p+1}X,d\right)_p
+	\arrow[rr, "-1"', "{\Hm(\alpha)}"] & &
+	\Hm\left(\mathrm{F}^{p+1}X,d\right)_p \arrow[ld, "{+1}"] \\
+	& \Hm\left(\gr^pX,\gr^pd\right)_p \arrow[lu] &
+\end{tikzcd}\right],\]
+di mana panah $\nwarrow$ berasal dari morfisme penghubung yang diinduksi oleh
+barisan eksak pendek
+$0\to(\mathrm{F}^{p+1}X,d)\to(\mathrm{F}^pX,d)
+\to(\gr^pX,\gr^pd)\to0$.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p006
+Barisan
+$\mathscr{E}=(E_r^p,d_r^p)_{\substack{r\geq0\\p\in\Z}}$ yang diperoleh
+dengan cara ini disebut barisan spektral yang ditentukan oleh
+$\mathrm{F}^\bullet X$ dalam $\mathcal{A}^{\Z}$. Pada akhir
+\S\ref{sec:exact-couples} telah dijelaskan bahwa $d_r$ adalah morfisme
+berderajat $r$ terhadap $S$, yaitu
+\[ d_r=\left(d_r^p:E_r^p\to(S^rE_r)^p=E_r^{p+r}\right)_{p\in\Z}; \]
+tentu saja, derajat $d_r$ juga dapat dibaca dari rumus dalam
+Proposisi~\ref{prop:differential-exact-couple}.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p007
+Dengan kata lain, objek diferensial terfiltrasi
+$(X,d,\mathrm{F}^\bullet X)$ menghasilkan barisan spektral bergradasi
+kohomologis sebagaimana dalam Definisi~\ref{def:graded-spectral-sequence}.
+Perhatikan bahwa $d_r^p$ di sini mungkin juga mempunyai derajat internal
+(kecuali jika $T=\identity_{\mathcal{A}}$); derajat ini tidak dicantumkan
+dalam notasi dan akan dirinci dalam \S\ref{sec:filtered-cplx-ss}.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p008
+Menurut pola \eqref{eqn:spectral-sequence-Z-B}, definisikan subobjek dari
+$Z_0=(\gr^pX,\gr^pd)_p$ sebagai
+\[ B_r=(B_r^p)_p\subset(Z_r^p)_p=Z_r. \]
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p009
+Untuk menyederhanakan notasi, pernyataan berikut tidak menampilkan derajat
+internal $d$; ini setara dengan meninjau kasus khusus
+$T=\identity_{\mathcal{A}}$. Perluasan ke kasus umum bersifat rutin: funktor
+translasi cukup disisipkan pada tempat yang tepat dalam setiap kemunculan
+$d^{-1}(\cdots)$ atau $d(\cdots)$ agar ungkapannya bermakna secara ketat.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.t001
+\begin{proposition}\label{prop:filtered-diff-E}
+	Untuk objek diferensial terfiltrasi $(X,d,\mathrm{F}^\bullet X)$, barisan
+	spektral terkait memenuhi
+	\begin{align*}
+		Z_r^p&=\dfrac{\left(\mathrm{F}^pX\cap d^{-1}\mathrm{F}^{p+r}X\right)
+		+\mathrm{F}^{p+1}X}{\mathrm{F}^{p+1}X}, \\
+		B_r^p&=\dfrac{\left(\mathrm{F}^pX\cap d\mathrm{F}^{p-r+1}X\right)
+		+\mathrm{F}^{p+1}X}{\mathrm{F}^{p+1}X},
+	\end{align*}
+	dan $d_r^p:E_r^p\to E_r^{p+r}$ diinduksi oleh morfisme
+	$d^{-1}\mathrm{F}^{p+r}X\xrightarrow{d}
+	\mathrm{F}^{p+r}X\cap\Ker(d)$.
+\end{proposition}
+\begin{proof}
+	Perhatikan bahwa komponen berderajat $p$ dari $\alpha^r$ dapat dipandang
+	sebagai penyertaan $\mathrm{F}^pX\hookrightarrow\mathrm{F}^{p-r}X$ atau
+	$\mathrm{F}^{p+r}X\hookrightarrow\mathrm{F}^pX$. Pernyataan tersebut
+	merupakan versi bergradasi dari
+	Proposisi~\ref{prop:differential-exact-couple}.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p010
+Karena $\varinjlim$ dan $\varprojlim$ dalam $\mathcal{A}^{\Z}$ diambil
+derajat demi derajat, $E_\infty=(E_\infty^p)_{p\in\Z}$ dapat dituliskan
+sebagai
+\begin{equation}\label{eqn:filtered-diff-infty}
+	E_\infty^p=\dfrac{Z_\infty^p}{B_\infty^p}
+	=\dfrac{\bigcap_r\left((\mathrm{F}^pX\cap d^{-1}\mathrm{F}^{p+r}X)
+	+\mathrm{F}^{p+1}X\right)}
+	{\bigcup_r\left((\mathrm{F}^pX\cap d\mathrm{F}^{p-r+1}X)
+	+\mathrm{F}^{p+1}X\right)},
+\end{equation}
+dengan syarat $\bigcap$ dan $\bigcup$ yang ditampilkan ada untuk setiap $p$.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.r001
+\begin{remark}
+	Proposisi~\ref{prop:filtered-diff-E} mengenai barisan spektral dari objek
+	diferensial terfiltrasi merupakan landasan pembahasan selanjutnya dalam bab
+	ini. Proposisi tersebut merupakan penerapan pasangan eksak, tetapi rumus
+	dalam Proposisi~\ref{prop:filtered-diff-E} juga dapat dipandang sebagai
+	definisi langsung, lalu semua sifat yang diperlukan bagi barisan spektral
+	diperiksa dari rumus itu.
+\end{remark}
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p011
+Berdasarkan deskripsi di atas, barisan spektral $E_r^p$ dari
+$(X,d,\mathrm{F}^\bullet X)$ dapat dipandang sebagai proses pendekatan bertahap
+terhadap $\Hm(X,d)$. Untuk memperjelas arti ``mendekati'', kita
+memerlukan konsep berikut.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.d002
+\begin{definition}[Filtrasi terinduksi]\label{def:induced-filtration-H}
+	\index{filtrasi!terinduksi (induced)}
+	Untuk suatu objek diferensial terfiltrasi
+	$(X,d,\mathrm{F}^\bullet X)$ pada $(\mathcal{A},T)$, objek $\Hm(X,d)$
+	dilengkapi filtrasi terinduksi
+	\[ \mathrm{F}^p\Hm(X,d):=
+	\Image\left[\mathrm{F}^pX\cap\Ker(d)\to\Hm(X,d)\right],
+	\qquad p\in\Z. \]
+\end{definition}
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.l001
+\begin{lemma}\label{prop:induced-filtration-H}
+	Jika terdapat $N$ dengan $\mathrm{F}^NX=0$, maka
+	$\mathrm{F}^N\Hm(X,d)=0$. Jika $\mathrm{F}^\bullet X$ merupakan filtrasi
+	menyeluruh menurut Definisi~\ref{def:filtration-properties}, maka
+	$\mathrm{F}^\bullet\Hm(X,d)$ juga menyeluruh.
+\end{lemma}
+\begin{proof}
+	Bagian pertama langsung; kita buktikan bagian kedua. Menurut
+	Lema~\ref{prop:image-sum-preimage-intersection}~(ii),
+	$\bigcup_p\mathrm{F}^p\Hm(X,d)$ adalah citra dari
+	$\bigcup_p(\mathrm{F}^pX\cap\Ker(d))$, sedangkan
+	\eqref{eqn:exhaustion-intersection} memberikan
+	\[ \bigcup_p\left(\mathrm{F}^pX\cap\Ker(d)\right)
+	=\left(\bigcup_p\mathrm{F}^pX\right)\cap\Ker(d)=\Ker(d). \]
+	Selain itu, jika terdapat $M$ dengan $\mathrm{F}^MX=X$, tentu saja
+	$\mathrm{F}^M\Hm(X,d)=\Hm(X,d)$.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p012
+Versi bergradasi dari pengamatan ini akan diterapkan dalam
+\S\ref{sec:filtered-cplx-ss}.
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.l002
+\begin{lemma}\label{prop:induced-filtration-gr}
+	Untuk objek diferensial terfiltrasi $(X,d,\mathrm{F}^\bullet X)$ dan setiap
+	$p\in\Z$, terdapat isomorfisme kanonik
+	\[ \gr^p\Hm(X,d)\simeq
+	\dfrac{\mathrm{F}^pX\cap\Ker(d)}
+	{(\mathrm{F}^{p+1}X\cap\Ker(d))
+	 +(\mathrm{F}^pX\cap\Image(T^{-1}d))}. \]
+\end{lemma}
+\begin{proof}
+	Uraikan definisi
+	$\mathrm{F}^p\Hm(X,d)/\mathrm{F}^{p+1}\Hm(X,d)$ dan gunakan teorema
+	isomorfisme standar untuk kategori abelian,
+	Proposisi~\ref{prop:Abel-cat-isom-thm}, untuk memperoleh
+	\begin{align*}
+		\gr^p\Hm(X,d)
+		&=\dfrac{(\mathrm{F}^pX\cap\Ker(d))+\Image(T^{-1}d)}
+		{(\mathrm{F}^{p+1}X\cap\Ker(d))+\Image(T^{-1}d)} \\
+		&=\dfrac{(\mathrm{F}^pX\cap\Ker(d))
+		 +(\mathrm{F}^{p+1}X\cap\Ker(d))+\Image(T^{-1}d)}
+		{(\mathrm{F}^{p+1}X\cap\Ker(d))+\Image(T^{-1}d)} \\
+		&\simeq\dfrac{\mathrm{F}^pX\cap\Ker(d)}
+		{((\mathrm{F}^{p+1}X\cap\Ker(d))+\Image(T^{-1}d))
+		 \cap(\mathrm{F}^pX\cap\Ker(d))} \\
+		&=\dfrac{\mathrm{F}^pX\cap\Ker(d)}
+		{(\mathrm{F}^{p+1}X\cap\Ker(d))
+		 +(\mathrm{F}^pX\cap\Image(T^{-1}d))}.
+	\end{align*}
+	Langkah terakhir memakai fakta bahwa $\mathrm{Sub}_X$ adalah kekisi
+	modular\footnote{Artinya, untuk semua subobjek $A,A^\flat,B\subset X$ dengan
+	$A^\flat\subset A$, berlaku
+	$A^\flat+(A\cap B)=(A^\flat+B)\cap A$.}
+	(Teorema~\ref{prop:subobject-modularity}), serta
+	$\mathrm{F}^{p+1}X\cap\Ker(d)\subset\mathrm{F}^pX\cap\Ker(d)$ dan
+	$\Image(T^{-1}d)\subset\Ker(d)$. Langkah-langkah lainnya standar.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.d003
+\begin{definition-proposition}\label{def:diff-obj-convergence}
+	\index{barisan spektral!konvergen lemah, konvergen kuat
+	(weakly convergent, strongly convergent)}
+	Untuk suatu objek diferensial terfiltrasi
+	$(X,d,\mathrm{F}^\bullet X)$, bangun barisan spektral bergradasi
+	kohomologis terkait $(E_r,d_r)_r$. Jika $\bigcap_r$ dan $\bigcup_r$ dalam
+	\eqref{eqn:filtered-diff-infty} ada, maka limit $E_\infty$ ada, dan
+	$\gr\Hm(X,d)$ yang ditentukan oleh filtrasi terinduksi dapat direalisasikan
+	secara kanonik sebagai subkuosien dari $E_\infty$.
+	\begin{itemize}
+		\item Jika $\gr\Hm(X,d)=E_\infty$, maka barisan spektral
+		$(E_r,d_r)_r$ disebut \emph{konvergen lemah}.
+		\item Jika $(E_r,d_r)_r$ konvergen lemah dan
+		$\mathrm{F}^\bullet\Hm(X,d)$ menyeluruh serta lengkap, maka barisan
+		spektral $(E_r,d_r)_r$ disebut \emph{konvergen kuat}.
+	\end{itemize}
+\end{definition-proposition}
+\begin{proof}
+	Misalkan $p\in\Z$. Dari ungkapan untuk $E_\infty^p$ dalam
+	\eqref{eqn:filtered-diff-infty}, pembilangnya memuat
+	$(\mathrm{F}^pX\cap\Ker(d))+\mathrm{F}^{p+1}X$, sedangkan penyebutnya
+	terkandung dalam
+	$(\mathrm{F}^pX\cap\Image(T^{-1}d))+\mathrm{F}^{p+1}X$
+	(ingat bahwa $d$ adalah morfisme $X\to TX$). Dengan demikian diperoleh
+	subkuosien berikut dari $E_\infty^p$:
+	\begin{multline*}
+		\dfrac{(\mathrm{F}^pX\cap\Ker(d))+\mathrm{F}^{p+1}X}
+		{(\mathrm{F}^pX\cap\Image(T^{-1}d))+\mathrm{F}^{p+1}X} \\
+		\simeq\dfrac{\mathrm{F}^pX\cap\Ker(d)}
+		{((\mathrm{F}^pX\cap\Image(T^{-1}d))+\mathrm{F}^{p+1}X)
+		 \cap(\mathrm{F}^pX\cap\Ker(d))} \\
+		=\dfrac{\mathrm{F}^pX\cap\Ker(d)}
+		{(\mathrm{F}^pX\cap\Image(T^{-1}d))
+		 +(\mathrm{F}^{p+1}X\cap\Ker(d))}.
+	\end{multline*}
+	Isomorfisme pertama bersifat standar. Kesamaan berikutnya memakai fakta
+	bahwa $\mathrm{Sub}_X$ adalah kekisi modular, bersama
+	$\mathrm{F}^pX\cap\Image(T^{-1}d)
+	\subset\mathrm{F}^pX\cap\Ker(d)$ dan
+	$\mathrm{F}^{p+1}X\subset\mathrm{F}^pX$. Sekarang terapkan
+	Lema~\ref{prop:induced-filtration-gr}.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-differential-spectral-sequence.p013
+Definisi konvergensi sedikit berbeda-beda antar-rujukan.
+Semua pernyataan di atas memiliki versi yang bersesuaian untuk objek
+diferensial dengan filtrasi menaik $(X,d,\mathrm{F}_\bullet X)$ dan barisan
+spektral bergradasi homologis terkait.

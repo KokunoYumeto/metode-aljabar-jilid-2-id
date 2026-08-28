@@ -1,0 +1,349 @@
+% Unit 068 terjemahan Bahasa Indonesia dari chapter5.tex baris 578--739.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter5.filtered-complex-spectral-sequence
+% Cakupan: Bagian 5.5 lengkap.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.h001
+\section{Barisan spektral kompleks terfiltrasi}\label{sec:filtered-cplx-ss}
+\hypertarget{o014.aljabr2.chapter5.filtered-complex-spectral-sequence}{ }
+\index{kompleks!terfiltrasi (filtered)}
+\index{barisan spektral!dari kompleks terfiltrasi}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p001
+Kita melanjutkan gagasan dari \S\ref{sec:filtered-diff-ss}, dengan kategori
+abelian $\mathcal{A}$ tetap. Hasil
+Proposisi~\ref{prop:filtered-diff-E} mengenai objek diferensial terfiltrasi
+dapat diperluas agar morfisme $d$ boleh mempunyai derajat. Secara khusus,
+teori ini dapat diterapkan pada kompleks terfiltrasi.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p002
+Secara konkret, gantilah $\mathcal{A}$ sebelumnya dengan
+$\mathcal{A}^{\Z}$ dan tuliskan $T$ untuk funktor translasinya. Menurut
+Contoh~\ref{eg:cplx-as-diff}, objek $(X,d)$ dalam
+$(\mathcal{A}^{\Z},T)_d$ dapat diidentifikasi dengan kompleks
+$X\in\Obj(\cate{C}(\mathcal{A}))$. Jika selanjutnya kita mengambil filtrasi
+menurun $(X,d,\mathrm{F}^\bullet X)$, maka
+\begin{align*}
+	\Hm(X,d)&=\left(\Hm^n(X)\right)_{n\in\Z}, \\
+	\Hm\left(\mathrm{F}^pX,d\right)
+	&=\left(\Hm^n\left(\mathrm{F}^pX\right)\right)_{n\in\Z}, \\
+	\mathrm{F}^p\Hm^n(X)&:=
+	\Image\left[\mathrm{F}^pX^n\cap\Ker(d_X^n)\to\Hm^n(X)\right]
+	\quad\text{(Definisi~\ref{def:induced-filtration-H}).}
+\end{align*}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p003
+Jadi, $E_r$ dalam barisan spektral $\mathscr{E}$ yang dibangun sebelumnya
+sebenarnya bernilai dalam $\mathcal{A}^{\Z\times\Z}$ dan merupakan objek
+bergradasi ganda. Selain derajat filtrasi $p$, terdapat ``derajat internal''
+$n$ yang berasal dari struktur kompleks; funktor translasi $S$ dan $T$ yang
+bersesuaian dengan keduanya komutatif secara ketat. Kita telah mengetahui
+bahwa derajat $d_r$ terhadap $S$ adalah $r$; sekarang kita tentukan derajatnya
+terhadap $T$.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p004
+\begin{itemize}
+	\item Dalam pasangan eksak $\mathscr{C}_{(1)}$ yang dipakai untuk membangun
+	$\mathscr{E}$, morfisme $\nwarrow$ berderajat $1$ terhadap $T$, sedangkan
+	morfisme lainnya berderajat nol. Memang, $\nwarrow$ berasal dari morfisme
+	penghubung kohomologi sehingga berderajat $1$ terhadap $T$, dan panah
+	lainnya jelas berderajat nol.
+	\item Dengan memakai deskripsi dalam Lema~\ref{prop:exact-couple-Z-B},
+	pernyataan tersebut berlaku secara rekursif bagi $\mathscr{C}_{(r)}$ untuk
+	semua $r$.
+	\item Akibatnya, $d_r$ dan $d$ dalam $(X,d)$ sama-sama merupakan morfisme
+	berderajat $1$ terhadap $T$. Hal ini juga langsung tampak dari deskripsi
+	dalam Proposisi~\ref{prop:differential-exact-couple}.
+\end{itemize}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p005
+Untuk keperluan penerapan, secara konvensional kita mengganti indeks dengan $p$
+dan $q:=n-p$. Dengan demikian,
+\begin{gather*}
+	E_r=(E_r^{p,q})_{(p,q)\in\Z^2}
+	=\left(Z_r^{p,q}/B_r^{p,q}\right)_{(p,q)\in\Z^2}, \\
+	E_0^{p,q}=\left(\gr^pX\right)^{p+q}, \\
+	E_1^{p,q}=\Hm^{p+q}\left(\gr^pX,\gr^pd\right), \\
+	d_r=\left(d_r^{p,q}:E_r^{p,q}\to E_r^{p+r,q-r+1}\right)_{(p,q)\in\Z^2}
+	:E_r\xrightarrow{(r,-r+1)}E_r.
+\end{gather*}
+Dengan kata lain, kompleks terfiltrasi menghasilkan barisan spektral
+bergradasi ganda kohomologis sebagaimana dalam
+Definisi~\ref{def:graded-spectral-sequence}. Secara dual, kompleks rantai
+dengan filtrasi menaik menghasilkan barisan spektral bergradasi ganda
+homologis.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.e001
+\begin{example}\label{eg:canonically-bdd-ss}
+	Perhatikan kompleks terfiltrasi $(X,d,\mathrm{F}^\bullet X)$. Jika untuk
+	semua $n\in\Z$ berlaku $\mathrm{F}^0X^n=X^n$ dan
+	$\mathrm{F}^{n+1}X^n=0$, maka $E_0$ terletak di kuadran pertama
+	(Definisi~\ref{def:quadrant-ss}). Hal ini langsung mengikuti dari
+	$E_0^{p,q}=(\gr^pX)^{p+q}$.
+\end{example}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.t001
+\begin{proposition}\label{prop:filtered-cplx-ss}
+	Untuk suatu kompleks $X\in\Obj(\cate{C}(\mathcal{A}))$ dengan filtrasi
+	menurun $\mathrm{F}^\bullet X$, barisan spektral terkait memenuhi
+	\begin{align*}
+		Z_r^{p,q}&=
+		\dfrac{\left(\mathrm{F}^pX^{p+q}\cap
+		d^{-1}\mathrm{F}^{p+r}X^{p+q+1}\right)+\mathrm{F}^{p+1}X^{p+q}}
+		{\mathrm{F}^{p+1}X^{p+q}}, \\
+		B_r^{p,q}&=
+		\dfrac{\left(\mathrm{F}^pX^{p+q}\cap
+		d\mathrm{F}^{p-r+1}X^{p+q-1}\right)+\mathrm{F}^{p+1}X^{p+q}}
+		{\mathrm{F}^{p+1}X^{p+q}},
+	\end{align*}
+	dan $d_r^{p,q}:E_r^{p,q}\to E_r^{p+r,q-r+1}$ diinduksi oleh
+	\[ d^{-1}\mathrm{F}^{p+r}X^{p+q+1}\xrightarrow{d}
+	\mathrm{F}^{p+r}X^{p+q+1}\cap\Ker(d). \]
+\end{proposition}
+\begin{proof}
+	Dalam Proposisi~\ref{prop:filtered-diff-E}, sertakan derajat kompleks
+	$n=p+q$ dan perhatikan bahwa $d$ berderajat $1$ terhadap funktor translasi
+	kompleks $T$.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p006
+Dengan cara yang sama, \eqref{eqn:filtered-diff-infty} mempunyai versi
+bergradasi ganda
+\begin{equation}\label{eqn:filtered-cplx-infty}
+	E_\infty^{p,q}=\dfrac{Z_\infty^{p,q}}{B_\infty^{p,q}}
+	=\dfrac{\bigcap_r\left((\mathrm{F}^pX^{p+q}\cap
+	d^{-1}\mathrm{F}^{p+r}X^{p+q+1})+\mathrm{F}^{p+1}X^{p+q}\right)}
+	{\bigcup_r\left((\mathrm{F}^pX^{p+q}\cap
+	d\mathrm{F}^{p-r+1}X^{p+q-1})+\mathrm{F}^{p+1}X^{p,q}\right)},
+\end{equation}
+dengan syarat $\bigcup$ dan $\bigcap$ yang ditampilkan ada. Dalam keadaan ini
+$E_\infty=(E_\infty^{p,q})_{(p,q)\in\Z^2}$.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p007
+Definisi--Proposisi~\ref{def:diff-obj-convergence} sekarang menjadi versi
+bergradasi ganda: untuk semua $p,q$, objek $\gr^p\Hm^{p+q}(X)$ secara kanonik
+dapat direalisasikan sebagai subkuosien dari $E_\infty^{p,q}$. Sifat
+konvergensi barisan spektral pun diperinci sesuai dengan gradasi tersebut.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.d001
+\begin{definition}\label{def:filtered-cplx-convergence}
+	\index{barisan spektral!konvergen lemah, konvergen kuat
+	(weakly convergent, strongly convergent)}
+	Untuk kompleks terfiltrasi $(X,d,\mathrm{F}^\bullet X)$ pada $\mathcal{A}$,
+	bangun barisan spektral bergradasi kohomologis terkait $(E_r,d_r)_r$. Jika
+	$\bigcap_r$ dan $\bigcup_r$ dalam \eqref{eqn:filtered-cplx-infty} ada, maka
+	$\gr^p\Hm^{p+q}(X)$ secara kanonik dapat direalisasikan sebagai subkuosien
+	dari $E_\infty^{p,q}$.
+	\begin{itemize}
+		\item Jika $\gr^p\Hm^{p+q}(X)=E_\infty^{p,q}$ untuk semua
+		$(p,q)\in\Z^2$, maka $(E_r,d_r)_r$ disebut \emph{konvergen lemah}.
+		\item Jika barisan tersebut konvergen lemah dan, untuk semua $n\in\Z$,
+		filtrasi $\mathrm{F}^\bullet\Hm^n(X)$ menyeluruh serta lengkap, maka
+		$(E_r,d_r)_r$ disebut \emph{konvergen kuat}.
+	\end{itemize}
+\end{definition}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.c001
+\begin{convention}\label{con:ss-conv}
+	\index[sym1]{Erpq abuts to H@$E_r^{p,q}\Rightarrow\Hm^{p+q}(X)$}
+	Konvergensi kuat barisan spektral juga ditulis
+	$E_r^{p,q}\Rightarrow\Hm^{p+q}(X)$. Subskrip $r$ biasanya ditulis secara
+	konkret sebagai $1$, $2$, dan seterusnya, bergantung pada halaman barisan
+	spektral yang hendak kita deskripsikan.
+
+	Lebih umum, misalkan diberikan barisan spektral bergradasi ganda
+	kohomologis $\mathscr{E}$, objek bergradasi terfiltrasi
+	$(H,\mathrm{F}^\bullet H)$, dan isomorfisme
+	$E_\infty^{p,q}\simeq\gr^pH^{p+q}$, dengan
+	$\mathrm{F}^\bullet H$ menyeluruh serta lengkap. Situasi ini juga kita
+	nyatakan dengan $E_r^{p,q}\Rightarrow H^{p+q}$. Kasus barisan spektral
+	bergradasi ganda homologis diperlakukan dengan cara serupa; khususnya,
+	$E^r_{p,q}\Rightarrow H_{p+q}$ berarti
+	$E^\infty_{p,q}\simeq\gr_pH_{p+q}$.
+\end{convention}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p008
+Teorema konvergensi klasik berikut sudah cukup untuk penerapan awal. Untuk
+syarat konvergensi yang lebih umum, lihat \cite{Boa99}.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.t002
+\begin{theorem}[Teorema konvergensi klasik]\label{prop:classical-convergence}
+	Perhatikan kompleks terfiltrasi $(X,d,\mathrm{F}^\bullet X)$. Andaikan
+	bahwa untuk setiap $n\in\Z$,
+	\begin{compactitem}
+		\item filtrasi $\mathrm{F}^\bullet X^n$ menyeluruh
+		(Definisi~\ref{def:filtration-properties}),
+		\item terdapat $N=N(n)$ dengan $\mathrm{F}^NX^n=0$.
+	\end{compactitem}
+	Maka barisan spektral terkait konvergen kuat
+	(Definisi--Proposisi~\ref{def:diff-obj-convergence}).
+
+	Jika syarat tersebut diperkuat sehingga filtrasi setiap $X^n$ hingga
+	(Definisi~\ref{def:filtration}), maka filtrasi terinduksi pada $\Hm^n(X)$
+	juga hingga. Dalam keadaan ini barisan spektral terkait terbatas
+	(Definisi~\ref{def:bdd-ss}).
+\end{theorem}
+\begin{proof}
+	Menurut versi bergradasi Lema~\ref{prop:induced-filtration-H}, filtrasi
+	terinduksi $\mathrm{F}^\bullet\Hm^n(X)$ menyeluruh serta lengkap. Jadi cukup
+	dibuktikan konvergensi lemah.
+
+	Kita perlu mengingat bukti
+	Definisi--Proposisi~\ref{def:diff-obj-convergence}, yang menjelaskan cara
+	merealisasikan $\gr^p\Hm^{p+q}(X)$ sebagai subkuosien dari
+	$E_\infty^{p,q}$ untuk setiap $(p,q)\in\Z^2$. Unsur kuncinya adalah
+	\begin{equation*}\begin{split}
+		\bigcap_r&\left(\left(\mathrm{F}^pX^{p+q}\cap
+		d^{-1}\mathrm{F}^{p+r}X^{p+q+1}\right)+\mathrm{F}^{p+1}X^{p+q}\right)
+		\\
+		&\supset(\mathrm{F}^pX^{p+q}\cap\Ker(d))+\mathrm{F}^{p+1}X^{p+q},\\
+		\bigcup_r&\left(\left(\mathrm{F}^pX^{p+q}\cap
+		d\mathrm{F}^{p-r+1}X^{p+q-1}\right)+\mathrm{F}^{p+1}X^{p+q}\right)
+		\\
+		&\subset(\mathrm{F}^pX^{p+q}\cap\Image(d))+\mathrm{F}^{p+1}X^{p+q}.
+	\end{split}\end{equation*}
+	Membuktikan konvergensi lemah setara dengan memperkuat kedua inklusi ini
+	menjadi kesamaan. Akan tetapi, jika $r\gg0$ relatif terhadap $p,q$, isi
+	$\bigcap_r$ pada baris pertama tepat merupakan
+	$(\mathrm{F}^pX^{p+q}\cap\Ker(d))+\mathrm{F}^{p+1}X^{p+q}$, sehingga
+	kesamaan berlaku.
+
+	Untuk baris kedua, suku $+\mathrm{F}^{p+1}X^{p+q}$ dapat dikeluarkan dari
+	$\bigcup_r$. Ingat bahwa $d(\mathrm{F}^\bullet X^n)$ merupakan filtrasi
+	menyeluruh dari $d(X^n)$. Karena itu,
+	\begin{multline*}
+		\bigcup_r\left(\mathrm{F}^pX^{p+q}\cap
+		d\mathrm{F}^{p-r+1}X^{p+q-1}\right)\\
+		\xlongequal{\because\;\text{\eqref{eqn:exhaustion-intersection}}}
+		\mathrm{F}^pX^{p+q}\cap\bigcup_r
+		d\mathrm{F}^{p-r+1}X^{p+q-1}\\
+		=\mathrm{F}^pX^{p+q}\cap d\bigcup_r
+		\mathrm{F}^{p-r+1}X^{p+q-1}
+		=\mathrm{F}^pX^{p+q}\cap\Image(d).
+	\end{multline*}
+
+	Terakhir, andaikan filtrasi setiap $X^n$ hingga. Maka
+	$\mathrm{F}^\bullet\Hm^n(X)$ tentu terbatas. Untuk membuktikan bahwa
+	barisan spektralnya terbatas, misalkan $r,n$ tetap dan ambil $p+q=n$. Menurut
+	deskripsi dalam Proposisi~\ref{prop:filtered-cplx-ss}, jika $p\gg0$ maka
+	pembilang $Z_r^{p,q}$ bernilai $0$, sedangkan jika $p\ll0$ maka
+	penyebutnya sama dengan $X^n$. Jadi hanya ada berhingga banyak
+	$(p,q)$ dengan $E_{r+1}^{p,q}\neq0$.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p009
+Versi dualnya jelas dan tidak kita ulangi.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.t003
+\begin{corollary}[Barisan eksak untuk suku berderajat rendah]
+\label{prop:low-degree-ss}
+	Misalkan kompleks terfiltrasi $(X,d,\mathrm{F}^\bullet X)$ memenuhi
+	\[ \mathrm{F}^0X^n=X^n,\qquad \mathrm{F}^{n+1}X^n=0,
+	\qquad n\in\Z, \]
+	seperti dalam Contoh~\ref{eg:canonically-bdd-ss}. Barisan spektral terkait
+	memberikan barisan eksak kanonik
+	\[ 0\to E_2^{1,0}\to\Hm^1(X)\to E_2^{0,1}\xrightarrow{d}E_2^{2,0}
+	\to\Hm^2(X). \]
+	Secara dual, untuk kompleks rantai $X$ dengan filtrasi menaik, jika
+	$\mathrm{F}_{-1}X=0$ dan $\mathrm{F}_nX=X$, terdapat barisan eksak kanonik
+	\[ \Hm_2(X)\to E^2_{2,0}\xrightarrow{d}E^2_{0,1}\to\Hm_1(X)
+	\to E^2_{1,0}\to0. \]
+\end{corollary}
+\begin{proof}
+	Substitusikan $p=2$ dalam \eqref{eqn:low-exact-coh} untuk memperoleh
+	barisan eksak
+	\[ 0\to E_\infty^{0,1}\to E_2^{0,1}\xrightarrow{d}E_2^{2,0}
+	\to E_\infty^{2,0}\to0. \]
+	Berdasarkan Teorema Konvergensi Klasik~\ref{prop:classical-convergence},
+	berlaku $E_\infty^{0,1}\simeq\gr^0\Hm^1(X)$,
+	$E_\infty^{1,0}\simeq\gr^1\Hm^1(X)$, dan
+	$E_\infty^{2,0}\simeq\gr^2\Hm^2(X)$. Dari syarat diperoleh
+	\begin{gather*}
+		\gr^2\Hm^2(X)=\mathrm{F}^2\Hm^2(X),\qquad
+		\gr^1\Hm^1(X)=\mathrm{F}^1\Hm^1(X),\\
+		\gr^0\Hm^1(X)=\Hm^1(X)/\mathrm{F}^1\Hm^1(X)
+		=\Hm^1(X)/E_\infty^{1,0}.
+	\end{gather*}
+	Selain itu, substitusi $p=1$ dalam \eqref{eqn:edge-ss-coh} memberikan
+	$E_2^{1,0}=E_\infty^{1,0}$. Menggabungkan semua kesamaan ini menghasilkan
+	barisan eksak yang dinyatakan. Versi homologis serupa.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p010
+Jika $E_r^{p,q}$ konvergen kuat, maka setelah mengetahui cukup banyak halaman
+$(E_r,d_r)$, pada prinsipnya kita dapat membaca
+$(\gr^p\Hm^{p+q}(X))_{p,q\in\Z}$ dari $E_\infty$. Akan tetapi, beralih dari
+$(\gr^p\Hm^n(X))_p$ ke $\Hm^n(X)$ berarti menentukan serangkaian ekstensi
+dalam $\mathcal{A}$, yang umumnya tidak mudah kecuali $\Hm^n(X)$ terbelah.
+Jika kita hanya mempertimbangkan sifat yang lebih kasar, barisan spektral
+kadang-kadang memberi jawaban ringkas. Contoh berikut pada dasarnya merupakan
+penerapan prinsip Euler--Poincar\'e.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.l001
+\begin{lemma}\label{prop:finite-degeneration}
+	Misalkan $\mathscr{E}=(E_r,d_r)_{r\geq1}$ adalah barisan spektral
+	bergradasi ganda kohomologis dan terdapat $r$ sedemikian sehingga
+	\[ \left\{(p,q)\in\Z^2:E_r^{p,q}\neq0\right\}
+	\quad\text{merupakan himpunan hingga}. \]
+	Maka untuk $r\gg0$, $\mathscr{E}$ mengalami degenerasi pada halaman $E_r$.
+\end{lemma}
+\begin{proof}
+	Menurut syarat tersebut, jika $r$ cukup besar maka semua suku taknol $E_r$
+	terkonsentrasi pada suatu daerah dengan panjang dan lebar hingga. Terapkan
+	Contoh~\ref{eg:SS-finite-width}.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.t004
+\begin{proposition}\label{prop:EP-ss}
+	Misalkan barisan spektral bergradasi ganda kohomologis $(E_r,d_r)_r$
+	memenuhi syarat-syarat berikut:
+	\begin{compactitem}
+		\item terdapat $r$ sedemikian sehingga
+		$\{(p,q)\in\Z^2:E_r^{p,q}\neq0\}$ merupakan himpunan hingga;
+		\item berlaku konvergensi kuat $E_r^{p,q}\Rightarrow H^{p+q}$ dalam
+		arti Konvensi~\ref{con:ss-conv}.
+	\end{compactitem}
+	Maka dalam grup $\mathrm{K}_0(\mathcal{A})$ dari Definisi~\ref{def:K0},
+	untuk $r\gg0$ berlaku
+	\[ \sum_{n\in\Z}(-1)^n[H^n]
+	=\sum_{p,q\in\Z}(-1)^{p+q}[E_r^{p,q}], \]
+	dan kedua ruas merupakan jumlah hingga.
+\end{proposition}
+\begin{proof}
+	Untuk $r\gg0$, hanya berhingga banyak suku di ruas kanan yang taknol. Selain
+	itu,
+	\[ E_{r+1}^{p,q}\simeq\Hm\left[
+	E_r^{p-r,q+r-1}\xrightarrow{d}E_r^{p,q}
+	\xrightarrow{d}E_r^{p+r,q-r+1}\right]. \]
+	Jika derajat dihitung menurut $n:=p+q$, maka $d$ berderajat $1$. Ambil
+	jumlah berselang-seling terhadap $n$ dalam $\mathrm{K}_0(\mathcal{A})$,
+	lalu terapkan Teorema~\ref{prop:EP}, untuk memperoleh
+	\[ \sum_{p,q\in\Z}(-1)^{p+q}[E_r^{p,q}]
+	=\sum_{p,q\in\Z}(-1)^{p+q}[E_{r+1}^{p,q}]. \]
+
+	Lema~\ref{prop:finite-degeneration} menunjukkan bahwa barisan spektral pada
+	akhirnya mengalami degenerasi. Jadi, jika $r\gg0$, berlaku
+	$E_r^{p,q}=E_\infty^{p,q}$ untuk semua $(p,q)$. Karena itu,
+	\[ \sum_{p,q}(-1)^{p+q}[E_r^{p,q}]
+	=\sum_{p,q}(-1)^{p+q}[\gr^p\Hm^{p+q}(X)]
+	=\sum_n(-1)^n\sum_p[\gr^pH^n], \]
+	dan syarat-syarat di atas memastikan bahwa semua jumlah tersebut hingga.
+	Menurut Lema~\ref{prop:K0-prep}~(v) dan sifat $\mathrm{F}^\bullet H$, kita
+	juga mempunyai
+	$\sum_p[\gr^pH^n(X)]=[\Hm^n(X)]$.
+\end{proof}
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p011
+Jika $(E_r,d_r)_r$ berasal dari kompleks terfiltrasi
+$(X,d,\mathrm{F}^\bullet)$ dan filtrasi $\mathrm{F}^\bullet X^n$ pada setiap
+$X^n$ hingga, maka Teorema~\ref{prop:classical-convergence} memastikan bahwa
+syarat konvergensi kuat $E_r^{p,q}\Rightarrow\Hm^{p+q}(X)$ dalam
+Proposisi~\ref{prop:EP-ss} berlaku secara otomatis. Akan tetapi, syarat
+mengenai $\{(p,q):E_r^{p,q}\neq0\}$ tidak otomatis berlaku.
+
+% segment-id: o014.li2.chapter5.filtered-complex-spectral-sequence.p012
+Kompleks terfiltrasi sudah cukup untuk menghasilkan beberapa barisan spektral
+sederhana namun berguna; lihat latihan bab ini. Karena pokok bahasan buku ini
+adalah aljabar, beberapa barisan spektral yang paling dikenal berasal dari
+bikompleks. Karena itu, sekarang kita beralih ke kasus bikompleks.

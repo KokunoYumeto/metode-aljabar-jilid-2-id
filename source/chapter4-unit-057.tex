@@ -1,0 +1,358 @@
+% Unit 057 terjemahan Bahasa Indonesia dari chapter4.tex baris 1513--1680.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.derived-functors-general
+% Cakupan: Bagian 4.7 lengkap; berhenti sebelum Bagian 4.8 pada baris 1681.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.h001
+\section{Teori Umum Funktor Turunan}\label{sec:derived-functors}
+\hypertarget{o014.aljabr2.chapter4.derived-functors-general}{ }
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p001
+Misalkan $\mathcal{A}$ dan $\mathcal{A}'$ kategori abelian, dan tetapkan
+funktor aditif $F:\mathcal{A}\to\mathcal{A}'$. Sekarang kita menerapkan teori
+dalam \S\ref{sec:triangulated-functor-localization}, khususnya situasi
+\eqref{eqn:derived-situation}, pada
+% segment-id: o014.li2.chapter4.derived-functors-general.g001
+\begin{equation*}\begin{tikzcd}
+	\cate{K}^{\star}(\mathcal{A}) \arrow[r, "{\cate{K}^\star F}"] \arrow[d, "Q"'] & \cate{K}^{\star}(\mathcal{A}') \arrow[d, "{Q'}"] \\
+	\cate{D}^{\star}(\mathcal{A}) & \cate{D}^{\star}(\mathcal{A}')
+\end{tikzcd} \qquad (\star \in \{+, -, \hspace{0.8em}\}) \end{equation*}
+Di sini $Q$ dan $Q'$ adalah funktor lokalisasi kategori bertriangulasi, dan
+$\cate{K}^\star F$ merupakan funktor bertriangulasi
+(Proposisi~\ref{prop:functor-induces-triangulated}). Superskrip kosong
+$\star=\hspace{0.8em}$ bersesuaian dengan kasus $\cate{K}(\mathcal{A})$ dan
+$\cate{D}(\mathcal{A})$. Ingat bahwa
+$\cate{D}^{\star}(\mathcal{A})=\cate{K}^{\star}(\mathcal{A})/\mathcal{N}^{\star}$,
+dengan $\mathcal{N}^{\star}$ subkategori bertriangulasi jenuh yang terdiri atas
+kompleks asiklik; demikian pula untuk $\mathcal{A}'$.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p002
+Kecuali jika $F$ eksak, secara umum tidak ada funktor bertriangulasi
+$\cate{D}^{\star}(\mathcal{A})\to\cate{D}^{\star}(\mathcal{A}')$ yang membuat
+diagram di atas komutatif. Pendekatan yang wajar adalah mengkaji funktor
+turunan kiri dan kanan dalam pengertian
+Definisi~\ref{def:Verdier-localization-functor}, masing-masing melalui dua
+jenis ekstensi Kan.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.d001
+\begin{definisi}[Funktor turunan antarkategori turunan]\label{def:derived-functor}
+	\index{funktor turunan}
+	\index[sym1]{RF@$\mathrm{R}F$, ${}^\star \mathrm{R}F$}
+	\index[sym1]{LF@$\mathrm{L}F$, ${}^\star \mathrm{L}F$}
+	\index[sym1]{RnF} \index[sym1]{LnF}
+	Untuk $\star\in\{+,-,\hspace{0.8em}\}$, jika
+	\begin{align*}
+		{}^\star \mathrm{R}F: \cate{D}^\star(\mathcal{A}) & \to \cate{D}^\star(\mathcal{A}'): \quad \text{funktor turunan kanan dari $\cate{K}^\star F$}, \quad \text{atau} \\
+		{}^\star \mathrm{L}F: \cate{D}^\star(\mathcal{A}) & \to \cate{D}^\star(\mathcal{A}'): \quad \text{funktor turunan kiri dari $\cate{K}^\star F$}
+	\end{align*}
+	ada, maka funktor tersebut disebut \emph{funktor turunan kanan} (atau
+	\emph{funktor turunan kiri}) dari $F:\mathcal{A}\to\mathcal{A}'$. Jika
+	funktor turunannya ada, untuk setiap $n\in\Z$ didefinisikan
+	\begin{gather*}
+		{}^\star \mathrm{R}^n F := \Hm^n \circ {}^\star \mathrm{R}F, \\
+		{}^\star \mathrm{L}_n F := \Hm^{-n} \circ {}^\star \mathrm{L}F.
+	\end{gather*}
+	Keduanya merupakan funktor bernilai di $\mathcal{A}'$. Subskrip $n$
+	digunakan untuk menyesuaikan dengan notasi kompleks rantai yang lazim ketika
+	mengkaji funktor turunan kiri. Superskrip kiri $\star$ sering dihilangkan
+	jika tidak menimbulkan kerancuan.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.e001
+\begin{contoh}[Menurunkan funktor eksak]
+	Kasus paling sederhana adalah ketika $F$ merupakan funktor eksak. Untuk
+	setiap $\star\in\{+,-,\hspace{0.8em}\}$, funktor turunan
+	${}^\star\mathrm{R}F$ dan ${}^\star\mathrm{L}F$ selalu ada. Memang,
+	$\cate{K}^\star F$ mempertahankan kompleks asiklik, sehingga funktor
+	turunannya langsung ditentukan oleh sifat universal lokalisasi.
+\end{contoh}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.t001
+\begin{teorema}[Barisan eksak panjang funktor turunan]\label{prop:derived-long-exact}
+	\index{barisan eksak panjang}
+	Tetapkan $\star\in\{+,-,\hspace{0.8em}\}$. Jika
+	${}^\star\mathrm{R}F$ atau ${}^\star\mathrm{L}F$ ada, maka setiap segitiga
+	terbedakan $X\to Y\to Z\xrightarrow{+1}$ dalam
+	$\cate{D}^\star(\mathcal{A})$ menghasilkan barisan eksak panjang kanonik
+	\begin{gather*}
+		\cdots \to {}^\star \mathrm{R}^{n-1} F(Z) \to {}^\star \mathrm{R}^n F(X) \to {}^\star \mathrm{R}^n F(Y) \to {}^\star \mathrm{R}^n F(Z) \to {}^\star \mathrm{R}^{n+1} F(X) \to \cdots , \\
+		\cdots \to {}^\star \mathrm{L}_{n+1} F(Z) \to {}^\star \mathrm{L}_n F(X) \to {}^\star \mathrm{L}_n F(Y) \to {}^\star \mathrm{L}_n F(Z) \to {}^\star \mathrm{L}_{n-1} F(X) \to \cdots .
+	\end{gather*}
+\end{teorema}
+% segment-id: o014.li2.chapter4.derived-functors-general.pf001
+\begin{bukti}
+	Menurut definisi, ${}^\star\mathrm{R}F$ maupun ${}^\star\mathrm{L}F$
+	merupakan funktor bertriangulasi. Selanjutnya, terapkan funktor kohomologi
+	$\Hm^0$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p003
+Bagaimana kita menjamin keberadaan funktor turunan dan menghitungnya?
+Proposisi~\ref{prop:localization-injective} sudah memuat gagasan umumnya.
+Untuk $\star\in\{+,-,\hspace{0.8em}\}$, ambil $\mathcal{N}^\star$ seperti
+dalam Definisi~\ref{def:derived-cat}. Kita mencari subkategori bertriangulasi
+$\mathcal{I}$ dari $\cate{K}^\star(\mathcal{A})$ agar ${}^\star\mathrm{R}F$
+atau ${}^\star\mathrm{L}F$ dapat didefinisikan sebagai komposisi pada diagram
+funktor
+% segment-id: o014.li2.chapter4.derived-functors-general.g002
+\[ \cate{D}^\star(\mathcal{A}) = \cate{K}^\star(\mathcal{A})/\mathcal{N}^\star \xleftarrow{\text{ekuivalensi}} \mathcal{I}/\mathcal{I} \cap \mathcal{N}^\star \xrightarrow{\text{sifat universal lokalisasi}} \cate{K}^\star(\mathcal{A}')/\mathcal{N}^\star = \cate{D}^\star(\mathcal{A}') . \]
+Bagaimana $\mathcal{I}$ harus dipilih? Subkategori tersebut hendaknya
+$F$-injektif (atau $F$-projektif) dalam pengertian berikut.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.c001
+\begin{konvensi}
+	\index{subkategori injektif-$\cdots$}
+	\index{subkategori projektif-$\cdots$}
+	Tetapkan $\star$. Jika subkategori bertriangulasi $\mathcal{I}$ dari
+	$\cate{K}^\star(\mathcal{A})$ merupakan subkategori bertriangulasi
+	$\cate{K}^\star F$-injektif (atau $\cate{K}^\star F$-projektif) dalam
+	pengertian Definisi~\ref{def:F-injective}, maka untuk singkatnya
+	$\mathcal{I}$ disebut subkategori $F$-injektif (atau $F$-projektif).
+\end{konvensi}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p004
+Jika terdapat subkategori $F$-injektif (atau $F$-projektif) $\mathcal{I}$
+dari $\cate{K}^\star(\mathcal{A})$,
+Proposisi~\ref{prop:localization-injective} menjamin bahwa
+${}^\star\mathrm{R}F$ (atau ${}^\star\mathrm{L}F$) ada. Pembatasannya ke
+$\mathcal{I}$ isomorfik dengan $Q'\cate{K}^\star F$, sedangkan rumus limit
+dalam Catatan~\ref{rem:Deligne-derived-functor} memperjelas morfisme kanonik
+yang dibawa funktor turunan sebagai ekstensi Kan:
+% segment-id: o014.li2.chapter4.derived-functors-general.g003
+\begin{equation}\label{eqn:L-R-can}
+	Q' \cate{K}^\star F \to ({}^\star \mathrm{R}F)Q \quad \text{atau} \quad ({}^\star \mathrm{L}F)Q \to Q' (\cate{K}^\star F).
+\end{equation}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p005
+Seluruh teori umum yang dibangun dalam
+\S\ref{sec:triangulated-functor-localization} dapat langsung digunakan.
+Sebagai contoh, tinjau funktor aditif antarkategori abelian
+\[ \mathcal{A} \xrightarrow{F} \mathcal{A}' \xrightarrow{F'} \mathcal{A}'' . \]
+Jika funktor turunan yang dibahas ada, terdapat morfisme kanonik
+\[ {}^\star \mathrm{R}(F'F) \to ({}^* \mathrm{R}F')({}^* \mathrm{R}F), \quad \left( {}^\star \mathrm{L}F' \right) \left( {}^\star \mathrm{L}F \right) \to {}^\star \mathrm{L}(F' F), \]
+dan Teorema~\ref{prop:localization-triangulated-composite} memberikan syarat
+cukup agar morfisme tersebut merupakan isomorfisme.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p006
+Selain itu, terdapat kompatibilitas berikut.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.l001
+\begin{lema}\label{prop:derived-functor-res}
+	Jika $\cate{K}(\mathcal{A})$ dan $\cate{K}^+(\mathcal{A})$ masing-masing
+	mempunyai subkategori $F$-injektif, maka pembatasan $\mathrm{R}F$ ke
+	$\cate{D}^+(\mathcal{A})$ memberikan ${}^+\mathrm{R}F$.
+
+	Pernyataan yang bersesuaian juga berlaku bagi subkategori $F$-projektif,
+	$\mathrm{L}F$, dan ${}^-\mathrm{L}F$.
+\end{lema}
+% segment-id: o014.li2.chapter4.derived-functors-general.pf002
+\begin{bukti}
+	Kita terlebih dahulu membahas $\mathrm{R}F$. Misalkan
+	$X\in\Obj(\cate{K}^+(\mathcal{A}))$. Tuliskan $\mathrm{qis}_{X/}$ untuk
+	kategori semua kuasi-isomorfisme $X\to Y$ dalam $\cate{K}(\mathcal{A})$,
+dan $\mathrm{qis}^+_{X/}$ untuk versinya di $\cate{K}^+(\mathcal{A})$.
+Catatan~\ref{rem:Deligne-derived-functor} memberikan isomorfisme kanonik
+	\begin{equation}\label{eqn:derived-as-limit}\begin{aligned}
+		\mathrm{R}F(QX) \simeq \varinjlim_{[X \to Y] \in \Obj(\mathrm{qis}_{X/})} (Q' \cate{K}F)(Y).
+	\end{aligned}\end{equation}
+
+	Untuk setiap objek $X\to Y$ dalam $\mathrm{qis}_{X/}$, jika $m\ll0$
+	(hanya bergantung pada $X$), maka
+	$X\to Y\to\tau^{\geq m}Y$ merupakan objek dari
+	$\mathrm{qis}^+_{X/}$. Lema~\ref{prop:S-filtered} menjamin bahwa
+	$\mathrm{qis}_{X/}$ tersaring, sehingga
+	Proposisi~\ref{prop:cofinal-filtered} menjamin bahwa subkategori penuh
+	$\mathrm{qis}^+_{X/}$ kofinal di dalamnya. Oleh karena itu, $\varinjlim$
+dalam \eqref{eqn:derived-as-limit} dapat diambil di atas
+$\mathrm{qis}^+_{X/}$ (Proposisi~\ref{prop:cofinal-lim}), dan hasilnya tepat
+${}^+\mathrm{R}F(QX)$.
+
+	Untuk $\mathrm{L}F$, gunakan versi funktor turunan kiri dari
+	Catatan~\ref{rem:Deligne-derived-functor} dan lakukan pemenggalan dalam arah
+	sebaliknya.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p007
+Selanjutnya kita membahas bifunktor yang diperkenalkan dalam
+Konvensi~\ref{con:bifunctor}. Teori yang sesuai juga telah disiapkan dalam
+\S\ref{sec:triangulated-functor-localization}. Misalkan $\mathcal{A}_1$,
+$\mathcal{A}_2$, dan $\mathcal{B}$ kategori abelian, dan bifunktor
+$F:\mathcal{A}_1\times\mathcal{A}_2\to\mathcal{B}$ aditif dalam setiap
+variabel. Seperti dalam Definisi--Proposisi~\ref{def:bifunctor-cplx}, definisikan
+% segment-id: o014.li2.chapter4.derived-functors-general.g004
+\begin{equation}\label{eqn:totCF}\begin{aligned}
+		\cate{C}_{\oplus} F & := \tot_{\oplus} \circ \cate{C}^2 F \quad \text{(jika $\mathcal{B}$ mempunyai koproduk terhitung)}, \\
+		\cate{C}_{\Pi} F & := \tot_{\Pi} \circ \cate{C}^2 F \quad \text{(jika $\mathcal{B}$ mempunyai produk terhitung)}.
+\end{aligned}\end{equation}
+Menurut Proposisi~\ref{prop:bifunctor-cplx-homotopy}, keduanya mempunyai
+faktorisasi melalui funktor pada tingkat $\cate{K}(\cdot)$, yaitu
+$\cate{K}_{\oplus}F$ dan $\cate{K}_{\Pi}F$.
+
+% Reference: [KS06, Proposition 11.2.11]
+% segment-id: o014.li2.chapter4.derived-functors-general.pr001
+\begin{proposisi}
+	Funktor
+	$\cate{K}_{\Pi}F,\;\cate{K}_{\oplus}F:
+	\cate{K}^\star(\mathcal{A}_1)\times\cate{K}^\star(\mathcal{A}_2)
+	\to\cate{K}^\star(\mathcal{B})$ di atas merupakan bifunktor bertriangulasi
+dalam pengertian Definisi~\ref{def:triangulated-bifunctor}.
+\end{proposisi}
+% segment-id: o014.li2.chapter4.derived-functors-general.pf003
+\begin{bukti}
+	Ambil $\cate{K}_{\Pi}F$ sebagai contoh (dengan asumsi $\mathcal{B}$
+	mempunyai produk terhitung). Pembahasan setelah
+	Proposisi~\ref{prop:bifunctor-cplx-homotopy} menunjukkan bahwa funktor ini
+	kompatibel dengan pergeseran dalam setiap variabel, sedangkan
+	Proposisi~\ref{prop:tot-shift} memberikan diagram antikomutatif yang
+	dipersyaratkan dalam definisi bifunktor bertriangulasi. Tinggal dibuktikan
+	bahwa $\cate{C}_{\Pi}F$ mempertahankan kerucut pemetaan dalam setiap
+	variabel. Untuk variabel pertama, ambil morfisme
+	$f:X_1\to X'_1$ dalam $\cate{C}(\mathcal{A}_1)$ dan objek $X_2$ dari
+	$\cate{C}(\mathcal{A}_2)$. Terdapat isomorfisme kanonik dalam $\mathcal{B}$
+	\begin{align*}
+		\cate{C}_{\Pi}F(\Cone(f), X_2)^n & \simeq \prod_{p+q=n} F(X_1^{p+1}, X_2^q ) \times F( (X'_1)^p, X_2^q ) \\
+		& \simeq \prod_{p+q=n+1} F( X_1^p, X_2^q ) \times \prod_{p+q=n} F( (X'_1)^p, X_2^q ) \\
+		& \simeq \Cone\left(\cate{C}_{\Pi}(f, \identity_{X_2}) \right)^n , \quad n \in \Z.
+	\end{align*}
+	Tinggal diverifikasi bahwa isomorfisme-isomorfisme tersebut
+	membentuk isomorfisme kompleks dan kompatibel dengan morfisme
+	$\alpha(\cdot)$ dan $\beta(\cdot)$ yang menyertai kerucut pemetaan. Tidak
+	ada kesulitan mendasar; perinciannya diserahkan kepada pembaca.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p008
+Selanjutnya, misalkan
+$Q_i:\cate{K}(\mathcal{A}_i)\to\cate{D}(\mathcal{A}_i)$ dan
+$Q:\cate{K}(\mathcal{B})\to\cate{D}(\mathcal{B})$ merupakan funktor
+lokalisasi ($i=1,2$). Tempatkan semua data ini dalam kerangka
+Definisi~\ref{def:bifunctor-triangulated-localization}, dengan
+$\mathcal{D}_1$, $\mathcal{D}_2$, dan $\mathcal{D}'$ berturut-turut
+$\cate{K}^\star(\mathcal{A}_1)$, $\cate{K}^\star(\mathcal{A}_2)$, dan
+$\cate{K}^\star(\mathcal{B})$, sedangkan kompleks-kompleks asiklik membentuk
+$\mathcal{N}_1^\star$, $\mathcal{N}_2^\star$, dan $(\mathcal{N}')^\star$.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.d002
+\begin{definisi}[Bifunktor turunan]\label{def:derived-bifunctor}
+	\index{bifunktor turunan}
+	\index[sym1]{RF} \index[sym1]{LF}
+	Tetapkan $\star\in\{+,-,\hspace{0.8em}\}$ dan tinjau bifunktor aditif
+	$F:\mathcal{A}_1\times\mathcal{A}_2\to\mathcal{B}$.
+	\begin{itemize}
+		\item Misalkan $\mathcal{B}$ mempunyai produk terhitung. Jika bifunktor
+		turunan kanan dari $\cate{K}_{\Pi}F$ dalam pengertian
+		Definisi~\ref{def:bifunctor-triangulated-localization},
+		\[\cate{D}^\star(\mathcal{A}_1)\times\cate{D}^\star(\mathcal{A}_2)
+		\to\cate{D}^\star(\mathcal{B}),\]
+		ada, maka bifunktor tersebut disebut \emph{bifunktor turunan kanan} dari
+		$F$ dan ditulis ${}^\star\mathrm{R}F$.
+		\item Misalkan $\mathcal{B}$ mempunyai koproduk terhitung. Jika bifunktor
+		turunan kiri dari $\cate{K}_{\oplus}F$,
+		\[\cate{D}^\star(\mathcal{A}_1)\times\cate{D}^\star(\mathcal{A}_2)
+		\to\cate{D}^\star(\mathcal{B}),\]
+		ada, maka bifunktor tersebut disebut \emph{bifunktor turunan kiri} dari
+		$F$ dan ditulis ${}^\star\mathrm{L}F$.
+	\end{itemize}
+	Tetap dituliskan
+	${}^\star\mathrm{R}^nF:=\Hm^n\circ{}^\star\mathrm{R}F$ dan
+	${}^\star\mathrm{L}_nF:=\Hm^{-n}\circ{}^\star\mathrm{L}F$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p009
+Tetapkan $\star\in\{+,-,\hspace{0.8em}\}$ dan misalkan $\mathcal{I}_i$
+subkategori bertriangulasi dari $\cate{K}^\star(\mathcal{A}_i)$, $i=1,2$.
+Seperti biasa, jika $(\mathcal{I}_1,\mathcal{I}_2)$ merupakan pasangan
+subkategori $\cate{K}^\star F$-injektif (atau projektif) dalam pengertian
+Definisi~\ref{def:F-injective-bifunctor}, maka pasangan ini disebut
+$F$-injektif (atau $F$-projektif). Proposisi~\ref{prop:localization-injective-bifunctor}
+langsung memberikan kesimpulan berikut, dan semua isomorfismenya kanonik.
+\index{subkategori injektif-$\cdots$} \index{subkategori projektif-$\cdots$}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p010
+\begin{itemize}
+	\item Jika $(\mathcal{I}_1,\mathcal{I}_2)$ bersifat $F$-injektif, maka
+	${}^\star\mathrm{R}F$ ada dan
+	\begin{equation}\label{eqn:derived-bifunctor-1}
+		(X_1, X_2) \in \Obj(\mathcal{I}_1) \times \Obj(\mathcal{I}_2) \implies {}^\star \mathrm{R}F(Q_1 X_1, Q_2 X_2) \simeq Q \cate{K}_{\Pi}F(X_1, X_2).
+	\end{equation}
+	\item Jika $(\mathcal{P}_1,\mathcal{P}_2)$ bersifat $F$-projektif, maka
+	${}^*\mathrm{L}F$ ada dan
+	\begin{equation}\label{eqn:derived-bifunctor-2}
+		(X_1, X_2) \in \Obj(\mathcal{P}_1) \times \Obj(\mathcal{P}_2) \implies {}^\star \mathrm{L}F(Q_1 X_1, Q_2 X_2) \simeq Q \cate{K}_{\oplus}F(X_1, X_2).
+	\end{equation}
+\end{itemize}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p011
+Selanjutnya kita membahas suatu perkalian pada bifunktor turunan. Kita mulai
+dengan versinya pada tingkat kompleks. Notasi tetap seperti di atas, tetapi
+$F$ sekarang diasumsikan eksak kanan dalam setiap variabel. Untuk setiap
+kompleks $X$, tuliskan $Z^n(X):=\Ker(d_X^n)$ dan
+	$B^n(X):=\Image(d_X^{n-1})$. Untuk setiap $(p,q)\in\Z^2$ terdapat morfisme
+	alami
+\[ F\left( Z^p(X_1), Z^q(X_2) \right) \to Z^{p+q}\left( \cate{C}_{\oplus}F(X_1, X_2) \right). \]
+Morfisme ini memetakan citra $F(B^p(X_1),Z^q(X_2))$ dan
+$F(Z^p(X_1),B^q(X_2))$ ke
+$B^{p+q}(\cate{C}_{\oplus}F(X_1,X_2))$. Dengan mengambil hasil bagi dan
+menggunakan keeksakan kanan $F$, diperoleh morfisme kanonik
+\[ \kappa: F\left(\Hm^p(X_1), \Hm^q(X_2)\right) \to \Hm^{p+q}\left( \cate{C}_{\oplus} F(X_1, X_2) \right). \]
+Pembahasan sebelum Teorema Künneth untuk homologi
+\ref{prop:Kunneth-homology} adalah kasus khusus konstruksi ini untuk
+$F=\otimes_R$.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p012
+Sekarang ubah syaratnya: $F$ eksak kiri dalam setiap variabel. Dengan
+mendualkan konstruksi di atas, diperoleh morfisme kanonik
+\[ \lambda: \Hm^{p+q}\left( \cate{C}_{\Pi} F(X_1, X_2) \right) \to F\left( \Hm^p(X_1), \Hm^q(X_2) \right). \]
+Keberadaan $\oplus$ atau $\prod$ terhitung yang dibahas tetap diasumsikan.
+Karena hanya kohomologi yang diperhatikan di sini, $\cate{C}$ juga dapat
+diganti dengan $\cate{K}$.
+
+% segment-id: o014.li2.chapter4.derived-functors-general.pr002
+\begin{proposisi}\label{prop:bifunctor-cup}
+	Misalkan $F$ eksak kanan (atau eksak kiri) dalam setiap variabel,
+	$\star\in\{+,-,\hspace{0.8em}\}$, dan terdapat pasangan $F$-projektif
+	$(\mathcal{P}_1,\mathcal{P}_2)$ (atau pasangan $F$-injektif
+	$(\mathcal{I}_1,\mathcal{I}_2)$). Maka terdapat morfisme kanonik
+	\[ F\left(\Hm^p(\cdot), \Hm^q(\cdot) \right) \to \Hm^{p+q} {}^\star \mathrm{L}F \quad \text{atau} \quad \Hm^{p+q} {}^\star \mathrm{R}F \to F\left(\Hm^p(\cdot), \Hm^q(\cdot) \right), \]
+	dengan kedua ruas merupakan funktor dari
+	$\cate{D}^\star(\mathcal{A}_1)\times\cate{D}^\star(\mathcal{A}_2)$ ke
+	$\mathcal{B}$. Morfisme-morfisme tersebut dicirikan oleh diagram komutatif
+% segment-id: o014.li2.chapter4.derived-functors-general.g005
+	\begin{equation*}
+		\begin{tikzcd}
+			& \Hm^{p+q} \cate{K}_{\oplus} F(X_1, X_2) \\
+			F\left(\Hm^p(X_1), \Hm^q(X_2) \right) \arrow[r] \arrow[ru, "\kappa"] & \Hm^{p+q} {}^\star \mathrm{L}F(Q_1 X_1, Q_2 X_2) \arrow[u, "\mathrm{can}"']
+		\end{tikzcd}
+	\end{equation*}
+	atau
+% segment-id: o014.li2.chapter4.derived-functors-general.g006
+	\begin{equation*}
+		\begin{tikzcd}[column sep=small]
+			& \Hm^{p+q} \cate{K}_{\Pi} F(X_1, X_2) \arrow[d, "\mathrm{can}"] \arrow[ld, "\lambda"'] \\
+			F\left(\Hm^p(X_1), \Hm^q(X_2) \right) & \Hm^{p+q} {}^\star \mathrm{R}F(Q_1 X_1, Q_2 X_2), \arrow[l]
+		\end{tikzcd}
+	\end{equation*}
+	dengan $X_i\in\Obj(\cate{K}^\star(\mathcal{A}_i))$. Panah yang diberi
+	label $\mathrm{can}$ adalah morfisme kanonik yang menyertai funktor turunan
+	sebagai ekstensi Kan (setelah menerapkan $\Hm^{p+q}$); lihat
+	\eqref{eqn:L-R-can} untuk kasus satu variabel.
+\end{proposisi}
+% segment-id: o014.li2.chapter4.derived-functors-general.pf004
+\begin{bukti}
+	Berdasarkan dualitas, cukup dibahas kasus yang melibatkan $\kappa$. Perhatikan
+	bahwa, selain $\cate{K}_{\oplus}F(X_1,X_2)$, dua simpul lain dalam diagram
+	hanya bergantung pada $Q_1X_1$ dan $Q_2X_2$.
+
+	Tetapkan pasangan $(\mathcal{P}_1,\mathcal{P}_2)$. Karena semua morfisme dalam diagram
+	bersifat funktorial dan
+	$\mathcal{P}_i/(\mathcal{P}_i\cap\mathcal{N}^\star_i)$ ekuivalen dengan
+	$\cate{D}^\star(\mathcal{A}_i)$, cukup menentukan morfisme yang dicari untuk
+	$X_i\in\Obj(\mathcal{P}_i)$; hal ini dapat diperiksa dengan menggambar
+	diagram. Namun, dalam kasus ini
+	${}^\star\mathrm{L}F(Q_1X_1,Q_2X_2)=\cate{K}_{\oplus}F(X_1,X_2)$, sehingga
+	pernyataannya langsung.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.derived-functors-general.p013
+Singkatnya, semuanya dapat dihitung dengan mengambil resolusi, dan hasil
+akhirnya tidak bergantung pada pilihan resolusi.

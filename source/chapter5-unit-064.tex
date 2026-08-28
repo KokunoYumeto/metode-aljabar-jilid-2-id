@@ -1,0 +1,336 @@
+% Unit 064 terjemahan Bahasa Indonesia dari chapter5.tex baris 9--140.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter5.intro-filtration-grading
+% Cakupan: pendahuluan Bab 5 dan Bagian 5.1 lengkap.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.h001
+\chapter{Barisan Spektral}\label{sec:ss}
+\hypertarget{o014.aljabr2.chapter5.intro-filtration-grading}{ }
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p001
+Barisan spektral merupakan alat aljabar klasik yang terus digunakan dan
+dikembangkan, serta berakar kuat dalam topologi. Dalam beberapa buku
+ajar atau catatan kuliah, barisan spektral bahkan dipakai sebagai alat dasar
+aljabar homologis untuk membangun sebagian sifat fundamental dalam
+\CHref{sec:Abel-cat} dan \CHref{sec:cplx}.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p002
+Barisan spektral pertama kali diperkenalkan oleh J.\ Leray pada dasawarsa 1940,
+lalu memperoleh bentuknya secara bertahap melalui pengembangan oleh J.-L.\
+Koszul, H.\ Cartan, dan lainnya. Motivasi utama mereka adalah mengkaji grup
+homologi berkas serat. Dalam bahasa aljabar, masalah semula setara dengan
+memahami homologi (atau kohomologi) suatu kompleks rantai (atau kompleks)
+$X$. Kita ambil kasus kompleks sebagai contoh. Objek $X$ sendiri mungkin sulit
+dipahami, tetapi dapat dikaji melalui filtrasi yang sesuai
+$\cdots\supset\mathrm{F}^pX\supset\mathrm{F}^{p+1}X\supset\cdots$.
+Filtrasi $\mathrm{F}^\bullet X$ menginduksi filtrasi pada setiap $\Hm^n(X)$.
+Dari informasi mengenai $\mathrm{F}^\bullet X$ dan subkuosiennya, kita dapat
+secara bertahap mendekati setiap subkuosien
+$\gr^p\Hm^n(X)$ dari kohomologi terfiltrasi tersebut. Barisan spektral adalah
+seni menyusun pendekatan bertahap semacam ini.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p003
+Kompleks dapat pula diperumum menjadi objek diferensial $(X,d)$ dalam kategori
+abelian (Definisi~\ref{def:differential-object}), sehingga diperoleh definisi
+abstrak barisan spektral dalam Definisi~\ref{def:SS-abstract}. Barisan spektral
+adalah deret objek diferensial $\mathscr{E}=(E_r,d_r)_r$ sedemikian sehingga
+kohomologi setiap ``halaman'' $\Hm(E_r,d_r)$ sama dengan halaman berikutnya
+$E_{r+1}$. Jika struktur bergradasi ditambahkan dan diferensial $d$ diizinkan
+memiliki derajat, diperoleh konsep barisan spektral bergradasi $E_r^p$ dan
+bergradasi ganda $E_r^{p,q}$ (Definisi~\ref{def:graded-spectral-sequence}).
+Secara konkret, arah diferensial pada barisan spektral bergradasi ganda adalah
+\begin{gather*}
+	d_r^{p, q}: E_r^{p, q} \to E_r^{p+r, q-r+1}, \\
+	E_r = (E_r^{p, q})_{(p, q) \in \Z^2}, \quad d_r = (d_r^{p, q})_{(p, q) \in \Z^2}.
+\end{gather*}
+Kompleks terfiltrasi menghasilkan objek diferensial terfiltrasi, lalu secara
+alami menghasilkan barisan spektral bergradasi ganda. Inilah bentuk barisan
+spektral yang paling sering muncul dalam penerapan. Semua konsep mempunyai
+versi yang bersesuaian bagi kompleks rantai dan homologinya.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p004
+Strategi bab ini dimulai dari teori pasangan eksak W.\ Massey. Pasangan eksak
+merupakan perangkat lain untuk menghasilkan barisan spektral dan cakupannya
+lebih luas daripada objek diferensial terfiltrasi. Setelah pengantar filtrasi
+dan struktur bergradasi dalam \S\ref{sec:grading-filtration}, kita memberikan
+definisi umum barisan spektral dalam \S\ref{sec:spectral-sequence}, termasuk
+versi bergradasi dan bergradasi ganda, serta istilah dasar seperti degenerasi,
+keterbatasan, dan halaman limit. Catatan~\ref{rem:edge-computing} pada akhir
+bagian itu menjelaskan cara membaca barisan eksak dari tepi barisan spektral,
+suatu teknik yang penting.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p005
+Pasangan eksak didefinisikan dalam \S\ref{sec:exact-couples}. Selanjutnya,
+\S\ref{sec:filtered-diff-ss} menjelaskan bagaimana pasangan eksak menghasilkan
+barisan spektral bergradasi dari objek diferensial terfiltrasi, dan
+\S\ref{sec:filtered-cplx-ss} menjelaskan lebih lanjut bagaimana kompleks
+terfiltrasi menghasilkan barisan spektral bergradasi ganda. Di sana juga
+dibahas konsep inti yang disebut konvergensi dan
+Teorema Konvergensi Klasik~\ref{prop:classical-convergence}. Sebagian
+verifikasinya sedikit teknis, tetapi tidak mengandung kesulitan mendasar.
+Pembaca dapat terlebih dahulu bekerja dalam kategori abelian konkret seperti
+$\cate{Ab}$ untuk menyederhanakan argumen.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p006
+Bikompleks menghasilkan kompleks terfiltrasi dengan dua cara, bergantung pada
+apakah kompleks total difiltrasi menurut koordinat horizontal atau vertikal.
+Barisan spektral yang bersesuaian berturut-turut ditulis
+$\mathscr{E}_{\mathrm{I}}$ dan $\mathscr{E}_{\mathrm{II}}$. Perinciannya
+merupakan pokok \S\ref{sec:double-cplx-ss}. Kita juga memberikan penerapan
+standar, termasuk penurunan bifunktor seimbang
+(Contoh~\ref{eg:bifunctor-ss}), barisan spektral funktor hiperturunan
+(Contoh~\ref{eg:hyperderived-ss}), dan barisan spektral Grothendieck
+(Teorema~\ref{prop:Grothendieck-ss}). Resolusi Cartan--Eilenberg yang telah
+diperkenalkan (Teorema~\ref{prop:CE-resolution}) berperan di sini.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p007
+Barisan spektral Grothendieck berkaitan dengan penurunan komposisi funktor dan
+sangat umum dalam geometri. Sebagai contoh funktor turunan kanan, tinjau
+funktor aditif eksak kiri antarkategori abelian
+$\mathcal{A}\xrightarrow{F}\mathcal{A}'\xrightarrow{F'}\mathcal{A}''$,
+dengan $\mathcal{A}$ dan $\mathcal{A}'$ mempunyai cukup banyak objek
+injektif. Jika $F$ memetakan objek injektif ke objek $F'$-asiklik
+(Konvensi~\ref{con:F-acyclic}), terdapat barisan spektral bergradasi ganda
+kanonik yang konvergen kuat
+\[ E_2^{p, q} = (\mathrm{R}^p F') (\mathrm{R}^q F)(X) \Rightarrow \mathrm{R}^{p+q}(F' F)(X), \quad X \in \Obj(\mathcal{A}). \]
+Penurunan komposisi funktor juga dapat ditangani pada tingkat kategori turunan;
+lihat Teorema~\ref{prop:localization-triangulated-composite}. Versi barisan
+spektralnya, selain bersifat elementer secara formal dan mudah dihitung, dalam
+beberapa kasus konkret memberikan informasi tambahan seperti barisan eksak
+pada derajat rendah.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p008
+Bagian terakhir bab ini, \S\ref{sec:multiplicative-SS}, memberikan pengantar
+singkat tentang struktur perkalian pada barisan spektral. Aspek ini telah
+mendapat perhatian sejak awal sejarah barisan spektral.
+Proposisi~\ref{prop:dga-mult-ss} menunjukkan bahwa aljabar diferensial
+bergradasi terfiltrasi menghasilkan barisan spektral dengan struktur perkalian
+kanonik; pembahasan yang lebih mendalam diserahkan kepada monograf khusus.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p009
+Sebagai latihan penerapan, barisan spektral Lyndon--Hochschild--Serre yang
+sangat penting dalam teori kohomologi grup dapat diperoleh sebagai penerapan
+barisan spektral Grothendieck maupun secara konkret dari kompleks terfiltrasi.
+Pendekatan kedua juga memberinya struktur perkalian kanonik. Pokok ini akan
+dibahas dalam \S\ref{sec:LHS-SS} pada masa mendatang.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.note001
+\begin{wenxintishi}
+	Bab ini hanya memerlukan pengetahuan mengenai kategori abelian dan kompleks.
+Selain beberapa definisi sederhana, bab ini tidak bergantung pada isi
+\CHref{sec:triangulated-derived-cat}; kedua bab dapat dibaca secara mandiri.
+Karena barisan spektral objek diferensial terfiltrasi dapat ditulis secara
+langsung, teori pasangan eksak tidak mutlak diperlukan untuk konstruksi itu
+(lihat Proposisi~\ref{prop:filtered-diff-E} dan pembahasan sesudahnya). Pembaca
+dapat mempertimbangkan untuk sementara melewati \S\ref{sec:exact-couples}.
+Selain itu, di bagian selanjutnya dari buku ini hanya \S\ref{sec:LHS-SS} yang
+memerlukan pengetahuan tentang barisan spektral.
+\end{wenxintishi}
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.h002
+\section{Filtrasi dan Struktur Bergradasi}\label{sec:grading-filtration}
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p010
+Kita telah menjumpai objek bergradasi dalam Definisi~\ref{def:graded-obj}.
+Objek bergradasi-$\Z$ dalam sembarang kategori $\mathcal{A}$ cukup disebut
+\emph{objek bergradasi}; menurut definisi, objek-objek tersebut adalah
+$(X^p)_{p\in\Z}$ dalam $\mathcal{A}^{\Z}$. Objek bergradasi-$\Z^2$ cukup
+disebut \emph{objek bergradasi ganda}; menurut definisi, objek-objek tersebut
+adalah $(X^{p,q})_{(p,q)\in\Z^2}$ dalam
+$\mathcal{A}^{\Z\times\Z}$. Morfisme antarobjek bergradasi (atau bergradasi
+ganda) seperti biasa ditulis $(f^p)_p$ (atau $(f^{p,q})_{p,q}$), dan
+dikomposisikan derajat demi derajat. \index{objek bergradasi}
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p011
+Jika $\mathcal{A}$ merupakan kategori abelian, maka
+$\mathcal{A}^{\Z}$ dan $\mathcal{A}^{\Z\times\Z}$ juga kategori abelian;
+kernel, kokernel, dan operasi lain semuanya dihitung derajat demi derajat.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p012
+Kategori $\mathcal{A}^{\Z}$ mempunyai autoekuivalensi pergeseran $T$ yang
+ditentukan oleh $(TX)^p=X^{p+1}$ dan $(Tf)^p=f^{p+1}$. Lebih umum,
+$\mathcal{A}^{\Z^n}$ mempunyai keluarga autoekuivalensi pergeseran
+$T_1,\ldots,T_n$ yang bersesuaian dengan pergeseran sepanjang $n$ koordinat.
+Pergeseran ini memenuhi komutativitas ketat $T_iT_j=T_jT_i$.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p013
+Dalam kerangka bab ini, struktur bergradasi terutama berasal dari filtrasi.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.d001
+\begin{definisi}\label{def:filtration}
+	\index{filtrasi}
+	\index{filtrasi!hingga}
+	\index[sym1]{FilpX@$\mathrm{F}^p X$, $\mathrm{F}_p X$}
+	Tinjau objek $X$ dari kategori aditif $\mathcal{A}$.
+	\begin{itemize}
+		\item Suatu \emph{filtrasi menurun} $\mathrm{F}^\bullet X$ berarti
+		barisan subobjek
+		\[ \cdots \supset \mathrm{F}^p X \supset \mathrm{F}^{p+1} X \supset \cdots \quad (p \in \Z). \]
+		\item Jika terdapat $a\leq b$ dengan $\mathrm{F}^aX=X$ dan
+		$\mathrm{F}^bX=0$, filtrasi tersebut disebut \emph{hingga}.
+		\item Filtrasi menaik $\mathrm{F}_\bullet X$ dan sifat hingganya
+		didefinisikan secara serupa.
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p014
+Filtrasi menurun dan menaik dapat dibedakan dari posisi indeks $p$. Jika tidak
+ada kerancuan, keduanya cukup disebut filtrasi. Dalam kajian kompleks dan
+kohomologi biasanya digunakan filtrasi menurun, sedangkan untuk kompleks
+rantai dan homologi biasanya digunakan filtrasi menaik. Bab ini terutama
+memakai filtrasi menurun.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p015
+Semua objek terfiltrasi $(X,\mathrm{F}^\bullet X)$ membentuk kategori
+$\mathrm{Fil}^\bullet(\mathcal{A})$. Morfisme
+$f:(X,\mathrm{F}^\bullet X)\to(Y,\mathrm{F}^\bullet Y)$ didefinisikan sebagai
+morfisme $f:X\to Y$ yang mempertahankan filtrasi, yakni yang untuk setiap $p$
+membatasi diri menjadi $\mathrm{F}^pX\to\mathrm{F}^pY$. Kategori
+$\mathrm{Fil}_\bullet(\mathcal{A})$ didefinisikan serupa.
+\index[sym1]{FilA@$\mathrm{Fil}^\bullet(\mathcal{A})$, $\mathrm{Fil}_\bullet(\mathcal{A})$}
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p016
+Untuk setiap $X$, filtrasi menurun $\mathrm{F}^\bullet X$ (atau filtrasi
+menaik $\mathrm{F}_\bullet X$) menghasilkan objek bergradasi
+$(\mathrm{F}^pX)_{p\in\Z}$ (atau $(\mathrm{F}_pX)_{p\in\Z}$). Ini memberikan
+funktor $\mathrm{Fil}^\bullet(\mathcal{A})\to\mathcal{A}^{\Z}$ (atau
+$\mathrm{Fil}_\bullet(\mathcal{A})\to\mathcal{A}^{\Z}$), yang disebut
+konstruksi Rees.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p017
+Jika $\mathcal{A}$ kategori abelian, terdapat cara lain membangun objek
+bergradasi dari filtrasi.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.d002
+\begin{definisi}
+	\index[sym1]{grX@$\gr^p X$, $\gr_p X$}
+	Misalkan $\mathcal{A}$ kategori abelian dan tinjau filtrasi
+	$\mathrm{F}^\bullet X$ (atau $\mathrm{F}_\bullet X$) pada objek $X$.
+	Definisikan objek bergradasi $\gr X$ melalui
+	\[ \gr^p X := \mathrm{F}^p X / \mathrm{F}^{p+1} X \quad (\text{atau} \quad \gr_p X := \mathrm{F}_p X / \mathrm{F}_{p-1} X). \]
+	Ini memberikan funktor
+	$\gr:\mathrm{Fil}^\bullet(\mathcal{A})\to\mathcal{A}^{\Z}$ (atau
+	$\gr:\mathrm{Fil}_\bullet(\mathcal{A})\to\mathcal{A}^{\Z}$).
+\end{definisi}
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p018
+Untuk mengekstrak informasi mengenai $X$ dari $(\gr^pX)_p$, setidaknya kita
+memerlukan $\bigcup_p\mathrm{F}^pX=X$ dan
+$\bigcap_p\mathrm{F}^pX=0$, dengan notasi dari
+Konvensi~\ref{con:increasing-union}. Agar pernyataan pertama bermakna dan
+berguna, kita juga menghendaki $\varinjlim_{p\to-\infty}$ eksak dalam
+$\mathcal{A}$, atau cukup mensyaratkan adanya $M$ dengan
+$\mathrm{F}^MX=X$. Kita mulai dengan beberapa konsep terkait.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.d003
+\begin{definisi}\label{def:filtration-properties}
+	\index{filtrasi!lengkap}
+	\index{filtrasi!terpisah}
+	\index{filtrasi!menyeluruh}
+	Misalkan $\mathcal{A}$ kategori abelian dan $X$ objek dengan filtrasi
+	$\mathrm{F}^\bullet X$.
+	\begin{itemize}
+		\item Jika $\bigcap_p\mathrm{F}^pX=0$, filtrasi tersebut disebut
+		\emph{terpisah}.
+		\item Jika $\bigcup_p\mathrm{F}^pX=X$ dan salah satu syarat berikut
+		berlaku, filtrasi tersebut disebut \emph{menyeluruh}:
+		\begin{compactenum}[(a)]
+			\item $\mathcal{A}$ mempunyai $\varinjlim$ tersaring terhitung yang
+			eksak; lebih tepatnya,
+			$\varinjlim:\mathcal{A}^{(\Z_{\geq0},\leq)}\to\mathcal{A}$ ada dan
+			eksak\footnote{Jika $\mathcal{A}$ merupakan kategori Grothendieck,
+			maka (a) otomatis berlaku.};
+			\item terdapat $M\in\Z$ dengan $\mathrm{F}^MX=X$.
+		\end{compactenum}
+		\item Jika keluarga morfisme kanonik
+		$X\twoheadrightarrow X/\mathrm{F}^pX$ menginduksi isomorfisme
+		$X\rightiso\varprojlim_pX/\mathrm{F}^pX$, filtrasi tersebut disebut
+		\emph{lengkap}.
+	\end{itemize}
+	Filtrasi menaik $\mathrm{F}_\bullet X$ diperlakukan dengan cara yang sama.
+\end{definisi}
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p019
+Konsep kelengkapan diilhami oleh kasus grup topologis; lihat
+\cite[\S 4.10]{Li1}.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p020
+Filtrasi hingga otomatis terpisah, menyeluruh, dan lengkap; inilah kasus utama
+yang diperlukan dalam bab ini. Perhatikan bahwa jika terdapat $N$ dengan
+$\mathrm{F}^NX=0$, filtrasi $\mathrm{F}^\bullet X$ terpisah dan lengkap.
+Selain itu, karena kernel dari
+$X\to\varprojlim_pX/\mathrm{F}^pX$ adalah
+$\bigcap_p\mathrm{F}^pX$, kelengkapan menyiratkan keterpisahan.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.p021
+Citra filtrasi menyeluruh tetap menyeluruh; hal ini diperoleh dengan
+menafsirkan $\bigcup_p$ sebagai $\sum_p$, lalu menggunakan
+Lema~\ref{prop:image-sum-preimage-intersection} (ii).
+Selain itu, filtrasi menyeluruh memenuhi
+\begin{equation}\label{eqn:exhaustion-intersection}\begin{gathered}
+	\varinjlim_{p \to -\infty} \mathrm{F}^p X \rightiso \bigcup_p \mathrm{F}^p X = X, \\
+	K = K \cap \left( \bigcup_p \mathrm{F}^p X \right) = \bigcup_p \left( K \cap \mathrm{F}^p X \right),
+\end{gathered}\end{equation}
+dengan $K$ sembarang subobjek dari $X$. Di bawah syarat (a) untuk filtrasi
+menyeluruh, pernyataan ini merupakan akibat sederhana dari
+Proposisi~\ref{prop:Grothendieck-cat-intersection}; di bawah syarat (b),
+pernyataan ini langsung.
+
+% segment-id: o014.li2.chapter5.intro-filtration-grading.pr001
+\begin{proposisi}\label{prop:gr-isom}
+	Misalkan $\mathcal{A}$ kategori abelian dan
+	$f:(X,\mathrm{F}^\bullet X)\to(Y,\mathrm{F}^\bullet Y)$ suatu morfisme dalam
+	$\mathrm{Fil}^\bullet(\mathcal{A})$.
+	\begin{enumerate}[(i)]
+		\item Misalkan $\mathrm{F}^\bullet X$ terpisah dan menyeluruh. Jika
+		$\gr(f)$ monomorfisme, maka $f$ monomorfisme.
+		\item Misalkan $\mathrm{F}^\bullet X$ lengkap dan menyeluruh, sedangkan
+		$\mathrm{F}^\bullet Y$ terpisah dan menyeluruh. Jika $\gr(f)$
+		isomorfisme, maka $f$ juga isomorfisme, dan dalam hal ini
+		$\mathrm{F}^\bullet Y$ juga lengkap.
+	\end{enumerate}
+	Pernyataan yang bersesuaian berlaku pula bagi filtrasi menaik.
+\end{proposisi}
+% segment-id: o014.li2.chapter5.intro-filtration-grading.pf001
+\begin{bukti}
+	Untuk setiap $p\in\Z$, tuliskan diagram komutatif dengan baris-baris eksak
+% segment-id: o014.li2.chapter5.intro-filtration-grading.g001
+	\[\begin{tikzcd}
+		0 \arrow[r] & \mathrm{F}^{p+1} X \arrow[d, "f"'] \arrow[r] & \mathrm{F}^p X \arrow[r] \arrow[d, "f"] & \gr^p X \arrow[r] \arrow[d, "{\gr^p(f)}"] & 0 \\
+		0 \arrow[r] & \mathrm{F}^{p+1} Y \arrow[r] & \mathrm{F}^p Y \arrow[r] & \gr^p Y \arrow[r] & 0
+	\end{tikzcd}\]
+	Tuliskan $K^p$ dan $C^p$ untuk kernel dan kokernel dari
+	$\mathrm{F}^pX\xrightarrow{f}\mathrm{F}^pY$.
+
+	Untuk (i), terapkan Teorema~\ref{prop:snake-lemma} pada diagram di atas.
+	Diperoleh $K^{p+1}=K^p$. Secara khusus,
+	$K^p\subset\bigcap_{\ell\geq p}\mathrm{F}^\ell X=0$, sehingga pembatasan
+	$f$ ke setiap $\mathrm{F}^pX$ monomorfisme. Untuk membuktikan bahwa $f$
+	monomorfisme, cukup gunakan
+	\[ \Ker(f) \xlongequal{\because\; \text{\eqref{eqn:exhaustion-intersection}}} \bigcup_p \left( \Ker(f) \cap \mathrm{F}^p X \right) = 0. \]
+
+	Untuk (ii), diagram menunjukkan $K^{p+1}=K^p$ dan
+	$C^{p+1}\rightiso C^p$. Untuk setiap $\ell>p$, perhatikan diagram komutatif
+dengan baris-baris eksak
+% segment-id: o014.li2.chapter5.intro-filtration-grading.g002
+	\[\begin{tikzcd}
+		0 \arrow[r] & \mathrm{F}^{\ell} X \arrow[r] \arrow[d, "f"] & \mathrm{F}^p X \arrow[r] \arrow[d, "f"] & \mathrm{F}^p X / \mathrm{F}^{\ell} X \arrow[r] \arrow[d] & 0 \\
+		0 \arrow[r] & \mathrm{F}^{\ell} Y \arrow[r] & \mathrm{F}^p Y \arrow[r] & \mathrm{F}^p Y / \mathrm{F}^{\ell} Y \arrow[r] & 0
+	\end{tikzcd}\]
+	Dengan menerapkan Teorema~\ref{prop:snake-lemma} sekali lagi, diperoleh
+	isomorfisme yang diinduksi oleh $f$
+	\[ \mathrm{F}^p X / \mathrm{F}^\ell X \rightiso \mathrm{F}^p Y / \mathrm{F}^\ell Y. \]
+
+	Ambil $\varinjlim_{p:p<\ell}$ pada kedua ruas dan gunakan
+	\eqref{eqn:exhaustion-intersection}; diperoleh
+	$X/\mathrm{F}^\ell X\rightiso Y/\mathrm{F}^\ell Y$. Selanjutnya ambil
+	$\varprojlim_\ell$ untuk mendapatkan diagram komutatif
+% segment-id: o014.li2.chapter5.intro-filtration-grading.g003
+	\[\begin{tikzcd}
+		X \arrow[r, "\sim"] \arrow[d, "f"'] & \varprojlim_\ell X/\mathrm{F}^\ell X \arrow[d, "\sim" sloped] \\
+		Y \arrow[hookrightarrow, r] & \varprojlim_\ell Y/\mathrm{F}^\ell Y
+	\end{tikzcd}\]
+	Maka baik $f$ maupun $Y\to\varprojlim_\ell Y/\mathrm{F}^\ell Y$
+	merupakan isomorfisme.
+\end{bukti}

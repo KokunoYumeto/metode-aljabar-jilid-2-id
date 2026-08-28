@@ -1,0 +1,221 @@
+% Unit 125 terjemahan Bahasa Indonesia dari chapter9.tex baris 951--1042.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter9.duality-examples-b
+% Cakupan: akhir Bagian 9.3, dualitas modul dan komodul Hopf.
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p001
+Terakhir, kita bahas bagaimana dualitas muncul pada modul dan komodul di
+atas aljabar Hopf; lihat \S\ref{sec:bialgebra}. Misalkan $\Bbbk$ medan dan
+$(A,\mu,\eta,\Delta,\epsilon)$ aljabar-$\Bbbk$ bialjabar, yakni bialjabar
+di atas $\cate{Vect}(\Bbbk)$. Proposisi~\ref{prop:bialgebra-Mod-monoidal}
+telah menjelaskan bagaimana struktur aljabar dan koaljabar dipakai
+bersama-sama untuk membekali kategori-kategori
+% segment-id: o014.li2.chapter9.duality-examples-b.q001
+\[ A\dcate{Mod}, \quad \cated{Mod}A, \quad A\dcate{Comod}, \quad \cated{Comod}A \]
+dengan struktur monoidal alami. Kita hendak mencirikan dualitas di
+dalamnya. Di bawah ini hanya kasus modul kanan dan komodul kanan yang
+diuraikan.
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p002
+Karena funktor lupa dari $\cated{Mod}A$ (atau $\cated{Comod}A$) ke
+$\cate{Vect}(\Bbbk)$ merupakan funktor monoidal, jika modul-$A$ kanan
+(atau komodul-$A$ kanan) $M$ memiliki dual kiri atau kanan, maka:
+\begin{itemize}
+	\item $\dim_{\Bbbk}M<\infty$;
+	\item baik dual kiri maupun kanan mesti direalisasikan pada ruang vektor
+	dual $M^\vee:=\Hom_{\Bbbk}(M,\Bbbk)$;
+	\item pada tingkat $\cate{Vect}_{\mathrm f}(\Bbbk)$, morfisme
+	$\mathrm{ev}$ dan $\mathrm{coev}$ ditentukan, hingga isomorfisme,
+	seperti dalam Contoh~\ref{eg:Vect-trace}.
+\end{itemize}
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p003
+Sebuah modul-$A$ (atau komodul-$A$) disebut berdimensi hingga jika ia
+berdimensi hingga sebagai ruang vektor-$\Bbbk$. Selanjutnya kita berfokus
+pada $M$ berdimensi hingga; kategori yang bersesuaian dinotasikan dengan
+$\catesubd{Mod}{\mathrm f}A$, dan seterusnya.\footnote{Jangan kacaukan
+dengan $\catesubd{Mod}{\mathrm{fg}}A$ dalam
+Teorema~\ref{prop:identify-ModR-fg}, yang merupakan kategori modul-$A$
+kanan terbangkit hingga.} Jika pembaca mengenal teori gelanggang
+komutatif, hasil-hasil berikut akan mudah diperumum ke gelanggang komutatif
+$\Bbbk$ sembarang dengan mensyaratkan bahwa $M$ adalah modul-$\Bbbk$
+projektif terbangkit hingga.
+\index[sym1]{Modf@$\cate{Mod}_{\mathrm{f}}$}
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p004
+Pokok persoalannya ialah membekali $M^\vee$ dengan struktur modul-$A$ kanan (atau
+komodul-$A$ kanan) yang sesuai. Tuliskan $\otimes:=\otimes_{\Bbbk}$.
+Funktor dual pada kasus berdimensi hingga meluas menjadi
+% segment-id: o014.li2.chapter9.duality-examples-b.q002
+\[ (\cdot)^\vee := \Hom_{\Bbbk}(\cdot, \Bbbk): \cate{Vect}(\Bbbk)^{\opp} \to \cate{Vect}(\Bbbk). \]
+Funktor ini hanya merupakan funktor monoidal longgar kanan: terdapat morfisme kanonik
+$N^\vee\otimes M^\vee\to(M\otimes N)^\vee$. Tersedia pula
+keluarga morfisme evaluasi
+% segment-id: o014.li2.chapter9.duality-examples-b.q003
+\[ \mathrm{ev}_M: M \otimes M^\vee \to \Bbbk. \]
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p005
+Mula-mula misalkan $M$ modul-$A$ kanan, dengan perkalian skalar diberikan
+oleh $a:M\otimes A\to M$. Karena $\cate{Vect}(\Bbbk)$ kategori konkret,
+bahasa unsur dan pemetaan lebih mudah digunakan. Ambil transpos
+${}^ta:A\otimes M^\vee\to M^\vee$ berikut, yang menjadikan $M^\vee$
+modul-$A$ kiri:
+% segment-id: o014.li2.chapter9.duality-examples-b.q004
+\[ \mathrm{ev}\left(m, {}^t a(t \otimes \lambda)\right) = \mathrm{ev}\left( a(m \otimes t), \lambda \right), \]
+dengan $m\in M$, $\lambda\in M^\vee$, dan $t\in A$.
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p006
+Untuk komodul-$A$ kanan $M$, pilih basis $v_1,\ldots,v_n$ dari $M$ dan
+basis dual $\check v_1,\ldots,\check v_n$ dari $M^\vee$. Struktur
+komodulnya dapat ditulis sebagai
+% segment-id: o014.li2.chapter9.duality-examples-b.q005
+\begin{equation}\label{eqn:comodule-basis}
+	\rho(v_i) = \sum_{j=1}^n v_j \otimes t_{ji}, \quad t_{ji} \in A, \quad 1 \leq i \leq n.
+\end{equation}
+Operasi transpos di atas memiliki versi dual untuk $\rho$: definisikan
+% segment-id: o014.li2.chapter9.duality-examples-b.q006
+\[ {}^t \rho: M^\vee \to A \otimes M^\vee, \quad \check{v}_i \mapsto \sum_{j=1}^n t_{ij} \otimes \check{v}_j. \]
+Dari \eqref{eqn:comodule-matrix} dan versi komodul kirinya, tampak bahwa
+${}^t\rho$ menjadikan $M^\vee$ komodul-$A$ kiri; dapat pula diperiksa
+bahwa struktur ini tidak bergantung pada pilihan basis.
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p007
+Persoalannya ialah bagaimana kembali ke modul-$A$ kanan dan komodul-$A$
+kanan. Hal ini dapat dilakukan secara kanonik jika $A$ aljabar Hopf,
+sebagai berikut.
+
+% segment-id: o014.li2.chapter9.duality-examples-b.pr001
+\begin{proposition}\label{prop:Hopf-module-dual}
+	\index{dualitas!modul Hopf}
+	Misalkan $\Bbbk$ medan dan $A$ aljabar Hopf-$\Bbbk$ dengan antipoda
+	$S$ (Definisi~\ref{def:Hopf-algebra}), dengan data
+	$(A,\mu,\eta,\Delta,\epsilon)$. Jika $M$ modul-$A$ kanan (atau
+	komodul-$A$ kanan) berdimensi hingga, maka $M$ memiliki dual kiri dan
+	kanan, keduanya direalisasikan pada ruang vektor dual $M^\vee$, dengan
+	deskripsi berikut.
+	\begin{itemize}
+		\item Misalkan struktur modul-$A$ kanan pada $M$ diberikan oleh
+		$a:M\otimes A\to M$. Maka:
+		% segment-id: o014.li2.chapter9.duality-examples-b.q007
+		\begin{center}\begin{tabular}{|c|c|} \hline
+			Dual kiri & Dual kanan \\ \hline
+			${}^\vee a: M^\vee \otimes A \to M^\vee$ & $a^\vee: M^\vee \otimes A \to M^\vee$ \\
+			${}^\vee a(\lambda \otimes t) = {}^t a\left( S^{-1} t \otimes \lambda\right)$ & $a^\vee(\lambda \otimes t) = {}^t a\left(St \otimes \lambda \right)$
+			\\ \hline
+		\end{tabular}\end{center}
+		dengan ${}^ta$ transpos yang didefinisikan di atas,
+		$\lambda\in M^\vee$, dan $t\in A$.
+		\item Misalkan struktur komodul-$A$ kanan pada $M$ diberikan oleh
+		$\rho:M\to M\otimes A$ dan, setelah memilih basis, dideskripsikan
+		seperti dalam \eqref{eqn:comodule-basis}. Maka:
+		% segment-id: o014.li2.chapter9.duality-examples-b.q008
+		\begin{center}\begin{tabular}{|c|c|} \hline
+			Dual kiri & Dual kanan \\ \hline
+			${}^\vee \rho: M^\vee \to M^\vee \otimes A$ & $\rho^\vee: M^\vee \to M^\vee \otimes A$ \\
+			${}^\vee \rho (\check{v}_i) = \sum_j \check{v}_j \otimes St_{ij}$ & $\rho^\vee (\check{v}_i) = \sum_j \check{v}_j \otimes S^{-1} t_{ij}$
+			\\ \hline
+		\end{tabular}\end{center}
+	\end{itemize}
+
+	Sebagai akibatnya, kategori modul-$A$ kanan berdimensi hingga
+	$\catesubd{Mod}{\mathrm f}A$ (atau kategori komodul-$A$ kanan
+	berdimensi hingga $\catesubd{Comod}{\mathrm f}A$) bersifat kaku kiri
+	dan kaku kanan. Kasus modul atau komodul-$A$ kiri sepenuhnya serupa,
+	dengan kiri dan kanan dipertukarkan.
+\end{proposition}
+\begin{proof}
+	Pertama tinjau modul-$A$ kanan $M$. Dengan notasi di atas, karena $S$
+	memberikan homomorfisme $A\to A^{\mathrm{op}}_{\mathrm{cop}}$
+	(Proposisi~\ref{prop:Hopf-antiautomorphism}) dan struktur kepang
+	$\cate{Vect}(\Bbbk)$ simetris, kedua konstruksi dalam tabel menjadikan
+	$M^\vee$ modul-$A$ kanan. Kita tunjukkan bahwa, untuk struktur
+	modul-$A$ kanan pada $M^\vee$ yang diberikan oleh $a^\vee$,
+	$\mathrm{ev}:M\otimes M^\vee\to\Bbbk$ merupakan homomorfisme
+	modul-$A$ kanan.
+
+	Tuliskan $a$ dan $a^\vee$ langsung sebagai perkalian kanan, seperti
+	lazim dalam teori gelanggang; tuliskan pula
+	$\mu:A\otimes A\to A$ sebagai perkalian dan hilangkan
+	$\eta:\Bbbk\to A$ dari notasi. Misalkan
+	$\Delta(t)=\sum_i t_i^{(1)}\otimes t_i^{(2)}$. Jika $t$ dikalikan dari
+	kanan pada $m\otimes\lambda\in M\otimes M^\vee$ lalu hasilnya
+	dievaluasi, diperoleh
+	% segment-id: o014.li2.chapter9.duality-examples-b.q009
+	\[ \mathrm{ev}\left( \sum_i m t_i^{(1)}, \lambda t_i^{(2)} \right) = \mathrm{ev}\left( \sum_i m t_i^{(1)} S\left(t_i^{(2)}\right), \lambda \right). \]
+	Definisi antipoda memberikan
+	$\sum_i t_i^{(1)}S(t_i^{(2)})=\epsilon(t)$, sehingga ungkapan ini
+	menjadi $\epsilon(t)\mathrm{ev}(m\otimes\lambda)$. Karena struktur
+	modul-$A$ pada $\Bbbk$ berasal dari $\epsilon$, ini membuktikan bahwa
+	$\mathrm{ev}$ homomorfisme modul-$A$ kanan.
+
+	Selanjutnya, periksa bahwa
+	$\mathrm{coev}:\Bbbk\to M^\vee\otimes M$ homomorfisme modul-$A$ kanan,
+	masih dengan struktur $a^\vee$ pada $M^\vee$. Identifikasikan
+	$M^\vee\otimes M$ dengan $\End_{\Bbbk}(M)$; maka
+	$\mathrm{coev}(1)=\identity_M$. Cukup diperiksa bahwa, untuk setiap
+	$t\in A$,
+	% segment-id: o014.li2.chapter9.duality-examples-b.q010
+	\[ \epsilon(t) \cdot \identity_M = \sum_i \left( t_i^{(2)} \;\text{dikalikan dari kanan} \right) \circ \identity_M \circ \left( S t_i^{(1)} \;\text{dikalikan dari kanan} \right). \]
+	Ini sama dengan membuktikan
+	$\epsilon(t)=\sum_iS(t_i^{(1)})t_i^{(2)}$, yang juga langsung mengikuti
+	dari definisi antipoda.
+
+	Jadi $M^\vee$, dengan struktur $a^\vee$, memberikan dual kanan $M$ dan
+	dinotasikan oleh $M^*$. Dual kiri dapat ditangani dengan cara serupa,
+	atau direduksi ke pengamatan berikut. Bekali $M^\vee$ dengan struktur
+	modul-$A$ kanan melalui ${}^\vee a$ dan tuliskan hasilnya sebagai
+	${}^*M$. Mudah terlihat bahwa $({}^*M)^*$ yang diberikan oleh konstruksi
+	sebelumnya kembali ke $M$; jadi ${}^*M$ adalah dual kiri $M$.
+
+	Untuk komodul-$A$ kanan berdimensi hingga $M$, kita gunakan metode
+	koefisien tak tentu. Misalkan $M^\vee$ memiliki struktur komodul kanan
+	yang ditentukan oleh matriks $n\times n$ di atas $A$,
+	$U=(u_{ij})_{i,j}$, melalui
+	% segment-id: o014.li2.chapter9.duality-examples-b.q011
+	\[ \check{v}_i \mapsto \sum_{j=1}^n \check{v}_j \otimes u_{ji}, \quad 1 \leq i \leq n. \]
+	Syarat perlu dan cukup agar $U$ memberikan struktur komodul kanan telah
+	dicantumkan dalam \eqref{eqn:comodule-matrix}.
+
+	Ingat bahwa
+	$\mathrm{ev}(v_i,\check v_j)=\delta_{i,j}$, dengan $\delta$ simbol
+	Kronecker, dan $\mathrm{coev}(1)=\sum_i\check v_i\otimes v_i$. Syarat
+	bahwa $\mathrm{ev}$ dan $\mathrm{coev}$ merupakan homomorfisme
+	komodul-$A$ kanan kemudian dapat ditulis sebagai
+	% segment-id: o014.li2.chapter9.duality-examples-b.q012
+	\begin{equation}\label{eqn:Hopf-module-dual-aux}
+		\sum_k t_{ki} u_{kj} = \delta_{i, j} = \sum_k u_{ik} t_{jk}.
+	\end{equation}
+	Tuliskan $T=(t_{ij})_{i,j}$ dan ${}^tT$ untuk transposnya. Dalam bahasa
+	matriks, syarat di atas menjadi
+	% segment-id: o014.li2.chapter9.duality-examples-b.q013
+	\[ ({}^t T) U = 1_{n \times n} = U ({}^t T). \]
+	Jadi mencari dual kanan $M$ sama dengan mencari $({}^tT)^{-1}$.
+	Demikian pula, mencari dual kiri $M$ sama dengan mencari
+	${}^t(T^{-1})$. Pernyataan mengenai dual kanan dan kiri masing-masing
+	cukup dibuktikan dengan memeriksa
+	% segment-id: o014.li2.chapter9.duality-examples-b.q014
+	\begin{align*}
+		\sum_k t_{ki} S^{-1}(t_{jk}) & = \delta_{i, j} = \sum_k S^{-1} (t_{ki}) t_{jk}, \\
+		\sum_k t_{ik} S(t_{kj}) & = \delta_{i, j} = \sum_k S(t_{ik}) t_{kj}.
+	\end{align*}
+
+	Pemeriksaan ini langsung. Karena
+	$\Delta(t_{ij})=\sum_k t_{ik}\otimes t_{kj}$, definisi antipoda
+	menunjukkan bahwa kedua ruas dalam persamaan kedua sama dengan
+	$\epsilon(t_{ij})=\delta_{i,j}$. Terapkan $S^{-1}$ pada kedua ruas
+	persamaan kedua dan gunakan fakta bahwa $S$ mempertahankan unit serta
+	membalik urutan perkalian; setelah disusun ulang, diperoleh persamaan
+	pertama. Pernyataan terbukti.
+\end{proof}
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p008
+Jika $A$ tidak komutatif, ${}^t(T^{-1})$ dan $({}^tT)^{-1}$ belum tentu
+sama. Jadi argumen di atas juga menunjukkan bahwa dual kiri dan kanan pada
+umumnya tidak sama.
+
+% segment-id: o014.li2.chapter9.duality-examples-b.p009
+Sesungguhnya, Korolari~\ref{prop:Hopf-vs-dual} di bawah akan menunjukkan
+bagaimana kekakuan kategori komodul berdimensi hingga dapat, sebaliknya,
+menentukan struktur Hopf pada suatu bialjabar. Untuk itu masih diperlukan
+serangkaian persiapan teoretis.

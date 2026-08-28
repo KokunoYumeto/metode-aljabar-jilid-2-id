@@ -8,7 +8,7 @@
 \hypertarget{o014.aljabr2.chapter1.kan-extensions}{ }
 
 % segment-id: o014.li2.chapter1.kan-extensions.p001
-Bagian ini bermula dari persoalan memperluas funktor. Tinjau kategori
+Bagian ini berangkat dari persoalan memperluas funktor. Tinjau kategori
 $\mathcal{C}$, $\mathcal{D}$, $\mathcal{E}$ serta funktor $K$ dan $F$ seperti
 dalam diagram berikut:
 % segment-id: o014.li2.chapter1.kan-extensions.g001
@@ -176,7 +176,7 @@ setiap morfisme ke $\identity_X$.
 	\end{tikzcd}\]
 	Maka $\Lan_! F$ (atau $\Ran_! F$) ada jika dan hanya jika
 	$\varinjlim F$ (atau $\varprojlim F$) ada di $\mathcal{E}$, dan dalam hal
-	ini ekstensi Kan tersebut tidak lain adalah limit yang bersangkutan.
+	ini ekstensi Kan tersebut tepat merupakan limit yang bersangkutan.
 
 	Sebagai contoh, tinjau $(\Lan_! F, \eta)$. Funktor
 	$\Lan_! F: \mathbf{1} \to \mathcal{E}$ dapat dipandang sebagai objek di
@@ -234,8 +234,8 @@ setiap morfisme ke $\identity_X$.
 \end{contoh}
 
 % segment-id: o014.li2.chapter1.kan-extensions.p006
-Dalam praktiknya, konsep ekstensi Kan perlu diperkuat lebih lanjut dalam
-sejumlah situasi\footnote{Salah satu penguatan yang lazim disebut ekstensi Kan
+Dalam praktik, sejumlah situasi menuntut penguatan lebih lanjut terhadap
+konsep ekstensi Kan\footnote{Salah satu penguatan yang lazim disebut ekstensi Kan
 titik demi titik (pointwise Kan extension), yang tidak dibahas di sini.},
 terutama dalam pembahasan funktor turunan nanti.
 
@@ -250,8 +250,8 @@ terutama dalam pembahasan funktor turunan nanti.
 % segment-id: o014.li2.chapter1.kan-extensions.l005
 	\begin{itemize}
 % segment-id: o014.li2.chapter1.kan-extensions.i009
-		\item Misalkan ekstensi Kan kanan $(\Ran_K F, \varepsilon)$ ada. Kita
-		katakan bahwa funktor $M: \mathcal{E} \to \mathcal{F}$
+		\item Misalkan ekstensi Kan kanan $(\Ran_K F, \varepsilon)$ ada. Funktor
+		$M: \mathcal{E} \to \mathcal{F}$ dikatakan
 		\emph{mempertahankan} $\Ran_K F$ jika komposisi $2$-sel
 % segment-id: o014.li2.chapter1.kan-extensions.g009
 		\[\begin{tikzcd}[column sep=large]
@@ -264,8 +264,8 @@ terutama dalam pembahasan funktor turunan nanti.
 		\end{tikzcd}\]
 		memberikan ekstensi Kan kanan dari $MF$ di sepanjang $K$.
 % segment-id: o014.li2.chapter1.kan-extensions.i010
-		\item Misalkan ekstensi Kan kiri $(\Lan_K F, \eta)$ ada. Kita katakan
-		bahwa funktor $M: \mathcal{E} \to \mathcal{F}$
+		\item Misalkan ekstensi Kan kiri $(\Lan_K F, \eta)$ ada. Funktor
+		$M: \mathcal{E} \to \mathcal{F}$ dikatakan
 		\emph{mempertahankan} $\Lan_K F$ jika komposisi $2$-sel
 % segment-id: o014.li2.chapter1.kan-extensions.g011
 		\[\begin{tikzcd}[column sep=large]
@@ -287,7 +287,7 @@ terutama dalam pembahasan funktor turunan nanti.
 \end{definisi}
 
 % segment-id: o014.li2.chapter1.kan-extensions.p007
-Langkah berikutnya adalah menetapkan hubungan antara adjungsi dan ekstensi Kan
+Langkah berikutnya adalah menjelaskan hubungan antara adjungsi dan ekstensi Kan
 absolut. Hasil ini sangat berguna dalam kajian lanjut tentang funktor turunan;
 mempelajari buktinya juga membantu membiasakan diri dengan ekstensi Kan dan
 manipulasi $2$-sel. Tinjau sepasang funktor adjoin
@@ -302,7 +302,7 @@ $\varepsilon: FG \to \identity_{\mathcal{C}'}$. Diberikan pula funktor
 Selanjutnya kita akan menggunakan diagram $2$-sel secara sistematis untuk
 menyatakan funktor, transformasi alami di antaranya, dan komposisinya, agar
 argumen menjadi lebih ringkas. Dalam manipulasi $2$-sel, kita akan menukar
-komposisi vertikal dan horizontal tanpa penjelasan lebih lanjut; tindakan ini
+komposisi vertikal dan horizontal tanpa penjelasan lebih lanjut; langkah ini
 sah, sebagaimana dijelaskan dalam \cite[Lema 2.2.7]{Li1}.
 
 % segment-id: o014.li2.chapter1.kan-extensions.th001
@@ -400,7 +400,7 @@ sah, sebagaimana dijelaskan dalam \cite[Lema 2.2.7]{Li1}.
 			\mathcal{D} \arrow[r, bend left=60, "{\mathrm{L}F}", ""' {name=A}] \arrow[r, bend right=60, "{\mathrm{L}F}"', "" {name=B}] & \mathcal{D}' \arrow[Rightarrow, from=A, to=B, "\identity" description]
 		\end{tikzcd},
 	\end{gathered}\end{equation*}
-	dengan label pada anak panah yang tidak menimbulkan ambiguitas dihilangkan.
+	dengan label anak panah yang tidak menimbulkan ambiguitas dihilangkan.
 	Kita buktikan persamaan pertama. Berdasarkan sifat universal
 	$(\mathrm{R}G, \beta)$ sebagai ekstensi Kan kiri, cukup ditunjukkan bahwa
 	$2$-sel yang diperoleh dengan mengomposisikan kedua ruas dengan $\beta$

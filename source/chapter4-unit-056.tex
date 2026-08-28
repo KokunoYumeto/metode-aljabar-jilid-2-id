@@ -1,0 +1,425 @@
+% Unit 056 terjemahan Bahasa Indonesia dari chapter4.tex baris 1314--1512.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.triangulated-functor-localization
+% Cakupan: Bagian 4.6 lengkap; berhenti sebelum Bagian 4.7 pada baris 1513.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.h001
+\section{Funktor Bertriangulasi dan Lokalisasi}\label{sec:triangulated-functor-localization}
+\hypertarget{o014.aljabr2.chapter4.triangulated-functor-localization}{ }
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p001
+Tetapkan kategori bertriangulasi $\mathcal{D}$ beserta subkategori
+bertriangulasi jenuhnya $\mathcal{N}$, dan tuliskan lokalisasi Verdier yang
+bersesuaian sebagai $Q: \mathcal{D} \to \mathcal{D}/\mathcal{N}$. Demikian
+pula, kita meninjau kategori bertriangulasi $\mathcal{D}'$ beserta
+$Q': \mathcal{D}' \to \mathcal{D}'/\mathcal{N}'$.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p002
+Misalkan $F: \mathcal{D} \to \mathcal{D}'$ suatu funktor bertriangulasi.
+Tinjau diagram berikut, yang bagian bergaris penuhnya telah diberikan:
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g001
+\begin{equation}\label{eqn:derived-situation}\begin{tikzcd}
+	\mathcal{D} \arrow[r, "F"] \arrow[d, "Q"'] & \mathcal{D}' \arrow[d, "{Q'}"] \\
+	\mathcal{D}/\mathcal{N} \arrow[dashed, r] & \mathcal{D}'/\mathcal{N}'
+\end{tikzcd}\end{equation}
+Harapan naifnya ialah melengkapi bagian bergaris putus-putus agar seluruh
+diagram komutatif. Jika
+$F\left(\Obj(\mathcal{N})\right) \subset \Obj(\mathcal{N}')$, maka $Q'F$
+menolkan $\mathcal{N}$, sehingga sifat universal dalam
+Teorema~\ref{prop:Verdier-localization} menginduksi funktor bergaris
+putus-putus tersebut. Namun, dalam praktiknya $F$ jarang memiliki sifat ini.
+Karena itu, kita memakai sasaran yang lebih lemah dan beralih ke ekstensi Kan
+yang diperkenalkan dalam \S\ref{sec:Kan-extension}.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.d001
+\begin{definisi}[Funktor turunan dari funktor bertriangulasi]\label{def:Verdier-localization-functor}
+	\index{funktor turunan}
+	\index[sym1]{RNF@$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}} F$}
+	\index[sym1]{LNF@$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}} F$}
+	Misalkan $F: \mathcal{D} \to \mathcal{D}'$ seperti di atas.
+	\begin{itemize}
+		\item Jika $\Lan_Q(Q' F)$ ada dan merupakan funktor bertriangulasi, maka
+		funktor tersebut ditulis
+		$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}} F:
+		\mathcal{D}/\mathcal{N} \to \mathcal{D}'/\mathcal{N}'$;
+		\item Jika $\Ran_Q(Q' F)$ ada dan merupakan funktor bertriangulasi, maka
+		funktor tersebut ditulis
+		$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}} F:
+		\mathcal{D}/\mathcal{N} \to \mathcal{D}'/\mathcal{N}'$.
+	\end{itemize}
+	Kita menyebut $\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}} F$ (atau
+	$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}} F$) sebagai \emph{funktor turunan
+	kanan} (atau \emph{funktor turunan kiri}) dari funktor bertriangulasi $F$.
+	Keunikannya, hingga isomorfisme unik, berasal dari keunikan ekstensi Kan.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p003
+Menurut Definisi~\ref{def:Kan-extension} tentang ekstensi Kan, data tersebut
+dapat ditempatkan dalam diagram sel-$2$
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g002
+\begin{equation}\label{eqn:derived-can-morphism}\begin{tikzcd}
+	\mathcal{D} \arrow[r, "F"] \arrow[d, "Q"'] & \mathcal{D}' \arrow[d, "{Q'}"] \arrow[Rightarrow, ld] \\
+	\mathcal{D}/\mathcal{N} \arrow[r, "{\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}} F}"'] & \mathcal{D}'/\mathcal{N}'
+\end{tikzcd} \quad \begin{tikzcd}
+	\mathcal{D} \arrow[r, "F"] \arrow[d, "Q"'] & \mathcal{D}' \arrow[d, "{Q'}"] \\
+	\mathcal{D}/\mathcal{N} \arrow[r, "{\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}} F}"'] \arrow[Rightarrow, ru] & \mathcal{D}'/\mathcal{N}' .
+\end{tikzcd}\end{equation}
+Sifat universalnya mengatakan hal berikut: setiap cara mengisi
+\eqref{eqn:derived-situation} dengan sel-$2$ diperoleh secara unik dengan
+``mendorong keluar'' diagram untuk
+$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$, atau secara unik dengan
+``menarik masuk'' ke diagram untuk
+$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}}F$, bergantung pada arah pengisian.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p004
+Sebagai ilustrasi, berikut cara menggunakan sifat universal sel-$2$ untuk
+menurunkan morfisme kanonik
+$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F \to
+\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}G$ dari suatu morfisme funktor
+$F \to G$, dengan asumsi kedua funktor turunan itu ada. Perhatikan diagram
+sebelah kiri berikut:
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g003
+\[\begin{tikzcd}[column sep=large]
+	\mathcal{D} \arrow[r, bend left=45, "F", ""' {name=U}] \arrow[r, "G"', "" {name=D}] \arrow[d] & \mathcal{D}' \arrow[d] \arrow[Rightarrow, ld] \\
+	\mathcal{D}/\mathcal{N} \arrow[r, "{\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}G }"'] & \mathcal{D}'/\mathcal{N}' \arrow[Rightarrow, from=U, to=D]
+\end{tikzcd} \xlongequal{\text{komposisi vertikal}} \begin{tikzcd}[column sep=large, row sep=large]
+	\mathcal{D} \arrow[r, "F"] \arrow[d] & \mathcal{D}' \arrow[d] \arrow[Rightarrow, ld] \\
+	\mathcal{D}/\mathcal{N} \arrow[r, "{\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F }", ""' {name=U}] \arrow[bend right=60, r, "{\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}G }"', "" {name=D}] & \mathcal{D}'/\mathcal{N}' \arrow[Rightarrow, from=U, to=D, "{\exists!}"' near start]
+\end{tikzcd}\]
+Berdasarkan sifat universal \eqref{eqn:derived-can-morphism}, komposisi
+vertikal pada diagram kiri secara unik merupakan hasil mendorong keluar diagram
+yang bersesuaian dengan $\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$, seperti
+ditunjukkan pada diagram kanan. ``Dorongan'' ini adalah morfisme kanonik yang
+dicari. Kasus funktor turunan kiri tentu saja dual. Catatan berikut menunjukkan
+bahwa morfisme kanonik tersebut kompatibel dengan pergeseran.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.r001
+\begin{catatan}\label{rem:derived-can-morphism}
+	Misalkan $\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$ (atau
+	$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}}F$) ada. Jika $(L,\xi)$ (atau
+	$(R,\delta)$) dalam sifat universal ekstensi Kan diambil sebagai funktor
+	bertriangulasi dan morfisme yang kompatibel dengan pergeseran (lihat
+	Definisi~\ref{def:category-with-translation}), maka morfisme yang ditentukan
+olehnya,
+	$\chi: \mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F \to L$ (atau
+	$\theta: R \to \mathrm{L}^{\mathcal{N}'}_{\mathcal{N}}F$), juga otomatis
+kompatibel dengan pergeseran. Ini merupakan akibat langsung dari keunikan.
+\end{catatan}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p005
+Definisi~\ref{def:Verdier-localization-functor} menimbulkan dua pertanyaan.
+Pertama, bagaimana keberadaan
+$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$ (atau
+$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}}F$) dapat dijamin? Kedua, bagaimana
+hubungannya dengan komposisi funktor? Kita membahas keduanya secara berurutan.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.d002
+\begin{definisi}\label{def:F-injective}
+	\index{subkategori injektif-$\cdots$}
+	\index{subkategori projektif-$\cdots$}
+	Ambil $\mathcal{N}$, $\mathcal{N}'$, dan
+	$F: \mathcal{D} \to \mathcal{D}'$ seperti di atas. Misalkan $\mathcal{I}$
+	subkategori bertriangulasi dari $\mathcal{D}$. Jika kondisi berikut berlaku,
+	\begin{description}
+		\item[Kondisi resolusi] untuk setiap $X \in \Obj(\mathcal{D})$ terdapat
+		morfisme $X \to Y$ (atau $Y \to X$) dalam $S\mathcal{N}$ dengan
+		$Y \in \Obj(\mathcal{I})$,
+		\item[Kondisi mempertahankan $\mathcal{N}$]
+		$F\left(\Obj(\mathcal{N}\cap\mathcal{I})\right)
+		\subset \Obj(\mathcal{N}')$,
+	\end{description}
+	maka $\mathcal{I}$ disebut \emph{$F$-injektif} (atau \emph{$F$-projektif}).
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p006
+Sebagai contoh, jika
+$F\left(\Obj(\mathcal{N})\right) \subset \Obj(\mathcal{N}')$, maka
+$\mathcal{D}$ sendiri sekaligus $F$-injektif dan $F$-projektif.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p007
+Kondisi
+$F\left(\Obj(\mathcal{N}\cap\mathcal{I})\right)\subset\Obj(\mathcal{N}')$
+bersama sifat universal lokalisasi Verdier memberikan funktor bertriangulasi
+$F^\flat: \mathcal{I}/(\mathcal{I}\cap\mathcal{N})
+\to \mathcal{D}'/\mathcal{N}'$.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.pr001
+\begin{proposisi}\label{prop:localization-injective}
+	Jika $\mathcal{I}$ merupakan subkategori bertriangulasi $F$-injektif (atau
+	$F$-projektif), maka $\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$ (atau
+	$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}}F$) ada, dan diagram berikut
+	komutatif hingga isomorfisme:
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g004
+	\[\begin{tikzcd}
+		\mathcal{D}/\mathcal{N} \arrow[r, "\text{funktor yang dicari}"] & \mathcal{D}'/\mathcal{N}' . \\
+		\mathcal{I}/(\mathcal{I} \cap \mathcal{N}) \arrow[u, "{i: \text{ekuivalensi}}"] \arrow[ru, "{F^\flat}"'] &
+	\end{tikzcd}\]
+\end{proposisi}
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.pf001
+\begin{bukti}
+	Tinjau kasus $\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$. Keberadaan
+	ekstensi Kan kiri $\Lan_Q(Q'F)$ mengikuti dari
+	Proposisi~\ref{prop:injective-localization} (ii). Satu-satunya hal yang perlu
+	diverifikasi adalah bahwa $Q'F$ memetakan
+	$S\mathcal{N}\cap\Mor(\mathcal{I})
+	\xlongequal{\eqref{eqn:S-N-D}}S(\mathcal{N}\cap\mathcal{I})$ ke
+	isomorfisme. Ambil $f:A\to B$ dalam himpunan ini dan lengkapi menjadi
+	segitiga terbedakan $A\xrightarrow{f}B\to C\xrightarrow{+1}$, dengan
+	$C\in\Obj(\mathcal{N}\cap\mathcal{I})$. Maka dalam segitiga terbedakan
+	$FA\xrightarrow{Ff}FB\to FC\xrightarrow{+1}$ berlaku
+	$FC\in\Obj(\mathcal{N}')$, yang menjamin bahwa $(Q'F)(f)$ isomorfisme.
+
+	Proposisi~\ref{prop:triangulated-i-equiv} menyiratkan bahwa $i$ mempunyai
+	funktor kuasi-invers bertriangulasi $i^{-1}$. Jadi
+	$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F:=F^\flat\circ i^{-1}$ memberikan
+	$\Lan_Q(Q'F)$ dan sekaligus merupakan funktor bertriangulasi. Terbukti.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.t001
+\begin{teorema}\label{prop:localization-triangulated-composite}
+	Tinjau kategori bertriangulasi $\mathcal{D}$, $\mathcal{D}'$,
+	$\mathcal{D}''$ beserta subkategori bertriangulasi jenuhnya
+	$\mathcal{N}$, $\mathcal{N}'$, $\mathcal{N}''$. Misalkan diberikan funktor
+	bertriangulasi
+	$\mathcal{D}\xrightarrow{F}\mathcal{D}'\xrightarrow{F'}\mathcal{D}''$.
+	\begin{enumerate}[(i)]
+		\item Misalkan funktor turunan kanan
+		$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$,
+		$\mathrm{R}^{\mathcal{N}''}_{\mathcal{N}'}F'$, dan
+		$\mathrm{R}^{\mathcal{N}''}_{\mathcal{N}}(F'F)$ ada. Maka terdapat
+		morfisme kanonik yang bersesuaian
+		\[ \mathrm{R}^{\mathcal{N}''}_{\mathcal{N}} (F' F) \to \left( \mathrm{R}^{\mathcal{N}''}_{\mathcal{N}'} F' \right) \left( \mathrm{R}^{\mathcal{N}'}_{\mathcal{N}} F \right). \]
+		\item Pernyataan yang sama berlaku bagi funktor turunan kiri, dengan
+		morfisme kanonik yang bersesuaian
+		\[ \left( \mathrm{L}^{\mathcal{N}''}_{\mathcal{N'}} F' \right) \left( \mathrm{L}^{\mathcal{N}'}_{\mathcal{N}} F \right) \to \mathrm{L}^{\mathcal{N}''}_{\mathcal{N}} (F' F). \]
+		\item Tetapkan subkategori bertriangulasi $\mathcal{I}$ dari
+		$\mathcal{D}$ (atau $\mathcal{I}'$ dari $\mathcal{D}'$). Jika
+		$\mathcal{I}$ bersifat $F$-injektif, $\mathcal{I}'$ bersifat
+		$F'$-injektif, dan
+		$F(\Obj(\mathcal{I}))\subset\Obj(\mathcal{I}')$, maka $\mathcal{I}$
+		bersifat $F'F$-injektif dan morfisme kanonik pada (i) merupakan
+		isomorfisme.
+		\item Pernyataan yang sama berlaku jika ``injektif'' diganti dengan
+		``projektif''. Dalam hal ini, $\mathcal{I}$ bersifat $F'F$-projektif dan
+		morfisme kanonik pada (ii) merupakan isomorfisme.
+	\end{enumerate}
+\end{teorema}
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.pf002
+\begin{bukti}
+	Jelas bahwa (i), (iii) masing-masing dual terhadap (ii), (iv), sehingga
+	cukup membahas pasangan pertama.
+
+	Untuk (i), tuliskan
+	$R:=\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F$ dan
+	$R':=\mathrm{R}^{\mathcal{N}''}_{\mathcal{N}'}F'$. Tinjau diagram sel-$2$
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g005
+	\[\begin{tikzcd}
+		\mathcal{D} \arrow[r, "F"] \arrow[d, "Q"'] & \mathcal{D}' \arrow[r, "{F'}"] \arrow[d, "{Q'}"] \arrow[Rightarrow, ld] & \mathcal{D}'' \arrow[d, "{Q''}"] \arrow[Rightarrow, ld] \\
+		\mathcal{D}/\mathcal{N} \arrow[r, "R"'] & \mathcal{D}'/\mathcal{N}' \arrow[r, "{R'}"'] & \mathcal{D}''/\mathcal{N}''
+	\end{tikzcd}\]
+	Sifat universal ekstensi Kan kiri memberikan
+	$\mathrm{R}^{\mathcal{N}''}_{\mathcal{N}}(F'F)\to R'R$, yang dicirikan oleh
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g006
+	\begin{equation}\label{eqn:R-composite-aux}\begin{tikzcd}[column sep=large]
+			\mathcal{D} \arrow[r, "{F' F}"] \arrow[d, "Q"'] & \mathcal{D}'' \arrow[d, "{Q''}"] \arrow[Rightarrow, ld] \\
+			\mathcal{D}/\mathcal{N} \arrow[r, "{\mathrm{R}^{\mathcal{N}''}_{\mathcal{N}} (F'F) }"' {below, name=R}] \arrow[r, "{R' R}"{below, name=RR, pos=0.465}, rounded corners, to path={-- ([yshift=-2em]\tikztostart.south) -- ([yshift=-2em] \tikztotarget.south) [midway]\tikztonodes -- (\tikztotarget) }] & \mathcal{D}''/\mathcal{N}''
+			\arrow[Rightarrow, from=R, to=RR]
+			% The hack pos=0.465 is for cosmetic reasons...
+		\end{tikzcd} \;\text{dikomposisikan dengan}\; = \begin{tikzcd}
+			\mathcal{D} \arrow[r, "{F' F}"] \arrow[d, "Q"'] & \mathcal{D}'' \arrow[d, "{Q''}"] \arrow[Rightarrow, ld] \\
+			\mathcal{D}/\mathcal{N} \arrow[r, "{R'R}"' inner sep=0.8em] & \mathcal{D}''/\mathcal{N}'' .
+	\end{tikzcd}\end{equation}
+
+	Untuk (iii), sifat $F'F$-injektif dari $\mathcal{I}$ langsung mengikuti
+	dari Definisi~\ref{def:F-injective} dan syarat
+	$F(\Obj(\mathcal{I}))\subset\Obj(\mathcal{I}')$. Misalkan
+	$Y\in\Obj(\mathcal{I})$. Konstruksi dalam
+	Proposisi~\ref{prop:localization-injective} memberikan
+	\begin{gather*}
+		RQY = Q'FY \in \Obj \left(\mathcal{I}'/(\mathcal{N}'\cap\mathcal{I}')\right), \\
+		(R'R)QY = R'(Q'FY) = Q'' F'FY = \mathrm{R}^{\mathcal{N}''}_{\mathcal{N}} (F' F)(QY).
+	\end{gather*}
+
+	Untuk objek umum $QX\in\Obj(\mathcal{D}/\mathcal{N})$, dengan
+	$X\in\Obj(\mathcal{D})$, terdapat morfisme $X\to Y$ dalam
+	$S\mathcal{N}$ dengan $Y\in\Obj(\mathcal{I})$, sehingga
+	$QX\rightiso QY$. Dengan menerapkan langkah sebelumnya, kita memperoleh
+	isomorfisme
+	$\mathrm{R}^{\mathcal{N}''}_{\mathcal{N}}(F'F)(QX)\simeq R'R(QX)$.
+	Dapat diperiksa bahwa isomorfisme-isomorfisme ini kompatibel dengan
+	$\mathrm{R}^{\mathcal{N}''}_{\mathcal{N}}(F'F)\to R'R$ yang dicirikan oleh
+	\eqref{eqn:R-composite-aux}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.r002
+\begin{catatan}[Definisi P.\ Deligne]\label{rem:Deligne-derived-functor}
+	\index{funktor turunan!definisi Deligne}
+	Menurut Proposisi~\ref{prop:injective-localization} (iii), di bawah syarat
+	Proposisi~\ref{prop:localization-injective}, funktor turunan dapat dituliskan
+	sebagai
+	\begin{align*}
+		(\mathrm{R}_{\mathcal{N}}^{\mathcal{N}'} F)(QX) & \simeq \varinjlim_{(X \to Y) \in \Obj(S\mathcal{N}_{X/})} (Q'F)Y, \\
+		(\mathrm{L}_{\mathcal{N}}^{\mathcal{N}'} F)(QX) & \simeq \varprojlim_{(Y \to X) \in \Obj(S\mathcal{N}_{/X}^{\opp})} (Q'F)Y.
+	\end{align*}
+	Isomorfisme-isomorfisme ini kanonik dan, melalui resolusi, setiap limit
+	tersebut dapat direalisasikan oleh suatu $Y$. Dalam
+	\cite[Exp XVII, Déf 1.2.1]{SGA4-3}, Deligne mendefinisikan
+	$(\mathrm{R}F_{\mathcal{N}}^{\mathcal{N}'} F)(QX)$ dan
+	$(\mathrm{L}_{\mathcal{N}}^{\mathcal{N}'} F)(QX)$ masing-masing sebagai
+	limit di atas, dengan syarat limit tersebut benar-benar dicapai oleh suatu
+	$Y$. Salah satu kelebihan definisi ini adalah bahwa ia dapat diterapkan pada
+	satu objek $X$, sehingga dapat didefinisikan secara ``parsial''.
+
+	Rumus di atas juga menjelaskan morfisme bawaan funktor turunan sebagai
+	ekstensi Kan,
+	$Q'F\to(\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}}F)Q$ dan
+	$(\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}}F)Q\to Q'F$. Keduanya berturut-turut
+	bersesuaian dengan suku $Y=X$ dalam $\varinjlim$ dan $\varprojlim$.
+\end{catatan}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p008
+Sekarang kita beralih ke bifunktor. Misalkan $\mathcal{D}_1$,
+$\mathcal{D}_2$, dan $\mathcal{D}'$ kategori bertriangulasi, dengan funktor
+pergeseran berturut-turut $T_1$, $T_2$, dan $T'$.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.d003
+\begin{definisi}\label{def:triangulated-bifunctor}
+	\index{bifunktor!bertriangulasi}
+	Suatu \emph{bifunktor bertriangulasi} dari
+	$\mathcal{D}_1\times\mathcal{D}_2$ ke $\mathcal{D}'$ berarti data berikut.
+	\begin{itemize}
+		\item Bifunktor $F:\mathcal{D}_1\times\mathcal{D}_2\to\mathcal{D}'$
+		yang dilengkapi struktur funktor bertriangulasi dalam setiap variabel.
+		\item Untuk semua $X\in\Obj(\mathcal{D}_1)$ dan
+		$Y\in\Obj(\mathcal{D}_2)$, diagram berikut antikomutatif (yakni, kedua
+		komposisinya berbeda dengan tanda minus)\footnote{Bandingkan dengan
+		Proposisi~\ref{prop:tot-shift}.}
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g007
+		\[\begin{tikzcd}
+			F(T_1 X, T_2 Y) \arrow[r] \arrow[d] & T' F(X, T_2 Y) \arrow[d] \\
+			T' F(T_1 X, Y) \arrow[r] & (T')^2(X, Y)
+		\end{tikzcd}\]
+		Panah-panahnya berasal dari struktur funktor bertriangulasi $F$ dalam
+		kedua variabel.
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p009
+Dalam situasi di atas, ambil $\mathcal{N}_1$, $\mathcal{N}_2$, dan
+$\mathcal{N}'$ sebagai subkategori bertriangulasi jenuh dari
+$\mathcal{D}_1$, $\mathcal{D}_2$, dan $\mathcal{D}'$. Tuliskan funktor
+lokalisasi yang bersesuaian sebagai
+$Q_i:\mathcal{D}_i\to\mathcal{D}_i/\mathcal{N}_i$ ($i=1,2$) dan
+$Q':\mathcal{D}'\to\mathcal{D}'/\mathcal{N}'$. Selanjutnya tetapkan bifunktor
+bertriangulasi $F:\mathcal{D}_1\times\mathcal{D}_2\to\mathcal{D}'$.
+Untuk bifunktor ini, kita dapat mengkaji masalah ekstensi funktor dalam diagram
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g008
+\[\begin{tikzcd}
+	\mathcal{D}_1 \times \mathcal{D}_2 \arrow[d, "{(Q_1, Q_2)}"'] \arrow[r, "F"] & \mathcal{D}' \arrow[d, "{Q'}"] \\
+	(\mathcal{D}_1 / \mathcal{N}_1) \times (\mathcal{D}_2 / \mathcal{N}_2) \arrow[r, dashed] & \mathcal{D}'/\mathcal{N}' .
+\end{tikzcd}\]
+Karena $(Q_1,Q_2)$ adalah lokalisasi terhadap sistem multiplikatif
+$S\mathcal{N}_1\times S\mathcal{N}_2$
+(Catatan~\ref{rem:localization-product-cat}), kita tetap dapat membicarakan
+kedua ekstensi Kan dari $Q'F$ sepanjang $(Q_1,Q_2)$.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.d004
+\begin{definisi}[Funktor turunan dari bifunktor bertriangulasi]\label{def:bifunctor-triangulated-localization}
+	\index{bifunktor turunan}
+	\index[sym1]{RNNF@$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}_1 \times \mathcal{N}_2} F$}
+	\index[sym1]{LNNF@$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}_1 \times \mathcal{N}_2} F$}
+	Untuk data di atas, jika
+	\[ \Lan_{(Q_1, Q_2)} (Q' F), \quad \text{(atau $\Ran_{(Q_1, Q_2)}(Q' F)$)} \]
+	ada dan merupakan bifunktor bertriangulasi, maka bifunktor tersebut ditulis
+	$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}_1\times\mathcal{N}_2}F$ (atau
+	$\mathrm{L}^{\mathcal{N}'}_{\mathcal{N}_1\times\mathcal{N}_2}F$) dan
+	disebut \emph{bifunktor turunan kanan} (atau \emph{bifunktor turunan kiri})
+	dari $F$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.d005
+\begin{definisi}\label{def:F-injective-bifunctor}
+	\index{subkategori injektif-$\cdots$}
+	\index{subkategori projektif-$\cdots$}
+	Tinjau bifunktor bertriangulasi
+	$F:\mathcal{D}_1\times\mathcal{D}_2\to\mathcal{D}'$ beserta
+	$\mathcal{N}_1$, $\mathcal{N}_2$, dan $\mathcal{N}'$ seperti di atas.
+	Misalkan $\mathcal{I}_i$ subkategori bertriangulasi dari $\mathcal{D}_i$.
+	Pasangan $(\mathcal{I}_1,\mathcal{I}_2)$ disebut \emph{$F$-injektif}
+	(atau \emph{$F$-projektif}) jika sifat-sifat berikut berlaku sekaligus:
+	\begin{itemize}
+		\item untuk setiap $X_1\in\Obj(\mathcal{I}_1)$, subkategori
+		$\mathcal{I}_2$ bersifat $F(X_1,\cdot)$-injektif (atau projektif);
+		\item untuk setiap $X_2\in\Obj(\mathcal{I}_2)$, subkategori
+		$\mathcal{I}_1$ bersifat $F(\cdot,X_2)$-injektif (atau projektif).
+	\end{itemize}
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p010
+Untuk $\mathcal{I}_j$ seperti di atas ($j=1,2$), sifat universal lokalisasi
+Verdier memberikan
+$i_j:\mathcal{I}_j/(\mathcal{I}_j\cap\mathcal{N}_j)
+	\to\mathcal{D}_j/\mathcal{N}_j$. Berikut ini padanan dari
+Proposisi~\ref{prop:localization-injective}.
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.pr002
+\begin{proposisi}\label{prop:localization-injective-bifunctor}
+	Misalkan $(\mathcal{I}_1,\mathcal{I}_2)$ bersifat $F$-injektif.
+	\begin{enumerate}[(i)]
+		\item Bifunktor turunan kanan
+		$\mathrm{R}F:=\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}_1\times\mathcal{N}_2}F$
+		ada, dan diagram berikut komutatif hingga isomorfisme:
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g009
+		\[\begin{tikzcd}
+			\mathcal{D}_1 /\mathcal{N}_1 \times \mathcal{D}_2 /\mathcal{N}_2 \arrow[r, "\mathrm{R}F"] & \mathcal{D}'/\mathcal{N}' \\
+			\mathcal{I}_1 /(\mathcal{I}_1 \cap \mathcal{N}_1) \times \mathcal{I}_2 /(\mathcal{I}_2 \cap \mathcal{N}_2) \arrow[u, "{i = (i_1, i_2): \text{ekuivalensi}}"] \arrow[ru, "{F^\flat}"'] &
+		\end{tikzcd}\]
+		dengan $F^\flat$ ditentukan oleh sifat universal lokalisasi.
+		\item Untuk $X_1\in\Obj(\mathcal{I}_1)$ dan
+		$X_2\in\Obj(\mathcal{I}_2)$, terdapat isomorfisme kanonik
+		\[ (\mathrm{R}F)(Q_1 X_1, \cdot) \simeq \mathrm{R}^{\mathcal{N}'}_{\mathcal{N}_2} F(X_1, \cdot), \quad (\mathrm{R}F)(\cdot, Q_2 X_2) \simeq \mathrm{R}^{\mathcal{N}'}_{\mathcal{N}_1} F(\cdot, X_2). \]
+	\end{enumerate}
+	Pernyataan yang bersesuaian tetap berlaku jika $F$-injektif diganti dengan
+	$F$-projektif dan $\mathrm{R}F$ diganti dengan $\mathrm{L}F$.
+\end{proposisi}
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.pf003
+\begin{bukti}
+	Cukup membahas kasus $F$-injektif. Pertama,
+	Proposisi~\ref{prop:injective-localization} (i) menyiratkan bahwa $i$ adalah
+	ekuivalensi. Dari syarat-syaratnya, $Q'F$ memetakan
+	$S\mathcal{N}_1\cap\Mor(\mathcal{I}_1)\times
+	S\mathcal{N}_2\cap\Mor(\mathcal{I}_2)$ ke isomorfisme; hal ini cukup
+	diverifikasi pada masing-masing variabel. Proposisi~\ref{prop:injective-localization}
+	(ii) menyiratkan bahwa $Q'F$ memiliki ekstensi Kan kiri sepanjang
+	$(Q_1,Q_2)$, yaitu $\mathrm{R}F$, yang membuat diagram di atas komutatif
+	hingga isomorfisme.
+
+	Selanjutnya kita tunjukkan bahwa $\mathrm{R}F$ merupakan bifunktor
+	bertriangulasi. Berdasarkan Proposisi~\ref{prop:localization-triangulated},
+	sifat-sifat terkait dapat diangkat melalui ekuivalensi $i$ dan diperiksa
+	pada $F$ di $\mathcal{I}_1\times\mathcal{I}_2$. Ini membuktikan (i).
+
+	Untuk (ii), berdasarkan simetri cukup ditinjau kasus
+	$X_1\in\Obj(\mathcal{I}_1)$ yang tetap. Dalam hal ini
+	$F^\flat(Q_1X_1,\cdot):
+	\mathcal{I}_2/(\mathcal{I}_2\cap\mathcal{N}_2)
+	\to\mathcal{D}'/\mathcal{N}'$ ditentukan dari $Q'F(X_1,\cdot)$ oleh sifat
+	universal lokalisasi, dan terdapat diagram funktor yang komutatif hingga
+	isomorfisme:
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.g010
+	\[\begin{tikzcd}[column sep=large, row sep=large]
+		\mathcal{D}_2 / \mathcal{N}_2 \arrow[r, "{\mathrm{R}F(Q_1 X_1, \cdot)}" inner sep=0.6em] & \mathcal{D}'/ \mathcal{N}' \\
+		\mathcal{I}_2 / \mathcal{I}_2 \cap \mathcal{N}_2 \arrow[u, "{i_2: \text{ekuivalensi}}"] \arrow[ru, "{F^\flat(Q_1 X_1, \cdot)}" description] & \mathcal{I}_2 \arrow[l] \arrow[u, "{Q' F(X_1, \cdot)}"']
+	\end{tikzcd}\]
+	Karena $\mathcal{I}_2$ bersifat $F(X_1,\cdot)$-injektif, perbandingan dengan
+	konstruksi dalam Proposisi~\ref{prop:localization-injective} menunjukkan
+	bahwa $(\mathrm{R}F)(Q_1X_1,\cdot)$ tepat merupakan
+	$\mathrm{R}^{\mathcal{N}'}_{\mathcal{N}_2}F(X_1,\cdot)$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.triangulated-functor-localization.p011
+Jika data $F$-injektif (atau $F$-projektif)
+$(\mathcal{I}_1,\mathcal{I}_2)$ tersedia, rumus limit dalam
+Catatan~\ref{rem:Deligne-derived-functor} juga berlaku bagi bifunktor turunan
+kiri (atau kanan) dari $F$.

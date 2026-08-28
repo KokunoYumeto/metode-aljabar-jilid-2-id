@@ -1,0 +1,274 @@
+% Unit 084 terjemahan Bahasa Indonesia dari chapter6.tex baris 2313--2457.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.profinite-cohomology-a
+% Cakupan: Bagian 6.12, modul mulus, definisi kohomologi profinit,
+% dan kompleks standar kontinu sampai Teorema 6.12 pertama.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.h001
+\section{Kohomologi grup profinit}\label{sec:profinite-cohomology}
+\hypertarget{o014.aljabr2.chapter6.profinite-cohomology-a}{ }
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p001
+Bagian ini mengandaikan definisi dan hasil dasar tentang grup profinit dari
+\S\ref{sec:profinite-groups}.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p002
+Misalkan $G$ grup profinit dan $M$ modul-$G$. Tidak sulit memeriksa bahwa
+syarat-syarat berikut ekuivalen:
+\begin{enumerate}[(i)]
+	\item $M=\bigcup_KM^K$, dengan $K$ berkisar atas subgrup normal buka dari
+	$G$;
+	\item untuk setiap $x\in M$, subgrup penstabil $\Stab_G(x)$ bersifat buka;
+	\item pemetaan aksi $G\times M\to M$ kontinu jika $M$ diberi topologi
+	diskret.
+\end{enumerate}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.d001
+\begin{definition}
+	\index{modul-$G$!mulus (smooth)}
+	\index[sym1]{G-Mod-infty@$G\dcate{Mod}^\infty$}
+	Misalkan $G$ grup profinit. Jika salah satu syarat di atas berlaku, modul-$G$
+	$M$ disebut \emph{mulus}\footnote{Karena~(iii), banyak pustaka menyebutnya
+	diskret.}. Semua modul-$G$ mulus membentuk subkategori penuh
+	$G\dcate{Mod}^\infty$ dari $G\dcate{Mod}$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p003
+Meskipun syarat pada $G$ sendiri bersifat topologis, karakterisasi~(i) atau
+~(ii) bagi modul-$G$ mulus sepenuhnya bersifat aljabar: kemulusan merupakan sifat
+modul-$G$, bukan struktur tambahan. Dari sini mudah dilihat bahwa
+$G\dcate{Mod}^\infty$ adalah subkategori abelian dari $G\dcate{Mod}$. Operasi
+dalam Definisi~\ref{def:Res-Infl} mempunyai analog alami dalam keadaan ini.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.d002
+\begin{definition-proposition}
+	Misalkan $\varphi:H\to G$ homomorfisme kontinu antargrup profinit dan
+$M$ modul-$G$ mulus. Maka modul-$H$ $\varphi^*M$ tetap mulus. Ini memberikan
+	funktor
+	\[ \varphi^*:G\dcate{Mod}^\infty\to H\dcate{Mod}^\infty. \]
+\end{definition-proposition}
+\begin{proof}
+	Untuk setiap subgrup normal buka $K\lhd G$, prapetanya
+	$\varphi^{-1}(K)\lhd H$ juga normal dan buka. Jika $x\in M^K$, maka
+	$x\in(\varphi^*M)^{\varphi^{-1}K}$. Jadi
+	\[ \varphi^*M=
+	\bigcup_{L\lhd H:\,\text{buka}}(\varphi^*M)^L, \]
+	yang membuktikan bahwa $\varphi^*M$ mulus.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p004
+Perhatikan bahwa funktor $\varphi^*$ selalu eksak. Dua kasus khusus berikut
+akan digunakan:
+\begin{description}
+	\item[Restriksi] Jika $H$ subgrup tertutup dari $G$, ambil $\varphi$ sebagai
+	homomorfisme penyertaan $H\hookrightarrow G$. Funktor terkait ditulis
+	\[ \Res^G_H:G\dcate{Mod}^\infty\to H\dcate{Mod}^\infty. \]
+	\item[Inflasi] Untuk subgrup normal tertutup $H\lhd G$, ambil $\varphi$
+	sebagai homomorfisme hasil bagi $G\twoheadrightarrow G/H$. Funktor terkait
+	ditulis
+	\[ \mathrm{Infl}^G_{G/H}:G/H\dcate{Mod}^\infty
+	\to G\dcate{Mod}^\infty. \]
+
+	Grup $H$ dan $G/H$ yang disebutkan di atas otomatis profinit, sehingga
+	definisi ini sah.
+\end{description}
+\index[sym1]{ResGH}
+\index[sym1]{InflGH}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.d003
+\begin{definition-proposition}\label{def:smooth-part}
+	Untuk setiap modul-$G$ $M$, definisikan
+	$M^\infty:=\bigcup_KM^K$, dengan $K$ berkisar atas subgrup normal buka dari
+	$G$. Ini merupakan modul-$G$ mulus, dan $M$ mulus jika dan hanya jika
+	$M=M^\infty$.
+
+	Untuk setiap modul-$G$ mulus $M'$, berlaku
+	\[ \Hom_G(M',M)=\Hom_G(M',M^\infty). \]
+	Dengan kata lain,
+	$\text{penyertaan}:G\dcate{Mod}^\infty
+	\leftrightarrows G\dcate{Mod}:(\cdot)^\infty$ merupakan pasangan adjoin.
+\end{definition-proposition}
+\begin{proof}
+	Jelas.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p005
+Unsur-unsur $M^\infty$ juga disebut \emph{unsur mulus} dari $M$. Karena
+$(\cdot)^\infty$ adalah adjoin kanan dari funktor eksak, funktor ini
+mempertahankan objek injektif
+(Proposisi~\ref{prop:adjoint-injective-projective}).
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.t001
+\begin{corollary}
+	Kategori abelian $G\dcate{Mod}^\infty$ memiliki cukup banyak objek
+	injektif.
+\end{corollary}
+\begin{proof}
+	Misalkan $M$ modul-$G$ mulus dan sertakan $M$ ke dalam modul-$G$ injektif
+	$I$. Maka $M=M^\infty\hookrightarrow I^\infty$, sedangkan $I^\infty$
+	merupakan modul-$G$ mulus injektif.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.r001
+\begin{remark}
+	Pada umumnya $G\dcate{Mod}^\infty$ tidak memiliki cukup banyak objek
+	projektif. Inilah alasan utama bagian ini membahas kohomologi, bukan homologi.
+\end{remark}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p006
+Karena $G\dcate{Mod}^\infty$ memiliki cukup banyak objek injektif, kita dapat
+membahas funktor turunan kanan dari funktor invarian $(\cdot)^G$. Pendekatan
+bagian ini mula-mula memberikan definisi langsung yang mereduksi ke kasus grup
+hingga, lalu mengidentifikasikannya dengan funktor turunan kanan dalam
+Proposisi~\ref{prop:profinite-cohomology-identification}. Untuk sementara kita
+hanya memakai bahasa klasik, tanpa kategori turunan.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p007
+Mula-mula, ambil grup profinit $G$ dan subgrup normal buka $K$. Untuk setiap
+modul-$G$ mulus $M$, submodul invarian-$K$
+$M^K=(\Res^G_KM)^K$ secara alami menjadi modul-$G/K$. Dengan demikian
+diperoleh funktor $(\cdot)^K:G\dcate{Mod}^\infty\to G/K\dcate{Mod}$ dan
+pasangan adjoin yang jelas
+\begin{equation}\label{eqn:invariant-adjunction-profinite}
+	\begin{tikzcd}[row sep=tiny]
+		\mathrm{Infl}^G_{G/K}:G/K\dcate{Mod} \arrow[shift left,r] &
+		G\dcate{Mod}^\infty:(\cdot)^K \arrow[shift left,l]\\
+		\Hom_G(\mathrm{Infl}^G_{G/K}(M'),M) \arrow[equal,r] &
+		\Hom_{G/K}(M',M^K).
+	\end{tikzcd}
+\end{equation}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p008
+Jika subgrup normal buka $K,K'$ dari $G$ memenuhi $K'\supset K$, maka
+penyertaan $M^{K'}\hookrightarrow M^K$ ekuivarian terhadap homomorfisme hasil
+bagi yang berarah sebaliknya $G/K'\twoheadleftarrow G/K$
+(Definisi~\ref{def:group-equivariance}). Jadi untuk setiap
+$n\in\Z_{\geq0}$ terdapat homomorfisme kanonik
+\[ \rho^{K'}_K:\Hm^n(G/K',M^{K'})\to\Hm^n(G/K,M^K). \]
+Jika $K_1\subset K_2\subset K_3$ merupakan subgrup normal buka dari $G$,
+maka $\rho^{K_2}_{K_1}\rho^{K_3}_{K_2}=\rho^{K_3}_{K_1}$. Jadi definisi
+berikut sah.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.d004
+\begin{definition}
+	\index{kohomologi grup!kasus profinit}
+	\index[sym1]{HnGM}
+	Misalkan $G$ grup profinit dan $M$ modul-$G$ mulus. Untuk setiap
+	$n\in\Z_{\geq0}$, definisikan
+	\[ \Hm^n(G,M):=\varinjlim_K\Hm^n(G/K,M^K), \]
+	dengan $K$ berkisar atas subgrup normal buka dari $G$, dan $\varinjlim$
+	diambil terhadap urutan parsial
+	$K'\preceq K\iff K\subset K'$ serta morfisme $\rho^{K'}_K$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p009
+Semua subgrup normal buka membentuk himpunan terurut terfilter: himpunan ini
+tertutup terhadap irisan hingga. Jika $G$ hingga, maka $\{1\}$ adalah satu-satunya
+unsur maksimal, dan $\Hm^n(G,M)$ kembali menjadi versi awal dalam
+\S\ref{sec:group-coh-sub}. Secara umum,
+\[ \Hm^0(G,M)=\varinjlim_K(M^K)^{G/K}=M^G. \]
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p010
+Misalkan $f:M_1\to M_2$ homomorfisme modul-$G$ mulus. Untuk setiap subgrup
+normal buka $K$, pemetaan ini membatasi menjadi
+$f_K:M_1^K\to M_2^K$. Jelas bahwa $K'\supset K$ mengakibatkan
+$\Hm^n(f_K)\rho^{K'}_K=\rho^{K'}_K\Hm^n(f_{K'})$, sehingga untuk setiap
+$n\in\Z_{\geq0}$ terdapat
+\[ \Hm^n(f):\Hm^n(G,M_1)\to\Hm^n(G,M_2). \]
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.e001
+\begin{example}
+	Misalkan $E|F$ perluasan Galois medan. Karena
+	$E=\bigcup_{L|F}E^{\Gal(E|L)}=\bigcup_{L|F}L$, dengan $L|F$ menjelajahi
+	subekstensi Galois hingga, aksi $\Gal(E|F)$ pada $E$ bersifat mulus.
+	Dengan menerapkan Contoh~\ref{eg:additive-90-finite} pada setiap $L|F$,
+	diperoleh
+	\[ n\geq1\implies\Hm^n(\Gal(E|F),E)
+	=\varinjlim_{L|F}\Hm^n(\Gal(L|F),L)=0. \]
+\end{example}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p011
+Seperti Proposisi~\ref{prop:groupcoh-cochain} dan
+Catatan~\ref{rem:nor-cochain} untuk grup tanpa topologi, kohomologi grup
+profinit dapat dihitung melalui kompleks standar atau versi ternormalisasinya;
+perbedaannya terletak pada syarat kontinuitas.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.d005
+\begin{definition}
+	\index{kompleks standar}
+	\index[sym1]{CGM}
+	Untuk modul-$G$ mulus $M$, beri $M$ topologi diskret dan definisikan
+	\emph{kompleks standar} $C(G,M)=(C^n(G,M))_n$ dengan
+	\[ C^n(G,M):=\{\text{pemetaan kontinu }f:G^n\to M\},
+	\qquad n\in\Z_{\geq0}. \]
+	Suku berderajat negatif didefinisikan sebagai $0$, sedangkan
+	$d^n:C^n(G,M)\to C^{n+1}(G,M)$ diberikan oleh
+	\begin{multline*}
+		(d^nf)(g_1,\ldots,g_{n+1})
+		=g_1f(g_2,\ldots,g_{n+1})\\
+		+\sum_{k=1}^n(-1)^kf(\ldots,g_kg_{k+1},\ldots)
+		+(-1)^{n+1}f(g_1,\ldots,g_n).
+	\end{multline*}
+
+	\index[sym1]{CGMbar}
+	Definisikan \emph{kompleks standar ternormalisasi} sebagai subkompleks
+	$\overline{C}(G,M)$ dari $C(G,M)$ berikut
+	(lihat Catatan~\ref{rem:nor-cochain}):
+	\[ \overline{C}^n(G,M)=\left\{\begin{array}{r|l}
+		f\in C^n(G,M)&\exists,1\leq k\leq n,\ g_k=1_G\\
+		&\implies f(g_1,\ldots,g_n)=0
+	\end{array}\right\}. \]
+\end{definition}
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p012
+Untuk setiap subgrup normal buka $K\lhd G$, terdapat penyertaan kompleks yang
+jelas
+$C(G/K,M^K)\hookrightarrow C(G,M)$ dan
+$\overline{C}(G/K,M^K)\hookrightarrow\overline{C}(G,M)$.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p013
+Karena $M$ diskret, pemetaan $f:G^n\to M$ kontinu jika dan hanya jika lokal
+konstan. Kekompakan $G$ kemudian memberikan subgrup normal buka
+$K_1\lhd G$ sedemikian sehingga $f$ berfaktor melalui
+$(G/K_1)^n\to M$. Khususnya, $f$ hanya mengambil sejumlah hingga nilai;
+kemulusan memberikan subgrup normal buka $K_2\lhd G$ sedemikian sehingga
+nilai-nilai $f$ terletak dalam $M^{K_2}$. Ambil $K:=K_1\cap K_2$. Maka
+\[ C^n(G,M)\simeq\varinjlim_{K\lhd G\;\text{buka}}C^n(G/K,M^K),\qquad
+	\overline{C}^n(G,M)\simeq
+	\varinjlim_{K\lhd G\;\text{buka}}\overline{C}^n(G/K,M^K). \]
+Ketika $n$ bervariasi, ini memberikan isomorfisme kompleks.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.p014
+Seperti sebelumnya, definisikan submodul dari $C^n(G,M)$
+\[ Z^n(G,M):=\Ker(d^n),\qquad B^n(G,M):=\Image(d^{n-1}), \]
+dengan $B^0(G,M):=\{0\}$. Maka
+$\Hm^n(C(G,M))=Z^n(G,M)/B^n(G,M)$. Definisikan dengan cara serupa versi
+ternormalisasi $\overline{Z}^n(G,M)$ dan $\overline{B}^n(G,M)$.
+
+% segment-id: o014.li2.chapter6.profinite-cohomology-a.t002
+\begin{theorem}\label{prop:profinite-group-standard}
+	Misalkan $G$ grup profinit. Untuk semua $n\in\Z_{\geq0}$ dan semua modul-$G$
+	mulus $M$, terdapat isomorfisme kanonik
+	\[ \Hm^n(C(G,M))\simeq\Hm^n(G,M)
+	\simeq\Hm^n(\overline{C}(G,M)). \]
+\end{theorem}
+\begin{proof}
+	Kohomologi bernilai dalam $\cate{Ab}$ atau $\Bbbk\dcate{Mod}$ jika
+	gelanggang koefisien $\Bbbk$ turut ditetapkan. Kolimit terfilter bersifat
+	eksak dalam kategori-kategori ini \cite[Teorema 6.2.2]{Li1}. Karena itu,
+	\[ Z^n(G,M)=\varinjlim_KZ^n(G/K,M^K),\qquad
+	B^n(G,M)=\varinjlim_KB^n(G/K,M^K), \]
+	dan selanjutnya
+	\begin{multline*}
+		\Hm^n(C(G,M))
+		=\dfrac{\varinjlim_KZ^n(G/K,M^K)}
+		{\varinjlim_KB^n(G/K,M^K)}\simeq\\
+		\varinjlim_K\frac{Z^n(G/K,M^K)}{B^n(G/K,M^K)}
+		=\varinjlim_K\Hm^n(C(G/K,M^K)).
+	\end{multline*}
+	Terapkan Proposisi~\ref{prop:groupcoh-cochain} pada suku terakhir untuk
+	memperoleh $\varinjlim_K\Hm^n(G/K,M^K)$, yakni $\Hm^n(G,M)$.
+
+	Kasus $\overline{C}(G,M)$ serupa.
+\end{proof}

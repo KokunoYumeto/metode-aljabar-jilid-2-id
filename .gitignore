@@ -1,4 +1,6 @@
 /build/
+/reader-source/build/
+/reader-source/dist/
 *.aux
 *.bbl
 *.bcf

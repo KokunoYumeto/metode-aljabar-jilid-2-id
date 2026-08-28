@@ -1,0 +1,299 @@
+% Unit 075 terjemahan Bahasa Indonesia dari chapter6.tex baris 740--868.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.induced-modules
+% Cakupan: Bagian 6.4 lengkap.
+
+% segment-id: o014.li2.chapter6.induced-modules.h001
+\section{Modul terinduksi}\label{sec:induced-module}
+\hypertarget{o014.aljabr2.chapter6.induced-modules}{ }
+
+% segment-id: o014.li2.chapter6.induced-modules.p001
+Untuk homomorfisme grup $\varphi:H\to G$,
+Proposisi~\ref{prop:pullback-two-adjoint} memberikan adjoin kanan
+$\Hom_H(\Bbbk[G],\cdot)$ dan adjoin kiri
+$\Bbbk[G]\dotimes{\Bbbk[H]}(\cdot)$ bagi $\varphi^*$. Bagian ini berfokus
+pada kasus umum ketika $H\subset G$ merupakan subgrup dan $\varphi$ adalah
+homomorfisme penyertaan. Kita mulai dengan memperkenalkan notasi.
+
+% segment-id: o014.li2.chapter6.induced-modules.d001
+\begin{definition}[Modul terinduksi]\label{def:induced-module}
+	\index{modul-$G$!terinduksi (induced)}
+	\index[sym1]{Ind-ind@$\Ind^G_H$, $\iInd^G_H$}
+	Misalkan $H$ subgrup dari $G$. Untuk modul-$H$ $N$, definisikan
+	modul-$G$
+	\[ \Ind^G_H(N):=\Hom_H(\Bbbk[G],N),\qquad
+	\iInd^G_H(N):=\Bbbk[G]\dotimes{\Bbbk[H]}N. \]
+	Ketika $N$ bervariasi, keduanya memberikan funktor
+	$H\dcate{Mod}\to G\dcate{Mod}$.
+\end{definition}
+
+% segment-id: o014.li2.chapter6.induced-modules.p002
+Kedua operasi tersebut secara umum dapat disebut \emph{induksi} dari $H$ ke
+$G$. Kadang-kadang $\iInd^G_H$ disebut induksi dengan dukungan hingga; istilah
+ini akan dijelaskan oleh Lema~\ref{prop:Ind-as-mappings} di bawah.
+
+% segment-id: o014.li2.chapter6.induced-modules.t001
+\begin{proposition}\label{prop:Ind-preservation}
+	Funktor $\Res^G_H:G\dcate{Mod}\to H\dcate{Mod}$ serta
+	$\Ind^G_H,\iInd^G_H:H\dcate{Mod}\to G\dcate{Mod}$ semuanya eksak.
+	Funktor $\Ind^G_H$ mempertahankan objek injektif,
+	$\iInd^G_H$ mempertahankan objek projektif, sedangkan $\Res^G_H$
+	mempertahankan keduanya.
+\end{proposition}
+\begin{proof}
+	Kita sudah mengetahui bahwa $\Res^G_H$ eksak. Dengan memilih wakil koset,
+	terlihat bahwa $\Bbbk[G]$ merupakan modul-$\Bbbk[H]$ kiri bebas, sehingga
+	$\Hom_{\Bbbk[H]}(\Bbbk[G],\cdot)$ eksak. Dengan cara serupa,
+	$\Bbbk[G]$ merupakan modul-$\Bbbk[H]$ kanan bebas, sehingga
+	$\Bbbk[G]\dotimes{\Bbbk[H]}(\cdot)$ eksak. Berdasarkan relasi adjungsi,
+	pernyataan mengenai pemertahanan objek injektif dan projektif merupakan
+	penerapan langsung Proposisi~\ref{prop:adjoint-injective-projective}.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.induced-modules.p003
+Proposisi~\ref{prop:Ind-preservation} memberikan cara membangun resolusi
+injektif (atau projektif) dalam $G\dcate{Mod}$: ambil resolusi injektif (atau
+projektif) dari modul-$G$ $M$ yang diberikan dalam $\Bbbk\dcate{Mod}$, lalu
+induksikan resolusi itu ke $G$ dengan $\Ind^G_{\{1\}}$ (atau
+$\iInd^G_{\{1\}}$).
+
+% segment-id: o014.li2.chapter6.induced-modules.p004
+Hasil berikut lazim disebut \emph{Lema Shapiro}.
+
+% segment-id: o014.li2.chapter6.induced-modules.t002
+\begin{theorem}[B.\ Eckmann, D.\ K.\ Faddeev, A.\ Shapiro]
+\label{prop:Shapiro}
+	\index{Lema Shapiro (Shapiro's Lemma)}
+	Misalkan $H$ subgrup dari $G$. Untuk setiap modul-$H$ $N$ dan
+	$n\in\Z$, terdapat isomorfisme kanonik
+	\[ \Hm^n\left(G,\Ind^G_H(N)\right)\simeq\Hm^n(H,N),\qquad
+	\Hm_n\left(G,\iInd^G_H(N)\right)\simeq\Hm_n(H,N). \]
+	Kedua sisi setiap isomorfisme, sebagai funktor dalam peubah $N$,
+	mempunyai barisan eksak panjang, dan isomorfisme tersebut kompatibel dengan
+	barisan-barisan eksak panjang itu.
+\end{theorem}
+\begin{proof}
+	Kita berikan dua metode. Untuk kohomologi, metode pertama meninjau funktor
+	\[ A^n:=\Hm^n\left(G,\Ind^G_H(\cdot)\right). \]
+	Karena $\Ind^G_H$ eksak, keluarga funktor ini mempunyai barisan eksak
+	panjang yang berasal dari $\Hm^n(G,\cdot)$, sehingga menjadi funktor-$\delta$
+	kohomologis dalam arti Definisi~\ref{def:delta-functor}. Untuk $n=0$,
+	Korolari~\ref{prop:Ind-invariant} memberikan isomorfisme kanonik
+	\[ A^0(N)=(\Ind^G_H(N))^G\rightiso N^H,\qquad
+	\varphi\mapsto\varphi(1_G). \]
+	Untuk memperluas isomorfisme ini secara kanonik menjadi isomorfisme
+	funktor-$\delta$ kohomologis $A^n\rightiso\Hm^n(H,\cdot)$, cukup buktikan
+	bahwa $A^n$ dapat dihapus untuk $n>0$
+	(Definisi~\ref{def:erasable}, Proposisi~\ref{prop:erasable-univ-delta}).
+	Menurut Proposisi~\ref{prop:Ind-preservation}, jika $N$ disertakan dalam
+	modul-$H$ injektif $I$, maka
+	$\Ind^G_H(N)\hookrightarrow\Ind^G_H(I)$ dan $\Ind^G_H(I)$ merupakan
+	modul-$G$ injektif. Karena itu $n>0$ mengakibatkan
+	$\Hm^n(G,\Ind^G_H(I))=0$, yang membuktikan sifat dapat dihapus.
+
+	Gagasan untuk homologi serupa dan memakai sifat kodapat-dihapus dari
+	funktor-$\delta$ homologis. Isomorfisme suku berderajat nol yang diperlukan,
+	$N_H\rightiso(\iInd^G_H(N))_G$, juga berasal dari
+	Korolari~\ref{prop:Ind-invariant}.
+
+	Metode kedua bekerja dalam kategori turunan. Untuk kohomologi, sekali lagi
+	kita mulai dari isomorfisme kanonik
+	\[ \underbracket{\Hom_G(\Bbbk,\Ind^G_H(\cdot))}_{
+	\simeq\Ind^G_H(\cdot)^G}
+	\simeq
+	\underbracket{\Hom_H(\Bbbk,\cdot)}_{\simeq(\cdot)^H}
+	:H\dcate{Mod}\to\Bbbk\dcate{Mod}. \]
+	Kedua ruas merupakan funktor eksak kiri. Karena $\Ind^G_H$ mempertahankan
+	objek injektif, dengan mengambil funktor turunan kanan dalam
+	Teorema~\ref{prop:localization-triangulated-composite}~(iii), diperoleh
+	\begin{equation*}
+		\RHom_G(\Bbbk,\mathrm{R}\Ind^G_H(\cdot))
+		\simeq\RHom_H(\Bbbk,\cdot).
+	\end{equation*}
+
+	Akan tetapi, $\Ind^G_H$ eksak, sehingga $\mathrm{R}\Ind^G_H(\cdot)$
+	merupakan funktor yang ditentukan oleh sifat universal lokalisasi dan dapat
+	tetap ditulis sebagai $\Ind^G_H$. Jadi, pada tingkat kategori turunan
+	terdapat isomorfisme funktor triangulasi
+	\[ \RHom_G(\Bbbk,\Ind^G_H(\cdot))
+	\simeq\RHom_H(\Bbbk,\cdot). \]
+	Mengambil $\Hm^n$ pada kedua ruas memberikan hasil yang diminta.
+
+	Gagasan untuk homologi serupa; unsur kuncinya ialah isomorfisme
+	\[ \Bbbk\otimesL[{\Bbbk[G]}]
+	\left(\Bbbk[G]\otimesL[{\Bbbk[H]}](\cdot)\right)
+	\simeq\Bbbk\otimesL[{\Bbbk[H]}](\cdot). \]
+	Ini juga merupakan kasus khusus Contoh~\ref{eg:change-of-rings} atau
+	Proposisi~\ref{prop:otimesL-associativity-constraint} mengenai kendala
+	asosiatif. Karena $\iInd^G_H$ eksak,
+	$\Bbbk[G]\otimesL[{\Bbbk[H]}](\cdot)$ juga dapat diganti dengan
+	$\Bbbk[G]\dotimes{\Bbbk[H]}(\cdot)$; langkah lainnya sama.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.induced-modules.p005
+Perhatikan bahwa jika $\Res^G_H$ ditafsirkan sebagai
+$\Bbbk[G]\dotimes{\Bbbk[G]}(\cdot)$ menurut
+\eqref{eqn:G-module-pullback-tensor}, maka karena
+$\Res^G_H\Bbbk=\Bbbk$, isomorfisme
+$\RHom_G(\Bbbk,\mathrm{R}\Ind^G_H(\cdot))
+\simeq\RHom_H(\Bbbk,\cdot)$ merupakan relasi adjungsi antara $\RHom$ dan
+$\otimesL$ (Teorema~\ref{prop:RHom-otimesL-adjunction}).
+
+% segment-id: o014.li2.chapter6.induced-modules.p006
+Kohomologi dan homologi grup dapat dideskripsikan secara konkret melalui
+kompleks standar dan kompleks rantai standar dalam
+Proposisi~\ref{prop:groupcoh-cochain} dan \ref{prop:grouph-chain}. Kita ingin
+membuat isomorfisme dalam Teorema~\ref{prop:Shapiro} eksplisit melalui
+kompleks-kompleks tersebut. Tidak ada kesulitan mendasar. Untuk membedakan
+grupnya, bagi setiap grup $H$ kita tulis kompleks modul-$H$ $\mathsf{L}$ dari
+Definisi~\ref{def:resolution-trivial-module} sebagai $\mathsf{L}^H$; kompleks
+ini memberikan resolusi bebas $\mathsf{L}^H\to\Bbbk$.
+
+% segment-id: o014.li2.chapter6.induced-modules.l001
+\begin{lemma}\label{prop:Shapiro-alpha-beta}
+	Misalkan $\varphi:H\to G$ homomorfisme grup. Homomorfisme terkait
+	$H^{n+1}\to G^{n+1}$ menginduksi kuasi-isomorfisme kompleks
+	$\mathsf{L}^H\to\varphi^*(\mathsf{L}^G)$, yang komposisinya dengan
+	$\varphi^*(\mathsf{L}^G)\to\varphi^*\Bbbk=\Bbbk$ sama dengan
+	$\mathsf{L}^H\to\Bbbk$.
+
+	Khususnya, jika $H$ subgrup dari $G$, terdapat kuasi-isomorfisme
+	$\mathsf{L}^H\to\Res^G_H\mathsf{L}^G$ dengan sifat komposisi di atas.
+\end{lemma}
+\begin{proof}
+	Dari definisi langsung terlihat bahwa
+	$\mathsf{L}^H\to\varphi^*(\mathsf{L}^G)$ merupakan morfisme kompleks;
+	pernyataan mengenai komposisinya juga jelas. Karena $\varphi^*$ eksak,
+	sedangkan $\mathsf{L}^G\to\Bbbk$ dan $\mathsf{L}^H\to\Bbbk$ keduanya
+	kuasi-isomorfisme, maka
+	$\mathsf{L}^H\to\varphi^*(\mathsf{L}^G)$ juga kuasi-isomorfisme.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.induced-modules.t003
+\begin{proposition}\label{prop:Shapiro-std-coh}
+	Misalkan $H$ subgrup dari $G$ dan $N$ modul-$H$. Identifikasikan
+	$\Hm^n(G,\Ind^G_H(N))$ (atau $\Hm^n(H,N)$) dengan $\Hm^n$ dari kompleks
+	standar $C(G,\Ind^G_H(N))$ (atau $C(H,N)$) menurut
+	Proposisi~\ref{prop:groupcoh-cochain}. Maka isomorfisme
+	\[ \Hm^n\left(G,\Ind^G_H(N)\right)\simeq\Hm^n(H,N),
+	\qquad n\in\Z_{\geq0}, \]
+	berasal dari morfisme kompleks
+	\begin{align*}
+		C^m(G,\Ind^G_H(N))&\to C^m(H,N),\\
+		[f:G^m\to\Ind^G_H(N)]&\mapsto
+		[(h_1,\ldots,h_m)\mapsto f(h_1,\ldots,h_m)(1_G)]\\
+		&\quad=(f|_{H^m})(\cdot)(1_G),
+	\end{align*}
+	dengan $h_1,\ldots,h_m\in H$.
+\end{proposition}
+\begin{proof}
+	Sekali lagi ada dua metode. Pertama, periksalah bahwa pemetaan
+	$C^m(G,\Ind^G_H(N))\to C^m(H,N)$ yang ditampilkan memang membentuk
+	morfisme kompleks. Karena $\Ind^G_H$ eksak, ketika $N$ bervariasi pemetaan
+	ini menginduksi morfisme antara funktor-$\delta$ kohomologis. Pada suku
+	berderajat nol, pemetaan tersebut jelas sama dengan isomorfisme kanonik
+	$\Ind^G_H(N)^G\rightiso N^H$, $\varphi\mapsto\varphi(1_G)$. Kita telah
+	mengetahui bahwa $\Hm^n(G,\Ind^G_H(\cdot))$ merupakan funktor-$\delta$
+	kohomologis universal (Teorema~\ref{prop:Shapiro}). Jadi morfisme di atas
+	unik dan harus sama dengan isomorfisme
+	$\Hm^n(G,\Ind^G_H(N))\simeq\Hm^n(H,N)$ dalam teorema tersebut.
+
+	Untuk metode kedua, misalkan $M$ (berturut-turut $N$) suatu kompleks
+	modul-$G$ (berturut-turut modul-$H$) terbatas ke bawah. Perluas funktor
+	$\Ind^G_H$ dan $\Res^G_H$ derajat demi derajat ke kompleks, dengan notasi
+	yang sama. Relasi adjungsi Proposisi~\ref{prop:pullback-two-adjoint} terangkat
+	ke kompleks $\Hom$:
+	\[ \Hom^\bullet_H(\Res^G_HM,N)
+	\simeq\Hom^\bullet_G(M,\Ind^G_H(N)). \]
+	Pemeriksaan langsung tidak sulit; relasi ini juga dapat dipahami sebagai
+	adjungsi antara $\Hom^\bullet$ dan $\otimes$ seperti dijelaskan sebelumnya
+	(Proposisi~\ref{prop:tensor-Hom-cplx}).
+
+	Sekarang misalkan $N$ modul-$H$ dan ambil resolusi injektif
+	$\iota:N\to I$. Maka $\Ind^G_H(N)\to\Ind^G_H(I)$ tetap merupakan resolusi
+	injektif, dan naturalitas kompleks $\Hom$ memberikan diagram komutatif
+	kompleks berikut (bagian garis penuh):
+	\begin{equation}\label{eqn:Shapiro-explicit-diagram}
+	\begin{tikzcd}[row sep=small]
+		\Hom^\bullet_H(\Bbbk,I) \arrow[d,"\alpha"'] &
+		\Hom^\bullet_G(\Bbbk,\Ind^G_H(I)) \arrow[l,"\sim"'] \arrow[d] \\
+		\Hom^\bullet_H(\Res^G_H\mathsf{L}^G,I) \arrow[d,"\beta"'] &
+		\Hom^\bullet_G(\mathsf{L}^G,\Ind^G_H(I)) \arrow[l,"\sim"] \\
+		\Hom^\bullet_H(\mathsf{L}^H,I) & \\
+		\Hom^\bullet_H(\mathsf{L}^H,N) \arrow[u] &
+		\Hom^\bullet_G(\mathsf{L}^G,\Ind^G_H(N))
+		\arrow[uu] \arrow[dashed,l,"\gamma"]
+	\end{tikzcd}
+	\end{equation}
+	dengan $\alpha$ dan $\beta$ berasal dari morfisme dalam
+	Lema~\ref{prop:Shapiro-alpha-beta}. Jadi $\beta\alpha$ adalah pemetaan yang
+	dikenal $\Hom^\bullet_H(\Bbbk,I)\to\Hom^\bullet_H(\mathsf{L}^H,I)$.
+	Isomorfisme horizontal bergaris penuh berasal dari adjungsi, dan semua
+	panah vertikal merupakan kuasi-isomorfisme.
+
+	Ingat kembali bukti kedua Teorema~\ref{prop:Shapiro}. Baris pertama
+	\eqref{eqn:Shapiro-explicit-diagram} memberikan bentuk dalam kategori
+	turunan dari
+	\[ \Hm^n(H,N)\simeq\Hm^n(G,\Ind^G_H(N)),\qquad n\in\Z. \]
+	Di sisi lain, inti Proposisi~\ref{prop:groupcoh-cochain} adalah isomorfisme
+	kompleks
+	\[ \Hom^\bullet_H(\mathsf{L}^H,N)\simeq C(H,N),\qquad
+	\Hom^\bullet_G(\mathsf{L}^G,\Ind^G_H(N))
+	\simeq C(G,\Ind^G_H(N)). \]
+	Jadi cukup melengkapi panah $\gamma$ dalam
+	\eqref{eqn:Shapiro-explicit-diagram} agar perseginya komutatif dan
+	mendeskripsikan panah itu. Karena $\iota$ monik, jika $\gamma$ ada maka ia
+	unik.
+
+	Ambil $m\in\Z_{\geq0}$ dan
+	$\phi\in\Hom^m_G(\mathsf{L}^G,\Ind^G_H(N))$. Dengan menelaah konstruksinya,
+	citra $\phi$ dalam $\Hom^m_H(\mathsf{L}^H,I)$ adalah
+	\[ (h_0,\ldots,h_m)\mapsto
+	\iota\left(\phi(h_0,\ldots,h_m)(1_G)\right). \]
+	Perbandingan dengan isomorfisme dalam bukti
+	Proposisi~\ref{prop:groupcoh-cochain} segera menunjukkan bahwa $\gamma$
+	dapat didefinisikan seperti yang dinyatakan.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.induced-modules.p007
+Sekarang kita nyatakan versi homologis. Kita memakai notasi kompleks rantai
+standar dari Proposisi~\ref{prop:grouph-chain}.
+
+% segment-id: o014.li2.chapter6.induced-modules.t004
+\begin{proposition}\label{prop:Shapiro-std-ho}
+	Misalkan $H$ subgrup dari $G$ dan $N$ modul-$H$. Identifikasikan
+	$\Hm_n(G,\iInd^G_H(N))$ (atau $\Hm_n(H,N)$) dengan $\Hm_n$ dari kompleks
+	rantai standar $C(G,\iInd^G_H(N))$ (atau $C(H,N)$) menurut
+	Proposisi~\ref{prop:grouph-chain}. Maka isomorfisme
+	\[ \Hm_n\left(G,\iInd^G_H(N)\right)\simeq\Hm_n(H,N),
+	\qquad n\in\Z_{\geq0}, \]
+	berasal dari morfisme kompleks
+	\begin{align*}
+		C_m(H,N)&\to C_m(G,\iInd^G_H(N)),\\
+		(h_1|\cdots|h_m)^\dagger\otimes y
+		&\mapsto(h_1|\cdots|h_m)^\dagger\otimes(1_G\otimes y),
+	\end{align*}
+	dengan $h_1,\ldots,h_m\in H$ dan $y\in N$.
+\end{proposition}
+\begin{proof}
+	Kita hanya menjelaskan pendekatan kategori turunan. Ambil resolusi projektif
+	$\pi:P\to N$ dalam modul-$H$. Diagram komutatif
+	\eqref{eqn:Shapiro-explicit-diagram} dari bukti
+	Proposisi~\ref{prop:Shapiro-std-coh} harus diganti dengan
+	\[\begin{tikzcd}[row sep=small]
+		\Bbbk\dotimes{\Bbbk[H]}P \arrow[r,"\sim"] &
+		\Bbbk\dotimes{\Bbbk[G]}\iInd^G_H(P) \\
+		\Res^G_H\mathsf{L}^G\dotimes{\Bbbk[H]}P
+		\arrow[r,"\sim"] \arrow[u,"\alpha"] &
+		\mathsf{L}^G\dotimes{\Bbbk[G]}\iInd^G_H(P)
+		\arrow[u] \arrow[dd] \\
+		\mathsf{L}^H\dotimes{\Bbbk[H]}P \arrow[u,"\beta"] \arrow[d] & \\
+		\mathsf{L}^H\dotimes{\Bbbk[H]}N \arrow[dashed,r,"\gamma"'] &
+		\mathsf{L}^G\dotimes{\Bbbk[G]}\iInd^G_H(N),
+	\end{tikzcd}\]
+	dengan panah horizontal bergaris penuh berasal dari kendala asosiatif hasil
+	kali tensor pada tingkat kompleks, sedangkan semua panah vertikal merupakan
+	kuasi-isomorfisme. Sekali lagi, tinggal mendeskripsikan $\gamma$.
+	Langkah selanjutnya serupa dengan versi kohomologis.
+\end{proof}

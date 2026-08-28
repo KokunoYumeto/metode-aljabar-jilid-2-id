@@ -1,0 +1,20 @@
+Metode dalam Aljabar, Jilid 2: Aljabar Linear — Edisi Bahasa Indonesia
+
+Karya sumber: Wen-Wei Li, Methods of Algebra, Volume 2: Linear Algebra,
+edisi 2024.
+
+Karya sumber dan edisi turunan ini dilisensikan menurut Creative Commons
+Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Perubahan meliputi penerjemahan ke Bahasa Indonesia, rekonsiliasi terminologi,
+metadata, backend modular, konfigurasi pembaca HTML, dan koreksi sumber yang
+dinyatakan secara terpisah dalam edisi. Produksi menggunakan OpenAI Codex
+gpt-5.6-sol, Ultra, atas instruksi pengguna.
+
+Edisi ini independen. Wen-Wei Li dan penerbit sumber tidak mendukung atau
+mengesahkan terjemahan atau pembaca ini.
+
+Pembaca menyertakan MathJax 3.2.2, Copyright (c) 2009-2021 The MathJax
+Consortium, menurut Apache License 2.0. Salinan lisensi komponen tersedia pada
+vendor/mathjax-3.2.2/LICENSE-MathJax.txt.

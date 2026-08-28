@@ -1,0 +1,240 @@
+% Unit 128 terjemahan Bahasa Indonesia dari chapter9.tex baris 1257--1367.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter9.reconstruction-a
+% Cakupan: Bagian 9.5 hingga Lema rekonstruksi dengan generator projektif.
+% Koreksi sumber terpaksa: baris 1275 memakai kategori modul kanan
+% cated{Mod}A; baris 1331 mensyaratkan N'_2 memuat Image(f|N'_1), bukan
+% Image omega(f|N'_1), yang bertipe sebagai submodul omega(N'_2).
+
+% segment-id: o014.li2.chapter9.reconstruction-a.h001
+\section{Teorema rekonstruksi}\label{sec:Tannaka-coend}
+\hypertarget{o014.aljabr2.chapter9.reconstruction-a}{ }
+% segment-id: o014.li2.chapter9.reconstruction-a.p001
+Sepanjang bagian ini, $\Bbbk$ adalah gelanggang komutatif tetap. Kecuali
+dinyatakan lain, semua kategori dan funktor yang dibahas di bawah bersifat
+$\Bbbk$-linear; khususnya, bifunktor $\otimes$ dari kategori monoidal
+dengan sendirinya $\Bbbk$-linear dalam setiap variabel. Untuk aljabar-$\Bbbk$
+$B$, Konvensi~\ref{con:Mod-pfg} telah mendefinisikan kategori kecil secara
+esensial
+$\catesubd{Mod}{\mathrm{pfg}}B\subset
+\catesubd{Mod}{\mathrm{fg}}B$. Jika $C$ koaljabar dalam kategori monoidal
+$(B,B)\dcate{Mod}$, tuliskan $\cated{Comod}C$ untuk kategori komodul-$C$
+kanan; struktur komodul ini ditumpangkan pada struktur dalam
+$\cated{Mod}B$, seperti dijelaskan setelah Definisi~\ref{def:cogebroid}.
+Dengan memberlakukan syarat projektivitas dan keterhinggaan sebagai
+modul-$B$ kanan, diperoleh subkategori penuh
+% segment-id: o014.li2.chapter9.reconstruction-a.q001
+\[ \underbracket{\catesubd{Comod}{\mathrm{pf}}C}_{\text{projektif + terbangkit hingga}} \subset \underbracket{\catesubd{Comod}{\mathrm{f}}C}_{\text{terbangkit hingga}} \subset \cated{Comod}C. \]
+\index[sym1]{Comodpfg@$\cate{Comod}_{\mathrm{pf}}, \cate{Comod}_{\mathrm{f}}$}
+
+% segment-id: o014.li2.chapter9.reconstruction-a.p002
+Syarat terbangkit hingga memastikan bahwa
+$\catesubd{Comod}{\mathrm f}C$ juga kategori kecil secara esensial dalam
+arti Definisi~\ref{def:essentially-small-cat}.
+
+% segment-id: o014.li2.chapter9.reconstruction-a.p003
+Untuk memperoleh pemahaman lebih konkret tentang
+$\coEnd(\omega)=\coEnd_{\Bbbk}(\omega)$ dari \S\ref{sec:coend}, sekarang
+tinjau situasi Proposisi~\ref{prop:Morita-comonad}. Ambil
+aljabar-$\Bbbk$ $A,B$, yang tidak harus komutatif, dan bimodul-$(A,B)$
+$P$. Andaikan $P$ projektif terbangkit hingga sebagai modul-$B$ kanan.
+Ambil $\mathcal{A}$ sebagai subkategori penuh $\cated{Mod}A$ dengan
+syarat
+\begin{itemize}
+	\item $A\in\Obj(\mathcal{A})$;
+	\item $\omega:=(\mathord\cdot)\dotimes{A}P$ memberikan funktor
+	$\mathcal{A}\to\catesubd{Mod}{\mathrm{pfg}}B$.
+\end{itemize}
+
+% segment-id: o014.li2.chapter9.reconstruction-a.p004
+Proposisi~\ref{prop:Morita-comonad} menyatakan bahwa bimodul-$(B,B)$
+$P^\vee\dotimes{A}P$ adalah koaljabar yang bersesuaian dengan komonad yang
+ditentukan oleh pasangan adjoin
+% segment-id: o014.li2.chapter9.reconstruction-a.q002
+\begin{equation*}\begin{tikzcd}
+	(\cdot) \dotimes{A} P : \cated{Mod}A \arrow[shift left, r] & \cated{Mod}B: (\cdot) \dotimes{B} P^\vee \arrow[shift left, l].
+\end{tikzcd}\end{equation*}
+Koaljabar $P^\vee\dotimes{A}P$ secara alami berkoaksi pada setiap
+$\omega(N)=N\dotimes{A}P$. Secara eksplisit, koaksinya ialah
+% segment-id: o014.li2.chapter9.reconstruction-a.q003
+\[ N \dotimes{A} P \xrightarrow{\identity_N \otimes \mathrm{coev} \otimes \identity_P} N \dotimes{A} P \dotimes{B} P^\vee \dotimes{A} P, \quad N \in \Obj(\cated{Mod}A). \]
+
+% segment-id: o014.li2.chapter9.reconstruction-a.p005
+Definisi--Proposisi~\ref{def:cogebra-L} kemudian memberikan homomorfisme
+koaljabar kanonik
+% segment-id: o014.li2.chapter9.reconstruction-a.q004
+\[ \coEnd(\omega) \to P^\vee \dotimes{A} P. \]
+
+% segment-id: o014.li2.chapter9.reconstruction-a.pr001
+\begin{proposition}\label{prop:endomorphism-vs-P}
+	Dalam situasi di atas, homomorfisme
+	$\coEnd(\omega)\to P^\vee\dotimes{A}P$ adalah isomorfisme.
+\end{proposition}
+\begin{proof}
+	Ambil subkategori penuh $\mathcal{A}^\flat$ dari $\cated{Mod}A$ dengan
+	$\Obj(\mathcal{A}^\flat)=\{A\}$, dan tuliskan $i$ untuk funktor
+	inklusinya. Catatan~\ref{rem:L-cogebra-functoriality} memberikan diagram
+	komutatif
+	% segment-id: o014.li2.chapter9.reconstruction-a.q005
+	\[\begin{tikzcd}[column sep=tiny]
+		\coEnd(\omega i) \arrow[rr] \arrow[rd] & & \coEnd(\omega), \arrow[ld] \\
+		& P^\vee \dotimes{A} P &
+	\end{tikzcd}\]
+	Pembaca dapat memeriksa langsung bahwa
+	$\coEnd(\omega i)\rightiso P^\vee\dotimes{A}P$. Jadi
+	$\coEnd(\omega i)\to\coEnd(\omega)$ memiliki invers kiri. Jika dapat
+	ditunjukkan bahwa morfisme ini surjektif, maka
+	$\coEnd(\omega i)\rightiso\coEnd(\omega)$ dan akibatnya
+	$\coEnd(\omega)\rightiso P^\vee\dotimes{A}P$.
+
+	Menurut konstruksi konkret $\coEnd(\omega)$ dan $\coEnd(\omega i)$,
+	masalahnya ialah membuktikan, untuk setiap $Y\in\Obj(\mathcal{A})$,
+	% segment-id: o014.li2.chapter9.reconstruction-a.q006
+	\[ \Image\left[ \omega(Y)^\vee \dotimes{\Bbbk} \omega(Y) \to \coEnd(\omega) \right] \subset \Image\left[ \omega(A)^\vee \dotimes{\Bbbk} \omega(A) \to \coEnd(\omega) \right]. \]
+
+	Tuliskan $t\in\omega(Y)^\vee\dotimes{\Bbbk}\omega(Y)$ sebagai jumlah
+	hingga $\sum_i\lambda_i\otimes o_i$. Karena bentuk konkret $\omega$,
+	setiap $o_i\in\omega(Y)$ adalah kombinasi linear hingga unsur berbentuk
+	$\omega(f)(x)$, dengan $x\in\omega(A)$ dan
+	$f\in\Hom_{\mathcal{A}}(A,Y)$. Jadi masalah direduksi lebih lanjut ke
+	kasus $t=\lambda\otimes\omega(f)(x)$. Hal ini mengikuti dengan meninjau
+	bayangan $\lambda\otimes x\in
+	\omega(Y)^\vee\dotimes{\Bbbk}\omega(A)$ dalam diagram komutatif
+	% segment-id: o014.li2.chapter9.reconstruction-a.q007
+	\[\begin{tikzcd}
+		\omega(Y)^\vee \dotimes{\Bbbk} \omega(A) \arrow[r, "{\omega(f)^\vee \otimes \identity}" inner sep=0.6em] \arrow[d, "{\identity \otimes \omega(f)}"'] & \omega(A)^\vee \dotimes{\Bbbk} \omega(A) \arrow[d] \\
+		\omega(Y)^\vee \dotimes{\Bbbk}  \omega(Y) \arrow[r] & \coEnd(\omega).
+	\end{tikzcd}\]
+\end{proof}
+
+% segment-id: o014.li2.chapter9.reconstruction-a.p006
+Untuk kategori kecil secara esensial $\mathcal{A}$ dan funktor
+$\omega:\mathcal{A}\to\catesubd{Mod}{\mathrm{pfg}}B$ sembarang,
+Definisi--Proposisi~\ref{def:cogebra-L} memfaktorkan $\omega$ secara
+kanonik sebagai
+% segment-id: o014.li2.chapter9.reconstruction-a.q008
+\begin{equation}\label{eqn:L-canonical-decomp}
+	\mathcal{A} \xrightarrow{\overline{\omega}} \catesubd{Comod}{\mathrm{pf}}\coEnd(\omega) \xrightarrow{U} \catesubd{Mod}{\mathrm{pfg}}B,
+\end{equation}
+dengan $U$ funktor lupa. Kita hendak menyelidiki kapan
+$\overline\omega$ merupakan ekuivalensi.
+
+% segment-id: o014.li2.chapter9.reconstruction-a.p007
+Lema berikut mendasari berbagai teorema rekonstruksi di bawah. Inti
+buktinya memakai Teorema Monadisitas Beck~\ref{prop:Beck}. Kita juga
+memerlukan pencirian funktor setia eksak dari
+Proposisi~\ref{prop:faithful-exact}, konsep kategori abelian hingga secara lokal dari
+Definisi~\ref{def:locally-finite}, dan beberapa teknik Ind-isasi dari
+\CHref{sec:app-Ind}.
+
+% segment-id: o014.li2.chapter9.reconstruction-a.l001
+\begin{lemma}\label{prop:Tannaka-projective-generator}
+	Misalkan $\Bbbk$ medan, $\mathcal{A}$ kategori abelian hingga secara lokal, dan
+	$s$ generator projektif bagi $\mathcal{A}$. Tinjau funktor setia eksak
+	% segment-id: o014.li2.chapter9.reconstruction-a.q009
+	\[ \omega: \mathcal{A} \to \cated{Mod}B, \]
+	dan andaikan ia mengambil nilai dalam
+	$\catesubd{Mod}{\mathrm{pfg}}B$.
+	\begin{enumerate}[(i)]
+		\item Koaljabar $\coEnd(\omega)$ dapat ditulis secara konkret sebagai
+		$P^\vee\dotimes{A}P$, dengan
+		$A=\End_{\mathcal{A}}(s)$ dan $P=\omega(s)$.
+		\item Funktor $\overline\omega$ dalam faktorisasi kanonik
+		\eqref{eqn:L-canonical-decomp} merupakan ekuivalensi kategori.
+		\item Berlaku
+		$\catesubd{Comod}{\mathrm{pf}}\coEnd(\omega)=
+		\catesubd{Comod}{\mathrm f}\coEnd(\omega)$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	Perhatikan bahwa $A$ aljabar-$\Bbbk$ berdimensi hingga. Semua hipotesis
+	Teorema~\ref{prop:identify-ModR-fg} terpenuhi, dan
+	$\Hom_{\mathcal{A}}(s,\mathord\cdot)$ memberikan ekuivalensi
+	$\mathcal{A}\to\catesubd{Mod}{\mathrm{fg}}A$. Jadi masalah direduksi
+	ke kasus $\mathcal{A}=\catesubd{Mod}{\mathrm{fg}}A$ dan $s=A$.
+	Pengamatan pertama ialah bahwa $\omega$ kini meluas secara kanonik
+	menjadi funktor
+	% segment-id: o014.li2.chapter9.reconstruction-a.q010
+	\[ \Omega: \cated{Mod}A \to \cated{Mod}B, \]
+	dengan konstruksi berikut.
+	\begin{description}
+		\item[Pada objek] Ambil kolimit terfilter kecil
+		% segment-id: o014.li2.chapter9.reconstruction-a.q011
+		\begin{equation}\label{eqn:Tannaka-tilde-omega}
+			\Omega(N) = \varinjlim_{\substack{N' \subset N \\ \text{terbangkit hingga}}} \omega(N').
+		\end{equation}
+		\item[Pada morfisme] Untuk homomorfisme modul-$A$ kanan
+		$f:N_1\to N_2$, ambil
+		% segment-id: o014.li2.chapter9.reconstruction-a.q012
+		\begin{align*}
+			\Omega(f) & = \varprojlim_{N'_1 \subset N_1} \varinjlim_{\substack{N'_2 \subset N_2 \\ N'_2 \supset \Image(f|_{N'_1}) }} \left[ \omega(f|_{N'_1}): \omega(N'_1) \to \omega(N'_2) \right] \\
+			& \in \varprojlim_{N'_1 \subset N_1} \varinjlim_{N'_2 \subset N_2} \Hom_{\cated{Mod}B}\left( \omega(N'_1), \omega(N'_2)\right).
+		\end{align*}
+		Ruas kanan menentukan homomorfisme
+		$\Omega(N_1)\to\Omega(N_2)$ dengan cara yang jelas.
+	\end{description}
+
+	Jika pembaca menggunakan teori Ind-isasi dari
+	\S\S\ref{sec:ind-pro}--\ref{sec:Indization}, konstruksi ini hanya
+	mengidentifikasikan $\cated{Mod}A$ dengan
+	$\IndC(\catesubd{Mod}{\mathrm{fg}}A)$, lalu memakai kekokompletan
+	$\cated{Mod}B$ untuk memperluas $\omega$ ke
+	$\IndC(\catesubd{Mod}{\mathrm{fg}}A)$ melalui kolimit terfilter; lihat
+	Definisi--Proposisi~\ref{def:Ind-hat-functor}.
+
+	Sifat-sifat berikut merupakan fakta umum tentang Ind-isasi, dan dapat
+	pula diperiksa langsung dari konstruksi $\Omega$.
+	\begin{itemize}
+		\item Pembatasan $\Omega$ pada
+		$\catesubd{Mod}{\mathrm{fg}}A$ isomorfik dengan $\omega$.
+		\item $\Omega$ merupakan funktor $\Bbbk$-linear eksak; lihat
+		Proposisi~\ref{prop:Ind-ext-exactness}(ii) dan pembahasan sebelumnya,
+		yang menggunakan keeksakan $\omega$ dan fakta bahwa
+		$\cated{Mod}B$ kategori Grothendieck.
+		\item $\Omega$ mempertahankan semua kolimit kecil; lihat
+		Proposisi~\ref{prop:Ind-ext-exactness}(iii), yang menggunakan fakta
+		bahwa $\catesubd{Mod}{\mathrm{fg}}A$ kecil secara esensial.
+	\end{itemize}
+
+	Selain itu, karena $\omega$ eksak kiri, untuk semua submodul terbangkit
+	hingga $N'\subset N''$ dari $N$, homomorfisme transisi
+	$\omega(N')\to\omega(N'')$ dalam \eqref{eqn:Tannaka-tilde-omega}
+	bersifat monik. Konstruksi elementer kolimit terfilter dalam kategori
+	modul kemudian memberikan
+	% segment-id: o014.li2.chapter9.reconstruction-a.q013
+	\[ \Omega(N) = 0 \iff \forall N', \; \omega(N') = 0 \stackrel{\because \;\omega\;\text{setia}}{\iff} \; \forall N', \; N' = 0 \iff N = 0. \]
+	Jadi $\Omega$ setia dan eksak.
+
+	Sekarang Teorema~\ref{prop:Morita} dapat diterapkan pada $\Omega$ untuk
+	memperoleh
+	% segment-id: o014.li2.chapter9.reconstruction-a.q014
+	\[ \Omega \simeq (\cdot) \dotimes{A} P, \quad P := \Omega(A) = \omega(A) \in \Obj(\catesubd{Mod}{\mathrm{pfg}}B). \]
+	Pembatasannya pada $\catesubd{Mod}{\mathrm{fg}}A$ memberikan funktor
+	asal $\omega$. Bersama Proposisi~\ref{prop:endomorphism-vs-P}, ini juga
+	memberikan deskripsi $\coEnd(\omega)$ dalam (i).
+
+	Karena $\Omega$ setia eksak, Proposisi~\ref{prop:Morita-descent}
+	menunjukkan bahwa pasangan adjoin
+	% segment-id: o014.li2.chapter9.reconstruction-a.q015
+	\begin{equation*}\begin{tikzcd}
+		(\cdot) \dotimes{A} P : \cated{Mod}A \arrow[shift left, r] & \cated{Mod}B: (\cdot) \dotimes{B} P^\vee \arrow[shift left, l]
+	\end{tikzcd}\end{equation*}
+	bersifat komonadik, dengan koaljabar yang bersesuaian
+	$P^\vee\dotimes{A}P$. Dengan demikian, $\Omega$ berfaktor secara kanonik
+	sebagai ekuivalensi diikuti funktor lupa:
+	% segment-id: o014.li2.chapter9.reconstruction-a.q016
+	\[ \cated{Mod}A \xrightarrow[\sim]{\overline{\Omega}} \cated{Comod}\left(P^\vee \dotimes{A} P\right) \xrightarrow{U} \cated{Mod}B. \]
+
+	Menurut Proposisi~\ref{prop:Morita-comonad-ft}, faktorisasi ini membatasi
+	menjadi diagram komutatif
+	% segment-id: o014.li2.chapter9.reconstruction-a.q017
+	\[\begin{tikzcd}
+		\catesubd{Mod}{\mathrm{fg}}A \arrow[r, "\sim"'] \arrow[rd, bend right] & \catesubd{Comod}{\mathrm{f}} \left(P^\vee \dotimes{A} P\right) \arrow[r, "U"]  \arrow[d, "\sim" sloped, "{\text{(i)}}"'] & \catesubd{Mod}{\mathrm{fg}}B. \\
+		& \catesubd{Comod}{\mathrm{f}}\coEnd(\omega) &
+	\end{tikzcd}\]
+	Komposisi baris pertama ialah $\omega$, yang diketahui mengambil nilai
+	dalam $\catesubd{Mod}{\mathrm{pfg}}B$; ini membuktikan (iii). Panah
+	melengkung dalam diagram tersebut kemudian sama dengan
+	$\overline\omega$, sehingga (ii) mengikuti.
+\end{proof}

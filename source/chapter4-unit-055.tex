@@ -1,0 +1,807 @@
+% Unit 055 terjemahan Bahasa Indonesia dari chapter4.tex baris 987--1313.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.morphisms-extensions
+% Cakupan: Bagian 4.5 lengkap tentang morfisme dalam kategori turunan,
+% amplitudo, Lema Jalan Keluar, funktor Ext, dan deskripsi Yoneda melalui
+% ekstensi-n; berhenti tepat sebelum Bagian 4.6 pada baris 1314.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.h001
+\section{Morfisme dan Ekstensi}\label{sec:Hom-Ext}
+\hypertarget{o014.aljabr2.chapter4.morphisms-extensions}{ }
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p001
+Dalam bagian ini, $\mathcal{A}$ dianggap sebagai kategori abelian. Tanpa
+penjelasan lebih lanjut, kita mengidentifikasi $\Obj(\cate{C}(\mathcal{A}))$,
+$\Obj(\cate{K}(\mathcal{A}))$, dan $\Obj(\cate{D}(\mathcal{A}))$; bila perlu,
+kita membedakan himpunan morfisme dalam kategori-kategori tersebut dengan
+$\Hom_{\cate{D}(\mathcal{A})}$, $\Hom_{\cate{K}(\mathcal{A})}$,
+$\Hom_{\cate{C}(\mathcal{A})}$, dan $\Hom_{\mathcal{A}}$. Pembaca yang belum
+mengenal kompleks K-injektif dan K-projektif dapat melewatkan
+pernyataan-pernyataan yang berkaitan dengannya.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pr001
+\begin{proposisi}\label{prop:Hom-D-injective}
+	Misalkan $X \in \Obj(\cate{C}^+(\mathcal{A}))$ terdiri atas objek-objek
+	injektif, atau, secara lebih umum, misalkan
+	$X \in \Obj(\cate{C}(\mathcal{A}))$ merupakan kompleks K-injektif
+	sebagaimana dalam Definisi \ref{def:K-resolutions}. Maka
+	$\Hom_{\cate{K}(\mathcal{A})}(\cdot, X) \simeq
+	\Hom_{\cate{D}(\mathcal{A})}(\cdot, X)$.
+	
+	Secara dual, misalkan $X \in \Obj(\cate{C}^-(\mathcal{A}))$ terdiri atas
+	objek-objek projektif, atau misalkan
+	$X \in \Obj(\cate{C}(\mathcal{A}))$ merupakan kompleks K-projektif. Maka
+	$\Hom_{\cate{K}(\mathcal{A})}(X, \cdot) \simeq
+	\Hom_{\cate{D}(\mathcal{A})}(X, \cdot)$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf001
+\begin{bukti}
+	Berdasarkan dualitas, cukup dibahas kasus
+	$\Hom_{\cate{D}(\mathcal{A})}(\cdot, X)$. Lema
+	\ref{prop:MXY-equiv} memberikan
+% segment-id: o014.li2.chapter4.morphisms-extensions.g001
+	\begin{equation}\label{eqn:Hom-D-injective-aux}
+		\Hom_{\cate{D}(\mathcal{A})}(T, X) \simeq \varinjlim_{\substack{\alpha: S \to T \\ \text{kuasi-isomorfisme dalam }\cate{K}(\mathcal{A})}} \Hom_{\cate{K}(\mathcal{A})}(S, X), \quad T \in \Obj(\cate{K}(\mathcal{A})).
+	\end{equation}
+
+	Misalkan $X \in \Obj(\cate{C}^+(\mathcal{A}))$ terdiri atas objek-objek
+	injektif. Untuk suatu kuasi-isomorfisme
+	$\alpha \in \Hom_{\cate{K}(\mathcal{A})}(S, T)$, Teorema
+	\ref{prop:resolution-homotopy} menunjukkan bahwa
+	$\alpha^*: \Hom_{\cate{K}(\mathcal{A})}(T, X) \rightiso
+	\Hom_{\cate{K}(\mathcal{A})}(S, X)$. Karena itu, $\varinjlim$ dalam
+	\eqref{eqn:Hom-D-injective-aux} sama dengan
+	$\Hom_{\cate{K}(\mathcal{A})}(T, X)$.
+	
+	Jika $X \in \Obj(\cate{C}(\mathcal{A}))$ merupakan kompleks K-injektif,
+	gunakan Teorema \ref{prop:K-resolution-homotopy} sebagai gantinya.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p002
+Salah satu penerapan langsung proposisi sebelumnya ialah mengendalikan ukuran
+kategori turunan. Di sini kita kembali menggunakan semesta Grothendieck
+$\mathcal{U}$ yang telah dipilih, beserta terminologi kategori-$\mathcal{U}$
+(yakni ``kategori'' dalam pengertian baku buku ini) dan kategori
+$\mathcal{U}$-kecil.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.co001
+\begin{korolari}\label{prop:D-size}
+	Gunakan notasi di atas. Misalkan $\mathcal{A}$ kategori-$\mathcal{U}$.
+% segment-id: o014.li2.chapter4.morphisms-extensions.l001
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.morphisms-extensions.i001
+		\item Jika $\mathcal{A}$ memiliki cukup banyak objek injektif (atau objek
+		projektif), maka $\cate{D}^+(\mathcal{A})$ (atau
+		$\cate{D}^-(\mathcal{A})$) juga merupakan kategori-$\mathcal{U}$.
+% segment-id: o014.li2.chapter4.morphisms-extensions.i002
+		\item Jika $\mathcal{A}$ memiliki cukup banyak kompleks K-injektif atau
+		K-projektif (Definisi \ref{def:K-resolutions}), maka
+		$\cate{D}(\mathcal{A})$ juga merupakan kategori-$\mathcal{U}$.
+% segment-id: o014.li2.chapter4.morphisms-extensions.i003
+		\item Jika $\mathcal{A}$ merupakan kategori $\mathcal{U}$-kecil, maka
+		$\cate{D}(\mathcal{A})$ juga demikian.
+	\end{enumerate}
+\end{korolari}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf002
+\begin{bukti}
+	Cukup diverifikasi bahwa
+	$\Hom_{\cate{D}(\mathcal{A})}(X, Y)$ merupakan himpunan
+	$\mathcal{U}$-kecil. Perhatikan bahwa versi
+	$\Hom_{\cate{K}(\mathcal{A})}$ mudah ditangani, sebab mudah dibuktikan bahwa
+	$\cate{C}(\mathcal{A})$ merupakan kategori-$\mathcal{U}$.
+
+	Misalkan $\mathcal{A}$ memiliki cukup banyak objek injektif dan
+	$X \in \Obj(\cate{D}^+(\mathcal{A}))$. Tanpa mengurangi keumuman, kita
+	dapat mengandaikan bahwa $X \in \Obj(\cate{C}^+(\mathcal{A}))$ terdiri atas
+	objek-objek injektif; (i) kemudian mengikuti dari Proposisi
+	\ref{prop:Hom-D-injective}. Jika $X$ memiliki resolusi K-injektif (atau $Y$
+	memiliki resolusi K-projektif), tanpa mengurangi keumuman kita dapat
+	mengandaikan bahwa $X$ merupakan kompleks K-injektif (atau $Y$ merupakan
+	kompleks K-projektif); argumen yang sama seperti sebelumnya memberikan (ii).
+
+	Untuk (iii), perhatikan bahwa $\cate{K}(\mathcal{A})$ dalam hal ini
+	merupakan kategori $\mathcal{U}$-kecil. Terapkan hal ini pada Catatan
+	\ref{rem:localization-size}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.x001
+\index{masalah ukuran (size issues)}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pr002
+\begin{proposisi}[Ortogonalitas]\label{prop:derived-cat-orthogonality}
+	Misalkan $a, b, n \in \Z$, $a < b$.
+% segment-id: o014.li2.chapter4.morphisms-extensions.l002
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.morphisms-extensions.i004
+		\item Jika $X \in \Obj(\cate{D}^{\leq a}(\mathcal{A}))$ dan
+		$Y \in \Obj(\cate{D}^{\geq b}(\mathcal{A}))$, maka
+		$\Hom_{\cate{D}(\mathcal{A})}(X, Y) = 0$.
+% segment-id: o014.li2.chapter4.morphisms-extensions.i005
+		\item Jika $X \in \Obj(\cate{D}^{\leq n}(\mathcal{A}))$ dan
+		$Y \in \Obj(\cate{D}^{\geq n}(\mathcal{A}))$, maka $\Hm^n$
+		memberikan isomorfisme kanonik
+% segment-id: o014.li2.chapter4.morphisms-extensions.q001
+		\[ \Hom_{\cate{D}(\mathcal{A})}(X, Y) \rightiso \Hom_{\mathcal{A}}\left( \Hm^n(X), \Hm^n(Y) \right). \]
+	\end{enumerate}
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf003
+\begin{bukti}
+	Misalkan $a \leq b$. Wakili suatu
+	$f \in \Hom_{\cate{D}(\mathcal{A})}(X, Y)$ dengan diagram
+	$X \xleftarrow{s} Z \xrightarrow{g} Y$ dalam $\cate{K}(\mathcal{A})$,
+	dengan $s$ suatu kuasi-isomorfisme. Dengan mengganti $f$ oleh $g$, kita boleh
+	mereduksi ke kasus ketika $f$ berasal dari $\cate{C}(\mathcal{A})$.
+	Selanjutnya, gantikan $f$ dengan komposisi
+	$\tau^{\leq a} X \to X \xrightarrow{f} Y \to \tau^{\geq b} Y$ dalam
+	$\cate{C}(\mathcal{A})$. Kedua morfisme di ujung komposisi ini merupakan
+	kuasi-isomorfisme. Dengan
+	demikian, kita dapat mereduksi lebih lanjut ke kasus
+	$X \in \Obj(\cate{C}^{\leq a}(\mathcal{A}))$ dan
+	$Y \in \Obj(\cate{C}^{\geq b}(\mathcal{A}))$.
+	
+	Jika $a < b$, setiap morfisme $X \to Y$ dalam $\cate{C}(\mathcal{A})$
+	niscaya bernilai $0$. Ini membuktikan (i).
+
+	Sekarang ambil $X$ dan $Y$ seperti di atas, tetapi tetapkan $a = n = b$
+	untuk menangani (ii). Tinjau morfisme-morfisme kanonik
+% segment-id: o014.li2.chapter4.morphisms-extensions.e001
+	\begin{equation}\label{eqn:derived-cat-orthogonality-aux}
+		\Hom_{\mathcal{A}}\left( \Hm^n(X), \Hm^n(Y) \right) \xleftarrow{\Hm^n} \Hom_{\cate{C}(\mathcal{A})}(X, Y) \to \Hom_{\cate{K}(\mathcal{A})}(X, Y) \to \Hom_{\cate{D}(\mathcal{A})}(X, Y).
+	\end{equation}
+	\begin{itemize}
+		\item Morfisme pertama $\Hm^n$ merupakan isomorfisme: karena
+		$X \in \Obj(\cate{C}^{\leq n}(\mathcal{A}))$ dan
+		$Y \in \Obj(\cate{C}^{\geq n}(\mathcal{A}))$, setiap
+		$f \in \Hom_{\cate{C}(\mathcal{A})}(X, Y)$ hanya mungkin tak nol pada
+		suku berderajat $n$, sedangkan satu-satunya syarat pada $f^n$ ialah
+% segment-id: o014.li2.chapter4.morphisms-extensions.q002
+		\[ f^n\left( \Image(d_X^{n-1}) \right) = 0 , \quad f\left(X^n\right) \subset \Ker\left( d_Y^n \right). \]
+		Namun,
+		$X^n/\Image\left( d_X^{n-1}\right) = \Hm^n(X)$ dan
+		$\Ker\left(d_Y^n \right) = \Hm^n(Y)$.
+		\item Morfisme kedua juga merupakan isomorfisme, sebab syarat pada $X,Y$
+		mengakibatkan $\Hom^{-1}(X, Y) = \{0\}$.
+	\end{itemize}
+
+	Jadi, untuk membuktikan (ii), tinggal ditunjukkan bahwa morfisme terakhir dalam
+	\eqref{eqn:derived-cat-orthogonality-aux} merupakan isomorfisme. Dengan
+	menerapkan Lema \ref{prop:MXY-equiv}, diperoleh
+% segment-id: o014.li2.chapter4.morphisms-extensions.q003
+	\[ \Hom_{\cate{D}(\mathcal{A})}(X, Y) \simeq \varinjlim_{[Y \rightarrowtail Z] \in \Obj(\mathrm{qis}_{Y/}) } \Hom_{\cate{K}(\mathcal{A})}(X, Z). \]
+	Jika $Y \to Z$ merupakan kuasi-isomorfisme, maka setiap morfisme dalam
+	$Y \to Z \to \tau^{\geq n} Z$ merupakan kuasi-isomorfisme dalam
+	$\cate{K}(\mathcal{A})$. Ini menunjukkan bahwa kuasi-isomorfisme $Y \to Z$
+	dengan $Z$ berasal dari $\cate{C}^{\geq n}(\mathcal{A})$ membentuk
+	subkategori penuh kofinal dari kategori terfilter $\mathrm{qis}_{Y/}$
+	(Definisi \ref{def:cofinal} dan Proposisi \ref{prop:cofinal-filtered}).
+	Berdasarkan Proposisi \ref{prop:cofinal-lim}, selanjutnya kita dapat membatasi
+	$\varinjlim$ pada subkategori ini.
+	
+	Kita telah mengetahui bahwa dua morfisme pertama dalam
+	\eqref{eqn:derived-cat-orthogonality-aux} merupakan isomorfisme kanonik.
+	Ambil $Y \to Z$ seperti di atas; dari sini diperoleh diagram komutatif
+% segment-id: o014.li2.chapter4.morphisms-extensions.g002
+	\[\begin{tikzcd}
+		\Hom_{\mathcal{A}}(\Hm^n(X), \Hm^n(Y)) \arrow[d, "\sim" sloped] & \Hom_{\cate{K}(\mathcal{A})}(X, Y) \arrow[l, "\sim", "{\Hm^n}"'] \arrow[d] \\
+		\Hom_{\mathcal{A}}(\Hm^n(X), \Hm^n(Z)) & \Hom_{\cate{K}(\mathcal{A})}(X, Z) \arrow[l, "\sim"', "{\Hm^n}"]
+	\end{tikzcd}\]
+	yang menunjukkan bahwa
+	$\Hom_{\cate{K}(\mathcal{A})}(X, Y) \rightiso
+	\Hom_{\cate{K}(\mathcal{A})}(X, Z)$. Jadi, $\varinjlim$ sebelumnya bernilai
+	konstan $\Hom_{\cate{K}(\mathcal{A})}(X, Y)$. Dengan demikian, morfisme
+	terakhir dalam \eqref{eqn:derived-cat-orthogonality-aux} merupakan isomorfisme.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.th001
+\begin{teorema}\label{prop:derived-cat-embedding}
+	Dengan memandang objek-objek $\mathcal{A}$ sebagai kompleks yang terkonsentrasi
+	pada derajat nol, diperoleh ekuivalensi kategori aditif
+	$\mathcal{A} \to \cate{D}^{\leq 0}(\mathcal{A}) \cap
+	\cate{D}^{\geq 0}(\mathcal{A})$, dengan funktor kuasi-invers yang diberikan
+	oleh $\Hm^0$.
+\end{teorema}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf004
+\begin{bukti}
+	Jelas bahwa objek-objek $\mathcal{A}$ memberikan objek-objek
+	$\cate{D}^{\leq 0}(\mathcal{A}) \cap \cate{D}^{\geq 0}(\mathcal{A})$.
+	Dengan demikian diperoleh funktor aditif
+	$\Phi: \mathcal{A} \to \cate{D}^{\leq 0}(\mathcal{A}) \cap
+	\cate{D}^{\geq 0}(\mathcal{A})$. Proposisi
+	\ref{prop:derived-cat-orthogonality} (ii) mengakibatkan bahwa $\Phi$ penuh dan
+	setia.
+
+	Selanjutnya kita tunjukkan bahwa $\Phi$ surjektif secara esensial. Misalkan
+	$X$ suatu objek dari
+	$\cate{D}^{\leq 0}(\mathcal{A}) \cap \cate{D}^{\geq 0}(\mathcal{A})$.
+	Dengan menerapkan funktor-funktor pemenggalan pada kompleks $X$ dalam
+	$\cate{C}(\mathcal{A})$, kita melihat bahwa setiap morfisme dalam
+	$X \to \tau^{\geq 0} X \leftarrow \tau^{\leq 0} \tau^{\geq 0} X$
+	merupakan kuasi-isomorfisme, sedangkan Proposisi
+	\ref{prop:truncate-twice} mengakibatkan
+	$\tau^{\leq 0} \tau^{\geq 0} X \simeq \Hm^0(X)$. Jadi, $\Phi$ merupakan
+	ekuivalensi dan $\Hm^0$ memberikan kuasi-inversnya.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p003
+Secara lebih umum, funktor $S \mapsto S[-n]$ memberikan ekuivalensi aditif
+dari $\mathcal{A}$ ke
+$\cate{D}^{\geq n}(\mathcal{A}) \cap \cate{D}^{\leq n}(\mathcal{A})$ untuk
+setiap $n \in \Z$, dengan $\Hm^n$ sebagai kuasi-inversnya. Ini tidak lain dari
+versi hasil di atas yang digeser.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p004
+Selanjutnya, tanpa penjelasan lebih lanjut kita akan mengidentifikasi
+$\mathcal{A}$ dengan subkategori aditif penuh
+$\cate{D}^{\geq 0}(\mathcal{A}) \cap \cate{D}^{\leq 0}(\mathcal{A})$ dari
+$\cate{D}^{\bdd}(\mathcal{A})$.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.d001
+\begin{definisi}\label{def:functor-amplitude}
+	\index{amplitudo (amplitude)}
+	Misalkan $\star \in \{+, -, \bdd, \hspace{0.8em}\}$ (dengan
+	$\star = \hspace{0.8em}$ menyatakan bahwa tidak ada superskrip). Misalkan
+	$\mathcal{A}$ dan $\mathcal{A}'$ kategori abelian. Jika funktor
+	bertriangulasi
+	$R: \cate{D}^\star(\mathcal{A}) \to \cate{D}^\star(\mathcal{A}')$
+	terbatas pada
+	$\mathcal{A} \to \cate{D}^{[a,b]}(\mathcal{A}')$, dengan
+	$-\infty \leq a \leq b \leq +\infty$, maka $R$ dikatakan mempunyai
+	\emph{amplitudo} yang termuat dalam $[a,b]$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p005
+Sebuah pengamatan sederhana ialah sebagai berikut: jika
+$X' \to X \to X'' \xrightarrow{+1}$ merupakan segitiga terbedakan dalam
+$\cate{D}(\mathcal{A})$ dan
+$X', X'' \in \Obj\left(\cate{D}^{[a,b]}(\mathcal{A})\right)$, maka
+$X \in \Obj\left(\cate{D}^{[a,b]}(\mathcal{A})\right)$. Ini merupakan
+penerapan langsung barisan eksak panjang untuk $\Hm^n$.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.le001
+\begin{lema}\label{prop:amplitude-translate}
+	Jika amplitudo $R$ termuat dalam $[a,b]$, maka untuk setiap
+	$-\infty < c \leq d < +\infty$ berlaku
+% segment-id: o014.li2.chapter4.morphisms-extensions.q004
+	\[ R \; \text{terbatas pada}\; \cate{D}^{[c,d]}(\mathcal{A}) \to \cate{D}^{[c+a, d+b]}(\mathcal{A}'). \]
+\end{lema}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf005
+\begin{bukti}
+	Kasus $c=d$ langsung. Jika $c < d$, untuk setiap
+	$X \in \Obj(\cate{D}^{[c,d]}(\mathcal{A}))$, ambil segitiga terbedakan dari
+	Proposisi \ref{prop:derived-truncation-adjunction}
+% segment-id: o014.li2.chapter4.morphisms-extensions.q005
+	\[ \tau^{\leq d-1} X \to X \to \tau^{\geq d} X \xrightarrow{+1} , \quad \tau^{\geq d} X \simeq \Hm^d(X)[-d] \]
+	lalu gunakan pengamatan sebelumnya pada citranya di bawah $R$ untuk
+	menjalankan induksi.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p006
+Sebagai akibatnya, jika amplitudo $R$ berhingga, maka $R$ terbatas pada
+$\cate{D}^{\bdd}(\mathcal{A}) \to \cate{D}^{\bdd}(\mathcal{A}')$.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p007
+Berikutnya kita berikan hasil terkait yang menjelaskan bagaimana suatu funktor
+bertriangulasi ditentukan oleh nilainya pada $\mathcal{A}$.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pr003
+\begin{proposisi}[Lema Jalan Keluar {\cite[Bab I, \S 7]{Har66}}]\label{prop:wayout}
+	\index{Lema Jalan Keluar (Way-out Lemma)}
+	Misalkan $\mathcal{T}$ subkategori Serre lemah dari $\mathcal{A}$ dan
+	$\star \in \{\hspace{0.8em}, +, \bdd\}$. Tinjau funktor-funktor
+	bertriangulasi
+	$F, G: \cate{D}^{\star}_{\mathcal{T}}(\mathcal{A}) \to
+	\cate{D}(\mathcal{A}')$ beserta morfisme $\eta: F \to G$ di antaranya,
+	sedemikian sehingga $\eta_X: FX \to GX$ merupakan isomorfisme untuk setiap
+	$X \in \Obj(\mathcal{T})$. Maka $\eta$ juga merupakan isomorfisme apabila
+	salah satu kondisi berikut dipenuhi:
+% segment-id: o014.li2.chapter4.morphisms-extensions.l003
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.morphisms-extensions.i006
+		\item $\star = \bdd$;
+% segment-id: o014.li2.chapter4.morphisms-extensions.i007
+		\item $\star = +$, dan terdapat $k \in \Z$ sedemikian sehingga $F,G$
+		terbatas pada
+		$\cate{D}^{\geq 0}_{\mathcal{T}}(\mathcal{A}) \to
+		\cate{D}^{\geq k}(\mathcal{A}')$;
+% segment-id: o014.li2.chapter4.morphisms-extensions.i008
+		\item $\star = \hspace{0.8em}$, dan terdapat $k, \ell \in \Z$
+		sedemikian sehingga $F,G$ masing-masing terbatas pada
+		$\cate{D}^{\geq 0}_{\mathcal{T}}(\mathcal{A}) \to
+		\cate{D}^{\geq k}(\mathcal{A}')$ dan
+		$\cate{D}^{\leq 0}_{\mathcal{T}}(\mathcal{A}) \to
+		\cate{D}^{\leq \ell}(\mathcal{A}')$.
+	\end{enumerate}
+
+	Selain itu, misalkan $\mathfrak{I}$ suatu subhimpunan dari
+	$\Obj(\mathcal{T})$ sedemikian sehingga untuk setiap
+	$X \in \Obj(\mathcal{T})$ terdapat $I \in \mathfrak{I}$ dan monomorfisme
+	$X \hookrightarrow I$. Jika syarat pada $\eta_X$ diganti dengan syarat bahwa
+	$\eta_I$ merupakan isomorfisme untuk setiap $I \in \mathfrak{I}$, maka
+	$\eta$ tetap merupakan isomorfisme dengan asumsi (i) atau (ii).
+	
+	Tentu saja, (ii) juga mempunyai versi dual untuk $\star = -$, yang tidak
+	dituliskan lagi.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf006
+\begin{bukti}
+	Untuk (i), ulangi saja argumen Lema \ref{prop:amplitude-translate}; gunakan
+	segitiga terbedakan
+	$\tau^{\leq d} X \to X \to \tau^{\geq d+1} X \xrightarrow{+1}$ dan
+	Proposisi \ref{prop:dt-3-2} secara induktif untuk mereduksi ke kasus
+	$X \simeq \Hm^{d+1}(X)[-d-1]$.
+	
+	Untuk (ii), tujuannya ialah membuktikan bahwa
+	$\Hm^j(FX) \to \Hm^j(GX)$ merupakan isomorfisme untuk setiap
+	$X \in \Obj(\cate{D}^+_{\mathcal{T}}(\mathcal{A}))$ dan $j \in \Z$.
+	Tinjau kembali segitiga terbedakan di atas, tetapi ambil $d \gg 0$ sehingga
+	$F\tau^{\geq d+1} X$ dan $G\tau^{\geq d+1} X$ keduanya berada dalam
+	$\cate{D}^{\geq j+1}(\mathcal{A}')$. Dari sini diperoleh diagram komutatif
+	dengan baris-baris eksak
+% segment-id: o014.li2.chapter4.morphisms-extensions.g003
+	\[\begin{tikzcd}
+		0 \arrow[r] \arrow[d] & \Hm^j\left( F\tau^{\leq d} X \right) \arrow[r] \arrow[d] & \Hm^j(FX) \arrow[d] \arrow[r] & 0 \arrow[d] \\
+		0 \arrow[r] & \Hm^j\left( G\tau^{\leq d} X \right) \arrow[r] & \Hm^j(GX) \arrow[r] & 0
+	\end{tikzcd}\]
+	Namun,
+	$\tau^{\leq d} X \in \Obj(\cate{D}^{\bdd}_{\mathcal{T}}(\mathcal{A}))$,
+	sehingga kasus ini mengikuti dari (i).
+
+	Untuk (iii), ambil sembarang $d \in \Z$. Dengan menggunakan
+	$\tau^{\leq d} X \to X \to \tau^{\geq d+1} X \xrightarrow{+1}$ dan
+	Proposisi \ref{prop:dt-3-2}, kasus ini mengikuti dari (ii) dan versi dualnya.
+	
+	Sekarang tinjau pernyataan terakhir. Karena (ii) telah dibuktikan, cukup
+	ditunjukkan bahwa $\eta_X$ merupakan isomorfisme untuk setiap
+	$X \in \Obj(\mathcal{T})$. Ambil barisan eksak
+	$0 \to X \to I^0 \to I^1 \to \cdots$ dengan setiap
+	$I^n \in \mathfrak{I}$. Tuliskan barisan ini sebagai kuasi-isomorfisme
+	kompleks $X \to I$; tinggal dibuktikan bahwa $\eta_I$ merupakan
+	isomorfisme. Untuk itu, definisikan pemenggalan kasar
+	(\emph{brutal truncation}) $\sigma^{\leq d} I$ dari kompleks, yang sama
+	dengan $I$ pada derajat $\leq d$ dan mempunyai suku $0$ pada derajat lainnya;
+	definisikan $\sigma^{\geq d+1} I$ secara serupa. Sekarang kita dapat
+	mengikuti argumen untuk (i) dan (ii); cukup gunakan barisan eksak
+	pendek kanonik dalam $\cate{C}(\mathcal{A})$
+% segment-id: o014.li2.chapter4.morphisms-extensions.q006
+	\[ 0 \to \sigma^{\geq d+1} I \to I \to \sigma^{\leq d} I \to 0 \]
+	dan segitiga terbedakan yang bersesuaian sebagai gantinya. Perinciannya
+	diserahkan kepada pembaca.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p008
+Sekarang ingat kembali Teorema \ref{prop:derived-cat-embedding}; sifat penuh dan
+setia
+$\Hom_{\mathcal{A}}(X, Y) \simeq \Hom_{\cate{D}(\mathcal{A})}(X, Y)$
+	merupakan kunci pembuktiannya. Informasi apa yang diperoleh jika derajat $X$
+	dan $Y$ digeser relatif satu sama lain? Inilah pokok pembahasan
+selanjutnya.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.d002
+\begin{definisi}[Funktor $\Ext$: Kasus Umum]\label{def:Ext-general}
+	\index[sym1]{Extn}
+	\index{funktor $\Ext$}
+	Untuk $X, Y \in \Obj(\mathcal{A})$ dan $n \in \Z$, definisikan
+	$\Ext^n_{\mathcal{A}}(X, Y) :=
+	\Hom_{\cate{D}(\mathcal{A})}\left(X, Y[n] \right)$. Funktor
+	$\Ext^n_{\mathcal{A}}: \mathcal{A}^{\opp} \times \mathcal{A} \to
+	\cate{Ab}$ bersifat aditif dalam setiap variabel.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p009
+Notasi $\Ext^n_{\mathcal{A}}(X, Y)$ juga telah muncul dalam
+Definisi--Proposisi \ref{def:Ext-classical}. Pembahasan tentang $\RHom$ akan
+mempertautkan kedua definisi tersebut; lihat Korolari
+\ref{prop:Ext-reconcilation}. Di sini tidak diasumsikan bahwa $\mathcal{A}$
+memiliki cukup banyak objek injektif atau projektif.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p010
+Seperti dalam kasus $\Hom$, funktorialitas $\Ext^n$ terhadap kedua variabel
+berturut-turut tetap disebut tarik balik dan dorong keluar. Jika tidak
+menimbulkan kerancuan, $\Ext^n_{\mathcal{A}}$ juga disingkat menjadi $\Ext^n$.
+Berikut ini ditunjukkan bahwa sifat-sifatnya serupa dengan sifat $\Ext^n$ yang
+didefinisikan dalam \S\ref{sec:Ext-Tor}.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pr004
+\begin{proposisi}\label{prop:Ext-generalities}
+	Di bawah ini, $X,Y$ adalah objek sembarang dari $\mathcal{A}$. Keluarga
+	bifunktor $\left( \Ext^n \right)_{n \in \Z}$ mempunyai sifat-sifat berikut.
+% segment-id: o014.li2.chapter4.morphisms-extensions.l004
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.morphisms-extensions.i009
+		\item Jika $n < 0$, maka $\Ext^n(X, Y) = 0$.
+% segment-id: o014.li2.chapter4.morphisms-extensions.i010
+		\item Terdapat isomorfisme kanonik
+		$\Ext^0(X, Y) \simeq \Hom_{\mathcal{A}}(X, Y)$.
+% segment-id: o014.li2.chapter4.morphisms-extensions.i011
+		\item Barisan eksak pendek
+		$0 \to X' \to X \to X'' \to 0$ dan
+		$0 \to Y' \to Y \to Y'' \to 0$ dalam $\mathcal{A}$ menginduksi
+		barisan eksak panjang yang bersesuaian
+% segment-id: o014.li2.chapter4.morphisms-extensions.q007
+		\begin{gather*}
+			\cdots \to \Ext^{n-1}(X', Y) \xrightarrow{\delta^{n-1}} \Ext^n(X'', Y) \to \Ext^n(X, Y) \to \Ext^n(X', Y) \to \cdots , \\
+			\cdots \to \Ext^{n-1}(X, Y'') \xrightarrow{\delta^{n-1}} \Ext^n(X, Y') \to \Ext^n(X, Y) \to \Ext^n(X, Y'') \to \cdots ,
+		\end{gather*}
+		dengan setiap morfisme penghubung $\delta^n$ funktorial terhadap barisan
+		eksak pendek.
+% segment-id: o014.li2.chapter4.morphisms-extensions.i012
+		\item Jika $\Ext^1(X, \cdot) = 0$ (atau
+		$\Ext^1(\cdot, Y) = 0$), maka $X$ (atau $Y$) merupakan objek projektif
+		(atau objek injektif) dari $\mathcal{A}$.
+	\end{enumerate}
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf007
+\begin{bukti}
+	Pernyataan (i) dan (ii) merupakan akibat langsung Proposisi
+	\ref{prop:derived-cat-orthogonality}.
+	
+	Untuk (iii), pertama-tama gunakan Proposisi \ref{prop:ses-vs-triangle} untuk
+	mengubah barisan-barisan eksak pendek secara kanonik menjadi segitiga-segitiga
+	terbedakan $X' \to X \to X'' \xrightarrow{+1}$ dan
+	$Y' \to Y \to Y'' \xrightarrow{+1}$ dalam $\cate{D}(\mathcal{A})$.
+	Kemudian gunakan fakta bahwa $\Hom$ merupakan funktor kohomologis dalam
+	setiap variabel (Proposisi \ref{prop:cohomological-Hom-functor}).
+	
+	Terakhir, (iv) diperoleh dengan menerapkan (i) dan (ii) pada barisan eksak
+	panjang dalam (iii).
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p011
+Karena $\Ext^n$ diberikan oleh $\Hom$ dalam $\cate{D}(\mathcal{A})$, untuk
+$f \in \Ext^n(X, Y)$ dan $g \in \Ext^n(X', Y')$ kita mempunyai jumlah
+langsung yang jelas
+$f \oplus g \in \Ext^n(X \oplus X', Y \oplus Y')$. Di sisi lain, terdapat
+operasi komposisi pada $\Ext$,
+% segment-id: o014.li2.chapter4.morphisms-extensions.g004
+\begin{equation}\label{eqn:Ext-composition}\begin{tikzcd}[row sep=tiny]
+	\Ext^m(Y, Z) \times \Ext^n(X, Y) \arrow[equal, d] & \\
+	\Hom_{\cate{D}(\mathcal{A})}(Y, Z[m]) \times \Hom_{\cate{D}(\mathcal{A})}(X, Y[n]) \arrow[r] & \Ext^{m+n}(X, Z) \\
+	(f, g) \arrow[r, mapsto] & fg := f[n] \circ g ,
+\end{tikzcd}\end{equation}
+dengan $m, n \in \Z$.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p012
+Mudah dilihat bahwa operasi ini asosiatif dan bilinear. Sebagai akibatnya,
+grup abelian
+% segment-id: o014.li2.chapter4.morphisms-extensions.q008
+\[ \Ext(X) := \bigoplus_{n \in \Z} \Ext^n(X, X) \]
+mempunyai struktur gelanggang alami, dengan
+$\identity_A \in \End_{\mathcal{A}}(A)$ sebagai satuan perkalian,
+sedangkan
+$\Ext(X, Y) := \bigoplus_{n \in \Z} \Ext^n(X, Y)$ menjadi
+$(\Ext(Y), \Ext(X))$-bimodul.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p013
+	Secara lebih umum, jika $\mathcal{A}$ bersifat $\Bbbk$-linear dengan $\Bbbk$
+	suatu gelanggang komutatif, maka funktor-funktor $\Ext^n$ bernilai dalam
+	$\Bbbk\dcate{Mod}$, sedangkan $\Ext(X)$ menjadi aljabar-$\Bbbk$. Definisi
+perkalian dalam \eqref{eqn:Ext-composition} menunjukkan bahwa $\Ext(X)$ bahkan
+menjadi aljabar-$\Bbbk$ bergradasi; lihat \cite[Definisi 7.4.1]{Li1}.
+Konstruksi semacam ini sangat berguna dalam teori representasi.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.d003
+\begin{definisi}\index{aljabar $\Ext$ ($\Ext$-algebra)}\label{def:Ext-algebra}
+	Misalkan $X \in \Obj(\mathcal{A})$. Aljabar bergradasi $\Ext(X)$ yang
+	didefinisikan di atas disebut \emph{aljabar-$\Ext$} dari objek $X$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p014
+Notasi $\Ext$ merupakan singkatan dari ``ekstensi''. Untuk menjelaskan kaitan
+konkretnya, pertama-tama kita definisikan apa yang dimaksud dengan ekstensi.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.d004
+\begin{definisi}\label{def:Yoneda-Ext}
+	\index{ekstensi (extension)}
+	Misalkan $X$ dan $Y$ objek-objek dari $\mathcal{A}$ dan
+	$n \in \Z_{\geq 1}$. Barisan eksak dalam $\mathcal{A}$ berbentuk
+% segment-id: o014.li2.chapter4.morphisms-extensions.q009
+	\[ \mathcal{E}: \quad 0 \to Y \to E^1 \to \cdots \to E^n \to X \to 0 \]
+	disebut \emph{ekstensi-$n$} dari $X$ oleh $Y$. Untuk $X,Y$ yang tetap,
+	pertimbangkan relasi biner berikut pada himpunan semua ekstensi-$n$:
+% segment-id: o014.li2.chapter4.morphisms-extensions.g005
+	\begin{multline*} \mathcal{E} \sim_0 \mathcal{E}' \iff \text{terdapat diagram komutatif} \\
+		\begin{tikzcd}[ampersand replacement=\&]
+			0 \arrow[r] \& Y \arrow[r] \arrow[equal, d] \& E^1 \arrow[r] \arrow[d] \& \cdots \arrow[r] \& E^n \arrow[d] \arrow[r] \& X \arrow[equal, d] \arrow[r] \& 0 \\
+			0 \arrow[r] \& Y \arrow[r] \& (E')^1 \arrow[r] \& \cdots \arrow[r] \& (E')^n \arrow[r] \& X \arrow[r] \& 0
+	\end{tikzcd}\end{multline*}
+	Relasi biner ini membangkitkan relasi ekuivalensi $\sim$
+	\footnote{Dengan kata lain, $\mathcal{E}_1 \sim \mathcal{E}_2$ jika dan
+	hanya jika keduanya dapat dihubungkan oleh serangkaian diagram komutatif
+	semacam ini.}; kelas-kelas ekuivalensi ekstensi-$n$ tersebut membentuk
+	himpunan $\Ext^{n, \text{Yoneda}}(X, Y)$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p015
+Proposisi \ref{prop:5-lemma} mengakibatkan bahwa ekuivalensi antara
+ekstensi-$1$ sama saja dengan isomorfisme barisan eksak pendek
+% segment-id: o014.li2.chapter4.morphisms-extensions.g006
+\[\begin{tikzcd}
+	0 \arrow[r] & Y \arrow[r] \arrow[equal, d] & E \arrow[r] \arrow[d, "\sim" sloped] & X \arrow[equal, d] \arrow[r] & 0 \\
+	0 \arrow[r] & Y \arrow[r] & E' \arrow[r] & X \arrow[r] & 0 .
+\end{tikzcd}\]
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.cv001
+\begin{konvensi}
+	Selanjutnya, ekstensi-$1$ cukup disebut ekstensi, dan ekuivalensi di
+	antaranya disebut isomorfisme. Barisan eksak pendek terbelah (Proposisi
+	\ref{prop:split-ses}) juga disebut ekstensi terbelah; semua ekstensi semacam
+	ini saling isomorfik.
+\end{konvensi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p016
+Terdapat operasi-operasi berikut pada ekstensi-$n$.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.l005
+\begin{description}
+% segment-id: o014.li2.chapter4.morphisms-extensions.i013
+	\item[Komposisi] Untuk
+	$[\mathcal{E}_1] \in \Ext^{n, \text{Yoneda}}(Y, Z)$ dan
+	$[\mathcal{E}_2] \in \Ext^{m, \text{Yoneda}}(X, Y)$, definisikan
+	$[\mathcal{E}_1] \circ [\mathcal{E}_2] \in
+	\Ext^{n+m, \text{Yoneda}}(X, Z)$ dengan menyambungkan kedua barisan eksak
+	ujung ke ujung pada $Y$. Operasi ini juga disebut \emph{produk Yoneda}.
+	\index{ekstensi!produk Yoneda (Yoneda product)}
+% segment-id: o014.li2.chapter4.morphisms-extensions.i014
+	\item[Tarik balik] Untuk morfisme $f: X' \to X$, pemetaan yang bersesuaian
+	$f^*: \Ext^{n, \text{Yoneda}}(X, Y) \to
+	\Ext^{n, \text{Yoneda}}(X', Y)$ diperoleh dari operasi berikut. Untuk
+	$[\mathcal{E}] \in \Ext^{n, \text{Yoneda}}(X, Y)$, tinjau diagram
+	komutatif
+% segment-id: o014.li2.chapter4.morphisms-extensions.g007
+	\[\begin{tikzcd}[every cell/.append style={font=\small}]
+		0 \arrow[r] & Y \arrow[r] \arrow[equal, d] & E^1 \arrow[r] \arrow[equal, d] & \cdots \arrow[r] & E^{n-1}  \arrow[equal, d] \arrow[r] & E^n \dtimes{X} X' \arrow[d] \arrow[r] \arrow[phantom, rd, "\Box" description] & X' \arrow[d, "f"] \arrow[r] & 0 \\
+		0 \arrow[r] & Y \arrow[r] & E^1 \arrow[r] & \cdots \arrow[r] & E^{n-1} \arrow[r] & E^n \arrow[r] & X \arrow[r] & 0
+	\end{tikzcd}\]
+	Persegi bertanda $\Box$ merupakan diagram tarik balik, sedangkan
+	$E^{n-1} \to E^n \dtimes{X} X'$ ditentukan oleh $E^{n-1} \to E^n$ dan
+	$E^{n-1} \xrightarrow{0} X'$. Tarik balik mempertahankan kernel, dan
+	$E^n \dtimes{X} X' \to X'$ tetap merupakan epimorfisme (Proposisi
+	\ref{prop:Abel-cat-pull-push}); dengan ini dapat diperiksa bahwa baris pertama
+	tetap eksak. Kelas ekuivalensinya ialah $f^* [\mathcal{E}]$.
+	
+% segment-id: o014.li2.chapter4.morphisms-extensions.i015
+	\item[Dorong keluar] Untuk morfisme $g: Y \to Y'$, pemetaan yang
+	bersesuaian
+	$g_*: \Ext^{n, \text{Yoneda}}(X, Y) \to
+	\Ext^{n, \text{Yoneda}}(X, Y')$ diperoleh dari operasi berikut. Untuk
+	$[\mathcal{E}] \in \Ext^{n, \text{Yoneda}}(X, Y)$, dorong keluar
+	memberikan diagram komutatif
+% segment-id: o014.li2.chapter4.morphisms-extensions.g008
+	\[\begin{tikzcd}[every cell/.append style={font=\small}]
+		0 \arrow[r] & Y \arrow[r] \arrow[d, "g"'] \arrow[phantom, rd, "\boxplus" description] & E^1 \arrow[r] \arrow[d] & E^2 \arrow[r] \arrow[equal, d] & \cdots \arrow[r] & E^n \arrow[equal, d] \arrow[r] & X \arrow[equal, d] \arrow[r] & 0 \\
+		0 \arrow[r] & Y' \arrow[r] & E^1 \dsqcup{Y} Y' \arrow[r] & E^2 \arrow[r] & \cdots \arrow[r] & E^n \arrow[r] & X \arrow[r] & 0
+	\end{tikzcd}\]
+	Di sini $E^1 \dsqcup{Y} Y' \to E^2$ ditentukan oleh $E^1 \to E^2$ dan
+	$Y' \xrightarrow{0} E^2$. Secara dual, dapat diperiksa bahwa baris kedua
+	tetap eksak. Kelas ekuivalensinya ialah $g_* [\mathcal{E}]$.
+	
+% segment-id: o014.li2.chapter4.morphisms-extensions.i016
+	\item[Jumlah langsung] Ambil jumlah langsung dua ekstensi suku demi suku,
+	$\mathcal{E} \oplus \mathcal{E}'$, lalu ambil kelas ekuivalensinya. Ini
+	memberikan pemetaan
+% segment-id: o014.li2.chapter4.morphisms-extensions.g009
+	\[\begin{tikzcd}
+		\oplus: \Ext^{n, \text{Yoneda}}(X, Y) \times \Ext^{n, \text{Yoneda}}(X', Y') \arrow[r] & \Ext^{n, \text{Yoneda}}(X \oplus X', Y \oplus Y') .
+	\end{tikzcd}\]
+	
+% segment-id: o014.li2.chapter4.morphisms-extensions.i017
+	\item[Jumlah Baer] Ini adalah pemetaan berikut:
+	\index{ekstensi!jumlah Baer (Baer sum)}
+	\index[sym1]{plusdot@$\dot{+}$}
+% segment-id: o014.li2.chapter4.morphisms-extensions.g010
+	\[\begin{tikzcd}
+		\dot{+}: \Ext^{n, \text{Yoneda}}(X, Y) \times \Ext^{n, \text{Yoneda}}(X, Y) \arrow[r] & \Ext^{n, \text{Yoneda}}(X, Y).
+	\end{tikzcd}\]
+	Definisinya ialah menarik balik
+	$[\mathcal{E}_1] \oplus [\mathcal{E}_2]$ sepanjang
+	$X \hookrightarrow X \times X$, lalu mendorongnya keluar sepanjang
+	$Y \oplus Y \twoheadrightarrow Y$ (morfisme-morfisme ini berasal dari
+	Konvensi \ref{con:biproduct}). Hasilnya ialah
+	$[\mathcal{E}_1] \dot{+} [\mathcal{E}_2] \in
+	\Ext^{n, \text{Yoneda}}(X, Y)$.
+\end{description}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p017
+Dapat diperiksa bahwa tarik balik dan dorong keluar saling komutatif:
+$g_* f^* = f^* g_*$, sedangkan jumlah Baer $\dot{+}$ bersifat komutatif.
+Sifat-sifat ini juga dapat diperoleh dari sifat-sifat $\Ext^n$ melalui teorema
+berikut.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.th002
+\begin{teorema}[Nobuo Yoneda]\label{prop:Yoneda-Ext}
+	Untuk setiap $X, Y \in \Obj(\mathcal{A})$ dan $n \in \Z_{\geq 1}$,
+	terdapat bijeksi kanonik
+% segment-id: o014.li2.chapter4.morphisms-extensions.q010
+	\[ \Ext^{n, \text{Yoneda}}(X, Y) \xrightarrow{1:1} \Ext^n(X, Y), \]
+	yang memetakan kelas ekuivalensi ekstensi-$n$
+	$0 \to Y \to E^1 \to \cdots \to E^n \to X \to 0$ ke
+	$as^{-1} \in \Hom_{\cate{D}(\mathcal{A})}(X, Y[n])$, dengan
+% segment-id: o014.li2.chapter4.morphisms-extensions.g011
+	\[\begin{tikzcd}
+		X \arrow[phantom, r, "" {name=A, yshift=2ex}] & {} & & & X \\
+		Z \arrow[u, "{s: \text{kuasi-isomorfisme}}"] \arrow[d, "a"'] & Y \arrow[r] \arrow[d, "\identity"'] & E^1 \arrow[r] & \cdots \arrow[r] & E^n \arrow[u] \\
+		Y[n] \arrow[phantom, r, "" {name=B, yshift=-2ex}] & Y & & &
+		\arrow[dash, from=A, to=B]
+	\end{tikzcd}\]
+	dengan suku-suku yang tidak ditampilkan semuanya bernilai $0$. Bijeksi ini
+	memadankan komposisi, jumlah langsung, tarik balik, dan dorong keluar
+	ekstensi-$n$ dengan operasi yang bersesuaian pada $\Ext^n$, sedangkan jumlah
+	Baer $\dot{+}$ berpadanan dengan struktur grup aditif pada
+	$\Ext^n(X, Y)$.
+\end{teorema}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf008
+\begin{bukti}
+	Ekuivalensi ekstensi $\mathcal{E} \sim \mathcal{E}'$ tercermin sebagai
+	kuasi-isomorfisme antara kompleks $Z$ dan $Z'$ yang bersesuaian. Karena itu,
+	pemetaan yang ditampilkan terdefinisi dengan baik. Tinggal ditunjukkan
+	bahwa pemetaan ini surjektif dan injektif. Kita mulai dengan surjektivitas.
+
+	Setiap $f \in \Hom_{\cate{D}(\mathcal{A})}(X, Y[n])$ berasal dari suatu
+	diagram $X \xleftarrow{s} Z \xrightarrow{a} Y[n]$ dalam
+	$\cate{C}(\mathcal{A})$, dengan $s$ suatu kuasi-isomorfisme. Setelah
+	mengomposisikannya dengan kuasi-isomorfisme
+	$\tau^{\leq 0} Z \to Z$, kita boleh mengandaikan bahwa
+	$Z \in \Obj(\cate{C}^{\leq 0}(\mathcal{A}))$. Selanjutnya, adjungsi dalam
+	Proposisi \ref{prop:truncation-adjunction} memfaktorkan $s$ dan
+	$a$ melalui kuasi-isomorfisme
+	$Z \twoheadrightarrow \tau^{\geq -n} Z$. Jadi, kita dapat mengandaikan bahwa
+	$Z \in \Obj(\cate{C}^{[-n, 0]}(\mathcal{A}))$.
+
+	Karena $Z$ eksak di luar derajat $0$, dengan meniru definisi dorong keluar
+	ekstensi di atas, definisikan kompleks $Z'$ sebagai baris kedua diagram
+	berikut:
+% segment-id: o014.li2.chapter4.morphisms-extensions.g012
+	\[\begin{tikzcd}[every cell/.append style={font=\small}]
+		\cdots 0 \arrow[r] & Z^{-n} \arrow[r] \arrow[d, "{a^{-n}}"'] \arrow[phantom, rd, "\boxplus" description] & Z^{-n+1} \arrow[r] \arrow[d] & Z^{-n+2} \arrow[r] \arrow[equal, d] & \cdots \\
+		\cdots 0 \arrow[r] & Y \arrow[r] & Z^{-n+1} \dsqcup{Z^{-n}} Y \arrow[r] & Z^{-n+2} \arrow[r] & \cdots
+	\end{tikzcd}\]
+	Morfisme-morfisme vertikal memberikan kuasi-isomorfisme $Z \to Z'$, dan
+	$a$ terfaktorkan sebagai $Z \to Z' \xrightarrow{a'} Y[n]$.
+	
+	Selain itu, $Z \xrightarrow{s} X$ juga terfaktorkan secara kanonik sebagai
+	$Z \to Z' \xrightarrow{s'} X$. Jika $n > 1$, hal ini langsung; jika
+	$n=1$, morfisme
+	$(s')^0: Z^0 \dsqcup{Z^{-1}} Y \to X$ ditentukan oleh
+	$s^0: Z^0 \to X$ dan $Y \xrightarrow{0} X$.
+
+	Singkatnya, kita telah mereduksi ke kasus ketika
+	$X \xleftarrow{s} Z \xrightarrow{a} Y[n]$ berbentuk
+% segment-id: o014.li2.chapter4.morphisms-extensions.g013
+	\[\begin{tikzcd}
+		\cdots 0 \arrow[r] & 0 \arrow[r] & 0 \arrow[r] & \cdots \arrow[r] & X \arrow[r] & 0 \cdots \\
+		\cdots 0 \arrow[r] & Z^{-n} \arrow[r] \arrow[equal, d] \arrow[u] & Z^{-n+1} \arrow[r] \arrow[u] \arrow[d] & \cdots \arrow[r] & Z^0 \arrow[u] \arrow[d] \arrow[r] & 0 \cdots \\
+		\cdots 0 \arrow[r] & Y \arrow[r] & 0 \arrow[r] & \cdots \arrow[r] & 0 \arrow[r] & 0 \cdots
+	\end{tikzcd}\]
+	Namun, membentangkan diagram ini memberikan ekstensi-$n$
+	$0 \to Y \to Z^{-n+1} \to \cdots \to Z^0 \to X \to 0$.
+	Surjektivitas pun terbukti.
+
+	Sekarang kita buktikan injektivitas. Mengingat
+	\eqref{eqn:localization-sim}, titik tolaknya ialah diagram komutatif dalam
+	$\cate{K}(\mathcal{A})$
+% segment-id: o014.li2.chapter4.morphisms-extensions.g014
+	\[\begin{tikzcd}
+		& Z_2 \arrow[ld, "s_2"'] \arrow[rd, "a_2"] & \\
+		X & W \arrow[l, "t"'] \arrow[r, "b"] \arrow[u] \arrow[d] & Y[n] \\
+		& Z_1 \arrow[lu, "s_1"] \arrow[ru, "a_1"'] & 
+	\end{tikzcd} \quad \begin{array}{l}
+		W \in \Obj(\cate{C}(\mathcal{A})), \quad s_i, t: \;\text{kuasi-isomorfisme}, \\
+		(Z_i; s_i, a_i) \;\text{mempunyai bentuk hasil reduksi di atas dan bersesuaian dengan ekstensi-$n$},\\
+		(i = 1, 2) .
+	\end{array}\]
+	Kita hendak menunjukkan bahwa diagram ini memberikan ekuivalensi
+	ekstensi-$n$. Dengan trik yang digunakan sebelumnya, mula-mula komposisikan
+	dengan $\tau^{\leq 0} W \to W$ untuk mereduksi ke
+	$W \in \Obj(\cate{C}^{\leq 0}(\mathcal{A}))$. Selanjutnya, gunakan adjungsi
+	pemenggalan untuk memfaktorkan semua morfisme dalam $\cate{C}(\mathcal{A})$
+	melalui $W \twoheadrightarrow \tau^{\geq -n} W$. Tuliskan $K$
+	untuk kernel
+	dari $W \twoheadrightarrow \tau^{\geq -n} W$. Karena
+	$\Hom^{-1}(K, V) = 0$ untuk setiap
+	$V \in \Obj(\cate{C}^{[-n, 0]}(\mathcal{A}))$, homotopi antara
+	morfisme-morfisme itu juga terfaktorkan dengan cara yang sama. Jadi,
+	operasi ini
+	tidak mengubah komutativitas diagram dalam $\cate{K}(\mathcal{A})$. Dengan
+	ini, kita mereduksi ke kasus
+	$W \in \Obj(\cate{C}^{[-n, 0]}(\mathcal{A}))$.
+
+	Serupa dengan itu, $\Hom^{-1}(W, X) = 0$, sehingga bagian kiri diagram telah
+	komutatif dalam $\cate{C}(\mathcal{A})$. Untuk bagian kanannya, karena
+	$a_i^{-n} = \identity_Y$, kita dapat mengubah $W \to Z_i$ dengan homotopi
+	yang sesuai agar bagian kanan juga komutatif dalam $\cate{C}(\mathcal{A})$.
+	Kemudian ulangi operasi dorong keluar dari pembuktian surjektivitas untuk
+	mereduksi ke kasus $W^{-n} = Y$ dan $b^{-n} = \identity_Y$, tanpa mengubah
+	komutativitas bagian kiri, sebagaimana dapat diverifikasi langsung.
+	Singkatnya, $(W; t, b)$ juga
+	bersesuaian dengan suatu ekstensi-$n$, dan diagram komutatif tersebut menjadi
+	saksi bagi relasi ekuivalensi $\sim$ dalam Definisi \ref{def:Yoneda-Ext}.
+	Inilah injektivitas yang diperlukan.
+	
+	Kecocokan komposisi, jumlah langsung, tarik balik, dan dorong keluar di bawah
+	bijeksi ini merupakan pemeriksaan rutin. Untuk jumlah Baer $\dot{+}$,
+	Proposisi \ref{prop:additive-cat-addition} merealisasikan penjumlahan $f+g$
+	dalam
+	$\Ext^n(X, Y) := \Hom_{\cate{D}(\mathcal{A})}(X, Y[n])$ sebagai komposisi
+	$X \to X \oplus X \xrightarrow{f \oplus g} (Y \oplus Y)[n] \to Y[n]$,
+	yang tepat cocok dengan definisi $\dot{+}$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.p018
+Secara dual, unsur $\Hom_{\cate{D}(\mathcal{A})}(X, Y[n])$ juga dapat
+dinyatakan oleh diagram berbentuk
+$X \xrightarrow{b} Z \xleftarrow{t} Y[n]$ dalam $\cate{C}(\mathcal{A})$,
+dengan $t$ suatu kuasi-isomorfisme. Perbandingan kedua konstruksi ini dibahas
+dalam soal-soal bab ini.
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pr005
+\begin{proposisi}\label{prop:Ext1-via-ses}
+	Tinjau ekstensi
+	$0 \to Y \xrightarrow{f} E \xrightarrow{g} X \to 0$. Dalam barisan eksak
+	dari Proposisi \ref{prop:Ext-generalities} (iii)
+% segment-id: o014.li2.chapter4.morphisms-extensions.q011
+	\begin{gather*}
+		\Hom_{\mathcal{A}}(X, E) \xrightarrow{g_*} \Hom_{\mathcal{A}}(X, X) \to \Ext^1(X, Y),
+	\end{gather*}
+	unsur yang ditentukan oleh ekstensi ini dalam $\Ext^1(X, Y)$ merupakan citra dari
+	$\identity_X$.
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf009
+\begin{bukti}
+	Homomorfisme penghubung
+	$\Hom_{\mathcal{A}}(X, X) \to \Ext^1(X, Y)$ tidak lain adalah $e_*$,
+	dengan $e \in \Hom_{\cate{D}(\mathcal{A})}(X, Y[1])$ ditentukan oleh
+	diagram dalam $\cate{C}(\mathcal{A})$
+% segment-id: o014.li2.chapter4.morphisms-extensions.g015
+	\[\begin{tikzcd}
+		X & \Cone(f) \arrow[r, "{\beta(f)}"] \arrow[l, "\Phi"', "\text{kuasi-isomorfisme}" inner sep=0.6em] & {Y[1]}
+	\end{tikzcd}\]
+	sebagaimana dalam Proposisi \ref{prop:ses-vs-triangle}. Namun, $\Cone(f)$
+	merupakan kompleks $Y \xrightarrow{f} E$ yang terkonsentrasi pada derajat $-1,0$.
+	Dengan membandingkannya dengan Teorema \ref{prop:Yoneda-Ext}, langsung
+	terlihat bahwa $e$ berasal dari ekstensi
+	$0 \to Y \xrightarrow{f} E \xrightarrow{g} X \to 0$.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pr006
+\begin{proposisi}\label{prop:Yoneda-zero}
+	Unsur nol dari grup aditif
+	$\left(\Ext^{n, \text{Yoneda}}(X, Y), \dot{+} \right)$ ditentukan oleh
+	ekstensi-ekstensi berikut:
+% segment-id: o014.li2.chapter4.morphisms-extensions.tb001
+	\begin{center}\begin{tabular}{|c|c|} \hline
+		$n = 1$ & Ekstensi terbelah $0 \to Y \to X \oplus Y \to X \to 0$ \\ \hline
+		$n = 2$ & $0 \to Y \xrightarrow{\identity_Y} Y \xrightarrow{0} X \xrightarrow{\identity_X} X \to 0$ \\ \hline
+		$n \geq 3$ & $0 \to Y \xrightarrow{\identity_Y} Y \to 0 \to \cdots \to 0 \to X \xrightarrow{\identity_X} X \to 0$ . \\ \hline
+	\end{tabular}\end{center}
+\end{proposisi}
+
+% segment-id: o014.li2.chapter4.morphisms-extensions.pf010
+\begin{bukti}
+	Untuk $n = 1$, misalkan barisan eksak pendek
+	$0 \to Y \xrightarrow{f} E \xrightarrow{g} X \to 0$ bersesuaian dengan
+	unsur nol. Barisan eksak dalam Proposisi \ref{prop:Ext1-via-ses}
+	menunjukkan bahwa terdapat $s \in \Hom_{\mathcal{A}}(X, E)$ sedemikian
+	sehingga $gs = \identity_X$; ini membuat barisan eksak pendek tersebut
+	terbelah.
+	
+	Selanjutnya tangani kasus $n = 2$. Jelas bahwa $\Ext^1(0, Y)$ dan
+	$\Ext^1(X, 0)$ keduanya merupakan grup nol; ekstensi yang
+	bersesuaian dapat diambil sebagai
+	$0 \to Y \xrightarrow{\identity} Y \to 0 \to 0$ dan
+	$0 \to 0 \to X \xrightarrow{\identity} X \to 0$. Karena
+	$\Ext^1 \times \Ext^1 \to \Ext^2$ bersifat bilinear, menyambungkan kedua
+	ekstensi ini ujung ke ujung memberikan unsur nol dari $\Ext^2(X, Y)$. Untuk
+	$n \geq 3$, tinjau ekstensi-$(n-1)$
+	$0 \to \cdots \to 0 \to X \xrightarrow{\identity} X \to 0$; metode serupa
+	memberikan unsur nol dari $\Ext^n(X, Y)$.
+\end{bukti}

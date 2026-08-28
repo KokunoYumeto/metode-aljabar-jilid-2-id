@@ -1,0 +1,478 @@
+% Unit 076 terjemahan Bahasa Indonesia dari chapter6.tex baris 869--1093.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter6.change-of-group
+% Cakupan: Bagian 6.5 lengkap; berhenti sebelum Bagian 6.6 pada baris 1094.
+
+% segment-id: o014.li2.chapter6.change-of-group.h001
+\section{Perubahan grup}\label{sec:change-of-group}
+\hypertarget{o014.aljabr2.chapter6.change-of-group}{ }
+
+% segment-id: o014.li2.chapter6.change-of-group.p001
+Tinjau homomorfisme grup $\varphi:H\to G$. Selanjutnya, $M$ menyatakan
+sembarang modul-$G$ dan $N$ sembarang modul-$H$. Tujuan pertama bagian ini ialah
+mendefinisikan dua keluarga homomorfisme kanonik
+% segment-id: o014.li2.chapter6.change-of-group.e001
+\begin{equation}\label{eqn:change-of-group-coh}\begin{aligned}
+	\Hm^n(G, M) & \to \Hm^n(H, \varphi^* M), \\
+	\Hm_n(H, \varphi^* M) & \to \Hm_n(G, M),
+\end{aligned}\end{equation}
+dengan $n\in\Z_{\geq0}$. Karena
+$\varphi^*:G\dcate{Mod}\to H\dcate{Mod}$ eksak, funktor-funktor pada kedua
+ruas homomorfisme tersebut mempunyai barisan eksak panjang; dengan kata lain,
+semuanya merupakan funktor-$\delta$ kohomologis atau homologis. Homomorfisme di
+atas akan kompatibel dengan barisan eksak panjang. Kita memperkenalkan dua
+metode konstruksi.
+
+% segment-id: o014.li2.chapter6.change-of-group.p002
+Untuk kohomologi, metode pertama meninjau keluarga funktor
+$B^n:=\Hm^n(H,\varphi^*(\cdot))$. Terdapat homomorfisme kanonik
+% segment-id: o014.li2.chapter6.change-of-group.q001
+\[ M^G \hookrightarrow M^{\varphi(H)} = (\varphi^* M)^H =  B^0(M). \]
+Karena $(\Hm^n(G,\cdot))_n$ merupakan funktor-$\delta$ kohomologis universal,
+homomorfisme ini meluas secara unik menjadi morfisme funktor-$\delta$
+kohomologis $\Hm^n(G,\cdot)\to B^n$.
+
+% segment-id: o014.li2.chapter6.change-of-group.p003
+Kasus homologi serupa; kuncinya ialah memakai homomorfisme kanonik
+$(\varphi^*M)_H=M_{\varphi(H)}\twoheadrightarrow M_G$.
+
+% segment-id: o014.li2.chapter6.change-of-group.p004
+Metode kedua bekerja dalam kategori turunan. Kita perkenalkan beberapa notasi
+yang terkait.
+
+% segment-id: o014.li2.chapter6.change-of-group.c001
+\begin{convention}
+	Tuliskan $\cate{C}(G):=\cate{C}(G\dcate{Mod})$,
+	$\cate{K}(G):=\cate{K}(G\dcate{Mod})$, dan
+	$\cate{D}(G):=\cate{D}(G\dcate{Mod})$; notasi serupa digunakan ketika
+	ditambahkan syarat keterbatasan satu sisi atau dua sisi. Demikian pula,
+	$\cate{C}(\Bbbk):=\cate{C}(\Bbbk\dcate{Mod})$, beserta
+	$\cate{K}(\Bbbk)$, $\cate{D}(\Bbbk)$, dan seterusnya.
+\end{convention}
+
+% segment-id: o014.li2.chapter6.change-of-group.p005
+Funktor pada tingkat kategori turunan yang diinduksi oleh funktor eksak
+$\varphi^*$ tetap ditulis
+$\varphi^*:\cate{D}(G)\to\cate{D}(H)$. Gunakan notasi lazim $\mathrm{R}$ dan
+$\mathrm{L}$ masing-masing untuk funktor turunan kanan dan kiri. Kita mencari
+morfisme antara funktor-funktor bertriangulasi
+% segment-id: o014.li2.chapter6.change-of-group.q002
+\begin{align*}
+	\mathrm{R}\left( (\cdot)^G \right) & \to \mathrm{R}\left( (\cdot)^H \right) \circ \varphi^* , \\
+	\mathrm{L}\left( (\cdot)_H \right) \circ \varphi^* & \to \mathrm{L}\left((\cdot)_G \right).
+\end{align*}
+
+% segment-id: o014.li2.chapter6.change-of-group.p006
+Kuncinya terletak pada sifat universal. Dalam kasus kohomologi, angkat funktor
+$(\cdot)^G$, $(\cdot)^H$, dan seterusnya ke tingkat kompleks dengan notasi
+yang sama. Tinjau diagram 2-sel berikut, yang melibatkan kategori, funktor, dan
+morfisme antarfunktor; semuanya dianggap bertriangulasi.
+% segment-id: o014.li2.chapter6.change-of-group.g001
+\begin{equation}\label{eqn:grp-pullback-2-cell}
+	\begin{tikzcd}[column sep=huge, row sep=large]
+		\cate{K}^+(G) \arrow[d] \arrow[r, "{\varphi^*}"] \arrow[rr, bend left, "{(\cdot)^G}", "{}"' {name=U}] & \cate{K}^+(H) \arrow[d] \arrow[r, "{(\cdot)^H}"] \arrow[from=U, Rightarrow] \arrow[Rightarrow, ld, "\sim" sloped] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+		\cate{D}^+(G) \arrow[r, "{\varphi^*}"'] & \cate{D}^+(H) \arrow[r, "{\mathrm{R}((\cdot)^H)}"'] & \cate{D}^+(\Bbbk)
+	\end{tikzcd}
+\end{equation}
+Simbol $\Rightarrow$ pada bagian melengkung berasal dari morfisme
+$(\cdot)^G\to(\cdot)^H\circ\varphi^*$ yang telah digunakan sebelumnya.
+Simbol $\stackrel{\sim}{\Rightarrow}$ pada persegi kiri berasal dari keeksakan
+$\varphi^*$, sedangkan $\Rightarrow$ pada persegi kanan merupakan data bawaan
+funktor turunan kanan $\mathrm{R}((\cdot)^H)$. Superskrip $+$ digunakan di sini
+hanya untuk menyederhanakan; versi tak terbatas memerlukan teori dalam
+\S\ref{sec:unbounded-derived}.
+
+% segment-id: o014.li2.chapter6.change-of-group.p007
+Ingat bahwa diagram 2-sel dapat dikomposisikan secara vertikal, yaitu dengan
+mengomposisikan morfisme $\Rightarrow$ antarfunktor. Berdasarkan sifat
+universal funktor turunan kanan (lihat Catatan~\ref{rem:derived-can-morphism}
+beserta pembahasan sebelumnya), terdapat tepat satu $\Downarrow$ pada diagram
+kiri berikut sedemikian sehingga
+% segment-id: o014.li2.chapter6.change-of-group.g002
+\begin{equation}\label{eqn:change-of-groups-univ}
+	\begin{tikzcd}[column sep=huge, row sep=large]
+		\cate{K}^+(G) \arrow[r, "{(\cdot)^G}"] \arrow[d] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+		\cate{D}^+(G) \arrow[r, "{\mathrm{R}((\cdot)^G)}", ""' {name=D}] \arrow[r, bend right=60, "" {name=U}, "{\mathrm{R}((\cdot)^H) \circ \varphi^*}"'] & \cate{D}^+(\Bbbk) \arrow[Rightarrow, from=D, to=U, "{\exists!}"']
+	\end{tikzcd} \xlongequal{\text{komposisi vertikal}} \;\text{komposisi vertikal dari \eqref{eqn:grp-pullback-2-cell}}
+	\begin{tikzcd}[column sep=huge, row sep=large]
+		\cate{K}^+(G) \arrow[r, "{(\cdot)^G}"] \arrow[d] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+		\cate{D}^+(G) \arrow[r, "{\mathrm{R}((\cdot)^H) \circ \varphi^*}"' inner sep=0.6em] & \cate{D}^+(\Bbbk)
+	\end{tikzcd}
+\end{equation}
+Simbol \rotatebox[origin=c]{45}{$\Leftarrow$} pada diagram kiri merupakan data
+bawaan funktor turunan kanan $\mathrm{R}\left((\cdot)^G\right)$. Dengan
+demikian ditentukan secara unik morfisme
+% segment-id: o014.li2.chapter6.change-of-group.q003
+\[ \mathrm{R}\left( (\cdot)^G \right) \to \mathrm{R}\left((\cdot)^H \right) \circ \varphi^* . \]
+
+% segment-id: o014.li2.chapter6.change-of-group.p008
+Metode untuk kasus homologi bersifat dual. Metode itu memakai sifat universal
+funktor turunan kiri dan morfisme
+$(\cdot)_H\circ\varphi^*\to(\cdot)_G$ yang telah digunakan sebelumnya.
+Selanjutnya kita berikan deskripsi yang lebih langsung.
+
+% segment-id: o014.li2.chapter6.change-of-group.le001
+\begin{lemma}\label{prop:change-of-groups-alt}
+	Untuk setiap homomorfisme grup $\varphi:H\to G$, morfisme yang dicirikan di atas
+	dapat didefinisikan sebagai berikut.
+% segment-id: o014.li2.chapter6.change-of-group.l001
+	\begin{itemize}
+% segment-id: o014.li2.chapter6.change-of-group.i001
+		\item Dalam kasus kohomologi, ambil komposisi
+% segment-id: o014.li2.chapter6.change-of-group.e002
+		\begin{equation}\label{eqn:change-of-group-dec-1}
+			\mathrm{R}\left( (\cdot)^G \right) \to \mathrm{R}\left( (\cdot)^H \circ \varphi^* \right) \to \mathrm{R}\left( (\cdot)^H \right) \circ \varphi^* .
+		\end{equation}
+		Bagian pertama berasal dari
+		$(\cdot)^G\to(\cdot)^H\circ\varphi^*$, karena morfisme antarfunktor
+		menghasilkan morfisme antara funktor turunan kanannya; bagian kedua berasal
+		dari Teorema~\ref{prop:localization-triangulated-composite}~(i).
+% segment-id: o014.li2.chapter6.change-of-group.i002
+		\item Kasus homologi serupa: ambil komposisi
+% segment-id: o014.li2.chapter6.change-of-group.e003
+		\begin{equation}\label{eqn:change-of-group-dec-2}
+			\mathrm{L}\left( (\cdot)_H \right) \circ \varphi^* \to \mathrm{L} \left( (\cdot)_H \circ \varphi^* \right) \to \mathrm{L}\left( (\cdot)_G \right).
+		\end{equation}
+		Bagian pertama berasal dari
+		Teorema~\ref{prop:localization-triangulated-composite}~(ii), sedangkan
+		bagian kedua berasal dari $(\cdot)_H\circ\varphi^*\to(\cdot)_G$.
+	\end{itemize}
+\end{lemma}
+% segment-id: o014.li2.chapter6.change-of-group.pf001
+\begin{proof}
+	Cukup dibahas kasus kohomologi. Pertama, untuk morfisme yang terdapat dalam
+	\eqref{eqn:change-of-group-dec-1}, periksa kesamaan komposisi vertikal
+% segment-id: o014.li2.chapter6.change-of-group.g003
+	\[\begin{tikzcd}[column sep=huge, row sep=large]
+		\cate{K}^+(G) \arrow[r, "{(\cdot)^G}"] \arrow[d] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+		\cate{D}^+(G) \arrow[r, "{\mathrm{R}((\cdot)^G)}", ""' {name=D}] \arrow[r, bend right=60, "" {name=U}, "{\mathrm{R}((\cdot)^H \circ \varphi^*)}"'] & \cate{D}^+(\Bbbk) \arrow[Rightarrow, from=D, to=U]
+	\end{tikzcd} = \begin{tikzcd}[column sep=huge, row sep=large]
+		\cate{K}^+(G) \arrow[r, "{(\cdot)^H \circ \varphi^*}" {name=D}] \arrow[d] \arrow[r, bend left=60, ""' {name=U}, "{(\cdot)^G}"] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+		\cate{D}^+(G) \arrow[r, "{\mathrm{R}((\cdot)^H \circ \varphi^* ) }"'] & \cate{D}^+(\Bbbk) \arrow[Rightarrow, from=U, to=D]
+	\end{tikzcd}\]
+dan
+% segment-id: o014.li2.chapter6.change-of-group.g004
+	\[\begin{tikzcd}[column sep=huge, row sep=large]
+		\cate{K}^+(G) \arrow[r, "{(\cdot)^H \circ \varphi^*}"] \arrow[d] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+		\cate{D}^+(G) \arrow[r, "{\mathrm{R}((\cdot)^H \circ \varphi^* ) }"' {name=U}] \arrow[r, bend right=60, "{\mathrm{R}((\cdot)^H) \circ \varphi^*}"', "" {name=D}] & \cate{D}^+(\Bbbk) \arrow[Rightarrow, from=U, to=D]
+	\end{tikzcd} = \begin{tikzcd}[column sep=huge, row sep=large]
+		\cate{K}^+(G) \arrow[d] \arrow[r, "{\varphi^*}"] & \cate{K}^+(H) \arrow[d] \arrow[r, "{(\cdot)^H}"] \arrow[Rightarrow, ld, "\sim" sloped] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+		\cate{D}^+(G) \arrow[r, "{\varphi^*}"'] & \cate{D}^+(H) \arrow[r, "{\mathrm{R}((\cdot)^H)}"'] & \cate{D}^+(\Bbbk).
+	\end{tikzcd}\]
+
+	Kesamaan pertama memang mencirikan morfisme terinduksi
+	$\mathrm{R}((\cdot)^G)\to
+	\mathrm{R}((\cdot)^H\circ\varphi^*)$, sedangkan kesamaan kedua mencirikan
+	morfisme kanonik dalam
+	Teorema~\ref{prop:localization-triangulated-composite}. Keduanya berasal dari
+	sifat universal funktor turunan kanan; lihat penjelasan pada awal
+	\S\ref{sec:triangulated-functor-localization}. Dengan merangkaikan kesamaan
+	ini, terlihat bahwa komposisi \eqref{eqn:change-of-group-dec-1} memenuhi
+	\eqref{eqn:change-of-groups-univ}.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.change-of-group.r001
+\begin{remark}\label{rem:change-of-group-Yoneda}
+	Metode pertama, yang didasarkan pada sifat funktor-$\delta$ kohomologis
+	universal, dapat dipadukan dengan teori kategori turunan untuk memberikan
+	konstruksi ringkas lain bagi kasus kohomologis
+	\eqref{eqn:change-of-group-coh}. Ingat bahwa untuk setiap modul-$G$ $M$ dan
+	setiap $n$, terdapat isomorfisme kanonik
+% segment-id: o014.li2.chapter6.change-of-group.q004
+	\[ \Hm^n(G, M) \simeq \Ext^n_G(\Bbbk, M) \simeq \Hom_{\cate{D}(G)}(\Bbbk, M[n]), \quad \Ext^\bullet_G := \Ext^\bullet_{\Bbbk[G]}; \]
+	dan demikian pula bagi modul-$H$. Karena
+	$\varphi^*\Bbbk\simeq\Bbbk$ dan $\varphi^*$ merupakan funktor
+	bertriangulasi, kita menyatakan bahwa homomorfisme kanonik yang dicari sama
+	dengan komposisi
+% segment-id: o014.li2.chapter6.change-of-group.q005
+	\[ \Hom_{\cate{D}(G)}(\Bbbk, M[n]) \xrightarrow{\text{funktor} \;\varphi^*} \Hom_{\cate{D}(H)}\left( \varphi^* \Bbbk, \varphi^* (M[n])\right) \simeq \Hom_{\cate{D}(H)}\left(\Bbbk, (\varphi^* M)[n]\right). \]
+
+	Untuk membuktikannya, cukup perhatikan bahwa jika $n=0$, rumus ini menjadi
+	pembenaman yang jelas $M^G\hookrightarrow(\varphi^*M)^H$ (karena
+	$\varphi^*\Bbbk\simeq\Bbbk$ memetakan $1$ ke $1$), dan bahwa setiap
+	morfisme dalam komposisi di atas kompatibel dengan barisan eksak panjang pada
+	variabel kedua dari funktor $\Hom$ dalam kategori bertriangulasi
+	(Proposisi~\ref{prop:cohomological-Hom-functor}).
+\end{remark}
+
+% segment-id: o014.li2.chapter6.change-of-group.r002
+\begin{remark}\label{rem:change-of-group-coh}
+	Jika $\varphi$ merupakan penyertaan subgrup, maka
+	$\varphi^*=\Res^G_H$ mempertahankan objek injektif dan projektif. Menurut
+	Teorema~\ref{prop:localization-triangulated-composite}~(iii) dan (iv), kedua
+	morfisme dalam Lema~\ref{prop:change-of-groups-alt},
+% segment-id: o014.li2.chapter6.change-of-group.q006
+	\[ \mathrm{R}\left( (\cdot)^H \circ \varphi^* \right) \to \mathrm{R}\left( (\cdot)^H \right) \circ \varphi^*, \quad
+	\mathrm{L}\left( (\cdot)_H \right) \circ \varphi^* \to \mathrm{L} \left( (\cdot)_H \circ \varphi^* \right) \]
+	merupakan isomorfisme. Deskripsi morfisme kanonik pun semakin sederhana:
+	ambil resolusi injektif $M\to I:=[I^0\to I^1\to\cdots]$. Maka
+	$\Res^G_H(M)\to\Res^G_H(I)$ juga merupakan resolusi injektif, dan tindakan
+	morfisme
+	$\mathrm{R}\left((\cdot)^G\right)\to
+	\mathrm{R}\left((\cdot)^H\right)\circ\Res^G_H$ pada $M$ sama dengan
+% segment-id: o014.li2.chapter6.change-of-group.q007
+	\[ I^G \to \left( \Res^G_H(I)\right)^H, \quad I^G := \left[ I^{0, G} \to I^{1, G} \to \cdots \right], \;\text{dan seterusnya}. \]
+
+	Dalam kasus homologi, ambil resolusi projektif $P\to M$. Tindakan morfisme
+	$\mathrm{L}\left((\cdot)_H\right)\circ\Res^G_H
+	\to\mathrm{L}\left((\cdot)_G\right)$ pada $M$ sama dengan
+	$\left(\Res^G_H(P)\right)_H\to P_G$.
+\end{remark}
+
+% segment-id: o014.li2.chapter6.change-of-group.le002
+\begin{lemma}\label{prop:change-of-group-compo}
+	Misalkan $F\xleftarrow{\psi}G\xleftarrow{\varphi}H$ homomorfisme grup,
+	$L$ modul-$F$, dan $n\in\Z_{\geq0}$. Maka komposisi
+	$\Hm^n(F,L)\to\Hm^n(G,\psi^*L)\to
+	\Hm^n(H,\varphi^*\psi^*L)$ sama dengan
+	$\Hm^n(F,L)\to\Hm^n(H,(\psi\varphi)^*L)$.
+
+	Demikian pula, komposisi
+	$\Hm_n(H,\varphi^*\psi^*L)\to\Hm_n(G,\psi^*L)\to\Hm_n(F,L)$ sama dengan
+	$\Hm_n(H,(\psi\varphi)^*L)\to\Hm_n(F,L)$.
+
+	Kesamaan serupa juga berlaku pada tingkat kategori turunan.
+\end{lemma}
+% segment-id: o014.li2.chapter6.change-of-group.pf002
+\begin{proof}
+	Pernyataan tentang $\Hm^n$ (atau $\Hm_n$) merupakan penerapan langsung
+	sifat funktor-$\delta$ kohomologis (atau homologis) universal dan cukup
+	diverifikasi untuk kasus $n=0$.
+
+	Untuk versi kategori turunan, pernyataan mengenai $\Hm^n$ harus diganti
+	dengan
+% segment-id: o014.li2.chapter6.change-of-group.q008
+	\[ \left[ \mathrm{R}((\cdot)^F) \to \mathrm{R}((\cdot)^G) \circ \psi^* \to \mathrm{R}((\cdot)^H) \circ \varphi^* \circ \psi^* \right] \xlongequal{\text{komposisi}} \left[ \mathrm{R}((\cdot)^F) \to \mathrm{R}((\cdot)^H) \circ (\psi\varphi)^* \right]. \]
+	Untuk itu, cukup periksa sifat \eqref{eqn:change-of-groups-univ} bagi ruas
+	kiri. Hal ini menjadi latihan yang menarik dan tidak sulit mengenai komposisi
+	2-sel; pembaca dipersilakan mencobanya.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.change-of-group.p009
+Sekarang kita perluas lebih lanjut homomorfisme kanonik
+\eqref{eqn:change-of-group-coh}.
+
+% segment-id: o014.li2.chapter6.change-of-group.d001
+\begin{definition}\label{def:group-equivariance}
+	Misalkan $M$ modul-$G$ dan $N$ modul-$H$. Di bawah ini, $f$ selalu
+	merupakan homomorfisme modul-$\Bbbk$ dan $h$ sembarang unsur $H$.
+% segment-id: o014.li2.chapter6.change-of-group.l002
+	\begin{itemize}
+% segment-id: o014.li2.chapter6.change-of-group.i003
+		\item Jika $f:M\to N$ memenuhi $f(\varphi(h)x)=hf(x)$ untuk $x\in M$,
+		maka $f$ disebut \emph{ekuivarian terhadap $\varphi$}.
+% segment-id: o014.li2.chapter6.change-of-group.i004
+		\item Jika $f:N\to M$ memenuhi $f(hy)=\varphi(h)f(y)$ untuk $y\in N$,
+		maka $f$ disebut \emph{ekuivarian terhadap $\varphi$}.
+	\end{itemize}
+\end{definition}
+
+% segment-id: o014.li2.chapter6.change-of-group.p010
+Ekuivariansi juga setara dengan pernyataan bahwa $f$ memberikan homomorfisme
+modul-$H$ $\varphi^*M\to N$ atau $N\to\varphi^*M$. Selain itu,
+$\identity_M:M\to\varphi^*M$ dan
+$\identity_M:\varphi^*M\to M$ keduanya ekuivarian terhadap $\varphi$.
+
+% segment-id: o014.li2.chapter6.change-of-group.d002
+\begin{definition}\label{def:change-of-group-equiv}
+% segment-id: o014.li2.chapter6.change-of-group.x001
+	\index{homomorfisme ekuivarian (equivariant homomorphism)}
+	Jika $f:M\to N$ ekuivarian terhadap $\varphi$, definisikan keluarga
+	homomorfisme kanonik
+% segment-id: o014.li2.chapter6.change-of-group.q009
+	\[ \Hm^n(f) := \left[ \Hm^n(G, M) \to \Hm^n(H, \varphi^* M) \to \Hm^n(H, N) \right] \;\text{sebagai komposisi}; \]
+	Jika $f:N\to M$ ekuivarian terhadap $\varphi$, definisikan keluarga
+	homomorfisme kanonik
+% segment-id: o014.li2.chapter6.change-of-group.q010
+	\[ \Hm_n(f) := \left[ \Hm_n(H, N) \to \Hm_n(H, \varphi^* M) \to \Hm_n(G, M) \right] \;\text{sebagai komposisi}. \]
+\end{definition}
+
+% segment-id: o014.li2.chapter6.change-of-group.p011
+Perhatikan bahwa $f$ dan $\varphi$ berlawanan arah dalam kasus kohomologi dan
+searah dalam kasus homologi. Homomorfisme dalam
+Definisi~\ref{def:change-of-group-equiv} kompatibel dengan barisan eksak
+panjang. Homomorfisme tersebut mencakup funktorialitas $\Hm^n$ dan $\Hm_n$
+(atau homomorfisme alami \eqref{eqn:change-of-group-coh}) sebagai kasus khusus
+$\varphi=\identity_G$ (atau $f=\identity_M$). Homomorfisme ini juga dapat
+diangkat ke tingkat kategori turunan.
+
+% segment-id: o014.li2.chapter6.change-of-group.p012
+Homomorfisme modul yang ekuivarian juga dapat dikomposisikan bersamaan dengan
+homomorfisme grup; definisinya sudah jelas.
+
+% segment-id: o014.li2.chapter6.change-of-group.pr001
+\begin{proposition}[Funktorialitas terhadap homomorfisme ekuivarian]
+\label{prop:change-of-group-composite}
+	Tinjau homomorfisme grup
+	$F\xleftarrow{\psi}G\xleftarrow{\varphi}H$ dan homomorfisme modul
+	ekuivarian $L\xrightarrow{g}M\xrightarrow{f}N$, dengan $L$ modul-$F$,
+	$M$ modul-$G$, dan $N$ modul-$H$. Untuk setiap $n\in\Z$, berlaku
+	$\Hm^n(fg)=\Hm^n(f)\Hm^n(g)$.
+
+	Jika yang ditinjau adalah homomorfisme modul ekuivarian berarah sebaliknya,
+	$L\xleftarrow{g}M\xleftarrow{f}N$, maka
+	$\Hm_n(gf)=\Hm_n(g)\Hm_n(f)$. Kesamaan komposisi serupa juga berlaku pada
+	tingkat kategori turunan.
+\end{proposition}
+% segment-id: o014.li2.chapter6.change-of-group.pf003
+\begin{proof}
+	Cukup dibahas kasus kohomologi. Misalkan $n$ tetap. Berdasarkan
+	Lema~\ref{prop:change-of-group-compo}, cukup dibuktikan komutativitas diagram
+	komutativitas diagram
+% segment-id: o014.li2.chapter6.change-of-group.g005
+	\[\begin{tikzcd}
+		\Hm^n(F, L) \arrow[d] & & \\
+		\Hm^n(G, \psi^* L) \arrow[r] \arrow[d] & \Hm^n(G, M) \arrow[d] & \\
+		\Hm^n(H, \varphi^* \psi^* L) \arrow[r] & \Hm^n(H, \varphi^* M) \arrow[r] & \Hm^n(H, N)
+	\end{tikzcd}\]
+	Namun, setiap perseginya komutatif karena funktorialitas
+\eqref{eqn:change-of-group-coh}. Versi kategori turunan sepenuhnya serupa.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.change-of-group.ex001
+\begin{example}[Konjugasi]\label{eg:change-of-group-conj}
+	Misalkan $H\lhd G$. Setiap $t\in G$ menginduksi automorfisme $H$
+	$a_t:h\mapsto t^{-1}ht$. Sekarang misalkan $M$ modul-$G$ dan, demi
+	menyederhanakan notasi, tetap tuliskan $M$ untuk $\Res^G_HM$. Homomorfisme
+	$c_t:M\xrightarrow{x\mapsto tx}M$ ekuivarian terhadap homomorfisme grup
+	berarah sebaliknya $H\xleftarrow{a_t}H$. Homomorfisme yang bersesuaian,
+% segment-id: o014.li2.chapter6.change-of-group.q011
+	\[ \Hm^n(c_t): \Hm^n(H, M) \to \Hm^n(H, M), \]
+	menurut definisi terurai menjadi
+	$\Hm^n(H,M)\to\Hm^n(H,a_t^*M)\xrightarrow{c_t}\Hm^n(H,M)$; setiap
+	bagiannya merupakan morfisme antara funktor-$\delta$ kohomologis.
+% segment-id: o014.li2.chapter6.change-of-group.l003
+	\begin{itemize}
+% segment-id: o014.li2.chapter6.change-of-group.i005
+		\item Jika $n=0$, bagian pertama hanyalah
+		$\identity_M:M^H\to a_t^*(M)^H=M^H$.
+% segment-id: o014.li2.chapter6.change-of-group.i006
+		\item Jika $n=0$, bagian kedua sama dengan $c_t:M^H\to M^H$, yang hanya
+		bergantung pada koset $tH$.
+	\end{itemize}
+	Jika dipilih resolusi injektif modul-$G$ $M\to I$, pengambilan
+	$c_t:I^{n,H}\to I^{n,H}$ suku demi suku memberikan $\Hm^n(c_t)$. Jika
+	$G=H$, maka koset $tG=G$, sehingga $\Hm^n(c_t)=\identity$.
+
+	Kasus homologi serupa, tetapi $a_t$ harus diganti dengan automorfisme grup
+	$b_t:h\mapsto tht^{-1}$ yang searah dengan homomorfisme $c_t$; pembaca
+	dipersilakan memeriksanya.
+\end{example}
+
+% segment-id: o014.li2.chapter6.change-of-group.p013
+Terakhir, kita jelaskan cara mendefinisikan secara eksplisit homomorfisme
+kanonik dari Definisi~\ref{def:group-equivariance} dengan kompleks standar
+(atau kompleks rantai standar) dalam
+Proposisi~\ref{prop:groupcoh-cochain} (atau
+Proposisi~\ref{prop:grouph-chain}). Dengan demikian, seluruh operasi menjadi konkret.
+
+% segment-id: o014.li2.chapter6.change-of-group.pr002
+\begin{proposition}\label{prop:grp-equiv}
+	Tinjau homomorfisme grup $\varphi:H\to G$. Misalkan $M$ modul-$G$, $N$
+	modul-$H$, dan $n\in\Z_{\geq0}$. Identifikasikan $\Hm^n(G,M)$ (atau
+	$\Hm_n(G,M)$) dengan $\Hm^n$ (atau $\Hm_n$) dari kompleks standar
+	$C(G,M)$ (atau kompleks rantai $C(G,M)$); lakukan hal serupa setelah
+	$(G,M)$ diganti dengan $(H,N)$.
+
+% segment-id: o014.li2.chapter6.change-of-group.l004
+	\begin{itemize}
+% segment-id: o014.li2.chapter6.change-of-group.i007
+		\item Misalkan homomorfisme modul $f:M\to N$ ekuivarian terhadap
+		$\varphi$. Maka $\Hm^n(f)$ berasal dari morfisme kompleks
+% segment-id: o014.li2.chapter6.change-of-group.g006
+		\[\begin{tikzcd}[row sep=tiny]
+			C^m(G, M) \arrow[r] & C^m(H, N) \\
+			c \arrow[mapsto, r] & {\left[ (h_1, \ldots, h_m) \mapsto f(c(\varphi(h_1), \ldots, \varphi(h_m))) \right]}.
+		\end{tikzcd}\]
+% segment-id: o014.li2.chapter6.change-of-group.i008
+		\item Misalkan homomorfisme modul $f:N\to M$ ekuivarian terhadap
+		$\varphi$. Maka $\Hm_n(f)$ berasal dari morfisme kompleks rantai
+% segment-id: o014.li2.chapter6.change-of-group.g007
+		\[\begin{tikzcd}[row sep=tiny]
+			C_m(H, N) \arrow[r] & C_m(G, M) \\
+			(h_1 | \cdots | h_m)^\dagger \otimes y \arrow[mapsto, r] & (\varphi(h_1) | \cdots | \varphi(h_m))^\dagger \otimes f(y).
+		\end{tikzcd}\]
+	\end{itemize}
+	Sesungguhnya, rumus ini memberikan morfisme yang diinduksi oleh $f$ pada
+	tingkat kategori turunan.
+
+	Hasil di atas juga berlaku bagi kompleks standar ternormalisasi
+	$(\overline{C}^m(G,M))_m$ dan kompleks rantai ternormalisasi
+	$(\overline{C}_m(G,M))_m$ yang diperkenalkan dalam
+	Catatan~\ref{rem:nor-cochain}, dengan rumus yang sama.
+\end{proposition}
+% segment-id: o014.li2.chapter6.change-of-group.pf004
+\begin{proof}
+	Masalahnya terbagi menjadi dua bagian: pertama kasus $f=\identity_M$, yaitu
+	deskripsi eksplisit homomorfisme kanonik
+	\eqref{eqn:change-of-group-coh}; kedua kasus $\varphi=\identity$. Bagian
+	terakhir tidak sulit, sehingga hanya bagian pertama yang dibahas.
+
+	Tinjau kasus kohomologi. Proposisi~\ref{prop:trivial-mod-resolution}
+	memberikan resolusi projektif modul-$G$ $\mathsf{L}^G\to\Bbbk$ (atau
+	resolusi projektif modul-$H$ $\mathsf{L}^H\to\Bbbk$). Sekarang tinjau
+% segment-id: o014.li2.chapter6.change-of-group.q012
+	\[ \Hom^\bullet_G \left( \mathsf{L}^G, \cdot\right) \xrightarrow{\varphi^*} \Hom^\bullet_H\left( \varphi^* (\mathsf{L}^G), \varphi^*(\cdot)\right) \to \Hom^\bullet_H\left(\mathsf{L}^H, \varphi^*(\cdot)\right), \]
+	dengan bagian kedua berasal dari morfisme
+	$\mathsf{L}^H\to\varphi^*(\mathsf{L}^G)$
+	(lihat Lema~\ref{prop:Shapiro-alpha-beta}). Tuliskan $\Theta$ untuk
+	komposisinya. Morfisme kompleks yang dinyatakan,
+	$C(G,M)\to C(H,\varphi^*(M))$, bersesuaian dengan tindakan $\Theta$ pada
+	modul-$G$ $M$.
+
+	Sekarang kita buktikan bahwa rumus ini memang memberikan homomorfisme kanonik
+	yang telah didefinisikan. Metode pertama kembali ke definisi
+	\eqref{eqn:change-of-group-coh}, yang berasal dari sifat funktor-$\delta$
+	kohomologis universal. Cukup ditunjukkan bahwa
+	$C(G,M)\to C(H,\varphi^*M)$ pada $\Hm^0$ sama dengan pembenaman
+	$M^G\to(\varphi^*M)^H$ dan kompatibel dengan barisan eksak panjang.
+	Perinciannya diserahkan kepada pembaca.
+
+	Metode kedua bekerja dalam kategori turunan. Funktor
+	$\Hom^\bullet_H(\mathsf{L}^H,\cdot)$ mempertahankan kompleks asiklik,
+	sehingga menginduksi funktor
+	$\cate{D}^+(H)\to\cate{D}^+(\Bbbk)$ pada tingkat kategori turunan, tetap
+	dengan notasi yang sama. Funktor ini dapat diidentifikasikan dengan
+	$\RHom_H(\Bbbk,\cdot)$. Jadi, memverifikasi
+	\eqref{eqn:change-of-groups-univ} setara dengan memverifikasi kesamaan
+	komposisi vertikal
+% segment-id: o014.li2.chapter6.change-of-group.g008
+	\begin{equation*}
+		\begin{tikzcd}[column sep=huge, row sep=large]
+			\cate{K}^+(G) \arrow[r, "{\Hom^\bullet_G(\Bbbk, \cdot)}"] \arrow[d] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+			\cate{D}^+(G) \arrow[r, "{\Hom^\bullet_G(\mathsf{L}^G, \cdot)}", ""' {name=D}] \arrow[r, bend right=60, "" {name=U}, "{\Hom^\bullet_H(\mathsf{L}^H, \varphi^*(\cdot))}"'] & \cate{D}^+(\Bbbk) \arrow[Rightarrow, from=D, to=U, "\Theta"']
+		\end{tikzcd} = \begin{tikzcd}[column sep=huge, row sep=large]
+			\cate{K}^+(G) \arrow[d] \arrow[r, "{\varphi^*}"] \arrow[rr, bend left, "{\Hom^\bullet_G(\Bbbk, \cdot)}", "{}"' {name=U}] & \cate{K}^+(H) \arrow[d] \arrow[r, "{\Hom^\bullet_H(\Bbbk, \cdot)}"] \arrow[from=U, Rightarrow] \arrow[Rightarrow, ld, "\sim" sloped] & \cate{K}^+(\Bbbk) \arrow[d] \arrow[Rightarrow, ld] \\
+			\cate{D}^+(G) \arrow[r, "{\varphi^*}"'] & \cate{D}^+(H) \arrow[r, "{\Hom^\bullet_H(\mathsf{L}^H, \cdot)}"'] & \cate{D}^+(\Bbbk) ,
+		\end{tikzcd}
+	\end{equation*}
+dengan simbol \rotatebox[origin=c]{45}{$\Leftarrow$} yang melibatkan
+$\Hom^\bullet$ berasal dari $\mathsf{L}^G\to\Bbbk$ dan
+$\mathsf{L}^H\to\Bbbk$. Versi pada tingkat kompleks dari morfisme
+$(\cdot)^G\to(\cdot)^H\circ\varphi^*$ mudah diidentifikasikan dengan
+$\varphi^*:\Hom^\bullet_G(\Bbbk,\cdot)\to
+\Hom^\bullet_H(\varphi^*\Bbbk,\varphi^*(\cdot))
+=\Hom^\bullet_H(\Bbbk,\varphi^*(\cdot))$. Kesamaan yang dicari pun cukup
+dibuktikan melalui komutativitas bagian bingkai luar diagram kompleks berikut:
+% segment-id: o014.li2.chapter6.change-of-group.g009
+	\[\begin{tikzcd}
+		\Hom^\bullet_G(\Bbbk, \cdot) \arrow[r] \arrow[d, "{\varphi^*}"'] & \Hom^\bullet_G(\mathsf{L}^G, \cdot) \arrow[d, "{\varphi^*}"] \arrow[rd, "\Theta"] & \\
+		\Hom^\bullet_H(\Bbbk, \varphi^*(\cdot)) \arrow[r] \arrow[rr, bend right=30, "{\text{diinduksi oleh}\; \mathsf{L}^H \to \Bbbk}"] & \Hom^\bullet_H(\varphi^* \mathsf{L}^G, \varphi^*(\cdot)) \arrow[r] & \Hom^\bullet_H(\mathsf{L}^H, \varphi^*(\cdot)).
+	\end{tikzcd}\]
+	Tinggal ditunjukkan bahwa bagian melengkung di bawah komutatif, tetapi hal
+	ini tepat merupakan isi Lema~\ref{prop:Shapiro-alpha-beta}. Dengan demikian
+	kasus kohomologi terbukti. Kasus homologi serupa.
+
+	Terakhir, versi untuk $\overline{C}(G,M)$ diperoleh dengan mengganti
+	$\mathsf{L}^G$ dan $\mathsf{L}^H$ dalam pembuktian masing-masing dengan
+	$\overline{\mathsf{L}}^G$ dan $\overline{\mathsf{L}}^H$; selebihnya berlaku
+	tanpa perubahan.
+\end{proof}
+
+% segment-id: o014.li2.chapter6.change-of-group.p014
+Setelah tersedia rumus eksplisit dari Proposisi~\ref{prop:grp-equiv}, kesamaan
+$\Hm^n(fg)=\Hm^n(f)\Hm^n(g)$ dan
+$\Hm_n(gf)=\Hm_n(g)\Hm_n(f)$ dalam
+Proposisi~\ref{prop:change-of-group-composite}, beserta versi kategori
+turunannya, langsung tampak pada tingkat kompleks.

@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "html_files": 2,
+  "units_and_bridges": 148,
+  "mathml_elements": 0,
+  "mathjax_source_elements": 27308,
+  "images": 0,
+  "diagram_alt_texts_applied": 829,
+  "ledger_diagrams": 829,
+  "local_references_checked": 3541,
+  "errors": [],
+  "limitations": [
+    "MathML pronunciation depends on the browser and assistive technology.",
+    "Complex diagram alt text is a summary, not a complete substitute for the visual relation.",
+    "No WCAG conformance level or tagged-PDF claim is made."
+  ]
+}

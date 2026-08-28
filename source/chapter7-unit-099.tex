@@ -1,0 +1,251 @@
+% Unit 099 terjemahan Bahasa Indonesia dari chapter7.tex baris 2036--2140.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter7.identifying-module-categories
+% Cakupan: Bagian 7.8 lengkap, ``Mengenali Kategori Modul'';
+% berhenti tepat sebelum Bagian 7.9 pada baris 2141.
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.h001
+\section{Mengenali Kategori Modul}\label{sec:module-cat}
+\hypertarget{o014.aljabr2.chapter7.identifying-module-categories}{ }
+% segment-id: o014.li2.chapter7.identifying-module-categories.p001
+Dalam bagian ini, tetap dipilih gelanggang komutatif $\Bbbk$. Semua kategori
+abelian dan funktor secara baku dianggap $\Bbbk$-linear.
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.p002
+Kategori berbentuk $R\dcate{Mod}$ atau $\cated{Mod}R$ secara kolektif disebut
+kategori modul, dengan $R$ suatu aljabar-$\Bbbk$. Dalam
+\S\ref{sec:Morita}, kita secara khusus membahas kategori modul beserta
+funktor di antaranya. Di sisi lain, wajar pula ditanyakan kategori mana
+yang ekuivalen dengan kategori modul dan bagaimana ekuivalensinya diberikan
+secara konkret. Bagian ini menyajikan beberapa hasil singkat dan praktis
+tentang pertanyaan tersebut.
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.p003
+Misalkan $\mathcal{A}$ kategori abelian. Pendekatan bagian ini ialah meninjau
+funktor berbentuk $\Hom_{\mathcal{A}}(s,\mathord\cdot)$, yang secara alami
+diangkat menjadi funktor $\mathcal{A}\to\cated{Mod}R$ dengan
+$R:=\End_{\mathcal{A}}(s)$. Persoalannya ialah menentukan kapan
+$\Hom_{\mathcal{A}}(s,\mathord\cdot)$ merupakan ekuivalensi.
+
+\index{objek kompak}
+% segment-id: o014.li2.chapter7.identifying-module-categories.p004
+Kita ingat kembali Definisi~\ref{def:cpt-objects} tentang objek kompak.
+Misalkan $\mathcal{A}$ mempunyai semua $\varinjlim$ kecil terfilter dan
+$X\in\Obj(\mathcal{A})$. Objek $X$ disebut \emph{kompak} jika, untuk setiap
+kategori kecil terfilter $I$ dan funktor $\alpha:I\to\mathcal{A}$, morfisme
+kanonik berikut adalah isomorfisme:
+% segment-id: o014.li2.chapter7.identifying-module-categories.q001
+\[ \varinjlim_i \Hom\left( X, \alpha(i) \right) \to \Hom\left( X, \varinjlim \alpha \right). \]
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.le001
+\begin{lemma}\label{prop:proj-compact}
+	Misalkan $X$ objek projektif dalam kategori abelian kokomplet $\mathcal{A}$.
+	Maka $X$ kompak jika dan hanya jika
+	$\Hom_{\mathcal{A}}(X,\mathord\cdot)$ mempertahankan semua jumlah langsung
+	kecil; yaitu, untuk sembarang himpunan kecil $I$ dan keluarga objek
+	$(Y_i)_{i\in I}$, berlaku
+	$\bigoplus_{i\in I}\Hom_{\mathcal{A}}(X,Y_i)\rightiso
+	\Hom_{\mathcal{A}}(X,\bigoplus_{i\in I}Y_i)$. Bila kondisi tersebut
+	berlaku, $\Hom_{\mathcal{A}}(X,\mathord\cdot)$ sebenarnya mempertahankan
+	semua $\varinjlim$ kecil.
+\end{lemma}
+% segment-id: o014.li2.chapter7.identifying-module-categories.pf001
+\begin{proof}
+	Misalkan $X$ kompak. Jumlah langsung yang diindeks oleh himpunan kecil $I$
+	adalah $\varinjlim$ terfilter dari jumlah langsung hingga (ambil semua
+	subhimpunan hingga dari $I$, terurut oleh inklusi). Karena
+	$\Hom_{\mathcal{A}}(X,\mathord\cdot)$ diketahui mempertahankan jumlah
+	langsung hingga, funktor itu juga mempertahankan jumlah langsung kecil.
+
+	Sebaliknya, syarat projektif sama artinya dengan
+	$\Hom_{\mathcal{A}}(X,\mathord\cdot)$ mempertahankan kokernel, sedangkan
+	$\varinjlim$ kecil umum dapat dikonstruksi dari jumlah langsung kecil dan
+	kokernel. Jadi, $\Hom_{\mathcal{A}}(X,\mathord\cdot)$ mempertahankan semua
+	$\varinjlim$ kecil.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.eg001
+\begin{example}
+	Misalkan $R$ aljabar-$\Bbbk$ dan $M$ modul-$R$ kanan projektif. Maka $M$
+	kompak jika dan hanya jika $M$ dibangkitkan secara hingga.
+	\begin{itemize}
+		\item Keniscayaan: terdapat himpunan kecil $I$ dan homomorfisme
+		$i:M\to R^{\oplus I}$ serta $p:R^{\oplus I}\to M$ dengan
+		$pi=\identity_M$. Kekompakan mengakibatkan citra $i$ terkandung dalam
+		$R^{\oplus I_0}$ untuk suatu subhimpunan hingga $I_0\subset I$. Ambil
+		$p':=p|_{R^{\oplus I_0}}$; tetap berlaku $p'i=\identity_M$. Jadi, $M$
+		dapat direalisasikan sebagai suku langsung modul bebas berperingkat
+		hingga.
+		\item Kecukupan: terapkan kriteria Lema~\ref{prop:proj-compact}. Setiap
+		homomorfisme $M\to\bigoplus_{i\in I}Y_i$ niscaya mendarat dalam
+		$\bigoplus_{i\in I_0}Y_i$ untuk suatu subhimpunan hingga
+		$I_0\subset I$ (cukup memeriksa citra para pembangkit). Karena itu, $M$
+		kompak.
+	\end{itemize}
+\end{example}
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.pr001
+\begin{proposition}\label{prop:proj-compact-gen}
+	Misalkan $\mathcal{A}$ kategori abelian kokomplet. Maka
+	$s\in\Obj(\mathcal{A})$ adalah pembangkit projektif kompak jika dan hanya
+	jika $\Hom_{\mathcal{A}}(s,\mathord\cdot):
+	\mathcal{A}\to\Bbbk\dcate{Mod}$ merupakan funktor eksak setia yang
+	mempertahankan semua $\varinjlim$ kecil.
+\end{proposition}
+% segment-id: o014.li2.chapter7.identifying-module-categories.pf002
+\begin{proof}
+	Menurut Proposisi~\ref{prop:injective-cogenerator}, menjadi pembangkit
+	projektif ekuivalen dengan sifat eksak setia dari
+	$\Hom_{\mathcal{A}}(s,\mathord\cdot)$. Menurut
+	Lema~\ref{prop:proj-compact}, dengan asumsi projektif, kekompakan ekuivalen
+	dengan fakta bahwa $\Hom_{\mathcal{A}}(s,\mathord\cdot)$ mempertahankan
+	semua $\varinjlim$ kecil.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.th001
+\begin{theorem}[P.\ Gabriel]\label{prop:identify-ModR}
+	Misalkan $s\in\Obj(\mathcal{A})$ dan tetapkan
+	$R:=\End_{\mathcal{A}}(s)$. Maka
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q002
+	\[ \Hom_{\mathcal{A}}(s, \cdot): \mathcal{A} \to \cated{Mod}R \]
+	merupakan ekuivalensi jika dan hanya jika $s$ adalah pembangkit projektif
+	kompak bagi $\mathcal{A}$.
+\end{theorem}
+% segment-id: o014.li2.chapter7.identifying-module-categories.pf003
+\begin{proof}
+	Untuk menyingkat notasi, tuliskan
+	$G:=\Hom_{\mathcal{A}}(s,\mathord\cdot):\mathcal{A}\to\cated{Mod}R$.
+	Mula-mula, kita buktikan keniscayaannya. Karena $G$ adalah ekuivalensi dan
+	$G(s)=R$, cukup memeriksa bahwa $R$ adalah pembangkit projektif kompak bagi
+	$\cated{Mod}R$, yang langsung terlihat.
+
+	Sekarang kita buktikan kecukupannya. Misalkan $s$ pembangkit projektif kompak.
+	Proposisi~\ref{prop:proj-compact-gen} mengakibatkan $G$ adalah funktor eksak
+	setia yang mempertahankan semua $\varinjlim$ kecil, karena komposisinya
+	dengan funktor pelupa $\cated{Mod}R\to\Bbbk\dcate{Mod}$ memiliki sifat
+	tersebut. Karena kesetiaan telah diketahui, cukup dibuktikan bahwa:
+	\begin{compactitem}
+		\item untuk semua $X,Y\in\Obj(\mathcal{A})$, pemetaan yang bersesuaian
+		$\Hom_{\mathcal{A}}(X,Y)\to\Hom_R(GX,GY)$ surjektif;
+		\item $G$ surjektif secara esensial.
+	\end{compactitem}
+
+	Pertama-tama, untuk setiap $X\in\Obj(\mathcal{A})$, definisikan morfisme
+	$\phi_X:s^{\oplus\Hom_{\mathcal{A}}(s,X)}\to X$ yang pada suku langsung
+	yang bersesuaian dengan $f:s\to X$ sama dengan $f$. Kita tunjukkan bahwa
+	$\phi_X$ surjektif. Andaikan sebaliknya bahwa
+	$\Coker(\phi_X)\neq0$. Sifat pembangkit memberikan morfisme tak nol
+	$s\to\Coker(\phi_X)$ (Proposisi~\ref{prop:injective-cogenerator}), sedangkan
+	sifat projektif membuat morfisme tersebut terfaktorkan sebagai
+	$s\xrightarrow{g}X\to\Coker(\phi_X)$. Akibatnya, komposisi
+	$s^{\oplus\Hom_{\mathcal{A}}(s,X)}\xrightarrow{\phi_X}X
+	\to\Coker(\phi_X)$ tidak nol pada suku langsung yang bersesuaian dengan
+	$g$, suatu kontradiksi.
+
+	Konstruksi yang sama dapat diterapkan pada kernel $\Ker(\phi_X)$. Jadi,
+	setiap $X$ dapat ditempatkan dalam barisan eksak
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q003
+	\[ s^{\oplus J} \to s^{\oplus I} \to X \to 0, \quad I = I_X, \; J = J_X: \text{himpunan kecil}. \]
+	Karena $G$ mempertahankan semua $\varinjlim$ kecil, diperoleh barisan eksak
+	modul-$R$ kanan
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q004
+	\[ R^{\oplus J} \to R^{\oplus I} \to GX \to 0. \]
+	Morfisme pertama dalam kedua barisan dapat dipandang sebagai matriks
+	$I\times J$ di atas $R$ yang beraksi melalui perkalian kiri; keduanya
+	sebenarnya adalah matriks yang sama.
+
+	Sekarang, tinjau homomorfisme modul-$R$ kanan $f:GX\to GY$. Pilih untuk
+	$X$ dan $Y$ barisan eksak berbentuk seperti di atas. Mudah dilihat bahwa
+	$f$ dapat diangkat menjadi diagram komutatif dengan baris-baris eksak
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q005
+	\[\begin{tikzcd}
+		R^{\oplus J_X} \arrow[r] \arrow[d] & R^{\oplus I_X} \arrow[d] \arrow[r] & GX \arrow[d, "f"] \arrow[r] & 0 \\
+		R^{\oplus J_Y} \arrow[r] & R^{\oplus I_Y} \arrow[r] & GY \arrow[r] & 0.
+	\end{tikzcd}\]
+	Namun, keempat anak panah pada persegi kiri dapat dinyatakan sebagai
+	matriks di atas $R$. Keempat matriks itu memberikan bagian bergaris penuh
+	dari diagram komutatif dengan baris-baris eksak
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q006
+	\[\begin{tikzcd}
+		s^{\oplus J_X} \arrow[r] \arrow[d] & s^{\oplus I_X} \arrow[d] \arrow[r] & X \arrow[dashed, d] \arrow[r] & 0 \\
+		s^{\oplus J_Y} \arrow[r] & s^{\oplus I_Y} \arrow[r] & Y \arrow[r] & 0,
+	\end{tikzcd}\]
+	dan bagian bergaris putus-putus ditentukan secara unik oleh funktorialitas
+	kokernel. Karena $G$ eksak, niscaya $G(X\dashrightarrow Y)=f$.
+
+	Teknik serupa menunjukkan bahwa $G$ surjektif secara esensial. Untuk modul-$R$
+	kanan $M$ yang diberikan, terdapat barisan eksak
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q007
+	\[ R^{\oplus L} \to R^{\oplus K} \to M \to 0, \]
+	dengan morfisme pertamanya dipandang sebagai matriks $K\times L$ di atas
+	$R$. Matriks yang sama memberikan barisan eksak kokernel dalam
+	$\mathcal{A}$,
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q008
+	\[ s^{\oplus L} \to s^{\oplus K} \to X \to 0. \]
+	Karena $G$ mempertahankan semua $\varinjlim$ kecil, niscaya
+	$GX\simeq M$. Selesailah bukti.
+\end{proof}
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.p005
+Persoalan terkait lainnya ialah mengenali kategori modul yang dibangkitkan
+secara hingga. Tuliskan $\catesubd{Mod}{\mathrm{fg}}R$ untuk kategori modul-
+$R$ kanan yang dibangkitkan secara hingga. Jika $R$ gelanggang Noether kanan,
+$\catesubd{Mod}{\mathrm{fg}}R$ tetap merupakan kategori abelian; lihat
+\cite[Proposisi 6.10.3, Lema 6.10.4]{Li1}.
+\index[sym1]{Modfg@$\cate{Mod}_{\mathrm{fg}}$}
+
+% segment-id: o014.li2.chapter7.identifying-module-categories.th002
+\begin{theorem}\label{prop:identify-ModR-fg}
+	Misalkan $\mathcal{A}$ kategori abelian dan $s\in\Obj(\mathcal{A})$. Andaikan:
+	\begin{compactitem}
+		\item setiap $X\in\Obj(\mathcal{A})$ adalah objek Noether
+		(Definisi~\ref{def:finite-length-object});
+		\item $R:=\End_{\mathcal{A}}(s)$ adalah gelanggang Noether kanan;
+		\item $s$ adalah pembangkit projektif bagi $\mathcal{A}$.
+	\end{compactitem}
+	Maka funktor $\Hom_{\mathcal{A}}(s,\mathord\cdot):
+	\mathcal{A}\to\cated{Mod}R$ terfaktorkan sebagai
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q009
+	\[ \mathcal{A} \xrightarrow{\text{ekuivalensi}} \catesubd{Mod}{\mathrm{fg}}R \subset \cated{Mod}R. \]
+\end{theorem}
+% segment-id: o014.li2.chapter7.identifying-module-categories.pf004
+\begin{proof}
+	Pertama-tama, tunjukkan bahwa setiap $X\in\Obj(\mathcal{A})$ dapat
+	ditempatkan dalam barisan eksak
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q010
+	\begin{equation}\label{eqn:identify-ModR-fg-aux}
+		s^{\oplus m} \to s^{\oplus n} \to X \to 0, \quad n, m \in \Z_{\geq 0}.
+	\end{equation}
+
+	Untuk itu, karena $s$ adalah pembangkit, bagi setiap $X\neq0$ terdapat
+	morfisme tak nol $\phi_1:s\to X$. Jika $\phi_1$ tidak surjektif, terdapat
+	morfisme tak nol $s\to\Coker(\phi_1)$; sifat projektif $s$ memastikan bahwa
+	morfisme ini terfaktorkan sebagai
+	$s\xrightarrow{\psi_1}X\to\Coker(\phi_1)$. Dengan demikian, diperoleh
+	$\phi_2:=(\phi_1,\psi_1):s^{\oplus2}\to X$ dengan
+	$\Image(\phi_2)\supsetneq\Image(\phi_1)$. Jika $\phi_2$ belum surjektif,
+	ulangi prosedur yang sama. Karena $X$ objek Noether, prosedur ini harus
+	berhenti setelah sejumlah langkah berhingga dan menghasilkan morfisme
+	surjektif $\phi_X:s^{\oplus n}\twoheadrightarrow X$. Terapkan prosedur yang
+	sama pada $\Ker(\phi_X)$ untuk memperoleh
+	\eqref{eqn:identify-ModR-fg-aux}.
+
+	Ingat bahwa $s$ adalah pembangkit projektif jika dan hanya jika
+	$G:=\Hom_{\mathcal{A}}(s,\mathord\cdot)$ eksak setia. Menerapkan $G$ pada
+	\eqref{eqn:identify-ModR-fg-aux} memberikan barisan eksak
+	$R^{\oplus m}\to R^{\oplus n}\to GX\to0$, yang menunjukkan bahwa citra
+	$G$ terletak dalam $\catesubd{Mod}{\mathrm{fg}}R$.
+
+	Di sisi lain, karena $R$ gelanggang Noether kanan, setiap
+	$M\in\Obj(\catesubd{Mod}{\mathrm{fg}}R)$ juga dapat ditempatkan dalam
+	barisan eksak
+	% segment-id: o014.li2.chapter7.identifying-module-categories.q011
+	\[ R^{\oplus q} \to R^{\oplus p} \to M \to 0, \quad p, q \in \Z_{\geq 0}. \]
+
+	Selanjutnya, gagasan pembuktiannya sama dengan bukti kecukupan dalam
+	Teorema~\ref{prop:identify-ModR}. Dalam argumen tersebut, kekompakan $s$
+	hanya digunakan untuk menangani jumlah langsung tak hingga; di sini hanya
+	terlibat jumlah langsung hingga, yang dipertahankan oleh setiap funktor
+	aditif. Selebihnya, argumennya persis sama dan tidak diulangi.
+\end{proof}

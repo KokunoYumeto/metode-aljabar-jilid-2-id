@@ -1,0 +1,557 @@
+% Unit 063 terjemahan Bahasa Indonesia dari chapter4.tex baris 2500--2745.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.k-flat-derived-tensor-b
+% Cakupan: akhir Bagian 4.12 dan Latihan Bab 4 lengkap (17 latihan dan 10 petunjuk);
+% menutup chapter4.tex tepat pada penutup lingkungan Exercises.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.co001
+\hypertarget{o014.aljabr2.chapter4.k-flat-derived-tensor-b}{ }
+\begin{korolari}\label{prop:otimesL-Tor}
+	\index[sym1]{Tor}
+	Funktor $\otimesL[R]$ dari Definisi~\ref{def:otimesL}, dengan syarat $A$
+	atau $B$ datar sebagai modul-$\Bbbk$, memenuhi isomorfisme kanonik
+	\[ \Hm^{-n}\left( X \otimesL[R] Y \right) \simeq \Tor^R_n(X, Y), \quad n \in \Z, \]
+	dengan $X$ suatu bimodul-$(A,R)$, $Y$ suatu bimodul-$(R,B)$, dan
+	$\Tor^R_n$ seperti dalam Definisi--Proposisi~\ref{def:Tor-classical}.
+\end{korolari}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.pf001
+\begin{bukti}
+	Ruas kiri diperoleh dengan menyusun diagram Proposisi
+	\ref{prop:otimesL-enrichment} sepanjang arah
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.g001
+	\begin{tikzpicture}[xscale=0.3, yscale=0.3, baseline=(O)]
+		\draw[->] (0,0) -- (1,0) -- (1, -1);
+		\coordinate (O) at (0, -0.7);
+	\end{tikzpicture}
+	sedangkan ruas kanan diperoleh dengan menyusunnya sepanjang arah
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.g002
+	\begin{tikzpicture}[xscale=0.3, yscale=0.3, baseline=(O)]
+		\draw[->] (0,0) -- (0, -1) -- (1, -1);
+		\coordinate (O) at (0, -0.7);
+	\end{tikzpicture}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.pr001
+\begin{proposisi}[Kendala asosiativitas]\label{prop:otimesL-associativity-constraint}
+	\index{hasil kali tensor turunan!kendala asosiativitas (associativity constraint)}
+	Misalkan $A$, $B$, $R$, dan $S$ aljabar-$\Bbbk$. Tinjau dua funktor berikut:
+	\begin{gather*}
+		\cate{D}((A,R)\dcate{Mod}) \times \cate{D}((R,S)\dcate{Mod}) \times \cate{D}((S,B)\dcate{Mod}) \to \cate{D}((A,B)\dcate{Mod}), \\
+		(X, Y, Z) \mapsto (X \otimesL[R] Y) \otimesL[S] Z, \\
+		(X, Y, Z) \mapsto X \otimesL[R] (Y \otimesL[S] Z).
+	\end{gather*}
+	Jika $A$ dan $B$ keduanya datar sebagai modul-$\Bbbk$, terdapat
+	isomorfisme kanonik
+	\[ a(X,Y,Z): (X \otimesL[R] Y) \otimesL[S] Z \rightiso X \otimesL[R] (Y \otimesL[S] Z). \]
+\end{proposisi}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.pf002
+\begin{bukti}
+	Tetapkan $Y$. Berdasarkan Proposisi~\ref{prop:K-flat}, kita boleh
+	mengandaikan bahwa $X_R$ dan ${}_R Z$ K-datar. Dengan demikian, semua
+	$\otimesL[R]$ dapat dihitung pada tingkat kompleks, dan semuanya kembali
+	kepada kendala asosiativitas hasil kali tensor
+	\cite[Proposisi 6.5.12]{Li1}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.p001
+Dengan asumsi kedataran tersebut, mengambil $\otimesL$ dari lebih dari tiga
+objek dalam berbagai urutan memberikan hasil-hasil yang saling isomorfik
+melalui kendala asosiativitas. Isomorfisme-isomorfisme ini juga memenuhi
+koherensi, yang dapat dirumuskan dengan meniru aksioma segilima untuk kategori
+monoidal; lihat \cite[Definisi 3.1.1]{Li1}. Caranya tetap dengan mengambil
+	resolusi K-datar dan melakukan verifikasi pada tingkat kompleks. Untuk
+menghemat uraian, buku ini hanya menampilkan kasus khusus gelanggang
+komutatif.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.e001
+\begin{contoh}[$\otimesL$ untuk gelanggang komutatif]\label{eg:commutative-otimesL}
+	\index{hasil kali tensor turunan!kendala komutativitas (commutativity constraint)}
+	Misalkan $R$ gelanggang komutatif. Dalam definisi
+	$\otimesL := \otimesL[R]$, ambil semua gelanggang sama dengan $R$,
+	khususnya $\Bbbk=R$. Dengan demikian,
+	$(R,R)\dcate{Mod}=R\dcate{Mod}$ dan semua asumsi kedataran sebelumnya
+	terpenuhi secara otomatis. Akibatnya,
+	$\Hm^{-n}(X \otimesL Y) \simeq \Tor^R_n(X,Y)$ berlaku untuk semua
+	modul-$R$ $X$ dan $Y$.
+	
+	Hal ini menjadikan $\cate{D}(R\dcate{Mod})$ kategori monoidal terhadap
+	$\otimesL$ dalam arti \cite[\S 3.1]{Li1}. Objek unitnya adalah $R$
+	sendiri, sedangkan kendala asosiativitasnya berasal dari
+	$a=(a(X,Y,Z))_{X,Y,Z}$ dalam Proposisi
+	\ref{prop:otimesL-associativity-constraint}. Karena $R$ merupakan
+	modul-$R$ datar, ia K-datar (Proposisi~\ref{prop:flat-K-flat}); maka
+	$R \otimesL (\cdot)$ dan $(\cdot) \otimesL R$ keduanya dapat dihitung
+	pada tingkat kompleks, sehingga semua aksioma kategori monoidal mudah
+	dibuktikan. Lebih lanjut, $\cate{D}(R\dcate{Mod})$ merupakan kategori
+	monoidal simetris dalam arti \cite[Definisi 3.3.1]{Li1}. Struktur
+	anyamannya (atau kendala komutativitasnya)
+	$c(X,Y):X\otimesL Y\rightiso Y\otimesL X$ berasal dari kendala
+	komutativitas pada tingkat kompleks, dan aksioma-aksiomanya juga diperiksa
+	pada tingkat kompleks. Mengingat Proposisi~\ref{prop:double-cplx-swap},
+	pertukaran superskrip pada kompleks total tidak menimbulkan masalah di sini.
+\end{contoh}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.e002
+\begin{contoh}[Aljabar $\mathrm{Tor}$]
+	Melanjutkan pembahasan Contoh~\ref{eg:commutative-otimesL}, misalkan $R$
+	komutatif. Identifikasikan kompleks modul-$R$ $X,Y,Z,W$ dengan citranya
+	dalam kategori turunan. Untuk setiap $(p,q)\in\Z^2$, terdapat morfisme
+	kanonik
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q001
+	\begin{multline*}
+		\Hm^{-p}\left( X \otimesL Y \right) \otimes \Hm^{-q}\left( Z \otimesL W \right) \to \Hm^{-p-q}\left( (X \otimesL Y) \otimesL (Z \otimesL W) \right) \\
+		\simeq \Hm^{-p-q}\left( (X \otimesL Z) \otimesL (Y \otimesL W) \right) \to \Hm^{-p-q} \left( (X \otimes Z) \otimesL (Y \otimes W) \right),
+	\end{multline*}
+	dengan bagian pertama merupakan penerapan Proposisi~\ref{prop:bifunctor-cup}
+	(ambil $F=\otimes$), bagian kedua memakai kendala asosiativitas dan
+	kendala komutativitas pada $(\cate{D}(R\dcate{Mod}),\otimesL)$, dan
+	bagian ketiga berasal dari morfisme kanonik yang melekat pada $\otimesL$
+	sebagai bifunktor turunan kiri:
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q002
+	\[ QX_1 \otimesL QX_2 \to Q(X_1 \otimes X_2), \quad X_1, X_2 \in \Obj(\cate{K}(R\dcate{Mod})), \]
+	Untuk ketepatan notasi, di sini funktor lokalisasi
+	$Q:\cate{K}(R\dcate{Mod})\to\cate{D}(R\dcate{Mod})$ dituliskan kembali.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.l001
+	\begin{itemize}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i001
+		\item Komposisi ketiga morfisme kanonik di atas memberikan ``hasil kali
+		luar'' bagi funktor $\Tor$:
+		\[ \Tor^R_p(X, Y) \otimes \Tor^R_q(Z, W) \to \Tor^R_{p+q}(X \otimes Z, Y \otimes W). \]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i002
+		\item Ambil $Z=X$ dan $W=Y$ sebagai aljabar-$R$ (terkonsentrasi pada
+		derajat $0$). Perkaliannya memberikan homomorfisme modul-$R$
+		$X\otimes X\to X$ dan $Y\otimes Y\to Y$. Dengan menyusun hasil kali
+		luar dengan homomorfisme-homomorfisme ini, diperoleh
+		\[ \Tor^R_p(X, Y) \otimes \Tor^R_q(X, Y) \to \Tor^R_{p+q}(X,Y), \]
+		yang disebut ``hasil kali dalam'' bagi funktor $\Tor$. Hal ini menjadikan
+		$\bigoplus_{n \in \Z} \Tor^R_n(X, Y)$ aljabar-$R$ bergradasi-$\Z$
+		dalam arti \cite[Definisi 7.4.1]{Li1}, yang disebut \emph{aljabar
+		$\Tor$}. Aljabar ini hanya memiliki komponen tak nol pada derajat
+		nonnegatif, dan komponen derajat $0$-nya memberikan subaljabar
+		$\Tor^R_0(X, Y) = X \otimes Y$, yang definisinya dapat dilihat dalam
+		\cite[Definisi 7.3.1]{Li1}. Hukum asosiatif yang diperlukan bagi
+		perkalian dapat diverifikasi dengan mereduksinya kepada kendala
+		asosiativitas $\otimesL$ dan hukum asosiatif perkalian masing-masing
+		pada $X$ dan $Y$.
+		\index{aljabar Tor@aljabar $\Tor$ ($\Tor$-algebra)}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i003
+		\item Andaikan lebih lanjut bahwa $X$ dan $Y$ merupakan aljabar-$R$
+		komutatif. Dalam hal ini, aljabar $\Tor$ juga merupakan aljabar
+		bergradasi-$\Z$ ``antikomutatif'' dalam arti
+		\cite[Definisi 7.4.3]{Li1}\footnote{Sebutan harfiahnya agak menyesatkan,
+		karena sifat ini merupakan perwujudan alami komutativitas. Sebutan
+		bergradasi-komutatif lebih tepat, seperti dalam Contoh
+		\ref{eg:graded-module}.}: untuk semua $p,q\in\Z$,
+		\[ a \in \Tor^R_p(X, Y), \; b \in \Tor^R_q(X, Y) \implies ab = (-1)^{pq} ba. \]
+		Karena $X\otimes X\to X$ dan $Y\otimes Y\to Y$ keduanya komutatif,
+		dari mana tanda tersebut berasal? Sumbernya adalah definisi hasil kali
+		luar. Misalkan $C_1$ dan $C_2$ dua salinan $X\otimesL Y$. Maka $ab$
+		dan $ba$ berbeda melalui isomorfisme
+		$C_1\otimesL C_2\rightiso C_2\otimesL C_1$, yaitu kendala
+		komutativitas $\otimesL$. Jika $C_1$ dan $C_2$ dinyatakan sebagai
+		kompleks K-datar, isomorfisme pada tingkat kompleks total ini persis
+		isomorfisme $r_{C_1^\bullet \otimes C_2^\bullet}$ dari
+		Proposisi~\ref{prop:double-cplx-swap}; pada komponen berderajat $(p,q)$,
+		isomorfisme tersebut menghasilkan tanda $(-1)^{pq}$.
+	\end{itemize}
+\end{contoh}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.p002
+Kembali ke aljabar-$\Bbbk$ umum. Untuk membahas adjungsi antara $\otimesL$
+dan $\RHom$, masih diperlukan satu lema. Berikut ini, $\RHom_{(A,B)}$
+menyatakan $\RHom$ pada $(A,B)\dcate{Mod}$; notasi bagi kategori bimodul
+(atau modul kiri maupun modul kanan) jenis lainnya digunakan secara serupa.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.le001
+\begin{lema}\label{prop:RHom-enrichment}
+	Tetapkan aljabar-$\Bbbk$ $A$, $B$, dan $R$. Andaikan $B$ datar sebagai
+	modul-$\Bbbk$. Maka funktor pelupa dari $(A,B)\dcate{Mod}$ ke
+	$A\dcate{Mod}$ mempertahankan kompleks K-injektif, dan $\RHom_A$ secara
+	kanonik dapat diangkat menjadi funktor
+	\[ \cate{D}\left((A,R)\dcate{Mod}\right)^{\opp} \times \cate{D}\left((A,B)\dcate{Mod}\right) \to \cate{D}\left((R,B)\dcate{Mod}\right), \]
+	dengan kata lain, terdapat diagram 2-sel kanonik
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.g003
+	\[\begin{tikzcd}
+		\cate{D}\left((A,R)\dcate{Mod}\right)^{\opp} \times \cate{D}\left((A,B)\dcate{Mod}\right) \arrow[r] \arrow[d, "\text{pelupa}"'] & \cate{D}\left((R,B)\dcate{Mod}\right) \arrow[d, "\text{pelupa}"] \arrow[Rightarrow, ld, "\sim", sloped] \\
+		\cate{D}(A\dcate{Mod})^{\opp} \times \cate{D}(A\dcate{Mod}) \arrow[r, "{\RHom_A}"'] & \cate{D}(\cate{Ab}) .
+	\end{tikzcd}\]
+
+	Demikian pula, jika $A$ datar sebagai modul-$\Bbbk$, $\RHom_B$ mempunyai
+	pengangkatan serupa.
+\end{lema}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.pf003
+\begin{bukti}
+	Karena $B$ modul-$\Bbbk$ datar, funktor $Y\mapsto{}_A Y$ mempunyai adjoin
+	kiri eksak $(\cdot)\dotimes{\Bbbk}B$, sehingga ia mempertahankan kompleks
+	K-injektif.
+	
+	Selanjutnya, ambil
+	$X \in \Obj(\cate{K}((A, R)\dcate{Mod}))$ dan
+	$Y \in \Obj(\cate{K}(A, B)\dcate{Mod})$, dengan $Y$ K-injektif.
+	Berdasarkan langkah sebelumnya,
+	$\Hom^\bullet\left({}_A X,{}_A Y\right)$ menentukan
+	$\RHom_A({}_A X,{}_A Y)$, tetapi sekaligus merupakan kompleks
+	bimodul-$(R,B)$. Ini menyelesaikan proses pengangkatan tersebut.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.th001
+\begin{teorema}[Adjungsi antara $\RHom$ dan $\otimesL$]\label{prop:RHom-otimesL-adjunction}
+	\index{funktor $\RHom$}
+	\index{hasil kali tensor turunan}
+	Misalkan $A$, $B$, dan $R$ aljabar-$\Bbbk$. Di bawah ini, $X$, $Y$, dan
+	$Z$ masing-masing menyatakan objek
+	$\cate{D}((A,R)\dcate{Mod})$, $\cate{D}((R,B)\dcate{Mod})$, dan
+	$\cate{D}((A,B)\dcate{Mod})$. Andaikan $B$ datar sebagai
+	modul-$\Bbbk$. Maka terdapat isomorfisme kanonik dalam
+	$\cate{D}(\Bbbk\dcate{Mod})$
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q003
+	\begin{equation*}
+		\RHom_{(A,B)} \left( X \otimesL[R] Y, Z \right) \rightiso \RHom_{(R,B)}\left( Y, \RHom_A \left( {}_A X, {}_A Z \right) \right).
+	\end{equation*}
+
+	Jika $A$ yang diasumsikan datar sebagai modul-$\Bbbk$, terdapat
+	isomorfisme kanonik dalam $\cate{D}(\Bbbk\dcate{Mod})$
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q004
+	\begin{equation*}
+		\RHom_{(A,B)}\left( X \otimesL[R] Y, Z \right) \rightiso \RHom_{(A,R)}\left( X, \RHom_B\left( Y_B , Z_B \right) \right).
+	\end{equation*}
+\end{teorema}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.pf004
+\begin{bukti}
+	Tinjau persamaan pertama. Andaikan $Y$ K-projektif dan $Z$ K-injektif.
+	Lema~\ref{prop:K-projective-flat} menjamin bahwa ${}_R Y$ K-datar,
+	sedangkan Lema~\ref{prop:RHom-enrichment} menjamin bahwa ${}_A Z$ tetap
+	K-injektif. Semua $\RHom$ dan $\otimesL[R]$ yang ditampilkan dapat
+	ditentukan pada tingkat kompleks. Karena itu, isomorfisme yang dicari
+	mengikuti dari Proposisi~\ref{prop:tensor-Hom-cplx}.
+\end{bukti}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.e003
+\begin{contoh}[Adjungsi untuk perubahan gelanggang]\label{eg:change-of-ring-adjunction}
+	Dalam situasi Contoh~\ref{eg:change-of-rings} (ambil homomorfisme
+	aljabar-$\Bbbk$ $R\to S$, $A=S$, $B=\Bbbk$, dan $X=S$), persamaan pertama
+	dalam Teorema~\ref{prop:RHom-otimesL-adjunction} menjadi isomorfisme kanonik
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q005
+	\begin{gather*}
+		\RHom_S\left( \mathrm{L} {}_{R \to S} P(Y), Z \right) \simeq \RHom_R\left( Y, {}_R Z \right), \\
+		Y \in \Obj(\cate{D}(R\dcate{Mod})), \quad Z \in \Obj(\cate{D}(S\dcate{Mod})).
+	\end{gather*}
+	Untuk itu, satu-satunya hal yang masih perlu dijelaskan ialah
+	$\RHom_S({}_S S,{}_S Z)\simeq{}_R Z$, yang langsung diperoleh dari
+	isomorfisme pada tingkat kompleks
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q006
+	\[ \Hom^\bullet\left({}_S S, \cdot\right) \simeq {}_R (\cdot) : \cate{C}(S\dcate{Mod}) \to \cate{C}(R\dcate{Mod}). \]
+	
+	Jika selanjutnya $R$ dan $S$ keduanya gelanggang komutatif dan
+	$\Bbbk:=R$, maka $\RHom_S$ (atau $\RHom_R$) bernilai dalam
+	$\cate{D}(S\dcate{Mod})$ (atau $\cate{D}(R\dcate{Mod})$). Isomorfisme
+	adjungsi tersebut selanjutnya dapat dituliskan sebagai isomorfisme kanonik
+	dalam $\cate{D}(R\dcate{Mod})$:
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q007
+	\[ {}_R \RHom_S\left( \mathrm{L} {}_{R \to S} P(Y), Z \right) \simeq \RHom_R\left( Y, {}_R Z \right) . \]
+	Semuanya dapat diverifikasi pada tingkat kompleks dengan mengambil
+	resolusi K-injektif dan K-projektif. Kasus modul kanan serupa.
+\end{contoh}
+
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.x001
+\begin{Exercises}
+	% Reference: [KS06, Exercise 10.10]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex001
+	\item Misalkan $(\mathcal{D}, T, \mathcal{H})$ kategori prabertriangulasi
+	(atau kategori bertriangulasi). Definisikan keluarga segitiga baru
+	$\mathcal{H}^-$ melalui
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q008
+	\[ [X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} TX] \in \mathcal{H} \iff [X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{-h} TX] \in \mathcal{H}^- . \]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.l002
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i004
+		\item Buktikan bahwa $(\mathcal{D},T,\mathcal{H}^-)$ juga merupakan
+		kategori prabertriangulasi (atau kategori bertriangulasi).
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i005
+		\item Buktikan bahwa $(\mathcal{D},T,\mathcal{H})$ dan
+		$(\mathcal{D},T,\mathcal{H}^-)$ saling ekuivalen sebagai kategori
+		prabertriangulasi.
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex002
+	\item Misalkan $(\mathcal{D},T,\mathcal{H})$ kategori prabertriangulasi.
+	Buktikan bahwa setiap monomorfisme (atau epimorfisme) $u:X\to Y$ dalam
+	$\mathcal{D}$ mempunyai invers kiri (atau invers kanan). Gunakan hal ini
+	untuk menunjukkan bahwa kategori prabertriangulasi yang sekaligus kategori
+	abelian harus terbelah (Definisi~\ref{def:semisimple}).
+	
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn001
+	\begin{hint}
+		Tempatkan monomorfisme $u$ dalam segitiga terbedakan
+		$X\xrightarrow{u}Y\xrightarrow{v}Z\xrightarrow{w}TX$. Dari
+		$u\circ T^{-1}w=0$, simpulkan $w=0$, lalu terapkan
+		Proposisi~\ref{prop:dt-sum-1}.
+	\end{hint}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex003
+	\item Terapkan latihan sebelumnya untuk memberikan contoh kategori abelian
+	$\mathcal{A}$ sedemikian sehingga $\cate{K}(\mathcal{A})$ dan
+	$\cate{D}(\mathcal{A})$ keduanya bukan kategori abelian.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn002
+	\begin{hint}
+		Tinjau morfisme $f:\Z/p^2\Z\twoheadrightarrow\Z/p\Z$ dalam
+		$\mathcal{A}=\cate{Ab}$, dengan $p$ prima. Jika
+		$\cate{K}(\mathcal{A})$ kategori abelian, tinjau faktorisasi epi--mono
+		$\cate{K}f$ dan $\Hm^0(\cate{K}f)$, kemudian uraikan keduanya sebagai
+		proyeksi ke suku jumlah langsung dan morfisme inklusi untuk memperoleh
+		kontradiksi.
+	\end{hint}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex004
+	\item Misalkan $\mathcal{A}$ kategori abelian. Buktikan bahwa
+	$\cate{D}(\mathcal{A})$ merupakan kategori abelian jika dan hanya jika
+	$\mathcal{A}$ terbelah.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn003
+	\begin{hint}
+		Untuk arah ``hanya jika'', benamkan $\mathcal{A}$ ke dalam
+		$\cate{D}(\mathcal{A})$ dan terapkan hasil latihan-latihan sebelumnya.
+		Untuk arah ``jika'', tunjukkan bagi $\mathcal{A}$ yang terbelah bahwa
+		pengambilan kohomologi memberikan ekuivalensi dari
+		$\cate{D}(\mathcal{A})$ ke $\mathcal{A}^{\Z}$.
+	\end{hint}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex005
+	\item Sering dikatakan bahwa aksioma oktahedral (TR5) bagi kategori
+	bertriangulasi merupakan pengganti bagi teorema isomorfisme
+	$\dfrac{X/Z}{Y/Z}\simeq X/Y$ dalam kategori abelian, dengan
+	$X\supset Y\supset Z$ (Teorema~\ref{prop:Abel-cat-isom-thm} (ii)).
+	Jelaskan secara eksplisit makna ungkapan tersebut.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex006
+	\item ($\mathrm{K}_0$ kategori prabertriangulasi) Untuk setiap kategori
+	prabertriangulasi $(\mathcal{D},T,\mathcal{H})$, definisikan
+	$\mathrm{K}_0(\mathcal{D})$ sebagai hasil bagi modul-$\Z$ bebas yang
+	dibangkitkan oleh $\Obj(\mathcal{D})$ terhadap relasi-relasi
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q009
+	\[ \text{terdapat segitiga terbedakan}\; X \to Y \to Z \xrightarrow{+1} \implies [X] - [Y] + [Z] = 0, \]
+	dengan $[X]\in\mathrm{K}_0(\mathcal{D})$ menyatakan kelas ekuivalensi yang
+	memuat $X\in\Obj(\mathcal{D})$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.l003
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i006
+		\item Buktikan bahwa $[0]=0$, $[TX]=-[X]$, dan
+		$[X\oplus Y]=[X]+[Y]$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i007
+		\item Tunjukkan bahwa setiap funktor bertriangulasi
+		$F:\mathcal{D}\to\mathcal{D}'$ menginduksi homomorfisme kanonik
+		$\mathrm{K}_0(\mathcal{D})\to\mathrm{K}_0(\mathcal{D}')$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i008
+		\item Tinjau funktor kohomologis $H:\mathcal{D}\to\mathcal{A}$, dengan
+		$\mathcal{A}$ kategori abelian. Andaikan, untuk semua $X$,
+		$|n|\gg_X0\implies H(T^nX)=0$. Definisikan homomorfisme alami
+		$\mathrm{K}_0(\mathcal{D})\to\mathrm{K}_0(\mathcal{A})$.
+		
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn004
+		\begin{hint}
+			Petakan $[X]$ ke $\sum_n(-1)^n[H(T^nX)]$. Terapkan
+			Lema~\ref{prop:K0-prep} (iv).
+		\end{hint}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i009
+		\item Tinjau kasus khusus $\mathcal{D}:=\cate{D}^{\bdd}(\mathcal{A})$.
+		Berikan homomorfisme yang saling invers
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.g004
+		\[\begin{tikzcd}[row sep=tiny]
+			\mathrm{K}_0(\mathcal{A}) \arrow[shift left, r] & \mathrm{K}_0(\cate{D}^{\bdd}(\mathcal{A})) \arrow[shift left, l] \\
+			{[A]} \arrow[mapsto, r] & {[A]} \\
+			\sum_n (-1)^n {[\Hm^n(X)]} & {[X]} \arrow[mapsto, l]
+		\end{tikzcd}\]
+		dengan $A\in\Obj(\mathcal{A})$, yang juga dipandang sebagai kompleks
+		yang terkonsentrasi pada derajat $0$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn005
+		\begin{hint}
+			Satu komposisi jelas merupakan identitas; untuk komposisi lainnya,
+			diperlukan pemenggalan kompleks.
+		\end{hint}
+	\end{enumerate}
+	\index{grup K0@grup $\mathrm{K}_0$} \index[sym1]{K0}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex007
+	\item Misalkan $X\in\Obj(\cate{D}(\mathcal{A}))$. Buktikan bahwa
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.q010
+	\begin{gather*}
+		X \in \cate{D}^{\leq 0}(\mathcal{A}) \iff \forall Z \in \Obj(\cate{D}^{\geq 1}(\mathcal{A})), \; \Hom_{\cate{D}(\mathcal{A})}(X, Z) = 0, \\
+		X \in \cate{D}^{\geq 0}(\mathcal{A}) \iff \forall Z \in \Obj(\cate{D}^{\leq -1}(\mathcal{A})), \; \Hom_{\cate{D}(\mathcal{A})}(Z, X) = 0.
+	\end{gather*}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn006
+	\begin{hint}
+		Terapkan Proposisi~\ref{prop:derived-cat-orthogonality} (i), serta
+		pasangan adjoin dan segitiga terbedakan dalam
+		Proposisi~\ref{prop:derived-truncation-adjunction}.
+	\end{hint}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex008
+	\item Dalam situasi Teorema~\ref{prop:localization-triangulated-composite},
+	andaikan $F'$ memenuhi
+	$F'(\Obj(\mathcal{N}'))\subset\Obj(\mathcal{N}'')$ (anggap ini sebagai
+	semacam ``keeksakan''). Jika $\mathcal{D}$ mempunyai subkategori
+	$F$-injektif atau $F$-projektif, buktikan bahwa morfisme kanonik
+	\[ \mathrm{R}^{\mathcal{N}''}_{\mathcal{N}} (F' F) \to \left( \mathrm{R}^{\mathcal{N}''}_{\mathcal{N}'} F' \right) \left( \mathrm{R}^{\mathcal{N}'}_{\mathcal{N}} F \right) \]
+	atau
+	\[ \left( \mathrm{L}^{\mathcal{N}''}_{\mathcal{N'}} F' \right) \left( \mathrm{L}^{\mathcal{N}'}_{\mathcal{N}} F \right) \to \mathrm{L}^{\mathcal{N}''}_{\mathcal{N}} (F' F) \]
+	merupakan isomorfisme.
+	
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex009
+	\item Dalam situasi Teorema~\ref{prop:localization-triangulated-composite},
+	tunjukkan bahwa terdapat diagram komutatif berikut, yang terdiri atas
+	funktor dan morfisme di antaranya (notasi $\mathcal{N}$ dan sebagainya
+	dihilangkan):
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.g005
+	\[\begin{tikzcd}
+		\mathrm{R}(F'' F' F) \arrow[r] \arrow[d] & \mathrm{R}(F'' F') \mathrm{R}F \arrow[d] \\
+		\mathrm{R}F'' \mathrm{R}(F'F) \arrow[r] & \mathrm{R}F'' \mathrm{R}F' \mathrm{R}F
+	\end{tikzcd} \quad \begin{tikzcd}
+		\mathrm{L}(F'' F' F) & \mathrm{L}(F'' F') \mathrm{L}F \arrow[l] \\
+		\mathrm{L}F'' \mathrm{L}(F'F) \arrow[u] & \mathrm{L}F'' \mathrm{L}F' \mathrm{L}F \arrow[u] \arrow[l] .
+	\end{tikzcd}\]
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex010
+	\item Untuk $F=\Hom$, nyatakan secara eksplisit morfisme kanonik dari
+	Proposisi~\ref{prop:bifunctor-cup} dalam bentuk
+	$\Ext^{q-p}(X,Y)\to\Hom\left(\Hm^p(X),\Hm^q(Y)\right)$.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex011
+	\item Rumuskan kembali bijeksi dalam Teorema~\ref{prop:Yoneda-Ext} dalam bentuk
+	berikut. Dari ekstensi-$n$
+	$0\to Y\to E^1\to\cdots\to E^n\to X\to0$, bangun
+	$t^{-1}b\in\Hom_{\cate{D}(\mathcal{A})}(X,Y[n])$ seperti berikut:
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.g006
+	\[\begin{tikzcd}
+		X \arrow[d, "b"']\arrow[phantom, r, "" {name=A, yshift=2ex}] & {} & & & X \arrow[d, "\identity"] \\
+		W & E^1 \arrow[r] & E^2 \arrow[r] & \cdots \arrow[r] & X \\
+		Y[n] \arrow[u, "{t: \text{kuasi-isomorfisme}}"] \arrow[phantom, r, "" {name=B, yshift=-2ex}] & Y \arrow[u] & & &
+		\arrow[dash, from=A, to=B]
+	\end{tikzcd}\]
+	Dengan demikian diperoleh
+	$t^{-1}b\in\Hom_{\cate{D}(\mathcal{A})}(X,Y[n])$. Buktikan bahwa bijeksi
+	ini berbeda dengan faktor $(-1)^n$ dari bijeksi semula yang didasarkan
+	pada $as^{-1}$. Untuk kasus khusus $n=1$, gunakan versi $t^{-1}b$ untuk
+	menurunkan versi terkait dari Proposisi~\ref{prop:Ext1-via-ses} (yang
+	melibatkan citra $\identity_Y$).
+	
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn007
+	\begin{hint}
+		Buktikan bahwa $ta+(-1)^{n-1}bs:Z\to W$ secara kanonik homotopik nol.
+		Untuk bagian kedua, perhatikan tanda negatif dalam
+		Proposisi~\ref{prop:ses-vs-triangle}.
+	\end{hint}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex012
+	\item Misalkan semua objek $S,T$ dalam kategori abelian $\mathcal{A}$
+	memenuhi $\Ext^2_{\mathcal{A}}(S,T)=0$. Buktikan bahwa setiap
+	$X\in\Obj(\cate{D}^{\bdd}(\mathcal{A}))$ isomorfik dengan
+	$\bigoplus_n\Hm^n(X)[-n]$. Tunjukkan bahwa
+	$\mathcal{A}:=\Z\dcate{Mod}$ memenuhi syarat ini.
+	
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn008
+	\begin{hint}
+		Kita boleh mengandaikan bahwa $X$ kompleks terbatas. Mulailah dari kasus
+		$n\gg0$. Terapkan Teorema~\ref{prop:Yoneda-Ext} dan
+		Proposisi~\ref{prop:Yoneda-zero} pada ekstensi-$2$
+		$0\to\Ker(d^n)\to X^n\xrightarrow{d^n}X^{n+1}\to\Coker(d^n)\to0$,
+		lalu ubah $X$ langkah demi langkah hingga $d^\bullet=0$, semuanya hingga
+		isomorfisme.
+	\end{hint}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex013
+	\item Buktikan bahwa, jika $\mathcal{A}$ mempunyai cukup banyak objek
+	injektif, $F:\mathcal{A}\to\mathcal{A}'$ funktor aditif eksak kiri, dan
+	$\mathrm{R}F$ berdimensi hingga, maka homomorfisme
+	$\mathrm{K}_0(\mathcal{A})\simeq\mathrm{K}_0(\cate{D}^{\bdd}(\mathcal{A}))
+	\to\mathrm{K}_0(\cate{D}^{\bdd}(\mathcal{A}'))\simeq
+	\mathrm{K}_0(\mathcal{A}')$ yang diinduksi oleh funktor bertriangulasi
+	$\mathrm{R}F$ ditentukan oleh
+	\[ [A] \mapsto \sum_n (-1)^n \left[\mathrm{R}^n F(A)\right], \quad A \in \Obj(\mathcal{A}). \]
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex014
+	\item Misalkan $R$ gelanggang. Buktikan bahwa limit langsung terfilter
+	$\varinjlim$ dari kompleks-kompleks K-datar dalam
+	$\cate{C}(R\dcate{Mod})$ tetap K-datar.
+	
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex015
+	\item Misalkan $R$ gelanggang. Jika kompleks modul-$R$ $P$ K-datar dan
+	setiap $P^n$ merupakan modul-$R$ datar, maka $P$ disebut
+	\emph{K-datar kuat}.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.l004
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i010
+		\item Buktikan bahwa, untuk setiap
+		$X\in\Obj(\cate{C}(R\dcate{Mod}))$, terdapat kompleks K-datar kuat $P$
+		beserta kuasi-isomorfisme $P\to X$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn009
+		\begin{hint}
+			Gunakan dual argumen keberadaan resolusi K-injektif; lihat
+			\S\ref{sec:K-injectives}.
+		\end{hint}
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i011
+		\item Tuliskan $\mathcal{SF}$ untuk subkategori penuh
+		$\cate{K}(R\dcate{Mod})$ yang dibentuk oleh kompleks-kompleks K-datar
+		kuat. Nyatakan kategori $\cate{D}(R\dcate{Mod})$ sebagai lokalisasi
+		$\mathcal{SF}$ terhadap kuasi-isomorfisme.
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex016
+	\item (P.\ Berthelot, A.\ Ogus) Misalkan $f$ bukan pembagi nol dalam
+	gelanggang komutatif $R$. Untuk setiap modul-$R$ $M$, tuliskan
+	$M[f]:=\{m\in M:fm=0\}$. Modul $M$ dengan $M[f]=0$ disebut
+	\emph{bebas torsi-$f$}. Pertama, tunjukkan bahwa $M$ yang bebas torsi-$f$
+	dapat dibenamkan sebagai submodul dari
+	$M[\frac{1}{f}]=M\dotimes{R}R[\frac{1}{f}]$. Karena itu, $f^mM$
+	bermakna untuk setiap $m\in\Z$.
+
+	Misalkan $X$ kompleks yang tersusun atas modul-$R$ bebas torsi-$f$.
+	Berdasarkan pengamatan di atas, definisikan subkompleks $\eta_fX$ dari
+	$X^\bullet\dotimes{R}R[\frac{1}{f}]$ dengan
+	\[ (\eta_f X)^n := \left\{ x \in f^n X^n : d_X^n(x) \in f^{n+1} X^{n+1} \right\}, \quad n \in \Z . \]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.l005
+	\begin{enumerate}[(i)]
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i012
+		\item Buktikan bahwa perkalian suku demi suku dengan $f$ memberikan
+		isomorfisme $\eta_f(X[1])\rightiso(\eta_fX)[1]$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i013
+		\item Tunjukkan bahwa, jika $f,g\in R$ keduanya bukan pembagi nol dan
+		setiap $X^n$ bebas torsi-$fg$, maka
+		$\eta_f\eta_gX=\eta_{fg}X$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i014
+		\item Berikan isomorfisme kanonik
+		$\Hm^n(X)/\Hm^n(X)[f]\rightiso\Hm^n(\eta_fX)$; jadi efek $\eta_f$
+		ialah mengoreksi torsi-$f$. Dari sini, simpulkan bahwa jika $X$ dan $Y$
+		merupakan kompleks yang tersusun atas modul-$R$ bebas torsi-$f$ dan
+		$\alpha:X\to Y$ suatu kuasi-isomorfisme, maka $\alpha$ menginduksi
+		kuasi-isomorfisme $\eta_f(\alpha):\eta_fX\to\eta_fY$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i015
+		\item Buktikan bahwa $\eta_f$ menginduksi funktor aditif
+		$\mathrm{L}\eta_f:\cate{D}(R\dcate{Mod})\to\cate{D}(R\dcate{Mod})$
+		dengan cara ini, yang pembatasannya ke $\mathcal{SF}$ dari latihan
+		sebelumnya sama dengan $\eta_f$.
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.i016
+		\item Tunjukkan bahwa $\mathrm{L}\eta_f$ bukan funktor
+		bertriangulasi. Jadi ia bukan funktor turunan kiri dalam arti
+		Definisi~\ref{def:Verdier-localization-functor}, meskipun tetap merupakan
+		ekstensi Kan kanan.
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.hn010
+		\begin{hint}
+			Ambil $R=\Z$ dan $f=p$ prima. Verifikasi bahwa
+			$\mathrm{L}\eta_p(\Z/p\Z)=0$, sedangkan
+			$\mathrm{L}\eta_p(\Z/p^2\Z)\simeq\Z/p\Z$.
+		\end{hint}
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter4.k-flat-derived-tensor-b.ex017
+	\item Melanjutkan latihan sebelumnya, berikan morfisme kanonik
+	$\mathrm{L}\eta_f X \otimesL[R] \mathrm{L}\eta_f Y \to
+	\mathrm{L}\eta_f\left( X \otimesL[R] Y \right)$ dan tunjukkan bahwa
+	morfisme ini simetris terhadap $X$ dan $Y$ dalam arti yang sesuai.
+	Sesungguhnya, dalam bahasa \cite[Catatan 3.1.8]{Li1},
+	$\mathrm{L}\eta_f$ merupakan funktor monoidal longgar kanan terhadap
+	$\otimesL[R]$.
+\end{Exercises}

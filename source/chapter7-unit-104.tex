@@ -1,0 +1,273 @@
+% Unit 104 terjemahan Bahasa Indonesia dari chapter7.tex baris 2828--2944.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter7.exercises-b
+% Cakupan: bagian tengah Latihan Bab 7, dari pengayaan diri kategori monoidal
+% tertutup hingga keunikan struktur komodul pada hasil bagi dan submodul;
+% dilanjutkan oleh Unit 105 pada baris 2945.
+
+\hypertarget{o014.aljabr2.chapter7.exercises-b}{ }
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex011
+	\item Buktikan bahwa morfisme kanonik
+	$[Y,Z]\otimes[X,Y]\to[X,Z]$ dan $\munit\to[X,X]$ yang didefinisikan bagi
+	kategori monoidal tertutup dalam \S\ref{sec:closed-monoidal} memenuhi sifat
+	asosiativitas dan unit. Dengan demikian, kategori monoidal tertutup diperkaya
+	atas dirinya sendiri relatif terhadap $\Hom$ internal.
+	% segment-id: o014.aljabr2.chapter7.exercises-b.hi006
+	\begin{hint}
+		Periksa secara langsung, atau lihat \cite[Bagian 1.6]{Kel05}.
+	\end{hint}
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex012
+	\item Tinjau aljabar polinomial $\Bbbk[t]$ di atas gelanggang komutatif
+	$\Bbbk$. Definisikan $\Delta$, $\epsilon$, dan $S$ masing-masing dengan
+	% segment-id: o014.aljabr2.chapter7.exercises-b.q010
+	\[ \Delta(t^n) = \sum_{k=0}^n \binom{n}{k} t^k \otimes t^{n-k}, \quad \epsilon(t^n) = \begin{cases}
+		1, & n = 0 \\
+		0, & n \neq 0
+	\end{cases}, \quad
+	S(t^n) = (-1)^n t^n, \]
+	dengan $n\in\Z_{\geq0}$. Verifikasi bahwa data ini memberikan
+	aljabar Hopf-$\Bbbk$ yang komutatif dan kokomutatif.
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex013
+	\item Misalkan $A$ aljabar Hopf di atas gelanggang komutatif. Ideal $I$ dari
+	$A$ disebut \emph{ideal Hopf} jika
+	$\Delta(I)\subset I\otimes A+A\otimes I$, $\epsilon(I)=0$, dan
+	$S(I)\subset I$. Tunjukkan bahwa mengambil hasil bagi dengan ideal Hopf
+	memberikan aljabar Hopf $A/I$.
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex014
+	\item Misalkan $\Bbbk$ gelanggang komutatif dan $V$ modul-$\Bbbk$. Pada
+	aljabar tensor $T(V)$ (lihat \cite[Definisi 7.5.1]{Li1}) dapat didefinisikan
+	homomorfisme aljabar-$\Bbbk$
+	$\Delta:T(V)\to T(V)\otimes T(V)$ dan $\epsilon:T(V)\to\Bbbk$ sedemikian
+	sehingga, untuk setiap $v\in V$,
+	% segment-id: o014.aljabr2.chapter7.exercises-b.q011
+	\begin{gather*}
+		\Delta(v) = v \otimes 1 + 1 \otimes v, \quad \epsilon(v) = 0;
+	\end{gather*}
+	di sini struktur aljabar pada $T(V)\otimes T(V)$ diberikan oleh struktur
+	anyaman trivial $x\otimes y\mapsto y\otimes x$.
+	\begin{enumerate}[(i)]
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i001
+		\item Verifikasi bahwa struktur ini membuat $T(V)$ menjadi bialjabar.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i002
+		\item Tunjukkan cara mendefinisikan automorfisme modul-$\Bbbk$
+		$S:T(V)\to T(V)$ sedemikian sehingga $S(v)=-v$ dan $S$ merupakan
+		antiautomorfisme bialjabar (Proposisi~\ref{prop:Hopf-antiautomorphism});
+		secara lebih eksplisit,
+		% segment-id: o014.aljabr2.chapter7.exercises-b.q012
+		\[ S(v_1 \cdots v_n) = (-1)^n v_n \cdots v_1, \quad n \in \Z_{\geq 0}, \quad v_1, \ldots, v_n \in V. \]
+		Verifikasi bahwa struktur ini membuat $T(V)$ menjadi aljabar Hopf.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i003
+		\item Tunjukkan bahwa aljabar simetris $\Sym(V)$ mempunyai sifat serupa;
+		sebenarnya, aljabar tersebut merupakan hasil bagi $T(V)$ dengan suatu
+		ideal Hopf.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i004
+		\item Kerjakan versi untuk aljabar eksterior $\bigwedge(V)$, tetapi
+		struktur perkalian pada $\bigwedge(V)\otimes\bigwedge(V)$ harus
+		didefinisikan menggunakan struktur anyaman Koszul
+		\eqref{eqn:Koszul-braiding} (ambil $\epsilon(a)=a\bmod\;2$ di sana),
+		sehingga untuk unsur-unsur homogen
+		$x,y,z,w\in\bigwedge(V)$ berlaku
+		$(x\otimes y)(z\otimes w)=(-1)^{\deg y\deg z}xz\otimes yw$. Hal ini
+		memastikan bahwa $(1\otimes v+v\otimes1)^2$ sama dengan unsur nol dalam
+		$\bigwedge(V)\otimes\bigwedge(V)$ untuk setiap $v\in V$.
+	\end{enumerate}
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex015
+	\item (E.\ Taft) Misalkan $q$ akar satuan primitif ke-$n$ dalam medan
+	$\Bbbk$, dengan $n\geq2$. Tinjau aljabar-$\Bbbk$ $H$ yang ditentukan oleh
+	pembangkit $g$, $x$, dan relasi
+	% segment-id: o014.aljabr2.chapter7.exercises-b.q013
+	\[ g^n = 1, \quad x^n = 0, \quad gxg^{-1} = qx. \]
+	Tunjukkan bahwa dapat didefinisikan
+	$\Delta:H\to H\dotimes{\Bbbk}H$ dan $\epsilon:H\to\Bbbk$ yang memenuhi
+	% segment-id: o014.aljabr2.chapter7.exercises-b.q014
+	\begin{gather*}
+		\Delta(g) = g \otimes g, \quad \Delta(x) = 1 \otimes x + x \otimes g, \\
+		\epsilon(g) = 1, \quad \epsilon(x) = 0,
+	\end{gather*}
+	dan yang membuat $H$ menjadi aljabar Hopf-$\Bbbk$ dengan antipoda
+	% segment-id: o014.aljabr2.chapter7.exercises-b.q015
+	\[ S:H\to H, \quad S(g)=g^{-1}, \quad S(x)=-g^{-1}x. \]
+
+	Tunjukkan bahwa $H$ tidak komutatif maupun kokomutatif. Jika $n=2$,
+	aljabar Hopf yang bersesuaian juga disebut aljabar Hopf Sweedler.
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex016
+	\item Misalkan $(A,\Delta,\epsilon)$ koaljabar di atas gelanggang komutatif
+	$\Bbbk$. Jika $x\in A$ memenuhi $\Delta(x)=1\otimes x+x\otimes1$, maka
+	$x$ disebut \emph{primitif}.
+	\begin{enumerate}[(i)]
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i005
+		\item Buktikan bahwa $\epsilon(x)=0$ untuk setiap unsur primitif $x$.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i006
+		\item Misalkan $(A,\mu,\eta,\Delta,\epsilon)$ bialjabar dan tuliskan
+		$\mu$ sebagai perkalian, yaitu $xy=\mu(x\otimes y)$. Buktikan bahwa jika
+		$x,y\in A$ primitif, maka $xy-yx$ juga primitif.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i007
+		\item Masih dengan $A$ bialjabar, misalkan $x_1,\ldots,x_n\in A$
+		unsur-unsur primitif dan tuliskan $V$ untuk modul-$\Bbbk$ bebas dengan
+		basis $x_1,\ldots,x_n$. Dari sini diperoleh homomorfisme aljabar-$\Bbbk$
+		$\phi:T(V)\to A$. Buktikan bahwa $\phi$ juga merupakan homomorfisme
+		bialjabar.
+	\end{enumerate}
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex017
+	\item Misalkan $(A,\Delta,\epsilon)$ koaljabar di atas gelanggang komutatif
+	$\Bbbk$, dengan $A\neq\{0\}$ dan $A$ bebas torsi sebagai modul-$\Bbbk$.
+	Unsur taknol $x\in A$ yang memenuhi $\Delta(x)=x\otimes x$ disebut
+	\emph{serupa-grup}. Himpunan semua unsur serupa-grup dinotasikan dengan
+	$\mathcal{G}(A)$.
+	\begin{enumerate}[(i)]
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i008
+		\item Buktikan bahwa $x\in\mathcal{G}(A)$ mengakibatkan
+		$\epsilon(x)=1$.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i009
+		\item Buktikan bahwa jika $(A,\mu,\eta,\Delta,\epsilon)$ bialjabar, maka
+		$\mathcal{G}(A)$ menjadi monoid di bawah perkalian $\mu$ pada $A$, dengan
+		$1_A:=\eta(1)$ sebagai unsur unit.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i010
+		\item Untuk monoid $M$ dan bialjabar $\Bbbk[M]$ yang bersesuaian
+		(Contoh~\ref{eg:monoid-bialgebra}), buktikan bahwa
+		$\mathcal{G}(\Bbbk[M])=M$.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i011
+		\item Misalkan $A$ aljabar Hopf dengan antipoda $S$. Buktikan bahwa
+		$\mathcal{G}(A)$ merupakan grup dan bahwa invers dari
+		$x\in\mathcal{G}(A)$ adalah $S(x)$.
+	\end{enumerate}
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex018
+	\item Misalkan $(A,\Delta,\epsilon)$ koaljabar taknol di atas medan
+	$\Bbbk$. Buktikan bahwa $\mathcal{G}(A)$ merupakan subhimpunan bebas linear
+	dari $A$.
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.hi007
+	\begin{hint}
+		Andaikan tidak demikian dan pilih relasi linear taktrivial terpendek di
+		antara unsur-unsur tersebut. Tanpa mengurangi keumuman, tuliskan
+		$x_1=\sum_{i=2}^n a_i x_i$, dengan
+		$x_1,\ldots,x_n\in\mathcal{G}(A)$ saling berbeda dan $a_i\in\Bbbk$.
+		Maka $x_2,\ldots,x_n$ bebas linear, sedangkan
+		$x_1\otimes x_1=\sum_{i=2}^n a_i x_i\otimes x_i$.
+	\end{hint}
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex019
+	\item Tuliskan $\cate{TopCMon}$ untuk kategori monoid topologis komutatif,
+	$\cate{Top}_\bullet$ untuk kategori ruang topologis bertitik, dan
+	$U:\cate{TopCMon}\to\cate{Top}_\bullet$ untuk funktor pelupa (titik
+	dasar bersesuaian dengan unsur unit). Bangun funktor adjoin kiri
+	$\Sym:\cate{Top}_\bullet\to\cate{TopCMon}$ bagi $U$. Untuk ruang topologis
+	bertitik $(X,x)$, objek $\Sym(X,x)$ juga disebut \emph{produk simetris
+	takhingga} dari $(X,x)$; jelaskan istilah ini. Teorema Dold--Thom dalam
+	topologi aljabar didasarkan pada konstruksi ini.
+
+	% Reference: Deligne, Categories tannakiennes, 4.5 Proposition.
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex020
+	\item Misalkan bimodul-$(A,B)$ $P$ projektif dan dibangkitkan secara hingga
+	sebagai modul-$B$ kanan, serta $(\mathord\cdot)\dotimes{A}P$ merupakan funktor eksak
+	setia. Buktikan bahwa modul-$A$ kanan $N$ berpenyajian hingga
+	(Contoh~\ref{eg:Mod-cpt}) jika dan hanya jika
+	$N\dotimes{A}P$ berpenyajian hingga sebagai modul-$B$ kanan. Hasil ini
+	melengkapi Proposisi~\ref{prop:Morita-comonad-ft}.
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex021
+	\item Tinjau gelanggang komutatif $\Bbbk$ dan homomorfisme aljabar-$\Bbbk$
+	$f:A\to B$. Kita mempunyai pasangan adjoin
+	% segment-id: o014.aljabr2.chapter7.exercises-b.q016
+	\[\begin{tikzcd}
+		\mathcal{F}_{B|A}: \cated{Mod}B \arrow[shift left, r] & \cated{Mod}A: \Hom_A(B, \cdot), \arrow[shift left, l]
+	\end{tikzcd}\]
+	dengan $\Hom_A(B,N)$ diberi struktur modul-$B$ kanan melalui
+	$(\phi b)(x)=\phi(bx)$ untuk setiap modul-$A$ kanan $N$. Lebih tepatnya,
+	\begin{compactitem}
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i012
+		\item morfisme unit $M\to\Hom_A(B,M)$ memetakan $m$ ke
+		$[b\mapsto mb]$;
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i013
+		\item morfisme kounit $\Hom_A(B,N)\to N$ memetakan $\phi$ ke $\phi(1)$.
+	\end{compactitem}
+	Lihat \cite[Korolari 6.6.8]{Li1}. Sebagai pelengkap
+	Contoh~\ref{eg:comonad-change-ring}, tentukan secara eksplisit monad dan
+	komonad yang bersesuaian.
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex022
+	\item Misalkan $R$ gelanggang komutatif. Tuliskan $R\dcate{Alg}$ untuk
+	kategori aljabar-$R$. Tinjau pasangan adjoin
+	% segment-id: o014.aljabr2.chapter7.exercises-b.g001
+	$\begin{tikzcd}
+		T(\cdot): R\dcate{Mod} \arrow[shift left, r] & R\dcate{Alg}: U \arrow[shift left, l]
+	\end{tikzcd}$,
+	dengan $T(\mathord\cdot)$ adalah funktor aljabar tensor dan $U$ funktor
+	pelupa.
+	\begin{enumerate}[(i)]
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i014
+		\item Buktikan secara langsung bahwa modul di bawah monad yang
+		bersesuaian pada $R\dcate{Mod}$ adalah aljabar-$R$, sehingga pasangan
+		adjoin tersebut monadik.
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i015
+		\item Gantikan $T(\mathord\cdot)$ dengan $\Sym(\mathord\cdot)$ dan
+		$\bigwedge(\mathord\cdot)$, lalu nyatakan dan buktikan hasil yang
+		bersesuaian; lihat \cite[\S 7.6]{Li1}.
+	\end{enumerate}
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex023
+	\item Lengkapi argumen dalam Proposisi~\ref{prop:Comod-abelian}, kemudian
+	buktikan penguatan berikut. Misalkan $C$ koaljabar dalam
+	$(B,B)\dcate{Mod}$. Buktikan bahwa:
+	\begin{enumerate}[(i)]
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i016
+		\item funktor pelupa $U:\cated{Comod}C\to\cated{Mod}B$ mempunyai adjoin
+		kanan;
+
+		% segment-id: o014.aljabr2.chapter7.exercises-b.hi008
+		\begin{hint}
+			Tuliskan $\Delta$ untuk komultiplikasi $C$ dan $\epsilon$ untuk
+			kounitnya. Untuk modul-$B$ kanan $N$, jadikan
+			$N\dotimes{B}C$ komodul-$C$ kanan melalui
+			$\identity_N\otimes\Delta$. Untuk setiap komodul-$C$ kanan $M$,
+			verifikasi bahwa
+			% segment-id: o014.aljabr2.chapter7.exercises-b.q017
+			\[\begin{tikzcd}[row sep=tiny]
+				\Hom_{\cated{Mod}B}(M, N) \arrow[shift left, r] & \Hom_{\cated{Comod}C}\left(M, N \dotimes{B} C\right) \arrow[shift left, l] \\
+				\varphi \arrow[mapsto, r] & (\varphi \otimes \identity_C) \rho \\
+				(\identity_N \otimes \epsilon) \psi & \psi \arrow[mapsto, l]
+			\end{tikzcd}\]
+			saling invers, dengan $\rho:M\to M\dotimes{B}C$ menentukan struktur
+			komodul pada $M$.
+		\end{hint}
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i017
+		\item funktor pelupa $U$ menciptakan semua $\varinjlim$ kecil; oleh
+		karena itu, $\cated{Comod}C$ kokomplet;
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i018
+		\item kategori $\cated{Comod}C$ mempunyai kogenerator
+		(Definisi~\ref{def:generators});
+
+		% segment-id: o014.aljabr2.chapter7.exercises-b.hi009
+		\begin{hint}
+			Ambil suatu kogenerator dari kategori Grothendieck $\cated{Mod}B$,
+			kemudian ambil citranya di bawah funktor adjoin kanan bagi $U$.
+		\end{hint}
+		% segment-id: o014.aljabr2.chapter7.exercises-b.i019
+		\item jika $\cated{Comod}C$ merupakan kategori abelian dan $U$ funktor
+		eksak, maka $C$ datar sebagai modul-$B$ kiri.
+
+		% segment-id: o014.aljabr2.chapter7.exercises-b.hi010
+		\begin{hint}
+			Misalkan $g:M\to N$ monomorfisme modul-$B$ kanan. Gunakan keeksakan
+			$U$ dan fakta bahwa adjoin kanan mempertahankan kernel untuk
+			menunjukkan bahwa
+			$g\otimes\identity_C:M\dotimes{B}C\to N\dotimes{B}C$ tetap injektif.
+		\end{hint}
+	\end{enumerate}
+
+	% segment-id: o014.aljabr2.chapter7.exercises-b.ex024
+	\item Seperti dalam latihan sebelumnya, tetap misalkan $C$ koaljabar dalam
+	$(B,B)\dcate{Mod}$ dan $M$ komodul-$C$ kanan. Buktikan bahwa jika suatu
+	modul-$B$ hasil bagi $M''$ dari $M$ (atau suatu submodul-$B$ $M'$ dari
+	$M$) memiliki struktur komodul yang membuat
+	$M\twoheadrightarrow M''$ (atau $M'\hookrightarrow M$) menjadi
+	homomorfisme komodul, maka struktur komodul tersebut unik. Untuk kasus
+	submodul, diasumsikan pula bahwa $C$ datar sebagai modul-$B$ kiri.

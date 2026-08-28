@@ -79,7 +79,7 @@ beberapa bagian berikutnya.
 	$\mathcal{C}^I$, dan tinjau pula funktor diagonal
 	$\Delta: \mathcal{C} \to \mathcal{C}^I$ yang memetakan setiap objek ke
 	funktor konstan yang bersesuaian. Menurut Definisi
-	\ref{def:comma-category}, $(\alpha/\Delta)$ tidak lain adalah kategori
+	\ref{def:comma-category}, $(\alpha/\Delta)$ tepat merupakan kategori
 	``kokonus'' yang diperkenalkan dalam Konvensi \ref{con:limit-cone}, sedangkan
 	funktor $\Pi_{\alpha/}$ memetakan setiap kokonus ke puncaknya.
 \end{contoh}
@@ -92,13 +92,13 @@ beberapa bagian berikutnya.
 \end{definisi}
 
 % segment-id: o014.li2.chapter1.filtered-inductive-limits.p003
-Mudah diperiksa bahwa jika $I \to J$ dan $J \to K$ keduanya kofinal, maka
+Mudah diverifikasi bahwa jika $I \to J$ dan $J \to K$ keduanya kofinal, maka
 funktor komposit $I \to K$ juga kofinal. Pemeriksaannya diserahkan kepada
 pembaca sebagai latihan.
 
 % segment-id: o014.li2.chapter1.filtered-inductive-limits.p004
-Hasil berikut menunjukkan bahwa limit dapat dihitung setelah diagram dibatasi
-di sepanjang funktor kofinal. Ingat bahwa $H$ menginduksi
+Hasil berikut menunjukkan bahwa limit dapat dihitung dengan membatasi diagram
+sepanjang funktor kofinal. Ingat bahwa $H$ menginduksi
 $H^{\opp}: J^{\opp} \to I^{\opp}$.
 
 % segment-id: o014.li2.chapter1.filtered-inductive-limits.pr001
@@ -141,7 +141,7 @@ $H^{\opp}: J^{\opp} \to I^{\opp}$.
 		& i \arrow[ld] \arrow[d] \arrow[rd] & \\
 		H(j) & H(j'') \arrow[l, "{H(j'' \to j)}"] \arrow[r, "{H(j'' \to j')}"'] & H(j')
 	\end{tikzcd}\]
-	maka dari konstruksinya mudah dilihat bahwa
+	maka dari konstruksinya langsung terlihat bahwa
 	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q002
 	\[ g_j \circ \alpha(i\to H(j))
 	= g_{j''} \circ \alpha(i\to H(j''))
@@ -161,7 +161,7 @@ $H^{\opp}: J^{\opp} \to I^{\opp}$.
 	$\mathcal{C}$, yaitu $\theta: L \to L'$, sedemikian sehingga
 	$\theta f_i = f'_i$ selalu berlaku. Cukup memeriksa syarat ini pada
 	objek-objek $H(j)$ dalam citra kofinal $H$: untuk setiap $i$, pilih
-	$j \in \Obj(J)$ dan $i \to H(j)$; syarat tersebut lalu tereduksi menjadi
+	$j \in \Obj(J)$ dan $i \to H(j)$; syarat tersebut kemudian menjadi
 	$\theta f_{H(j)} = f'_{H(j)}$, yakni bahwa $\theta$ merupakan morfisme di
 	$(\alpha H / \Delta)$.
 \end{bukti}
@@ -230,7 +230,8 @@ $H^{\opp}: J^{\opp} \to I^{\opp}$.
 	\end{tikzcd}\]
 	dengan $k \in \Obj(J)$. Ini menunjukkan bahwa $J$ kofinal.
 
-	Untuk sifat terfilter $J$, ambil sembarang $i, j \in \Obj(J)$. Karena $I$
+	Untuk membuktikan bahwa $J$ terfilter, ambil sembarang
+	$i, j \in \Obj(J)$. Karena $I$
 	terfilter, terdapat $k_0 \in \Obj(I)$ beserta morfisme $i\to k_0$ dan
 	$j\to k_0$; pilih pula $k \in \Obj(J)$ beserta
 	morfisme $k_0 \to k$. Dengan mengomposisikan morfisme-morfisme tersebut,
@@ -239,7 +240,7 @@ $H^{\opp}: J^{\opp} \to I^{\opp}$.
 	$i\rightarrow k_0\leftarrow j$ sebagai morfisme-morfisme di $J$, padahal
 	$k_0$ hanya diketahui berada di $I$. Target menggunakan komposit menuju
 	$k\in\Obj(J)$ (O014-C012).} Ini membuktikan syarat pertama
-	untuk kategori terfilter. Syarat kedua dapat ditangani dengan gagasan yang
+	untuk kategori terfilter. Syarat kedua dapat dibuktikan dengan gagasan yang
 	sama.
 \end{bukti}
 
@@ -254,13 +255,13 @@ $H^{\opp}: J^{\opp} \to I^{\opp}$.
 \end{contoh}
 
 % segment-id: o014.li2.chapter1.filtered-inductive-limits.p005
-Apa kegunaan konstruksi ini? Tinjau sembarang funktor
+Untuk melihat kegunaan konstruksi ini, tinjau sembarang funktor
 $\alpha: I \to \mathcal{C}$ (atau $\beta: I^{\opp} \to \mathcal{C}$).
 Pembatasannya pada subkategori penuh $J$ memberikan $\alpha|_J$ (atau
 $\beta|_{J^{\opp}}$). Jika $J \subset K$, terdapat morfisme alami
 $\varinjlim \alpha|_J \to \varinjlim \alpha|_K$ (atau
 $\varprojlim \beta|_{K^{\opp}} \to \varprojlim \beta|_{J^{\opp}}$), asalkan
-limit-limit tersebut ada. Hasil berikut menjelaskan suatu cara untuk
+limit-limit tersebut ada. Hasil berikut menjelaskan cara
 menghampiri sembarang limit secara ``terfilter'' melalui kasus dengan
 objek berhingga.
 
@@ -291,8 +292,8 @@ objek berhingga.
 	\varprojlim \Hom(\alpha|_J, S) .
 	\end{aligned} \]
 	dengan $S \in \Obj(\mathcal{C})$ sembarang, sedangkan ruas kanan merupakan
-	$\varprojlim$ rangkap dari himpunan. Persoalannya tereduksi menjadi
-	memeriksa, untuk keluarga himpunan $(X_i)_{i \in \Obj(I)}$ beserta keluarga
+	$\varprojlim$ rangkap dari himpunan. Cukup diperiksa, untuk keluarga
+	himpunan $(X_i)_{i \in \Obj(I)}$ beserta keluarga
 	morfisme kompatibel
 	$\left( f_{i \to j}: X_j \to X_i \right)_{[i \to j] \in \Mor(I)}$,
 	bijeksi
@@ -346,7 +347,7 @@ kompatibilitas $\beta(j' \to j)(y_j) = y_{j'}$.
 % segment-id: o014.li2.chapter1.filtered-inductive-limits.p008
 Berikutnya, tinjau funktor berbentuk
 $\alpha: I \times J^{\opp} \to \cate{Set}$, dengan $I, J$ kategori kecil;
-terhadap peubah $I$ dan $J$ masing-masing dapat diambil $\varinjlim$ dan
+menurut peubah $I$ dan $J$ masing-masing dapat diambil $\varinjlim$ dan
 $\varprojlim$. Untuk setiap $(i_0, j_0) \in \Obj(I \times J)$, terdapat
 komposisi pemetaan alami
 % segment-id: o014.li2.chapter1.filtered-inductive-limits.q007
@@ -380,15 +381,16 @@ digunakan dalam \S\sourcecrossref{sec:cat-localization}{1.9}.
 	Pertama-tama kita tunjukkan bahwa $e$ surjektif. Diberikan
 	$(b_j)_{j \in \Obj(J)} \in \varprojlim_j \varinjlim_i \alpha(i, j)$,
 	tuliskan setiap $b_j$ sebagai $[x_{i_j, j}]$. Karena $I$ terfilter dan $J$
-	berhingga, kita dapat memilih objek penerima bersama $i\in\Obj(I)$ untuk
+	berhingga, kita dapat memilih objek sasaran bersama $i\in\Obj(I)$ untuk
 	semua $i_j$, lalu mengganti setiap wakil dengan citranya sepanjang morfisme
 	$i_j\to i$.
 	Dengan demikian, semua wakil dapat ditulis $x_{i,j}$ dengan indeks $i$ yang
 	sama. Untuk setiap morfisme $j \to j'$ di $J$, kita mempunyai
 	% segment-id: o014.li2.chapter1.filtered-inductive-limits.q009
 	\[ \left[ \alpha(i, j \to j') (x_{i, j'}) \right] = \left[ x_{i, j} \right]. \]
-	Karena $\Mor(J)$ berhingga dan $I$ terfilter, kita dapat memilih penerus
-	bersama $i\to i_1$, mengganti semua wakil dengan citranya di indeks $i_1$,
+	Karena $\Mor(J)$ berhingga dan $I$ terfilter, kita dapat memilih satu
+	morfisme $i\to i_1$ yang menyamakan semua pasangan tersebut, mengganti
+	semua wakil dengan citranya di indeks $i_1$,
 	lalu menamai
 	kembali $i_1$ sebagai $i$, sehingga
 	$\alpha(i, j \to j') (x_{i, j'}) = x_{i, j}$ berlaku untuk semua
@@ -400,8 +402,8 @@ digunakan dalam \S\sourcecrossref{sec:cat-localization}{1.9}.
 	citranya di satu indeks bersama $i\in\Obj(I)$, sehingga keduanya mempunyai wakil
 	$(x_{i,j})_j$ dan $(y_{i,j})_j$. Jadi, untuk setiap $j \in \Obj(J)$,
 	berlaku $[x_{i,j}]=[y_{i,j}]$. Karena $I$ terfilter dan $J$ berhingga, kita
-	dapat memilih satu penerus bersama, mengganti semua komponen dengan citranya
-	di sana, lalu menamainya kembali sebagai $i$, sehingga
+	dapat memilih satu indeks lanjutan bersama, mengganti semua komponen dengan
+	citranya di sana, lalu menamainya kembali sebagai $i$, sehingga
 	$x_{i,j}=y_{i,j}$ untuk setiap
 	$j$. Dengan demikian, $x=y$.
 \end{bukti}

@@ -24,10 +24,10 @@ yang dimaksud dengan kategori dengan pergeseran.
 	\footnote{Banyak pustaka mensyaratkan bahwa $T$ merupakan automorfisme;
 	dalam hal ini dapat dipilih funktor invers $T^{-1}$ yang memenuhi
 	$T^{-1}T=\identity_{\mathcal D}=TT^{-1}$. Syarat tersebut mencakup semua
-	situasi yang benar-benar ditangani dalam buku ini dan menghindari
-	seluk-beluk potensial teori $2$-kategori, sehingga pembaca boleh saja
-	membuat asumsi yang sama. Namun, kajian kategori model stabil atau kategori
-	$\infty$ stabil tidak dapat menghindari kasus yang bukan isomorfisme,
+	situasi yang dibahas dalam buku ini dan menghindari
+	kemungkinan seluk-beluk dalam teori $2$-kategori, sehingga pembaca boleh saja
+	mengandaikan hal yang sama. Namun, kajian kategori model stabil atau kategori
+	$\infty$ stabil tidak dapat menghindari kasus ketika ekuivalensinya bukan isomorfisme,
 	terutama dalam topologi.}
 	Ekuivalensi $T$ disebut \emph{funktor pergeseran} dari $\mathcal{D}$.
 	Selain itu, dipilih kuasi-invers $T^{-1}$ bagi $T$ beserta isomorfisme
@@ -40,7 +40,7 @@ yang dimaksud dengan kategori dengan pergeseran.
 % segment-id: o014.li2.chapter4.triangulated-category-definition.i001
 		\item Suatu funktor dari $(\mathcal{D},T)$ ke
 		$(\mathcal{D}',T')$ ialah funktor $F:\mathcal{D}\to\mathcal{D}'$
-		beserta isomorfisme yang ditetapkan $FT\simeq T'F$. Menurut kebiasaan,
+		beserta isomorfisme yang dipilih $FT\simeq T'F$. Menurut kebiasaan,
 		isomorfisme itu tidak dituliskan dan data tersebut disingkat menjadi
 		$F:(\mathcal{D},T)\to(\mathcal{D}',T')$.
 % segment-id: o014.li2.chapter4.triangulated-category-definition.i002
@@ -59,7 +59,7 @@ yang dimaksud dengan kategori dengan pergeseran.
 			T'F \arrow[r,"{T'\varphi}"'] & T'F'.
 		\end{tikzcd}\]
 % segment-id: o014.li2.chapter4.triangulated-category-definition.i003
-		\item Suatu subkategori dari kategori dengan pergeseran
+		\item Suatu subkategori dalam kategori dengan pergeseran
 		$(\mathcal{D},T)$ ialah subkategori $\mathcal{D}'$ dari $\mathcal{D}$
 		yang tertutup terhadap $T$ dan sedemikian sehingga
 		$T':=T|_{\mathcal{D}'}$ menjadikan $(\mathcal{D}',T')$ kategori dengan
@@ -152,7 +152,7 @@ Dalam bab ini kita terutama meninjau kategori aditif dengan pergeseran.
 
 % segment-id: o014.li2.chapter4.triangulated-category-definition.p006
 	Konsep serupa tetap tersedia jika kategori aditif diganti dengan kategori
-	$\Bbbk$-linear yang lebih umum, dengan $\Bbbk$ sebarang gelanggang
+	$\Bbbk$-linear yang lebih umum, dengan $\Bbbk$ sembarang gelanggang
 	komutatif.
 \end{definisi}
 
@@ -182,7 +182,7 @@ $(\mathcal{D}^{\opp},T^{-1})$.
 
 % segment-id: o014.li2.chapter4.triangulated-category-definition.p008
 Menurut notasi Definisi~\ref{def:morphism-with-degree}, suatu segitiga juga
-dapat dituliskan $X\to Y\to Z\xrightarrow{+1}$, atau secara lebih bergambar
+dapat dituliskan $X\to Y\to Z\xrightarrow{+1}$, atau secara lebih visual
 sebagai
 % segment-id: o014.li2.chapter4.triangulated-category-definition.g005
 $\begin{tikzcd}[row sep=small,column sep=tiny]
@@ -232,7 +232,8 @@ morfisme tersebut dapat dianalogikan dengan ikatan hidrogen di antara basa.
 		$(-++)$, $(+-+)$, atau $(---)$; lihat
 		Catatan~\ref{rem:triangle-signs}.
 % segment-id: o014.li2.chapter4.triangulated-category-definition.i008
-		\item Andaikan bagian bergaris penuh pada diagram berikut komutatif,
+		\item Andaikan bagian diagram berikut yang digambar dengan garis penuh
+		komutatif,
 % segment-id: o014.li2.chapter4.triangulated-category-definition.g006
 		\[\begin{tikzcd}
 			X \arrow[r] \arrow[d,"\alpha"'] &
@@ -291,8 +292,8 @@ morfisme tersebut dapat dianalogikan dengan ikatan hidrogen di antara basa.
 		\mathcal{D} \arrow[shift left,r,"F"] &
 		\mathcal{D}' \arrow[shift left,l,"G"]
 	\end{tikzcd}$
-	saling kuasi-invers, keduanya disebut memberikan suatu \emph{ekuivalensi}
-	di antara $\mathcal{D}$ dan $\mathcal{D}'$.
+	saling kuasi-invers, keduanya disebut membentuk suatu \emph{ekuivalensi}
+	antara $\mathcal{D}$ dan $\mathcal{D}'$.
 \end{definisi}
 
 % segment-id: o014.li2.chapter4.triangulated-category-definition.p011

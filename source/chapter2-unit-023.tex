@@ -29,7 +29,7 @@ tetapkan suatu kategori abelian $\mathcal{A}$.
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.pf001
 \begin{bukti}
-	Pertama, perhatikan arah ``hanya jika''. Morfisme $f$ dan $h$ sama-sama
+	Pertama, tinjau arah ``hanya jika''. Morfisme $f$ dan $h$ sama-sama
 	berfaktor melalui $\Ker(g)$. Berdasarkan faktorisasi itu, ambil
 	$S' := S \dtimes{\Ker(g)} X'$, sedangkan $S' \to S$ dan $S' \to X'$ diambil
 	sebagai morfisme alami dari produk serat. Keeksakan mengakibatkan
@@ -46,7 +46,7 @@ tetapkan suatu kategori abelian $\mathcal{A}$.
 		X' \arrow[dashed, ru, "\alpha" description] \arrow[r, "f"'] & X
 	\end{tikzcd}\]
 	Bagian bergaris putus-putus, yaitu $\alpha$, berasal dari faktorisasi $f$
-	yang diberikan oleh $gf=0$. Kita nyatakan bahwa diagram tersebut komutatif.
+	yang diberikan oleh $gf=0$. Akan ditunjukkan bahwa diagram tersebut komutatif.
 	Bingkai luar dan segitiga kanan bawah sudah diketahui komutatif. Karena itu,
 	dua morfisme pada segitiga kiri atas menjadi sama setelah dikomposisikan
 	dengan $h$. Karena $h$ merupakan monomorfisme, segitiga kiri atas juga
@@ -62,8 +62,8 @@ Untuk pendekatan lain yang menggantikan pengejaran diagram dalam kategori
 abelian umum, lihat \cite[Tag 05PL]{stacks}.
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.p003
-Kembali ke pokok bahasan, kini kita membahas Lema Ular yang sangat diperlukan
-dalam penerapan. Perhatikan diagram
+Sekarang kita membahas Lema Ular, yang sangat diperlukan dalam penerapan.
+Tinjau diagram
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.q001
 \begin{equation}\label{eqn:snake}
@@ -97,15 +97,15 @@ dengan ketentuan berikut:
 \end{itemize}
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.p005
-Dengan demikian, \eqref{eqn:snake} merupakan diagram komutatif yang setiap
-kolomnya dan kedua baris tengahnya eksak. Berikut akan dijelaskan cara
+Dengan demikian, \eqref{eqn:snake} merupakan diagram komutatif; setiap
+kolom dan kedua baris tengahnya eksak. Berikut akan dijelaskan cara
 membangun \emph{morfisme penghubung} bergaris putus-putus
 $\delta: \Ker'' \to \Coker'$.
 \index{morfisme penghubung (connecting morphism)}
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.p006
-Langkah pertama ialah membangun dari \eqref{eqn:snake} diagram komutatif
-berikut, yang baris-barisnya eksak:
+Langkah pertama ialah menurunkan diagram komutatif berikut dari
+\eqref{eqn:snake}; semua barisnya eksak:
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.q002
 \begin{equation}\label{eqn:snake-conn}
@@ -153,7 +153,7 @@ selanjutnya dengan $\Coker(u) \rightiso \Image(v) \hookrightarrow Y''$
 bernilai $0$.
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.p009
-Nyatakan komposisi sepanjang jalur tengah dalam \eqref{eqn:snake-conn} sebagai
+Notasikan komposisi sepanjang jalur tengah dalam \eqref{eqn:snake-conn} sebagai
 $\delta_0: X \dtimes{X''} \Ker'' \to \Coker' \dsqcup{Y'} Y$. Pengamatan di
 atas langsung memberikan
 % segment-id: o014.li2.chapter2.diagram-lemmas.q003
@@ -190,7 +190,7 @@ diperoleh morfisme kanonik yang dicari, $\delta: \Ker'' \to \Coker'$.
 	\end{tikzcd}\]
 	Menurut definisinya, untuk membuktikan hal ini cukup ditunjukkan bahwa
 	$\delta_0$ dan $\underline{\delta_0}$ juga dapat ditempatkan dalam persegi
-	komutatif yang bersesuaian. Semuanya tereduksi pada funktorialitas kernel,
+	komutatif yang bersesuaian. Semuanya mengikuti dari funktorialitas kernel,
 	kokernel, produk, dan koproduk. Perinciannya diserahkan kepada pembaca.
 \end{catatan}
 
@@ -214,7 +214,7 @@ Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
 	\eqref{eqn:snake-conn}, tampak bahwa kedua komposisi morfisme
 	% segment-id: o014.li2.chapter2.diagram-lemmas.q005
 	\[ \Ker \to \Ker'' \xrightarrow{\delta} \Coker' \hookrightarrow \Coker' \dsqcup{Y'} Y, \qquad \Ker \to X \dtimes{X''} \Ker'' \xrightarrow{\delta_0} \Coker' \dsqcup{Y'} Y \]
-	adalah sama. Namun, komposisi yang kedua juga sama dengan komposisi
+		sama. Namun, komposisi yang kedua juga sama dengan komposisi
 	$\Ker \to X \to Y \to \Coker' \dsqcup{Y'} Y $, yaitu $0$. Dengan
 	demikian diperoleh
 	% segment-id: o014.li2.chapter2.diagram-lemmas.q006
@@ -241,7 +241,7 @@ Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
 	menyiratkan bahwa $\Ker' \to \Ker$ merupakan monomorfisme. Kasus ketika
 	$v$ merupakan epimorfisme diperoleh dengan membalik semua anak panah.
 
-	Pokok masalahnya ialah keeksakan barisan pertama.
+	Bagian utama pembuktian ialah keeksakan barisan pertama.
 	Berdasarkan sifat dual yang telah diamati, cukup dibuktikan bahwa
 	$\Ker' \to \Ker \to \Ker'' \to \Coker'$ eksak.
 	
@@ -251,7 +251,7 @@ Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
 	Lema~\ref{prop:Abel-cat-exact-aux} untuk
 	membuktikan keeksakannya: andaikan morfisme $\psi: S \to \Ker$ membuat
 	komposisi $S \xrightarrow{\psi} \Ker \to \Ker''$ sama dengan $0$.
-	Kita mencari diagram komutatif
+	Kita perlu membangun diagram komutatif
 	% segment-id: o014.li2.chapter2.diagram-lemmas.q007
 	\begin{equation}\label{eqn:snake-lemma-aux-1}
 	% segment-id: o014.li2.chapter2.diagram-lemmas.g007
@@ -285,7 +285,7 @@ Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
 	Persamaan \eqref{eqn:snake-conn-complex} terlebih dahulu menunjukkan
 	bahwa barisan ini merupakan kompleks. Untuk membuktikan keeksakannya,
 	kita kembali menggunakan Lema~\ref{prop:Abel-cat-exact-aux}. Andaikan
-	morfisme $\psi: S \to \Ker''$ memenuhi $\delta \psi = 0$. Kita mencari
+	morfisme $\psi: S \to \Ker''$ memenuhi $\delta \psi = 0$. Kita perlu membangun
 	diagram komutatif berbentuk
 	% segment-id: o014.li2.chapter2.diagram-lemmas.q008
 	\begin{equation}\label{eqn:snake-lemma-aux-2}
@@ -312,7 +312,7 @@ Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
 	Karenanya, $S_1 \to X \dtimes{X''} \Ker'' \to X \to Y$ berfaktor
 	sebagai $S_1 \xrightarrow{\xi} Y' \xrightarrow{u} Y$. Sekarang akan
 	dibuktikan bahwa komposisi $S_1 \xrightarrow{\xi} Y' \to \Coker'$
-	sama dengan $0$. Titik pangkalnya ialah diagram komutatif
+	sama dengan $0$. Mulailah dengan diagram komutatif
 	% segment-id: o014.li2.chapter2.diagram-lemmas.g011
 	\[\begin{tikzcd}
 		S \arrow[r, "\psi"] & \Ker'' \arrow[r, "\delta"] & \Coker' \arrow[hookrightarrow, d] \\
@@ -362,13 +362,13 @@ Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
 		\Ker \arrow[hookrightarrow, d] \arrow[rr] & & \Ker'' \arrow[hookrightarrow, d] \\
 		X \arrow[rr, "g"] & & X'' .
 	\end{tikzcd}\]
-	Untuk mencapai sasaran yang ditetapkan dalam
+	Untuk memperoleh diagram dalam
 	\eqref{eqn:snake-lemma-aux-2}, cukup ditunjukkan bahwa persegi atasnya
 	komutatif. Persegi bawah dan bagian yang melengkung telah diketahui
 	komutatif; argumen yang lazim mereduksi persoalan ini menjadi
 	kekomutatifan bingkai luar. Karena
 	$g(\lambda - fk) = g\lambda$, kekomutatifan bingkai luar tersebut
-	mereduksi pada diagram komutatif yang telah diketahui (lihat
+	mereduksi menjadi diagram komutatif yang telah diketahui (lihat
 	\eqref{eqn:snake-lemma-aux-3}):
 	% segment-id: o014.li2.chapter2.diagram-lemmas.g015
 	\[\begin{tikzcd}
@@ -376,7 +376,7 @@ Dua pengamatan berikut akan digunakan dalam pembuktian selanjutnya.
 		& X \dtimes{X''} \Ker'' \arrow[r] \arrow[d] & \Ker'' \arrow[d] \\
 		& X \arrow[r, "g"] & X'' .
 	\end{tikzcd}\]
-	Ini memverifikasi semua syarat yang diperlukan.
+	Dengan demikian, semua syarat yang diperlukan terpenuhi.
 \end{bukti}
 
 % segment-id: o014.li2.chapter2.diagram-lemmas.p011
@@ -416,8 +416,8 @@ sederhana dalam kategori modul $R\dcate{Mod}$; lihat
 	dari (i)--(ii) dan Proposisi~\ref{prop:strict-isomorphism}. Jadi, cukup
 	dibuktikan (i).
 	
-	Andaikan morfisme $h: S \to X_3$ memenuhi $f_3 h = 0$; sasaran kita
-	ialah membuktikan bahwa $h = 0$. Komposisi
+	Andaikan morfisme $h: S \to X_3$ memenuhi $f_3 h = 0$; kita perlu
+	membuktikan bahwa $h = 0$. Komposisi
 	$S \xrightarrow{h} X_3 \to X_4 \xrightarrow{f_4} Y_4$ sama dengan $0$,
 	sehingga komposisi $S \xrightarrow{h} X_3 \to X_4$ juga sama dengan
 	$0$. Dengan menerapkan Lema~\ref{prop:Abel-cat-exact-aux} pada barisan
@@ -435,8 +435,8 @@ sederhana dalam kategori modul $R\dcate{Mod}$; lihat
 		& & X_2 \arrow[d, "f_2" inner sep=0.5em] \\
 		X_1 \arrow[r, "f_1"'] & Y_1 \arrow[r] & Y_2 . 
 	\end{tikzcd}\]
-	Caranya sebagai berikut. Komposisi
-	$S' \to X_2 \xrightarrow{f_2} Y_2 \to Y_3$, oleh karena $f_3 h = 0$,
+	Caranya sebagai berikut. Karena $f_3 h = 0$, komposisi
+	$S' \to X_2 \xrightarrow{f_2} Y_2 \to Y_3$
 	sama dengan $0$. Penerapan Lema~\ref{prop:Abel-cat-exact-aux} pada
 	$S' \to Y_2$ dan barisan eksak $Y_1 \to Y_2 \to Y_3$ memberikan bagian
 	kanan diagram. Penerapan Lema~\ref{prop:Abel-cat-exact-aux} pada
@@ -450,7 +450,7 @@ sederhana dalam kategori modul $R\dcate{Mod}$; lihat
 		X_1 \arrow[r] \arrow[d, "f_1"'] & X_2 \arrow[r] \arrow[d, "f_2"] & X_3 \arrow[r] & X_4 \\
 		Y_1 \arrow[r] & Y_2 & &
 	\end{tikzcd}\]
-	Kita nyatakan bahwa diagram ini komutatif. Satu-satunya persoalan ialah
+	Akan ditunjukkan bahwa diagram ini komutatif. Satu-satunya persoalan ialah
 	persegi kiri atas. Komposisikan kedua lintasan
 	% segment-id: o014.li2.chapter2.diagram-lemmas.g020
 	\begin{tikzpicture}[scale=0.3]
@@ -460,7 +460,7 @@ sederhana dalam kategori modul $R\dcate{Mod}$; lihat
 	\begin{tikzpicture}[scale=0.3]
 		\draw[->] (0,1) -- (0,0) -- (1,0);
 	\end{tikzpicture}
-	di dalamnya di sebelah kanan dengan $f_2$. Karena kedua persegi
+	di dalam persegi itu dengan $f_2$ di sebelah kanan. Karena kedua persegi
 	% segment-id: o014.li2.chapter2.diagram-lemmas.g022
 	$\begin{tikzcd}[row sep=small, column sep=small]
 		X_1 \arrow[r] \arrow[d] & X_2 \arrow[d] \\
@@ -482,7 +482,7 @@ sederhana dalam kategori modul $R\dcate{Mod}$; lihat
 % segment-id: o014.li2.chapter2.diagram-lemmas.p012
 Bagian ini hanya memperkenalkan dua lema yang paling umum dipakai di antara
 sekian banyak lema diagram. Dengan bahasa bikompleks, G.\ Bergman
-menemukan Lema Salamander yang serba mencakup; lema ini merangkum Lema Ular
+menemukan Lema Salamander yang bersifat menyeluruh; lema ini merangkum Lema Ular
 dan beberapa lema diagram klasik dalam aljabar homologis. Pembaca yang
 berminat dipersilakan melihat \cite{Be12}.
 \index{lema salamander (Salamander Lemma)}

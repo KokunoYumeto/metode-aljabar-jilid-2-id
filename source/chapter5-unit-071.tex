@@ -1,0 +1,190 @@
+% Unit 071 terjemahan Bahasa Indonesia dari chapter5.tex baris 1066--1148.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter5.exercises
+% Cakupan: seluruh latihan Bab 5.
+
+% segment-id: o014.li2.chapter5.exercises.h001
+\begin{Exercises}
+	% segment-id: o014.li2.chapter5.exercises.ex001
+	\item Untuk kategori abelian $\mathcal{A}$, periksalah sifat-sifat
+	berikut bagi kategori objek terfiltrasi $\mathrm{Fil}^\bullet(\mathcal{A})$.
+	\begin{enumerate}[(i)]
+		\item Kategori ini aditif, dan setiap morfisme mempunyai kernel,
+		kokernel, citra, dan kocitra. Deskripsikan semuanya sekonkret mungkin.
+		\item Untuk morfisme $f:X\to Y$ dalam
+		$\mathrm{Fil}^\bullet(\mathcal{A})$, jika
+		$f(\mathrm{F}^nX)\to f(X)\cap\mathrm{F}^nY$ merupakan isomorfisme
+		untuk semua $n$, maka $f$ disebut morfisme ketat. Buktikan bahwa konsep
+		ini ekuivalen dengan versi dalam Definisi~\ref{def:strict-morphism}.
+
+		\begin{hint}
+			Ini setara dengan mengatakan bahwa kedua filtrasi alami pada $f(X)$
+			sama: yang pertama adalah citra $\mathrm{F}^\bullet X$, sedangkan
+			yang kedua adalah restriksi $\mathrm{F}^\bullet Y$. Yang pertama
+			bersesuaian dengan $\Coim(f)$ dalam
+			$\mathrm{Fil}^\bullet(\mathcal{A})$, sedangkan yang kedua
+			bersesuaian dengan $\Image(f)$.
+		\end{hint}
+		\item Berikan contoh yang menunjukkan bahwa
+		$\mathrm{Fil}^\bullet(\mathcal{A})$ pada umumnya bukan kategori abelian.
+	\end{enumerate}
+	Meskipun objek terfiltrasi tidak membentuk kategori abelian, geometri tetap
+	memerlukan kategori turunan terfiltrasi dalam kasus filtrasi hingga,
+	$\cate{DF}(\mathcal{A})$. Definisinya membutuhkan teknik yang cukup
+	mendalam; lihat \cite[Tag 05RX]{stacks}.
+	\index{kategori turunan!terfiltrasi (filtered)}
+
+	% segment-id: o014.li2.chapter5.exercises.ex002
+	\item Untuk suatu objek diferensial terfiltrasi
+	$(X,d,\mathrm{F}^\bullet X)$ pada kategori abelian $\mathcal{A}$,
+	buktikan bahwa $d_1^p:E_1^p\to E_1^{p+1}$ dalam barisan spektral merupakan
+	morfisme penghubung yang diinduksi oleh barisan eksak pendek objek
+	diferensial
+	\[ 0\to\gr^{p+1}X\to\mathrm{F}^pX/\mathrm{F}^{p+2}X
+	\to\gr^pX\to0. \]
+
+	% segment-id: o014.li2.chapter5.exercises.ex003
+	\item (Barisan spektral Bockstein) Misalkan $f$ bukan pembagi nol
+	dalam gelanggang komutatif $R$. Untuk setiap modul-$R$ $M$, definisikan
+	$M[f]:=\{m\in M:fm=0\}$; $M$ disebut \emph{bebas torsi-$f$} jika
+	$M[f]=\{0\}$. Misalkan $C$ adalah kompleks rantai dan setiap $C_n$ bebas
+	torsi-$f$. Perkalian dengan $f$ memberikan monomorfisme kompleks rantai
+	$\alpha:C\to C$. Untuk data $(C,\alpha)$,
+	Proposisi~\ref{prop:differential-exact-couple} memberikan pasangan eksak
+	\[\begin{tikzcd}[column sep=tiny]
+		\Hm_\bullet(C) \arrow[rr, "{\Hm_\bullet(\alpha)}"] & &
+		\Hm_\bullet(C) \arrow[ld] \\
+		& \Hm_\bullet\left(C\dotimes{R}R/(f)\right) \arrow[lu, "{-1}"] &
+	\end{tikzcd}\]
+	dan barisan spektral bergradasi homologis terkait
+	$(E^r_q)_{\substack{r\geq0\\q\in\Z}}$. Deskripsikan setiap halaman
+	$(E^r,d^r)$ serta $E^\infty$ sejelas mungkin.
+	\index{barisan spektral!Bockstein}
+
+	% segment-id: o014.li2.chapter5.exercises.ex004
+	\item Dalam soal sebelumnya, ambil $R=\Z$ dan $f=p$ dengan $p$ bilangan prima, lalu
+	andaikan setiap $C_n$ merupakan modul-$\Z$ bebas berperingkat hingga. Untuk
+	setiap modul-$\Z$ $M$, tuliskan $M_{\mathrm{tor}}$ untuk submodul semua
+	unsur torsinya dan definisikan hasil bagi bebas torsi
+	$M_{\mathrm{tf}}:=M/M_{\mathrm{tor}}$. Buktikan bahwa
+	\[ E^\infty_q\simeq\Hm_q(C)_{\mathrm{tf}}\dotimes{\Z}\F_p,
+	\qquad q\in\Z. \]
+	Dari sini deduksikan
+	\[ \dim_{\F_p}\Hm_q\left(C\dotimes{\Z}\F_p\right)
+	\geq\dim_{\F_p}\left(\Hm_q(C)_{\mathrm{tf}}\dotimes{\Z}\F_p\right). \]
+	Berikan contoh ketika pertidaksamaan ini ketat.
+
+	% segment-id: o014.li2.chapter5.exercises.ex005
+	\item (Barisan spektral dua kolom dan dua baris) Misalkan diberikan barisan
+	spektral konvergen kuat $E_2^{p,q}\Rightarrow H^{p+q}$, dalam arti
+	Konvensi~\ref{con:ss-conv}.
+	\begin{enumerate}[(i)]
+		\item Buktikan bahwa jika $E_2^{p,q}$ taknol hanya untuk
+		$p\in\{0,1\}$, maka untuk semua $q\in\Z$ terdapat barisan eksak pendek
+		kanonik
+		\[ 0\to E_2^{1,q-1}\to H^q\to E_2^{0,q}\to0. \]
+		\item Buktikan bahwa jika $E_2^{p,q}$ taknol hanya untuk
+		$q\in\{0,1\}$, maka untuk semua $p\in\Z$ terdapat barisan eksak kanonik
+		\[ \cdots\to H^{p-1}\to E_2^{p-2,1}\xrightarrow{d_2}E_2^{p,0}
+		\to H^p\to E_2^{p-1,1}\xrightarrow{d_2}E_2^{p+1,0}
+		\to H^{p+1}\to\cdots. \]
+		\item Tangani versi $E^2_{p,q}\Rightarrow H_{p+q}$.
+		\begin{hint}
+			Tukar superskrip dengan subskrip, balik arah panah, dan biarkan yang lain
+			tetap sama.
+		\end{hint}
+	\end{enumerate}
+
+	% segment-id: o014.li2.chapter5.exercises.ex006
+	\item Perhatikan funktor eksak kiri $F'$ dan $F$ yang memenuhi prasyarat
+	Teorema~\ref{prop:Grothendieck-ss}; syaratkan pula bahwa $\mathrm{R}F'$ dan
+	$\mathrm{R}F$ keduanya berdimensi hingga.
+	\begin{enumerate}[(i)]
+		\item Buktikan bahwa $F'F$ juga berdimensi hingga dan berikan batas atas
+		bagi dimensinya.
+		\item Perhatikan homomorfisme
+		$\chi_F:\mathrm{K}_0(\mathcal{A})\to\mathrm{K}_0(\mathcal{A}')$ yang
+		dietapkan oleh funktor triangulasi $\mathrm{R}F$, dan homomorfisme
+		serupa $\chi_{F'}$, $\chi_{F'F}$ yang ditetapkan oleh $\mathrm{R}F'$,
+		$\mathrm{R}(F'F)$; lihat latihan \CHref{sec:cplx}. Buktikan bahwa
+		$\chi_{F'F}=\chi_{F'}\circ\chi_F$.
+	\end{enumerate}
+	Sifat-sifat ini juga dapat dibuktikan dengan kategori turunan. Kasus funktor
+	eksak kanan serta $\mathrm{L}F',\mathrm{L}F$ tentu bersifat dual.
+
+	% segment-id: o014.li2.chapter5.exercises.ex007
+	\item Misalkan $\mathcal{A}$ adalah kategori abelian dengan cukup objek
+	injektif, dan $X\in\Obj(\mathcal{A})$ dilengkapi filtrasi hingga
+	$X=\mathrm{F}^0X\supset\cdots\supset\mathrm{F}^{N+1}X=0$. Misalkan
+	$G:\mathcal{A}\to\mathcal{A}'$ adalah funktor aditif eksak kiri. Buktikan
+	bahwa terdapat barisan spektral konvergen kuat
+	\[ E_1^{p,q}=\mathrm{R}^{p+q}G(\gr^pX)
+	\Rightarrow\mathrm{R}^{p+q}G(X). \]
+	% Reference: [Knapp-Vogan 1995, Proposition D.57]
+	\begin{hint}
+		Salah satu cara adalah meniru konstruksi resolusi Cartan--Eilenberg
+		(Teorema~\ref{prop:CE-resolution}, yang memakai
+		Proposisi~\ref{prop:horseshoe}). Mulai dari $\mathrm{F}^NX$ dan pilih
+		serangkaian resolusi injektif yang sesuai
+		\[\begin{tikzcd}[row sep=small]
+			\vdots & & \vdots \\
+			\mathrm{F}^0I^1 \arrow[u]
+			\arrow[phantom,r,"\supset" description] & \cdots
+			\arrow[phantom,r,"\supset" description] & \mathrm{F}^NI^1 \arrow[u] \\
+			\mathrm{F}^0I^0 \arrow[u]
+			\arrow[phantom,r,"\supset" description] & \cdots
+			\arrow[phantom,r,"\supset" description] & \mathrm{F}^NI^0 \arrow[u] \\
+			\mathrm{F}^0X \arrow[u]
+			\arrow[phantom,r,"\supset" description] & \cdots
+			\arrow[phantom,r,"\supset" description] & \mathrm{F}^NX \arrow[u] \\
+			0 \arrow[u] & & 0 \arrow[u]
+		\end{tikzcd}\]
+		sedemikian sehingga penerapan $\cate{C}G$ pada
+		$\mathrm{F}^\bullet(I)$ tetap menghasilkan kompleks terfiltrasi dan
+		barisan spektral terkait memenuhi pernyataan yang diminta.
+	\end{hint}
+
+	% segment-id: o014.li2.chapter5.exercises.ex008
+	\item Misalkan $R$ gelanggang,
+	$C=(C_n,d^C_n)_n$ kompleks rantai modul-$R$ kanan, dan $D$ modul-$R$ kiri.
+	Andaikan setiap $C_n$ datar dan $n\ll0\implies C_n=0$. Ambil resolusi
+	projektif $\cdots\to P_1\to P_0\to D\to0$ dan bangun bikompleks
+	$C_\bullet\dotimes{R}P_\bullet$.
+	\begin{enumerate}[(i)]
+		\item Tunjukkan bahwa barisan spektral bergradasi ganda homologis terkait
+		$\mathscr{E}_{\mathrm{I}}$ mengalami degenerasi pada halaman
+		$E_{\mathrm{I}}^2$.
+		\item Tunjukkan bahwa
+		$(E_{\mathrm{II}}^2)_{p,q}=\Tor^R_p(\Hm_q(C),D)
+		\Rightarrow\Hm_{p+q}(C_\bullet\dotimes{R}D)$.
+		\item Buktikan bahwa jika semua $\Image(d^C_n)$ datar, maka ini
+		menghasilkan barisan eksak pendek dalam Teorema K\"unneth Homologis
+		\ref{prop:Kunneth-homology}.
+		\begin{hint}
+			Resolusi datar
+			$0\to\Image(d_C^{n+1})\to\Ker(d_C^n)\to\Hm_n(C)\to0$
+			membuat suku-suku taknol $E_{\mathrm{II}}^2$ terkonsentrasi pada
+			$p\in\{0,1\}$.
+		\end{hint}
+	\end{enumerate}
+
+	% segment-id: o014.li2.chapter5.exercises.ex009
+	\item Misalkan $R,S$ gelanggang, $X$ modul-$R$ kanan, $Y$ bimodul-$(R,S)$,
+	dan $Z$ modul-$S$ kiri. Bangun bikompleks sedemikian sehingga barisan
+	spektral terkait memenuhi
+	\[ (E_{\mathrm{I}}^2)_{p,q}
+	=\Tor^R_p\left(X,\Tor^S_q(Y_S,Z)\right),\qquad
+	(E_{\mathrm{II}}^2)_{p,q}
+	=\Tor^S_p\left(\Tor^R_q(X,{}_RY),Z\right). \]
+	\begin{hint}
+		Ambil resolusi untuk $X$ dan $Z$. Pembaca yang mengenal kategori turunan
+		dapat membandingkannya dengan Proposisi~\ref{prop:otimesL-associativity-constraint}
+		mengenai kendala asosiatif (ambil $A=\Bbbk=B$).
+	\end{hint}
+
+	% segment-id: o014.li2.chapter5.exercises.ex010
+	\item Nyatakan secara eksplisit homomorfisme kanonik
+	$\Ext^n_R(Y,{}_RX)\to\Hom_S(\Tor^R_n(S_R,Y),X)$ dalam barisan eksak pendek
+	dari Contoh~\ref{eg:change-of-rings-SS-bis}.
+\end{Exercises}
