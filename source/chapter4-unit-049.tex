@@ -1,0 +1,357 @@
+% Unit 049 terjemahan Bahasa Indonesia dari chapter4.tex baris 62--208.
+% Sumber: Methods of Algebra, Volume 2, commit
+% 9a5803ff77dd3257484cb177f851a73770a59dd3 (CC BY 4.0).
+% stable-unit-id: o014.aljabr2.chapter4.triangulated-category-definition
+% Cakupan: Bagian 4.1 dari definisi kategori dengan pergeseran sampai catatan
+% dualitas; berhenti sebelum lema pada baris 210.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.h001
+\section{Definisi Kategori Bertriangulasi}\label{sec:triangular-def}
+\hypertarget{o014.aljabr2.chapter4.triangulated-category-definition}{ }
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p001
+Kategori bertriangulasi adalah kategori aditif dengan pergeseran yang
+dilengkapi suatu kelas segitiga terbedakan. Terlebih dahulu kita jelaskan apa
+yang dimaksud dengan kategori dengan pergeseran.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.d001
+\begin{definisi}\label{def:category-with-translation}
+	\index{kategori!dengan pergeseran (with translation)}
+	\index{funktor pergeseran}
+	Yang dimaksud dengan \emph{kategori dengan pergeseran} ialah data
+	$(\mathcal{D},T)$, dengan $\mathcal{D}$ suatu kategori dan
+	$T:\mathcal{D}\to\mathcal{D}$ suatu ekuivalensi.%
+	\footnote{Banyak pustaka mensyaratkan bahwa $T$ merupakan automorfisme;
+	dalam hal ini dapat dipilih funktor invers $T^{-1}$ yang memenuhi
+	$T^{-1}T=\identity_{\mathcal D}=TT^{-1}$. Syarat tersebut mencakup semua
+	situasi yang benar-benar ditangani dalam buku ini dan menghindari
+	seluk-beluk potensial teori $2$-kategori, sehingga pembaca boleh saja
+	membuat asumsi yang sama. Namun, kajian kategori model stabil atau kategori
+	$\infty$ stabil tidak dapat menghindari kasus yang bukan isomorfisme,
+	terutama dalam topologi.}
+	Ekuivalensi $T$ disebut \emph{funktor pergeseran} dari $\mathcal{D}$.
+	Selain itu, dipilih kuasi-invers $T^{-1}$ bagi $T$ beserta isomorfisme
+	$T^{-1}T\simeq\identity_{\mathcal D}\simeq TT^{-1}$ sehingga data tersebut
+	membentuk apa yang disebut ekuivalensi adjoin dalam
+	\cite[Teorema~2.6.12]{Li1}.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.l001
+	\begin{itemize}
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i001
+		\item Suatu funktor dari $(\mathcal{D},T)$ ke
+		$(\mathcal{D}',T')$ ialah funktor $F:\mathcal{D}\to\mathcal{D}'$
+		beserta isomorfisme yang ditetapkan $FT\simeq T'F$. Menurut kebiasaan,
+		isomorfisme itu tidak dituliskan dan data tersebut disingkat menjadi
+		$F:(\mathcal{D},T)\to(\mathcal{D}',T')$.
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i002
+		\item Suatu morfisme di antara dua funktor
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g001
+		$\begin{tikzcd}
+			(\mathcal{D},T) \arrow[r,shift left,"F"]
+			\arrow[r,shift right,"{F'}"'] & (\mathcal{D}',T')
+		\end{tikzcd}$
+		ialah morfisme $\varphi:F\to F'$ yang membuat diagram berikut
+		komutatif:
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g002
+		\[\begin{tikzcd}
+			FT \arrow[r,"\varphi T"] \arrow[d,"\sim"' sloped] &
+			F'T \arrow[d,"\sim" sloped] \\
+			T'F \arrow[r,"{T'\varphi}"'] & T'F'.
+		\end{tikzcd}\]
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i003
+		\item Suatu subkategori dari kategori dengan pergeseran
+		$(\mathcal{D},T)$ ialah subkategori $\mathcal{D}'$ dari $\mathcal{D}$
+		yang tertutup terhadap $T$ dan sedemikian sehingga
+		$T':=T|_{\mathcal{D}'}$ menjadikan $(\mathcal{D}',T')$ kategori dengan
+		pergeseran.
+	\end{itemize}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p002
+	Jika $\mathcal{D}$ kategori aditif dan $T$ funktor aditif (hal ini
+	berlaku secara otomatis; lihat Korolari~\ref{prop:automatic-additivity}),
+	maka $(\mathcal{D},T)$ disebut \emph{kategori aditif dengan pergeseran};
+	funktor di antara kategori-kategori tersebut juga disyaratkan aditif.
+	Setelah suatu gelanggang komutatif $\Bbbk$ ditetapkan, definisi yang sama
+	berlaku dalam situasi $\Bbbk$-linear.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p003
+Jika $(\mathcal{D},T)$ kategori dengan pergeseran, maka
+$(\mathcal{D}^{\opp},T^{-1})$ juga demikian. Menurut kebiasaan, data
+$(\mathcal{D},T)$ sering disingkat menjadi $\mathcal{D}$. Konsep berikut
+sangat berguna.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.d002
+\begin{definisi}[Morfisme berderajat]\label{def:morphism-with-degree}
+	\index[sym1]{mdegree@$X \xrightarrow{+m} Y$}
+	Suatu morfisme berderajat $m$ pada kategori dengan pergeseran
+	$(\mathcal{D},T)$ ialah morfisme berbentuk $f:X\to T^mY$ dan juga
+	dituliskan $f:X\xrightarrow{+m}Y$. Jika diberikan
+	$X\xrightarrow[f]{+m}Y\xrightarrow[g]{+n}Z$, komposisi $gf$
+	didefinisikan sebagai morfisme berderajat $m+n$, yaitu $T^m(g)f$.
+	Diagram komutatif juga dapat dibicarakan untuk morfisme-morfisme jenis ini.
+
+	Dalam situasi multivariabel, andaikan $\mathcal{D}$ dilengkapi
+	automorfisme $T_1,\ldots,T_n$ yang berkomutasi secara ketat,
+	$T_iT_j=T_jT_i$. Suatu morfisme berderajat $(m_1,\ldots,m_n)$
+	didefinisikan sebagai morfisme berbentuk
+	$X\to T_1^{m_1}\cdots T_n^{m_n}Y$. Morfisme ini dituliskan sebagai
+	$X\xrightarrow{+(m_1,\ldots,m_n)}Y$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p004
+Sebagai contoh, untuk suatu kategori $\mathcal{A}$, kategori objek bergradasi
+$(\mathcal{A}^{\Z},T)$ dari Definisi~\ref{def:graded-obj} merupakan kategori
+dengan pergeseran. Secara lebih umum, kita dapat meninjau kategori objek
+bergradasi $\Z^n$, yaitu $\mathcal{A}^{\Z^n}$, beserta funktor pergeseran
+$T_1,\ldots,T_n$ untuk setiap variabel, lalu membahas morfisme berderajat di
+antara objek-objek bergradasi $\Z^n$. Namun, kasus multivariabel bukan pokok
+bahasan bab ini.
+\index{objek bergradasi}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.ex001
+\begin{contoh}\label{eg:cplx-as-translation-cat}
+	Kategori kompleks $\cate{C}(\mathcal{A})$ pada kategori aditif
+	$\mathcal{A}$, bersama funktor pergeseran $T:X\mapsto X[1]$ dari
+	Definisi~\ref{def:translation-functor}, merupakan kategori aditif dengan
+	pergeseran. Kategori $\cate{K}(\mathcal{A})$ dari
+	Definisi~\ref{def:cplx-homotopy-cat} mewarisi funktor pergeseran dari
+	$\cate{C}(\mathcal{A})$, yang tetap dituliskan $T$. Funktor kanonik
+	$F:\cate{C}(\mathcal{A})\to\cate{K}(\mathcal{A})$ jelas memenuhi
+	$FT=TF$. Hal yang sama berlaku, untuk setiap
+	$\star\in\{+,-,\bdd\}$, bagi kategori $\cate{C}^{\star}(\mathcal{A})$
+	(atau $\cate{K}^{\star}(\mathcal{A})$) yang diperkenalkan dalam
+	Definisi~\ref{def:cplx-cat-variant} (atau
+	Definisi~\ref{def:cplx-homotopy-cat-variant}).
+\end{contoh}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p005
+Dalam bab ini kita terutama meninjau kategori aditif dengan pergeseran.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.d003
+\begin{definisi}
+	\index{segitiga (triangle)}
+	Misalkan $(\mathcal{D},T)$ kategori aditif dengan pergeseran. Suatu
+	\emph{segitiga} di dalamnya ialah rangkaian morfisme pada $\mathcal{D}$
+	berbentuk
+% segment-id: o014.li2.chapter4.triangulated-category-definition.q001
+	\[ X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}TX. \]
+	Suatu morfisme di antara dua segitiga ialah diagram komutatif berbentuk
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g003
+	\[\begin{tikzcd}
+		X \arrow[r,"f"] \arrow[d,"\alpha"'] &
+		Y \arrow[r,"g"] \arrow[d,"\beta"] &
+		Z \arrow[r,"h"] \arrow[d,"\gamma"] &
+		TX \arrow[d,"T\alpha"] \\
+		X' \arrow[r,"{f'}"'] & Y' \arrow[r,"{g'}"'] &
+		Z' \arrow[r,"{h'}"'] & TX'.
+	\end{tikzcd}\]
+	Kedua barisnya adalah segitiga yang diberikan. Morfisme tersebut juga
+	disingkat menjadi $(X,Y,Z)\to(X',Y',Z')$. Dengan cara yang sama dapat
+	didefinisikan isomorfisme di antara segitiga.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p006
+	Konsep serupa tetap tersedia jika kategori aditif diganti dengan kategori
+	$\Bbbk$-linear yang lebih umum, dengan $\Bbbk$ sebarang gelanggang
+	komutatif.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p007
+Jelas bahwa segitiga pada $(\mathcal{D},T)$ sama dengan segitiga pada
+$(\mathcal{D}^{\opp},T^{-1})$.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.r001
+\begin{catatan}\label{rem:triangle-signs}
+	Tinjau segitiga
+	$X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}TX$ pada kategori
+	$\Bbbk$-linear dengan pergeseran $(\mathcal{D},T)$, serta
+	$\epsilon,\zeta,\eta\in\Bbbk^\times$. Jika
+	$\epsilon\zeta\eta=1$, segitiga semula isomorfik dengan
+	$X\xrightarrow{\epsilon f}Y\xrightarrow{\zeta g}Z
+	\xrightarrow{\eta h}TX$, sebagaimana ditunjukkan oleh diagram komutatif
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g004
+	\[\begin{tikzcd}
+		X \arrow[r,"f"] \arrow[d,"1"'] &
+		Y \arrow[r,"g"] \arrow[d,"\epsilon"] &
+		Z \arrow[r,"h"] \arrow[d,"\epsilon\zeta"] &
+		TX \arrow[d,"\epsilon\zeta\eta"] \\
+		X \arrow[r,"\epsilon f"'] & Y \arrow[r,"\zeta g"'] &
+		Z \arrow[r,"\eta h"'] & TX.
+	\end{tikzcd}\]
+\end{catatan}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p008
+Menurut notasi Definisi~\ref{def:morphism-with-degree}, suatu segitiga juga
+dapat dituliskan $X\to Y\to Z\xrightarrow{+1}$, atau secara lebih bergambar
+sebagai
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g005
+$\begin{tikzcd}[row sep=small,column sep=tiny]
+	& Y \arrow[rd] & \\
+	X \arrow[ru] & & Z \arrow[ll,"{+1}"]
+\end{tikzcd}$.
+Dengan demikian, segitiga dapat dibayangkan sebagai rantai yang berpilin naik,
+sedangkan morfisme di antara segitiga menyerupai struktur asam
+deoksiribonukleat: panah-panah $\alpha$, $\beta$, $\gamma$, dan seterusnya pada
+morfisme tersebut dapat dianalogikan dengan ikatan hidrogen di antara basa.
+\index{asam deoksiribonukleat (deoxyribonucleic acid)}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.d004
+\begin{definisi}[\mbox{Kategori bertriangulasi} dan
+\mbox{funktor bertriangulasi}]
+\label{def:triangulated-cat}
+	\index{kategori bertriangulasi (triangulated category)}
+	\index{kategori prabertriangulasi (pretriangulated category)}
+	\index{funktor!bertriangulasi (triangulated)}
+	\index{segitiga!terbedakan (distinguished / exact)}
+	Suatu \emph{kategori bertriangulasi} ialah kategori aditif dengan
+	pergeseran $(\mathcal{D},T)$ yang dilengkapi suatu kelas segitiga
+	$\mathcal{H}$, yang disebut \emph{segitiga terbedakan}, dan memenuhi
+	aksioma-aksioma berikut.
+% segment-id: o014.li2.chapter4.triangulated-category-definition.l002
+	\begin{enumerate}[(TR1)]
+		\setcounter{enumi}{-1}
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i004
+		\item Setiap segitiga yang isomorfik dengan suatu segitiga terbedakan
+		juga merupakan segitiga terbedakan.
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i005
+		\item Untuk setiap $X\in\Obj(\mathcal{D})$, segitiga
+		$X\xrightarrow{\identity_X}X\to0\to TX$ merupakan segitiga
+		terbedakan.
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i006
+		\item Setiap morfisme $f:X\to Y$ dapat diperluas menjadi suatu
+		segitiga terbedakan berbentuk
+		$X\xrightarrow{f}Y\to Z\to TX$, dengan $Z\in\Obj(\mathcal{D})$.
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i007
+		\item Segitiga
+		$X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}TX$ merupakan
+		segitiga terbedakan jika dan hanya jika ``rotasi berlawanan arah jarum
+		jam''-nya,
+% segment-id: o014.li2.chapter4.triangulated-category-definition.q002
+		\[ Y\xrightarrow{g}Z\xrightarrow{h}TX\xrightarrow{-Tf}TY, \]
+		merupakan segitiga terbedakan. Pola tandanya juga boleh dipilih sebagai
+		$(-++)$, $(+-+)$, atau $(---)$; lihat
+		Catatan~\ref{rem:triangle-signs}.
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i008
+		\item Andaikan bagian bergaris penuh pada diagram berikut komutatif,
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g006
+		\[\begin{tikzcd}
+			X \arrow[r] \arrow[d,"\alpha"'] &
+			Y \arrow[r] \arrow[d,"\beta"] &
+			Z \arrow[r] \arrow[dashed,d,"\gamma"] &
+			TX \arrow[dashed,d,"T\alpha"] \\
+			X' \arrow[r] & Y' \arrow[r] & Z' \arrow[r] & TX'.
+		\end{tikzcd}\]
+		Jika kedua barisnya segitiga terbedakan, terdapat morfisme
+		$\gamma:Z\to Z'$ seperti ditunjukkan oleh garis putus-putus sehingga
+		seluruh diagram yang memuat $\alpha$, $\beta$, $\gamma$, dan $T\alpha$
+		komutatif. Dengan demikian diperoleh suatu morfisme segitiga.
+% segment-id: o014.li2.chapter4.triangulated-category-definition.i009
+		\item Andaikan diberikan segitiga-segitiga terbedakan
+% segment-id: o014.li2.chapter4.triangulated-category-definition.q003
+		\begin{gather*}
+			X\xrightarrow{f}Y\xrightarrow{h}Z'\to TX,\\
+			Y\xrightarrow{g}Z\xrightarrow{k}X'\to TY,\\
+			X\xrightarrow{gf}Z\xrightarrow{m}Y'\to TX.
+		\end{gather*}
+		Terdapat segitiga terbedakan
+% segment-id: o014.li2.chapter4.triangulated-category-definition.q004
+		\[ Z'\xrightarrow{u}Y'\xrightarrow{v}X'\xrightarrow{w}TZ' \]
+		sedemikian sehingga diagram berikut komutatif:
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g007
+		\[\begin{tikzcd}
+			X \arrow[r,"f"] \arrow[equal,d] &
+			Y \arrow[r,"h"] \arrow[d,"g"] &
+			Z' \arrow[r] \arrow[d,"u"] & TX \arrow[equal,d] \\
+			X \arrow[r,"gf"] \arrow[d,"f"'] &
+			Z \arrow[r,"m"] \arrow[equal,d] &
+			Y' \arrow[r] \arrow[d,"v"] & TX \arrow[d,"Tf"] \\
+			Y \arrow[r,"g"] \arrow[d,"h"'] &
+			Z \arrow[r,"k"] \arrow[d,"m"] &
+			X' \arrow[r] \arrow[equal,d] & TY \arrow[d,"Th"] \\
+			Z' \arrow[r,"u"'] & Y' \arrow[r,"v"'] &
+			X' \arrow[r,"w"'] & TZ'.
+		\end{tikzcd}\]
+	\end{enumerate}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p009
+	Data $(\mathcal{D},T,\mathcal{H})$ yang hanya memenuhi (TR0)--(TR4)
+	disebut \emph{kategori prabertriangulasi}. Dalam notasi, data $T$ dan
+	$\mathcal{H}$ sering tidak dituliskan.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p010
+	Suatu \emph{funktor bertriangulasi} dari $\mathcal{D}$ ke
+	$\mathcal{D}'$ ialah funktor $F:\mathcal{D}\to\mathcal{D}'$ di antara
+	kategori aditif dengan pergeseran yang memetakan segitiga terbedakan ke
+	segitiga terbedakan. Morfisme di antara funktor bertriangulasi sama dengan
+	morfisme dalam Definisi~\ref{def:category-with-translation}; dengan itu,
+	kuasi-invers suatu funktor bertriangulasi dapat didefinisikan. Jika dua
+	funktor bertriangulasi
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g008
+	$\begin{tikzcd}
+		\mathcal{D} \arrow[shift left,r,"F"] &
+		\mathcal{D}' \arrow[shift left,l,"G"]
+	\end{tikzcd}$
+	saling kuasi-invers, keduanya disebut memberikan suatu \emph{ekuivalensi}
+	di antara $\mathcal{D}$ dan $\mathcal{D}'$.
+\end{definisi}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p011
+Jika $(\mathcal{D},T)$ bersifat $\Bbbk$-linear, semua definisi di atas
+mempunyai perluasan yang bersesuaian.
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.r002
+\begin{catatan}\index{aksioma oktahedral (octahedral axiom)}
+	Dengan notasi Definisi~\ref{def:morphism-with-degree}, aksioma (TR5) dapat
+	dituliskan kembali sebagai diagram
+% segment-id: o014.li2.chapter4.triangulated-category-definition.g009
+	\[\begin{tikzcd}[column sep=large,row sep=large]
+		& Y' \arrow[dashed,rd,"v"] \\
+		Z' \arrow[dashed,ru,"u"] \arrow[d,"+1" description] &&
+		X' \arrow[dashed,ll,"+1" description,"w" inner sep=0.6em]
+		\arrow[ldd,"+1" description,near end] \\
+		X \arrow[rd,"f"'] && Z \arrow[u,"k"'] \\
+		& Y \arrow[ru,"g"'] \arrow[luu,"h"',near start] &
+		\arrow[from=1-2,to=3-1,crossing over,"+1" description,near start]
+		\arrow[from=3-1,to=3-3,crossing over]
+		\arrow[from=3-3,to=1-2,crossing over,"m",near end]
+	\end{tikzcd}\]
+	Bagian bergaris putus-putus melambangkan morfisme yang keberadaannya
+	dinyatakan oleh aksioma. Empat muka oktahedron ini merupakan segitiga
+	terbedakan, sedangkan keempat muka lainnya komutatif; perinciannya
+	diserahkan kepada pembaca. Karena itu, (TR5) juga disebut
+	\emph{aksioma oktahedral}.
+\end{catatan}
+
+% [Yekutieli, Remark 5.6.12]
+% segment-id: o014.li2.chapter4.triangulated-category-definition.r003
+\begin{catatan}[Dualitas]\label{rem:triangulated-op}
+	Misalkan $(\mathcal{D},T,\mathcal{H})$ kategori prabertriangulasi (atau
+	kategori bertriangulasi). Pandang $T^{-1}$ sebagai funktor dari
+	$\mathcal{D}^{\opp}$ ke dirinya sendiri dan tuliskan funktor itu sebagai
+	$S$. Definisikan suatu kelas segitiga $\mathcal{K}$ pada
+	$(\mathcal{D}^{\opp},S)$ sebagai berikut. Jika
+% segment-id: o014.li2.chapter4.triangulated-category-definition.q005
+	\[ [X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}TX]
+		\;\in\mathcal{H}, \]
+	maka rotasi searah jarum jamnya
+	$[T^{-1}Z\xrightarrow{-T^{-1}h}X\xrightarrow{f}Y\xrightarrow{g}Z]
+	\in\mathcal{H}$ dapat dipandang sebagai segitiga pada
+	$\mathcal{D}^{\opp}$,
+% segment-id: o014.li2.chapter4.triangulated-category-definition.q006
+	\begin{equation}\label{eqn:op-triangle}
+		Z\xrightarrow{g^{\opp}}Y\xrightarrow{f^{\opp}}X
+		\xrightarrow{-(T^{-1}h)^{\opp}}SZ.
+	\end{equation}
+	Definisikan $\mathcal{K}$ sebagai kelas semua segitiga berbentuk
+	\eqref{eqn:op-triangle}. Mudah diverifikasi bahwa
+	$(\mathcal{D}^{\opp},S,\mathcal{K})$ menjadi kategori
+	prabertriangulasi (atau kategori bertriangulasi). Juga jelas bahwa
+	menjalankan prosedur ini dua kali mengembalikan
+	$(\mathcal{D},T,\mathcal{H})$ semula.
+\end{catatan}
+
+% segment-id: o014.li2.chapter4.triangulated-category-definition.p012
+Konsep subkategori prabertriangulasi dan subkategori bertriangulasi akan
+diperkenalkan dalam
+Definisi--Proposisi~\sourcecrossref{def:triangulated-subcat}{pada \S~4.2};
+untuk sementara pembahasannya ditunda.

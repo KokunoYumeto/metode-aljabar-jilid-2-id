@@ -1,14 +1,13 @@
 # O014 current state
 
-Status: active source-order Indonesian production. Units 001--048 are complete,
+Status: active source-order Indonesian production. Units 001--049 are complete,
 admitted, built, and QA-passed without a source gap through the Chapter 4
-overview at `chapter4.tex` line 60. Unit 047 is publicly verified in the
-existing GitHub and Zenodo lineages; the admitted Unit 048 checkpoint is next
-for publication in those same lineages. This remains a partial working edition;
-do
-not complete the pursuit at this or any later checkpoint short of the entire
-corpus, independent mastery layer, semantic reader, and final verified release
-set.
+duality remark at `chapter4.tex` line 208. Unit 048 is publicly verified in the
+existing GitHub and Zenodo lineages; the admitted Unit 049 checkpoint is next
+for publication in those same lineages. Unit 050 is frozen at lines 210--258.
+This remains a partial working edition; do not complete the pursuit at this or
+any later checkpoint short of the entire corpus, independent mastery layer,
+semantic reader, and final verified release set.
 
 ## Frozen authority and terminal scope
 
@@ -899,7 +898,7 @@ and re-verifies with zero missing, duplicate, byte-count, or hash mismatch.
 The output-argument parsing failure that created a literal `$out` directory is
 closed: exactly eleven failed-build files / 1,651,491 bytes were verified in
 the no-overwrite archive
-`[workspace]\old stuff\o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
+`local-archive/o014_unit040_failed_literal-output-build_01a02164_20260825-034221.zip`,
 SHA-256
 `3b98158aeb8ad61ad818d352f340f7d8145a6fc2a8199ca7cd2cbf5bfddb83f7`,
 then both loose failed roots were deleted. The finalD canonical build and QA
@@ -908,7 +907,7 @@ surfaces are retained.
 After admission, the two superseded overflow-build trees, inspected individual
 page renders, and redundant finalD console captures (70 files / 5,984,538
 bytes) were likewise verified in the no-overwrite archive
-`[workspace]\old stuff\o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
+`local-archive/o014_unit040_superseded_builds_and_render_transients_01a02164_20260825-041115.zip`,
 SHA-256
 `3762c561607547799ab7ac1a86f48342ca2dc59bf1c0e94a9ccf2f477727b732`,
 then deleted. Canonical finalD artifacts and the three contact sheets remain.
@@ -1650,3 +1649,103 @@ bytes / SHA-256
 and replays with zero missing, duplicate, size, or hash mismatch. Unit 048 is
 ready for immediate publication through the existing GitHub repository and
 Zenodo concept. This partial checkpoint does not complete the corpus pursuit.
+
+## Unit 048 public close and Unit 049 frozen continuation (2026-08-28)
+
+Unit 048 is now closed across both existing public lineages. GitHub `main`
+ends at immutable commit
+`4552f93d6a2deadf33ec84ac4f9f0050dae99e10`, tree
+`3c9681d3333dadd5a470bc0daa9d4bc6f8cae662`. Credential-free repository,
+commit, raw-file, and immutable codeload checks pass. The 2,447,439-byte
+codeload archive has SHA-256
+`2a6ddcb4a77529a878a0bdf5fd4316c3d5e86028cd92bf16c2624b9e61a9489d`;
+its 165 files replay the 163-row / 4,752,909-byte manifest with zero mismatch,
+with only `MANIFEST.csv` and `SHA256SUMS.txt` intentionally self-excluded. The
+sanitized GitHub receipt is 6,582 bytes / SHA-256
+`d2872ab38f2da3a438621921bb8da4f79a892eb7e4e4f0bac180aba6f92a5ab7`.
+
+Zenodo record `22134970`, DOI `10.5281/zenodo.22134970`, advances the existing
+concept `22059751` from immutable record `22105841` as version `unit-048`.
+The record and all seven files are public, with the reader PDF as the active
+preview and first visible file. The seven files total 2,319,142 bytes. Every
+file was downloaded through credential-free public endpoints and matches the
+admitted local bytes by SHA-256. The downloaded source/backend ZIP replays 155
+rows / 2,549,141 bytes inside 156 entries; the downloaded QA/provenance ZIP
+replays fourteen rows / 348,883 bytes inside fifteen entries. The outer 49-row
+release manifest and six-row checksum list also replay with zero mismatch.
+Both DOI forms resolve to record `22134970`, and the latest-version API resolves
+to the same record. A signed-out visible-page inspection confirms the exact
+title, version `unit-048`, open status, CC BY 4.0 license, 314-page active PDF
+preview, and PDF-first file table. The sanitized Zenodo receipt is 7,365 bytes /
+SHA-256
+`01f0bf5cf5731566142e8c3ba09e5b5e345f3cd0b687f2665714d2313debb6a6`.
+
+The Zenodo version transaction used the modern record-version route after the
+legacy deposition route returned server-side file-deletion errors. The public
+Unit 047 record remained available throughout, the recovered draft stayed in
+the same concept, no competing concept was created, and publication completed
+only after exact draft metadata, public access, default preview, and seven-file
+byte identities passed.
+
+Production continues at frozen Unit 049,
+`o014.aljabr2.chapter4.triangulated-category-definition`, using the normalized
+11,491-byte `chapter4.tex` lines 62--208 witness at SHA-256
+`e61a3898512072a4df18f5c7e3255fb009d274fd327dd91b781c22fea58e2516`.
+Stop at blank line 209 before the lemma at line 210. This public checkpoint is
+partial and does not complete the corpus pursuit.
+
+## Unit 049 local admission and Unit 050 frozen continuation (2026-08-28)
+
+Admit Unit 049,
+`o014.aljabr2.chapter4.triangulated-category-definition`, as the complete
+Section 4.1 definition cluster at `chapter4.tex` lines 62--208. The normalized
+authority witness is 11,491 bytes / SHA-256
+`e61a3898512072a4df18f5c7e3255fb009d274fd327dd91b781c22fea58e2516`;
+the 47-record segment map is 15,759 bytes / SHA-256
+`2523adc49a09f1665e024c82afdfd9d300b71245a7adb9aa6c5bacb72c36eb8c`;
+and the final Indonesian target is 17,618 bytes / SHA-256
+`66361f2b64908293cc507d34d74089e1a51b4d3697becdabab75cae07e4000db`.
+All 47 stable segment IDs, four definitions, one example, three remarks,
+eight labels, twelve references, one citation, nine diagrams, and every sign,
+arrow, dashed style, list item, formula, footnote, and index entry pass
+independent comparison. This unit has no exercise, hint, answer, solution, or
+external asset, and no new source correction is warranted.
+
+The modular backend now has 49 unique units and 2,690 unique segments. Both
+terminology surfaces have 511 unique concept IDs with exactly matching
+preferred Indonesian forms. The frozen and mutable wrappers are byte-identical
+at 9,268 bytes / SHA-256
+`8aca09ac5931e9a7b0a8c12183f6a4a321c378492df2fc261f3962774f113f54`
+and contain 49 unique contiguous unit inputs. The bibliography remains the
+same resolved 26-entry corpus because Unit 049 cites only the existing `Li1`.
+
+Admit the clean converged build
+`build/cumulative-unit-049-finalC-20260828`. Its final log has no TeX/package
+error, unresolved reference or citation, missing character, rerun request,
+emergency stop, or fatal error. Seven overfull horizontal boxes are exactly
+the inherited set, no overfull vertical box exists, and fresh full-size
+inspection finds no clipping or overlap. The build, checkpoint, and promoted
+reader are byte-identical: PDF 1.7, 318 pages, 1,549,628 bytes / SHA-256
+`e76f5d2f3184fba979d525673963cc85453202d199243f6532beae21eaaec04c`.
+Strict parsing resolves all 1,399 named destinations, 56 outline destinations,
+1,130 internal links, 22 URI links, and 1,152 in-bounds link rectangles. The
+reader is public-release ready but remains untagged, so no tagged or fully
+semantic PDF accessibility claim is made.
+
+Freeze the Unit 049 QA receipt at 9,009 bytes / SHA-256
+`87d2cc129cbd367744ab5544de40298be8d8f395aafe493f1cd46bb2d8405649`
+and its 132-row admission manifest at 17,529 bytes / SHA-256
+`4a9712462c65d1b1baf53753d13072ef199faf5c16dab3694f4762a6c856a21b`.
+The manifest lists 29,978,206 bytes and replays with zero missing, duplicate,
+size, or hash mismatch. Publish this exact boundary through the existing
+GitHub repository and Zenodo concept before changing its admitted payload.
+
+The next exact source-order boundary is Unit 050,
+`o014.aljabr2.chapter4.cohomological-functors`, `chapter4.tex` lines 210--258.
+Its normalized-LF authority witness is 3,170 bytes / SHA-256
+`62fa567b35e1544072e5983e982bc8f87e2c606428496b69f99e165fb7548cdc`.
+It contains one lemma, one definition, one remark, one proposition, one
+corollary, three proofs, two TikZ-CD diagrams, five labels, and three references,
+with no citation, exercise, hint, or external asset. Stop at blank line 259
+before Section 4.2 at line 260. The Unit 049 publication boundary and frozen
+Unit 050 cursor remain partial and do not complete the corpus pursuit.

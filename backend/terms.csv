@@ -505,3 +505,8 @@ math.homological.effaceability,keterhapusan,id-ID,O014,active
 math.homological.n_extension,ekstensi-n,id-ID,O014,active
 math.homological.yoneda_ext_theorem,Teorema Yoneda,id-ID,O014,active
 math.homological.unbounded_derived_functor,funktor turunan tak terbatas,id-ID,O014,active
+math.category.category_with_translation,kategori dengan pergeseran,id-ID,O014,provisional
+math.category.translation_functor,funktor pergeseran,id-ID,O014,active
+math.category.morphism_with_degree,morfisme berderajat,id-ID,O014,active
+math.homological.triangle,segitiga,id-ID,O014,active
+math.homological.pretriangulated_category,kategori prabertriangulasi,id-ID,O014,provisional
