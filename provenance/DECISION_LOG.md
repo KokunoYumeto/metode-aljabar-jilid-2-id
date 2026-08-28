@@ -2267,7 +2267,7 @@ canonical translated sources, source slices, segment maps, terminology and
 backend ledgers, controls, receipts, final release artifacts, and credentials.
 
 The no-overwrite archive is
-`[private archival path omitted]`:
+`C:/Users/pengguna/Documents/interlanguage/old stuff/o014_methods_of_algebra_v2_obsolete_builds_readbacks_01a02164_20260824-222605.zip`:
 692,700,671 bytes, SHA-256
 `dfccec87a0f8bc71767709969803649cc795ef2b47276de49a4812aa7098cf34`.
 Its `_cleanup_roots.txt` gives the exact 150 archived/deleted roots and
@@ -3322,3 +3322,71 @@ SHA-256
 `020f161ea22eacc84e0e37471baf36dffe891ff73e8cbf7ae7afa066a192e1ef`.
 Stop before Section 4.3 at line 561. This admission and partial release do not
 complete the corpus pursuit.
+
+## D134 - Publish and anonymously close Unit 050 in both existing lineages (2026-08-28)
+
+Accept GitHub Unit 050 at commit
+`7268646cff777ee12a3dca260b048b31160fdd16`, tree
+`e2135a2cf158c3e78f7eeec7a4c726c61f9dd418`, parent
+`e4175bafd6c032b36035cb7b809c7f867c5342dd`. The public archive is
+2,533,455 bytes / SHA-256
+`497f6b9a32a713e9c37d7a8e36c80296f51b216621061824a28ce94b5bbbfa89`;
+all 175 files and both 173-row inventories replay with zero defect. Preserve
+`release/github/GITHUB_PUBLICATION_RECEIPT.json`, 11,022 bytes / SHA-256
+`1af7b1452beed8863bef339ad12138f96c20867b1114c35d5fcfb4c885b2381f`.
+
+Accept Zenodo record `22143171`, DOI `10.5281/zenodo.22143171`, version
+`unit-050`, as the public/open latest version in concept `22059751`. Its seven
+files total 2,371,650 bytes; all anonymous downloads, inner manifests, outer
+checksums, metadata, license, PDF-first/default-preview surface, and the exact
+GitHub commit/tree pass. The release explicitly corrects the Unit 049 stale
+tree field without creating a competing concept. Preserve
+`release/zenodo/unit-050/ZENODO_PUBLICATION_RECEIPT.json`, 14,942 bytes /
+SHA-256
+`33ae56fad71b837fffb5ef655fe14c733f00d5f0eecce4fb3d6ab8182a6393a4`.
+
+## D135 - Reject Unit 051 finalA and require stable partial-reader forward references (2026-08-28)
+
+Admit the independently audited Unit 051 mathematics and source order only
+after correcting `struktur bertriangulasi` to `struktur prabertriangulasi` in
+the existence sentence and recording all three source cross-references in
+segment `q010`. Reject `build/cumulative-unit-051-finalA-20260828` because its
+otherwise successful 330-page build retained undefined partial-reader links
+to Section 4.3, Definition A.2.2, and Section A.2. Preserve the source's exact
+designations through `\sourcecrossref` fallbacks rather than suppressing or
+misnumbering them. Build the corrected target from a fresh finalB directory.
+
+## D136 - Admit complete Section 4.2 and freeze the first localization closure (2026-08-28)
+
+Admit Unit 051 as exact `chapter4.tex` lines 260--560 after independent
+source-order, mathematics, terminology, topology, diagram, and residue review.
+Freeze the 25,193-byte authority witness at SHA-256
+`020f161ea22eacc84e0e37471baf36dffe891ff73e8cbf7ae7afa066a192e1ef`,
+the 82-record / 24,970-byte segment map at SHA-256
+`d25de133ce9082e919a032880721c1aeca75f8ddbfbf21c1a42dc29217bfa461`,
+and the reviewed 35,946-byte target at SHA-256
+`053ec43d8c63dedfe76be48e81384191fb41516aae7ab0a56250017c6a961d96`.
+No source correction or terminology-row change is warranted.
+
+Admit `build/cumulative-unit-051-finalB-20260828` after stable
+XeLaTeX/Biber/MakeIndex convergence, strict PDF parsing, text/font checks, and
+fresh full-size visual inspection. Promote the byte-identical build,
+checkpoint, and cumulative reader: 330 pages, 1,606,437 bytes, SHA-256
+`a34260d5cbb051c4209b7b7e8189ab794fe7656f10ed0bfa4b3491868b936945`.
+Retain the explicit untagged and incomplete-ToUnicode accessibility
+limitations. The backend is now 51 units / 2,786 segments.
+
+Freeze `qa/UNIT_051_QA.md`, 8,681 bytes / SHA-256
+`67cf1a39030bae9f0fcecd4dbb4705e825b91295aa7e3317009ffbdc09551346`,
+and the 140-row manifest, 18,585 bytes / SHA-256
+`5967c001654a00dc61888a880e9592f7b539a278a919999b1739863039b491ba`,
+listing 35,287,820 bytes with zero replay mismatch. Publish this boundary in
+the existing GitHub and Zenodo lineages without delaying continued production.
+
+Freeze Unit 052 as `o014.aljabr2.chapter4.triangulated-localization`, exact
+source lines 561--622. Its normalized 5,380-byte witness has SHA-256
+`ed5059ac0d88f53e232f4c30d3f8bc78ff091a46504f50ea32bb311c6381f5b8`.
+Translate the Section 4.3 introduction, compatibility definition, and complete
+localization proposition/proof without crossing the new proposition at line
+623. Neither this admission nor the partial publication completes the corpus
+pursuit.

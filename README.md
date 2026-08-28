@@ -8,14 +8,14 @@ XeLaTeX yang dapat disunting, dan ekspor semantik ber-ID stabil.
 
 ## Status
 
-Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 050
-ini mencakup Unit 001–050: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
+Ini adalah **edisi kerja parsial**, bukan terjemahan lengkap. Snapshot Unit 051
+ini mencakup Unit 001–051: seluruh Pendahuluan, seluruh Bab 1, seluruh Bab 2,
 seluruh Bab 3 (`chapter3.tex` upstream baris 9–3425), serta Bab 4 melalui
-funktor kohomologis, barisan eksak panjang, dan akibat untuk segitiga dengan
-objek nol (`chapter4.tex` baris 9–258). Pembaca tetap memuat 63 latihan dan 40
-petunjuk aktif; Unit 050 tidak menambah latihan atau petunjuk. Pembaca saat ini
-berjumlah 320 halaman. Produksi berikutnya dimulai pada `chapter4.tex` baris
-260 dan berlanjut dalam
+sifat-sifat dasar kategori bertriangulasi, lema sembilan, dan catatan
+keterwakilan Brown (`chapter4.tex` baris 9–560). Pembaca tetap memuat 63
+latihan dan 40 petunjuk aktif; Unit 051 tidak menambah latihan atau petunjuk.
+Pembaca saat ini berjumlah 330 halaman. Produksi berikutnya dimulai pada
+`chapter4.tex` baris 561 dan berlanjut dalam
 urutan sumber menuju keseluruhan buku resmi 650 halaman.
 
 PDF memiliki teks yang dapat dipilih, daftar isi, markah, dan pranala internal
@@ -40,12 +40,12 @@ ini. Rincian otoritas, komponen, dan perubahan tersedia di
 ## Isi repositori
 
 - `artifacts/`: PDF pembaca terbaik pada batas publik saat ini.
-- `source/`: penutup kumulatif, 50 unit terjemahan, bibliografi, kelas, gaya,
+- `source/`: penutup kumulatif, 51 unit terjemahan, bibliografi, kelas, gaya,
   konfigurasi font/judul, dan aset lisensi yang diperlukan untuk membangun PDF.
-- `backend/`: 50 unit, 2.704 segmen, dan 511 istilah dalam bentuk modular
+- `backend/`: 51 unit, 2.786 segmen, dan 511 istilah dalam bentuk modular
   (`JSONL`/`CSV`).
 - `provenance/`: pembekuan sumber, hak komponen, koreksi, terminologi, baseline
-  build, audit terminologi Indonesia, QA Unit 050, serta manifes.
+  build, audit terminologi Indonesia, QA Unit 051, serta manifes.
 
 Lihat [BUILD.md](BUILD.md) untuk cara membangun ulang. `MANIFEST.csv` dan
 `SHA256SUMS.txt` mencatat ukuran dan SHA-256 setiap berkas publik.

@@ -1825,3 +1825,93 @@ has SHA-256
 `020f161ea22eacc84e0e37471baf36dffe891ff73e8cbf7ae7afa066a192e1ef`.
 Stop before Section 4.3 at line 561. Neither the Unit 049 public checkpoint nor
 the Unit 050 admission/release completes the corpus pursuit.
+
+## Unit 050 public closure and Unit 051 production (2026-08-28)
+
+Unit 050 is now public and byte-verified in both existing lineages. GitHub
+`main` resolves to commit
+`7268646cff777ee12a3dca260b048b31160fdd16`, tree
+`e2135a2cf158c3e78f7eeec7a4c726c61f9dd418`, direct parent
+`e4175bafd6c032b36035cb7b809c7f867c5342dd`. The anonymous 2,533,455-byte
+codeload archive has SHA-256
+`497f6b9a32a713e9c37d7a8e36c80296f51b216621061824a28ce94b5bbbfa89`;
+all 175 archive files and both 173-row root inventories replay exactly. The
+sanitized 11,022-byte GitHub receipt has SHA-256
+`1af7b1452beed8863bef339ad12138f96c20867b1114c35d5fcfb4c885b2381f`.
+
+Zenodo record `22143171`, DOI `10.5281/zenodo.22143171`, version `unit-050`,
+is published, open, and latest under concept `22059751`. Its seven files total
+2,371,650 bytes and download anonymously with exact identity; the 320-page PDF
+is the default preview and first visible file. Both package manifests and the
+outer checksums replay without defect. This release carries the verified Unit
+050 GitHub commit/tree above and explicitly supersedes the stale tree field in
+Unit 049. The sanitized 14,942-byte Zenodo receipt has SHA-256
+`33ae56fad71b837fffb5ef655fe14c733f00d5f0eecce4fb3d6ab8182a6393a4`.
+Public access remains open.
+
+Unit 051 has advanced through independent source/target review. The exact
+25,193-byte witness remains unchanged. Its reviewed target and 82-row segment
+map required correction of a displaced source block, the precise
+`prabertriangulasi` distinction, and one omitted map cross-reference list.
+The first cumulative build was rejected because three lawful forward source
+references produced broken links in a partial reader; those surfaces now use
+stable source-designation fallbacks `4.3`, `A.2.2`, and `A.2`. A fresh build is
+in progress. This substantive checkpoint does not complete the corpus goal.
+
+## Unit 051 local admission and Unit 052 frozen continuation (2026-08-28)
+
+Admit Unit 051, `o014.aljabr2.chapter4.triangulated-basics`, as the complete
+Section 4.2 at `chapter4.tex` lines 260--560, with content ending on line 559
+and the terminal blank line retained. The normalized authority witness is
+25,193 bytes / SHA-256
+`020f161ea22eacc84e0e37471baf36dffe891ff73e8cbf7ae7afa066a192e1ef`;
+the 82-record segment map is 24,970 bytes / SHA-256
+`d25de133ce9082e919a032880721c1aeca75f8ddbfbf21c1a42dc29217bfa461`;
+and the final Indonesian target is 35,946 bytes / SHA-256
+`053ec43d8c63dedfe76be48e81384191fb41516aae7ab0a56250017c6a961d96`.
+Independent review confirms exact source order and coverage, twenty labels,
+46 references, four citations, seven index entries, 22 TikZ-CD displays, 245
+arrows, sixty matched environment pairs, and no exercise, hint, answer,
+solution, external asset, source spill, or new source correction.
+
+The modular backend now has 51 unique units and 2,786 unique segments. Both
+terminology surfaces retain 511 exact-matching concept IDs. The frozen and
+mutable wrappers are byte-identical at 9,372 bytes / SHA-256
+`869646bc1cb66dc908483c577fcef13e846db0bb7261d3da219536408657e323`
+and contain 51 unique contiguous inputs. The 26-entry bibliography remains
+byte-identical at 9,881 bytes / SHA-256
+`45d10bddaacbc2272a62c15c6d58e46f2bd769e4f32455c8a8cfd525fd33f0f6`.
+
+Reject `build/cumulative-unit-051-finalA-20260828` because three forward
+references were unresolved in the partial reader. Admit fresh finalB after
+replacing only those unavailable destinations with visible source-designation
+fallbacks `4.3`, `A.2.2`, and `A.2`. Its final three XeLaTeX transcripts are
+byte-identical; Biber resolves all 26 citekeys; both indexes accept every
+entry; and the final log has no TeX/package error, unresolved reference or
+citation, missing character, rerun request, emergency stop, or fatal error.
+The seven overfull horizontal boxes are inherited and visibly benign.
+
+The build, checkpoint, and promoted cumulative reader are byte-identical:
+PDF 1.7, 330 pages, 1,606,437 bytes / SHA-256
+`a34260d5cbb051c4209b7b7e8189ab794fe7656f10ed0bfa4b3491868b936945`.
+Strict parsing resolves 1,463 named destinations, 57 outlines, 1,184 internal
+links, 22 URI links, and all 1,206 annotations without structural defect.
+Fresh 120-dpi inspection of the front matter, Chapter 4, all Unit 051 pages,
+bibliography, and both indexes finds no clipping, collision, or unreadable
+diagram. Preserve the explicit untagged and incomplete-ToUnicode disclosure.
+
+Freeze `qa/UNIT_051_QA.md`, 8,681 bytes / SHA-256
+`67cf1a39030bae9f0fcecd4dbb4705e825b91295aa7e3317009ffbdc09551346`,
+and the 140-row admission manifest, 18,585 bytes / SHA-256
+`5967c001654a00dc61888a880e9592f7b539a278a919999b1739863039b491ba`,
+listing 35,287,820 bytes with zero duplicate path or replay mismatch. Unit 051
+is ready for immediate release through the existing GitHub and Zenodo lineages.
+
+The next exact source-order boundary is Unit 052,
+`o014.aljabr2.chapter4.triangulated-localization`, `chapter4.tex` lines
+561--622. Its normalized-LF witness is 5,380 bytes / SHA-256
+`ed5059ac0d88f53e232f4c30d3f8bc78ff091a46504f50ea32bb311c6381f5b8`.
+It contains the Section 4.3 introduction, compatibility definition, and the
+complete localization proposition/proof. Stop at the blank line 622 before the
+distinct saturated-subcategory proposition at line 623. Unit 051 admission and
+its forthcoming partial release do not complete the corpus pursuit.
