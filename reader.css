@@ -333,3 +333,12 @@ pre {
     padding: 0;
   }
 }
+/* GitHub Pages-only containment for long inline MathJax fallbacks.
+   The canonical reader, main branch, and archived release bytes remain unchanged. */
+.math.inline {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
