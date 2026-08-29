@@ -1,0 +1,116 @@
+{
+  "schema": "d80-github-pages-deployment-receipt/v1",
+  "status": "PASS",
+  "scope": {
+    "repository": "KokunoYumeto/metode-aljabar-jilid-2-id",
+    "public_url": "https://kokunoyumeto.github.io/metode-aljabar-jilid-2-id/",
+    "edition_units": 146,
+    "operation": "Deploy the completed offline HTML reader on the existing GitHub Pages lineage only."
+  },
+  "preserved_release": {
+    "main_commit": "8dbaeb4443978aef6d89365149e28a6ba06e005a",
+    "main_tree": "6f9c40a7dbe5ab4d28cbc87cacbbc9fd54459654",
+    "zenodo_record": 22151139,
+    "zenodo_doi": "10.5281/zenodo.22151139",
+    "zenodo_concept_id": 22059751,
+    "zenodo_file_count": 9,
+    "mathematical_source_backend_pdf_zenodo_bytes_changed": false
+  },
+  "content_deployment": {
+    "branch": "gh-pages",
+    "source_path": "/",
+    "build_type": "legacy",
+    "initial_reader_commit": "ba4a208e821d48e646fbb15716a77813039cc469",
+    "initial_reader_tree": "f494eb77488a5f9a7edc2a5bc0667e51b8896ee4",
+    "content_commit": "01954917e2b94a1066312bf4c593a1776e4486f1",
+    "content_tree": "18579833ba6848b375fd100491aefbe058af6f6b",
+    "source_reader_tree": "9047f3ec5f6acb667a7ebc32fe9a3cd6be332356",
+    "https_enforced": true,
+    "build_status": "built",
+    "build_updated_at_utc": "2026-08-29T23:12:03Z"
+  },
+  "deployment_manifest": {
+    "path": "PAGES_DEPLOYMENT_MANIFEST.csv",
+    "rows": 32,
+    "reader_files": 31,
+    "deployment_controls": 1,
+    "total_reader_bytes": 6329881,
+    "sha256": "af3c6fccb15560194a639ba56c9579cbb9aaf8857cf14391293fbe5536594ac5",
+    "root_index_bytes": 4628517,
+    "root_index_sha256": "021becbd54636f5077418af38e698a81b5e8630b3833dd7999414970f10c523d",
+    "canonical_reader_css_bytes": 6051,
+    "canonical_reader_css_sha256": "8eec1ce517f70c7edb79e29da9dcdc55c969f73019aedd065137617baf36f06a",
+    "pages_reader_css_bytes": 6420,
+    "pages_reader_css_sha256": "0fe361b33e4ad5467e28f759c89d82b4effbfb9e6bedc99df34767d5689f823a",
+    "pages_only_css_append_bytes": 369,
+    "pages_only_css_append_purpose": "Contain long inline MathJax fallbacks locally so they cannot create page-wide horizontal overflow."
+  },
+  "anonymous_byte_readback": {
+    "status": "PASS",
+    "root_http_status": 200,
+    "root_final_url": "https://kokunoyumeto.github.io/metode-aljabar-jilid-2-id/",
+    "root_bytes": 4628517,
+    "root_sha256": "021becbd54636f5077418af38e698a81b5e8630b3833dd7999414970f10c523d",
+    "reader_files_verified": 31,
+    "reader_bytes_verified": 6329881,
+    "deployment_control_files_verified": 1,
+    "failures": 0,
+    "reader_anchor_sections": 148,
+    "anchor_accounting": "146 source-order units plus 2 reader bridge sections",
+    "representative_fragment_present": true,
+    "local_mathjax_runtime": true,
+    "representative_local_font": true,
+    "accessibility_page": true,
+    "license_page": true,
+    "remote_runtime_urls": [],
+    "source_evidence": {
+      "PAGES_READBACK.json": {
+        "bytes": 25802,
+        "sha256": "2a0d363ce6f6d8a32f3d52f7fe1ec6c5cdf5140c6ca69b69e9e1559799178429"
+      },
+      "PAGES_CONFIGURATION_READBACK.json": {
+        "bytes": 1215,
+        "sha256": "6874678667a45dc665bb853e8106614335537a0d327eacc65360473495efae55"
+      }
+    }
+  },
+  "rendered_layout_readback": {
+    "checked_at_utc": "2026-08-29T23:18:45Z",
+    "stylesheet_readback": "The final public 6,420-byte reader.css was loaded from a same-origin repeated-slash URL solely to bypass the inspection browser's pre-deployment ten-minute cache; the canonical root and stylesheet bytes were independently read back at their ordinary URLs.",
+    "desktop": {
+      "viewport_width": 1440,
+      "viewport_height": 900,
+      "document_client_width": 1425,
+      "document_scroll_width": 1425,
+      "page_wide_horizontal_overflow": false,
+      "reader_main_width": 1216,
+      "reader_main_center_delta_from_client_midpoint_px": 0.0556,
+      "representative_fallback_client_width": 1187,
+      "representative_fallback_scroll_width": 2619,
+      "representative_fallback_overflow_x": "auto"
+    },
+    "mobile": {
+      "viewport_width": 390,
+      "viewport_height": 844,
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "page_wide_horizontal_overflow": false,
+      "reader_main_left": 16,
+      "reader_main_right": 359.1111,
+      "reader_main_width": 343.1111,
+      "reader_main_center_delta_from_client_midpoint_px": 0.0556,
+      "header_position": "static",
+      "visual_result": "Centered, readable cover and navigation; no page-wide horizontal scrollbar."
+    },
+    "representative_fragment_url": "https://kokunoyumeto.github.io/metode-aljabar-jilid-2-id/#unit-mastery-bridge-002-derived-functors-spectral-sequences",
+    "representative_fragment_visible": true
+  },
+  "receipt_publication": {
+    "self_in_payload_manifest": false,
+    "note": "This receipt binds the content deployment commit. It is published by a child commit so the receipt does not attempt to contain its own commit or hash."
+  },
+  "limitations": [
+    "Unsupported inline TikZ syntax remains visible as a MathJax fallback in the HTML reader; the Pages-only CSS contains that fallback locally, while the authoritative source and PDF diagram bytes remain unchanged."
+  ],
+  "failures": []
+}
