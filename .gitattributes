@@ -1,8 +1,0 @@
-# Preserve the verified release bytes exactly in raw downloads, codeload
-# archives, and fresh checkouts. The edition intentionally contains mixed
-# line endings inherited from its frozen source and generated reader.
-* -text
-*.pdf binary
-*.png binary
-*.zip binary
-*.woff binary

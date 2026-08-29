@@ -1,6 +1,0 @@
--- Build produksi terbatas: satu lintasan awal, Biber, lalu satu lintasan
--- resolusi. Semua keluaran grafis dibuat sesudah lintasan terakhir.
--- make4ht tetap menangani konversi TeX4ht dan penyalinan aset sesudahnya.
-Make:htlatex {}
-Make:biber {}
-Make:htlatex {}
