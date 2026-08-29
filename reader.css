@@ -342,3 +342,10 @@ pre {
   overflow-y: hidden;
   vertical-align: middle;
 }
+
+@media screen {
+  .reader-main {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+}
