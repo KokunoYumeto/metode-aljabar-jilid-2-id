@@ -8,6 +8,9 @@
   "diagram_alt_texts_applied": 829,
   "ledger_diagrams": 829,
   "local_references_checked": 3541,
+  "logical_sections": 149,
+  "unsupported_math_residue": [],
+  "unsupported_raw_residue": [],
   "errors": [],
   "limitations": [
     "MathML pronunciation depends on the browser and assistive technology.",

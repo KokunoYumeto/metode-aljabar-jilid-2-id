@@ -61,6 +61,7 @@ body {
 
 .reader-main {
   width: min(calc(100% - 2rem), var(--reader-width));
+  min-width: 0;
   min-height: 70vh;
   margin-inline: auto;
   padding: clamp(1.25rem, 3vw, 3.5rem) clamp(0rem, 1vw, 1.25rem) 5rem;
@@ -119,6 +120,7 @@ body {
 
 .reader-unit {
   display: flow-root;
+  min-width: 0;
   scroll-margin-top: 5rem;
 }
 
@@ -254,14 +256,35 @@ math[display="block"],
 .math-display,
 .displaymath,
 mjx-container[display="true"] {
+  display: block;
+  width: 100%;
   max-width: 100%;
   margin-block: 1.2rem;
   overflow-x: auto;
   overflow-y: hidden;
 }
 
+.math.display {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.math.display > mjx-container[display="true"] {
+  min-width: 0 !important;
+}
+
 mjx-container {
   max-width: 100%;
+}
+
+.math.inline {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
 }
 
 pre,
@@ -331,21 +354,5 @@ pre {
   .reader-main {
     width: 100%;
     padding: 0;
-  }
-}
-/* GitHub Pages-only containment for long inline MathJax fallbacks.
-   The canonical reader, main branch, and archived release bytes remain unchanged. */
-.math.inline {
-  display: inline-block;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  vertical-align: middle;
-}
-
-@media screen {
-  .reader-main {
-    overflow-x: hidden;
-    overflow-x: clip;
   }
 }
