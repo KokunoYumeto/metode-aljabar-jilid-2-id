@@ -1,0 +1,15 @@
+{
+  "schema": "program-matematika.federated-navigation.config.v1",
+  "repository": "metode-aljabar-jilid-2-id",
+  "course_id": "D80",
+  "content_language": "id",
+  "surface_url": "https://kokunoyumeto.github.io/metode-aljabar-jilid-2-id/",
+  "published_roots": ["."],
+  "central_links": [
+    {"locale": "id", "label": "Program (Bahasa Indonesia)", "url": "https://kokunoyumeto.github.io/program-matematika-indonesia/id/#course-D80"},
+    {"locale": "en", "label": "Program (English)", "url": "https://kokunoyumeto.github.io/program-matematika-indonesia/en/#course-D80"}
+  ],
+  "authoritative_originals": [
+    {"label": "Sumber asli / Authoritative original", "url": "https://wwli.asia/zh/docs/books/"}
+  ]
+}

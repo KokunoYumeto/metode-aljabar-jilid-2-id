@@ -1,0 +1,43 @@
+{
+  "after_manifest_sha256": "91000d20ed335e0839a606e138ecce9f828c990c493014f3f9a170e15606ad3a",
+  "authoritative_originals": [
+    {
+      "label": "Sumber asli / Authoritative original",
+      "url": "https://wwli.asia/zh/docs/books/"
+    }
+  ],
+  "before_manifest_sha256": "496d9687018b17543ed56a1bfce062d7af843ce63a7bfc1bc545dac868040796",
+  "central_links": [
+    {
+      "label": "Program (Bahasa Indonesia)",
+      "locale": "id",
+      "url": "https://kokunoyumeto.github.io/program-matematika-indonesia/id/#course-D80"
+    },
+    {
+      "label": "Program (English)",
+      "locale": "en",
+      "url": "https://kokunoyumeto.github.io/program-matematika-indonesia/en/#course-D80"
+    }
+  ],
+  "checks": {
+    "all_central_and_original_links_present_once_per_document": true,
+    "exactly_one_navigation_landmark_per_document": true,
+    "exactly_one_stylesheet_reference_per_document": true,
+    "idempotent_transform": true,
+    "roundtrip_content_preservation": true
+  },
+  "content_language": "id",
+  "course_id": "D80",
+  "documents_with_navigation": 2,
+  "generated_by": "scripts/apply_federated_navigation.py",
+  "html_bytes_after": 4245990,
+  "html_documents": 2,
+  "published_roots": [
+    "."
+  ],
+  "repository": "metode-aljabar-jilid-2-id",
+  "schema": "program-matematika.federated-navigation.local-receipt.v1",
+  "status": "passed",
+  "stylesheet_sha256": "3c88e12efe746142c009e55762f12619c45a1c384718b990507502fcfd78f5bb",
+  "surface_url": "https://kokunoyumeto.github.io/metode-aljabar-jilid-2-id/"
+}
